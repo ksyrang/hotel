@@ -1,0 +1,479 @@
+/* CSS Document */
+
+/*멤버십 인덱스*/
+.ctnMembership.ctnMemIndex{ width:866px; overflow:hidden;}
+.ctnMembership.ctnMemIndex img{ vertical-align:middle;}
+.ctnMembership.ctnMemIndex .boxA{ overflow:hidden; padding:0 0 50px 0; margin:0 0 50px 0; border-bottom:#e8e4de solid 1px;}
+.ctnMembership.ctnMemIndex .box1{ position:relative; width:426px; float:left;}
+.ctnMembership.ctnMemIndex .box2{ position:relative; width:426px; float:right;}
+.ctnMembership.ctnMemIndex .boxB{ overflow:hidden; padding:0 0 50px 0; margin:0 0 50px 0;}
+.ctnMembership.ctnMemIndex .box3{ position:relative; width:426px; float:left;}
+.ctnMembership.ctnMemIndex .box4{ position:relative; width:426px; float:right;}
+
+
+.ctnMembership .hTit{ border-bottom:#a1886f solid 3px; height:27px; margin:0 0 10px 0;}
+.ctnMembership .hTit .tit{ float:left; height:27px;}
+.ctnMembership .hTitS{ height:24px; margin:0 0 5px 0;}
+.ctnMembership .hTitS .tit{ font-size:12px; font-weight:bold; padding:2px 0 0 0px; float:left}
+
+
+
+
+/*다이너스티*/
+.ctnMembership.ctnDynasty{}
+.ctnMembership.ctnDynasty .infoMsg{ background:url(../../images/ko/mem/membership/dynastyInfoMSg.gif) no-repeat; width:404px; height:41px; line-height:100px; overflow:hidden; margin:0 0 20px 0;}
+.ctnMembership.ctnDynasty .cardBox{ overflow:hidden; position:relative; margin:20px 0 30px 0;}
+.ctnMembership.ctnDynasty .cardBox .fLeft{ float:left; width:267px;}
+.ctnMembership.ctnDynasty .cardBox .fRight{ float:right; width:568px;}
+.ctnMembership.ctnDynasty .cardBox .cardImg{}
+.ctnMembership.ctnDynasty .cardBox .cardImg .img{ vertical-align:middle;}
+.ctnMembership.ctnDynasty .cardBox .info{ background:url(../../images/ko/mem/membership/dynastyCardInfo.gif) no-repeat; width:457px; height:120px;}
+.ctnMembership.ctnDynasty .cardBox .info *{ position:absolute; left:-9999%;}
+.ctnMembership.ctnDynasty .cardBox .btnPoinSch{ position:absolute; right:0px; top:0; background:url(../../images/ko/mem/membership/dynastyBtnPointSch.gif) no-repeat; width:94px; height:23px; vertical-align:middle; display:inline-block; line-height:100px; overflow:hidden;}
+.ctnMembership.ctnDynasty .cardBox .btn{}
+.ctnMembership.ctnDynasty .cardBox .btn .btnQna{ background:url(../../images/ko/mem/membership/dynastyBtnQna.gif) no-repeat; width:106px; height:44px; vertical-align:middle; display:inline-block; line-height:100px; overflow:hidden;}
+.ctnMembership.ctnDynasty .cardBox .btn .btnJoin{background:url(../../images/ko/mem/membership/dynastyBtnJoinSend.gif) no-repeat; width:106px; height:44px; vertical-align:middle; display:inline-block; line-height:100px; overflow:hidden;}
+.ctnMembership.ctnDynasty .cardBox .btn .btnInfo{background:url(../../images/ko/mem/membership/dynastyBtnInfo.gif) no-repeat; width:142px; height:44px; vertical-align:middle; display:inline-block; line-height:100px; overflow:hidden;}
+.ctnMembership.ctnDynasty .cardBox .snsLink { position:absolute; right:0px;bottom:0px;}
+.ctnMembership .cardBox .snsLink .btnTwitter{background:url(../../images/ko/mem/membership/dynastyBtnSns.gif) no-repeat; width:23px; height:23px; vertical-align:middle; display:inline-block; line-height:100px; overflow:hidden;margin-right:5px;}
+.ctnMembership .cardBox .snsLink .btnFacebook{ background:url(../../images/ko/mem/membership/dynastyBtnSns.gif) no-repeat -29px 0; width:23px; height:23px; vertical-align:middle; display:inline-block; line-height:100px; overflow:hidden;}
+.ctnMembership.ctnDynasty .infoGuideMsg{ margin:0 0 30px 0; background:#fbfbfb; border:#eaeaea solid 1px; padding:15px 20px;}
+.ctnMembership.ctnDynasty .infoGuideMsg li{ color:#666; background:url(../../images/ko/mem/main/bul01.gif) no-repeat 0 8px; padding:0 0 0 10px;}
+.ctnMembership.ctnDynasty .tabCardBox{ position:relative; padding:36px 0px 0 0px; overflow:hidden;}
+.ctnMembership.ctnDynasty .tabCardBox .ctn{ float:left; width:100%;}
+.ctnMembership.ctnDynasty .tabCardBox .ctn .tit{ position:absolute; top:0px;margin:0px; padding:0px; font-size:12px; font-weight:normal; }
+.ctnMembership.ctnDynasty .tabCardBox .ctn .tit a{ display:block; width:130px; height:37px; background:url(../../images/ko/mem/membership/tabMenuMemDynasty.gif) no-repeat; line-height:100px; overflow:hidden; }
+.ctnMembership.ctnDynasty .tabCardBox .ctn .box{ border:#e2d5c5 solid 1px; display:none; padding:25px; }
+.ctnMembership.ctnDynasty .tabCardBox .ctn1 .tit{ left:0px; }
+.ctnMembership.ctnDynasty .tabCardBox .ctn2 .tit{ left:129px; }
+.ctnMembership.ctnDynasty .tabCardBox .ctn3 .tit{ left:298px; }
+.ctnMembership.ctnDynasty .tabCardBox .ctn1 .tit a{width:128px; background-position:0px 0px;}
+.ctnMembership.ctnDynasty .tabCardBox .ctn2 .tit a{ width:168px; background-position:-129px 0px;}
+.ctnMembership.ctnDynasty .tabCardBox .ctn3 .tit a{width:167px; background-position:-298px 0px;}
+.ctnMembership.ctnDynasty .tabCardBox .ctnOn .tit a{ background-image:url(../../images/ko/mem/membership/tabMenuMemDynastyOn.gif)}
+.ctnMembership.ctnDynasty .tabCardBox .ctnOn .box{display:block;}
+.ctnMembership.ctnDynasty .tableBenefitWrap{ background:url(../../images/ko/mem/membership/dynastyCardInfoImg1.gif) no-repeat; height:699px;}
+.ctnMembership.ctnDynasty .tableBenefitWrap .tableBenefit{ position:absolute; left:-9999%;}
+.ctnMembership.ctnDynasty .tableUsePointWrap{ background:url(../../images/ko/mem/membership/dynastyCardInfoImg2.gif) no-repeat; height:815px; height:526px;}
+.ctnMembership.ctnDynasty .tableUsePointWrap *{position:absolute; left:-9999%;}
+.ctnMembership.ctnDynasty .tableAirPartner{ background:url(../../images/ko/mem/membership/dynastyCardInfoImg3.gif) no-repeat; width:814px; height:411px;}
+.ctnMembership.ctnDynasty .tableAirPartner  *{position:absolute; left:-9999%;}
+
+
+/*다이너스티 멤버십 개편 안내*/
+.popLayerNewMembership{ width:750px; margin:0 0 0 -400px; left:50%;}
+.popLayerNewMembership .box1{background:url(../../images/ko/common/newMembership/newMemNotice_kr.gif) no-repeat; width:686px; height:789px}
+.popLayerNewMembership .box1 *{ position:absolute; left:-9999%;}
+
+
+
+
+/*더에스포인트*/
+.ctnMembership.ctnCardSpoint{}
+.ctnMembership.ctnCardSpoint .ingBox{ margin:20px 0 0 0;}
+.ctnMembership.ctnCardSpoint .infoMsg{ background:url(../../images/ko/mem/membership/theSpointMsg.gif) no-repeat; width:404px; height:41px; line-height:100px; overflow:hidden; margin:0 0 20px 0;}
+.ctnMembership.ctnCardSpoint .cardBox{ overflow:hidden; position:relative; margin:20px 0 50px 0;}
+.ctnMembership.ctnCardSpoint .cardBox .fLeft{ float:left; width:267px;}
+.ctnMembership.ctnCardSpoint .cardBox .fRight{ float:right; width:568px;}
+.ctnMembership.ctnCardSpoint .cardBox .cardImg{}
+.ctnMembership.ctnCardSpoint .cardBox .cardImg .img{ vertical-align:middle;}
+.ctnMembership.ctnCardSpoint .cardBox .info{ background:url(../../images/ko/mem/membership/theSpointCardInfo.gif) no-repeat; width:457px; height:120px;}
+.ctnMembership.ctnCardSpoint .cardBox .info *{ position:absolute; left:-9999%;}
+.ctnMembership.ctnCardSpoint .cardBox .btnPoinSch{ position:absolute; right:0px; top:0; background:url(../../images/ko/mem/membership/dynastyBtnPointSch.gif) no-repeat; width:94px; height:23px; vertical-align:middle; display:inline-block; line-height:100px; overflow:hidden;}
+.ctnMembership.ctnCardSpoint .cardBox .btn{}
+.ctnMembership.ctnCardSpoint .cardBox .btn .btnQna{ background:url(../../images/ko/mem/membership/dynastyBtnQna.gif) no-repeat; width:106px; height:44px; vertical-align:middle; display:inline-block; line-height:100px; overflow:hidden;}
+.ctnMembership.ctnCardSpoint .cardBox .btn .btnJoin{background:url(../../images/ko/mem/membership/dynastyBtnJoinSend.gif) no-repeat; width:106px; height:44px; vertical-align:middle; display:inline-block; line-height:100px; overflow:hidden;}
+.ctnMembership.ctnCardSpoint .cardBox .snsLink { position:absolute; right:0px;bottom:0px;}
+.ctnMembership.ctnCardSpoint .tabCardBox{ position:relative; padding:36px 0px 0 0px; overflow:hidden;}
+.ctnMembership.ctnCardSpoint .tabCardBox .ctn{ float:left; width:100%;}
+.ctnMembership.ctnCardSpoint .tabCardBox .ctn .tit{ position:absolute; top:0px;margin:0px; padding:0px; font-size:12px; font-weight:normal; }
+.ctnMembership.ctnCardSpoint .tabCardBox .ctn .tit a{ display:block; width:130px; height:37px; background:url(../../images/ko/mem/membership/tabMenuMemSpoint.gif) no-repeat; line-height:100px; overflow:hidden; }
+.ctnMembership.ctnCardSpoint .tabCardBox .ctn .box{ border:#e2d5c5 solid 1px; display:none; padding:25px; }
+.ctnMembership.ctnCardSpoint .tabCardBox .ctn1 .tit{ left:0px; }
+.ctnMembership.ctnCardSpoint .tabCardBox .ctn2 .tit{ left:129px; }
+.ctnMembership.ctnCardSpoint .tabCardBox .ctn3 .tit{ left:258px; }
+.ctnMembership.ctnCardSpoint .tabCardBox .ctn1 .tit a{width:128px; background-position:0px 0px;}
+.ctnMembership.ctnCardSpoint .tabCardBox .ctn2 .tit a{ width:128px; background-position:-129px 0px;}
+.ctnMembership.ctnCardSpoint .tabCardBox .ctn3 .tit a{width:157px; background-position:-258px 0px;}
+.ctnMembership.ctnCardSpoint .tabCardBox .ctnOn .tit a{ background-image:url(../../images/ko/mem/membership/tabMenuMemSpointOn.gif)}
+.ctnMembership.ctnCardSpoint .tabCardBox .ctnOn .box{display:block;}
+.ctnMembership.ctnCardSpoint .memBenefitWrap{ overflow:hidden; }
+.ctnMembership.ctnCardSpoint .memBenefitWrap .p1{ background:url(../../images/ko/mem/membership/theSpointCardInfoImgA1.jpg) no-repeat; width:814px; height:209px;}
+.ctnMembership.ctnCardSpoint .memBenefitWrap .p1 *{ position:absolute; left:-9999%;}
+.ctnMembership.ctnCardSpoint .memBenefitWrap .p2,
+.ctnMembership.ctnCardSpoint .memBenefitWrap .p2,
+.ctnMembership.ctnCardSpoint .memBenefitWrap .p3,
+.ctnMembership.ctnCardSpoint .memBenefitWrap .p4{ float:left;}
+.ctnMembership.ctnCardSpoint .memBenefitWrap img{ vertical-align:middle;}
+.ctnMembership.ctnCardSpoint .memBenefitWrap .info{ position:absolute; left:-9999%;}
+.ctnMembership.ctnCardSpoint .userGuideWrap{ background:url(../../images/ko/mem/membership/theSpointCardInfoImgB1.gif) no-repeat; width:814px; height:253px}
+.ctnMembership.ctnCardSpoint .userGuideWrap *{ position:absolute; left:-9999%;}
+.ctnMembership.ctnCardSpoint .newsEventWrap .msg{ background:url(../../images/ko/mem/membership/theSpointCardInfoImgC1.gif) no-repeat; height:28px; line-height:100px; overflow:hidden;}
+
+
+/*신라피트니스*/
+.ctnMembership.ctnSillaFitness{}
+.ctnMembership.ctnSillaFitness .infoMsg{ background:url(../../images/ko/mem/membership/shillaFitnessMsg.gif) no-repeat; width:404px; height:41px; line-height:100px; overflow:hidden; margin:0 0 20px 0;}
+.ctnMembership.ctnSillaFitness .cardBox{ overflow:hidden; position:relative; margin:20px 0 50px 0;}
+.ctnMembership.ctnSillaFitness .cardBox .fLeft{ float:left; width:267px;}
+.ctnMembership.ctnSillaFitness .cardBox .fRight{ float:right; width:568px; position:relative;}
+.ctnMembership.ctnSillaFitness .cardBox .cardImg{}
+.ctnMembership.ctnSillaFitness .cardBox .cardImg .img{ vertical-align:middle;}
+.ctnMembership.ctnSillaFitness .cardBox .info{ background:url(../../images/ko/mem/membership/shillaFitnessCardInfo.gif) no-repeat; width:500px; height:164px;}
+.ctnMembership.ctnSillaFitness .cardBox .info *{ position:absolute; left:-9999%;}
+.ctnMembership.ctnSillaFitness .cardBox .btnPoinSch{ position:absolute; right:0px; top:0; background:url(../../images/ko/mem/membership/dynastyBtnPointSch.gif) no-repeat; width:94px; height:23px; vertical-align:middle; display:inline-block; line-height:100px; overflow:hidden;}
+.ctnMembership.ctnSillaFitness .cardBox .btn{ position:absolute; left:150px; top:137px;}
+.ctnMembership.ctnSillaFitness .cardBox .btn .btnNewMemJoin{ background:url(../../images/ko/mem/membership/shillaFitnessBtnJoin.gif) no-repeat; width:137px; height:27px; vertical-align:middle; display:inline-block; line-height:100px; overflow:hidden;}
+.ctnMembership.ctnSillaFitness .cardBox .snsLink { position:absolute; right:0px; bottom:0px;}
+.ctnMembership.ctnSillaFitness .tabCardBox{ position:relative; padding:36px 0px 0 0px; overflow:hidden;}
+.ctnMembership.ctnSillaFitness .tabCardBox .ctn{ float:left; width:100%;}
+.ctnMembership.ctnSillaFitness .tabCardBox .ctn .tit{ position:absolute; top:0px;margin:0px; padding:0px; font-size:12px; font-weight:normal; }
+.ctnMembership.ctnSillaFitness .tabCardBox .ctn .tit a{ display:block; width:130px; height:37px; background:url(../../images/ko/mem/membership/tabMenuMemShillaFitness.gif) no-repeat; line-height:100px; overflow:hidden; }
+.ctnMembership.ctnSillaFitness .tabCardBox .ctn .box{ border:#e2d5c5 solid 1px; display:none; padding:25px; }
+.ctnMembership.ctnSillaFitness .tabCardBox .ctn1 .tit{ left:0px; }
+.ctnMembership.ctnSillaFitness .tabCardBox .ctn2 .tit{ left:129px; }
+.ctnMembership.ctnSillaFitness .tabCardBox .ctn3 .tit{ left:258px; }
+.ctnMembership.ctnSillaFitness .tabCardBox .ctn1 .tit a{width:128px; background-position:0px 0px;}
+.ctnMembership.ctnSillaFitness .tabCardBox .ctn2 .tit a{ width:128px; background-position:-129px 0px;}
+.ctnMembership.ctnSillaFitness .tabCardBox .ctn3 .tit a{width:157px; background-position:-258px 0px;}
+.ctnMembership.ctnSillaFitness .tabCardBox .ctnOn .tit a{ background-image:url(../../images/ko/mem/membership/tabMenuMemShillaFitnessOn.gif)}
+.ctnMembership.ctnSillaFitness .tabCardBox .ctnOn .box{display:block;}
+.ctnMembership.ctnSillaFitness .memBenefitWrap{ overflow:hidden;}
+.ctnMembership.ctnSillaFitness .memBenefitWrap .p1{ float:left;}
+.ctnMembership.ctnSillaFitness .memBenefitWrap .p2{ float:right;}
+.ctnMembership.ctnSillaFitness .memBenefitWrap .info{ position:absolute; left:-9999%;}
+.ctnMembership.ctnSillaFitness .userGuideWrap{ background:url(../../images/ko/mem/membership/shillaFitnessCardInfoImgB.gif) no-repeat; width:814px; height:320px;}
+.ctnMembership.ctnSillaFitness .userGuideWrap *{ position:absolute; left:-9999%;}
+.ctnMembership.ctnSillaFitness .memLounge{ position:relative; background:url(../../images/ko/mem/membership/shillaFitnessCardInfoImgC.gif) no-repeat; height:249px;}
+.ctnMembership.ctnSillaFitness .memLounge .info{ position:absolute; left:-9999%;}
+.ctnMembership.ctnSillaFitness .memLounge .btnFloorMap{ position:absolute; left:0px; top:342px; background:url(../../images/ko/mem/membership/shillaFitnessCardInfoImgCBtnFloor.gif) no-repeat; width:106px; height:34px; display:inline-block; line-height:100px; overflow:hidden;}
+
+/*신라에스*/
+.ctnMembership.ctnShillaS{}
+.ctnMembership.ctnShillaS .cardBox{ overflow:hidden; position:relative; margin:20px 0 50px 0;}
+.ctnMembership.ctnShillaS .cardBox .fLeft{ float:left; width:267px;}
+.ctnMembership.ctnShillaS .cardBox .fRight{ float:right; width:568px;}
+.ctnMembership.ctnShillaS .cardBox .cardImg{}
+.ctnMembership.ctnShillaS .cardBox .cardImg .img{ vertical-align:middle;}
+.ctnMembership.ctnShillaS .cardBox .info{ background:url(../../images/ko/mem/membership/shilla-s-info.jpg) no-repeat; width:457px; height:120px;}
+.ctnMembership.ctnShillaS .cardBox .info *{ position:absolute; left:-9999%;}
+.ctnMembership.ctnShillaS .cardBox .btnPoinSch{ position:absolute; right:0px; top:0; background:url(../../images/ko/mem/membership/dynastyBtnPointSch.gif) no-repeat; width:94px; height:23px; vertical-align:middle; display:inline-block; line-height:100px; overflow:hidden;}
+.ctnMembership.ctnShillaS .cardBox .btn{}
+.ctnMembership.ctnShillaS .cardBox .btn .btnQna{ background:url(../../images/ko/mem/membership/dynastyBtnQna.gif) no-repeat; width:106px; height:44px; vertical-align:middle; display:inline-block; line-height:100px; overflow:hidden;}
+.ctnMembership.ctnShillaS .cardBox .btn .btnJoin{background:url(../../images/ko/mem/membership/dynastyBtnJoinSend.gif) no-repeat; width:106px; height:44px; vertical-align:middle; display:inline-block; line-height:100px; overflow:hidden;}
+.ctnMembership.ctnShillaS .cardBox .snsLink { position:absolute; right:0px;bottom:0px;}
+.ctnMembership .cardBox .snsLink .btnTwitter{background:url(../../images/ko/mem/membership/dynastyBtnSns.gif) no-repeat; width:23px; height:23px; vertical-align:middle; display:inline-block; line-height:100px; overflow:hidden;margin-right:5px;}
+.ctnMembership .cardBox .snsLink .btnFacebook{ background:url(../../images/ko/mem/membership/dynastyBtnSns.gif) no-repeat -29px 0; width:23px; height:23px; vertical-align:middle; display:inline-block; line-height:100px; overflow:hidden;}
+.ctnMembership.ctnShillaS .tabCardBox{ position:relative; padding:36px 0px 0 0px; overflow:hidden;}
+.ctnMembership.ctnShillaS .tabCardBox .ctn{ float:left; width:100%;}
+.ctnMembership.ctnShillaS .tabCardBox .ctn .tit{ position:absolute; top:0px;margin:0px; padding:0px; font-size:12px; font-weight:normal; }
+.ctnMembership.ctnShillaS .tabCardBox .ctn .tit a{ display:block; width:130px; height:37px; background:url(../../images/ko/mem/membership/tabMenuMemShillaS.gif) no-repeat; line-height:100px; overflow:hidden; }
+.ctnMembership.ctnShillaS .tabCardBox .ctn .box{ border:#e2d5c5 solid 1px; display:none; padding:25px; }
+.ctnMembership.ctnShillaS .tabCardBox .ctn1 .tit{ left:0px; }
+.ctnMembership.ctnShillaS .tabCardBox .ctn2 .tit{ left:129px; }
+.ctnMembership.ctnShillaS .tabCardBox .ctn3 .tit{ left:298px; }
+.ctnMembership.ctnShillaS .tabCardBox .ctn1 .tit a{width:128px; background-position:0px 0px;}
+.ctnMembership.ctnShillaS .tabCardBox .ctn2 .tit a{ width:130px; background-position:-129px 0px;}
+.ctnMembership.ctnShillaS .tabCardBox .ctn3 .tit a{width:167px; background-position:-298px 0px;}
+.ctnMembership.ctnShillaS .tabCardBox .ctnOn .tit a{ background-image:url(../../images/ko/mem/membership/tabMenuMemShillaSOn.gif)}
+.ctnMembership.ctnShillaS .tabCardBox .ctnOn .box{display:block;}
+.ctnMembership.ctnShillaS .tableBenefitWrap{ background:url(../../images/ko/mem/membership/ShillaSCardInfoImg1.jpg) no-repeat; height:1677px;}
+.ctnMembership.ctnShillaS .tableBenefitWrap .tableBenefit{ position:absolute; left:-9999%;}
+.ctnMembership.ctnShillaS .tableUsePointWrap{ background:url(../../images/ko/mem/membership/ShillaSCardInfoImg2.jpg) no-repeat; height:348px;}
+.ctnMembership.ctnShillaS .tableUsePointWrap *{position:absolute; left:-9999%;}
+
+.ctnMembership.ctnShillaS .tableUsePointWrap h4,
+.ctnMembership.ctnShillaS .tableUsePointWrap .tableUsePoint{position:absolute; left:-9999%;}
+.ctnMembership.ctnShillaS .pointGuideBox{ position:relative; display:inline-block; *display:inline; zoom:1; z-index:20}
+.ctnMembership.ctnShillaS .pointGuideBox .btnPwHelp{ font-size:11px; font-weight:normal; color:#806925; text-decoration:none;}
+.ctnMembership.ctnShillaS .pointGuideBox .btnPwHelp .icoHelp{ background:url(../../images/ko/common/join/icoHelp.gif) no-repeat; width:15px; height:14px; margin:0 0 0 4px; display:inline-block; vertical-align:middle; line-height:100px; overflow:hidden;}
+.ctnMembership.ctnShillaS .pointGuideBox .pointGuide{ display:none; position:absolute; left:62px; top:26px; width:480px; border:#a1886f solid 1px; padding:19px; background:#f7f4ea; z-index:100; zoom:1; color:#626262; font-size:11px;}
+.ctnMembership.ctnShillaS .pointGuideBox .pointGuide .tit{ font-weight:bold; margin:0 0 10px 0;}
+.ctnMembership.ctnShillaS .pointGuideBox .pointGuide .list li{background:url(../../images/ko/mem/main/bul01.gif) no-repeat 0 9px; padding:0 0 0 8px;}
+.ctnMembership.ctnShillaS .pointGuideBox .pointGuide .btnClose{position:absolute; right:5px; top:5px; background:url(../../images/ko/common/join/btnClose.gif) no-repeat; width:20px; height:20px; text-indent:-9999%; overflow:hidden; }
+.ctnMembership.ctnShillaS .pointGuideBox .pointGuide .pwGuideArrow{ position:absolute; left:18px; top:-6px; background:url(../../images/ko/common/join/pwGuideArrowTop.gif) no-repeat; width:15px; height:6px; overflow:hidden;}
+
+.ctnMembership.ctnShillaSJoin1{}
+
+.ctnMembership.ctnShillaSJoin1 .hTitS{}
+.ctnMembership.ctnShillaSJoin1 .hTitS .tit{}
+.ctnMembership.ctnShillaSJoin1 .hTitS .info{ float:right;}
+.ctnMembership.ctnShillaSJoin1 .infoMsg{ margin:0 0 20px 0;}
+.ctnMembership.ctnShillaSJoin1 .hTit{ margin:20px 0 0 0;}
+.ctnMembership.ctnShillaSJoin1 .hTit .tit{ background:url(../../images/ko/mem/membership/shillasJoin1Tit1.gif) no-repeat; width:300px; line-height:100px; overflow:hidden;}
+.ctnMembership.ctnShillaSJoin1 .msg{ background:url(../../images/ko/mem/membership/shillasJoin1Msg1.gif) no-repeat; height:46px; line-height:100px; overflow:hidden;} 
+.ctnMembership.ctnShillaSJoin1 .btnMembershipJoin{ background:url(../../images/ko/mem/membership/dynastyJoin1BtnJoin.jpg) no-repeat; width:137px; height:44px; vertical-align:middle; display:inline-block; line-height:200px; overflow:hidden;}
+.ctnMembership.ctnShillaSJoin1 .btnMembershipJoinCancel{ background:url(../../images/ko/mem/membership/dynastyJoin2BtnCancel.gif) no-repeat; width:99px; height:44px; vertical-align:middle; display:inline-block; line-height:200px; overflow:hidden;}
+.ctnMembership.ctnShillaSJoin1 .btnSchAddress{ background:url(../../images/ko/common/join/btnSchAddress.gif) no-repeat; width:66px; height:27px; display:inline-block; vertical-align:middle; line-height:100px; overflow:hidden;}
+.ctnMembership.ctnShillaSJoin1 .btnCertifi{ background:url(../../images/ko/mem/membership/BtnCertifiMobile.gif) no-repeat; width:77px; height:27px; display:inline-block; vertical-align:middle; line-height:200px; overflow:hidden;}
+
+.ctnMembership.ctnShillaSJoin1 .addressWrap .addressOld input.address1{ width:712px}
+.ctnMembership.ctnShillaSJoin1 .addressWrap .addressOld input.address2{ width:712px;}
+.ctnMembership.ctnShillaSJoin1 .addressWrap .addressNew div.addressNew1,
+.ctnMembership.ctnShillaSJoin1 .addressWrap .addressNew div.addressNew2{ width:650px}
+.ctnMembership.ctnShillaSJoin1 .addressWrap .addressNew input.addressNew1,
+.ctnMembership.ctnShillaSJoin1 .addressWrap .addressNew input.addressNew2{ width:653px;}
+.ctnMembership.ctnShillaSJoin1 label.lastNameEn,
+.ctnMembership.ctnShillaSJoin1 label.firstNameEn{ margin:0 10px 0 0;}
+.ctnMembership.ctnShillaSJoin1 input.lastNameEn,
+.ctnMembership.ctnShillaSJoin1 input.firstNameEn{ margin:0 10px 0 0;}
+.ctnMembership.ctnShillaSJoin1 .emailRecepBox{ padding:10px 0 4px 0;}
+.ctnMembership.ctnShillaSJoin1 label.birthDay{ margin:0 15px 0 0}
+
+.ctnMembership.ctnShillaSJoin2{}
+.ctnMembership.ctnShillaSJoin2 .infoMsg{ background:url(../../images/ko/mem/membership/jejuBlueInfoMSg.gif) no-repeat; width:404px; height:41px; line-height:100px; overflow:hidden; margin:0 0 20px 0;}
+.ctnMembership.ctnShillaSJoin2 .joinComBox{ margin:50px 0 25px 0;}
+.ctnMembership.ctnShillaSJoin2 .joinComBox h5{ position:absolute; left:-9999%;}
+.ctnMembership.ctnShillaSJoin2 .joinComBox .box{ margin:0 0 20px 0; background:url(../../images/ko/mem/membership/shillasJoin3Tit1.gif) no-repeat; height:120px;}
+.ctnMembership.ctnShillaSJoin2 .joinComBox .box .msg{ font-size:16px; font-weight:bold; color:#444; text-align:center; padding:54px 0 0 0;}
+.ctnMembership.ctnShillaSJoin2 .joinComBox .guideList{ width:410px; margin:auto;}
+.ctnMembership.ctnShillaSJoin2 .btnMembershipConfirm{ background:url(../../images/ko/mem/membership/shillasJoin3BtnConfirm.gif) no-repeat; width:99px; height:44px; vertical-align:middle; display:inline-block; line-height:200px; overflow:hidden;}
+
+
+/*신라피트니스 가입안내*/
+.popLayerShillaFitnessJoinPop{ width:800px; margin:0 0 0 -400px; left:50%;}
+.popLayerShillaFitnessJoinPop .popHead .tit{ background:url(../../images/ko/mem/membership/popHeadTitMembership.gif) no-repeat;}
+.popLayerShillaFitnessJoinPop .box1{ background:url(../../images/ko/mem/membership/shillaFitnessJoinPopImg1.gif) no-repeat; height:118px;}
+.popLayerShillaFitnessJoinPop .box1 *{ position:absolute; left:-9999%;}
+.popLayerShillaFitnessJoinPop .box2{ background:url(../../images/ko/mem/membership/shillaFitnessJoinPopImg2.gif) no-repeat; height:458px;}
+.popLayerShillaFitnessJoinPop .box2 *{ position:absolute; left:-9999%;}
+
+
+
+
+
+
+
+
+.ctnMembership .newsList{}
+.ctnMembership .newsList li{ margin:0 0 20px 0;}
+.ctnMembership .newsList li .nBox{}
+.ctnMembership .newsList li .nBox .tCtn{ height:37px; margin:0 0 15px 0; background:#faf9f4; border-bottom:#cdcbbe solid 1px; border-top:#cdcbbe solid 1px;}
+.ctnMembership .newsList li .nBox .tCtn .name{ color:#707070; font-weight:bold; float:left; padding:10px 0 0 22px;}
+.ctnMembership .newsList li .nBox .tCtn .date{ float:right; padding:10px 18px 0 0px;}
+.ctnMembership .newsList li .nBox .nCtn{ display:block; overflow:hidden; }
+.ctnMembership .newsList li .nBox .nCtn .photo{ float:left; width:235px;}
+.ctnMembership .newsList li .nBox .nCtn .photo .img{ vertical-align:middle;}
+.ctnMembership .newsList li .nBox .nCtn .info{ width:560px; float:right;}
+.ctnMembership .newsList li .nBox .nCtn .info .date{ display:block; padding:3px 0 0 0; margin:0 0 4px 0; font-weight:bold; color:#6e583e;}
+.ctnMembership .newsList li .nBox .nCtn .info .txt{ display:block; color:#1b1b1b}
+
+.ctnMembership .newsList li .nNewsBox {}
+.ctnMembership .newsList li .nNewsBox .nCtn .info{ width:100%; float:none;}
+
+.ctnMembership .newsView{ margin:0 0 20px 0;}
+.ctnMembership .newsView .tCtn{ height:37px; margin:0 0 15px 0; background:#faf9f4; border-bottom:#cdcbbe solid 1px; border-top:#cdcbbe solid 1px;}
+.ctnMembership .newsView .tCtn .name{ color:#707070; font-weight:bold; float:left; padding:10px 0 0 22px;} 
+.ctnMembership .newsView .tCtn .date{float:right; padding:10px 18px 0 0px;} 
+.ctnMembership .newsView .nCtn{  }
+.ctnMembership .newsView .nCtn .photo{ margin:0 0 20px 0;}
+.ctnMembership .newsView .nCtn .photo .img{ vertical-align:middle;}
+.ctnMembership .newsView .nCtn .info{}
+.ctnMembership .newsView .nCtn .info .date{ padding:3px 0 0 0; margin:0 0 4px 0; font-weight:bold; color:#6e583e;}
+.ctnMembership .newsView .nCtn .info .txt{ color:#1b1b1b}
+.ctnMembership .pagingBox{ border-top:#cdcbbe solid 1px; margin:0 0 10px 0;}
+.ctnMembership .pagingBox li{ height:37px; border-bottom:#cdcbbe solid 1px;}
+.ctnMembership .pagingBox li .name{ display:block; width:70px; margin:0 10px 0 0; float:left; padding:10px 0 0 22px;}
+.ctnMembership .pagingBox li .subject{ display:block; float:left; padding:10px 0 0 0px;}
+.ctnMembership .btnGoList{ background:url(../../images/ko/mem/membership/btnGoList.gif) no-repeat; width:62px; height:27px; vertical-align:middle; display:inline-block; line-height:100px; overflow:hidden;}
+
+
+
+
+.ctnMembership.ctnDynastyJoin .infoMsg{ background:url(../../images/ko/mem/membership/dynastyInfoMSg.gif) no-repeat; width:404px; height:41px; line-height:100px; overflow:hidden; margin:0 0 20px 0;}
+.ctnMembership.ctnDynastyJoin1{}
+.ctnMembership.ctnDynastyJoin1 .hTit{ margin:0 0 25px 0;}
+.ctnMembership.ctnDynastyJoin1 .hTit .tit{ background:url(../../images/ko/mem/membership/dynastyJoin1Tit1.jpg) no-repeat; width:365px; height:27px; line-height:100px; overflow:hidden;}
+.ctnMembership.ctnDynastyJoin1 .clauseBox{ margin:0 0 25px 0;}
+.ctnMembership.ctnDynastyJoin1 .clauseBox .scBox{ height:100px;}
+.ctnMembership.ctnDynastyJoin .btnMembershipJoin{ background:url(../../images/ko/mem/membership/dynastyJoin1BtnJoin.jpg) no-repeat; width:137px; height:44px; vertical-align:middle; display:inline-block; line-height:200px; overflow:hidden;}
+
+.ctnMembership.ctnDynastyJoin2{}
+.ctnMembership.ctnDynastyJoin2 .hTit{ margin:0 0 25px 0;}
+.ctnMembership.ctnDynastyJoin2 .hTit .tit{ background:url(../../images/ko/mem/membership/dynastyJoin1Tit1.jpg) no-repeat; width:365px; height:27px; line-height:100px; overflow:hidden;}
+.ctnMembership.ctnDynastyJoin2 .tableUserInfo{}
+.ctnMembership.ctnDynastyJoin2 .tableUserInfo1{ margin:0 0 4px 0;}
+.ctnMembership.ctnDynastyJoin2 .tableUserInfo2{ margin:0 0 4px 0;}
+.ctnMembership.ctnDynastyJoin2 .tableUserInfo2 label{ min-width:40px; display:inline-block;}
+.ctnMembership.ctnDynastyJoin2 .msg1{ margin:0 0 20px 0; color:#666}
+.ctnMembership.ctnDynastyJoin2 .msg1 a{ text-decoration:underline;}
+.ctnMembership.ctnDynastyJoin2 .msg2{ margin:0 0 30px 0; color:#666}
+.ctnMembership.ctnDynastyJoin2 .btnMembershipJoinCancel{ background:url(../../images/ko/mem/membership/dynastyJoin2BtnCancel.gif) no-repeat; width:99px; height:44px; vertical-align:middle; display:inline-block; line-height:200px; overflow:hidden;}
+
+.ctnMembership.ctnDynastyJoin2 .tableUserInfo2 label.spDaySel1,
+.ctnMembership.ctnDynastyJoin2 .tableUserInfo2 label.spDaySel2,
+.ctnMembership.ctnDynastyJoin2 .tableUserInfo2 label.spDayName1,
+.ctnMembership.ctnDynastyJoin2 .tableUserInfo2 label.spDayName2{ position:absolute; left:-9999%;}
+.ctnMembership.ctnDynastyJoin2 .tableUserInfo2 label.spDayYY1,
+.ctnMembership.ctnDynastyJoin2 .tableUserInfo2 label.spDayYY2,
+.ctnMembership.ctnDynastyJoin2 .tableUserInfo2 label.spDayMM1,
+.ctnMembership.ctnDynastyJoin2 .tableUserInfo2 label.spDayMM2,
+.ctnMembership.ctnDynastyJoin2 .tableUserInfo2 label.spDayDD1,
+.ctnMembership.ctnDynastyJoin2 .tableUserInfo2 label.spDayDD2{ min-width:15px;}
+.ctnMembership.ctnDynastyJoin2 .tableUserInfo2 label.spDayDD1,
+.ctnMembership.ctnDynastyJoin2 .tableUserInfo2 label.spDayDD2{ margin-right:15px;}
+.ctnMembership.ctnDynastyJoin2 .tableUserInfo2 span.rsvHotel{ margin-right:15px;}
+.ctnMembership.ctnDynastyJoin2 .tableUserInfo2 .spDayAdd{ padding:5px 0 0 0;}
+.ctnMembership.ctnDynastyJoin2 .tableUserInfo2 .spDayName1,
+.ctnMembership.ctnDynastyJoin2 .tableUserInfo2 .spDayName2{ width:90px;}
+
+
+
+
+.ctnMembership.ctnDynastyJoin3{}
+.ctnMembership.ctnDynastyJoin3 .joinComBox{ margin:0 0 25px 0;}
+.ctnMembership.ctnDynastyJoin3 .joinComBox h5{ position:absolute; left:-9999%;}
+.ctnMembership.ctnDynastyJoin3 .joinComBox .box{ margin:0 0 20px 0; background:url(../../images/ko/mem/membership/dynastyJoin3Txt1.gif) no-repeat; height:120px;}
+.ctnMembership.ctnDynastyJoin3 .joinComBox .box .msg{ font-size:16px; font-weight:bold; color:#444; text-align:center; padding:54px 0 0 0;}
+.ctnMembership.ctnDynastyJoin3 .joinComBox .box .msg2{ text-align:center; padding:5px 0 0 0 ;text-indent:-9999px;}
+.ctnMembership.ctnDynastyJoin3 .joinComBox .guideList{ background:#f4f4f4; border:#eeeeee solid 1px; padding:7px 0;}
+.ctnMembership.ctnDynastyJoin3 .joinComBox .guideList ul{ width:500px; margin:auto;}
+.ctnMembership.ctnDynastyJoin3 .btnMembershipConfirm{ background:url(../../images/ko/mem/membership/dynastyJoin3BtnConfirm.gif) no-repeat; width:99px; height:44px; vertical-align:middle; display:inline-block; line-height:200px; overflow:hidden;}
+
+
+
+/*더블초이스*/
+.ctnMembership.ctnDoubleChoice{}
+.ctnMembership.ctnDoubleChoice .infoMsg{ background:url(../../images/ko/mem/membership/doubleChoiceInfoMSg.gif) no-repeat; width:404px; height:41px; line-height:100px; overflow:hidden; margin:0 0 20px 0;}
+.ctnMembership.ctnDoubleChoice .cardBox{ overflow:hidden; position:relative; margin:20px 0 50px 0;}
+.ctnMembership.ctnDoubleChoice .cardBox .fLeft{ float:left; width:267px;}
+.ctnMembership.ctnDoubleChoice .cardBox .fRight{ float:right; width:568px;}
+.ctnMembership.ctnDoubleChoice .cardBox .cardImg{}
+.ctnMembership.ctnDoubleChoice .cardBox .cardImg .img{ vertical-align:middle;}
+.ctnMembership.ctnDoubleChoice .cardBox .info{ background:url(../../images/ko/mem/membership/doubleChoiceCardInfo.gif) no-repeat; width:568px; height:122px;}
+.ctnMembership.ctnDoubleChoice .cardBox .info *{ position:absolute; left:-9999%;}
+.ctnMembership.ctnDoubleChoice .cardBox .btnPoinSch{ position:absolute; right:0px; top:0; background:url(../../images/ko/mem/membership/doubleChoiceBtnDinSch.gif) no-repeat; width:131px; height:23px; vertical-align:middle; display:inline-block; line-height:100px; overflow:hidden;}
+.ctnMembership.ctnDoubleChoice .cardBox .btn{}
+.ctnMembership.ctnDoubleChoice .cardBox .btn .btnQna{ background:url(../../images/ko/mem/membership/dynastyBtnQna.gif) no-repeat; width:106px; height:44px; vertical-align:middle; display:inline-block; line-height:100px; overflow:hidden;}
+.ctnMembership.ctnDoubleChoice .cardBox .btn .btnJoin{background:url(../../images/ko/mem/membership/dynastyBtnJoinSend.gif) no-repeat; width:106px; height:44px; vertical-align:middle; display:inline-block; line-height:100px; overflow:hidden;}
+.ctnMembership.ctnDoubleChoice .cardBox .snsLink { position:absolute; right:0px;bottom:0px;}
+.ctnMembership.ctnDoubleChoice .tabCardBox{ position:relative; padding:36px 0px 0 0px; overflow:hidden;}
+.ctnMembership.ctnDoubleChoice .tabCardBox .ctn{ float:left; width:100%;}
+.ctnMembership.ctnDoubleChoice .tabCardBox .ctn .tit{ position:absolute; top:0px;margin:0px; padding:0px; font-size:12px; font-weight:normal; }
+.ctnMembership.ctnDoubleChoice .tabCardBox .ctn .tit a{ display:block; width:130px; height:37px; background:url(../../images/ko/mem/membership/tabMenuMemDchoice.gif) no-repeat; line-height:100px; overflow:hidden; }
+.ctnMembership.ctnDoubleChoice .tabCardBox .ctn .box{ border:#e2d5c5 solid 1px; display:none; padding:25px; }
+.ctnMembership.ctnDoubleChoice .tabCardBox .ctn1 .tit{ left:0px; }
+.ctnMembership.ctnDoubleChoice .tabCardBox .ctn2 .tit{ left:129px; }
+.ctnMembership.ctnDoubleChoice .tabCardBox .ctn3 .tit{ left:298px; }
+.ctnMembership.ctnDoubleChoice .tabCardBox .ctn1 .tit a{width:128px; background-position:0px 0px;}
+.ctnMembership.ctnDoubleChoice .tabCardBox .ctn2 .tit a{ width:153px; background-position:-129px 0px;}
+.ctnMembership.ctnDoubleChoice .tabCardBox .ctn3 .tit a{width:167px; background-position:-298px 0px;}
+.ctnMembership.ctnDoubleChoice .tabCardBox .ctnOn .tit a{ background-image:url(../../images/ko/mem/membership/tabMenuMemDchoiceOn.gif)}
+.ctnMembership.ctnDoubleChoice .tabCardBox .ctnOn .box{display:block;}
+.ctnMembership.ctnDoubleChoice .tableBenefitWrap{ background:url(../../images/ko/mem/membership/doubleChoiceCardInfoImgA.gif) no-repeat; height:1655px;}
+.ctnMembership.ctnDoubleChoice .tableBenefitWrap .tableBenefit{ position:absolute; left:-9999%;}
+.ctnMembership.ctnDoubleChoice .tableUsePointWrap{ background:url(../../images/ko/mem/membership/doubleChoiceCardInfoImgB.gif) no-repeat; height:204px;}
+.ctnMembership.ctnDoubleChoice .tableUsePointWrap *{position:absolute; left:-9999%;}
+
+
+.ctnMembership.ctnDoubleChoiceJoin .infoMsg{ background:url(../../images/ko/mem/membership/doubleChoiceJoin1InfoMsg.gif) no-repeat; width:404px; height:41px; line-height:100px; overflow:hidden; margin:0 0 20px 0;}
+.ctnMembership.ctnDoubleChoiceJoin1{}
+.ctnMembership.ctnDoubleChoiceJoin1 .hTit{ margin:0 0 25px 0;}
+.ctnMembership.ctnDoubleChoiceJoin1 .hTit .tit{ background:url(../../images/ko/mem/membership/doubleChoiceJoin1Tit1.gif) no-repeat; width:365px; height:27px; line-height:100px; overflow:hidden;}
+.ctnMembership.ctnDoubleChoiceJoin1 .clauseBox{ margin:0 0 25px 0;}
+.ctnMembership.ctnDoubleChoiceJoin1 .clauseBox .scBox{ height:100px;}
+.ctnMembership.ctnDoubleChoiceJoin .btnMembershipNext{ background:url(../../images/ko/mem/membership/doubleChoiceJoin1BtnNext.gif) no-repeat; width:65px; height:44px; vertical-align:middle; display:inline-block; line-height:200px; overflow:hidden;}
+
+
+.ctnMembership.ctnDoubleChoiceJoin2 .hTit{ margin:0 0 25px 0;}
+.ctnMembership.ctnDoubleChoiceJoin2 .hTit .tit{ background:url(../../images/ko/mem/membership/doubleChoiceJoin1Tit1.gif) no-repeat; width:365px; height:27px; line-height:100px; overflow:hidden;}
+.ctnMembership.ctnDoubleChoiceJoin2 .hTitS{}
+.ctnMembership.ctnDoubleChoiceJoin2 .hTitS .tit{}
+.ctnMembership.ctnDoubleChoiceJoin2 .hTitS .info{ float:right;}
+.ctnMembership.ctnDoubleChoiceJoin2 .msg{ background:url(../../images/ko/mem/membership/doubleChoiceJoin2Msg.gif) no-repeat; height:40px; line-height:200px; overflow:hidden; margin:0 0 10px 0;}
+.ctnMembership.ctnDoubleChoiceJoin2 .btnMembershipJoin{ background:url(../../images/ko/mem/membership/doubleChoiceJoinBtnJoin.gif) no-repeat; width:137px; height:44px; vertical-align:middle; display:inline-block; line-height:200px; overflow:hidden;}
+.ctnMembership.ctnDoubleChoiceJoin2 .btnMembershipJoinCancel{ background:url(../../images/ko/mem/membership/doubleChoiceJoinBtnCancel.gif) no-repeat; width:99px; height:44px; vertical-align:middle; display:inline-block; line-height:200px; overflow:hidden;}
+.ctnMembership.ctnDoubleChoiceJoin2 .addressWrap .addressOld input.address1{ width:522px}
+.ctnMembership.ctnDoubleChoiceJoin2 .addressWrap .addressOld input.address2{ width:712px;}
+.ctnMembership.ctnDoubleChoiceJoin2 .addressWrap .addressNew div.addressNew1,
+.ctnMembership.ctnDoubleChoiceJoin2 .addressWrap .addressNew div.addressNew2{ width:650px}
+.ctnMembership.ctnDoubleChoiceJoin2 .addressWrap .addressNew input.addressNew1,
+.ctnMembership.ctnDoubleChoiceJoin2 .addressWrap .addressNew input.addressNew2{ width:653px;}
+
+
+.ctnMembership.ctnDoubleChoiceJoin3{}
+.ctnMembership.ctnDoubleChoiceJoin3 .infoMsg{ background:url(../../images/ko/mem/membership/doubleChoiceJoin1InfoMsg.gif) no-repeat scroll 0 0 transparent no-repeat; width:404px; height:41px; line-height:100px; overflow:hidden; margin:0 0 20px 0;}
+.ctnMembership.ctnDoubleChoiceJoin3 .joinComBox{ margin:50px 0 25px 0;}
+.ctnMembership.ctnDoubleChoiceJoin3 .joinComBox h5{ position:absolute; left:-9999%;}
+.ctnMembership.ctnDoubleChoiceJoin3 .joinComBox .box{ margin:0 0 20px 0; background:url(../../images/ko/mem/membership/doubleChoiceJoin3Txt1.gif) no-repeat; height:120px;}
+.ctnMembership.ctnDoubleChoiceJoin3 .joinComBox .box .msg{ font-size:16px; font-weight:bold; color:#444; text-align:center; padding:54px 0 0 0;}
+.ctnMembership.ctnDoubleChoiceJoin3 .joinComBox .guideList{ width:650px; margin:auto;}
+.ctnMembership.ctnDoubleChoiceJoin3 .btnMembershipConfirm{ background:url(../../images/ko/mem/membership/doubleChoiceJoin3BtnConfirm.gif) no-repeat; width:99px; height:44px; vertical-align:middle; display:inline-block; line-height:200px; overflow:hidden;}
+
+
+
+.ctnMembership label.nameH,
+.ctnMembership label.nameK,
+.ctnMembership label.emailId,
+.ctnMembership label.emailDomain,
+.ctnMembership label.emailDomainSel,
+.ctnMembership label.phoneComp,
+.ctnMembership label.phoneNum1,
+.ctnMembership label.phoneNum2,
+.ctnMembership label.phoneNum3,
+.ctnMembership label.phoneHome,
+.ctnMembership label.phoneHome1,
+.ctnMembership label.phoneHome2,
+.ctnMembership label.zipcode1,
+.ctnMembership label.zipcode2,
+.ctnMembership label.address1,
+.ctnMembership label.address2,
+.ctnMembership label.addressNew1,
+.ctnMembership label.addressNew2,
+.ctnMembership label.phoneHome2,
+.ctnMembership label.phoneHome2{ position:absolute; left:-9999%;}
+.ctnMembership .tableFormInput{ margin:0 0 20px 0;}
+
+
+
+/*포인트조회팝업*/
+.popLayerPointSch{ width:480px; left:50%; top:200px; margin:0px 0 0 -240px; position:fixed;}
+.popLayerPointSch .popHead .tit{ background:url(../../images/ko/mem/main/popHeadTitMypage.gif) no-repeat 0 -50px;}
+.popLayerPointSch .guideBox{ padding:0px 0;}
+.popLayerPointSch .pointBox{ position:relative;}
+.popLayerPointSch .pointBox .inputForm{ margin:0 0 4px 0;}
+.popLayerPointSch .pointBox .schBtn{ position:absolute; right:0px; top:0px;}
+.popLayerPointSch .pointBox .schBtn .btnSch{ width:104px; height:55px; background:url(../../images/ko/mem/membership/pointSchPopBtnSch.gif) no-repeat; border:none; font-size:0; line-height:200px; overflow:hidden;}
+.popLayerPointSch .pointBox .inputCardNum{ margin:0 0 3px 0; *margin:0 0 0px 0;}
+.popLayerPointSch .msg{ color:#666666;/*margin:0 0 20px 0;*/}
+.popLayerPointSch .guideBox{ color:#666666; border-top:1px solid #e9e9e9; margin-top:10px; padding-top:10px;}
+.popLayerPointSch .guideBox .txt1{}
+.popLayerPointSch .guideBox .txt2{ padding:0 0 0 16px;}
+
+.popLayerPointSch input.cardNum{ font-weight:bold; width:297px; color:#727272;}
+.popLayerPointSch input.firstName{ font-weight:bold; width:143px; color:#727272;}
+.popLayerPointSch input.lastName{ font-weight:bold; width:140px; color:#727272;}
+.popLayerPointSch .pointBox label.cardNum,
+.popLayerPointSch .pointBox label.userName,
+.popLayerPointSch .pointBox label.lastName,
+.popLayerPointSch .pointBox label.firstName{ position:absolute; left:-9999%}
+
+.popLayerPointSch .pointResult .cardNum{ margin:0 0 15px 0; background:#fbfbfb; border:#e9e9e9 solid 1px; padding:10px 15px; text-align:center;}
+.popLayerPointSch .pointResult .msg{ margin:0 0 3px 0;}
+.popLayerPointSch .pointResult .resultBox{/*margin:0 0 15px 0; padding:0 0 10px 0; border-bottom:#e9e9e9 solid 1px;*/}
+.popLayerPointSch .pointResult .resultBox .list{ width:220px; margin:auto;}
+.popLayerPointSch .pointResult .resultBox .list li{ padding:2px 0;}
+.popLayerPointSch .pointResult .resultBox .list li .name{ display:inline-block; min-width:100px;}
+.popLayerPointSch .pointResult .resultBox .list li .amt{ display:inline-block; min-width:100px; text-align:right;}
+.popLayerPointSch .pointResult .pointGuide{ background:#fbfbfb; border:#e9e9e9 solid 1px; padding:10px 15px; margin:0 0 10px 0;}
+.popLayerPointSch .pointResult .pointGuide .tit{ font-weight:bold;}
+.popLayerPointSch .pointResult .pointGuide .txt{ color:#666}
+
+.popLayerPointSch .pointResultNone{}
+.popLayerPointSch .pointResultNone .msg1{ /*margin:0 0 20px 0;*/}
+.popLayerPointSch .pointResultNone .joinBox{border-bottom:#a1886f solid 1px;  border-top:#a1886f solid 1px; padding:10px 0; margin:0 0 10px 0;}
+.popLayerPointSch .pointResultNone .joinBox2{border-bottom:#a1886f solid 1px;   margin:10px 0 10px 0;}
+.popLayerPointSch .pointResultNone .joinBox .msg2{margin:0 auto 8px auto; width:357px; text-align:center; }
+.popLayerPointSch .pointResultNone .joinBox .btnMemJoin{ width:85px; height:27px; background:url(../../images/ko/mem/membership/pointSchPopComBtnMemJoin.gif) no-repeat; vertical-align:middle; display:inline-block; line-height:100px; overflow:hidden;}
+.popLayerPointSch .pointResultNone .joinBox .btnJoinSend{ width:85px; height:27px; background:url(../../images/ko/mem/membership/pointSchPopComBtnJoinSend.gif) no-repeat; vertical-align:middle; display:inline-block; line-height:100px; overflow:hidden;}
+.popLayerPointSch .pointResultNone .joinBox .btnPoint_R{ width:110px; height:27px; background:url(../../images/ko/mem/membership/pointR_search.gif) no-repeat; vertical-align:middle; display:inline-block; line-height:100px; overflow:hidden;}
+ 
+
+
+
+
+/*식음특전회수 조회팝업*/
+.popLayerPointSchDining .popHead .tit{ background:url(../../images/ko/mem/main/popHeadTitMypage.gif) no-repeat 0 -100px;}
+
+/*2015-03-16 연락처필드 수정*/
+.contact { padding:10px 0 4px 0;}

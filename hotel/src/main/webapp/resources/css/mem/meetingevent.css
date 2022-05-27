@@ -1,0 +1,96 @@
+/* CSS Document */
+.ctnMeetingEvent{}
+.ctnWeddingHall{}
+.ctnMeetingEvent img{ vertical-align:middle;}
+.ctnMeetingEvent .headTit .tit{background:none;line-height:100%;}
+
+/* Index */
+.ctnMeetingEvent .mtTit{width:100%;overflow:hidden;}
+.ctnMeetingEvent .mtBox{width:100%;overflow:hidden;margin-bottom:50px;padding-bottom:50px;border-bottom:1px solid #e8e4de;}
+.ctnMeetingEvent .mtBoxNbd{border-bottom:none;}
+.ctnMeetingEvent .mtsubBox{width:421px;float:left;}
+.ctnMeetingEvent .mtBoxmg{margin-left:20px;}
+
+.ctnMeetingEvent .mtBox4{width:100%;overflow:hidden;padding-bottom:40px;border-bottom:1px solid #e8e4de;margin-bottom:50px}
+.ctnMeetingEvent .mtsubBox4{width:274px;float:left;}
+.ctnMeetingEvent .mtBox4mg{margin-left:15px;}
+
+/* Wedding Hall */
+
+.ctnMeetingEvent .headTit .noBdBt{border-bottom:0px; }
+.ctnMeetingEvent .ctnWeddingHall .headTit .tit{ background-position:0px 0px;}
+.ctnMeetingEvent .ctnWeddingHall .headTit .tit {line-height:100%;}
+
+.ctnMeetingEvent .whBox,
+.ctnMeetingEvent .whIntroBox{overflow:hidden;width:100%;}
+
+.ctnMeetingEvent .whIntroLeftBox{float:left;width:627px;}
+.ctnMeetingEvent .whIntroRightBox{float:right;width:200px;text-align:right;padding-top:35px;}
+.ctnMeetingEvent .whIntroRightBox2{float:right;width:200px;text-align:right;padding-top:20px;}
+
+.ctnMeetingEvent .whBox{margin-top:35px;}
+.ctnMeetingEvent .whTit{}
+.ctnMeetingEvent .txtAleft{text-align:left!important;}
+.ctnMeetingEvent .whLeftBox{float:left;width:427px;}
+.ctnMeetingEvent .whRightBox{float:right;width:417px;text-align:right;}
+.ctnMeetingEvent .whRightBox2{float:right;width:417px;}
+.ctnMeetingEvent .whRightBox3{float:right;width:420px;}
+.ctnMeetingEvent .whRightBox4{float:right;width:427px;}
+.ctnMeetingEvent .noTopMrg{margin-top:0px;}
+
+/* Grand Ball Room */
+
+.ctnMeetingEvent .gbBtnBox{}
+.ctnMeetingEvent .gbBtnBox a{float:left;margin-right:5px;}
+
+.ctnMeetingEvent .bgRmInfoTable{border-top:1px solid #e2d5c5;border-right:1px solid #e2d5c5;width:100%; border-collapse:collapse; table-layout:fixed;*table-layout:none;}
+.ctnMeetingEvent .bgRmInfoTable th,
+.ctnMeetingEvent .bgRmInfoTable td{border-left:1px solid #e2d5c5;border-bottom:1px solid #e2d5c5;padding:0;}
+.ctnMeetingEvent .bgRmInfoTable th{background-color:#fbfbfb;}
+
+.ctnMeetingEvent .gbDnstBox,
+.ctnMeetingEvent .gbDnstBox2{display:inline-block;background-color:#f8f8f8;border:1px solid #f1f1f1;padding:5px 10px;}
+.ctnMeetingEvent .gbDnstBox2{width:407px;padding:10px;margin-bottom:10px;}
+.ctnMeetingEvent .gbDnstBoxLeft{float:left;width:340px;}
+.ctnMeetingEvent .gbDnstBoxRight{float:right;width:500px;}
+.ctnMeetingEvent .gbDnstBoxRight ul{border-left:1px solid #e7e7e7;overflow:hidden;}
+.ctnMeetingEvent .gbDnstBoxRight li{float:left;padding:4px 6px;background-color:#FFF;border:1px solid #f1f1f1;margin-right:10px;text-align:center;}
+.ctnMeetingEvent .gbDnstBoxRight li.first{margin-right:0;background-color:transparent;border:none;}
+.ctnMeetingEvent .mgBtm10{margin-bottom:10px;}
+
+
+.ctnMeetingEvent .capaBox{display:inline-block;margin-top:10px;}
+.ctnMeetingEvent .capaBox li{float:left;padding:4px 6px;background-color:#FFF;border:1px solid #f1f1f1;margin-right:10px;text-align:center;}
+.ctnMeetingEvent .capaBox li.last{margin-right:0;}
+
+.ctnMeetingEvent .eccInfoTable{border-top:1px solid #cdcbbe;width:100%; border-collapse:collapse; table-layout:fixed;margin-bottom:10px;}
+.ctnMeetingEvent .eccInfoTable th,
+.ctnMeetingEvent .eccInfoTable td{border-left:1px solid #eceae1;border-bottom:1px solid #eceae1;padding:0;}
+.ctnMeetingEvent .eccInfoTable th{background-color:#faf9f7;}
+.ctnMeetingEvent .eccInfoTable td{padding:10px 0 5px 0;text-align:center;}
+.ctnMeetingEvent .eccInfoTable th.first,
+.ctnMeetingEvent .eccInfoTable td.first{border-left:none;}
+.ctnMeetingEvent .eccInfoTable td.last{border-bottom:1px solid #cdcbbe;}
+.ctnMeetingEvent .eccInfoTable th.discnt{text-align:left;padding-left:30px;border-bottom:1px solid #cdcbbe;}
+.ctnMeetingEvent .eccInfoTable th.discnt li,
+
+.ctnMeetingEvent ul.svc li{background:url(../../../images/ko/mem/main/bul02.gif) no-repeat 0px 8px;padding-left:10px;color:#444444;font-family:Dotum;}
+.ctnMeetingEvent ul.svc{float:left;width:170px;}
+
+/* Pop UP */
+.popLayerMe{width:600px; left:50%; margin:0 0 0 -300px;}
+.popLayerMe .popHead .tit{text-align:left;margin-top:2px;}
+.mePopBox{display:table-cell;border:1px solid #eae0d4;text-align:center;padding:0;width:535px;height:450px; vertical-align:middle;*line-height:450px;}
+.mapTit{float:left;width:100%;text-align:left;margin:0 0 15px 20px;}
+
+.popLayerContactusQna.popLayerWedding{ width:670px; left:50%; top:100px; margin:0px 0 0 -335px; position:absolute;}
+.popLayerContactusQna.popLayerWedding .popHead .tit{ background:url(../../images/ko/mem/meetingevent/popWdTit.gif) no-repeat 10px 5px;}
+.popLayerContactusQna.popLayerWedding .tableContactQna textarea.qMemo{ width:465px; height:60px;}
+.popLayerContactusQna.popLayerWedding .tableContactQna input.title{ width:465px; }
+.popLayerContactusQna.popLayerWedding .tableContactQna .phSp{display:inline;}
+.popLayerContactusQna.popLayerWedding .tableContactQna .phSp div.selector{width:65px!important;padding-left:5px;}
+.popLayerContactusQna.popLayerWedding .tableContactQna .phSp div.selector span{width:40px!important;}
+
+.popLayerContactusQna.popLayerWedding .tableTypeA th{ padding:6px 10px;}
+.tableTypeA td{ padding:6px 14px; word-wrap: break-word;}
+

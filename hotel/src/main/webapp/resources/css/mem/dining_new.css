@@ -1,0 +1,527 @@
+@charset "UTF-8";
+
+/*허브 dining css*/
+
+/*공통*/
+.fontColA{color: #a1886f;}
+
+/* 메인 */
+/* 메인 예약박스 기존소스 */
+.rsvBox_N{display:none;position:fixed;top:50%;left:50%;width:984px;min-height:525px;z-index:1002;background:#fff; transform: translate(-50.1%,-49.1%); -webkit-transform: translate(-50.1%,-49.1%); -moz-transform: translate(-50.1%,-49.1%);}
+.rsvBox_N .btnClose{position:absolute;top:22px;right:20px;width:17px;height:17px;background:url(../../images/ko/mem/new_2019/main_layerClose.png) 0 0 no-repeat;text-indent:-9999px;}
+.rsvBox_N .hHead{height:37px;padding:23px 0 0 40px;background:#f7f7f7;}
+.rsvBox_N .hHead .htTab:after{content:'';display:block;clear:both;}
+.rsvBox_N .hHead .htTab li{float:left;position:relative;}
+.rsvBox_N .hHead .htTab li + li{margin-left:21px;padding-left:20px;}
+.rsvBox_N .hHead .htTab li + li:before{display:block;content:'';position:absolute;left:0;top:0;width:1px;height:15px;background:#eaeaea;}
+.rsvBox_N .hHead .htTab li a{display:inline-block;}
+.rsvBox_N .hHead .htTab li a span{display:inline-block;height:15px;overflow:hidden;background: url('../../images/ko/mem/new_2020/txt_diningl_search_tab.jpg') no-repeat;text-indent:-9999px;width:57px;}
+.rsvBox_N .hHead .htTab li.on > a{border-bottom:2px solid #333;}
+.rsvBox_N .hHead .htTab li a{display:inline-block;padding-bottom:17px;}
+.rsvBox_N .hCon{padding:5px 40px 0;}
+.rsvBox_N .hCon ul li{display:inline-block;margin:0 0 6px 2px;}
+.rsvBox_N .hCon ul li a{display:inline-block;position:relative;width:196px;border:1px solid #eaeaea;line-height:36px;text-align:center;letter-spacing:-1px;color: #999; font-weight: bold;}
+.rsvBox_N .hCon ul li a:hover{color:#856f56;font-weight:bold;}
+.rsvBox_N .hCon ul li a:hover:before{content:'';display:block;position:absolute;top:-1px;left:-1px;width:195px;height:35px;border:2px solid #856f56;}
+
+
+/* 메인 예약박스 추가소스 */
+.newDim{display: none; background: #fff; width: 100%; height: 100%; zoom: 1; position: fixed; left: 0px; z-index: 1000; top: 0px; opacity: 0.3;}
+.head .header .rsvBtn a.btn{display: inline-block; position: relative; z-index: 5; width: 100%; height: 51px; text-indent: -9999%; overflow: hidden;}
+.rsvBox_N .hCon{padding: 30px 40px;}
+.rsvBox_N .hHead .htTab li a{cursor: auto;}
+.rsvBox_N{width: 580px; height: 210px; min-height: 210px;}
+.rsvBox_N .hCon ul li a{width: 240px; height: 90px; background: url('../../images/ko/mem/new_2020/rsv_hotell_search_img.jpg') center 23px no-repeat; box-sizing: border-box; padding-top: 45px;}
+.rsvBox_N .hCon ul li.rsvDiningGo a{background: url('../../images/ko/mem/new_2020/rsv_dining_search_img.jpg') center 21px no-repeat;}
+.rsvBox_N .hCon ul li a:hover:before{content: ''; display: block; position: absolute;  width: 240px; height: 90px; border: 2px solid #856f56; background: url('../../images/ko/mem/new_2020/rsv_hotell_search_img_on.jpg') center 22px no-repeat; box-sizing: border-box; }
+.rsvBox_N .hCon ul li.rsvDiningGo a:hover:before{background: url('../../images/ko/mem/new_2020/rsv_dining_search_img_on.jpg') center 20px no-repeat;}
+.rsvBox_wrap .rsvBox_N{transform: translate(-50%,-50%); -webkit-transform: translate(-50%,-50%);border: 1px solid #e5e5e5;}
+.head .header .rsvBox_wrap.on .btn:after{position: absolute; bottom: 0; left: 0; z-index: 10; content: ''; display: inline-block; width: 100%; height: 4px; background: #3b3b3a;}
+
+
+
+/* 매인 예약확인 셀렉트 박스 기존 소스 */
+.head .header .resvConfirm{position: absolute;top: 0;right: 102px;}
+.head .header .resvConBox{ display: inline-block;vertical-align: top;font-size:12px; width: 84px; background:#f1e3c4 url(../../images/ko/mem/new_2020/resvConBox.jpg) no-repeat 50% 5px; z-index:20;position: relative;}
+.head .header .resvConBox.on{ background:#bfaf9d url(../../images/ko/mem/new_2020/resvConBoxOn.jpg) no-repeat 50% 5px; z-index:20;}
+.head .header .resvConBox .btn{ display:inline-block; width:74px; height:24px;line-height: 24px;padding: 6px 0 5px 10px;color: #856f56;border-bottom: 1px solid #f1e3c4;}
+.head .header .resvConBox.on .btn{color:#fff;border-bottom: 1px solid #ac9d8d;}
+.head .header .resvConBox .list{ display:none;}
+.head .header .resvConBox .list li{background: url(../../images/ko/mem/main/icoDot.gif) no-repeat 13px 14px;}
+.head .header .resvConBox .list li a{display: block !important; height:31px;line-height: 31px; margin:1px 0 0 0;padding-left: 22px;text-align: left;color: #856f56;}
+.head .header .resvConBox .list li a:hover{font-weight: 700;text-decoration: underline;}
+.head .header .resvConBox.on .list li a{color: #fff;}
+.head .header .resvConBox .list li.st1 a{ background-position:-1px -26px;}
+.head .header .resvConBox .list li.st2 a{ background-position:-1px -44px;}
+
+/* 메인 다이닝 배너 */
+.diningMainBanner{width: 1200px; margin: 50px auto 0;}
+
+
+
+
+/*step0*/
+/*다이닝 예약 step0*/
+.diningNew.new_rsvBox .diningHotelBox_N .rsvSchHotel{ margin-bottom:50px; }
+.diningNew.new_rsvBox .rsvSchHotel{ padding:25px 30px; }
+.diningNew.new_rsvBox .rsvSchHotel .rsvSchCont{ /*width:50%;*/ min-width:570px; }
+.diningNew.new_rsvBox .rsvSchHotel .rsvSchCont:first-child, .diningNew.new_rsvBox .rsvResultDiningList > ul > li:first-child{ padding-right:25px; }
+.diningNew.new_rsvBox .rsvSchHotel .rsvSchCont:last-child, .diningNew.new_rsvBox .rsvResultDiningList > ul > li:last-child{ padding-left:25px; }
+.diningNew.new_rsvBox .rsvStepWrap .rsvStepList.step0{ height:26px; margin-bottom:42px; }
+.diningNew.new_rsvBox .rsvStepWrap .rsvStepList.step0 .step0{ position:relative; width:100%; text-align:center; height:28px; }
+
+/* .diningNew.new_rsvBox .rsvSchHotel .rsvSchCont .hotelList2{display: inline-block;} */
+.diningNew.new_rsvBox .rsvSchHotel .rsvSchCont .optionList{display: inline-block;}
+.diningNew.new_rsvBox .rsvSchHotel .rsvSchCont dl{ float:none; }
+.diningNew.new_rsvBox .rsvSchHotel .rsvSchCont dl dt{ text-align:left; }
+.diningNew.new_rsvBox .rsvSchHotel .rsvSchCont dl dd, .diningNew .diningChList2{ margin-top:15px !important; }
+.diningNew.new_rsvBox .rsvSchHotel .rsvSchCont dd.diningChList a{ float:left; width:175px; margin:0 0 0 10px; box-sizing:border-box; border:1px solid #dcdcdc; font-size:12px;color:#999; line-height:38px; text-align:center; font-weight: normal; box-sizing: border-box;}
+.diningNew.new_rsvBox .rsvSchHotel .rsvSchCont dd.diningChList li:first-child a{ margin-left:0; }
+.diningNew.new_rsvBox .rsvSchHotel .rsvSchCont dd.diningChList a.on{border:2px solid #856f56;color:#856f56;font-weight:bold;line-height: 36px;}
+.diningNew.new_rsvBox .rsvSchHotel .rsvSchCont dd.diningChList li a.disabled{border: 1px solid #f1f1f1; background: #f9f8f6; color: #aaa; cursor: auto; line-height: 38px; font-weight: normal;}
+.diningNew.new_rsvBox .rsvSchCont dd.diningChList2{ text-align:left; }
+.diningNew.new_rsvBox .selectWrap0 .selector{ width:370px !important; }
+
+.diningNew.new_rsvBox .rsvResultDiningList{ padding-bottom:100px; }
+.diningNew.new_rsvBox .rsvResultDiningList > ul > li{ border-bottom:0; width:calc(50% - 25px); float:left; padding-top:0; }
+.diningNew.new_rsvBox .rsvResultDiningList > ul > li img{width: 100%;}
+.diningNew.new_rsvBox .rsvResultDiningList .tit{ font-size:18px; color:#333; font-weight:bold; margin-top: 10px;}
+.diningNew.new_rsvBox .rsvResultDiningList > ul > li:last-child #intro .subTit{ font-size:12px; color:#333; margin-top:25px; line-height: 22px; font-weight: normal;}
+.diningNew.new_rsvBox .rsvResultDiningList .btnBenfitInfo{ display:inline-block; height:15px; margin-top:20px; padding:1px 23px 0 0; box-sizing:border-box; background:url("../../images/ko/mem/new_2019/btn_benefit.gif") 100% 0 no-repeat; color:#b07748; }
+.diningNew.new_rsvBox .rsvResultDiningList .diningInfoBoxWrap{ margin:30px 0; padding-top:20px; padding-left:1px; border-top:1px solid #eaeaea; }
+.diningNew.new_rsvBox .diningInfoBoxWrap dl{ margin-bottom:15px; clear: both;}
+.diningNew.new_rsvBox .diningInfoBoxWrap dl:nth-child(2){margin-bottom: 13px; float: left;}
+
+.diningNew.new_rsvBox .diningInfoBoxWrap dl::after{ clear:both; display:block; content:""; font-size:0; height:0; }
+.diningNew.new_rsvBox .diningInfoBoxWrap dl:last-child{ margin-bottom:0; clear: both;}
+.diningNew.new_rsvBox .diningInfoBoxWrap dl dt, .diningNew.new_rsvBox .diningInfoBoxWrap dl dd{ float:left; }
+.diningNew.new_rsvBox .diningInfoBoxWrap dl dt{ text-indent:8px; position:relative; color:#333; font-weight:bold; width:110px; }
+.diningNew.new_rsvBox .diningInfoBoxWrap dl dt::before{ content:""; position:absolute; left:0; top:0; margin-top:5px; width:2px; height:2px; background-color:#aea8a5; }
+.diningNew.new_rsvBox .diningInfoBoxWrap dl dd{ width:calc(100% - 110px); }
+.diningNew.new_rsvBox .diningInfoBoxWrap dl dd, .diningNew.new_rsvBox .diningInfoBoxWrap dl dd p{ color:#727272; }
+.diningNew.new_rsvBox .rsvResultDiningList > ul > li:last-child p:last-child{ color:#856f56; font-weight:bold;}
+.diningNew.new_rsvBox .diningInfoBoxWrap dl dd p{margin-top: 10px;}
+
+.diningNew.new_rsvBox .rsvResultDiningList .diningInfoBoxWrap p{ color:#856f56; font-weight:bold;}
+.diningNew.new_rsvBox .rsvResultDiningList .diningInfoBoxWrap p.dinigmore{float: left; margin: 0 0 0 12px; }
+.diningNew.new_rsvBox .diningInfoBoxWrap p a{color:#856f56; text-decoration: underline;}
+
+.diningNew .diningStay_N{ min-height:475px; display:none; position:fixed; top:50%; left:50%; width:984px; z-index:1003; background:#fff; transform:translate(-50.1%, -52.1%); -webkit-transform:translate(-50.1%, -52.1%); -moz-transform:translate(-50.1%, -52.1%); }
+.diningNew .diningStay_N .hHead{ background:#f7f7f7; padding:23px 0 0 40px; height:37px; }
+.diningNew .diningStay_N .btnStayClose{ position:absolute; top:22px; right:20px; width:17px; height:17px; background:url("../../images/ko/mem/new_2019/main_layerClose.png") 0 0 no-repeat; text-indent:-9999px; }
+.diningNew .diningStay_N .hCon{ padding:0 40px 0; }
+.diningNew .diningStay_N .spNoticeTxt{line-height:24px; color:#856f56; padding: 30px 0;}
+.diningNew .diningStay_N .hCon dl{ position:relative; padding-left:147px; }
+.diningNew .diningStay_N .hCon dl dt{ position:absolute; top:16px; left:0; }
+.diningNew .diningStay_N .hCon dl dt+dd{ padding-top:0; }
+.diningNew .diningStay_N .hCon dl dd{ padding:25px 0 19px; box-sizing:border-box; border-top: 1px dotted #eaeaea;}
+.diningNew .diningStay_N .hCon dl dd:nth-child(2){border-top: 0;}
+.diningNew .diningStay_N .hCon .list2 dd .tit{ float:left; width:140px; padding-top:15px; }
+.diningNew .diningStay_N .hCon dl dd:last-child{padding-bottom:0; }
+.diningNew .diningStay_N .hCon .list2 dd ul{ float:left; width:612px; }
+.diningNew .diningStay_N .hCon ul li{ display:inline-block; margin:0 0 6px 2px; box-sizing: border-box;}
+.diningNew .diningStay_N .hCon ul li a{ display:inline-block; position:relative; width:196px; border:1px solid #eaeaea; line-height:36px; text-align:center; letter-spacing:-1px; color: #999; font-weight:bold; box-sizing: border-box;}
+.diningNew .diningStay_N .hCon ul li a.on{color:#856f56; font-weight:bold; border: 2px solid #856f56; box-sizing: border-box; line-height: 34px;}
+.diningNew .diningStay_N .hCon .list2 dd::after{ content:''; display:block; clear:both; }
+
+.diningNew .diningStay_N .hCon .btnList{height: 44px; padding: 24px 0 30px;}
+
+.diningNew .afterSearchDining{ display:none; }
+
+/*다이닝 예약 step0 popup*/
+/* 운영시간 안내 레이어 팝업 */
+#popPriceInfo .new_popLayer.diningPop .popCtn{position: relative; top: 0; height: 600px; overflow: hidden; overflow-y: scroll;}
+#popPriceInfo .new_popLayer.diningPop .popHead .tit{background: url(../../images/ko/mem/new_2020/pop_head_tit_diningInfo.jpg) no-repeat; margin: 6px 0 0 13px;}
+#popPriceInfo .new_popLayer.diningPop .popCtn .btnBox{background: none; text-align: center; margin: 30px 0 0; height: 44px;}
+#popPriceInfo .new_rsvBox .tableType2 th{padding: 9px 20px;}
+#popPriceInfo .new_rsvBox .tableType2 td{padding: 7px 14px;}
+.bdBott{border-bottom: #856f56 solid 1px !important;}
+
+/* 호텔 및 다이닝 선택 안내 레이이 팝업*/
+#popSelectInfo .new_popLayer.diningPop .popHead .tit{background: url(../../images/ko/mem/new_2020/pop_head_tit_select.jpg) no-repeat; margin: 6px 0 0 13px;}
+
+
+/*step1*/
+/*다이닝 예약 step1*/
+
+.new_rsvBox.diningNew .rsvSchHotel{margin-bottom: 20px;}
+.new_rsvBox.diningNew .fRight{margin: 0 31px 0 0;}
+.new_rsvBox.diningNew .diningTableSel .rsvSchHotel{margin: 0; padding: 0 30px 30px; border-top: none; border-bottom: 1px dotted #dcdcdc;}
+.new_rsvBox.diningNew .diningTableSel .rsvSchHotel .rsvSchCont{position: relative; top:0; left: 0; min-width: 100%; padding: 0;}
+.new_rsvBox.diningNew .diningTableSel .rsvSchHotel:before{display: none;}
+.new_rsvBox.diningNew .diningTableSel .rsvSchHotel .rsvSchCont dd.diningChList a{width: 277px;}
+
+.new_rsvBox.diningNew .diningTableSel.diningPersonIn .rsvSchHotel{border-bottom: none;}
+.new_rsvBox.diningNew .diningTableSel.diningPersonIn .rsvSchHotel dl{float: left; width: 565px;}
+.new_rsvBox.diningNew .diningTableSel.diningPersonIn .rsvSchHotel .rsvSchCont dl:nth-child(2){margin-left: 9px;}
+.new_rsvBox.diningNew .diningTableSel.diningPersonIn .rsvSchHotel .rsvSchCont dl:nth-child(2) dd{text-align: left;}
+.new_rsvBox.diningNew .diningTableSel.diningPersonIn .rsvSchHotel .rsvSchCont dl:nth-child(2) dd input{margin: 0;}
+.new_rsvBox.diningNew .diningTableSel.diningPersonIn .rsvSchHotel .rsvSchCont dl:nth-child(2) dd span{color: #666; margin-left: 5px;}
+.new_rsvBox.diningNew .diningTableSel.diningPersonIn .diningBtnSearch{position: absolute; top: 35px; right: 0;}
+
+
+.new_rsvBox.diningNew .r_number{padding: 0 30px; margin: 30px 0 39px;}
+.new_rsvBox.diningNew .r_number .con{height: 40px; background: none;}
+.new_rsvBox.diningNew .r_number .con dl dd ul li{width: 287px;}
+.new_rsvBox.diningNew .r_number .con dl{float: left; height: 40px;}
+.new_rsvBox.diningNew .diningBtnSearch{float: right; vertical-align: top; }
+.new_rsvBox.diningNew .r_number .con dl dt,
+.new_rsvBox.diningNew .r_number .con dl dd
+{padding: 6px 0;}
+
+.new_rsvBox.diningNew .notiList1{clear: both; float: inherit; margin-top: 11px;}
+
+.new_rsvBox.diningNew .caltimeBox{height: 483px; border: 1px solid #dcdcdc; box-sizing: border-box; padding: 40px 30px;}
+.new_rsvBox.diningNew .ly_reserve{display: block; position: relative; top: 0; clear: both; border: none;}
+.new_rsvBox.diningNew .new_rsvCal.rsvCalendarDate{position: relative;}
+.new_rsvBox.diningNew .new_rsvCal.rsvCalendarDate p{font-size: 14px; font-weight: bold; color: #333;}
+.new_rsvBox.diningNew .new_rsvCal.rsvCalendarDate,
+.new_rsvBox.diningNew .new_rsvCal.promotionCalendar{float: left; display: block; top: auto; width: 50%; left: 0; padding: 0;  box-sizing: border-box;}
+.new_rsvBox.diningNew .new_rsvCal.rsvCalendarDate{height: 400px; background: url(../../images/ko/mem/new_2019/bg_dot_line_vertical.png) 100% 0 repeat-y;}
+.new_rsvBox.diningNew .new_rsvCal.rsvCalendarDate .calendarInner{margin-top: 16px; }
+.new_rsvBox.diningNew .new_rsvCal.rsvCalendarDate .calInfo{font-size: 12px; color: #727272; margin-top: 15px;}
+
+.new_rsvBox.diningNew .caltimeBox .diningTimeCho{float: left; display: block; width: 50%; border: none; margin-top: 0;}
+.new_rsvBox.diningNew .diningTimeCho .rsvSchHotel{margin: 0 0 0 30px; border: none; padding: 0;}
+.new_rsvBox.diningNew .new_rsvCal .calendarRsvBox{height: 341px; margin: 0 30px 0 0; padding: 0 0 0 86px; background: none; border-bottom: 1px solid #eaeaea;}
+
+.new_rsvBox.diningNew .new_rsvCal .calendarRsvBox .btnPrevDisable{left: 0px;}
+.new_rsvBox.diningNew .new_rsvCal .calendarRsvBox .btnNextDisable{right: 31px;}
+.new_rsvBox.diningNew .new_rsvCal .calendarRsvBox .btnCalPrev{left: 0px;}
+.new_rsvBox.diningNew .new_rsvCal .calendarRsvBox .btnCalNext{right: 31px;}
+
+.new_rsvBox.diningNew .new_rsvCal .calendarRsvBox .calendarReserve .datePrev{text-align: center; padding: 0 0 12px 0;}
+.new_rsvBox.diningNew .new_rsvCal .calendarRsvBox .calendarReserve table th{padding: 0 0 12px 0;}
+
+.new_rsvBox.diningNew .new_rsvCal .calendarRsvBox .calendarReserve table td span.selDate.sd_first,
+.new_rsvBox.diningNew .new_rsvCal .calendarRsvBox .calendarReserve table td span.selDate.sd_last,
+.new_rsvBox.diningNew .new_rsvCal .calendarRsvBox .calendarReserve table td span.selDate
+{background: #ae906f; border-radius: 20px; padding:11px 5px 5px; margin: -1px auto 0;}
+.new_rsvBox.diningNew .new_rsvCal .calendarRsvBox .calendarReserve table td span.dateclose a{color: #fff;}
+.new_rsvBox.diningNew .new_rsvCal .calendarRsvBox .calendarReserve table td.sun span.dateclose a{color: #fff !important;}
+.new_rsvBox.diningNew .new_rsvCal .calendarRsvBox .calendarReserve table td span.dateclose{background: #ebe3db; border-radius: 20px; padding: 11px 5px 5px; margin: -1px auto 0;}
+.new_rsvBox.diningNew .new_rsvCal .calendarRsvBox .calendarReserve table td span.today a{opacity: 0.25;}
+.diningNew.new_rsvBox .new_rsvCal .calendarRsvBox .calendarReserve table td span.today span.tTxt{opacity: 0.6 !important;}
+
+.diningLegend{position: absolute; bottom: 40px; right: 30px; height: 15px; font-size: 12px; color: #727272;}
+.diningLegend::before{content:''; display: inline-block; width: 15px; height: 15px; background: #ebe3db; border-radius: 20px; margin-right: 10px; vertical-align: middle;}
+
+.diningNew.new_rsvBox .diningTimeCho .rsvSchHotel:before{display: none;}
+.diningNew.new_rsvBox .rsvSchHotel .rsvSchCont dl dt{font-size: 14px; color: #333; font-weight: bold;}
+.diningNew.new_rsvBox .rsvSchHotel .rsvSchCont dl dt a{float: right; font-size: 12px; color: #856f56; text-decoration: underline;}
+.diningNew.new_rsvBox .diningTimeCho .rsvSchHotel .rsvSchCont dd.diningChList a{width: 264px;}
+.diningNew.new_rsvBox .diningTimeCho .rsvSchHotel .rsvSchCont dl dd, .diningNew .diningChList2{display: block; width: 100%; height: 40px;}
+.diningNew.new_rsvBox .diningTimeCho .rsvSchHotel .rsvSchCont dl dd .optionList{margin-top: 10px !important;}
+.diningNew.new_rsvBox .diningTimeCho .rsvSchHotel .rsvSchCont{min-width: 100%; height: 75px; padding: 0;}
+
+.new_rsvBox.diningNew .diningPersonSel,
+.new_rsvBox.diningNew .diningPersonIn{padding: 0 30px; margin: 30px 0 39px;}
+.new_rsvBox.diningNew .diningPersonSel .r_number,
+.new_rsvBox.diningNew .diningPersonIn .r_number{padding: 0;}
+.new_rsvBox.diningNew .diningPersonIn .rsvSchHotel{padding: 0;}
+
+.diningNew.new_rsvBox .ly_reserve:after{display: none;}
+.diningNew.new_rsvBox .diningTimeCho .optionList div.selector{text-align: left; width: 537px;}
+.diningNew.new_rsvBox .listDot1 > li{color: #666;}
+.diningNew.new_rsvBox .estCharge{position: absolute;}
+
+
+/*다이닝 예약 step1 popup*/
+/* 예약 초기화 레이어 팝업 */
+#popReset .new_popLayer.diningPop .popHead .tit{background: url(../../images/ko/mem/new_2020/pop_head_tit_reset.jpg) no-repeat; margin: 6px 0 0 13px;}
+/* 좌석 유형 초기화 레이어 팝업 */
+#popSetInit .new_popLayer.diningPop .popHead .tit{background: url(../../images/ko/mem/new_2020/pop_head_tit_reset.jpg) no-repeat; margin: 6px 0 0 13px;}
+
+/* 예약 인원 입력 안내 레이어 팝업 */
+#popPeopleChInfo .new_popLayer.diningPop .popHead .tit{background: url(../../images/ko/mem/new_2020/pop_head_tit_person.jpg) no-repeat; margin: 6px 0 0 13px;}
+
+/* 예약 불가 안내 레이어 팝업 */
+#popNoResv .new_popLayer.diningPop .popCtn .checkTxt{padding: 0 0 20px;}
+#popNoResv .new_popLayer.diningPop .notiList2 li { line-height: 22px; word-break: keep-all;}
+#popNoResv .new_popLayer.diningPop .popHead .tit {
+    background: url(../../images/ko/mem/new_2020/pop_head_tit_noresv.jpg) no-repeat;  margin: 6px 0 0 13px}
+
+/* 이용 안내 레이어 팝업 */
+#popUseInfo .new_popLayer.diningPop .popHead .tit {
+    background: url(../../images/ko/mem/new_2020/pop_head_tit_inforuse.jpg) no-repeat; margin: 6px 0 0 13px}
+#popUseInfo .new_popLayer.diningPop .popCtn .checkTxt{padding: 0 0 20px;}
+#popUseInfo .new_popLayer.diningPop .notiList2 li { line-height: 22px; word-break: keep-all;}
+
+/* 이용 안내 레이어 팝업 (필수정보 입력팝업)*/
+#popAlertInfo .new_popLayer.diningPop .popHead .tit {
+    background: url(../../images/ko/mem/new_2020/pop_head_tit_necesinfor.jpg) no-repeat; margin: 6px 0 0 13px}
+#popAlertInfo .new_popLayer.diningPop .popCtn .checkTxt{padding: 15px 0;}
+
+/* 중복예약 안내 레이어 팝업 */
+#popOverlapInfo .new_popLayer.diningPop .popHead .tit {
+    background: url(../../images/ko/mem/new_2020/pop_head_tit_overlap.jpg) no-repeat; margin: 6px 0 0 13px}
+#popOverlapInfo .new_popLayer.diningPop .popCtn .checkTxt{padding: 15px 0;}
+
+/* 온라인 예약 가능 횟수 초과 안내 */
+#popOverlapCntInfo .new_popLayer.diningPop .popHead .tit {
+    background: url(../../images/ko/mem/new_2020/pop_head_tit_numofsecond.jpg) no-repeat; margin: 6px 0 0 13px}
+#popOverlapCntInfo .new_popLayer.diningPop .popCtn .checkTxt{padding: 15px 0;}
+
+
+/* 이용불가 안내 레이어 팝업 */
+#popNoResv .new_popLayer.diningPop .popHead .tit {
+    background: url(../../images/ko/mem/new_2020/pop_head_tit_notAvailable.jpg) no-repeat; margin: 6px 0 0 13px}
+#popNoResv .new_popLayer.diningPop .popCtn .checkTxt{padding: 0 0 15px;}
+
+/* 예약 가능 횟수 초과 안내 레이어 팝업 */
+/* #popOverlapCntInfo .new_popLayer.diningPop .popHead .tit {
+    background: url(../../images/ko/mem/new_2020/pop_head_tit_resvcountover.jpg) no-repeat; margin: 6px 0 0 13px}
+#popOverlapCntInfo .new_popLayer.diningPop .popCtn .checkTxt{padding: 0 0 15px; line-height: 22px;} */
+
+/* 체크박스 확인 안내 레이어 팝업 */
+#popNoticeInfoCk .new_popLayer.diningPop .popHead .tit {
+    background: url(../../images/ko/mem/new_2020/pop_head_tit_resvcheckConfirm.jpg) no-repeat; margin: 6px 0 0 13px}
+
+/* 유의사항 확인 안내 레이어 팝업 */
+#popAlertInfo3 .new_popLayer.diningPop .popHead .tit {
+    background: url(../../images/ko/mem/new_2020/pop_head_tit_noticeconfirm.jpg) no-repeat; margin: 6px 0 0 13px}
+
+/* 예약 인원 안내 레이어 팝업 */
+#popPersonInfo .new_popLayer.diningPop .popHead .tit {
+    background: url(../../images/ko/mem/new_2020/pop_head_tit_personset.jpg) no-repeat; margin: 6px 0 0 13px}
+#popPersonInfo .new_popLayer.diningPop .popCtn .checkTxt{line-height: 22px;}
+
+/* 재검색 안내 레이어 팝업 */
+#popPeopleChInfo2 .new_popLayer.diningPop .popHead .tit {
+    background: url(../../images/ko/mem/new_2020/pop_head_tit_research.jpg) no-repeat; margin: 6px 0 0 13px}
+
+/* 방문예정 시간 재선택 안내 레이어 팝업 */
+#popVisitInfo .new_popLayer.diningPop .popHead .tit {
+    background: url(../../images/ko/mem/new_2020/pop_head_tit_visittime.jpg) no-repeat; margin: 6px 0 0 13px}
+#popVisitInfo .new_popLayer.diningPop .popCtn .checkTxt{padding: 0 0 15px;}
+
+/* 시스템 점검 안내 */
+#popSysErr .new_popLayer.diningPop .popHead .tit {
+    background: url(../../images/ko/mem/new_2020/pop_head_tit_sysyem.jpg) no-repeat; margin: 6px 0 0 13px}
+#popSysErr .new_popLayer.diningPop .popCtn .checkTxt{padding: 0 0 15px;}
+/*인원날짜선택 구역*/
+
+/* 매월1,15일 */
+#popNoReady .new_popLayer.diningPop .popHead .tit {
+    background: url(../../images/ko/mem/new_2020/pop_head_tit_sysyem.jpg) no-repeat; margin: 6px 0 0 13px}
+
+
+/*step2*/
+/*다이닝 예약 step2*/
+.diningNew.new_rsvBox .rsvOptionWrap{padding-bottom: 100px;}
+.diningNew.new_rsvBox .rsvOptionWrap+.rsvOptionWrap{padding-bottom: 110px;}
+.diningNew.new_rsvBox .rsvInfoType{margin-top: 40px;}
+.diningNew.new_rsvBox .diningImg{border: 1px solid #e5e5e5;}
+.diningNew.new_rsvBox .rsvInfoType .colWrap .col2.colR{vertical-align: middle; padding-bottom: 40px;}
+.diningNew.new_rsvBox .rsvInfoType .colWrap .col2.verAlignTop{ vertical-align:top; }
+.diningNew.new_rsvBox .rsvInfoType .colWrap .col2.colR table{width: 539px !important;}
+.diningNew.new_rsvBox .rsvInfoType .colWrap .col2 .diningAreaCh label{color: #333; cursor: pointer;}
+.diningNew.new_rsvBox div.radio span.disabled { background-position: 0 -380px;}
+.diningNew.new_rsvBox div.radio.disabled label{color:#aaa;}
+.diningNew.new_rsvBox .diningRdCh{ padding:20px 0 0 0; }
+.diningNew.new_rsvBox .diningRdCh li{ float:left; width:calc( (100% - 40px) / 4); }
+.diningNew.new_rsvBox .diningRdCh li:last-child{ width:40px; }
+.diningNew.new_rsvBox .diningRdCh input[type='radio'] + label{ padding-left:30px; }
+.diningNew.new_rsvBox .diningRdCh input[type='radio'], .diningNew.new_rsvBox .allergyBox input[type='checkbox']{ position:absolute; display:none; width:12.5px; height:12.5px; opacity:0.1; }
+.diningNew.new_rsvBox .diningRdCh [type='radio'] + label > span, .diningNew.new_rsvBox .diningRdCh input[type='radio']:checked + label > span{ color:#222; font-size:15px; }
+
+.diningNew.new_rsvBox .diningAreaCh li{display: inline-block; margin: 0 20px 5px 0; width: 100px;}
+.diningNew.new_rsvBox .diningAreaCh li:last-child{margin-right: 0px;}
+
+.diningNew.new_rsvBox .dinAllergy{display: block; height: 40px; line-height: 40px;}
+.diningNew.new_rsvBox .dinAllergy:last-child{margin-bottom: 0px;}
+.diningNew.new_rsvBox .dinAllergy .text.textResv{width: 447px; margin-left: 16px;}
+.diningNew.new_rsvBox .personnelOpt .division .point{color: #727272; font-weight: normal; padding-left: 0;}
+.diningNew.new_rsvBox .personnelOpt .division .point:before{display: none;}
+.diningNew.new_rsvBox .dinAllergy label{vertical-align: middle;}
+.diningNew.new_rsvBox .dinAllergy div.checker input{vertical-align: top;}
+
+.diningNew.new_rsvBox .cont .diningMenu li{display: inline-block; margin: 0; background: url(../../images/ko/mem/new_2020/menu_down.jpg) no-repeat 91% 41%;}
+.diningNew.new_rsvBox .cont .diningMenu li:nth-child(2n) a{margin-right: 0;}
+.diningNew.new_rsvBox .cont .diningMenu li a{float: left; width: 264px; box-sizing: border-box; border: 1px solid #dcdcdc; font-size: 12px; color: #666; text-align: left; padding: 12px 15px; margin: 0 6px 6px 0;}
+
+.diningNew .tglType1.rsvInfoType .myroomInfo table{width: 774px !important ;}
+.diningNew .tableTypeI thead th{border-top: #cdcbbe solid 1px; border-bottom: #cdcbbe solid 1px;}
+.diningNew .tableTypeI th{border-bottom: #eceade solid 1px; border-right: #eceade solid 1px;}
+.diningNew .tableTypeI tbody td{text-align: center;}
+.diningNew .tableTypeI tbody tr:last-child th,
+.diningNew .tableTypeI tbody tr:last-child td
+{ border-bottom: #cdcbbe solid 1px;}
+.diningNew .tableTypeI .borBottomCd{border-bottom: #cdcbbe solid 1px;}
+
+
+
+/*step3 고객정보*/
+/*step3 고객정보입력 selectBox*/
+.new_rsvBox.diningNew .rsvOptionStep .rsvStepHotel{display: inline-block; font-size: 16px; font-weight: bold; color: #333; margin-right: 60px;;}
+.new_rsvBox.diningNew .rsvOptionStep .rsvStepHotel span{font-size: 14px; font-weight: normal; color: #727272;}
+.new_rsvBox.diningNew .rsvOptionStep .rscStepDate{display: inline-block;}
+.new_rsvBox.diningNew .rsvOptionStep .rscStepDate li{display: inline-block; font-size: 14px; font-weight: bold;}
+.new_rsvBox.diningNew .rscStepDate li:after{content: ''; display: inline-block; width: 1px; height: 12px; background: #eaeaea; margin: 0 10px 0 15px;}
+.new_rsvBox.diningNew .rscStepDate li:last-child:after{display: none;}
+.new_rsvBox.diningNew .rsvOptionStep .btnRsvClear{float: right;}
+.new_rsvBox.diningNew .rsvOptionStep .btnRsvClear img{vertical-align: bottom; margin-top: 4px;}
+
+
+.new_rsvBox.diningNew .rsvOptionWrap > .rsvInfoType:first-child{border-top: 1px solid #dcdcdc;}
+.new_rsvBox.diningNew .tglType1 .active .tgCon .formWrap ul li{width: 100%; line-height:20px; /*2020-01-08 수정*/ }
+.new_rsvBox.diningNew .tglType1 .active .tgCon .formWrap ul .last{margin-bottom: 0;}
+.new_rsvBox.diningNew .NoMemberContact td .optionList input{float: left;}
+.new_rsvBox.diningNew .NoMemberContact td .optionList a{width: 100px; display: inline-block;}
+.new_rsvBox.diningNew .NoMemberContact td .optionList+.optionList{margin-top: 10px !important;}
+.new_rsvBox.diningNew .NoMemberContact td .optionList:last-child{margin-top: 20px !important;}
+
+.new_rsvBox.diningNew .NoMemberContact td .optionList.CertNumberGet{position: relative; top: 0; left: 0;}
+.new_rsvBox.diningNew .NoMemberContact td .optionList.CertNumberGet b{position: absolute; top: 37%; right: 30%;}
+.new_rsvBox.diningNew .NoMemberContact td .notiList1{float: left; width: 301px; text-align: left; margin-top: 0;}
+.new_rsvBox.diningNew .NoMemberContact td .notiList1:after{clear: both; content: ''; display: inline-block;}
+.new_rsvBox.diningNew .NoMemberContact td .notiList1 li{overflow: visible;}
+.new_rsvBox.diningNew .NoMemberContact td .notiList1 li+li{border-top: none; padding: 0;}
+.new_rsvBox.diningNew .NoMemberContact td .optionList .first{margin-bottom: 0;}
+.new_rsvBox.diningNew .notiList1 > li{word-break: keep-all;}
+.new_rsvBox.diningNew .estCharge .btnStepN{float: right;}
+
+
+/*step3 고객정보입력 popup*/
+/* 예약 정보 레이어 팝업 */
+.new_popLayer.diningPop .popCtn .checkTxt{word-break: keep-all; line-height: 22px;}
+#comparePop2 .pop_rsvInfo.diningPop {background: url(../../images/ko/mem/new_2020/bg_dot_line_col2.png) 365px 0 repeat-y;}
+#comparePop2 .diningPop .fLeft{width: 316px;}
+#comparePop2 .diningPop .fLeft h3{font-size: 14px; font-weight: bold; margin-bottom: 28px; color: #333333;}
+#comparePop2 .diningPop .r_list1 dt{float: left; display: inline-block; width: 140px; margin-right: 20px;}
+#comparePop2 .diningPop .r_list1 dt:after{display: none;}
+#comparePop2 .diningPop .r_list1 dd{display: inline-block;}
+#comparePop2 .diningPop .r_list1 dt img{width: 140px; height: 80px;}
+#comparePop2 .diningPop .r_list1 dd strong{display: inline-block; color: #333; margin-bottom: 13px;;}
+#comparePop2 .diningPop .r_list1 dd ul li{line-height: 20px; color: #727272;}
+#comparePop2 .diningPop .fRight,
+#comparePop2 .diningPop .fRight.fCenter{float: left !important; width: 319px; padding: 30px 35px; border-left: none; min-height: 204px;}
+#comparePop2 .diningPop .fRight{width: 300px; padding: 30px 25px;}
+#comparePop2 .diningPop .r_list2>dl>dt{border-bottom: none; padding: 0 0 28px; color: #333333;}
+#comparePop2 .diningPop .fRight.fCenter .r_list2 dd .con{width: 319px;}
+#comparePop2 .diningPop .fRight .r_list2 dd .con{display: block;  width: 300px;}
+#comparePop2 .diningPop .r_list2 dd .con dt{display: inline-block; padding: 0; text-align: left; width: 40%;}
+#comparePop2 .diningPop .r_list2 dd .con dd{float: right; display: inline-block; text-align: right; color: #727272; width: 60%; word-break: break-all;}
+#comparePop2 .diningPop .r_list2 dl dd .con+.con{padding-left: 0; margin-top: 12px;}
+
+/* 입력시간 초과 안내 레이어 팝업 */
+#popAutNumTimeOver .new_popLayer.diningPop .popHead .tit {
+    background: url(../../images/ko/mem/new_2020/pop_head_tit_writetimeover.jpg) no-repeat;     margin: 6px 0 0 13px}
+#popAutNumTimeOver .new_popLayer.diningPop .popCtn .checkTxt{padding: 5px 0 20px;}
+
+/* 선호 구역 마감 안내 레이어 팝업 */
+#popAreaInfo .new_popLayer.diningPop .popHead .tit{background: url(../../images/ko/mem/new_2020/pop_head_tit_resvdeadline.jpg) no-repeat; margin: 6px 0 0 13px;}
+#popAreaInfo .new_popLayer.diningPop .popCtn .checkTxt{padding: 0 0 20px;}
+#popAreaInfo .diningPop .notiList2 li{line-height: 22px; word-break: keep-all;}
+#popAreaInfo .diningPop .notiList2 li b{color: #333;}
+#popAreaInfo .diningPop .notiList1{border-top: 1px solid #eaeaea; padding-top: 20px;}
+
+/* 예약가능 시간초과 안내 레이어 팝업 */
+#popRsvOverInfo .new_popLayer.diningPop .popHead .tit{background: url(../../images/ko/mem/new_2020/pop_head_tit_timeover.jpg) no-repeat; margin: 6px 0 0 13px;}
+
+/* 인증번호 재 입력 안내 */
+#popAutNumMiss .new_popLayer.diningPop .popHead .tit{background: url(../../images/ko/mem/new_2020/pop_head_tit_certifinum.jpg) no-repeat; margin: 6px 0 0 13px;}
+#popAutNumMiss .new_popLayer.diningPop .popCtn .checkTxt{padding: 0 0 20px;}
+
+/* 카드정보 저장 약관 동의 알림 레이어 팝업*/
+#popCardSave .new_popLayer.diningPop .popHead .tit{background: url(../../images/ko/mem/new_2019/pop_head_tit_reservation.gif) 0 -350px no-repeat;}
+#popCardSave .new_popLayer.diningPop .checkTxt{border-top: 1px solid #eaeaea !important;}
+
+/* 인증 완료 안내 레이어 팝업*/
+#popAutNumConfirm .new_popLayer.diningPop .popHead .tit{background: url(../../images/ko/mem/new_2020/pop_head_tit_resvcompletepop.jpg) no-repeat; margin: 6px 0 0 13px;}
+#popAutNumConfirm .new_popLayer.popLayerRegistCard .popCtn .checkTxt{padding: 15px 0 0 0 }
+
+
+/* 약관동의 안내 레이어 팝업*/
+#popNoticeInfoPo .new_popLayer.diningPop .popHead .tit{background: url(../../images/ko/mem/new_2020/pop_head_tit_agreecheek.jpg) no-repeat; margin: 6px 0 0 13px;}
+#popNoticeInfoPo .new_popLayer.popLayerRegistCard .popCtn .checkTxt{padding: 0; line-height: 1.5; }
+
+/* 등록된 카드 정보 레이어 팝업 */
+#popCardInfo .new_popLayer.popLayerRegistCard .popCtn{width: 430px;}
+
+/* 온라인 예약 가능 안내 레이어 팝업 */
+#popOverlapResvComfirm .new_popLayer.diningPop .popHead .tit{background: url(../../images/ko/mem/new_2020/pop_head_tit_online.jpg) no-repeat; margin: 6px 0 0 13px;}
+#popOverlapResvComfirm .new_popLayer.diningPop .popCtn .checkTxt{padding: 0 0 20px }
+
+/* 예약 재시도 안내 레이어 팝업 */
+#popReplayInfo .new_popLayer.diningPop .popHead .tit{background: url(../../images/ko/mem/new_2020/pop_head_tit_replay.jpg) no-repeat; margin: 6px 0 0 13px;}
+
+/* 휴대전화 번호 확인 안내 */
+#popPhonNumConfirm .new_popLayer.diningPop .popHead .tit{background: url(../../images/ko/mem/new_2020/pop_head_tit_phonenumber.jpg) no-repeat; margin: 6px 0 0 13px;}
+#popPhonNumConfirm .new_popLayer.diningPop .popCtn .checkTxt{padding: 0 0 20px }
+
+/* 인증번호 전송 횟수 초과 안내 */
+#popNumOverInfo .new_popLayer.diningPop .popHead .tit{background: url(../../images/ko/mem/new_2020/pop_head_tit_numberover.jpg) no-repeat; margin: 6px 0 0 13px;}
+#popNumOverInfo .new_popLayer.diningPop .popCtn .checkTxt{padding: 0 0 20px }
+
+
+
+
+/* 공통, 기타 popup */
+.diningPop .notiList2 li{font-size: 12px; color: #727272; text-align: center; line-height: 22px;}
+.diningPop.popCtn .checkTxt{border-top: none !important; margin-top: 0 !important;}
+.new_popLayer.popLayerRegistCard.diningPop .popCtn .btnBox{height: 44px;}
+.new_popLayer.popLayerRegistCard.diningPop .popCtn .btnBox a{height: 44px;}
+
+
+/*step4*/
+/*다이닝 예약 step4*/
+.diningNew.new_rsvBox .rsvInfoType .rsvDetailInfo [class*="rsvDetail"] .infoQ{width: 40%;}
+.diningNew.new_rsvBox .rsvInfoType .rsvDetailInfo [class*="rsvDetail"] .infoA{width: 60%;}
+
+
+/* 예약확인/취소 리스트*/
+.diningNew.ctnMypage.ctnMypageRsv .box .hTit{height: 25px;}
+.diningNew.ctnMypage.ctnMypageRsv .boxRoomPack{margin: 26px 0;}
+.diningNew.ctnMypage.ctnMypageRsv .boxRoomPack .hTit .tit{display: inline-block; background: url(../../images/ko/mem/new_2020/myRsvDinTit.jpg) no-repeat;}
+.diningNew.ctnMypage.ctnMypageRsv .boxRoomPack .hTit .sortSelect{float: right; display: inline-block; position: relative; top: -5px;}
+.diningNew.ctnMypage.ctnMypageRsv .boxRoomPack .hTit .sortSelect span{background: url(../../images/ko/mem/new_2019/bg_rsv_select.png) 92px 11px no-repeat; color: #333; padding-right: 30px;}
+.diningNew.ctnMypage.ctnMypageRsv .boxRoomPack .hTit .sortSelect .selector{background-image: none; width: 100px !important;}
+.diningNew.ctnMypage.ctnMypageRsv .topMsg{background: url(../../images/ko/mem/new_2020/myRsvDinTopMsg.jpg) no-repeat; font-size: 0; margin: 20px 0; height: 15px; /*2021-01-11 height값 수정*/ }
+.diningNew.ctnMypage.ctnMypageRsv .diningResvNo td{padding: 30px 0;}
+
+
+/*예약확인/취소 상세*/
+.diningNew.ctnMypage.ctnMypageRsv .box1 .hTit .tit{background: url(../../images/ko/mem/new_2020/myRsvDinTit.jpg) no-repeat;}
+.diningNew.ctnMypage.ctnMypageRsv .box .msg li a{text-decoration: none; cursor: auto;}
+.diningNew .rsvInfoBox .rsvInfoCon .tableTypeA tr td a{padding-left: 20px; text-decoration: underline; color: #856f56; font-weight: bold;}
+.diningNew.mypageWrap.new_rsvBox .rsvInfoType .myroomInfo{padding: 25px 20px 30px;}
+.diningNew.ctnMypage .hTitS .tit{padding: 20px 0 0 0;}
+.diningNew.ctnMypage .schBox .dateOpt .sortSelect{float: left;}
+.diningNew.ctnMypage .schBox .dateOpt .dateGroup{float: left; margin-left: 10px;}
+
+.diningNew.ctnMypage .schBox .dateOpt .dateGroup .btnDate{width: 50px; background: url(../../images/ko/mem/new_2020/resv_today.jpg) no-repeat; vertical-align: top;}
+.diningNew.ctnMypage .schBox .dateOpt .dateGroup .btnOneWeek{background: url(../../images/ko/mem/new_2020/resv_OneWeek.jpg) no-repeat;}
+.diningNew.ctnMypage .schBox .dateOpt .dateGroup .btnmonth1{background: url(../../images/ko/mem/new_2020/resv_1month.jpg) no-repeat;}
+.diningNew.ctnMypage .schBox .dateOpt .dateGroup .btnmonth3{background: url(../../images/ko/mem/new_2020/resv_3month.jpg) no-repeat;}
+
+.diningNew.ctnMypage .schBox .dateOpt .dateGroup .btnmonth_1{background: url(../../images/ko/mem/new_2020/resv_1-month.jpg) no-repeat; vertical-align: top;}
+.diningNew.ctnMypage .schBox .dateOpt .dateGroup .btnmonth_3{background: url(../../images/ko/mem/new_2020/resv_3-month.jpg) no-repeat;}
+.diningNew.ctnMypage .schBox .dateOpt .dateGroup .btnmonth_12{background: url(../../images/ko/mem/new_2020/resv_12-month.jpg) no-repeat;}
+.diningNew.ctnMypage .schBox .dateOpt .dateGroup .btnAllDay{background: url(../../images/ko/mem/new_2020/resv_AllDay.jpg) no-repeat;}
+
+
+
+
+/* 예약변경 레이어팝업 */
+#popRsvChange .diningPop.new_popLayer .popHead .tit{background: url(../../images/ko/mem/new_2020/pop_head_tit_resvchange.jpg) 0 0 no-repeat; margin: 6px 0 0 13px;}
+#popRsvChange .diningPop.new_popLayer .popCtn{width: 380px;}
+
+/* 예약 변경 안내 레이어 팝업 */
+#ResvChangePop .new_popLayer.diningPop .popHead .tit{background: url(../../images/ko/mem/new_2020/pop_head_tit_change.jpg) no-repeat; margin: 6px 0 0 13px;}
+
+/* 예약취소 레이어팝업 */
+#popRsvCancel .diningPop.new_popLayer .popCtn{width: 380px; padding: 25px 20px 0;}
+#popRsvCancel .diningPop.new_popLayer .popCtn .btnBox{height: 44px;}
+#popRsvCancel .diningPop.new_popLayer .popCtn .checkTxt{margin: 13px 0;}
+#popRsvCancel .diningPop.new_popLayer .popHead .tit{background: url(../../images/ko/mem/new_2020/pop_head_tit_resvcancle.jpg) 0 0 no-repeat; margin: 6px 0 0 13px;}
+
+/* 도면보기 레이어팝업 */
+#popShowArea .diningPop.new_popLayer .popHead .tit{background: url(../../images/ko/mem/new_2020/pop_head_tit_drawing.jpg) 0 0 no-repeat; margin: 6px 0 0 13px;}
+#popShowArea .diningPop.new_popLayer .diningImg{border: 1px solid #e2d5c5;}
+
+/* SMS 발송 안내 레이어팝업 */
+#popSmsSend .diningPop.new_popLayer .popHead .tit{background: url(../../images/ko/mem/new_2020/pop_head_tit_sms.jpg) 0 0 no-repeat; margin: 6px 0 0 13px;}
+
+/* 레스토랑 상세보기 레이어팝업 */
+#accViewPop .diningPop.new_popLayer .popHead .tit{background: url(../../images/ko/mem/new_2020/pop_head_tit_AboutRestaurant.jpg) 0 0 no-repeat; margin: 6px 0 0 13px;}

@@ -1,0 +1,162 @@
+/* CSS Introduction */
+/*aboutShilla*/
+.ctnIntroduction.ctnAboutShilla{}
+.ctnIntroduction.ctnAboutShilla .aboutBox{ background:url(../images/ko/mem/introduction/aboutShillaImg.jpg) no-repeat; padding:470px 0 0 0; height:0px; overflow:hidden;}
+
+/*Concept*/
+.ctnIntroduction.ctnConcept{}
+.ctnIntroduction.ctnConcept .movieBox{ width:720px; margin:0px auto 0 auto;}
+.ctnIntroduction.ctnConcept .movieBox .player{ width:720px; height:400px; background:#000; margin:0 0 0px 0;}
+.ctnIntroduction.ctnConcept .movieBox .guide{ height:80px; overflow:auto; margin:10px 0 0 0; padding:10px 15px; font-weight:bold; border:#eaeaea solid 1px; background:#fbfbfb; color:#666;}
+.control{ border:#c4c4c4 solid 1px; background:#f1f1f1; padding:5px 10px;}
+.control .btnMovPlay{ background:url(../../images/ko/mem/introduction/btnMovPlay.gif) no-repeat; width:22px; height:22px; vertical-align:middle; display:inline-block; line-height:100px; overflow:hidden;}
+.control .btnMovPause{ background:url(../../images/ko/mem/introduction/btnMovPause.gif) no-repeat; width:22px; height:22px; vertical-align:middle; display:inline-block; line-height:100px; overflow:hidden;}
+.control .btnMovStop{ background:url(../../images/ko/mem/introduction/btnMovStop.gif) no-repeat; width:22px; height:22px; vertical-align:middle; display:inline-block; line-height:100px; overflow:hidden;}
+
+div.reg_cona { padding: 0 15px 10px 15px !important; }
+div.reg_cona.newpd { padding: 0 10px 10px 10px !important; }
+div.reg_cona a {text-indent:-9999px; display:block; overflow:hidden;}
+div.reg_cona a:focus {text-indent:0px;}
+
+
+/*News*/
+.ctnIntroduction.ctnNews{}
+.ctnIntroduction.ctnNews .msg1{ background:url(../../images/ko/mem/introduction/newsMsg1.gif) no-repeat; height:48px; line-height:200px; overflow:hidden;}
+.ctnIntroduction.ctnNews .bbsSchNews{ margin:0 0 20px 0;}
+.ctnIntroduction.ctnNews .bbsListNews{ margin:0 0 20px 0;}
+.ctnIntroduction.ctnNews .bbsListNews tr.notice{}
+.ctnIntroduction.ctnNews .bbsListNews tr.notice td{ font-weight:bold;}
+.ctnIntroduction.ctnNews .bbsListNews .icoNotice{ color:#865009}
+.ctnIntroduction.ctnNews .btnGoList{ background:url(../../images/ko/mem/main/btnBBs.gif) no-repeat; width:62px; height:27px; display:inline-block; vertical-align:middle; line-height:100px; overflow:hidden;}
+
+.ctnIntroduction .pagingBox{ border-top:#cdcbbe solid 1px; margin:0 0 10px 0;}
+.ctnIntroduction .pagingBox li{ height:37px; border-bottom:#cdcbbe solid 1px;}
+.ctnIntroduction .pagingBox li .name{ display:block; width:70px; margin:0 10px 0 0; float:left; padding:10px 0 0 22px;}
+.ctnIntroduction .pagingBox li .subject{ display:block; float:left; padding:10px 0 0 0px;}
+
+
+
+/*Photos*/
+/* Introduction 포토 슬라이드 박스 */
+.slideGalleryBox{ margin:0 0 7px 0;}
+.slideGalleryBox .ad-gallery { width:866px; overflow:hidden; position:relative;}
+.slideGalleryBox .ad-gallery .ad-image-wrapper{ height:379px; margin-bottom:2px; overflow:hidden; background:#000; position:relative; z-index:8;}
+.slideGalleryBox .ad-gallery .ad-image-wrapper .ad-prev{top:140px; left:0px; margin: 0 0 0 0px; position: absolute; z-index: 10; width:60px; height:94px !important; background:url(../../images/ko/mem/main/slidePrev.png) no-repeat 0px 0px; text-indent:-9999%; overflow:hidden;}
+.slideGalleryBox .ad-gallery .ad-image-wrapper .ad-prev:hover{background-position:0 -100px}
+.slideGalleryBox .ad-gallery .ad-image-wrapper .ad-next{top:140px; right:0px; margin: 0 0 0 0px; position: absolute; z-index: 10; width:60px; height:94px !important; background:url(../../images/ko/mem/main/slideNext.png) no-repeat 0px 0px; text-indent:-9999%; overflow:hidden;}
+.slideGalleryBox .ad-gallery .ad-image-wrapper .ad-next:hover{background-position:0 -100px}
+.slideGalleryBox .ad-gallery .ad-nav{ width:866px; overflow:hidden; height:120px;}
+.slideGalleryBox .ad-gallery .ad-nav .ad-thumbs{ width:866px; zoom:1;}
+.slideGalleryBox .ad-gallery .ad-thumbs li{ padding-right:0px;  position:relative;}
+.slideGalleryBox .ad-gallery .ad-thumbs li .mask{ width:114px; height:84px; border:#d4bf99 solid 5px; display:none; position:absolute; left:0px; top:0px;}
+.slideGalleryBox .ad-gallery .ad-thumbs li a{ background:#000}
+.slideGalleryBox .ad-gallery .ad-thumbs li a:hover .mask,
+.slideGalleryBox .ad-gallery .ad-thumbs li a.ad-active .mask{ display:block;}
+.slideGalleryBox .ad-gallery .ad-thumbs li a.ad-active img { border:none;}
+.slideGalleryBox .ad-gallery .ad-thumbs li a img{ border:none;}
+.slideGalleryBox .ad-gallery .ad-thumbs li .tit{ display:block;  text-align:center;width:114px; padding:4px 4px 4px 4px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;}
+.slideGalleryBox .ad-gallery .ad-thumbs li .tit.on{ font-weight:bold;}
+.slideGalleryBox .ad-gallery .ad-controls{ display:block; position:relative; height:50px; z-index:10;}
+.slideGalleryBox .ad-gallery .ad-controls .totalNum{ padding:25px 0 0 0; display:block;}
+.slideGalleryBox .ad-gallery .ad-controls .ad-info{ float:none; position:absolute; right:25px; top:-35px; color:#FFF;}
+.slideGalleryBox .ad-gallery .ad-controls .ad-info .total{ display:none;}
+.slideGalleryBox .ad-gallery .ad-controls .ad-info2{ float:none; position:absolute; left:0px; top:25px; color:#000; zoom:1;}
+.slideGalleryBox .ad-gallery .ad-controls .ad-info2 .total{ display:inline;}
+.slideGalleryBox .ad-gallery .ad-controls .ad-info2 .txt1{ display:none;}
+.slideGalleryBox .ad-gallery .ad-controls .ad-slideshow-controls{float:none; position:absolute; right:0px; top:25px; }
+
+.slideGalleryBox .ad-gallery .ad-controls .ad-slideshow-controls .ad-slideshow-start{ padding:0px; background:url(../../images/ko/mem/main/uiPackStartStop.gif) no-repeat 1px 3px; width:13px; height:18px; line-height:0px; font-size:0; tent-indent:-100px; overflow:hidden; display:inline-block;}
+.slideGalleryBox .ad-gallery .ad-controls .ad-slideshow-controls .ad-slideshow-stop{ padding:0px; background:url(../../images/ko/mem/main/uiPackStartStop.gif) no-repeat -18px 3px; width:13px; height:18px; line-height:0px; font-size:0; overflow:hidden; display:inline-block;}
+.slideGalleryBox .ad-gallery .ad-controls .ad-slideshow-controls .ad-slideshow-countdown{ display:none !important;}
+.slideGalleryBox .ad-gallery .ad-image-wrapper .ad-image .ad-image-description{ height:101px; padding:0px; color:#FFF; bottom:0px !important;}
+.slideGalleryBox .ad-gallery .ad-image-wrapper .ad-image .ad-image-description .mask{ width:866px; height:101px; display:block; position:absolute; left:0px; top:0; background:#000; opacity:0.7;	filter: alpha(opacity = 70);}
+.slideGalleryBox .ad-gallery .ad-image-wrapper .ad-image .ad-image-description .btnFullScreen{ position:absolute; right:22px; top:22px; padding:0 0 0 17px; z-index:10; display:block; color:#FFF; font-size:11px; background:url(../../images/ko/mem/main/uiPackFullScreenIco.gif) no-repeat 0 4px;}
+.slideGalleryBox .ad-gallery .ad-image-wrapper .ad-image .ad-image-description .ad-description-title{ position:relative; z-index:10; padding:20px 0 0 25px;}
+.slideGalleryBox .ad-gallery .ad-image-wrapper .ad-image .ad-image-description .desc{ position:relative; z-index:10; padding:2px 0 0 25px; display:block;color:#FFF;}
+.slideGalleryBox .ad-gallery .ad-image-wrapper .ad-image .ad-image-description .desc p{color:#FFF;}
+.slideGalleryBox .ad-gallery .ad-forward{ top:0px; right:0px; margin: 0 0 0 0px; position: absolute; z-index: 10; width:60px; height:94px !important; background:url(../../images/ko/mem/main/slideNext.png) no-repeat 0px 0px; text-indent:-9999%; overflow:hidden;}
+.slideGalleryBox .ad-gallery .ad-forward:hover{  background-position:0 -100px}
+.slideGalleryBox .ad-gallery .ad-back{ top:0px; left:0px; margin: 0 0 0 0px; position: absolute; z-index: 10; width:60px; height:94px !important; background:url(../../images/ko/mem/main/slidePrev.png) no-repeat 0px 0px; text-indent:-9999%; overflow:hidden;}
+.slideGalleryBox .ad-gallery .ad-back:hover{ background-position:0 -100px}
+
+/* Introduction 포토 Full 슬라이드 박스 */
+.sideGalleryFullBox{}
+.sideGalleryFullBox .mdScreen{ display:block !important; background:#000;opacity:0.7;	filter: alpha(opacity = 70);}
+.sideGalleryFullBox .slideBox{ padding:22px 0 0 0; position:absolute; left:50%; top:335px; margin:0 0 0 -458px; width:916px; height:620px; z-index:100000 }
+.sideGalleryFullBox .slideBox .btnSlideClose{ position:absolute; right:0px; top:0px; background:url(../../images/ko/mem/main/slideBtnClose.png) no-repeat; width:22px; height:22px; display:block; line-height:100px; overflow:hidden;}
+.sideGalleryFullBox .slideBox .slidesjs-navigation{}
+.sideGalleryFullBox .slideBox .slidesjs-previous{ top: 260px; left:13px;  position: absolute; z-index: 10; width:25px; height:40px; background:url(../../images/ko/mem/main/mvBtnSlide.png) no-repeat 0 0; text-indent:-9999%; overflow:hidden; }
+.sideGalleryFullBox .slideBox .slidesjs-next{ top: 260px; right:13px; position: absolute; z-index: 10; width:25px; height:40px; background:url(../../images/ko/mem/main/mvBtnSlide.png) no-repeat right 0; text-indent:-9999%; overflow:hidden;}
+.sideGalleryFullBox .slideBox .photo{}
+.sideGalleryFullBox .slideBox .photo .img{ vertical-align:middle;}
+.sideGalleryFullBox .slideBox .info{ position:relative; width:916px; height:79px;}
+.sideGalleryFullBox .slideBox .info .title{ display:block; position:relative; color:#FFF; z-index:10; padding:17px 0 0 25px;}
+.sideGalleryFullBox .slideBox .info .desc{ display:block; position:relative; color:#FFF;  z-index:10; padding:5px 0 0 25px;}
+.sideGalleryFullBox .slideBox .info .desc p{ color:#FFF;}
+.sideGalleryFullBox .slideBox .info .mask{ width:916px; height:79px; display:block; position:absolute; left:0px; top:0; background:#000; opacity:0.7;	filter: alpha(opacity = 70);}
+.sideGalleryFullBox .slideBox .slidesjs-play{ position:absolute; right:40px; bottom:66px; z-index:10; padding:0px; background:url(../../images/ko/mem/main/uiPackStartStopB.png) no-repeat 1px 3px; width:13px; height:18px; line-height:100px; overflow:hidden; display:inline-block;}
+.sideGalleryFullBox .slideBox .slidesjs-stop{ position:absolute; right:26px; bottom:66px; z-index:10; padding:0px; background:url(../../images/ko/mem/main/uiPackStartStopB.png) no-repeat -18px 3px; width:13px; height:18px; line-height:100px; overflow:hidden; display:inline-block;}
+
+
+
+/*모바일서비스*/
+.ctnIntroduction.ctnMobile{}
+.ctnIntroduction.ctnMobile img{ vertical-align:middle;}
+.ctnIntroduction.ctnMobile .box{ overflow:hidden; margin:0 0 40px 0;}
+.ctnIntroduction.ctnMobile .box .img{ float:left; width:190px; margin:0 35px 0 0;}
+.ctnIntroduction.ctnMobile .box .img.last{margin-right:0;}
+.ctnIntroduction.ctnMobile .box .txt{ float:left;}
+
+
+
+/*Fact Sheet*/
+
+.msg1{display:table-row; height:23px;color:#444;}
+.msg1 b{margin:0;padding:0;display:table-cell; vertical-align:middle;}
+.msg1 a img{margin:10px 0 0 10px;}
+.ctnFactSheet .btnBox{margin-top:10px;}
+
+
+/* Pop UP */
+.popLayerFs{left:50%; margin:0 0 0 -300px;top:30px;}
+.popLayerFs .popHead .tit{text-align:left;margin-top:2px;}
+
+.popLayerFs .fsPopBox{padding:0;width:535px;}
+
+.fsPopBox .tableTypeD{width:535px;} 
+.popLayerFs .tableTypeD td.ftd{background:#faf9f4;text-align:left;}
+.popLayerFs .tableTypeD td.aleft{text-align:left}
+.popLayerFs .tableTypeD th{padding:6px 6px;}
+.popLayerFs .tableTypeD td{padding:6px 14px;}
+.popLayerFs .btnBox{margin-top:20px;text-align:center;}
+
+
+.popLayerDnFs{left:50%; margin:0 0 0 -400px;top:30px;}
+.popLayerDnFs .fsPopBox .tableTypeD{width:735px;} 
+.popLayerDnFs .btnBox{margin-top:20px;text-align:center;}
+.popLayerDnFs .tableTypeD td{padding:6px 10px;}
+.popLayerDnFs .tableTypeD td.tdp p{margin-left:10px;}
+.popLayerDnFs .tableTypeD td.tdp p.npd{margin-left:0px;}
+.popLayerDnFs .tableTypeD td.tdp p.mg100{margin-left:95px;}
+
+
+.popLayerFsMeeting{left:50%; margin:0 0 0 -342px;top:30px;}
+.popLayerFsMeeting .fsPopBox .tableTypeD{width:685px;}
+.popLayerFsMeeting .btnBox{margin-top:20px;text-align:center;}
+
+.popLayerFsYeongbingwan{left:50%; margin:0 0 0 -471px;top:30px;}
+.popLayerFsMeeting .btnBox{margin-top:20px;text-align:center;}
+
+.popLayerFs .msg  {width:685px;margin-top:10px;}
+.popLayerFs .msg p{color:#666;}
+.popLayerFs p.msg2{text-indent:150px;}
+
+.popLayerFsMeeting .msg p{letter-spacing: -0.2px;*letter-spacing: -1px;}
+
+.popLayerFsYbg{width:750px; left:50%; margin:0 0 0 -342x;top:30px;}
+.popLayerFsYbg .fsPopBox .tableTypeD{width:685px;}
+.popLayerFsYbg .btnBox{width:685px;margin-top:20px;text-align:center;}
+
+/*2013-10-15 추가*/
+.ctnIntroduction.ctnFactSheet .topMsg{ margin:0 0 20px 0; background:url(../../images/ko/mem/introduction/factSheetMsg1.gif) no-repeat; height:82px; overflow:hidden; line-height:200px;}
+.ctnIntroduction.ctnMobile .box .img{width:190px}

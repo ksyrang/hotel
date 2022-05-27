@@ -1,0 +1,377 @@
+/* CSS Document */
+
+.popCtn .headTit{ position:relative;  padding:0px; margin:0 0 0px 0; z-index:8; height:47px; border-bottom:#432c10 solid 5px; width:100%}
+.popCtn .headTit .tit{ float:left; width:430px; height:34px; font-size:20px;}
+
+
+/*식음문의팝업*/
+.popLayerFdQna{ width:600px !important; left:50%; top:200px; margin:0px 0 0 -300px; position:absolute;}
+.popLayerFdQna #uniform-phoneHome { width: 74px !important;  }
+.popLayerFdQna #uniform-phone1 { width: 50px !important;  }
+.popLayerFdQna #uniform-phone1 span { padding-right: 4px !important;  }
+.popLayerFdQna #uniform-phoneComp { width: 65px !important;  }
+.popLayerFdQna #uniform-phoneComp span { width: 40px !important;  }
+.popLayerFdQna .popHead .tit{ background:url(../../images/ko/mem/main/popHeadTitDining.gif) no-repeat scroll 0 0px}
+.popLayerFdQna .hTitS{ font-weight:bold; font-size:12px; margin:0 0 0px; color:#444;}
+.popLayerFdQna .hTitS .tit{font-weight:bold; }
+.popLayerFdQna .hTitS1{ margin:0 0 5px 0;}
+.popLayerFdQna .policyBox{ border:#CCC solid 1px; height:100px; overflow:auto; overflow-x:hidden}
+.popLayerFdQna .guideMsg{ background:#FFC; padding:10px; border:#90C solid 1px; margin:0 0 10px 0;}
+.popLayerFdQna .privacyBox{ padding:0px;}
+.popLayerFdQna label.gender,
+.popLayerFdQna label.nameF,
+.popLayerFdQna label.phoneComp,
+.popLayerFdQna label.phone1,
+.popLayerFdQna label.phone2,
+.popLayerFdQna label.phone3,
+.popLayerFdQna label.phoneHome,
+.popLayerFdQna label.phoneHome1,
+.popLayerFdQna label.phoneHome2,
+.popLayerFdQna label.emailId,
+.popLayerFdQna label.emailDomain,
+.popLayerFdQna label.emailDomainSel{position:absolute; left:-9999%}
+.popLayerFdQna .headTit .tit{ /*background:url(../../images/ko/mem/dining/popTitleDiningQna.gif) no-repeat 0 0;*/}
+.popLayerFdQna .tablePalsunQna { border-top:none; margin:0 0 25px 0;}
+.popLayerFdQna .tablePalsunQna input.title{ width:405px;}
+.popLayerFdQna .tablePalsunQna textarea.qMemo { width:405px; height:60px;}
+.popLayerFdQna .clauseBox .scBox{ height:50px;}
+.popLayerFdQna .btnQnaSend{ background:url(../../images/ko/mem/dining/btnDining.gif) no-repeat; width:99px; height:44px; display:inline-block; vertical-align:middle; line-height:100px; overflow:hidden;}
+.popLayerFdQna .btnQnaCancel{ background:url(../../images/ko/mem/dining/btnDining.gif) no-repeat -150px 0; width:99px; height:44px; display:inline-block; vertical-align:middle; line-height:100px; overflow:hidden;}
+.popLayerFdQna .btnMobileCertifi{ background:url(../../images/ko/mem/dining/btnDining.gif) no-repeat 0px -200px; width:80px; height:27px; display:inline-block; vertical-align:middle; line-height:100px; overflow:hidden;}
+.popLayerFdQna .msgBox{ background:#fbfbfb; border:#eaeaea solid 1px; padding:15px 20px; margin:0 0 20px 0; color:#666666}
+
+
+.mgt8 { margin-top: 8px; }
+
+/*식음예약팝업*/
+.popLayerFdReservation{ width:600px; left:50%; top:200px; margin:0px 0 0 -300px; position:absolute;}
+.popLayerFdReservation .popHead .tit{ background:url(../../images/ko/mem/main/popHeadTitDining.gif) no-repeat scroll 0 -50px; line-height: 100px; }
+.popLayerFdReservation .hTitS{ font-weight:bold; font-size:12px; margin:0 0 0px; color:#444;}
+.popLayerFdReservation .hTitS .tit{font-weight:bold; margin-bottom: 5px; }
+.popLayerFdReservation .policyBox{ border:#CCC solid 1px; height:100px; overflow:auto; overflow-x:hidden}
+.popLayerFdReservation .guideMsg{ background:#FFC; padding:10px; border:#90C solid 1px; margin:0 0 10px 0;}
+.popLayerFdReservation .privacyBox{ padding:0px;}
+.popLayerFdReservation .msgBox{ border:#eaeaea solid 1px;  background:#fbfbfb; padding:15px; margin:0 0 25px 0; color: #666; }
+.popLayerFdReservation .phoneSelBox { display: inline; margin: 0 10px 0 0; }
+
+.popLayerFdReservation .headTit .tit{ /*background:url(../../images/ko/mem/dining/popTitleDiningReserve.gif) no-repeat 0 0;*/}
+.popLayerFdReservation .tablePalsunQna { border-top:none; margin:0 0 10px 0;}
+.popLayerFdReservation .tablePalsunQna input.title{ width:405px;}
+.popLayerFdReservation .tablePalsunQna #uniform-emailDomainSel { width:106px !important;}
+.popLayerFdReservation .tablePalsunQna textarea.qMemo { width:405px; height:60px; color: #727272; }
+.popLayerFdReservation .clauseBox .scBox{ height:50px; color: #646464;}
+.popLayerFdReservation .btnMobileCertifi{ background:url(../../images/ko/mem/dining/btnDining.gif) no-repeat 0px -200px; width:80px; height:27px; display:inline-block; vertical-align:middle; line-height:100px; overflow:hidden;}
+.popLayerFdReservation .btnReserveSend{ background:url(../../images/ko/mem/dining/btnDining.gif) no-repeat 0 -50px; width:99px; height:44px; display:inline-block; vertical-align:middle; line-height:100px; overflow:hidden;}
+.popLayerFdReservation .btnReserveCancel{ background:url(../../images/ko/mem/dining/btnDining.gif) no-repeat -150px 0; width:99px; height:44px; display:inline-block; vertical-align:middle; line-height:100px; overflow:hidden;}
+
+
+.popLayerFdReservation label.gender,
+.popLayerFdReservation label.nameF,
+.popLayerFdReservation label.phoneComp,
+.popLayerFdReservation label.phone1,
+.popLayerFdReservation label.phone2,
+.popLayerFdReservation label.phone3,
+.popLayerFdReservation label.phoneHome,
+.popLayerFdReservation label.phoneHome1,
+.popLayerFdReservation label.phoneHome2,
+.popLayerFdReservation label.emailId,
+.popLayerFdReservation label.emailDomain,
+.popLayerFdReservation label.rHour,
+.popLayerFdReservation label.emailDomainSel{position:absolute; left:-9999%}
+
+
+/*식음 페스트리 예약팝업*/
+.popLayerBkPastryReserve{ width:600px; left:50%; top:200px; margin:0px 0 0 -300px; position:absolute;}
+.popLayerBkPastryReserve .popCtn .headTit{ margin:0 0 0px 0;}
+.popLayerBkPastryReserve .headTit .tit{ background:url(../../images/ko/mem/dining/popTitleDiningReserve.gif) no-repeat 0 -352px; text-indent: -999%; overflow: hidden;}
+.popLayerBkPastryReserve .scrollBox{ height:500px; overflow:auto; position:relative; zoom:1; overflow-x:hidden;
+	scrollbar-face-color:#fdf8ef;
+	scrollbar-shadow-color:#856f56;
+	scrollbar-highlight-color:#FDF8EF;
+	scrollbar-3dlight-color:#856f56;
+  	scrollbar-darkshadow-color:#FDF8EF;
+  	scrollbar-track-color:#fff;
+	scrollbar-arrow-color:#856f56;
+}
+.popLayerBkPastryReserve .scrollBox .scrollBoxIn{ width:510px; padding-top:10px;}
+.popLayerBkPastryReserve .hTitS{ font-weight:bold; font-size:12px; margin:0 0 7px 0; color:#444; overflow:hidden;}
+.popLayerBkPastryReserve .hTitS .tit{ float:left;font-weight:bold; }
+.popLayerBkPastryReserve .hTitS .info{ float:right;}
+.popLayerBkPastryReserve .tableOrderInfo1,
+.popLayerBkPastryReserve .tableOrderInfo2{ margin:0 0 20px 0;}
+.popLayerBkPastryReserve .policyBox{ border:#CCC solid 1px; height:100px; overflow:auto; overflow-x:hidden}
+.popLayerBkPastryReserve .guideMsg{ background:#FFC; padding:10px; border:#90C solid 1px; margin:0 0 10px 0;}
+.popLayerBkPastryReserve .privacyBox{ padding:0px;}
+.popLayerBkPastryReserve .orderPrice { font-weight: bold; }
+
+.popLayerBkPastryReserve .prdImg { display: inline-block; vertical-align: middle; margin-right:10px; }
+.popLayerBkPastryReserve .prdImg img { vertical-align: top; width:122px; height:67px; }
+.popLayerBkPastryReserve .prdLinkw { display: inline-block; width: 122px; text-align: center; margin-left:-6px; }
+.popLayerBkPastryReserve .prdLink { font-weight: bold; line-height: 16px; vertical-align: middle; padding: 10px 0; display: inline-block; }
+.popLayerBkPastryReserve .popHead .tit { background: url("../../images/ko/mem/main/popHeadTitDining.gif") no-repeat scroll 0 -50px transparent; }
+
+.popLayerBkPastryReserve .bbsOrderInfoList{ margin:0 0 0px 0;}
+.popLayerBkPastryReserve .totalPriceBox{ background:#f4eee3; border-bottom:#cdcbbe solid 1px; padding:10px 20px; margin:0 0 25px 0; text-align:right;}
+.popLayerBkPastryReserve .totalPriceBox .totalPrice{ font-weight:bold;}
+.popLayerBkPastryReserve .hTit{ background:#FFC; height:30px;}
+.popLayerBkPastryReserve .hTit .tit{ float:left; padding:5px 0 0 15px; font-weight:bold; font-size:14px;}
+.popLayerBkPastryReserve .hTit .info{ float:right;padding:5px  15px 0 0; }
+.popLayerBkPastryReserve .leaveMsgbox{ margin:0 0 10px 0;}
+.popLayerBkPastryReserve .leaveMsgbox textarea.leaveMemo{ width:501px; height:60px;}
+.popLayerBkPastryReserve .addressWrap .addressOld input.address2{ width:395px; }
+.popLayerBkPastryReserve .addressWrap .addressOld input.address1{ width:205px; }
+.popLayerBkPastryReserve .addressWrap .addressNew div.addressNew1 { width: 340px; }
+.popLayerBkPastryReserve .addressWrap .addressNew div.addressNew1 input.addressNew1 { width: 344px; }
+.popLayerBkPastryReserve .addressWrap .addressNew div.addressNew2 { width: 340px; }
+.popLayerBkPastryReserve .addressWrap .addressNew div.addressNew2 input.addressNew2 { width: 344px; }
+
+.popLayerBkPastryReserve .msgBox{ background:#fbfbfb; border:#eaeaea solid 1px; padding:15px 20px; margin:0 0 20px 0; color:#666666}
+.popLayerBkPastryReserve .clauseBox .scBox{ height:50px;}
+
+.popLayerBkPastryReserve .btnMobileCertifi{ background:url(../../images/ko/mem/dining/btnDining.gif) no-repeat 0px -200px; width:80px; height:27px; display:inline-block; vertical-align:middle; line-height:100px; overflow:hidden;}
+.popLayerBkPastryReserve .btnReserveSend{ background:url(../../images/ko/mem/dining/btnDining.gif) no-repeat 0 -50px; width:99px; height:44px; display:inline-block; vertical-align:middle; line-height:100px; overflow:hidden;}
+.popLayerBkPastryReserve .btnReserveCancel{ background:url(../../images/ko/mem/dining/btnDining.gif) no-repeat -150px 0; width:99px; height:44px; display:inline-block; vertical-align:middle; line-height:100px; overflow:hidden;}
+.popLayerBkPastryReserve .btnSchAddress{ background:url(../../images/ko/common/join/btnSchAddress.gif) no-repeat; width:66px; height:27px; display:inline-block; vertical-align:middle; line-height:100px; overflow:hidden;}
+.popLayerBkPastryReserve .phoneSelBox { display: inline; margin: 0 10px 0 0; }
+.popLayerBkPastryReserve #uniform-phoneComp { width: 65px !important; }
+.popLayerBkPastryReserve #uniform-phoneComp span { width: 40px !important; padding-right: 25px !important; }
+.popLayerBkPastryReserve #uniform-phoneCompB { width: 65px !important; }
+.popLayerBkPastryReserve #uniform-phoneCompB span { width: 40px !important; padding-right: 25px !important; }
+.popLayerBkPastryReserve #uniform-phoneHome { width: 65px !important; }
+.popLayerBkPastryReserve #uniform-phoneHome span { width: 40px !important; padding-right: 25px !important; }
+.popLayerBkPastryReserve #uniform-phoneHomeB { width: 65px !important; }
+.popLayerBkPastryReserve #uniform-phoneHomeB span { width: 40px !important; padding-right: 25px !important; }
+.popLayerBkPastryReserve #uniform-phoneB1 { width: 50px !important; }
+.popLayerBkPastryReserve #uniform-phoneB1 span { width: 30px !important; padding-right: 20px !important; }
+.popLayerBkPastryReserve #uniform-phone1 { width: 50px !important; }
+.popLayerBkPastryReserve #uniform-phone1 span { width: 30px !important; padding-right: 20px !important; }
+
+
+
+.popLayerFdReservation #uniform-phone1 { width: 50px !important; }
+.popLayerFdReservation #uniform-phone1 span { width: 25px !important; }
+.popLayerFdReservation #uniform-phoneHome  { width:70px !important; }
+.popLayerFdReservation #uniform-phoneHome span { width: 45px !important; }
+
+.popLayerFdReservation #uniform-rHour  { width:45px !important; }
+.popLayerFdReservation #uniform-rHour span { width: 20px !important; }
+.popLayerFdReservation #uniform-rHourA  { width:173px !important; }
+.popLayerFdReservation #uniform-rHourA span { width: 148px !important; }
+.popLayerFdReservation #uniform-rMin  { width:45px !important; }
+.popLayerFdReservation #uniform-rMin span { width: 20px !important; }
+
+.popLayerBkPastryReserve label.gender,
+.popLayerBkPastryReserve label.nameF,
+.popLayerBkPastryReserve label.phoneComp,
+.popLayerBkPastryReserve label.phone1,
+.popLayerBkPastryReserve label.phone2,
+.popLayerBkPastryReserve label.phone3,
+.popLayerBkPastryReserve label.phoneHome,
+.popLayerBkPastryReserve label.phoneHome1,
+.popLayerBkPastryReserve label.phoneHome2,
+.popLayerBkPastryReserve label.emailId,
+.popLayerBkPastryReserve label.emailDomain,
+.popLayerBkPastryReserve label.emailDomainSel,
+.popLayerBkPastryReserve label.genderB,
+.popLayerBkPastryReserve label.nameFB,
+.popLayerBkPastryReserve label.phoneCompB,
+.popLayerBkPastryReserve label.phoneB1,
+.popLayerBkPastryReserve label.phoneB2,
+.popLayerBkPastryReserve label.phoneB3,
+.popLayerBkPastryReserve label.phoneHomeB,
+.popLayerBkPastryReserve label.phoneHomeB1,
+.popLayerBkPastryReserve label.phoneHomeB2,
+.popLayerBkPastryReserve label.zipcode1,
+.popLayerBkPastryReserve label.zipcode2,
+.popLayerBkPastryReserve label.address1,
+.popLayerBkPastryReserve label.address2,
+.popLayerBkPastryReserve label.addressNew1,
+.popLayerBkPastryReserve label.addressNew2,
+.popLayerBkPastryReserve label.phoneHomeB2,
+.popLayerBkPastryReserve label.phoneHomeB2{ position:absolute; left:-9999%;}
+
+
+
+/* 공통레이아웃 */
+.contents .ctnDining .headTit .tit{line-height:100%;}
+.mgB0 { margin-bottom: 0 !important; }
+.conWrap { width: 100%; overflow: hidden; }
+.conWrap .leftArea { width: 496px; float: left; margin-right: 40px; }
+.conWrap .rightArea { width: 330px; float: left; }
+.conWrap .rightArea .btnSet { padding-top: 10px; }
+
+.conWrapA { width: 100%; overflow: hidden; }
+.conWrapA .leftArea { width: 648px; float: left; }
+.conWrapA .rightArea { width: 218px; float: left; }
+
+
+.dnBox { background: #faf7ed; padding: 20px 15px; margin-top: 50px; }
+.dnBox p { line-height: 100%; }
+.dnBox dl { overflow: hidden; margin-bottom: 15px; line-height: 100%; }
+.dnBox dl dt { float: left; margin-right: 6px; }
+.dnBox dl dd { float: left; }
+.dnBox dl.Open dd p { height: 15px; line-height: 100%; }
+.dnBox dl.Open dd p.first { margin-bottom: 6px; }
+.dnBox dl.Open dd p span { vertical-align: top; color: #555; font-size: 12px; }
+
+.height{height:36px}
+
+.titAst { margin-bottom: 30px; }
+.dnBoxA { padding: 0 0 40px 0; }
+.dnBoxA p { line-height: 100%; }
+.dnBoxA dl { overflow: hidden; line-height: 100%; }
+.dnBoxA dl dt { float: left; margin-right: 10px; }
+.dnBoxA dl dd { float: left; padding-right: 10px; background: url('../../images/ko/mem/dining/dnBar.gif') right 0 no-repeat; margin-right: 11px; }
+.dnBoxA dl dd.last { background: none; }
+.dnBoxA dl dd.last img { display: inline-block; }
+.dnBoxA dl dd.last .etcTx { margin-left: 11px; }
+
+/* 팔선새로 */
+
+.mgt0 { margin-top: 0 !important; }
+.mgb48 { margin-bottom: 48px !important; }
+.mgb10 { margin-bottom: 10px !important; }
+.dnImgTxt { margin-top: 20px !important; }
+.topTitle { margin-bottom: 20px; }
+.titAType { margin-top: 20px; line-height: 100%; }
+.titBType { margin-top: 50px; line-height: 100% }
+.mgb40 { margin-bottom: 40px; }
+.mgt40 { margin-top: 40px; }
+
+.downMenu { overflow: hidden; margin-top: 10px; }
+.downMenu li { width: 163px; float: left; }
+.downMenu li.firsta { float: left; margin: 0 4px 4px 0;}
+.downMenu li.firstb { float: left; margin: 0 4px 0 0;}
+.downMenu li.lasta { float: left; margin: 0 0 4px 0;}
+.downMenu li.lastb { float: left; margin: 0 0 0 0;}
+.ctnDining img { vertical-align: top; }
+.downMenuA { margin-top: 10px; }
+
+.dnSeasonSpecial { width: 100%; margin-top: 10px; }
+.dnSeasonSpecial .packagePic { width: 330px; height: 185px; position: relative; margin-top: 8px;}
+.dnSeasonSpecial .packagePic.first{ margin-top: 0px;}
+.dnSeasonSpecial .packagePic .picArea { width: 330px; height: 185px; display:block; }
+.dnSeasonSpecial .packagePic p { position: absolute; bottom: 0; z-index: 10; padding: 12px 0 0 0; vertical-align: top; height: 44px; line-height: 17px;  width: 100%; color: #fff; text-align: center; }
+.dnSeasonSpecial .packagePic .bgOvr { width: 100%; position: absolute; bottom: 0; z-index: 1; height: 60px; background-color: #000; filter:alpha(opacity=70); opacity: 0.7; -moz-opacity:0.5;  }
+
+
+
+
+/* 더 파크뷰 */
+.adParkview .tbPic { margin-top: 191px; }
+.adParkview h6.titCType { margin-top: 40px; }
+.adParkview .roomPrice { margin-top: 20px; }
+.adParkview .goodIntroduce { margin-top: 40px; overflow: hidden; }
+.adParkview .goodIntroduce .leftPic { float: left; width: 210px; margin-right: 20px; }
+.adParkview .goodIntroduce .rightTxt { float: left; }
+.adParkview .goodIntroduce .rightTxt h6 { margin-bottom: 14px; }
+
+
+
+/* 패스트리 뷰티크 */
+.dnPicWrap { overflow: hidden; width: 100%; }
+.dnPicWrap .leftImg { float: left; width: 278px; margin-right: 19px; }
+.dnPicWrap .rightImg { float: left; width: 567px; }
+
+.dnBkPastryTabWrap { width: 100%; overflow: hidden; position: relative; padding-top: 37px; margin-top: 40px; }
+.dnBkPastryTabWrap .dnBkPastryTab { float: left; width: 100%; }
+.dnBkPastryTabWrap .dnBkPastryTab h3 { position: absolute; top: 1px; }
+.dnBkPastryTabWrap .bkp1 h3 { left: 0; }
+.dnBkPastryTabWrap .bkp2 h3 { left: 131px; }
+.dnBkPastryTabWrap .bkp3 h3 { left: 253px; }
+.dnBkPastryTabWrap .bkp4 h3 { left: 343px; }
+.dnBkPastryTabWrap .bkp5 h3 { left: 463px; }
+.dnBkPastryTabWrap .bkp6 h3 { display:none; overflow:hidden; left: 551px; }
+.dnBkPastryTabWrap .bkp7 h3 { left: 551px; }
+.dnBkPastryTabWrap .dnBkPastryTabCon { border: 1px solid #e2d5c5; padding: 22px 20px 24px 20px; }
+.dnBkPastryTabWrap .dnBkPastryTabCon .topCon { margin: 0; }
+.dnBkPastryTabWrap .dnBkPastryTabCon .topCon ul { overflow: hidden; }
+.dnBkPastryTabWrap .dnBkPastryTabCon .topCon ul li { float: left; width: 397px; float: left; position: relative; }
+.dnBkPastryTabWrap .dnBkPastryTabCon .topCon ul li.first { margin-right: 30px; }
+.dnBkPastryTabWrap .dnBkPastryTabCon .topCon ul li .pic { display: block; }
+.dnBkPastryTabWrap .dnBkPastryTabCon .topCon ul li .hotAbs { position: absolute; top: 0; left: 0; }
+.dnBkPastryTabWrap .dnBkPastryTabCon .topCon ul li .txtArea { position: relative; margin-top: 10px; }
+.dnBkPastryTabWrap .dnBkPastryTabCon .topCon ul li .txtArea .Pstprice { color: #757575; margin-bottom: 10px; }
+.dnBkPastryTabWrap .dnBkPastryTabCon .topCon ul li .txtArea .introTxt { color: #444; }
+.dnBkPastryTabWrap .dnBkPastryTabCon .topCon ul li .txtArea .Pstprice span { color: #7c6347; font-size: 14px; }
+.dnBkPastryTabWrap .dnBkPastryTabCon .topCon ul li .txtArea .btnSet { position: absolute; top: 0; right: 0; }
+.dnBkPastryTabWrap .dnBkPastryTabCon .topCon ul li .txtArea h6 { margin-bottom: 15px; padding-top: 8px; line-height: 100%; font-size: 16px; color: #555; font-weight: bold; }
+
+.dnBkPastryTabWrap .dnBkPastryTabCon .btCon { margin-top: 50px; }
+.dnBkPastryTabWrap .dnBkPastryTabCon .btCon ul { overflow: hidden; }
+.dnBkPastryTabWrap .dnBkPastryTabCon .btCon ul li { float: left; margin-right: 25px; width: 258px; float: left; padding-bottom: 30px; min-height: 400px; }
+.dnBkPastryTabWrap .dnBkPastryTabCon .btCon ul li.last { margin-right: 0 !important; }
+.dnBkPastryTabWrap .dnBkPastryTabCon .btCon ul li.pdb0 { padding-bottom: 0 !important; }
+.dnBkPastryTabWrap .dnBkPastryTabCon .btCon ul li .pic { display: block; }
+
+
+.dnBkPastryTabWrap .dnBkPastryTabCon .btCon ul li .txtArea { position: relative; margin-top: 10px; }
+.dnBkPastryTabWrap .dnBkPastryTabCon .btCon ul li .txtArea .Pstprice { color: #757575; margin-bottom: 10px; font-weight: bold; }
+.dnBkPastryTabWrap .dnBkPastryTabCon .btCon ul li .txtArea .Pstprice p { color: #757575; font-weight: bold; }
+.dnBkPastryTabWrap .dnBkPastryTabCon .btCon ul li .txtArea .introTxt { color: #444; word-break: break-all; }
+.dnBkPastryTabWrap .dnBkPastryTabCon .btCon ul li .txtArea .Pstprice span { color: #7c6347; font-size: 14px; }
+
+
+.dnBkPastryTabWrap .dnBkPastryTabCon .btCon ul li .txtArea .btnSet { position: absolute; top: 0; right: 0; }
+.dnBkPastryTabWrap .dnBkPastryTabCon .btCon ul li .txtArea h6 { margin-bottom: 10px; padding-top: 8px; line-height: 100%; font-size: 16px; color: #555; font-weight: bold; }
+
+
+.txtStyleA { color: #7e4f15; font-family: dotum; text-align: right; margin-top: 10px; }
+.policyBox { overflow: hidden; border: 1px solid #eaeaea; background: #fbfbfb; padding: 19px 29px; margin-top: 10px; }
+.policyBox dl { float: left; width: 280px; overflow: hidden; }
+.policyBox dl dt { float: left; width: 65px; font-weight: bold; color: #666; }
+.policyBox dl dd { float: left; width: 215px; color: #666; }
+
+.policyBox dl.last { width: 520px; }
+.policyBox dl.last dt { float: left; width: 65px; font-weight: bold; }
+.policyBox dl.last dd { float: left; width: 455px; }
+
+/* 식음 인덱스 */
+.dnListWrap { width: 100%; margin-top: 50px; border-bottom: 1px solid #e8e4de; }
+.dnListWrap ul { width: 100%; overflow: hidden; padding-bottom: 50px; }
+.dnListWrap ul li { margin-right: 15px; float: left; line-height: 100%; width:205px; }
+.dnListWrap ul.newMg li { margin-right: 20px; float: left; width:274px;}
+.dnListWrap ul li h3 { margin-bottom: 10px; }
+.dnListWrap ul li .dnPic { width:205px; margin-top: 20px; }
+.dnListWrap ul li a { display: inline-block; }
+.dnListWrap ul li a.mgt17  { margin-top: 17px; }
+.dnListWrap ul li.last  { margin-right: 0; }
+
+.dnListWrap2 { width: 100%; margin-top: 50px; border-bottom: 1px solid #e8e4de; }
+.dnListWrap2 ul { width: 100%; overflow: hidden; padding-bottom: 50px; }
+.dnListWrap2 ul li { margin-right: 15px; float: left; line-height: 100%; width:274px; }
+.dnListWrap2 ul.newMg li { margin-right: 20px; float: left; }
+.dnListWrap2 ul li h3 { margin-bottom: 10px; }
+.dnListWrap2 ul li .dnPic { width:274px; margin-top: 20px; }
+.dnListWrap2 ul li a { display: inline-block; }
+.dnListWrap2 ul li a.mgt17  { margin-top: 17px; }
+.dnListWrap2 ul li.last  { margin-right: 0; }
+
+.dnSpecialEvent { margin-top: 30px; }
+.dnSpecialEvent h3 { margin-bottom: 10px; }
+.dnSpecialEvent ul { width: 100%; overflow: hidden; padding-bottom: 50px; }
+.dnSpecialEvent ul li { width: 274px; margin-right: 20px; float: left; line-height: 100%; }
+.dnSpecialEvent ul li a.pic { display: inline-block; margin-bottom: 5px; }
+.dnSpecialEvent ul li a.pic img { display: inline-block; }
+.dnSpecialEvent ul li a.txtSt  { color: #856f56; font-size: 15px; font-weight: bold; text-decoration: underline; line-height: 21px; }
+.dnSpecialEvent ul li.last  { margin-right: 0; }
+
+
+/*인덱스 이벤트*/
+.ctnDining .icoARI{ width:74px; background:url(../../images/ko/mem/specialoffers/eventIcoAriake.gif) no-repeat; }
+.ctnDining .icoPAL{width:75px; background:url(../../images/ko/mem/specialoffers/eventIcoPalsun.gif) no-repeat; }
+.ctnDining .icoFRC{width:102px;  background:url(../../images/ko/mem/specialoffers/eventIcoFrench.gif) no-repeat;}
+.ctnDining .icoKRN{width:77px;  background:url(../../images/ko/mem/specialoffers/eventIcoKorean.gif) no-repeat;}
+.ctnDining .icoLIB{width:101px;  background:url(../../images/ko/mem/specialoffers/eventIcoLibrary.gif) no-repeat;}
+.ctnDining .icoPSBQ{width:125px;  background:url(../../images/ko/mem/specialoffers/eventIcoPastry.gif) no-repeat; }
+.ctnDining .icoPAR{width:113px;  background:url(../../images/ko/mem/specialoffers/eventIcoParkview.gif) no-repeat; }
+.ctnDining .icoSTORY{width:68px;  background:url(../../images/ko/mem/specialoffers/eventIcoSyory.gif) no-repeat; }
+
+.ctnDining .dnSpecialEvent .photo{margin:0 0 14px 0; position:relative;}
+.ctnDining .dnSpecialEvent .photo .img{ vertical-align:middle;}
+.ctnDining .dnSpecialEvent .ico{position:absolute; left:0px; bottom:0; top:127px; }
+.ctnDining .dnSpecialEvent .ico{height:27px; display:inline-block; line-height:100px; overflow:hidden; vertical-align:middle;}
+
+
+.ctnSpOffer.ctnEvent {}
+

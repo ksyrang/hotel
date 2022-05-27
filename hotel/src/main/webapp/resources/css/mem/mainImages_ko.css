@@ -1,0 +1,223 @@
+.head .header .logo{ width:260px; margin:0 auto;}
+.head .header .logo a{ display:block;  height:78px; background:url(../../images/ko/main/logo.gif); text-indent:-9999%; overflow:hidden; }
+
+
+
+/*높이 한줄 추가 시작*/
+.head .header .topNavi{ position:absolute; right:0px; bottom:15px;}
+/*높이 한줄 추가 끝*/
+.head .header .topNavi .list{}
+.head .header .topNavi .list li{ float:left; margin:0 0 0 2px;}
+.head .header .topNavi .list li a{ display:block; height:20px; display:block; font-size:9px; background:url(../../images/ko/mem/main/topNavi.gif) no-repeat; text-indent:-9999px; overflow:hidden;}
+.head .header .topNavi .list li.login a{ width:57px; background-position:-117px 0px}
+.head .header .topNavi .list li.join a{ width:54px; background-position:-174px 0px}
+.head .header .topNavi .list li.charge a{ width:180px;background-position:-228px 0px}
+.head .header .topNavi .list li.logout a{ width:66px; background-position:-154px -37px}
+.head .header .topNavi .list li.mypage a{ width:63px; background-position:-221px -37px}
+.head .header .topNavi .list li.membership a{ width:80px; background-position:-257px 0px}
+/*20150622 logout start*/
+.head .header .topNavi .list li.point { min-width:60px; width: auto; font-size: 12px; line-height: 23px; text-align: center; font-weight: bold; color: #444;}
+
+.head .header .topNavi .list li.memberBox {padding: 0px; margin: 0px; position: relative; top: 3px;}
+.head .header .topNavi .list li.memberBox img {}
+
+.head .header .topNavi .list li.UserName { min-width:100px; width: auto; font-size: 12px; line-height: 23px; text-align: right; color: #685845; margin-right: 10px;}
+
+.head .header .topNavi .list:before, .head .header .topNavi .list:after {
+	display: table;
+	content: "";
+}
+.head .header .topNavi .list:after {
+	clear: both;
+}
+/*20150622 logout end*/
+
+/*20150619 리워즈,호텔,예약 버튼 시작*/
+.head .header .moumBtn{position:absolute; right:125px; top:22px; height:22px;}
+.head .header .moumBtn span{float: left; padding-left: 5px;}
+
+
+/*find a hotel box*/
+.findBox {display: block; min-width:200px; margin-top: 10px; background: url(../../images/ko/main/findWayIcon.png) no-repeat top center; padding-top: 6px; position: absolute; top:40px; right:60px;}
+/*rgba(255,255,255,0.5); border-radius: 1px; */
+.findBox .list {border: 5px solid #3c3c3c; background-color:#fff }
+.findBox .list li {border-bottom: 1px solid #b2a995; }
+.findBox .list li:last-child {border-bottom: none;}
+.findBox .list li a {display:block; color: #444; line-height: 30px; padding-left: 25px; padding-right: 10px; background: url(../../images/ko/main/findIcon.gif) no-repeat 13px 13px; }
+/*.findBox .list li a:first-child:hover {border:solid 1px; border-radius:5px 5px 0px;}
+.findBox .list li a:last-child:hover {border-bottom-right-radius: 5px; border-bottom-left-radius: 5px;}*/
+.findBox .list li a:hover {color: #736049; background:#faf2e1 url(../../images/ko/main/findIcon.gif) no-repeat 13px 13px;  }
+
+.findBox .list li.theShilla {font-weight: bold; background: #efefef; border-bottom: 1px solid #d5d5d5;}
+.findBox .list li.theShilla a:hover {color:#101010; background:#dbdbdb url(../../images/ko/main/findIcon.gif) no-repeat 13px 13px;}
+
+/*20150619 리워즈,호텔,예약 버튼 끝*/
+
+.mainImg {height: 623px; min-width: 1200px; width: auto; position: relative; }
+.mainImg .scrBtn {z-index: 2; position: absolute; bottom: 0px;display: block; background: rgba(0, 0, 0, 0.5); width: 100%; height: 100px;}
+.mainImg .scrBtn .scrBox {width: 1200px; height: 50px; margin: 0 auto; padding-top: 30px; vertical-align: middle;}
+.mainImg .scrBtn .scrBox ul {position: absolute; top: 0px; width: 1200px;}
+.mainImg .scrBtn .scrBox li {float: left; }
+.mainImg .scrBtn .scrBox li a span {display: block; text-indent:-9999%; overflow:hidden;}
+.mainImg .scrBtn .scrBox li a {opacity: 0.5; filter: alpha(opacity=50); /* For IE8 and earlier */ padding: 0 48px 0 48px;}
+.mainImg .scrBtn .scrBox li a:hover, .mainImg .scrBtn .scrBox li a.on {opacity: 1.0; filter: alpha(opacity=100); /* For IE8 and earlier */}
+.mainImg .scrBtn .scrBox li a.seoul {background: url(../../images/ko/hub/main/seoulLogo_btn.png) no-repeat center 25px; display: block; width: 170px; height: 100px;}
+.mainImg .scrBtn .scrBox li a.jeju {background: url(../../images/ko/hub/main/jejuLogo_btn.png) no-repeat center 25px; display: block; width: 170px; height: 100px;}
+.mainImg .scrBtn .scrBox li a.stay {background: url(../../images/ko/hub/main/stayLogo_btn.png) no-repeat center 25px; display: block; width: 200px; height: 100px;}
+.mainImg .scrBtn .scrBox li a.rewards {background: url(../../images/ko/hub/main/rewardsLogo_btn.png) no-repeat center 25px; display: block; width: 270px; height: 100px;}
+
+
+
+.mainImg .scrBtn .scrBox li a:hover.seoul {background: url(../../images/ko/hub/main/seoulLogo_btn.png) no-repeat center 25px; display: block; width: 170px; height: 100px;}
+.mainImg .scrBtn .scrBox li a:hover.jeju {background: url(../../images/ko/hub/main/jejuLogo_btn.png) no-repeat center 25px; display: block; width: 170px; height: 100px;}
+.mainImg .scrBtn .scrBox li a:hover.stay {background: url(../../images/ko/hub/main/stayLogo_btn.png) no-repeat center 25px; display: block; width: 200px; height: 100px;}
+.mainImg .scrBtn .scrBox li a:hover.rewards {background: url(../../images/ko/hub/main/rewardsLogo_btn.png) no-repeat center 25px; display: block; width: 270px; height: 100px;}
+
+
+
+
+.mainImg .scrBtn .scrBox:before, .mainImg .scrBtn .scrBox:after {
+	display: table;
+	content: "";
+}
+
+.mainImg .scrBtn .scrBox:after {
+	clear: both;
+}
+
+
+.mainImg .scrBtn .scrBox .ralBox {position: relative; width: 1200px;}
+.mainImg .scrBtn .scrBox .ralBox a {opacity: 0.5; filter: alpha(opacity=50); /* For IE8 and earlier */}
+.mainImg .scrBtn .scrBox .ralBox a:hover {opacity: 1.0; filter: alpha(opacity=100); /* For IE8 and earlier */}
+.mainImg .scrBtn .scrBox .ralBox a.leftBtn {background: url(../../images/ko/hub/main/leftBtn.png) no-repeat; position: absolute; left: -50px; display: block; width: 23px; height: 37px;}
+.mainImg .scrBtn .scrBox .ralBox a.leftBtn span {display: block; text-indent:-9999%; overflow:hidden;}
+
+.mainImg .scrBtn .scrBox .ralBox a.rightBtn {background: url(../../images/ko/hub/main/rightBtn.png) no-repeat; position: absolute; right: -50px; display: block; width: 23px; height: 37px;}
+.mainImg .scrBtn .scrBox .ralBox a.rightBtn span {display: block; text-indent:-9999%; overflow:hidden;}
+
+
+
+.mainImg .ctnMain {z-index: 1; min-width: 1200px; width: auto;  background: url(../../images/ko/hub/main/pImgD.jpg) no-repeat top center; background-size: auto; height: 623px; display: block;}
+
+.mainImg .seoulMain {z-index: 1; background: url(../../images/ko/hub/main/pImgA.jpg) no-repeat top center; background-size: auto; height: 623px; display: block;}
+.mainImg .seoulMain .sizeBox {width: 1200px; margin: 0 auto;}
+.mainImg .seoulMain .sizeBox .menuBox {width: 290px; height: 356px; background: rgba(0, 0, 0, 0.5); position: relative; top: 40px; padding: 45px 40px 40px 40px;}
+.mainImg .seoulMain .sizeBox .menuBox a.closeBtn {display: block; width: 19px; height: 19px; background: url(../../images/ko/hub/main/closeBtn.png) no-repeat; position: absolute; top: 10px; right: 10px;}
+.mainImg .seoulMain .sizeBox .menuBox a.closeBtn span {display: block; text-indent:-9999%; overflow:hidden;}
+.mainImg .seoulMain .sizeBox .menuBox .headText {margin-bottom: 42px;}
+.mainImg .seoulMain .sizeBox .menuBox .headText a {display: block; width:100%; height: 73px; background: url(../../images/ko/hub/main/seoulText.png) no-repeat -50px -50px;}
+.mainImg .seoulMain .sizeBox .menuBox .headText a span {display: block; text-indent:-9999%; overflow:hidden;}
+.mainImg .seoulMain .sizeBox .menuBox li {display: block; border-bottom: 1px solid; border-color: rgba(255, 255, 255, 0.3) ; height:49px; }
+.mainImg .seoulMain .sizeBox .menuBox li:last-child {border-bottom: none; }
+.mainImg .seoulMain .sizeBox .menuBox li a span {display: block; text-indent:-9999%; overflow:hidden;}
+.mainImg .seoulMain .sizeBox .menuBox li a.menu01 {background: url(../../images/ko/hub/main/seoulText.png) no-repeat -50px -161px; display: block; height: 49px; }
+.mainImg .seoulMain .sizeBox .menuBox li a.menu02 {background: url(../../images/ko/hub/main/seoulText.png) no-repeat -50px -211px; display: block; height: 49px; }
+.mainImg .seoulMain .sizeBox .menuBox li a.menu03 {background: url(../../images/ko/hub/main//seoulText.png) no-repeat -50px -261px; display: block; height: 49px; }
+.mainImg .seoulMain .sizeBox .menuBox li a.menu04 {background: url(../../images/ko/hub/main/seoulText.png) no-repeat -50px -310px; display: block; height: 49px; }
+.mainImg .seoulMain .sizeBox .menuBox li a.menu05 {background: url(../../images/ko/hub/main/seoulText.png) no-repeat -50px -361px; display: block; height: 49px; }
+
+
+.mainImg .jejuMain {z-index: 1; background: url(../../images/ko/hub/main/pImgC.jpg) no-repeat top center; background-size: auto; height: 623px; display: block;}
+.mainImg .jejuMain .sizeBox {width: 1200px; margin: 0 auto;}
+.mainImg .jejuMain .sizeBox .menuBox {width: 290px; height: 356px; background: rgba(0, 0, 0, 0.5); position: relative; top: 40px; padding: 45px 40px 40px 40px;}
+.mainImg .jejuMain .sizeBox .menuBox a.closeBtn {display: block; width: 19px; height: 19px; background: url(../../images/ko/hub/main/closeBtn.png) no-repeat; position: absolute; top: 10px; right: 10px;}
+.mainImg .jejuMain .sizeBox .menuBox a.closeBtn span {display: block; text-indent:-9999%; overflow:hidden;}
+.mainImg .jejuMain .sizeBox .menuBox .headText {margin-bottom: 42px;}
+.mainImg .jejuMain .sizeBox .menuBox .headText a {display: block; width:100%; height: 73px; background: url(../../images/ko/hub/main/jejuText.png) no-repeat -50px -50px;}
+.mainImg .jejuMain .sizeBox .menuBox .headText a span {display: block; text-indent:-9999%; overflow:hidden;}
+.mainImg .jejuMain .sizeBox .menuBox li {display: block; border-bottom: 1px solid; border-color: rgba(255, 255, 255, 0.3) ; height:49px; }
+.mainImg .jejuMain .sizeBox .menuBox li:last-child {border-bottom: none; }
+.mainImg .jejuMain .sizeBox .menuBox li a span {display: block; text-indent:-9999%; overflow:hidden;}
+.mainImg .jejuMain .sizeBox .menuBox li a.menu01 {background: url(../../images/ko/hub/main/jejuText.png) no-repeat -50px -161px; display: block; height: 49px; }
+.mainImg .jejuMain .sizeBox .menuBox li a.menu02 {background: url(../../images/ko/hub/main/jejuText.png) no-repeat -50px -211px; display: block; height: 49px; }
+.mainImg .jejuMain .sizeBox .menuBox li a.menu03 {background: url(../../images/ko/hub/main/jejuText.png) no-repeat -50px -261px; display: block; height: 49px; }
+.mainImg .jejuMain .sizeBox .menuBox li a.menu04 {background: url(../../images/ko/hub/main/jejuText.png) no-repeat -50px -310px; display: block; height: 49px; }
+.mainImg .jejuMain .sizeBox .menuBox li a.menu05 {background: url(../../images/ko/hub/main/jejuText.png) no-repeat -50px -361px; display: block; height: 49px; }
+
+
+
+.mainImg .stayMain {z-index: 1; background: url(../../images/ko/hub/main/pImgE.jpg) no-repeat top center; background-size: auto; height: 623px; display: block;}
+.mainImg .stayMain .sizeBox {width: 1200px; margin: 0 auto;}
+.mainImg .stayMain .sizeBox .menuBox {width: 290px; height: 356px; background: rgba(0, 0, 0, 0.5); position: relative; top: 40px; padding: 45px 40px 40px 40px;}
+.mainImg .stayMain .sizeBox .menuBox a.closeBtn {display: block; width: 19px; height: 19px; background: url(../../images/ko/hub/main/closeBtn.png) no-repeat; position: absolute; top: 10px; right: 10px;}
+.mainImg .stayMain .sizeBox .menuBox a.closeBtn span {display: block; text-indent:-9999%; overflow:hidden;}
+.mainImg .stayMain .sizeBox .menuBox .headText {margin-bottom: 42px;}
+.mainImg .stayMain .sizeBox .menuBox .headText a {display: block; width:100%; height: 73px; background: url(../../images/ko/hub/main/stayText.png) no-repeat -50px -50px;}
+.mainImg .stayMain .sizeBox .menuBox .headText a span {display: block; text-indent:-9999%; overflow:hidden;}
+.mainImg .stayMain .sizeBox .menuBox li {display: block; border-bottom: 1px solid; border-color: rgba(255, 255, 255, 0.3) ; height:49px; }
+.mainImg .stayMain .sizeBox .menuBox li:last-child {border-bottom: none; }
+.mainImg .stayMain .sizeBox .menuBox li a span {display: block; text-indent:-9999%; overflow:hidden;}
+.mainImg .stayMain .sizeBox .menuBox li a.menu01 {background: url(../../images/ko/hub/main/stayText.png) no-repeat -50px -161px; display: block; height: 49px; }
+.mainImg .stayMain .sizeBox .menuBox li a.menu02 {background: url(../../images/ko/hub/main/stayText.png) no-repeat -50px -211px; display: block; height: 49px; }
+.mainImg .stayMain .sizeBox .menuBox li a.menu03 {background: url(../../images/ko/hub/main/stayText.png) no-repeat -50px -261px; display: block; height: 49px; }
+.mainImg .stayMain .sizeBox .menuBox li a.menu04 {background: url(../../images/ko/hub/main/stayText.png) no-repeat -50px -310px; display: block; height: 49px; }
+.mainImg .stayMain .sizeBox .menuBox li a.menu05 {background: url(../../images/ko/hub/main/stayText.png) no-repeat -50px -361px; display: block; height: 49px; }
+
+
+
+
+.mainImg .rewardsMain {z-index: 1; background: url(../../images/ko/hub/main/pImgF.jpg) no-repeat top left; background-size: auto; height: 623px; display: block;}
+.mainImg .rewardsMain .sizeBox {width: 1200px; margin: 0 auto;}
+.mainImg .rewardsMain .sizeBox .menuBox {width: 290px; height: 356px; background: rgba(0, 0, 0, 0.5); position: relative; top: 40px; padding: 45px 40px 40px 40px;}
+.mainImg .rewardsMain .sizeBox .menuBox a.closeBtn {display: block; width: 19px; height: 19px; background: url(../../images/ko/hub/main/closeBtn.png) no-repeat; position: absolute; top: 10px; right: 10px;}
+.mainImg .rewardsMain .sizeBox .menuBox a.closeBtn span {display: block; text-indent:-9999%; overflow:hidden;}
+.mainImg .rewardsMain .sizeBox .menuBox .headText {margin-bottom: 42px;}
+.mainImg .rewardsMain .sizeBox .menuBox .headText a {display: block; width:100%; height: 73px; background: url(../../images/ko/hub/main/rewardsText.png) no-repeat -50px -50px;}
+.mainImg .rewardsMain .sizeBox .menuBox .headText a span {display: block; text-indent:-9999%; overflow:hidden;}
+.mainImg .rewardsMain .sizeBox .menuBox li {display: block; border-bottom: 1px solid; border-color: rgba(255, 255, 255, 0.3) ; height:49px; }
+.mainImg .rewardsMain .sizeBox .menuBox li:last-child {border-bottom: none; }
+.mainImg .rewardsMain .sizeBox .menuBox li a span {display: block; text-indent:-9999%; overflow:hidden;}
+.mainImg .rewardsMain .sizeBox .menuBox li a.menu01 {background: url(../../images/ko/hub/main/rewardsText.png) no-repeat -50px -161px; display: block; height: 49px; }
+.mainImg .rewardsMain .sizeBox .menuBox li a.menu02 {background: url(../../images/ko/hub/main/rewardsText.png) no-repeat -50px -211px; display: block; height: 49px; }
+.mainImg .rewardsMain .sizeBox .menuBox li a.menu03 {background: url(../../images/ko/hub/main/rewardsText.png) no-repeat -50px -261px; display: block; height: 49px; }
+.mainImg .rewardsMain .sizeBox .menuBox li a.menu04 {background: url(../../images/ko/hub/main/rewardsText.png) no-repeat -50px -310px; display: block; height: 49px; }
+.mainImg .rewardsMain .sizeBox .menuBox li a.menu05 {background: url(../../images/ko/hub/main/rewardsText.png) no-repeat -50px -361px; display: block; height: 49px; }
+
+
+
+
+
+
+
+
+/*예약 박스*/
+.ReservationBox {display: block;}
+.ReservationBox .conBox {z-index: 3; width: 1200px; margin: 0 auto; position: relative;}
+.ReservationBox .conBox .dlBox {width: 260px; height: 175px; top: 0; right: 0; background: #b3a28f; position: absolute; padding: 14px 23px 12px 23px;}
+.ReservationBox .conBox .dlBox .title {display: block; width: 100px; height: 16px; background: url(../../images/ko/hub/main/reservation_text.gif) no-repeat -23px -14px; margin-bottom: 16px; text-indent:-9999%; overflow:hidden;}
+.ReservationBox .conBox .dlBox .reservationSet {display: block; width:260px;}
+.ReservationBox .conBox .dlBox .reservationSet .inputHotel {width:260px;padding-bottom: 3px;}
+.ReservationBox .conBox .dlBox .reservationSet .inputHotel label {display: inline-block; position: relative; top: 2px; width:42px; height:21px; background: url(../../images/ko/hub/main/reservation_text.gif) no-repeat -23px -42px; text-indent:-9999%; overflow:hidden;}
+.ReservationBox div.selecter {background: #fff !important;}
+
+
+
+.ReservationBox .conBox .dlBox .reservationSet .inputCheck {width:260px;padding-bottom: 3px;}
+.ReservationBox .conBox .dlBox .reservationSet .inputCheck label {display: inline-block; position: relative; top: 6px; width:42px; height:21px; background: url(../../images/ko/hub/main/reservation_text.gif) no-repeat -23px -78px; text-indent:-9999%; overflow:hidden;}
+.ReservationBox .conBox .dlBox .reservationSet .inputCheck .check {width:83px; }
+.ReservationBox .conBox .dlBox .reservationSet .inputCheck a.btnCalendar {width: 16px; height: 16px; background: url(../../images/ko/hub/main/btnCalendar.gif) no-repeat 0px 0px}
+
+
+
+
+.ReservationBox .conBox .dlBox .reservationSet .people {}
+.ReservationBox .conBox .dlBox .reservationSet .people li {float: left;}
+.ReservationBox .conBox .dlBox .reservationSet .people:before, .ReservationBox .conBox .dlBox .reservationSet .people:after {
+	display: table;
+	content: "";
+}
+.ReservationBox .conBox .dlBox .reservationSet .people:after {
+	clear: both;
+}
+
+.ReservationBox .conBox .dlBox .reservationSet .people li.adult label {display: inline-block; position: relative; top: 2px; width:42px; height:21px; background: url(../../images/ko/hub/main/reservation_text.gif) no-repeat -23px -107px; text-indent:-9999%; overflow:hidden;}
+.ReservationBox .conBox .dlBox .reservationSet .people li.kid label {display: inline-block; position: relative; top: 2px; left: 5px; width:42px; height:21px; background: url(../../images/ko/hub/main/reservation_text.gif) no-repeat -157px -107px; text-indent:-9999%; overflow:hidden;}
+
+
+.ReservationBox .conBox .dlBox .reservationSet .searchBtn {display: block;width:260px; height: 32px;}
+.ReservationBox .conBox .dlBox .reservationSet .searchBtn input.btnSearch {display: block;width:260px; height: 32px; background: url(../../images/ko/hub/main/reservationBtn.gif) no-repeat 0px 0px; text-indent:-9999%; overflow:hidden; border: none; margin-top: 11px;}
+
+
+
+/*유니폼 쫌*/
+div.selector select option {background: #fff !important; }

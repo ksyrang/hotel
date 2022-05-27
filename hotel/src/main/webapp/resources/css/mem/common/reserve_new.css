@@ -1,0 +1,665 @@
+/* CSS Document */
+/*ë ˆì €ë² ì´ì…˜ owsì—°ê³„ë¡œ ì¸í•œ htmlë³€ê²½*/
+dd.item5 div.selector { width:251px!important; margin-bottom:6px;}
+dd.item5 div.selector span {width: 216px!important;}
+input.W152{width:152px!important;}
+input.W156{width:235px!important; padding-left:10px;}
+input.W113{width:113px!important;}
+.TL{text-align:left!important; padding-left:42px!important;}
+.TR{text-align:right!important; padding-right:42px!important;}
+.mgb20{margin-bottom:20px!important;}
+.mgt30{margin-top:30px;}
+.P9{margin:9px 0px;}
+
+input[placeholder], [placeholder], *[placeholder] {color:#1b1b1b;}
+
+.selForm label.date4 { background: url("../../../images/ko/mem/reservation/reserveStepDateBoxATh1.gif") no-repeat scroll 0 -124px transparent; display: inline-block; height: 27px;line-height: 100px; overflow: hidden; vertical-align: middle;    width: 190px;}
+.ctnReserve .dateBoxC .hBox .selRoom {padding: 34px 0 0;}
+.btnS_1Confirm{background: url("../../../images/ko/mem/reservation/reserveStep1BtnConfirm.gif") no-repeat scroll 0 0 transparent; display: inline-block; height: 27px; line-height: 100px;overflow: hidden; vertical-align: middle;  width: 81px;}
+.hrOptRoom { border-top:none; padding: 0 0 20px;}
+
+/*ì˜ˆì•½*/
+
+/*20150611 start*/
+.reserveStep li.t1 span {background-position: 0 0; width: 240px!important;}
+.reserveStep li.t2 span {background-position: -241px 0px!important; width: 240px!important;}
+.reserveStep li.t3 span {background-position: -481px 0px!important; width: 240px!important;}
+.reserveStep li.t4 span {background-position: -721px 0px!important;width: 240px!important;}
+.reserveStep li.t5 span {background-position: -961px 0px!important;width: 240px!important;}
+.reserveStep {height: 76px; margin: 0 0 0px; width: 1202px!important;}
+/*20150611 end*/
+
+.reserveInfoBox .rBox4 .rTit .tit span { background: url("../../../images/ko/mem/reservation/reserveStepTit1depth.gif") no-repeat scroll 0 -61px transparent; display: inline-block; height: 18px; line-height: 100px; overflow: hidden; vertical-align: middle;}
+.reserveInfoBox .rBox4 .list li .tit { display: inline-block; float: left; height: 18px; width: 190px; font-size:11px;}
+.reserveInfoBox .rBox4 .list li.opt1 .tit { background-position: 0 0;}
+.reserveInfoBox .rBox4 .list li.opt2 .tit { background-position: 0 -20px;}
+.reserveInfoBox .rBox4 .list li.opt3 .tit { background-position: 0 -40px;}
+.reserveInfoBox .rBox4 .list li {overflow: hidden;}
+.reserveInfoBox .rBox4 .list li .num {float: right;}
+.reserveInfoBox .rBox4 div {height: 13px; margin: 0 0 4px;overflow: hidden;}
+.reserveInfoBox .rBox4 div .Room { background: url("../../../images/ko/mem/reservation/reserveStepTitRoom.gif") ;display: inline-block;float: left;    height: 18px;    line-height: 100px;    overflow: hidden;   width: 50px;}
+.reserveInfoBox .rBox4 div .Room1 {  background-position: 0 0;}
+.reserveInfoBox .rBox4 div .Room2 {  background-position: 0 -20px;}
+.reserveInfoBox .rBox4 ul.list{padding-bottom:10px;}
+
+.ctnReserve .miceBoxTop .Mice{width:585px;}
+/*20150611 start*/
+.ctnReserve .dateBoxC .selRoomOpt{ float:left; width:700px!important; padding:7px 0 7px 20px;}
+/*20150611 end*/
+.ctnReserve .dateBoxC .selRoomOpt dl {float: left; margin: 0 73px 0 0!important; width: 160px!important;}
+.ctnReserve .tableTypeC thead tr {border: 1px solid #ECEAE1;}
+.ctnReserve .tableTypeC thead th{border:none;}
+.ctnReserve .tableTypeC{ margin:20px 0 0 0; width: 100%; border-collapse:collapse; table-layout:fixed;}
+.ctnReserve .tableTypeC thead th {height: 11px; background: #faf9f7; vertical-align: top; line-height: 100%; }
+.ctnReserve .tableTypeC thead th.bdL { border-left: 1px solid #eceae1; }
+.ctnReserve .tableTypeC thead th img { vertical-align: top; line-height: 100%; }
+.ctnReserve .tableTypeC tbody th img { vertical-align: top; line-height: 100%; }
+.ctnReserve .tableTypeC tbody th { border-right: 1px solid #eceae1; border-left: 1px solid #eceae1; border-bottom: 1px solid #eceae1; height: 43px; padding: 0 0 0 15px; text-align: left; background: #faf9f7; line-height: 100%; vertical-align: middle; }
+.ctnReserve .tableTypeC tbody td.left { text-align:left !important; padding:7px 0 6px 10px !important; }
+.ctnReserve .tableTypeC.tableAccSatellite thead th {background: none repeat scroll 0 0 #Fff; padding: 8px 0;color:#444444;}
+.ctnReserve .tableTypeC.tableAccSatellite tbody td {background: none repeat scroll 0 0 #FDF8EF; border:none; height: 23px;text-align: center;}
+.ctnReserve .tableTypeC.tableAccSatellite tbody td.TaL{padding-left:20px!important; text-align: left!important;}
+.ctnReserve .tableTypeC.tableAccSatellite .line{border-bottom:1px solid #E6DCCA}
+.ctnReserve .tableTypeC.tableAccSatellite .bold{font-weight: bold; color:#7e4f15}
+.ctnReserve .tableTypeC.tableAccSatellite{ margin:0; }
+.ctnReserve .tableTypeC.tableAccSatellite tr .bdrN { border-right: 0 !important; }
+.ctnReserve .tableTypeC.tableAccSatellite tbody th { height: auto; border-left: none; background: #f8f8f8; font-weight: bold; text-align: center; padding: 8px 0; color: #888; }
+.ctnReserve .roomList .rBox .rCtn .info .priceBox .priceScroll.new { max-height: 376px !important;}
+
+.ctnReserve1 .reserveInfoBox .rBox {padding: 8px 0; background: none!important;}
+.ctnReserve1 .reserveInfo {background:#f4eee3; border: 1px solid #ede5d8; padding: 19px 21px 50px;}
+.ctnReserve1 .rsvJejuGuide ul { overflow: hidden;float: left}
+.ctnReserve1 .rsvJejuGuide ul li {width: 410px; float:none}
+/* 2018.10.18 í‚¤ì›Œë“œ ê²€ìƒ‰ì‹œ ìƒí’ˆì´ ì—†ì„ ê²½ìš° ì•ˆë‚´ */
+.NomOList{padding: 20px 0; text-align: left;}
+.ctnReserve2 .rsvJejuGuide ul { overflow: hidden;float: left}
+.ctnReserve2 .rsvJejuGuide ul li {width: 410px; float:none}
+
+/*20150616 ì•„ëž˜ë‚´ìš© ì£¼ì„ê±¸ì–´ ì—†ì• ì£¼ì‹œêµ¬ìš”. ê·¸ ì•„ëž˜êº¼ ë³µì‚¬í•´ ì£¼ì„¸ìš”*/
+/*.ctnReserve1 .rsvJejuGuide {height:70px;}*/
+.rsvJejuGuide:before, .rsvJejuGuide:after {
+	display: table;
+	content:"";
+}
+.rsvJejuGuide:after {
+	clear: both;
+}
+
+/*20150616 ì•„ëž˜ë‚´ìš© ì£¼ì„ê±¸ì–´ ì—†ì• ì£¼ì‹œêµ¬ìš”. ê·¸ ì•„ëž˜êº¼ ë³µì‚¬í•´ ì£¼ì„¸ìš” ~ë*/
+
+.ctnReserve1 .dateBoxA .item5 label.date5  ,
+.ctnReserve1 .dateBoxA .item5 label.date6  { left: -9999%;  position: absolute;}
+.ctnReserve1 .dateBoxA .item5 .date5 {background:url("../../../images/ko/mem/reservation/BgText.png") no-repeat  2px -30px; margin: 0;    width: 208px; background-color: #fff;}
+.ctnReserve1 .dateBoxA .item5 .date6 {background: url("../../../images/ko/mem/reservation/BgText.png") no-repeat  2px 0px; margin: 0;    width: 208px;background-color: #fff;}
+.ctnReserve1 .dateBoxA .item5 .focus{background-image:none}
+.ctnReserve1 .dateBoxA .item6 .focus{background-image:none}
+
+.ctnReserve2 td .btnSelBed { background: url("../../../images/ko/mem/reservation/reserveStep2BtnSelBed.gif") no-repeat scroll 0 0 transparent;display: inline-block; height: 27px; line-height: 100px; overflow: hidden; position: absolute; right: 8px; vertical-align: middle; width: 59px; margin-top:-14px }
+.ctnReserve2 td a:hover,
+.ctnReserve2 td a:focus{background: url("../../../images/ko/mem/reservation/reserveStep2BtnSelBed_over.gif") no-repeat scroll 0 0 transparent;}
+
+.ctnReserve2Opt .hrOptRoom p{ color: #7E4F15;}
+.ctnReserve2Opt .btnList .btnOptSel { background: url("../../../images/ko/mem/reservation/reserveStep2DayBtnPrev.gif") no-repeat scroll 0 0 transparent;display: inline-block; height: 41px; line-height: 100px; overflow: hidden;vertical-align: middle; width: 142px;}
+.ctnReserve2Opt .headTit .tit {background: url("../../../images/ko/mem/reservation/reserveStep2Tit1Opt.gif") no-repeat 0px 23px;    line-height: 100px;    overflow: hidden;    width: 400px;}
+.ctnReserve2Opt .roomOptWrap .bbsAddonTable th, .roomOptWrap .bbsAddonTable td {-moz-border-bottom-colors: none; -moz-border-left-colors: none; -moz-border-right-colors: none; -moz-border-top-colors: none; border-color: -moz-use-text-color -moz-use-text-color #ECEAE1; border-image: none; border-style: none none solid; border-width: medium medium 1px; color: #1B1B1B; height: 38px; line-height: 16px; text-align: center;padding:0px;}
+
+.ctnReserve3 .roomUserWrap .tableReserveInfo1 label.firstNameEn {margin:0px!important;}
+.ctnReserve3 .roomUserWrap textarea{width:834px;}
+.ctnReserve3 .reserveStep3Box .msg {  display: block;    padding: 6px 0 0;}
+.ctnReserve3 .reserveInfoBox .rBox3 {   background: url("../../../images/ko/mem/reservation/reserveInfoBoxDotLine.gif") repeat-x scroll 0 bottom transparent; padding: 8px 0;}
+.ctnReserve3 .reserveInfoBox .rBox4 {   background: none!important;}
+.ctnReserve3 .phoneNum div.selector { width:48px!important; font-size: 12px;}
+.ctnReserve3 .phoneNum div.selector span { color: #1B1B1B; width:22px!important;}
+.ctnReserve3 .phoneNum input.text{width:40px;}
+/** 20180827 ì¶”ê°€ **/
+.popLayerResvconfirm{width:952px; margin-left:-476px;}
+.popLayerResvconfirm .popCtn .tableTypeA{margin-top:0;}
+.popLayerResvconfirm .popCtn .bbsPriceTable{float: none; width: 100%; border-top:#cdcbbe solid 1px; border-collapse: collapse; margin-top: 20px; table-layout: fixed;}
+.popLayerResvconfirm .popCtn .bbsPriceTable td{border-bottom: #eceae1 solid 1px; padding: 11px 10px 10px; line-height: 16px; color: #1b1b1b; text-align: center;}
+.popLayerResvconfirm .popCtn .priceWrap .priceBox1{border: #f4eee3 solid 1px; border-bottom: #e2d5c5 solid 1px;padding: 15px 40px; text-align: right; background: #fdf8ef; color:#7e4f15}
+.popLayerResvconfirm .popCtn .priceWrap .priceBox1 .dd{margin-left:110px;}
+.popLayerResvconfirm .popCtn .priceWrap .priceBox1 li:first-child{margin-bottom: 10px;}
+.popLayerResvconfirm .popCtn .priceWrap .priceTotal{background: #a1886f; color:#fdf8ef; padding: 15px 40px; text-align: right; font-weight:bold;}
+.popLayerResvconfirm .popCtn .priceWrap .priceTotal .name{font-size: 14px;}
+.popLayerResvconfirm .popCtn .priceWrap .priceTotal .amt{font-size: 20px; font-family: Verdana; margin-left:40px;}
+.popLayerResvconfirm .popCtn .priceWrap .priceTotal .unit{font-size: 14px;}
+.popLayerResvconfirm .popHead .tit{width:73px; height: 20px; display: block; padding: 8px 0 0 28px; overflow: hidden; text-indent: -9999%; background: url(../../../images/ko/mem/reservation/resvconfirmPopTitle.gif) 28px 5px no-repeat;}
+.popLayerResvconfirm .popCtn .priceView{margin-top:5px; line-height:140%;}
+.popLayerResvconfirm .popCtn .btnListMem{padding-top:20px;}
+.popLayerResvconfirm .popCtn .btnListMem span{display:none;}
+.popLayerResvconfirm .popCtn .btnSelStep3{width: 85px; height: 27px; display: inline-block; background: url(../../../images/ko/mem/reservation/resv_before.gif) no-repeat;}
+.popLayerResvconfirm .popCtn .btnReserveSend{width: 85px; height: 27px; display: inline-block; background: url(../../../images/ko/mem/reservation/resv_send.gif) no-repeat;}
+/** 20180831 ì¶”ê°€ **/
+.rsvOption .pointArea .myPoint{font-size:16px; font-weight:bold; color:#1b1b1b;}
+.rsvOption .pointArea strong{font-size:14px;}
+.completeMsg .completPoint span{display: inline-block; height:18px; overflow: hidden; margin-left: 1px;}
+.completeMsg .completPoint .myPoint{font-size:15px; font-weight:bold; padding: 3px 0 0 0; vertical-align: top; display: inline-block;}
+
+.ctnReserve4 .topGuideMsg { height:109px; }
+.ctnReserve4 .topGuideMsg .msg2 {color: #856F56;text-align: center; width: 100%;}
+.ctnReserve4 .rsvDetInfoBox{border-top: 3px solid #A1886F; margin:0;}
+.ctnReserve4 .rsvDetInfoBox .item .dt{ height:12px; width:85px; vertical-align:middle; display:inline-block; }
+.ctnReserve4 .rsvDetInfoBox .item .dd{ height:27px; line-height:29px; vertical-align:middle; display:inline-block;}
+.ctnReserve4 .rsvDetInfoBox .item1 .dt{width:85px;background: none!important;line-height: 0px!important;}
+.ctnReserve4 .rsvDetInfoBox .item2 .dt {width:85x;background: none!important;line-height: 0px!important;}
+.ctnReserve4 .rsvDetInfoBox .item3 .dt {width:85px;background: none!important;line-height: 0px!important;}
+.ctnReserve4 .rsvDetInfoBox .item4 .dt {width:85px;background: none!important;line-height: 0px!important;}
+.ctnReserve4 .rsvDetInfoBox .item {background: none;}
+.ctnReserve4 .rsvDetInfoBox .item .dd {display: inline-block; height: 27px; line-height: 29px; vertical-align: middle;width: 520px;}
+.ctnReserve4 .rsvDetInfoBox .item .dd2 {display: inline-block; height: 27px; line-height: 29px; vertical-align: middle;width: 100px;}
+.ctnReserve4 .rsvDetInfoBox .item .dd3 {display: inline-block; height: 27px; line-height: 29px; vertical-align: middle;width: 270px;}
+.ctnReserve4 .rsvDetInfoBox_B{background-color:#faf9f4;}
+.ctnReserve4 .rsvDetInfoBox_B .Booking1 {line-height: 25px;}
+.ctnReserve4 .rsvDetInfoBox_B .Booking .dt { display: inline-block;  vertical-align: middle; color:#666666; font-weight: bold;}
+.ctnReserve4 .rsvDetInfoBox_B .Booking1 .dt {width: 54px;}
+.ctnReserve4 .rsvDetInfoBox_B .Booking2 .dt {width: 73px;}
+.ctnReserve4 .rsvDetInfoBox_B .Booking  { margin: 0 0 0 30px;  padding: 0 30px 0 0; width: 352px;background: none;}
+.ctnReserve4 .rsvDetInfoBox_B .Booking .dd {display: inline-block; vertical-align: middle;width: 232px;}
+.ctnReserve4 .rsvDetInfoBox_B .Booking .dd2 {display: inline-block;vertical-align: middle;width: 301px;}
+.ctnReserve4 .rsvDetInfoBox_B .box {padding: 10px 20px 10px 0;}
+.ctnReserve4 .roomComWrap { border: 1px solid #E3D6C7;    margin-bottom: 20px;}
+.ctnReserve4 .roomComWrap .headTit .tit {display: inline-block; height: 27px;vertical-align: middle;width: 70px;background: none!important;line-height: 0px;}
+.ctnReserve4 .roomComWrap .headTit .bookingNumber{font-size:15px;color:#666666; font-weight: bold;}
+
+.ctnReserve4 .roomPriceWrap .bbsPriceTable th,
+.ctnReserve4 .roomPriceWrap .bbsPriceTable td{ border:none; border-bottom:#eceae1 solid 1px; padding:5px 10px 5px 10px; text-align:center; line-height:16px; color:#1b1b1b}
+.ctnReserve4 .roomPriceWrap .bbsPriceTable tr.last td{ border-bottom:none;}
+.ctnReserve4 .roomPriceWrap .bbsPriceTable th{ border-bottom:#cdcbbe solid 1px; font-weight:bold; color:#666666; padding:13px 10px 13px; line-height:17px;  background:#faf9f4; white-space:nowrap;}
+.ctnReserve4 .roomPriceWrap .bbsPriceTable td.price {font-weight:bold; padding-right: 30px;  text-align: right;}
+.ctnReserve4 .roomPriceWrap .msg { color: #7E4F15;margin-top:5px;}
+.ctnReserve4 .roomComWrap .btnPrint {background: url("../../../images/ko/mem/reservation/reserveStep4BtnPrint.gif") no-repeat scroll 0 0 transparent;display: inline-block;height: 27px; line-height: 100px; margin: -4px 0 0;overflow: hidden; vertical-align: middle; width: 63px;}
+.ctnReserve4 .info { display: block;   float: right; margin-top:9px;}
+
+.roomPriceWrap .priceWrap .priceBox .list li.rprice .dt{font-size:14px; font-weight:bold; min-width:150px; margin:0 20px 0 0; color:#584a3b; text-align:right; display:inline-block; vertical-align:middle;}
+.roomPriceWrap .priceWrap .priceBox .list li.rprice .dd{font-size:14px; font-weight:bold; min-width:110px; color:#584a3b; text-align:right; display:inline-block; vertical-align:middle;}
+.roomList .rBox .rCtn .info .priceBox .detailBox .dHead .icoPack {background: url("../../../images/ko/mem/reservation/reserveStep2IcoRoom.gif") no-repeat scroll 0 0 transparent;}
+.roomList .rBox .rCtn .info .priceBox {background: none repeat scroll 0 0 #FDF8EF; border: 1px solid #856f56; display: none; min-height: 120px; position: absolute;right: 1px; top: 122px;width: 403px;}/*2013.10.28ìˆ˜ì •*/
+.roomOptWrap .rOptHeadTop p{float: left;  height: 13px; width: 209px;}
+.roomOptWrap .rOptHeadTop { margin: 0 0 20px; border:none;}
+.roomOptWrap .hRoomOptTit1{ border-bottom: 3px solid #A78F77;    height: 30px; }
+.roomOptWrap .hRoomOptTit1 .msg{ background-image:url(../../../images/ko/mem/reservation/reserveStep2DayMsg1.gif);float:right;width:285px; margin-top:-41px;}
+.roomOptWrap .hRoomOptTit1 .tit2 { background: url("../../../images/ko/mem/reservation/reserveStep2DayTit1.gif") no-repeat scroll 0 0 transparent;   line-height: 100px; height:35px; overflow: hidden;}
+.roomOptWrap .rmRsvWrap {}
+.roomOptWrap .bbsPriceTable tfoot .fTr{ border-top:2px solid #A1886F; }
+.roomCateBox .hRoomTit1 .tit { background: url("../../../images/ko/mem/reservation/reserveStep2TitRoom.gif") no-repeat scroll 0 0 transparent;}
+.rprice_1 .dt{font-size:14px!important; font-weight:bold!important;}
+.rprice_1 .dd{font-size:14px!important; font-weight:bold!important;}
+
+
+.titst01 {background: url("../../../images/ko/mem/reservation/reserveStepOptRoom.gif") no-repeat scroll 0 0 transparent;    height: 22px;    line-height: 100px;    overflow: hidden;  margin-top: 35px; }
+.titst02 {background: url("../../../images/ko/mem/reservation/reserveStepOptRoom.gif") no-repeat scroll 0 -18px transparent; height: 22px;    line-height: 100px;    overflow: hidden;  margin-top: 20px;}
+.titst03 {background: url("../../../images/ko/mem/reservation/reserveStepOptRoom.gif") no-repeat scroll 0 -36px transparent; height: 22px;    line-height: 100px;    overflow: hidden;  margin-top: 20px;}
+
+.popLayerAccSatellite_seoul .askTxt { width: 91px; height:11px; display:block; margin-top: 10px; overflow: hidden; text-indent:-9999%; background:url('../../../../images/ko/mem/accommodation/AccSatelliteTxt.gif') 0 0 no-repeat; }
+
+
+.gnbReservationBox .dateBoxA .selForm .itemMice .btnMice{width:180px!important;}
+.gnbReservationBox .dateBoxA .selForm .itemMice input.miceCode1,
+.gnbReservationBox .dateBoxA .selForm .itemMice input.miceCode2{width: 90px; height:20px;padding:0px!important;}
+.gnbReservationBox .dateBoxA .selForm .itemMice input.miceCode{width:90px!important;}
+.gnbReservationBox div.selector { height: 23px; line-height: 23px;  width: 123px !important; background-color:#f1ebd6;}
+.gnbReservationBox div.selector span {width:103px!important;}
+.gnbReservationBox .groupCodeBox .itemMice label,
+.gnbReservationBox .dateBoxA .itemMice label { left: -9999%;  position: absolute;}
+.gnbReservationBox .groupCodeBox .miceCode1,.gnbReservationBox .groupCodeBox .miceCode,
+.gnbReservationBox .dateBoxA .miceCode1,.gnbReservationBox .dateBoxA .miceCode {background: url("../../../images/en/mem/reservation/BgText.png") no-repeat  2px -32px;  margin: 0;    width: 208px;background-color: #F1EBD6}
+.gnbReservationBox .groupCodeBox .miceCode2,
+.gnbReservationBox .dateBoxA .miceCode2 {background: url("../../../images/en/mem/reservation/BgText.png") no-repeat  2px 0px; margin: 0;    width: 208px; background-color: #F1EBD6}
+.gnbReservationBox .groupCodeBox .focus,
+.gnbReservationBox .dateBoxA .focus{ background-image:none; background-color: #F1EBD6}
+.gnbReservationBox .groupCodeBox .miceCode1 .focus,
+.gnbReservationBox .groupCodeBox .miceCode .focus,
+.gnbReservationBox .dateBoxA .miceCode1 .focus,
+.gnbReservationBox .dateBoxA .miceCode .focus{ background-image:none; background-color: #F1EBD6}
+
+/* 2017-02-13 */
+.rsvBody{background: url("../../../images/ko/mem/reservation/bg_rsv.gif") repeat-x 0 0 transparent;}
+.rsvBody_bt{background: url("../../../images/ko/mem/reservation/bg_rsv_1.gif") repeat-x 0 0 transparent;}
+.rsvStepWrap{}
+.rsvStepWrap .rsvStepList{margin-bottom: 35px;}
+.rsvStepWrap .rsvStepList.step1{background: url("../../../images/ko/mem/reservation/resvStep1On.gif") no-repeat 0 0;}
+.rsvStepWrap .rsvStepList.step2{background: url("../../../images/ko/mem/reservation/resvStep2On.gif") no-repeat 0 0;}
+.rsvStepWrap .rsvStepList.step3{background: url("../../../images/ko/mem/reservation/resvStep3On.gif") no-repeat 0 0;}
+.rsvStepWrap .rsvStepList.step4{background: url("../../../images/ko/mem/reservation/resvStep4On.gif") no-repeat 0 0;}
+.rsvStepWrap .rsvStepList ul{overflow: hidden;}
+.rsvStepWrap .rsvStepList li {float: left;width: 300px;height: 48px;}
+.rsvStepWrap .rsvStepList li a{display: block;}
+.rsvStepWrap .rsvStepList span{display: block;width: 300px;height: 48px;text-indent: -9999px;}
+.rsvCalendarWrap {position: relative;padding: 30px 25px;background: #f1f1f1;font-family: verdana, Dotum,'ë‹ì›€', sans-serif; margin-bottom: 10px;} /*2018.10.23 ìˆ˜ì •*/
+.rsvCalendarWrap:after{content: '';display: block;clear: both;}
+.rsvCalendarWrap .rsvCalendarInner {float: left;margin-right: 45px;}
+.rsvCalendarWrap .rsvCalendarInner:first-child{margin-right: 60px;}
+.rsvCalendarInner .txt1 {display: block;text-align: center;font-size:13px;color: #727272;margin-bottom: 17px;}
+.rsvCalendarInner .txt2 {display: block;text-align: right;font-size:13px;color: #727272;margin-bottom: 8px;}
+.rsvCalendarInner .txt3 {display: block;text-align: center;font-size:13px;color: #727272;margin-bottom: 12px;}
+.rsvCalendarInner .selectTile {display: block;font-size: 14px;color:#727272;margin-bottom: 15px;}
+.rsvDateWrap{overflow: hidden;cursor: pointer;}
+.rsvDateWrap .leftSide{float: left;width: 45px;font-size:13px;color: #555555;margin: 4px 0 0 0}
+.rsvDateWrap .leftSide span {display: block;text-align: left;}
+.rsvDateWrap .leftSide .rsvYear {}
+.rsvDateWrap .leftSide .rsvMonth {font-size: 20px;}
+.rsvDateWrap .RightSide {float: right;}
+.rsvDateWrap .rsvDay, .rsvDateWrap .rsvPerson {font-size: 40px;line-height: 1.13;color: #333;}
+.rsvDateWrap .btnControl {display: block;width: 34px;height: 51px;margin-top: 1px;}
+.rsvDateWrap .btnControl .btnControlBg {display: block;height: 26px;overflow: hidden;line-height: 999;background: url("../../../images/ko/mem/reservation/btnControl.gif") no-repeat scroll 0 bottom transparent;margin-top: -1px;cursor:pointer;}
+.btnControl .btnControlBg.perAdd {background-position: 0 0;}
+.btnControl .btnControlBg.perDel {background-position: 0 -25px;}
+.btnControl .btnControlBg.perAddNon {background-position: 0 -50px;}
+.btnControl .btnControlBg.perNon {background-position: 0 bottom;}
+.rsvCalendarWrap .btnSrch{position: absolute;top: 60px;right: 30px;background:url(../../../images/ko/mem/reservation/reserveStepSrch.gif) no-repeat; width:160px; height:50px; display:inline-block; line-height:999; overflow:hidden; }
+
+.rsvTab {}
+.rsvTab {overflow: hidden;}
+.rsvTab li {float: left;border-top: 1px solid #cdcbbe;border-right: 1px solid #cdcbbe;}
+.rsvTab li:first-child {border-left: 1px solid #cdcbbe;}
+.rsvTab li:first-child.on {margin-left: 0;}
+.rsvTab li a {display: block;height: 38px;line-height: 38px;padding: 0 65px;min-width: 70px;font-size:14px;color: #727272;border-bottom: none;text-align: center;}
+.rsvTab li.on {border: 1px solid #a1886f;border-bottom: 1px solid #fff;margin-left: -1px;}
+.rsvTab li.on a{font-weight: 700;color: #6e583e;}
+
+.rsvTabContent.first {padding-top: 30px;border-top: 1px solid #a1886f;margin-top: -1px;}
+.rsvTabContent.choiceBlock {margin-top: 40px;}
+.rsvTabContent.choiceBlock+.rsvDetailWrap>ul>li.last {border-bottom: none;}
+.rsvTabContent .rsvTile {overflow: hidden;height: 40px;line-height: 40px;padding-left: 20px;color:#444;font-size: 14px;font-weight: 700;background: #f4eee3;margin-bottom: 30px;}
+.rsvTabContent .rsvTile .desc {float: right;font-size:12px;color: #727272;font-weight: 100;padding-right: 20px;}
+
+.rsvDetailWrap {color:#444;}
+.rsvPriceWrap:after {content: '';display: block;margin-bottom: 50px;}
+.rsvDetailWrap>ul>li {border-bottom: 1px solid #eceae1;margin-bottom: 30px;padding-bottom: 30px;float: left;width: 100%;}
+.rsvDetailWrap>ul>li.last{border-bottom: 1px solid #cdcbbe;}
+.rsvDetail {}
+.rsvDetail .rsvDetailInner {float: left; margin-bottom:20px;}
+.rsvDetail .rsvDetailInner .thumb {margin-right: 30px;}
+.rsvDetail .rsvDetailInner .thumb, .rsvDetail .rsvDetailInner .thumbDesc {float: left;color:#444;}
+.thumbDesc dl{width:560px;}/*180906 dlê°’ ì¶”ê°€_181107 dlê°’ ìˆ˜ì •*/
+
+/*17.07.14*/
+.rsvDetail .rsvDetailInner .thumbDesc li{ background:url(../../../images/ko/common/icoDotB.gif) no-repeat 0 5px;padding-left:10px;}
+
+.thumbDesc dt {font-size: 18px;font-weight: 700;color: #343434;margin-bottom: 13px;}
+.thumbDesc dt span.pointColorB {color: #856f56;}
+.thumbDesc dt span.pointColorDb {color: #7e4f15;}
+.thumbDesc dd {font-size: 13px; line-height: 23px;/* background: url("../../../images/ko/mem/reservation/icoDot.gif") no-repeat 0 50% transparent;padding-left: 10px; */}
+.thumbDesc .roomTit{font-weight: 700;color: #444;width: 77px;display: inline-block;}
+.rsvPriceWrap {float: right;}
+.rsvPrice {display: inline-block;vertical-align: top;text-align: right;margin-right: 30px;}
+.rsvPrice .price{font-size: 16px;font-family: verdana, sans-serif;color: #3a3125;margin-bottom: 45px;}
+.rsvPrice .price .secretPrice_login{display: block; margin-right:12px; margin-bottom:3px; color:#9c5718; font-size:15px; font-weight:bold;}
+.rsvPrice .secretPrice{margin-bottom: 35px; height: 50px; overflow: hidden; font-family: dotum; width:250px;}
+.secretPrice span {display: block;}
+.secretPrice .title{background: url(../../../images/mbl/ko/common/main/m_secretPrice.png) no-repeat 0px 4px; background-size: 13px; font-size: 18px; height:25px; line-height:25px; font-weight:bold; color: #3a3125; float:right; padding-left: 22px;}
+.secretPrice .notice{font-size: 12px; float:right; color:#727272; margin-top:6px;}
+.rsvPrice .price .unit {font-family: Dotum,'ë‹ì›€',sans-serif;padding-right: 8px;font-weight: 700;}
+.rsvPrice .price .priceTot{font-size: 26px;letter-spacing: -0.05em;line-height: 1;}
+.rsvPrice .price .scheduleTxt {font-size: 13px;color: #727272;display: inline-block;margin-top: 3px;}
+.btnRsvInner{display: inline-block;vertical-align: middle;}
+.btnRsvInner .btnRsv {display: inline-block;width: 100px;height: 100px;;overflow: hidden;line-height: 999;background: url("../../../images/ko/mem/reservation/btnRsv.gif") no-repeat 0 0 transparent;}
+.btnRsvInner .btnRsv.on{background: url("../../../images/ko/mem/reservation/btnRsv.gif") no-repeat 0 -100px transparent;}
+
+
+.tab-menu {clear: both;margin-top: 20px;display: none;}
+.tab-menu.on{display: block;}
+.tab-menu .tab-list>li{border: 1px solid #cdcbbe;margin-top: -2px;}
+.tab-menu .tab-list>li.on{border: 1px solid #a1886f;margin-top: -1px;position: relative;z-index: 10}
+.tab-menu .tab-list>li.last .tab-content{border-bottom: none;}
+.tab-menu .tab-list>li>a {position: relative;display: block;background: #faf9f4;height: 70px;line-height: 70px;padding: 0 23px;font-size:14px;font-weight: 700;color:#343434;border-bottom: 1px solid #cdcbbe;}
+.tab-menu .tab-list>li>a:after {position: absolute;top: 25px;right: 20px;content: '';display: block;width: 31px;height: 16px;background: url("../../../images/ko/mem/reservation/btnRsvToggle.gif") no-repeat 0 bottom;}
+.tab-menu .tab-list>li>a.on:after  {background: url("../../../images/ko/mem/reservation/btnRsvToggle.gif") no-repeat 0 0;}
+.tab-menu .tab-list a span {color:#856f56;}
+.tab-menu .tab-list .tab-content li {overflow: hidden;}
+.tab-menu .tab-list .tab-content li:first-child{border-top:0;}
+.tab-menu .tab-list .tab-content.active{display: none;}
+.listTyleA {float: left;width: 960px;padding: 0 20px;border-right: 1px solid #eceae1;}
+.listTyleA li{padding: 20px 0 17px;font-size:14px;color: #444444;border-top: 1px solid #eceae1; height: 26px;}
+.listTyleA li.first{border-top: none;}
+.listTyleA .price{font-size: 16px;font-family: verdana, sans-serif;color: #343434;float: right;}
+.listTyleA .price em {font-size: 13px;font-family: Dotum,'ë‹ì›€',sans-serif}
+.btnSelInner {display: inline-block;vertical-align: middle;width: 197px;}
+.btnSelInner .btnSel {position: absolute;top: 50%;right: 50px;margin: -22px 0 0 0;display: block;vertical-align: middle;width: 100px;height: 44px;overflow: hidden;line-height: 999;background: url("../../../images/ko/mem/reservation/btnSel.gif") no-repeat 0 0 transparent;}
+
+.btnBenefit{display: inline-block;color:#7e4f15;background: url("../../../images/ko/mem/reservation/btnBenefit.gif") no-repeat right 0;padding-right: 25px;height: 15px;}
+
+/*17.07.14*/
+.btnBenefit span {display:block; margin-top:1px;}
+
+.btnQuestion{position: relative;display: inline-block;vertical-align: middle;width: 21px;height: 21px;margin-left: 6px;background: url("../../../images/ko/mem/reservation/icoQuestion.gif") no-repeat 0 0;cursor: pointer;z-index: 10}
+.btnQuestion .warnBalloonBox{position: absolute;bottom: 30px;left: -78px;display: inline-block;min-width:145px;color:#444;line-height: 24px;border: 1px solid #89745d;background: #fff;padding: 13px 15px;text-align: left;display: none;line-height: 21px;}
+.btnQuestion .warnBalloonBox.on{display: block;}
+.btnQuestion .warnBalloonBox:after{position: absolute;bottom: -8px;left: 83px;content: '';display: inline-block;width: 9px;height: 8px;background:url(../../../images/ko/hub/main/icoBalloonArrow.gif) no-repeat;}
+
+
+.rsvStepWrapInner {overflow: hidden;width: 1200px;}
+.rsvStepWrapInner .rsvOption{float: left;width: 890px;}
+.rsvStepWrapInner .rsvInfo{float: right;width: 220px;}
+.rsvTit{background: #f4eee3;margin-bottom: 20px;color:#444;height: 40px;line-height: 39px;padding-left: 20px;font-size: 14px;font-weight: 700;}
+.rsvTit .desc {font-size: 13px;font-weight: 100;padding-right: 20px;color: #727272;float: right;}
+.optionList {margin: 0  20px;color: #444;}
+.optionList li {overflow: hidden;}
+.optionList li+li{padding: 18px 0;border-top: 1px solid #eceae1; margin-bottom: -8px;}
+.optionList .first{margin-bottom: 8px;}
+.optionList .middle{margin-bottom: -8px;}
+.optionList .noLine {border-top: none;padding-top: 5px;margin-bottom: 8px;}
+.optTxt {float: left;font-size:14px;letter-spacing: 0.05em;}
+.optTxt label{display: inline-block;margin-left: 15px;}
+.optTxt .checkbox {/* margin:-2px 20px 0; */}
+.optTxt .optTxtAdd {display: block;font-size: 13px;padding: 2px 15px;}
+
+.selectNum{float: right; padding-right: 50px;}
+.selectNum > div{width: 120%; height: 30px; line-height: 20px;}
+.selectNum > div + div{width: 30%; border: none; text-align: right;}
+.selectNum > *{font-size: 14px; color: #666666;}
+.selectNum strong{display: inline-block; width: 48px; font-weight: normal;}
+.selectNum span{padding-left: 1%; font-size: 14px; color: #222222;}
+.selectNum .plus{margin-left: 5px;}
+.selectNum .plus a{display: block; width: 34px; height: 20px; text-indent: -9999px; background: url(../../../images/mbl/ko/common/main/plus_ico2.gif) no-repeat center; background-size: 17px;}
+.selectNum .minus.disabled{opacity: .4; filter: alpha(opacity=40);}
+.selectNum .minus a{display: block; width: 34px; height: 20px; text-indent: -9999px; background: url(../../../images/mbl/ko/common/main/minus_ico2.gif) no-repeat center; background-size: 17px;}
+
+.optSelectArea {float: right;}
+.optSelectArea .optPrice {font-size: 13px;color: #343434;margin-left: 20px;display: inline-block;min-width: 100px;vertical-align: middle;}
+.optSelectArea .optPrice em {font-size: 16px;font-family: verdana, sans-serif;display: inline-block;margin: 0 3px;}
+.rsvOptionDesc {padding: 20px;margin: 0 20px 20px;background: #f1f1f1;color: #727272;}
+.rsvOptionDesc li+li {margin-top: 12px;}
+.rsvOptionDesc li{word-break: keep-all; text-indent: -16px; padding-left: 16px; line-height:140%;}
+.addRequest {border: 1px solid #cdcbbe;}
+.addRequest.on .addTit{border-bottom: 1px solid #eceae1;}
+.addRequest .addTit{height: 38px;line-height: 38px;padding-left: 20px;font-size: 14px;font-weight: 700;color: #444;cursor: pointer;border-bottom: 1px solid transparent;}
+.addRequest .addTit .icoArrow{float: right;display: inline-block;width: 13px;height: 7px;overflow: hidden;line-height: 999;background: url("../../../images/ko/common/icoArrow.gif") no-repeat 0 0;margin: 16px 20px 15px 0;}
+.addRequest .reqContent {padding: 20px;display: none;}
+.addRequest .addDesc {color:#666;}
+.addRequest .addDesc li {background: url("../../../images/ko/common/icoDotS.gif") no-repeat 5px 7px; background-size: 2px; padding-left: 15px;}
+.addRequest .addDesc li+li {margin-top: 7px;}
+.addRequest .reqContent .col2>ul {overflow: hidden;}
+.addRequest .reqContent .col2>ul>li {float: left;width: 50%;}
+.addRequest .reqContent .col2 li li {line-height: 18px;}
+.addRequest .reqContent .col2 li li.first {background:none; padding-left:0;}
+.addRequest .addDesc.warn {height: 95px;overflow: auto;}
+.addRequest.mbReq{margin-bottom: 20px;}
+.addRequest .reqContent textarea{margin-bottom: 20px;color:#444;}
+.addRequest.on .reqContent {display: block;}
+.addRequest.on .addTit .icoArrow{background: url("../../../images/ko/common/icoArrow.gif") no-repeat 0 bottom;}
+.rewardsMem {margin-top: 30px;}
+.rewardsMem .btnRewardsMem{margin-top: 15px;}
+.rewardsMem {border: 5px solid #f1e3c4; padding: 22px 30px; line-height: 18px; text-align: center;}
+.rewardsMem p {color: #3a3125; font-size:14px; line-height:170%;}
+.rewardsMem p .rewardsMyPoint{font-size:15px; color:#000; font-family:verdana, sans-serif; margin: 0 3px;}
+.rewardsMem p .rewardsPoint{font-size:19px; color:#000; font-family:verdana, sans-serif; margin: 0 3px;}
+.rewardsMem p .notice{font-size:13px; color:#727272; display:block; margin-top:10px;}
+.rewardsMem .btnRewardsMem .btnRewardC{display: inline-block;margin-right: 15px;width: 126px;height: 27px;background: url("../../../images/ko/mem/reservation/btnRewards.gif") no-repeat 0 bottom;}
+.rewardsMem .btnRewardsMem .btnRewardC span, .rewardsMem .btnRewardsMem .btnRewardM span  {display: inline-block;height: 27px;overflow: hidden;line-height: 999;}
+.rewardsMem .btnRewardsMem .btnRewardM{display: inline-block;width: 126px;height: 27px;background: url("../../../images/ko/mem/reservation/btnRewardsMem.gif") no-repeat 0 bottom;}
+.btnListMem {padding-top: 30px;}
+.btnListMem span {float: right;}
+.btnSelStep1{display: inline-block;vertical-align: middle;width: 140px;height: 44px;background: url("../../../images/ko/mem/reservation/btnStep1.gif") no-repeat 0 0;}
+.btnSelStep2{display: inline-block;vertical-align: middle;width: 140px;height: 44px;background: url("../../../images/ko/mem/reservation/btnStep2.gif") no-repeat 0 0;}
+.btnStepNon{display: inline-block;vertical-align: middle;margin-right: 6px;width: 140px;height: 44px;background: url("../../../images/ko/mem/reservation/btnStepNon.gif") no-repeat 0 0;}
+.btnStepMem{display: inline-block;vertical-align: middle;width: 140px;height: 44px;background: url("../../../images/ko/mem/reservation/btnStepMem.gif") no-repeat 0 0;}
+.btnSelStep1 span, .btnSelStep2 span,.btnStepNon span,.btnStepMem span {display: inline-block;height: 27px;overflow: hidden;line-height: 999;}
+
+.rsvInfo {position: relative;border: 1px solid #a1886f;border-top: 5px solid #a1886f;padding: 30px 25px;}
+.rsvInfo .rsvInfoTit {font-size: 16px;color: #333;font-weight: 700;margin-bottom: 40px;}
+.rsvInfo .rsvInfoList .htlTxt {font-size: 16px;font-weight: 700;color: #343434}
+.rsvInfo .rsvInfoList {border-bottom: 1px dotted #b2b2b2;margin-bottom: 20px;padding-bottom: 15px;color: #856f56;font-size: 13px;}
+.rsvInfo .rsvInfoList.last {border-bottom: none;padding-bottom: 0;}
+.rsvInfo .rsvInfoList li {overflow: hidden;}
+.rsvInfo .rsvInfoList li+li{margin-top: 10px;}
+.rsvInfo .rsvInfoList span {float: right;color: #444;}
+.btnPackWarn{float: right;display:block;margin: 15px 0;width: 126px;height: 27px;background: url("../../../images/ko/mem/reservation/btnPackage.gif") no-repeat 0 0;} /*181022 display: inline-block ìˆ¨ê¹€ ì²˜ë¦¬ */
+.btnPackWarn span {display: inline-block;width: 126px;height: 27px;overflow: hidden;line-height: 999;}
+.rsvInfo .rsvSubTit {font-size: 14px;font-weight: 700;color: #444;margin-bottom: 15px;}
+.packagesList {font-size:13px;color:#444;border-bottom: 1px dotted #b2b2b2;}
+.packagesList{border-bottom: 1px dotted #b2b2b2;margin-bottom: 20px;padding-bottom: 15px;}
+.packagesList dt {margin-bottom: 8px;}
+.packagesList dd {margin-bottom: 25px;}
+.packagesList dd span.allPrice {float:right; font-weight:bold; margin:10px 0;}
+.packagesList dd ul {max-height:240px; overflow-y:auto; overflow-x:hidden;}
+.packagesList dd ul li span {float:right;}
+.packagesList dd ul li+li {margin-top:10px;}
+.packagesList dd.last {margin-bottom: 0;}
+.totalPrice{font-size: 13px;color: #343434;padding-top: 20px;border-top: 2px solid #a1886f;}
+.totalPrice .total{font-size: 14px;font-weight: 700;}
+.totalPrice .priceTxt{float: right;}
+.totalPrice .priceTxt em{font-family: verdana, sans-serif;font-size: 16px;font-weight: 700;display: inline-block;margin: 0 3px;}
+.icoRefresh {position: absolute;top: 30px;right: 20px;display: inline-block;height: 14px;background: url("../../../images/ko/common/icoRefresh.gif") no-repeat 0 0;padding-left: 25px;color:#856f56;}
+.customInfo{width: 848px;border: 1px solid #cdcbbe;padding: 20px;margin: -20px 0 20px;color:#444;overflow: hidden;}
+.customInfo li{float: left;width: 405px;height: 255px;padding-left: 20px;border-left: 1px solid #e1e0d8;margin-left: -1px;}
+.customInfo li:first-child{border-left: 0;margin-left: -1px;padding-left: 0;margin-right: 19px;}
+.customInfo .customInfoTit{font-size: 13px;font-weight: 700;margin-bottom: 15px;}
+.customInfo dl {overflow: hidden;}
+.customInfo dl dt{float: left;width: 100px;font-weight: 700;height: 40px;line-height: 40px;margin-bottom: 7px;}
+.customInfo dl dd{float: left;width: 305px;margin-bottom: 7px;}
+.customInfo dl dd:after{content:'';display: block;clear:both;}
+.customInfo .optionList{margin: 0;}
+.customInfo dd.cardList span {display: inline-block;margin: 0 2px;color:#c7c7c7;}
+.customInfo dd.cardList input {width: 40px;}
+.customInfoDesc {position: relative;color:#666;line-height: 22px;padding-left: 22px;}
+.customInfoDesc span {position: absolute;left: 0;}
+.customInfoDesc em {color: #cb5d5d;text-decoration: underline;}
+.noShow {padding: 20px;border: 5px solid #f1e3c4;margin-bottom: 20px;}
+.noShow .tit{font-size:14px; margin-bottom:5px;}
+.noShow p{line-height: 20px;color: #666;padding-left: 8px;}
+.noShow .noShowTit{font-size: 14px;font-weight: 700;color: #444;margin-bottom: 11px;}
+.policyAgreeTit{font-size: 14px;font-weight: 700;color: #444;margin-bottom: 11px;}
+.policyAgreeBox .clauseBox .scBox{border: 1px solid #ccc;background: #fff;}
+.policyAgreeBox .clauseBox .scBox p{color: #727272;line-height: 20px;}
+.checkAgreeBox {color: #444;margin-top: 10px;}
+.rsvComplete{position: relative;border: 10px solid #f1e3c4;margin-bottom: 30px;}
+.rsvComplete .rsvCompleteInner{border: 1px solid #e4d4b0;padding: 50px 55px;}
+.rsvComplete .completeMsg{padding-bottom: 40px;margin-bottom: 35px;border-bottom: 2px dotted #f1f1f1;}
+.completeMsg .completCustom{margin-bottom: 30px;}
+.completeMsg .completCustom em{font-size: 14px;color: #3a3a3a;font-weight: 700;margin-right: 10px;vertical-align: top;}
+.completeMsg .completCustom .completTxt1{display: inline-block;width: 124px;height: 15px;line-height: 50;overflow: hidden;background: url("../../../images/ko/mem/reservation/rsvCompleteTxt1.gif") no-repeat 0 0;}
+.completeMsg .completArticle{width: 283px;height: 28px;line-height: 50;overflow: hidden;background: url("../../../images/ko/mem/reservation/rsvCompleteTxt2.gif") no-repeat 0 0;margin-bottom: 30px;}
+.completeMsg .completChange{width: 283px;height: 28px;line-height: 50;overflow: hidden;background: url("../../../images/ko/mem/reservation/rsvCompleteTxt2_1.gif") no-repeat 0 0;margin-bottom: 30px;}
+.completeMsg .completTxt{width: 415px;height: 36px;line-height: 50;overflow: hidden;background: url("../../../images/ko/mem/reservation/rsvCompleteTxt3.gif") no-repeat 0 0;}
+.completeMsg .rsvNum{position: absolute;top: 158px;right: 70px;font-size: 14px;color: #856f56;font-weight: 700;}
+.completeMsg .rsvNum em{font-size: 34px;color: #444;display: inline-block;margin-left: 60px;font-family: verdana, sans-serif;font-weight: 100;}
+.btn-print{position: absolute;top: 50px;right: 70px;display: inline-block;width: 81px;height: 27px;line-height: 50;overflow: hidden;background: url("../../../images/ko/mem/reservation/btnRsvPrint.gif") no-repeat 0 0;}
+.rsvCompleteInfo {font-size: 14px;color:#856f56;font-weight: 100;overflow: hidden;}
+.rsvCompleteInfo li{float: left;width: 33.33%;font-weight: 700;}
+.rsvCompleteInfo em{color: #444;font-size:16px;font-weight: 700;display: inline-block;margin-left: 35px;letter-spacing: 0.03em;}
+.rsvCompleteList{position: relative;border: 1px solid #e5e5e5;border-bottom: 6px solid #a1886f;padding: 50px;font-size: 13px;color:#444;}
+.rsvCompleteList .rsvCompleteListInner:after{content:'';display: block;clear: both;}
+.rsvCompleteList .rsvCompleteListInner{min-height: 230px;background: url("../../../images/ko/mem/reservation/rsvLine.gif") repeat-y 50% 0;}
+.rsvCompleteList .rsvCompleteListInner>li{float: left; width: 295px;margin-left: 50px;padding-left: 50px;}
+.rsvCompleteList .rsvCompleteListInner>li:first-child{margin-left: 0;padding-left: 0;border-left: 0;}
+.infoHtl {font-size:14px;font-weight: 700;margin-bottom: 20px;}
+.infoHtl span{float: right;font-size: 16px;}
+.rsvCompleteListInner dl+dl{margin-top: 20px;}
+.infoDesc dt{font-size: 14px;font-weight: 700;margin-bottom: 20px;color: #343434}
+.infoDescList>li{background: url("../../../images/ko/common/icoDotS.gif") no-repeat 0 50%;color:#856f56;padding-left: 10px;}
+.infoDescList>li span{float: right;color: #444;}
+.infoDescList>li+li{margin-top: 15px;}
+.rsvCompleteTot{position: absolute;bottom: 50px;right: 50px;width: 255px;padding: 18px 20px;border-top: 1px solid #e3dacc;background: #f4eee3;font-size: 14px;color: #444;}
+.rsvCompleteTot strong{display: inline-block;vertical-align: middle;}
+.rsvCompleteTot .priceTotalSum{float: right;font-size: 14px;}
+.rsvCompleteTot .priceTotalSum em{font-size: 26px;color:#3a3125;font-family: verdana,sans-serif;display: inline-block;margin: -7px 2px 0 5px;vertical-align: middle;}
+.rsvCompleteTot .priceTotalSum .unitM{vertical-align: middle;}
+.rsvCompleteWarn{border: 1px solid #cdcbbe;background: #faf9f4;padding: 25px 40px;color: #727272;}
+.rsvCompleteWarn li+li{margin-bottom: 10px;}
+.rsvCompleteWarn li.first{color: #666;margin-bottom: 18px;}
+.rsvCompleteWarn li.last{margin-bottom: 0;}
+
+.guide{color: #727272 !important;}
+
+.rsvWrap{position: relative;}
+.rsvCalendarDate{position: absolute;top: 142px;left: 288px;width: 592px;padding: 25px 30px 45px;border: 1px solid #6e583e;background: #fff;display: none;z-index: 100;}
+.rsvCalendarDate.on{display: block;}
+
+.rsvWrap .ReservInfo{float:right; margin-bottom:10px;}
+.rsvWrap .ReservInfo1{position: absolute;top: 154px; right: -30px;}
+.rsvWrap .ReservInfo a{font-size:13px;position: relative;display: inline-block;color:#727272;margin-right:15px;padding-right: 16px;}
+.rsvWrap .ReservInfo1 a{font-size:13px;position: relative;display: inline-block;color:#727272;margin-right:15px;padding-right: 16px;}
+.rsvWrap .ReservInfo a:before{position: absolute;top: 3px;left: -17px;content:'';display: inline-block;width: 1px;height: 10px;background: #d2c4a5;}
+.rsvWrap .ReservInfo1 a:before{position: absolute;top: 3px;left: -17px;content:'';display: inline-block;width: 1px;height: 10px;background: #d2c4a5;}
+.rsvWrap .ReservInfo a:first-child:before{background: none;}
+.rsvWrap .ReservInfo1 a:first-child:before{background: none;}
+.rsvWrap .ReservInfo a:last-child{padding-right:0; margin-right:0;}
+/*2018.10.12 ì˜ˆì•½ìŠ¤í…1 í‚¤ì›Œë“œê²€ìƒ‰ ì¶”ê°€*/
+.rsvWrap .keyWord {border:1px solid #e3d6c6; margin-bottom:10px; position:relative;}
+.rsvWrap .keyWord>div{display: inline-block; width:80%; margin:15px 0 15px 25px; line-height:35px;}
+.rsvWrap .keyWord span{display: inline-block; color:#727272; padding-right:30px;}
+.rsvWrap .keyWord span:last-child{margin-right:0px; padding-left:40px; position:relative; margin-left:10px;}
+.rsvWrap .keyWord span:last-child:before{content:""; position:absolute; width:1px; height:20px; top:6px; left:0; background-color:#e3d6c6;}
+.rsvWrap .keyWord .keywordReset{padding-left:20px; background:url("../../../images/ko/common/icoRefresh.gif") no-repeat 0 0; background-size:12px; color:#856f56;}
+.rsvWrap .keyWord span label.keyOn{font-weight:bold; color:#101010;}
+.rsvWrap .keyWord .btnKeySrch{background:url(../../../images/ko/mem/reservation/reserveStepKeySrch.gif) no-repeat; width:160px; height:44px; display:inline-block; overflow:hidden; line-height: 999; position:absolute; right:28px; top:50%; margin-top: -22px;}
+.rsvWrap input[type="checkbox"] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip:rect(0,0,0,0);
+  border: 0
+}
+.rsvWrap input[type="checkbox"]+label{
+    display:inline-block;
+    position:relative;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.rsvWrap input[type="checkbox"]+label:before{
+    content: ' ';
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    line-height: 18px;
+    margin: -2px 8px 0 0;
+    text-align: center;
+    vertical-align: middle;
+    background: url("../../../images/ko/common/checkbox_off.gif") no-repeat;
+    background-position:0 0;
+}
+.rsvWrap input[type="checkbox"] + label:active:before,
+.rsvWrap input[type="checkbox"]:checked + label:active:before{
+  background: url("../../../images/ko/common/checkbox_on.gif") no-repeat;
+}
+.rsvWrap input[type="checkbox"]:checked + label:before{
+  background: url("../../../images/ko/common/checkbox_on.gif") no-repeat;
+}
+
+.promotionCalendar{overflow: hidden;border: 1px solid #ddd;padding: 40px 185px; margin:0 0 30px 0;}
+.promotionCalendar .calendarRsvBox{width: 824px;height: 320px;background:url(../../../images/ko/mem/reservation/bgPromotionLine.gif) repeat-y 50% 0;}
+.rsvDescriptionWrap{border-top: 1px solid #e6e5de;border-bottom: 1px solid #e6e5de;}
+.rsvDescriptionWrap .rsvDescription{width: 501px;height: 30px;background:url(../../../images/ko/mem/reservation/txtPackage.gif) no-repeat;line-height: 30;overflow: hidden;margin: 175px auto;}
+.promotionCalendar .calendarRsvBox .rStatus{padding: 17px 0;}
+
+.promotionWrap{min-height: 174px;border: 1px solid #a1886f;margin: 0 0 30px;background: #fefbf7;}
+.promotionWrap:after{content: '';display: block;clear: both;}
+.promotionWrap .promotionLeft{width: 303px;padding: 30px;float: left;}
+.promotionWrap .promotionLeft dt{font-size: 14px;font-weight: 700;color: #444;margin: 0 0 18px}
+.promotionWrap .promotionLeft dd+dd{margin: 4px 0 0;}
+.promotionWrap .promotionRight{position: relative;padding: 30px;margin-left: 365px;border-left: 1px solid #a1886f;background: #fff;}
+.promotionWrap .promotionRight:after {content:'';display: inline-block;width: 9px;height: 17px;background:url(../../../images/ko/mem/reservation/icoPromotionArrow.gif) no-repeat 0 0;position: absolute;top: 42px;left: -1px;}
+.promotionWrap .btnQuestion{position: absolute;top: 27px;left: 212px;}
+.promotionWrap .warnBalloonBox{position: absolute;bottom: -72px;left: 35px;min-width:460px;}
+.promotionWrap .btnQuestion .warnBalloonBox:after{position: absolute;top: 20px;left: -9px;content: '';display: inline-block;width: 9px;height: 17px;background:url(../../../images/ko/mem/reservation/icoPromotionArrowBalloon.gif) no-repeat;}
+.promotionWrap .optionList{margin: 0;}
+.promotionWrap .optionList .selector{width: 292px !important;}
+.promotionWrap .optionList .selector span{width: 267px !important;}
+.promotionWrap .promotionRight dt{font-size: 18px;color: #343434;font-weight: 700;margin-bottom: 14px;}
+.promotionWrap .promotionRight{position: relative;}
+.promotionWrap .promotionRight dl{width: 500px;min-height: 122px}
+.promotionWrap .promotionRight dd{font-size: 13px;color: #444;}
+.promotionWrap .promotionRight ul li{background: url("../../../images/ko/mem/reservation/icoDot.gif") no-repeat 0 6px;padding-left: 9px;line-height: 18px;}
+.promotionWrap .promotionRight ul li+li{margin-top: 5px;}
+.promotionWrap .promotionRight .line-idt{display: block;padding-left: 215px;}
+.promotionWrap .promotionRight .promotionImg{position: absolute;top: 27px;right: 27px;}
+
+
+
+.popLayerInfo{width:948px; margin:-60px 0 0 -474px; }/*180918 ìˆ˜ì •*/
+.popLayerInfo .popHead .tit{ background:url(../../../images/ko/mem/reservation/popHeadTitReservation.gif) no-repeat 0 -250px;}
+.popLayerInfo .popCtn{height:600px; overflow-y:scroll; padding: 25px 27px 0;}/* 20200204 ìˆ˜ì • */
+.LayerInfoCon .InfoDesc{font-size: 14px;color: #444;margin: 25px 0 20px;}
+.LayerInfoCon .InfoDate{font-size: 14px;color: #444;font-weight: 700;margin-bottom: 17px;}
+.LayerInfoCon .InfoBenefit{overflow: hidden;border-top: 1px dotted #ccc;border-bottom: 1px dotted #ccc;background: #f4eee3;position: relative;margin: 0 0 25px}
+.LayerInfoCon .InfoBenefit dt{float: left;width: 90px;font-size:14px;color: #444;text-align: center;font-weight: 700;position: absolute;top: 47%;}
+.LayerInfoCon .InfoBenefit dd{float: left;width: 546px;padding: 27px 30px;color: #444;background: #fff;margin-left: 90px;}
+.LayerInfoCon .InfoBenefit ul li{background:url(../../../images/ko/common/icoDotB.gif) no-repeat 0 5px;padding-left: 10px;}
+.LayerInfoCon .InfoBenefit ul li+li{margin-top: 10px;}
+
+.LayerInfoCon .useInfo{border: 1px solid #eee;background: #f8f8f8;color: #444;padding: 25px 30px;}
+.LayerInfoCon .useInfo dt{font-size: 14px;font-weight: 700;margin: 0 0 14px;}
+.LayerInfoCon .useInfo ul>li{background:url(../../../images/ko/common/bul02.gif) no-repeat 0 8px;padding-left: 10px;line-height: 20px;}
+.LayerInfoCon .useInfo ul>li>ul>li{background: none;padding-left: 0;}
+
+.popLayer.popLayerCalendar{left: 50%;width: 835px;margin-left: -418px;}
+.popLayer.popLayerCalendar .LayerInfoCon{height: 575px;}
+.popLayer.popLayerCalendar .LayerInfoCon .rsvCalendarWrap{padding: 20px 40px;}
+.popLayer.popLayerCalendar .LayerInfoCon .rsvCalendarWrap .rsvCalendarInner {float: left;margin-right: 55px;}
+.popLayer.popLayerCalendar .LayerInfoCon .promotionCalendar{margin: 0 50px;}
+.popLayer.popLayerCalendar .LayerInfoCon .rsvCalendarWrap .rsvCalendarInner.last{margin-right: 0;}
+.popLayer.popLayerCalendar .LayerInfoCon .rStatus{clear:both;padding-top: 20px;border-top: 1px solid #cdcbbe;}
+.popLayer.popLayerCalendar .LayerInfoCon .CalSrch{text-align: right;line-height: 0;}
+.popLayer.popLayerCalendar .LayerInfoCon .CalSrch .btnCalSrch{background: url("../../../images/ko/mem/main/btnCalSrch.gif") no-repeat 0 0;display: inline-block;width: 160px;height: 50px;line-height: 50;overflow: hidden;}
+.popLayer.popLayerCalendar .popHead .tit{margin: 5px 0 0 30px;padding: 0;background: url("../../../images/ko/mem/reservation/popTitleCal.gif") no-repeat 0 0;display: inline-block;width: 300px;height: 21px;line-height: 50;overflow: hidden;}
+
+.popLayer.popLayerCalendar .btnQuestion .warnBalloonBox{position: absolute;top: 30px;left: -78px;min-width:145px;color:#444;line-height: 24px;border: 1px solid #89745d;background: #fff;padding: 13px 15px;text-align: left;/* display: none; */line-height: 21px;min-height:45px;}
+.popLayer.popLayerCalendar .btnQuestion .warnBalloonBox.on{display: block;}
+.popLayer.popLayerCalendar .btnQuestion .warnBalloonBox:after{position: absolute;top: -8px;left: 83px;content: '';display: inline-block;width: 9px;height: 8px;background:url(../../../images/ko/mem/reservation/icoBalloonArrowUp.gif) no-repeat;}
+.popLayer.popLayerCalendar .promotionCalendar{overflow: hidden;border: 0;padding: 0;/* margin: -15px 0 0; */}
+.popLayer.popLayerCalendar .promotionCalendar .calendarRsvBox{width: auto;height: 320px;background:none}
+
+/*181001 ì„œìš¸-ì–´ë¦°ì´,ìœ ì•„ íŒì—…*/
+.childinfo {top:250px; width: 866px; margin: 0 0 0 -433px; left: 50%;}
+.childinfo .popHead .tit {background:url(../../../images/ko/mem/reservation/popHeadTitReservation.gif) no-repeat 0 -300px;}
+.childinfo .popCtn p {line-height: 18px; color: #646464}
+/*181019 ì¹´ë“œ ì´ìš©ì•ˆë‚´ íŒì—…*/
+.cardinfo {top:250px; width: 866px; margin: 0 0 0 -433px; left: 50%;}
+.cardinfo .popHead .tit {background:url(../../../images/ko/mem/reservation/popHeadTitReservation.gif) no-repeat 0 -350px;}
+.cardinfo .popCtn p {line-height: 18px; color: #646464}
+/* 2018.12.18 ì˜µì…˜ ì´ìš©ì•ˆë‚´ íŒì—… */
+.optioninfo {top:250px; width:600px; margin:0 0 0 -300px; left: 50%;}
+.optioninfo .popCtn p{line-height: 160%;color: #646464; word-break:keep-all;}
+.optioninfo .popCtn p+p{margin-top: 5px;}
+.optioninfo .popCtn .optionTit{margin-bottom:10px; font-size:15px; font-weight:bold;}
+.optioninfo .popCtn .optionTxt{padding-left:10px; background: url(../../../images/mbl/ko/common/main/bul01.png) no-repeat 0 7px; background-size:2px;}
+.optioninfo .popHead .tit{background:url(../../../images/ko/mem/reservation/popHeadTitReservation.gif) no-repeat 0 -399px;}
+
+/*ì½”ë¡œë‚˜ê´€ë ¨ ì´ìš©ì•ˆë‚´*/
+.reserveinfo {top: 200px;width: 690px;margin: 0 0 0 -345px;left: 50%;}
+.reserveinfo .popCtn p{line-height: 160%;color: #646464; word-break:keep-all;}
+.reserveinfo .popCtn p+p{margin-top: 5px;}
+.reserveinfo .popCtn .reserveTxt{padding-left:6px; background: url(../../../images/mbl/ko/common/main/bul01.png) no-repeat 0 7px; background-size:2px;}
+.reserveinfo .popHead .tit{background:url(../../../images/ko/mem/reservation/popHeadTitReservation.gif) no-repeat 0 -497px;}
+
+/*181220 ì˜ˆì•½ê²½ë¡œì•ˆë‚´ íŒì—…*/
+.ResvRouteInfo {top:250px;width: 690px;margin: 0 0 0 -300px;left: 49%;}
+.ResvRouteInfo .popHead .tit {background: url(../../../images/ko/mem/reservation/popHeadTitReservation.gif) no-repeat 0 -497px;}
+.ResvRouteInfo .popCtn p {line-height:180%; color: #646464}
+
+/*211126 부가세 조정 기간 상세확인 제한*/
+#ResvRouteInfo2 .ResvRouteInfo {top:250px;width: 690px;margin: 0 0 0 -300px;left: 49%;}
+#ResvRouteInfo2 .ResvRouteInfo .popHead .tit {background:url(../../../images/ko/mem/reservation/popHeadTitReservation.gif) no-repeat 0 -497px;}
+#ResvRouteInfo2 .ResvRouteInfo .popCtn p {line-height:180%; color: #646464}
+
+#ResvRouteInfo3 .ResvRouteInfo {top:250px;width: 690px;margin: 0 0 0 -300px;left: 49%;}
+#ResvRouteInfo3 .ResvRouteInfo .popHead .tit {background:url(../../../images/ko/mem/reservation/popHeadTitReservation.gif) no-repeat 0 -497px;}
+#ResvRouteInfo3 .ResvRouteInfo .popCtn p {line-height:180%; color: #646464}
+
+/*181107 ì œì£¼ì‹ ë¼í˜¸í…” ê°ì‹¤ íƒ­ ì„ íƒ ì‹œ, íŒì—…*/
+.jejuRoomPop {top:290px; width: 750px; margin: 0 0 0 -395px; left: 50%;}
+.jejuRoomPop .popHead .tit {}
+.jejuRoomPop .popCtn p {line-height: 25px; color: #646464; font-size:11pt; text-align:center;}
+
+/* 181129 ì˜ˆìƒ ìš”ê¸ˆë‚´ì—­ ì¡°íšŒ */
+.tab-content {position: relative;}
+.totalBox {float: right; margin-left: 10px;}
+.totalTable {position: absolute; z-index: 1; background-color: #fff; padding: 10px 10px 3px; right: 218px; border: 1px solid #e3d6c6; margin-top: -3px; line-height: 180%;}
+.totalBtn {display: inline-block;padding: 5px 7px;border: 1px solid #e3d6c6;color: #856f57;background: url(../../../images/mbl/ko/common/main/toggle_down_arrow.gif) no-repeat 93% 50%;padding-right: 20px; background-size: 9px 5px; position: relative; top: -2px;}
+.totalTable .totalR{text-align:right; width:179px;}
+.totalBtn.on{background:url(../../../images/mbl/ko/common/main/toggle_up_arrow.gif) no-repeat 93% 50%; background-size: 9px 5px;}
+.totalTable .total td {border-top: 2px solid #e3d6c6; line-height: 280%; font-weight: bold; color:#111;}
+.totalTable td{color:#856f57;float:left;width:95px}
+.totalTable .line td{border-top: 1px dotted #e3d6c6;padding-top:3px;}
+
+/* 2019-12-27 ìŠ¤íŽ˜ì…œ ë ˆì´íŠ¸ ì´ìš©ì•ˆë‚´ íŒì—…*/
+.SpPromoinfo {top:250px; width: 600px; margin: 0 0 0 -300px; left: 50%;}
+.SpPromoinfo .popHead .tit {background:url(../../../images/ko/mem/reservation/popHeadTitReservation.gif) no-repeat 0 -500px;}
+.SpPromoinfo .popCtn p {line-height: 180%;color: #646464;}

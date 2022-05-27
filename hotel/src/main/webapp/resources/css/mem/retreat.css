@@ -1,0 +1,289 @@
+/* Retreat CSS Document */
+
+
+
+/* Retreat Index */
+.ctnRetreat.ctnRetreatIndex{}
+.ctnRetreat.ctnRetreatIndex:after{clear:both;content:"";display:block;font-size:0;height:0;line-height:0;visibility:hidden}
+.ctnRetreat.ctnRetreatIndex img{ vertical-align:middle;}
+.ctnRetreat.ctnRetreatIndex .tit2{ }
+.ctnRetreat.ctnRetreatIndex .sdPhotoBox{ position:relative; height:475px; border-bottom:#e8e4de solid 1px; margin:0 0 38px 0;}
+.ctnRetreat.ctnRetreatIndex .sdPhotoBox .txt{}
+.ctnRetreat.ctnRetreatIndex .sdPhotoBox .urbanPhoto{ width:866px; height:200px; position:relative;}
+.ctnRetreat.ctnRetreatIndex .sdPhotoBox .urbanPhoto .slides_container{ width:561px; height:200px; position:absolute !important; right:0px; top:0px;}
+.ctnRetreat.ctnRetreatIndex .sdPhotoBox .urbanPhoto .pagination{ position:absolute; left:0px; top:79px;}
+.ctnRetreat.ctnRetreatIndex .sdPhotoBox .urbanPhoto .pagination li{ float:left; margin:0 5px 5px 0;}
+.ctnRetreat.ctnRetreatIndex .sdPhotoBox .urbanPhoto .pagination li.t1{ float:none}
+.ctnRetreat.ctnRetreatIndex .box1{ width:866px; overflow:hidden; border-bottom:#e8e4de solid 1px; padding:0 0 23px 0; margin:0 0 39px 0;}
+.ctnRetreat.ctnRetreatIndex .box1 .cBox{ overflow:hidden; width:900px;}
+.ctnRetreat.ctnRetreatIndex .box1 .cBox li{ float:left; margin:0 16px 0 0;}
+.ctnRetreat.ctnRetreatIndex .box2 { float:left;}
+.ctnRetreat.ctnRetreatIndex .box3 { float:right;}
+
+/* Retrat SNS */
+.ctnRetreat .snsLink {width:252px; height:23px; margin-top:20px; clear: both;}
+.ctnRetreat .snsLink .btnTwitter{background:url(../../images/ko/mem/membership/dynastyBtnSns.gif) no-repeat; width:23px; height:23px; vertical-align:middle; display:inline-block; line-height:100px; overflow:hidden;margin-right:5px;}
+.ctnRetreat .snsLink .btnFacebook{ background:url(../../images/ko/mem/membership/dynastyBtnSns.gif) no-repeat -29px 0; width:23px; height:23px; vertical-align:middle; display:inline-block; line-height:100px; overflow:hidden;}
+
+
+/*UrbanIsland*/
+.ctnRetreat.ctnOpUrbanIsland{zoom:1}
+.ctnRetreat.ctnOpUrbanIsland:after{clear:both;content:"";display:block;font-size:0;height:0;line-height:0;visibility:hidden}
+.ctnRetreat.ctnOpUrbanIsland img{ vertical-align:middle;}
+.ctnRetreat.ctnOpUrbanIsland .sdTxt{ margin:0 0 20px 0;}
+.ctnRetreat.ctnOpUrbanIsland .box1{ float:left; height:340px; margin:0 0 0px 0;}
+.ctnRetreat.ctnOpUrbanIsland .box2{float:right; height:340px; margin:0 0 0px 0;}
+.ctnRetreat.ctnOpUrbanIsland .box3{ float:left; margin:20px 0 0px 0;}
+.ctnRetreat.ctnOpUrbanIsland .box4{float:right; margin:20px 0 0px 0;}
+/**Urban Island  Map*/
+.popLayerUrbanIslandMapPop{ width:600px; left:50%; margin:0 0 0 -300px;}
+.popLayerUrbanIslandMapPop .popHead .tit{ background:url(../../images/ko/mem/main/popHeadTitRetreat.gif) no-repeat 0 -200px;}
+/*Floor Map 3f*/
+.popLayerFloorMap3FPop{ width:600px; left:50%; margin:0 0 0 -300px;}
+.popLayerFloorMap3FPop .popHead .tit{ background:url(../../images/ko/mem/main/popHeadTitRetreat.gif) no-repeat 0 -250px;}
+/*Floor Map 5f*/
+.popLayerFloorMap5FPop{ width:600px; left:50%; margin:0 0 0 -300px;}
+.popLayerFloorMap5FPop .popHead .tit{ background:url(../../images/ko/mem/main/popHeadTitRetreat.gif) no-repeat 0 -300px;}
+/*Floor Map 6f*/
+.popLayerFloorMap6FPop{ width:600px; left:50%; margin:0 0 0 -300px;}
+.popLayerFloorMap6FPop .popHead .tit{ background:url(../../images/ko/mem/main/popHeadTitRetreat.gif) no-repeat 0 -350px;}
+
+/*야외수영장 이용 안내*/
+.popLayerUrbanIslandPop{ width:600px; margin:0 0 0 -300px; left:50%;}
+.popLayerUrbanIslandPop .popHead .tit{ background:url(../../images/ko/mem/main/popHeadTitRetreat.gif) no-repeat 0 -50px;}
+.popLayerUrbanIslandPop .btnList .btnClose{ background:url(../../images/ko/mem/retreat/btnClose.gif) no-repeat; width:85px; height:27px; vertical-align:middle; display:inline-block; line-height:100px; overflow:hidden;}
+.popLayerUrbanIslandPop .tableUrbanInfo{ margin:0 0 20px 0;border-bottom: #cdcbbe solid 1px;}
+.popLayerUrbanIslandPop .tableUrbanInfo td.ubBdNo{border-bottom:none;}
+.popLayerUrbanIslandPop p.cmt{text-align:right}
+
+/*Cabana 이용 요금*/
+.popLayerUrbanIslandCabanaPop{ width:800px; margin:0 0 0 -400px; left:50%;}
+.popLayerUrbanIslandCabanaPop .popHead .tit{ background:url(../../images/ko/mem/main/popHeadTitRetreat.gif) no-repeat 0 -100px;}
+.popLayerUrbanIslandCabanaPop .time{ border:#eaeaea solid 1px; background:#fbfbfb; font-weight:bold; margin:0 0 20px 0; padding:5px 10px; color:#666666}
+.popLayerUrbanIslandCabanaPop .tableCanana{ margin:0 0 20px 0;}
+.popLayerUrbanIslandCabanaPop .tableCanana th{}
+.popLayerUrbanIslandCabanaPop .tableCanana .thR{ background:#faf9f4}
+.popLayerUrbanIslandCabanaPop .tableCanana td{ padding:3px 5px;}
+.popLayerUrbanIslandCabanaPop .tableCanana .stxt{ color:#db3e3e}
+.popLayerUrbanIslandCabanaPop .btnClose{background:url(../../images/ko/mem/retreat/btnClose.gif) no-repeat; width:85px; height:27px; vertical-align:middle; display:inline-block;  line-height:200px; overflow:hidden;}
+
+
+/*스파 프로그램*/
+.ctnSpProgram {}
+.ctnSpProgram .btnBrc{ text-align:right; height:34px; margin:20px 0 10px 0;}
+.ctnSpProgram .btnBrc .txt{ vertical-align:middle; margin:0 10px 0 0;}
+.ctnSpProgram .btnBrc .btnBorchure{ background:url(../../images/ko/mem/retreat/spProgramBtnBrochure.gif) no-repeat; width:120px; height:34px; display:inline-block; vertical-align:middle; line-height:200px; overflow:hidden;}
+.ctnSpProgram .programList{ border-top:#cdcbbf solid 1px; margin:0 0 20px 0;}
+.ctnSpProgram .programList ul{}
+.ctnSpProgram .programList .pBox{ border-bottom:#cdcbbf solid 1px;}
+.ctnSpProgram .programList .pBox .pTit{ display:block; padding:12px 20px; height:20px; background:url(../../images/ko/mem/retreat/spProgramBtnDown.gif) no-repeat right 10px}
+.ctnSpProgram .programList .on .pTit{ background:url(../../images/ko/mem/retreat/spProgramBtnUp.gif) no-repeat right 10px #faf9f4; border-bottom:#eceae1 solid 1px;} 
+.ctnSpProgram .programList .pBox .pTit .tit{ float:left; font-weight:bold; margin:0 10px 0 0;}
+.ctnSpProgram .programList .pBox .pTit .txt{ float:left; padding:0 0 0 10px; background:url(../../images/ko/mem/retreat/spProgramBar.gif) no-repeat 0 4px;}
+.ctnSpProgram .programList .pBox .pList{ display:none;}
+.ctnSpProgram .programList .pBox.on .pList{ display:block;}
+.ctnSpProgram .programList .pBox .pList li{}
+.ctnSpProgram .programList .pBox .psBox{ position:relative; padding:30px 20px; border-bottom:#eceae1 solid 1px;}
+.ctnSpProgram .programList .pBox .psBox .tit{ font-weight:bold; font-size:14px; margin:0 0 13px 0;}
+.ctnSpProgram .programList .pBox .psBox .opt{}
+.ctnSpProgram .programList .pBox .psBox .btn{ position:absolute; right:20px; top:26px; }
+.ctnSpProgram .programList .pBox .psBox .btn .opt{display:inline-block; vertical-align:middle; margin:0 10px 0 20px;}
+.ctnSpProgram .programList .pBox .psBox .btn .btnRsv{background:url(../../images/ko/mem/retreat/spProgramBtnRsv.gif) no-repeat; width:83px; height:27px; display:inline-block; vertical-align:middle; line-height:100px; overflow:hidden;}
+.ctnSpProgram .programList .pBox .last{border-bottom:none}
+.ctnSpProgram .spProgram{}
+.ctnSpProgram .spProgram .hTit{ height:27px; margin:0 0 20px 0; border-bottom:#a1886f solid 3px;}
+.ctnSpProgram .spProgram .hTit .tit{ float:left; background:url(../../images/ko/mem/retreat/spProgramTit1.gif) no-repeat; width:120px; height:27px; line-height:100px; overflow:hidden;}
+
+.ctnSpProgram .slideBox{ padding:0 0 0 20px; /*width:814px; height:160px;*/ position:relative;}
+.ctnSpProgram .slideBox .ad-gallery{ width:805px;}
+.ctnSpProgram .slideBox .ad-gallery .ad-nav{}
+.ctnSpProgram .slideBox .ad-gallery .ad-back{ background:url(../../images/ko/mem/specialoffers/packageViewBtnPrev.gif) no-repeat; left:-33px; width:33px; height:120px; text-indent:-9999px; overflow:hidden;}
+.ctnSpProgram .slideBox .ad-gallery .ad-forward{ background:url(../../images/ko/mem/specialoffers/packageViewBtnNext.gif) no-repeat; right:-23px; width:33px; height:120px; text-indent:-9999px; overflow:hidden;}
+.ctnSpProgram .slideBox .ad-gallery .ad-thumbs li a img{ border:none ; opacity:1 !important; 	filter: alpha(opacity = 100) !important;}
+.ctnSpProgram .slideBox .ad-gallery .ad-thumbs li a{ text-align:center; width:235px; margin:auto; }
+.ctnSpProgram .slideBox .ad-gallery .ad-thumbs li a .tit{ font-weight:bold; display:block; padding:14px 0 0 0; text-align:left; font-size:15px; color:#856f56; text-decoration:underline;}
+.ctnSpProgram .slideBox .ad-gallery .ad-thumbs li{ padding-right:0px; width:275px; text-align:center; }
+.ctnSpProgram .slideBox .ad-gallery .ad-thumbs li p{background:url(../../images/ko/mem/main/bul02.gif) no-repeat 0 8px;text-align:left;font-size:12px;color:#444;padding-left:10px;margin:10px 0 0 20px;}
+
+.ctnSpProgram .msgTax {    color: #7E4F15;    padding: 10px 0;    text-align: right;}
+
+/*스파 프로그램 팝업*/
+.popLayerSpProgam { width:600px; left:50%; top:200px; margin:0px 0 0 -300px; position:absolute;}
+.popLayerSpProgam .popHead .tit{ background:url(../../images/ko/mem/main/popHeadTitRetreat.gif) no-repeat 0 0px;}
+
+.popLayerSpProgam .scrollBox{ height:500px; overflow-y:scroll; overflow-x:hidden;position:relative; zoom:1;
+scrollbar-base-color:#9b7f5b;
+/*scrollbar-face-color:#fdf8ef;
+	scrollbar-shadow-color:#856f56;
+	scrollbar-highlight-color:#FDF8EF;
+	scrollbar-3dlight-color:#856f56;
+  	scrollbar-darkshadow-color:#FDF8EF;
+  	scrollbar-track-color:#fff;
+	scrollbar-arrow-color:#856f56;*/
+}
+.popLayerSpProgam .scrollBox .scrollBoxIn{ width:520px; padding-top:10px;}
+
+.tableSpProgram{ margin:0 0 10px 0;}
+.popLayerSpProgam .guideBox{ margin:10px 0 0 0;}
+.popLayerSpProgam .guideBox .info{ color:#666666}
+.popLayerSpProgam .guideBox .tit{ font-weight:bold;margin:10px 0 0 0; color:#666666}
+.popLayerSpProgam .guideBox .msg{ margin:0px 0 0 0; color:#666666}
+.popLayerSpProgam .hTitS{}
+.popLayerSpProgam .policyBox{ border:#CCC solid 1px; height:100px; overflow:auto; overflow-x:hidden}
+.popLayerSpProgam .guideMsg{ background:#FFC; padding:10px; border:#90C solid 1px; margin:0 0 10px 0;}
+.popLayerSpProgam .privacyBox{ padding:0px; margin:10px 0 0 0;}
+.popLayerSpProgam .privacyBox .hTitS{ }
+.popLayerSpProgam .privacyBox .hTitS .tit{font-weight:bold;}
+.popLayerSpProgam .msgBox{ border:#eaeaea solid 1px;  background:#fbfbfb; padding:15px; color:#666666}
+.popLayerSpProgam textarea.leaveMsg { width:397px; height:50px;}
+.popLayerSpProgam .btnList{ margin:20px 0 0px 0;}
+.popLayerSpProgam .btnSpRsv{background:url(../../images/ko/mem/retreat/btnSpRsv.gif) no-repeat; width:99px; height:44px; vertical-align:middle; display:inline-block; line-height:200px; overflow:hidden;}
+.popLayerSpProgam .btnSpCancel{background:url(../../images/ko/mem/retreat/btnSpCancel.gif) no-repeat; width:99px; height:44px; vertical-align:middle; display:inline-block; line-height:200px; overflow:hidden;}
+
+.popLayerSpProgam input.rMemCnt,
+.popLayerSpProgam input.gender,
+.popLayerSpProgam input.gender1,
+.popLayerSpProgam input.gender2,
+.popLayerSpProgam input.gender3{ width:20px;}
+
+.popLayerSpProgam #uniform-emailDomainCd{ width:115px !important;}
+.popLayerSpProgam #uniform-emailDomainCd span{ width:90px !important;}
+.popLayerSpProgam #uniform-bkrUseLang{ width:115px !important;}
+.popLayerSpProgam #uniform-bkrUseLang span{ width:90px !important;}
+
+.popLayerSpProgam #uniform-phoneComp{ width:65px !important;}
+.popLayerSpProgam #uniform-phoneComp span{ width:40px !important;}
+.popLayerSpProgam #uniform-phone1{ width:50px !important;}
+.popLayerSpProgam #uniform-phone1 span{ width:25px !important;}
+.popLayerSpProgam input.phone2{ width:50px;}
+.popLayerSpProgam input.phone3{ width:50px;}
+.popLayerSpProgam label.phoneSel1,
+.popLayerSpProgam label.phoneSel2{ margin:0 10px 0 0}
+.popLayerSpProgam #uniform-phoneHome{ width:50px !important;}
+.popLayerSpProgam #uniform-phoneHome span{ width:25px !important;}
+.popLayerSpProgam input.emailId { width:110px;}
+.popLayerSpProgam input.emailDomain {width:110px;}
+.popLayerSpProgam input.rDate  {width:70px;}
+.popLayerSpProgam label.rHour{ }
+.popLayerSpProgam #uniform-resvTm1 { width:40px !important;}
+.popLayerSpProgam #uniform-resvTm1  span{ width:15px !important;}
+.popLayerSpProgam #uniform-resvTm2 { width:40px !important;}
+.popLayerSpProgam #uniform-resvTm2  span{ width:15px !important;}
+.popLayerSpProgam label.gender,
+.popLayerSpProgam label.nameF,
+.popLayerSpProgam label.phoneComp,
+.popLayerSpProgam label.phone1,
+.popLayerSpProgam label.phone2,
+.popLayerSpProgam label.phone3,
+.popLayerSpProgam label.phoneHome,
+.popLayerSpProgam label.phoneHome1,
+.popLayerSpProgam label.phoneHome2,
+.popLayerSpProgam label.emailId,
+.popLayerSpProgam label.emailDomain,
+.popLayerSpProgam label.emailDomainSel{position:absolute; left:-9999%}
+
+/*Guerlain Spa*/
+.ctnRetreat.ctnSpGuerlainSpa{}
+.ctnRetreat.ctnSpGuerlainSpa:after{clear:both;content:"";display:block;font-size:0;height:0;line-height:0;visibility:hidden}
+.ctnRetreat.ctnSpGuerlainSpa img{ vertical-align:middle;}
+.ctnRetreat.ctnSpGuerlainSpa .box1{ margin:0 0 28px 0; overflow:hidden;}
+.ctnRetreat.ctnSpGuerlainSpa .box1 .tit{}
+.ctnRetreat.ctnSpGuerlainSpa .box1 .info{ float:left;}
+.ctnRetreat.ctnSpGuerlainSpa .box1 .photo{ float:right;}
+.ctnRetreat.ctnSpGuerlainSpa .guide{ border:#e9e5e0 solid 1px; margin:0px 0 28px 0; padding:15px 20px;}
+.ctnRetreat.ctnSpGuerlainSpa .guide .tit{ font-weight:bold;}
+.ctnRetreat.ctnSpGuerlainSpa .guide .list{}
+.ctnRetreat.ctnSpGuerlainSpa .guide .list li{ background:url(../../images/ko/mem/main/bul02.gif) no-repeat 0 8px; padding:0 0 0 10px;}
+.ctnRetreat.ctnSpGuerlainSpa .box2{ float:left; height:351px;}
+.ctnRetreat.ctnSpGuerlainSpa .box3{ float:right; height:351px; padding:40px 0 0 0;}
+.ctnRetreat.ctnSpGuerlainSpa .box4{ float:left;}
+
+
+/*POOL*/
+.ctnRetreat.ctnFnPool{}
+.ctnRetreat.ctnFnPool img{ vertical-align:middle;}
+.ctnRetreat.ctnFnPool .sdTxt{}
+.ctnRetreat.ctnFnPool .btn{ margin:0 0 45px 0;}
+.ctnRetreat.ctnFnPool .btn .btnFloorMap{ background:url(../../images/ko/mem/retreat/btnFloorMap.gif) no-repeat; width:99px; height:33px; vertical-align:middle; display:inline-block; line-height:200px; overflow:hidden;}
+.ctnRetreat.ctnFnPool .hTit{ height:33px;}
+.ctnRetreat.ctnFnPool .hTit .tit{ background:url(../../images/ko/mem/retreat/fnPoolTit1.gif) no-repeat; width:99px; height:33px; float:left; vertical-align:middle; display:inline-block; line-height:200px; overflow:hidden;}
+.ctnRetreat.ctnFnPool .tablePoolInfo{}
+.ctnRetreat.ctnFnPool .tablePoolInfo img{ vertical-align:middle;}
+.ctnRetreat.ctnFnPool .tablePoolInfo .thR{ background:#faf9f4}
+
+
+
+
+
+/*GYM*/
+.ctnRetreat.ctnFnGym{}
+.ctnRetreat.ctnFnGym:after{clear:both;content:"";display:block;font-size:0;height:0;line-height:0;visibility:hidden}
+.ctnRetreat.ctnFnGym img{ vertical-align:middle;}
+.ctnRetreat.ctnFnGym .sdTxt{ margin:0 0 18px 0;}
+.ctnRetreat.ctnFnGym .box1{ float:left; height:351px;}
+.ctnRetreat.ctnFnGym .box2{ float:right; /*height:351px;*/}
+.ctnRetreat.ctnFnGym .box3{ float:left;}
+
+/*GX프로그램팝업*/
+.popLayerGymGxPop{ width:600px; left:50%; margin:0 0 0 -300px;}
+.popLayerGymGxPop .popHead .tit{  background:url(../../images/ko/mem/main/popHeadTitRetreat.gif) no-repeat 0 -150px;}
+.popLayerGymGxPop .tableGx{ margin:0 0 20px;}
+.popLayerGymGxPop .tableGx td{ padding:4px 2px;}
+.popLayerGymGxPop .btnClose{background:url(../../images/ko/mem/retreat/btnClose.gif)no-repeat; width:85px; height:27px; vertical-align:middle; display:inline-block; line-height:200px; overflow:hidden;}
+
+/*Indoor Golf Range*/
+.ctnRetreat.ctnFnIndoorGolfRange{}
+.ctnRetreat.ctnFnIndoorGolfRange:after{clear:both;content:"";display:block;font-size:0;height:0;line-height:0;visibility:hidden}
+.ctnRetreat.ctnFnIndoorGolfRange img{ vertical-align:middle;}
+.ctnRetreat.ctnFnIndoorGolfRange .sdTxt{ margin:0 0 34px 0;}
+.ctnRetreat.ctnFnIndoorGolfRange .box1{}
+.ctnRetreat.ctnFnIndoorGolfRange .box2{}
+.ctnRetreat.ctnFnIndoorGolfRange .box3{}
+
+/*사우나 Sauna*/
+.ctnRetreat.ctnFnSauna{}
+.ctnRetreat.ctnFnSauna img{ vertical-align:middle;}
+
+
+/*JoggingTrack*/
+.ctnRetreat.ctnFnJoggingTrack{}
+.ctnRetreat.ctnFnJoggingTrack:after{clear:both;content:"";display:block;font-size:0;height:0;line-height:0;visibility:hidden}
+.ctnRetreat.ctnFnJoggingTrack img{ vertical-align:middle;}
+.ctnRetreat.ctnFnJoggingTrack .sdTxt{ margin:0 0 0 0;}
+.ctnRetreat.ctnFnJoggingTrack .box1{ float:left;}
+.ctnRetreat.ctnFnJoggingTrack .box2{ float:right;}
+
+/*Sculpture Park*/
+.ctnRetreat.ctnSculpturePark{}
+.ctnRetreat.ctnSculpturePark img{ vertical-align:middle;}
+.ctnRetreat.ctnSculpturePark .sdTxt{ margin:0 0 30px 0;}
+.ctnRetreat.ctnSculpturePark .box1{ overflow:hidden; width:900px;}
+.ctnRetreat.ctnSculpturePark .tableWork{ width:282px; float:left; margin:0 10px 0 0; border-left:#ECEAE1 solid 1px;}
+.ctnRetreat.ctnSculpturePark .tableWork th.last,
+.ctnRetreat.ctnSculpturePark .tableWork td.last{ border-right:#ECEAE1 solid 1px;}
+
+/*Sculpture Park Pop up*/
+.popLayerSpPop{ width:650px; left:50%; margin:0 0 0 -325px;}
+.popLayerSpPop .popHead .tit{ text-align:left;}
+
+
+/*객실*/
+.ctnAcmd .spBox{ float:left; position:relative; display:block}
+.ctnAcmd .spBox .img{ height:185px; width:330px; background:#000; display:block;}
+.ctnAcmd .spBox .info{ width:330px; height:56px; position:absolute; left:0px; bottom:0px; display:block;}
+.ctnAcmd .spBox .info .name{ padding:10px 0 0; text-align:center; font-weight:bold; color:#FFF; position:relative; z-index:10; display:block;}
+.ctnAcmd .spBox .info .name a{ color:#FFF;}
+.ctnAcmd .spBox .info .name a:hover{text-decoration:underline}
+.ctnAcmd .spBox .info .date{ text-align:center; color:#FFF; position:relative; z-index:10; display:block;}
+.ctnAcmd .spBox .info .mask{ width:330px; height:56px; background:#000; opacity:0.7;	filter: alpha(opacity = 70); position:absolute; left:0px; bottom:0px; display:block;}
+
+/*다이닝*/
+.ctnDining .spBox{ float:left; position:relative; display:block}
+.ctnDining .spBox .img{ height:185px; width:330px; background:#000; display:block;}
+.ctnDining .spBox .info{ width:330px; height:56px; position:absolute; left:0px; bottom:0px; display:block;}
+.ctnDining .spBox .info .name{ padding:10px 0 0; text-align:center; font-weight:bold; color:#FFF; position:relative; z-index:10; display:block;}
+.ctnDining .spBox .info .name a{ color:#FFF;}
+.ctnDining .spBox .info .name a:hover{text-decoration:underline}
+.ctnDining .spBox .info .date{ text-align:center; color:#FFF; position:relative; z-index:10; display:block;}
+.ctnDining .spBox .info .mask{ width:330px; height:56px; background:#000; opacity:0.7;	filter: alpha(opacity = 70); position:absolute; left:0px; bottom:0px; display:block;}
+

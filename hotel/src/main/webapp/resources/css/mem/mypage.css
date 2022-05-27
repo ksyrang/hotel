@@ -1,0 +1,988 @@
+@charset "UTF-8";
+
+/* CSS Document */
+.mypageBody .contents {/*float:none; width:auto;*/}
+.mypageBody .contain .container .contents{ margin:0; width:866px;}
+
+/*.gnbMenuMypage{width:1200px; margin:0 auto 0 auto; height:35px; background:#CCC; position:relative; }
+.gnbMenuMypage .menu{ position:absolute; left:0px; top:0px;}
+.gnbMenuMypage ul li{ float:left; width:120px; background:#3CF; position:relative;}
+.gnbMenuMypage ul li a{background:#FFF; display:block; text-align:center; padding:8px 5px;}
+.gnbMenuMypage ul li a.on{font-weight:bold;}
+.gnbMenuMypage ul li a span{ display:block;}
+.gnbMenuMypage .sm{position:absolute; position:absolute; left:0px; top:35px; width:600px;  }
+
+
+
+.ctnMypage .topHead{ width:1200px; height:50px; background:#9FC; margin:auto;}
+.ctnMypage .topHead .tit{ float:left; font-size:16px; font-weight:bold; padding:15px 0 0 10px;}
+.ctnMypage .topHead .location{ float:right;}
+.ctnMypage .topHead .location .locationIn{  height:30px; background:#ddd; text-align:right;}
+*/
+.ctnMypage img{ vertical-align:middle;}
+.ctnMypage .headTit{height:47px; border-bottom:#432c10 solid 5px; width:866px; margin:0 0 0px 0;}
+.ctnMypage .headTit h4.tit{ background: url(../../images/ko/mem/main/subTitleMypage.gif) no-repeat;}
+.ctnMypage.ctnMypageRsv .headTit h4.tit{ background-position:0px -50px;}
+.ctnMypage.ctnUserInfo1 .headTit h4.tit{ background-position:0px -219px;}/* 프로필수정 */
+.ctnMypage.ctnUserInfo2 .headTit h4.tit{ background-position:0px -100px;}
+.ctnMypage.ctnPwMod .headTit h4.tit{ background-position:0px -261px;} /* 비밀번호 요청 */
+.ctnMypage.ctnPwMod2 .headTit h4.tit{ background-position:0px -550px;} /* 개인정보 보호를 위한 비밀번호 변경 안내 */
+.ctnMypage.join_mem .headTit h4.tit{ background-position:0px -497px;} /* 신라 리워즈 가입 */
+.ctnMypage.ctnMemDis .headTit h4.tit{ background-position:0px -304px;} /* 탈회요청 */
+
+.ctnMypage.ctnDeluxe .headTit h4.tit{ background-position:0px -90px;} /* 포인트조회  */
+.ctnMypage.ctnApplete .headTit h4.tit{ background-position:0px -133px;} /* 포인트 사용신청  */
+.ctnMypage.ctnRetrosp .headTit h4.tit{ background-position:0px -175px;} /* 포인트 소급신청  */
+
+.ctnMypage.ctnMyMembership .headTit h4.tit,
+.ctnMypage.ctnMembershipPoint .headTit h4.tit,
+.ctnMypage.ctnMembershipDining .headTit h4.tit	{ background-position:0px -250px;}
+.ctnMypage.ctnQna .headTit h4.tit{ background-position:0px -347px;} /* 문의내역 */
+.ctnMypage.ctnEvent .headTit h4.tit{ background-position:0px -350px;}
+.ctnMypage.ctnMyplanPackage .headTit h4.tit,
+.ctnMypage.ctnMyplanEvent .headTit h4.tit,
+.ctnMypage.ctnMyplanGao .headTit h4.tit{ background-position:0px -400px;}
+
+.ctnMypage .hdTit{ height:40px;}
+.ctnMypage .hdTit .tit{ float:left; padding:5px 0 0 0; font-size:18px; font-weight:bold;}
+.ctnMypage .hdTit .info{ float:right; padding:5px 0 0 0;}
+.ctnMypage .myInfoBox{ border:#CCC solid 1px; padding:15px; overflow:hidden; margin:0 0 20px 0;}
+.ctnMypage .myInfoBox .areaA{ float:left; background:#efefef; width:300px; padding:15px;}
+.ctnMypage .myInfoBox .areaB{ float:right; background:#efefef; width:600px; padding:15px; position:relative;}
+.ctnMypage .myInfoBox .areaB .tit{ float:left;}
+.ctnMypage .myInfoBox .areaB .btn{float:left;}
+.ctnMypage .myInfoBox .areaB .list{ width:400px; border:#CCC solid 1px; padding:10px; overflow:hidden; float:right;}
+.ctnMypage .myInfoBox .areaB .list dt{ float:left; width:100px;}
+.ctnMypage .myInfoBox .areaB .list dd{float:left; width:300px;}
+
+.ctnMypage .prtLink{ height:15px;margin:0 0 0px 0; position:relative; z-index:10; }
+.ctnMypage .prtLink li{ float:left; margin:0 1px 0 0}
+.ctnMypage .prtLink li a{ display:block; width:150px;  height:37px; background:url(../../images/ko/common/mypage/tabMenuMypageMemQna.gif) no-repeat; line-height:100px; overflow:hidden;}
+.ctnMypage .prtLink li.m1 a{ width:128px; background-position:0px 0px}
+.ctnMypage .prtLink li.m2 a{ width:128px; background-position:-129px 0px}
+.ctnMypage .prtLink li.m3 a{ width:139px; background-position:-258px 0px}
+.ctnMypage .prtLink li a.on{ height:37px; background-image:url(../../images/ko/common/mypage/tabMenuMypageMemQnaOn.gif)}
+.ctnMypage .tabBox{ border:#e2d5c5 solid 1px; padding:24px;}
+
+
+
+.ctnMypage .hTitS{ height:30px;  margin:0 0 10px 0;}
+.ctnMypage .hTitS .tit{ float:left; padding:15px 0 0 0; font-size:12px; font-weight:bold;}
+.ctnMypage .hTitS .info{ float:right; padding:5px 0 0 0;}
+
+.ctnMypage .bbsReserveInfo { margin:0 0 20px 0;}
+.ctnMypage .bbsReserveInfo .trCancel td{ background:#CCC;}
+.ctnMypage .bbsQnaList { margin:0 0 0px 0;}
+.ctnMypage .bbsQnaList .trReply td{ background:#fdf8f3;}
+.ctnMypage .btnGoList{ background:url(../../images/ko/common/mypage/btnGoList.gif) no-repeat; width:62px; height:27px; vertical-align:middle; display:inline-block; line-height:100px; overflow:hidden;}
+.ctnMypage.ctnQna .btnQna{ background:url(../../images/ko/common/mypage/btnBbsQna.gif) no-repeat; width:85px; height:27px; vertical-align:middle; display:inline-block; line-height:100px; overflow:hidden;}
+
+
+.ctnMypage .mypageWrap{ border:#e3d6c6 solid 1px; padding:24px;}
+
+/*마이페이지 인덱스*/
+.ctnMypage.ctnMypageMain{}
+.ctnMypage.ctnMypageMain .topBox{ overflow:hidden; margin:20px 0 12px 0; }
+.ctnMypage.ctnMypageMain .mypage_in{background: url(../../images/ko/common/mypage/Mypage_in.gif) no-repeat; width:442px; height:58px; margin-bottom: 30px;}
+.ctnMypage.ctnMypageMain .topBox .name{ float:left; font-weight:bold;}
+.ctnMypage.ctnMypageMain .topBox .info{ float:right;}
+.ctnMypage.ctnMypageMain .topBox .info .msg{ background:url(../../images/ko/common/mypage/mypageTopMsg.gif) no-repeat; width:328px; height:26px; display:inline-block; vertical-align:middle; line-height:100px; overflow:hidden;}
+.ctnMypage.ctnMypageMain .topBox .info .btnMyInfoMod{ background:url(../../images/ko/common/mypage/mypageBtnMyInfo.gif) no-repeat;width:74px; height:26px; display:inline-block; vertical-align:middle; line-height:100px; overflow:hidden;}
+.ctnMypage.ctnMypageMain .box{}
+.ctnMypage.ctnMypageMain .box .hTit{ height:30px; border-bottom:#a1886f solid 3px; overflow:hidden;}
+.ctnMypage.ctnMypageMain .box .hTit .tit{float:left; }
+.ctnMypage.ctnMypageMain .box .hTit .info{ float:right; padding:2px 0 1px 0; zoom:1;width:66px;}
+.ctnMypage.ctnMypageMain .box .hTit .btnMore{ background:url(../../images/ko/common/mypage/mypageBtnMore.gif) no-repeat 3px 5px; border:#ede6db solid 1px; padding:3px 10px 3px 18px;}
+.ctnMypage.ctnMypageMain .boxMember{ margin:0 0 33px 0;}
+.ctnMypage.ctnMypageMain .boxMember .hTit .tit{ background:url(../../images/ko/common/mypage/mypageTit1.gif) no-repeat;  width:328px; height:30px; display:inline-block; vertical-align:middle; line-height:100px; overflow:hidden;}
+.ctnMypage.ctnMypageMain .boxMember .msg{ padding:18px 0px;}
+.ctnMypage.ctnMypageMain .boxMember .msg strong{ color:#6e583e}
+.ctnMypage.ctnMypageMain .boxMember .bbsMembership{}
+.ctnMypage.ctnMypageMain .boxMember .bbsMembership thead th{font-size:12px; line-height:17px; height:17px; padding:10px 10px 11px; border-bottom:1px solid #CDCBBE;}
+.aRight_Mypage{ text-align:right!important; padding: 7px 30px 6px 10px!important}
+.ctnMypage.ctnMypageMain .boxRsv{overflow:hidden; margin:0 0 33px 0;}
+.ctnMypage.ctnMypageMain .boxRsv .hTit .tit{ background:url(../../images/ko/common/mypage/mypageTit2.gif) no-repeat;  width:328px; height:30px; display:inline-block; vertical-align:middle; line-height:100px; overflow:hidden;}
+.ctnMypage.ctnMypageMain .boxRsv .msg{ padding:14px 0px 5px;}
+.ctnMypage.ctnMypageMain .boxRsv .msg strong{ color:#6e583e}
+.ctnMypage.ctnMypageMain .boxRsv .rBox1{ float:left;}
+.ctnMypage.ctnMypageMain .boxRsv .rBox2{ float:right;}
+.ctnMypage.ctnMypageMain .boxRsv .rBox{ width:400px;}
+.ctnMypage.ctnMypageMain .boxRsv .rBox .hNav{ overflow:hidden; height:23px;}
+.ctnMypage.ctnMypageMain .boxRsv .rBox .hNav .tit{ float:left}
+.ctnMypage.ctnMypageMain .boxRsv .rBox .hNav .nav{ float:right;}
+.ctnMypage.ctnMypageMain .boxRsv .rBox .hNav .nav .btnPrev{ background:url(../../images/ko/common/mypage/mypageBtnPrev.gif) no-repeat; width:20px; height:17px; display:inline-block; vertical-align:middle; line-height:100px; overflow:hidden;}
+.ctnMypage.ctnMypageMain .boxRsv .rBox .hNav .nav .btnNext{background:url(../../images/ko/common/mypage/mypageBtnNext.gif) no-repeat; width:20px; height:17px; display:inline-block; vertical-align:middle; line-height:100px; overflow:hidden;}
+.ctnMypage.ctnMypageMain .boxRsv .rBox .hNav .nav .pag{}
+.ctnMypage.ctnMypageMain .boxRsv .rBox .cBox{ position:relative; background:#faf9f4; border:#eceae1 solid 1px; padding-left:23px; height:144px;}
+.ctnMypage.ctnMypageMain .boxRsv .rBox .cBox .hPrt{ padding:10px 20px 10px 0px; overflow:hidden;border-bottom:#eceae1 solid 1px;}
+.ctnMypage.ctnMypageMain .boxRsv .rBox .cBox .hPrt .prt{ float:left}
+.ctnMypage.ctnMypageMain .boxRsv .rBox .cBox .hPrt .stat{ float:right; padding:4px 0 0 0;}
+.ctnMypage.ctnMypageMain .boxRsv .rBox .cBox .pInfo{min-height:78px;}
+.ctnMypage.ctnMypageMain .boxRsv .rBox .cBox .pInfoIn{}
+.ctnMypage.ctnMypageMain .boxRsv .rBox .cBox .noData {padding-top:62px; text-align:center;}
+.ctnMypage.ctnMypageMain .boxRsv .rBox .cBox .pInfo .btnDtail{ position:absolute; right:10px; bottom:10px; line-height:16px; background:url(../../images/ko/common/mypage/mypageIcoPlus.gif) no-repeat right 2px; padding:0 15px 0 0; text-decoration:underline;}
+.ctnMypage.ctnMypageMain .boxRsv .rBox .cBox .pInfo .list li{ background:url(../../images/ko/mem/main/bul01.gif) no-repeat 0 9px; padding:0 0 0 12px;}
+.ctnMypage.ctnMypageMain .boxRsv .rBox1 .hNav .tit{ background:url(../../images/ko/common/mypage/mypageTit21.gif) no-repeat; width:147px; height:23px; line-height:100px; overflow:hidden;}
+.ctnMypage.ctnMypageMain .boxRsv .rBox2 .hNav .tit{ background:url(../../images/ko/common/mypage/mypageTit22.gif) no-repeat; width:147px; height:23px; line-height:100px; overflow:hidden;}
+
+.ctnMypage.ctnMypageMain .boxQna{ margin:0 0 33px 0;}
+.ctnMypage.ctnMypageMain .boxQna .hTit .tit{ background:url(../../images/ko/common/mypage/mypageTit3.gif) no-repeat;  width:328px; height:30px; display:inline-block; vertical-align:middle; line-height:100px; overflow:hidden;}
+.ctnMypage.ctnMypageMain .boxQna .bbsQnaList{ border-top:none;}
+
+.ctnMypage.ctnMypageMain .boxEvent{ width:400px; float:left;}
+.ctnMypage.ctnMypageMain .boxEvent .hTit .tit{background:url(../../images/ko/common/mypage/mypageTit4.gif) no-repeat;  width:300px; height:30px; display:inline-block; vertical-align:middle; line-height:100px; overflow:hidden;}
+.ctnMypage.ctnMypageMain .boxEvent .cBox{ padding-top:10px;}
+.ctnMypage.ctnMypageMain .boxEvent .cBox .msg{ margin:0 0 5px 0; background:url(../../images/ko/common/mypage/mypageTxt4.gif) no-repeat; width:400px; height:49px; display:block; overflow:hidden; text-indent:-999px;}
+.ctnMypage.ctnMypageMain .boxEvent .cBox .info{}
+.ctnMypage.ctnMypageMain .boxEvent .cBox .info strong{ color:#6e583e}
+
+.ctnMypage.ctnMypageMain .boxMpPlan{ width:400px; float:right;}
+.ctnMypage.ctnMypageMain .boxMpPlan .hTit .tit{background:url(../../images/ko/common/mypage/mypageTit5.gif) no-repeat;  width:328px; height:30px; display:inline-block; vertical-align:middle; line-height:100px; overflow:hidden;}
+.ctnMypage.ctnMypageMain .boxMpPlan .cBox{ padding-top:10px;}
+.ctnMypage.ctnMypageMain .boxMpPlan .cBox .msg{ margin:0 0 5px 0;background:url(../../images/ko/common/mypage/mypageTxt5.gif) no-repeat; width:400px; height:49px; display:block; overflow:hidden; text-indent:-999px;}
+.ctnMypage.ctnMypageMain .boxMpPlan .cBox .info{}
+.ctnMypage.ctnMypageMain .boxMpPlan .cBox .info strong{ color:#6e583e}
+
+
+/*예약확인*/
+.ctnMypage.ctnMypageRsv{}
+.ctnMypage.ctnMypageRsv .topMsg{ background:url(../../images/ko/common/mypage/myRsvTopMsg.gif) no-repeat; height:51px; line-height:200px; overflow:hidden;}
+.ctnMypage.ctnMypageRsv .schOpt{}
+.ctnMypage.ctnMypageRsv .schBox .dateOpt .tit1{background:url(../../images/ko/common/mypage/myRsvLabel1.gif) no-repeat; width:57px; height:27px;  vertical-align:middle; display:inline-block; line-height:100px; overflow:hidden;}
+.ctnMypage.ctnMypageRsv .schBox .dateOpt .tit2{ margin:0 0 0 10px; background:url(../../images/ko/common/mypage/myRsvLabel2.gif) no-repeat; width:71px; height:27px;  vertical-align:middle; display:inline-block; line-height:100px; overflow:hidden;}
+.ctnMypage.ctnMypageRsv .schBox .dateOpt input.dateStart,
+.ctnMypage.ctnMypageRsv .schBox .dateOpt input.dateEnd{ width:70px;}
+.ctnMypage.ctnMypageRsv .schBox .dateOpt #uniform-searchHotlId{ width:97px !important;}
+.ctnMypage.ctnMypageRsv .schBox .dateOpt #uniform-searchHotlId span{ width:72px !important;}
+
+.ctnMypage.ctnMypageRsv .bbsRsvList{ margin:0 0 10px 0;}
+.ctnMypage.ctnMypageRsv .bbsRsvList .trCancel td{background:#fdf8f3;}
+.ctnMypage.ctnMypageRsv .box{}
+.ctnMypage.ctnMypageRsv .box .hTit{ height:30px; border-bottom:#a1886f solid 3px;}
+.ctnMypage.ctnMypageRsv .box .hTit .tit{ height:30px;}
+.ctnMypage.ctnMypageRsv .box .msg,
+.ctnMypage.ctnMypageRsv .mypageWrap .msg{ background:#fbfbfb; border:#e9e9e9 solid 1px; padding:8px 20px; color:#666;}
+.ctnMypage.ctnMypageRsv .box .msg li a{color:#6e583e; text-decoration:underline; font-weight:bold;}
+.ctnMypage.ctnMypageRsv .box .bbsTot{ padding:5px 0;}
+.ctnMypage.ctnMypageRsv .boxRoomPack{ margin:20px 0 26px 0;}
+.ctnMypage.ctnMypageRsv .boxRoomPack .hTit .tit{ background:url(../../images/ko/common/mypage/myRsvTit1.gif) no-repeat; width:200px; height:30px; line-height:100px; overflow:hidden;}
+.ctnMypage.ctnMypageRsv .boxDinSpa .hTit .tit{ background:url(../../images/ko/common/mypage/myRsvTit2.gif) no-repeat; width:200px; height:30px; line-height:100px; overflow:hidden;}
+.ctnMypage.ctnMypageRsv .box .rsvTableTit .bbsList.bbsRsvList {margin-bottom: -1px;}
+
+.ctnMypage.ctnMypageRsv .btnRsvMod {background:url(../../images/ko/common/mypage/myRsvBtnRsvMod.gif) no-repeat; width:85px; height:27px; vertical-align:middle; display:inline-block; line-height:100px; overflow:hidden;}
+.ctnMypage.ctnMypageRsv .btnRsvCancel {background:url(../../images/ko/common/mypage/myRsvBtnRsvCancel.gif) no-repeat; width:85px; height:27px; vertical-align:middle; display:inline-block; line-height:100px; overflow:hidden;}
+.ctnMypage.ctnMypageRsv .btnPrint{ position:absolute; right:0px; top:12px; background:url(../../images/ko/common/mypage/myRsvBtnPrint.gif) no-repeat; width:63px; height:27px; display:inline-block; line-height:100px; overflow:hidden;}
+/* 2018.09.28 포인트사용안내 */
+.ctnMypage .pointGuide{padding: 6px 13px; border-top: 1px solid #cdcbbe; border-bottom:1px solid #cdcbbe; line-height: 180%;}
+.ctnMypage .pointGuide .myPoint{font-size:16px; font-weight:bold; padding: 0 0px 0 3px;}
+
+/* 쿠폰함 */
+.ctnMypage.ctnCoupon .topMsg{margin:16px 0 10px;background:url(../../images/ko/common/mypage/couponTopMsg.gif) no-repeat; height:63px; line-height:200px; overflow:hidden;}
+
+
+/*  취소정책  */
+.popLayerCancelPolicyPop{ width:700px; left:50%; margin:0 0 0 -350px}
+.popLayerCancelPolicyPop .popHead .tit{ background:url(../../images/ko/mem/main/popHeadTitMypage.gif) no-repeat 0 -200px;}
+.popLayerCancelPolicyPop  p{ padding:5px 0;}
+.popLayerCancelPolicyPop  .list{}
+.popLayerCancelPolicyPop  .list li{ background:url(../../images/ko/mem/main/bul01.gif) no-repeat 0 8px; padding:0 0 0 12px;}
+
+
+
+/*예약확인상세 룸,팩*/
+.ctnMypage.ctnMypageRsvRmPack .hTitS{ position:relative; padding-bottom:5px;}
+.ctnMypage.ctnMypageRsvRmPack{}
+.ctnMypage.ctnMypageRsvRmPack .box1{ margin:0 0 20px 0;}
+.ctnMypage.ctnMypageRsvRmPack .box1 .hTit{ margin:0 0 20px 0;}
+.ctnMypage.ctnMypageRsvRmPack .box1 .hTit .tit{ background:url(../../images/ko/common/mypage/myRsvRmPackTit1.gif) no-repeat; width:142px; height:29px; line-height:100px; overflow:hidden;}
+.ctnMypage.ctnMypageRsvRmPack .tableInfo1{ margin:0 0 20px 0;*margin-top:20px;}
+.ctnMypage.ctnMypageRsvRmPack .tableInfo5{ margin:0 0 20px 0;}
+.ctnMypage.ctnMypageRsvRmPack .priceWrap{}
+.ctnMypage.ctnMypageRsvRmPack .priceWrap .priceBox{background:#fdf8ef; padding:15px 40px; overflow:hidden; text-align:right;}
+.ctnMypage.ctnMypageRsvRmPack .priceWrap .priceBox1{ border:#f4eee3 solid 1px; border-bottom:#e2d5c5 solid 1px;}
+.ctnMypage.ctnMypageRsvRmPack .priceWrap .priceBox2{border:#f4eee3 solid 1px; border-bottom:none; border-top:none;}
+/*.ctnMypage.ctnMypageRsvRmPack .priceWrap .priceBox .list{  text-align:right; float:right;}
+.ctnMypage.ctnMypageRsvRmPack .priceWrap .priceBox .list li{ line-height:22px;}
+.ctnMypage.ctnMypageRsvRmPack .priceWrap .priceBox .list li .dt{font-size:14px; font-weight:bold; min-width:150px; margin:0 20px 0 0; color:#7e4f15; text-align:right; display:inline-block; vertical-align:middle;}
+.ctnMypage.ctnMypageRsvRmPack .priceWrap .priceBox .list li .dd{font-size:14px; font-weight:bold; min-width:110px; color:#7e4f15; text-align:right; display:inline-block; vertical-align:middle;}*/
+/*추가*/
+.ctnMypage.ctnMypageRsvRmPack .priceWrap .priceBox .list{ text-align:right; float:right;}
+.ctnMypage.ctnMypageRsvRmPack .priceWrap .priceBox .list li{ line-height:22px;}
+.ctnMypage.ctnMypageRsvRmPack .priceWrap .priceBox .list li .dt{font-size:12px; font-weight:normal; min-width:150px; margin:0 20px 0 0; color:#7e4f15; text-align:right; display:inline-block; vertical-align:middle;}
+.ctnMypage.ctnMypageRsvRmPack .priceWrap .priceBox .list li .dd{font-size:12px; font-weight:normal; min-width:110px; color:#7e4f15; text-align:right; display:inline-block; vertical-align:middle;}
+.ctnMypage.ctnMypageRsvRmPack .priceWrap .priceBox .list li.rprice .dt{font-size:14px; font-weight:bold; min-width:150px; margin:0 20px 0 0; color:#584a3b; text-align:right; display:inline-block; vertical-align:middle;}
+.ctnMypage.ctnMypageRsvRmPack .priceWrap .priceBox .list li.rprice .dd{font-size:14px; font-weight:bold; min-width:110px; color:#584a3b; text-align:right; display:inline-block; vertical-align:middle;}
+.ctnMypage.ctnMypageRsvRmPack .priceWrap .priceTotal { background: none repeat scroll 0 0 #A1886F; color: #FDF8EF; padding: 8px 40px 13px; text-align: right;}
+.ctnMypage.ctnMypageRsvRmPack .info-text {margin:-10px 0 25px;font-weight:bold;}
+
+
+.ctnMypage.ctnMypageRsvRmPack .priceWrap .priceBox .list li .msg1{ margin:0 0 5px 0; display:block}
+.ctnMypage.ctnMypageRsvRmPack .priceWrap .priceBox .list li .msg2{margin:0 0 0px 0; display:block}
+.ctnMypage.ctnMypageRsvRmPack .priceWrap .priceBox .list li .tot{ font-weight:bold; font-size:14px;}
+.ctnMypage.ctnMypageRsvRmPack .priceWrap .priceTotal{ background:#a1886f; color:#fdf8ef; padding:8px 40px 13px; text-align:right;}
+.ctnMypage.ctnMypageRsvRmPack .priceWrap .priceTotal .name{ font-size:14px; height:25px; line-height:33px; font-weight:bold;  display:inline-block; vertical-align:middle; margin:0 10px 0 0;}
+.ctnMypage.ctnMypageRsvRmPack .priceWrap .priceTotal .amt{ font-size:25px;  height:28px;  line-height:30px; display:inline-block; vertical-align:middle; font-family:Verdana}
+.ctnMypage.ctnMypageRsvRmPack .priceWrap .priceTotal .unit{ font-size:14px;  height:25px; line-height:33px; font-weight:bold; display:inline-block; vertical-align:middle;}
+.ctnMypage.ctnMypageRsvRmPack .priceView{ overflow:hidden; padding:5px 0 0 0;}
+.ctnMypage.ctnMypageRsvRmPack .priceView .txt{ float:left; color:#7e4f15;}
+.ctnMypage.ctnMypageRsvRmPack .priceView .btnPriceView{ float:right; padding:0 17px 0 0; background:url(../../images/ko/mem/reservation/reserveStepPriceBtnPriceView.gif) no-repeat right 2px; display:inline-block; vertical-align:middle; line-height:16px; text-decoration:underline; color:#444;}
+.ctnMypage.ctnMypageRsvRmPack .box2{ margin:0 0 20px 0;}
+.ctnMypage.ctnMypageRsvRmPack .box3{ margin:0 0 20px 0;}
+.ctnMypage.ctnMypageRsvRmPack .box4{ margin:0 0 10px 0;}
+.ctnMypage.ctnMypageRsvRmPack .box5{ margin:0 0 20px 0;}
+.ctnMypage.ctnMypageRsvRmPack .box6{ margin:0 0 20px 0;}
+.ctnMypage.ctnMypageRsvRmPack .btnViewDetail{ background:url(../../images/ko/common/mypage/btnFacilViewDetail.gif) no-repeat; display:inline-block; vertical-align:middle; width:59px; height:20px; line-height:100px; overflow:hidden;}
+
+
+/*부대시설신청내역팝업*/
+.popLayerMyFacilPop{ width:700px; margin:0 0 0 -350px; left:50%;}
+.popLayerMyFacilPop .popHead .tit{ background:url(../../images/ko/mem/main/popHeadTitMypage.gif) no-repeat 0 -150px;}
+.popLayerMyFacilPop .btnGoList{ background:url(../../images/ko/common/mypage/btnGoList.gif) no-repeat; width:62px; height:27px; vertical-align:middle; display:inline-block; line-height:100px; overflow:hidden;}
+.popLayerMyFacilPop .hTitS{ margin:0 0 10px 0;}
+.popLayerMyFacilPop .hTitS .tit{ font-weight:bold}
+.popLayerMyFacilPop .tableInfoFacil{ margin:0 0 20px 0;}
+
+
+
+/*예약확인상세 다이닝*/
+.ctnMypage.ctnMypageRsv .thR{ background:#f2f2ec;}
+.ctnMypage.ctnMypageRsv td.memo{ height:100px; vertical-align:top;}
+.ctnMypage.ctnMypageRsvDining{}
+.ctnMypage.ctnMypageRsvDining .box1{ margin:0 0 20px 0;}
+.ctnMypage.ctnMypageRsvDining .box1 .hTit{ margin:0 0 20px 0;}
+.ctnMypage.ctnMypageRsvDining .box1 .hTit .tit{ background:url(../../images/ko/common/mypage/myRsvDiningTit1.gif) no-repeat; width:142px; height:29px; line-height:100px; overflow:hidden;}
+.ctnMypage.ctnMypageRsvDining .box2{ margin:0 0 10px 0;}
+
+
+/*예약확인상세 스파*/
+.ctnMypage.ctnMypageRsv .thR{ background:#f2f2ec;}
+.ctnMypage.ctnMypageRsv td.memo{ height:100px; vertical-align:top;}
+.ctnMypage.ctnMypageRsvSpa{}
+.ctnMypage.ctnMypageRsvSpa .box1{ margin:0 0 20px 0;}
+.ctnMypage.ctnMypageRsvSpa .box1 .hTit{ margin:0 0 20px 0;}
+.ctnMypage.ctnMypageRsvSpa .box1 .hTit .tit{ background:url(../../images/ko/common/mypage/myRsvSpaTit1.gif) no-repeat; width:142px; height:29px; line-height:100px; overflow:hidden;}
+.ctnMypage.ctnMypageRsvSpa .box2{ margin:0 0 10px 0;}
+
+/*예약 취소*/
+.ctnMypage.ctnMypageRsvCancel{}
+.ctnMypage.ctnMypageRsvCancel .hTit .tit{ line-height:100px; overflow:hidden;}
+.ctnMypage.ctnMypageRsvCancel .hTit1 .tit{ background:url(../../images/ko/common/mypage/myRsvTit1.gif) no-repeat;}
+.ctnMypage.ctnMypageRsvCancel .hTit2 .tit{ background:url(../../images/ko/common/mypage/myRsvDiningTit1.gif) no-repeat;}
+.ctnMypage.ctnMypageRsvCancel .hTit3 .tit{ background:url(../../images/ko/common/mypage/myRsvSpaTit1.gif) no-repeat;}
+.ctnMypage.ctnMypageRsvCancel .hTitS{ margin:10px 0 0 0 ; height:25px;}
+.ctnMypage.ctnMypageRsvCancel .msg1{ background:#fbfbfb; border:#e9e9e9 solid 1px; padding:8px 20px; margin:0 0 10px 0;}
+.ctnMypage.ctnMypageRsvCancel .guideBox{ margin:0 0 10px 0; background:#fbfbfb; border:#e9e9e9 solid 1px; padding:15px 20px; line-height:20px;}
+.ctnMypage.ctnMypageRsvCancel .guideBox *{ color:#666}
+.ctnMypage.ctnMypageRsvCancel .guideBox .tit{ font-size:14px; font-weight:bold; margin:0 0 4px 0;}
+.ctnMypage.ctnMypageRsvCancel .guideBox  ul li{ background:url(../../images/ko/mem/main/bul01.gif) no-repeat 0 9px; padding:0 0 0 10px;}
+.ctnMypage.ctnMypageRsvCancel .guideBox .txt2{ margin:20px 0 0 0;}
+
+.ctnMypage label.nameH,
+.ctnMypage label.nameK,
+.ctnMypage label.emailId,
+.ctnMypage label.emailDomain,
+.ctnMypage label.emailDomainSel,
+.ctnMypage label.phoneComp,
+.ctnMypage label.phoneNum1,
+.ctnMypage label.phoneNum2,
+.ctnMypage label.phoneNum3,
+.ctnMypage label.phoneHome,
+.ctnMypage label.phoneHome1,
+.ctnMypage label.phoneHome2,
+.ctnMypage label.zipcode1,
+.ctnMypage label.zipcode2,
+.ctnMypage label.address1,
+.ctnMypage label.address2,
+.ctnMypage label.addressNew1,
+.ctnMypage label.addressNew2,
+.ctnMypage label.phoneHome2,
+.ctnMypage label.compPart1,
+.ctnMypage label.compPart2,
+.ctnMypage label.phoneComp1,
+.ctnMypage label.phoneComp2,
+.ctnMypage label.phoneComp3,
+.ctnMypage label.zipcodeComp1,
+.ctnMypage label.zipcodeComp2,
+.ctnMypage label.addressComp1,
+.ctnMypage label.addressComp2,
+.ctnMypage label.addressCompNew1,
+.ctnMypage label.addressCompNew2,
+.ctnMypage label.spDaySel1,
+.ctnMypage label.spDaySel2,
+.ctnMypage label.spDayName1,
+.ctnMypage label.spDayName2,
+.ctnMypage label.dateStart,
+.ctnMypage label.dateEnd{ position:absolute; left:-9999%;}
+
+label.dateStart {position:absolute; left:-9999%;}
+label.dateEnd {position:absolute; left:-9999%;}
+/*비회원예약*/
+.ctnNoMem{ width:866px; margin:auto; float:none;}
+.ctnMypage.ctnNoMem .topMsg{ background:url(../../images/ko/common/mypage/myRsvTopMsg.gif) no-repeat; height:51px; line-height:200px; overflow:hidden;}
+.ctnMypage.ctnMypageRsv.ctnNoMem .headTit .tit{ background-position:0 -50px;}
+
+.ctnMypage.ctnMypageRsv.ctnNoMem .topMsg{ background-image:url(../../images/ko/common/mypage/noMemRsvTopMsg.gif)}
+
+
+/*회원정보 변경*/
+.ctnMypage.ctnUserInfo1 .btnConfirm{ background:url(../../images/ko/common/mypage/btnConfirm.gif) no-repeat; width:62px; height:27px; vertical-align:middle; display:inline-block; line-height:100px; overflow:hidden;}
+.ctnMypage.ctnUserInfo1 .tableUserInfo1{ margin:0 0 10px;}
+.ctnMypage.ctnUserInfo1 .msgBox{ border:#e9e9e9 solid 1px; background:#fbfbfb; color:#666; padding:15px; margin:0 0 20px 0;}
+
+/* 2018.07.27 프로필수정 內 비밀번호찾기 버튼 추가 */
+.ctnMypage.ctnUserInfo1 .btnFindPw{width:110px; height:27px; vertical-align: middle; display: inline-block; line-height: 100px; overflow: hidden; background: url(../../images/ko/mypage/btnFindPw.gif) no-repeat;}
+
+.ctnMypage.ctnUserInfo2{}
+.ctnMypage.ctnUserInfo2 .hTitS{ border-bottom:none}
+.ctnMypage.ctnUserInfo2 .msg{ margin:20px 0 10px 0; background:url(../../images/ko/common/mypage/userInfo1Msg.gif) no-repeat; height:20px; line-height:100px; overflow:hidden;}
+.ctnMypage.ctnUserInfo2 .btnList{ padding:30px 0 0 0;}
+.ctnMypage.ctnUserInfo2 .btnChange{ background:url(../../images/ko/common/mypage/btnChange.gif) no-repeat; width:137px; height:44px; vertical-align:middle; display:inline-block; line-height:100px; overflow:hidden;}
+.ctnMypage.ctnUserInfo2 .btnCancel{ background:url(../../images/ko/common/mypage/btnCancel.gif) no-repeat; width:137px; height:44px; vertical-align:middle; display:inline-block; line-height:100px; overflow:hidden;}
+.ctnMypage.ctnUserInfo2 .emailRecepBox{ padding:5px 0px;}
+.ctnMypage.ctnUserInfo2 .emailRecepBox .msgCheck3{ margin:0 10px 0 0;}
+.ctnMypage.ctnUserInfo2 .tableUserInfo2,
+.ctnMypage.ctnUserInfo2 .tableUserInfo1{ margin:0 0 10px 0;}
+.ctnMypage.ctnUserInfo2 table td.newsletter{}
+.ctnMypage.ctnUserInfo2 table td.newsletter th{}
+.ctnMypage.ctnUserInfo2 table td.newsletter .dList{}
+.ctnMypage.ctnUserInfo2 table td.newsletter .dt,
+.ctnMypage.ctnUserInfo2 table td.newsletter .dd{ height:30px; padding:5px 0 5px 20px; border-bottom:#eaeaea solid 1px; }
+.ctnMypage.ctnUserInfo2 table td.newsletter .dt{ float:left;  width:80px;background:#f7f7f7;}
+.ctnMypage.ctnUserInfo2 table td.newsletter .dd{ float:left;  width:560px; }
+.ctnMypage.ctnUserInfo2 table td.newsletter li.last .dt,
+.ctnMypage.ctnUserInfo2 table td.newsletter li.last .dd{ border-bottom:none;}
+.ctnMypage.ctnUserInfo2 table td.newsletter label{ margin:0 20px 0 0;}
+
+.ctnMypage #uniform-phoneComp{ width:65px !important;}
+.ctnMypage #uniform-phoneComp span{ width:40px !important;}
+.ctnMypage #uniform-phoneNum1{ width:65px !important;}
+.ctnMypage #uniform-phoneNum1 span{ width:40px !important;}
+.ctnMypage #uniform-phoneHome{ width:65px !important;}
+.ctnMypage #uniform-phoneHome span{ width:40px !important;}
+.ctnMypage input.phoneNum2,
+.ctnMypage input.phoneNum3,
+.ctnMypage input.phoneHome1,
+.ctnMypage input.phoneHome2{width:60px }
+
+.ctnMypage.ctnUserInfo2 label.smsOpt1,
+.ctnMypage.ctnUserInfo2 label.smsOpt2,
+.ctnMypage.ctnUserInfo2 label.emailRecep1{ margin:0 20px 0 0;}
+
+.ctnMypage.ctnUserInfo2 .addressWrap .addressOld input.address1{ width:540px}
+.ctnMypage.ctnUserInfo2 .addressWrap .addressOld input.address2{ width:730px}
+
+.ctnMypage.ctnUserInfo2  .addressWrap .addressNew div.addressNew1,
+.ctnMypage.ctnUserInfo2  .addressWrap .addressNew div.addressNew2{ width:660px}
+.ctnMypage.ctnUserInfo2  .addressWrap .addressNew input.addressNew1,
+.ctnMypage.ctnUserInfo2  .addressWrap .addressNew input.addressNew2{ width:663px}
+
+
+/*비번변경*/
+.ctnMypage.ctnPwMod .hTitS{ border-bottom:none; display:none;}
+.ctnPwMod .msg{ margin:20px 0 10px 0; background:url(../../images/ko/common/mypage/userInfo2Msg1.gif) no-repeat 0 -4px; height:30px; line-height:100px; overflow:hidden;}
+.ctnPwMod .pwGuideBox{ position:relative; display:inline-block;}
+.ctnPwMod .pwGuideBox .btnPwHelp{}
+.ctnPwMod .pwGuideBox .pwGuide{ position:absolute; left:110px; top:0; width:300px; border:#CCC solid 1px; padding:15px; background:#FFF; z-index:10; display:none;}
+.ctnPwMod .msgCheck{ margin:0 0 0 7px}
+
+.ctnPwMod .pwGuideBox{ position:relative; display:inline-block; *display:inline; zoom:1; z-index:10}
+.ctnPwMod .pwGuideBox .btnPwHelp{}
+.ctnPwMod .pwGuideBox .pwGuide{ display:none; position:absolute; left:75px; top:26px; width:450px; border:#a1886f solid 1px; padding:19px; background:#f7f4ea; z-index:100; zoom:1; color:#626262; font-size:11px;}
+.ctnPwMod .pwGuideBox .pwGuide .tit{ font-weight:bold; margin:0 0 10px 0;}
+.ctnPwMod .pwGuideBox .pwGuide .list li{background:url(../../images/ko/mem/main/bul01.gif) no-repeat 0 9px; padding:0 0 0 8px;}
+.ctnPwMod .pwGuideBox .pwGuide .btnClose{position:absolute; right:5px; top:5px; background:url(../../images/ko/common/join/btnClose.gif) no-repeat; width:20px; height:20px; text-indent:-9999%; overflow:hidden; }
+.ctnPwMod .pwGuideBox .pwGuide .pwGuideArrow{ position:absolute; left:18px; top:-6px; background:url(../../images/ko/common/join/pwGuideArrowTop.gif) no-repeat; width:15px; height:6px; overflow:hidden;}
+.ctnPwMod .btnPwHelp{ font-size:11px; font-weight:normal; color:#806925; text-decoration:none;}
+.ctnPwMod .btnPwHelp .icoHelp{ background:url(../../images/ko/common/join/icoHelp.gif) no-repeat; width:15px; height:14px; margin:0 0 0 4px; display:inline-block; vertical-align:middle; line-height:100px; overflow:hidden;}
+.ctnPwMod .btnList{ padding:30px 0 0 0;}
+.ctnPwMod .btnChange{ background:url(../../images/ko/common/mypage/btnChange2.gif) no-repeat; width:137px; height:44px; vertical-align:middle; display:inline-block; line-height:100px; overflow:hidden;}
+.ctnPwMod .btnCancel{ background:url(../../images/ko/common/mypage/btnCancel.gif) no-repeat; width:137px; height:44px; vertical-align:middle; display:inline-block; line-height:100px; overflow:hidden;}
+
+
+/*20150605 비밀번호 변경 width size
+.size866{ width:866px; margin:auto; !important}*/
+
+/*비번변경*/
+.ctnMypage.ctnPwMod2 .hTitS{ border-bottom:none; display:none;}
+.ctnPwMod2 .msg{ margin:20px 0 10px 0; background:url(../../images/ko/common/mypage/userInfo2Msg1.gif) no-repeat 0 -4px; height:20px; line-height:100px; overflow:hidden;}
+.ctnPwMod2 .pwGuideBox{ position:relative; display:inline-block;}
+.ctnPwMod2 .pwGuideBox .btnPwHelp{}
+.ctnPwMod2 .pwGuideBox .pwGuide{ position:absolute; left:110px; top:0; width:300px; border:#CCC solid 1px; padding:15px; background:#FFF; z-index:10; display:none;}
+.ctnPwMod2 .msgCheck{ margin:0 0 0 7px}
+
+.ctnPwMod2 .pwGuideBox{ position:relative; display:inline-block; *display:inline; zoom:1; z-index:10}
+.ctnPwMod2 .pwGuideBox .btnPwHelp{}
+.ctnPwMod2 .pwGuideBox .pwGuide{ display:none; position:absolute; left:75px; top:26px; width:450px; border:#a1886f solid 1px; padding:19px; background:#f7f4ea; z-index:100; zoom:1; color:#626262; font-size:11px;}
+.ctnPwMod2 .pwGuideBox .pwGuide .tit{ font-weight:bold; margin:0 0 10px 0;}
+.ctnPwMod2 .pwGuideBox .pwGuide .list li{background:url(../../images/ko/mem/main/bul01.gif) no-repeat 0 9px; padding:0 0 0 8px;}
+.ctnPwMod2 .pwGuideBox .pwGuide .btnClose{position:absolute; right:5px; top:5px; background:url(../../images/ko/common/join/btnClose.gif) no-repeat; width:20px; height:20px; text-indent:-9999%; overflow:hidden; }
+.ctnPwMod2 .pwGuideBox .pwGuide .pwGuideArrow{ position:absolute; left:18px; top:-6px; background:url(../../images/ko/common/join/pwGuideArrowTop.gif) no-repeat; width:15px; height:6px; overflow:hidden;}
+.ctnPwMod2 .btnPwHelp{ font-size:11px; font-weight:normal; color:#806925; text-decoration:none;}
+.ctnPwMod2 .btnPwHelp .icoHelp{ background:url(../../images/ko/common/join/icoHelp.gif) no-repeat; width:15px; height:14px; margin:0 0 0 4px; display:inline-block; vertical-align:middle; line-height:100px; overflow:hidden;}
+.ctnPwMod2 .btnList{ padding:30px 0 0 0;}
+.ctnPwMod2 .btnChange{ background:url(../../images/ko/common/mypage/btnChange.gif) no-repeat; width:137px; height:44px; vertical-align:middle; display:inline-block; line-height:100px; overflow:hidden;}
+.ctnPwMod2 .btnCancel{ background:url(../../images/ko/common/mypage/btnCancel.gif) no-repeat; width:137px; height:44px; vertical-align:middle; display:inline-block; line-height:100px; overflow:hidden;}
+.ctnPwMod2 .btnChange2{ background:url(../../images/ko/common/mypage/btnChange2.gif) no-repeat; width:137px; height:44px; vertical-align:middle; display:inline-block; line-height:100px; overflow:hidden;}
+.ctnPwMod2 .btnCancel2{ background:url(../../images/ko/common/mypage/btnCancel2.gif) no-repeat; width:188px; height:44px; vertical-align:middle; display:inline-block; line-height:100px; overflow:hidden;}
+
+/*회원탈퇴*/
+.ctnMypage.ctnMemDis{}
+.ctnMypage.ctnMemDis .msg{ margin:20px 0 17px; background:url(../../images/ko/common/mypage/userInfo2Msg1.gif) no-repeat; height:27px; line-height:100px; overflow:hidden;}
+.ctnMypage.ctnMemDis .msg1{ margin:0 0 5px 0}
+.ctnMypage.ctnMemDis .msgBox{ border:#e9e9e9 solid 1px; background:#fbfbfb; color:#666; padding:15px; margin:0 0 20px 0;}
+.ctnMypage.ctnMemDis .msgBox p{ color:#666;}
+.ctnMypage.ctnMemDis .msgBox ul{ margin:0 0 0 5px;}
+.ctnMypage.ctnMemDis .msgBox ul li{ background:url(../../images/ko/mem/main/bul01.gif) no-repeat 0 8px; padding:0 0 0 10px;}
+.ctnMypage.ctnMemDis .tableMemDis{margin:0 0 30px 0;}
+.ctnMypage.ctnMemDis .tableMemDis p{ padding:5px 0;}
+.ctnMypage.ctnMemDis .btnMemDis{ background:url(../../images/ko/common/mypage/btnMemDis.gif) no-repeat; width:137px; height:44px; vertical-align:middle; display:inline-block; line-height:100px; overflow:hidden;}
+.ctnMypage.ctnMemDis .btnCancel{ background:url(../../images/ko/common/mypage/btnCancel.gif) no-repeat; width:137px; height:44px; vertical-align:middle; display:inline-block; line-height:100px; overflow:hidden;}
+
+
+.ctnMypage .schBox{ padding:0; margin:0 0 20px 0; overflow:hidden;}
+.ctnMypage .schBox .dateOpt{ float:left}
+.ctnMypage .schBox .btn{ float:left; padding:0 0 0 10px;}
+.ctnMypage .bbsCount{ margin:0 0 10px 0;}
+
+.ctnMypage .bbsViewQna{ margin:0 0 10px 0;}
+.ctnMypage .bbsViewQna th.memo{ background:#f2f2ec;}
+.ctnMypage .bbsViewQna td.memo{ min-height:90px; vertical-align:top;}
+.ctnMypage .bbsViewQna .thR{ background:#f2f2ec;}
+.ctnMypage .bbsLinkQna{ margin:0 0 10px 0;}
+.ctnMypage .bbsViewQnaWrite{ margin:0 0 20px 0;}
+
+
+
+/*멤버십조회*/
+
+.ctnMypage{}
+.ctnMypage.ctnMyMembership .msg1{ margin:0 0 10px 0;}
+.ctnMypage.ctnMyMembership .msgBox{ border:#e9e9e9 solid 1px; background:#fbfbfb; color:#666; padding:15px; margin:0 0 20px 0;}
+
+.ctnMypage .msgBox .btnQna{ }
+
+.ctnMypage.ctnMyMembership .tableUserInfo1{ margin:0 0 10px 0;}
+.ctnMypage.ctnMyMembership .hTitS{ /*border-bottom:#a1886f 3px solid;*/ height:30px; margin:0; line-height:100px; overflow:hidden;}
+
+.ctnMypage.ctnMyMembership{}
+.ctnMypage.ctnMyMembership .msg1{ margin:10px 0 10px 0; background:url(../../images/ko/common/mypage/membershipMsg1.gif) no-repeat; height:27px; line-height:100px; overflow:hidden; display:inline-block;}
+.ctnMypage.ctnMyMembership .msgBox{ height:24px; line-height:24px; position:relative; border:#f4eee4 solid 1px; background:#fff; color:#444444; padding:18px 24px; margin:0 0 20px 0;}
+.ctnMypage.ctnMyMembership .msgBox .btnQna{ position:absolute; right:18px; top:18px; background:url(../../images/ko/common/mypage/btnQna.gif) no-repeat; width:74px; height:26px; vertical-align:middle; display:inline-block; line-height:100px; overflow:hidden;}
+.ctnMypage.ctnMyMembership .btnCertifi{ background:url(../../images/ko/common/mypage/btnCertifi.gif) no-repeat; width:59px; height:20px; vertical-align:middle; display:inline-block; line-height:100px; overflow:hidden;}
+
+
+.pSeoul{background:url(../../images/ko/common/mypage/pSeoul.gif) no-repeat; width:77px; height:27px;vertical-align:middle; display:inline-block; line-height:100px; overflow:hidden;}
+.pJeju{background:url(../../images/ko/common/mypage/pJeju.gif) no-repeat; width:77px; height:27px;vertical-align:middle; display:inline-block; line-height:100px; overflow:hidden;}
+.pStay{background:url(../../images/ko/common/mypage/pStay.gif) no-repeat; width:77px; height:27px;vertical-align:middle; display:inline-block; line-height:100px; overflow:hidden;}
+
+
+.ctnMypage.ctnMyMembership .btnPointList{ margin:18px 0 18px 0;}
+.ctnMypage.ctnMyMembership .btnDiningList{ margin:18px 0 18px 0;}
+.ctnMypage.ctnMyMembership .btnPointSaveList{ background:url(../../images/ko/common/mypage/btnPointSaveList.gif) no-repeat; width:115px; height:27px; vertical-align:middle; display:inline-block; line-height:100px; overflow:hidden;}
+.ctnMypage.ctnMyMembership .btnPointDiningList{ background:url(../../images/ko/common/mypage/btnPointDiningList.gif) no-repeat; width:85px; height:27px; vertical-align:middle; display:inline-block; line-height:100px; overflow:hidden;}
+.ctnMypage.ctnMyMembership .btnMembership{float:right;margin:0;display:inline-block;width:102px; height:27px;background:url(../../images/ko/common/mypage/btnMembership.gif) no-repeat;}
+.ctnMypage.ctnMyMembership .btnMembership a{display:block;text-indent:-9999px;width:102px; height:27px;}
+
+.ctnMyMembership .bbsMembership{ margin:0 0 8px 0; border-top: #a1886f 3px solid;}
+.ctnMyMembership .bbsMembershipDining{ margin:0 0 8px 0;}
+.ctnMyMembership .memQnaBox{border:#eaeaea solid 1px; background:#fbfbfb; color:#666666; padding:15px; position:relative; overflow:hidden;}
+.ctnMyMembership .memQnaBox .tit{ float:left; margin:0 30px 0 0;}
+.ctnMyMembership .memQnaBox .list{ overflow:hidden; width:400px; float:left;}
+.ctnMyMembership .memQnaBox .list dt{ float:left; width:100px; background:url(../../images/ko/mem/main/bul01.gif) no-repeat 0 8px; padding:0 0 0 15px;}
+.ctnMyMembership .memQnaBox .list dd{ float:left; width:250px;}
+.ctnMyMembership .membershipBox{ border:#f5efe5 solid 1px; padding:24px; margin:0 0 24px 0;overflow:hidden;}
+.ctnMyMembership .membershipBox .membershipBoxTop{width:816px;overflow:hidden;height:50px;}
+.ctnMyMembership .membershipBox .membershipBoxTop .msg2{float:left;}
+.ctnMyMembership .hTitS1{ background:url(../../images/ko/common/mypage/membershipTit1.gif) no-repeat;}
+
+.ctnMyMembership .msg2,
+.ctnMyMembership .msg3,
+.ctnMyMembership .msg4{ color:#727272; margin:0 0 4px 0;}
+.ctnMypage .bbsTotal{ overflow:hidden; margin:0 0 5px 0;}
+.ctnMypage .bbsTotal .count{ float:left; padding:8px 0 0 0;}
+.ctnMypage .bbsTotal .tabMemCate{ float:right; padding:10px 0 0 0;}
+.ctnMypage .tabMemCate{ height:20px; margin:0 -10px 0 0;}
+.ctnMypage .tabMemCate li{ float:left; margin:0 0 0 0px;}
+.ctnMypage .tabMemCate li a{ display:block; padding:0px 15px; font-weight:normal; color:#666; text-decoration:none; background:url(../../images/ko/common/mypage/membershipPointBar.gif) no-repeat 0 4px;}
+.ctnMypage .tabMemCate li a.on{ font-weight:bold}
+.ctnMypage .tabMemCate li.first a{ background:none;}
+
+.ctnMypage .tableMembershipPointSch{ margin:0 0 20px 0;}
+.ctnMypage .pagingMembership{ margin:0 0 20px 0;}
+.ctnMypage .bbsMembershipCate{ margin:0 0 20px 0;}
+
+.ctnMembershipPoint .membershipBox{ border:#f5efe5 solid 1px; padding:24px; margin:0 0 24px 0;}
+.ctnMembershipPoint .hTitS{ height:32px;}
+.ctnMembershipPoint .hTitS1 .tit{ background:url(../../images/ko/common/mypage/membershipPointTit1.gif) no-repeat; height:30px; padding:0; width:242px;  vertical-align:middle; display:inline-block; line-height:100px; overflow:hidden;}
+.ctnMembershipPoint .hTitS2 .tit{ background:url(../../images/ko/common/mypage/membershipPointTit2.gif) no-repeat; height:30px; padding:0; width:242px; vertical-align:middle; display:inline-block; line-height:100px; overflow:hidden;}
+.ctnMembershipPoint .bbsMembership{ margin:0 0 26px 0;}
+.ctnMembershipPoint .tableMembershipPointSch{ margin:0 0 10px 0;}
+.ctnMembershipPoint .btnMembershipSch{ background:url(../../images/ko/common/mypage/membershipBtnSch.gif) no-repeat; width:62px; height:27px; vertical-align:middle; display:inline-block; line-height:100px; overflow:hidden;}
+.ctnMembershipPoint .bbsMembership{/*border-top:none;*/}
+.ctnMembershipPoint .tableMembershipPointSch{/*border-top:none;*/}
+.ctnMembershipPoint .btnListMembershipSch{ margin:0 0 10px 0;}
+
+.ctnMypage .btnMembersipAll{ background:url(../../images/ko/common/mypage/btnMembershipAll.gif) no-repeat; width:132px; height:44px;vertical-align:middle; display:inline-block; line-height:100px; overflow:hidden;}
+
+.ctnMembershipDining .membershipBox{ border:#f5efe5 solid 1px; padding:24px; margin:0 0 24px 0;}
+.ctnMembershipDining .hTitS{ height:32px;}
+.ctnMembershipDining .hTitS1 .tit{ background:url(../../images/ko/common/mypage/membershipDiningTit1.gif) no-repeat; height:30px; width:242px;  vertical-align:middle; display:inline-block; line-height:100px; overflow:hidden;}
+.ctnMembershipDining .hTitS2 .tit{ background:url(../../images/ko/common/mypage/membershipDiningTit2.gif) no-repeat; height:30px; width:242px; vertical-align:middle; display:inline-block; line-height:100px; overflow:hidden;}
+.ctnMembershipDining .bbsMembershipDining{ margin:0 0 26px 0; border-top:3px solid #a1886f;}
+.ctnMembershipDining .btnMembershipSch{ background:url(../../images/ko/common/mypage/membershipBtnSch.gif) no-repeat; width:62px; height:27px; vertical-align:middle; display:inline-block; line-height:100px; overflow:hidden;}
+.ctnMembershipDining .tableMembershipDiningSch{ margin:0 0 10px 0; border-top:none;}
+
+
+.popLayerMemCertifi .memQnaBox{border:#eaeaea solid 1px; padding:15px; background:#fbfbfb; position:relative; overflow:hidden;}
+.popLayerMemCertifi .memQnaBox .list{ overflow:hidden; width:400px; font-size:11px; color:#666666}
+.popLayerMemCertifi .memQnaBox .list dt{ float:left; width:100px; background:url(../../images/ko/mem/main/bul01.gif) no-repeat 0 8px; padding:0 0 0 10px;}
+.popLayerMemCertifi .memQnaBox .list dd{ float:left; width:250px;}
+
+/*label*/
+ .tableUserInfo2 label.spDaySel1,
+ .tableUserInfo2 label.spDaySel2,
+ .tableUserInfo2 label.spDayName1,
+ .tableUserInfo2 label.spDayName2,
+ .tableUserInfo2 label.spDayYY1,
+ .tableUserInfo2 label.spDayYY2,
+ .tableUserInfo2 label.spDayMM1,
+ .tableUserInfo2 label.spDayMM2,
+ .tableUserInfo2 label.spDayDD1,
+ .tableUserInfo2 label.spDayDD2,
+ .tableUserInfo2 label.spDayDD1,
+ .tableUserInfo2 label.spDayDD2{ position:absolute; left:-9999%;}
+
+
+
+/*문의내역*/
+.ctnMypage.ctnQna{}
+.ctnMypage.ctnQna .msg{ margin:16px 0 10px 0; background:url(../../images/ko/common/mypage/myPageQnaMsg1.gif) no-repeat; height:20px; line-height:100px; overflow:hidden;}
+.ctnMypage .schBox .dateOpt .tit{ background:url(../../images/ko/common/mypage/myPageQnaLabel1.gif) no-repeat; width:60px; height:27px;  vertical-align:middle; display:inline-block; line-height:100px; overflow:hidden;}
+.ctnMypage .schBox {}
+.ctnMypage .schBox .btnSch{background:url(../../images/ko/common/mypage/membershipBtnSch.gif) no-repeat; width:62px; height:27px; vertical-align:middle; display:inline-block; line-height:100px; overflow:hidden;}
+.ctnMypage.ctnQna .memo{ width:670px; height:130px; vertical-align:middle;}
+.ctnMypage.ctnQna .btnQnaReg{ background:url(../../images/ko/common/mypage/qnaBtnRegist.gif) no-repeat; width:62px; height:27px; vertical-align:middle; display:inline-block; line-height:100px; overflow:hidden;}
+.ctnMypage.ctnQna .btnCancel{ background:url(../../images/ko/common/mypage/qnaBtnCancel.gif) no-repeat; width:62px; height:27px; vertical-align:middle; display:inline-block; line-height:100px; overflow:hidden;}
+.ctnMypage.ctnQna .bbsQnaList{ margin:0 0 10px 0;}
+
+/*이벤트*/
+.ctnMypage.ctnEvent .eventInfoBox{ border:#e2d5c5 solid 1px; padding:25px;  margin:0 0 20px 0; zoom:1;}
+.ctnMypage.ctnEvent .eventInfoBox:after{clear:both;content:"";display:block;font-size:0;height:0;line-height:0;visibility:hidden}
+.ctnMypage.ctnEvent .eventInfoBox .user{ float:left}
+.ctnMypage.ctnEvent .bbsEventOpt{ margin:0 0 30px 0;}
+.ctnMypage.ctnEvent .eventInfoBox .checkDate{ float:right; font-weight:bold;}
+.ctnMypage.ctnEvent .eventWrap{ border:#e2d5c5 solid 1px; padding:24px; margin:0 0 10px 0; }
+.ctnMypage.ctnEvent .eventWrap .tabMemCate {margin:0 0 10px 0}
+.ctnMypage.ctnEvent .eventWrap .tabMemCate .first a{ background:url(../../images/ko/common/mypage/membershipPointBar.gif) no-repeat 0 4px}
+.ctnMypage.ctnEvent .eventWrap .tabMemCate .last{ background:url(../../images/ko/common/mypage/membershipPointBar.gif) no-repeat right 4px; }
+
+.ctnMypage.ctnEvent .eventWrap .checkDate{ font-size:14px; font-weight:bold; margin:0 0 8px 0;}
+.ctnMypage.ctnEvent .msg{ margin:10px 0 18px 0; background:url(../../images/ko/common/mypage/eventMsg1.gif) no-repeat; height:20px; line-height:100px; overflow:hidden;}
+.ctnMypage.ctnEvent .btnEventVeiwAll{ background:url(../../images/ko/common/mypage/eventBtnVeiwAll.gif) no-repeat; width:137px; height:44px; vertical-align:middle; display:inline-block; line-height:100px; overflow:hidden;}
+.ctnMypage.ctnEvent .eventList .eventBox{margin:0 0 20px 0; vertical-align:middle; zoom:1; overflow:hidden;}
+.ctnMypage.ctnEvent .eventList .eventBox .eventL{ float:left; margin:0 20px 0 0;}
+.ctnMypage.ctnEvent .eventList .eventBox .eventL .photo{ width:235px;}
+.ctnMypage.ctnEvent .eventList .eventBox .eventL .photo .img{ vertical-align:middle;}
+.ctnMypage.ctnEvent .eventList .eventBox .eventR{ float:right; width:560px; }
+.ctnMypage.ctnEvent .eventList .eventBox .eventR .tit{ font-size:15px; font-weight:bold; color:#856f56; text-decoration:underline; margin:0 0 5px 0;}
+.ctnMypage.ctnEvent .eventList .eventBox .eventR .info{ color:#444444; margin:0 0 5px 0;}
+.ctnMypage.ctnEvent .eventList .eventBox .eventR .data{}
+.ctnMypage.ctnEvent .eventList .eventBox .eventR .data li{ background:url(../../images/ko/mem/main/bul02.gif) no-repeat 2px 8px; padding:0 0 0 12px; color:#444}
+
+.ctnMypage.ctnEvent .eventOpt{ clear:both;  border:#eaeaea solid 1px; background:#fbfbfb; padding:15px 20px; position:relative; vertical-align:middle; zoom:1;}
+.ctnMypage.ctnEvent .eventOpt:after{clear:both;content:"";display:block;font-size:0;height:0;line-height:0;visibility:hidden}
+.ctnMypage.ctnEvent .eventOpt .smsOpt{ float:left;}
+.ctnMypage.ctnEvent .eventOpt .smsSet{ float:right;}
+.ctnMypage.ctnEvent .eventOpt .smsSet .msgSmsAgree1{ margin:0 10px 0 0 ;}
+.ctnMypage.ctnEvent .eventOpt .btnSmsHelp{ background:url(../../images/ko/common/join/icoHelp.gif) no-repeat; width:15px; height:14px; margin:0 0 0 4px; display:inline-block; vertical-align:middle; line-height:100px; overflow:hidden;}
+.ctnMypage.ctnEvent .btnSetting{ background:url(../../images/ko/common/mypage/eventBtnSet.gif) no-repeat; width:62px; height:27px;  vertical-align:middle; display:inline-block; line-height:100px; overflow:hidden;}
+
+.ctnMypage.ctnEvent .smsHelpLayer{ border:#CCC solid 1px; width:200px; padding:15px; position:absolute; left:170px; top:0px; display:none; background:#FFF;}
+.ctnMypage.ctnEvent .eventOpt .smsHelpLayer{ display:none; position:absolute; left:105px; top:43px; width:270px; border:#a1886f solid 1px; padding:15px 20px; background:#f7f4ea; z-index:100; zoom:1; color:#626262; font-size:11px;}
+.ctnMypage.ctnEvent .eventOpt .smsHelpLayer *{ font-size:11px; color:#626262}
+.ctnMypage.ctnEvent .eventOpt .smsHelpLayer .pwGuideArrow{ position:absolute; left:18px; top:-6px; background:url(../../images/ko/common/join/pwGuideArrowTop.gif) no-repeat; width:15px; height:6px; overflow:hidden;}
+
+
+/*멤버십인증*/
+.popLayerMemCertifi{ width:430px; left:50%; top:200px; margin:0px 0 0 -215px; position:fixed;}
+.popLayerMemCertifi .popHead .tit{ background:url(../../images/ko/mem/main/popHeadTitMypage.gif) no-repeat 0 0px;}
+.popLayerMemCertifi .guideBox{ padding:10px 0; border-top:#CCC solid 1px;}
+.popLayerMemCertifi .pointBox{ position:relative;}
+.popLayerMemCertifi .pointBox .schBtn{ position:absolute; right:0px; top:80px;}
+.popLayerMemCertifi .pointBox .schBtn .btnSch{ width:104px; height:58px; background:url(../../images/ko/common/mypage/memCertifiPopBtnCertifi.gif) no-repeat; border:none; font-size:0; line-height:200px; overflow:hidden;}
+.popLayerMemCertifi .inputForm{ margin:0 0 6px 0;}
+.popLayerMemCertifi .inputCardNum{ margin:0 0 2px 0;}
+.popLayerMemCertifi .txt1{ color:#727272; font-size:11px; padding:4px 0 0 0;}
+.popLayerMemCertifi .pointBox input.cardNum{ width:247px;}
+.popLayerMemCertifi .pointBox input.lastName{ width:116px;}
+.popLayerMemCertifi .pointBox input.firstName{ width:117px;}
+
+
+.popLayerMemCertifi .pointBox label.cardNum,
+.popLayerMemCertifi .pointBox label.userName,
+.popLayerMemCertifi .pointBox label.lastName,
+.popLayerMemCertifi .pointBox label.firstName{ position:absolute; left:-9999%}
+
+.popLayerMemCertifi .pointBox .inputForm .memType{height:80px;}
+.popLayerMemCertifi .pointBox .inputForm .memTypeRadio .rBtn{ font-size:12px; font-weight:bold; color:#444444; position:absolute; top:25px}
+.popLayerMemCertifi .pointBox .inputForm .memTypeRadio .rBtn2{left:150px;}
+.popLayerMemCertifi .pointBox .inputForm .memTypeRadio .rBtn3{left:220px;}
+
+.popLayerMemCertifi .pointBox .inputForm .memTypeRadio2 .rBtn{ font-size:12px; font-weight:bold; color:#444444; position:absolute; top:50px}
+.popLayerMemCertifi .pointBox .inputForm .memTypeRadio2 .rBtn2{left:150px;}
+
+/*My Plan*/
+.ctnMypage{}
+.ctnMypage .icoBox{ position:relative; display:inline-block; vertical-align:middle; cursor:pointer; width:40px; height:40px;}
+.ctnMypage .icoBox .ico{ position:relative; display:block;}
+.ctnMypage .icoBox .ico .mask{ display:none; width:40px; height:40px; position:absolute; left:0px; top:0px; background:url(../../images/ko/mem/specialoffers/packageMask.png) no-repeat}
+.ctnMypage .icoBoxCheck .ico .mask{ display:block;}
+.ctnMypage .icoBox .gMsg{ display:none; position:absolute; left:0px; top:41px; min-width:26px; background:#f7f4ea; border:#a1886f solid 1px; padding:2px 6px; text-align:center; font-size:11px; color:#626262; white-space:nowrap;}
+.ctnMypage .icoBox:hover .gMsg{ display:block;}
+.ctnMypage .icoBox .gMsg .arrow{ background:url(../../images/ko/mem/specialoffers/packageArrow.gif) no-repeat; width:9px; height:6px; overflow:hidden; position:absolute; left:15px; top:-6px;}
+
+
+
+.ctnMypage .myplanLink{ height:36px;margin:0 0 0px 0; position:relative; z-index:10; }
+.ctnMypage .myplanLink li{ float:left; margin:0 1px 0 0}
+.ctnMypage .myplanLink li a{ display:block; width:150px;  height:37px; background:url(../../images/ko/common/mypage/tabMenuMyplanLink.gif) no-repeat; line-height:100px; overflow:hidden;}
+.ctnMypage .myplanLink li.m1 a{ width:131px; background-position:0px 0px}
+.ctnMypage .myplanLink li.m2 a{ width:114px; background-position:-132px 0px}
+.ctnMypage .myplanLink li.m3 a{ width:112px; background-position:-247px 0px}
+.ctnMypage .myplanLink li a.on{ height:37px; background-image:url(../../images/ko/common/mypage/tabMenuMyplanLinkOn.gif)}
+
+
+.ctnMypage.ctnMyplanPackage .msg,
+.ctnMypage.ctnMyplanEvent .msg,
+.ctnMypage.ctnMyplanGao .msg{ margin:10px 0 14px 0; background:url(../../images/ko/common/mypage/myplanPackageMsg1.gif) no-repeat; height:24px; line-height:100px; overflow:hidden;}
+
+.ctnMypage.ctnMyplan .btnDel{ background:url(../../images/ko/common/mypage/myplanBtnDel.gif) no-repeat; width:62px; height:27px; vertical-align:middle; display:inline-block; line-height:100px; overflow:hidden;}
+
+.ctnMypage .myplanNone{ padding:15px; text-align:center; margin:15px 0;}
+.ctnMypage .titActive{ position:absolute; left:-9999%;}
+.ctnMypage .optBox{ border:#e2d5c5 solid 1px; padding:19px 25px; margin:0 0 20px 0; zoom:1;}
+.ctnMypage .optBox:after{clear:both;content:"";display:block;font-size:0;height:0;line-height:0;visibility:hidden}
+.ctnMypage .optBox dt{ font-weight:bold; width:70px; float:left; color:#444444}
+.ctnMypage .optBox dd{ float:left; margin:0 22px 0 0; color:#444444}
+.ctnMypage .optBox .num{ vertical-align:middle;}
+.ctnMypage .optCheckBox{border:#eaeaea solid 1px; background:#fbfbfb; padding:15px; overflow:hidden; margin:0 0 20px 0; }
+.ctnMypage .optCheckBox label{ margin-right:20px;}
+.ctnMypage .myplanBox{ border:#e2d5c5 solid 1px; padding:24px; margin:0 0 10px 0;}
+.ctnMypage .myplanBox .bbsTotal{}
+.ctnMypage .myplanBox .bbsTotal .count{ padding:0;}
+.ctnMypage .packList { width:815px; overflow:hidden;}
+.ctnMypage .packList .list { overflow:hidden; width:870px;zoom:1; vertical-align:middle; margin:-30px 0 0 0; padding-bottom:30px;}
+.ctnMypage .packList .list .packBox{  float:left; width:235px; margin:30px 55px 0px 0px;  position:relative; display:block; zoom:1; vertical-align:middle;}
+.ctnMypage .packList .list .packBox .box{padding:0px; position:relative; }
+.ctnMypage .packList .list .packBox .box .checkBtn{ position:relative; height:27px; margin:0 0 5px 0;}
+.ctnMypage .packList .list .packBox .box .photo{margin:0 0 14px 0}
+.ctnMypage .packList .list .packBox .box .photo .img{ vertical-align:middle;}
+.ctnMypage .packList .list .packBox .box .tit,
+.ctnMypage .packList .list .packBox .box .tit a{ font-size:15px; font-weight:bold; color:#856f56; text-decoration:underline; color:#856f56; margin:0 0 5px 0; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;}
+.ctnMypage .packList .list .packBox .box .info{ margin:0 0 4px 0; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;}
+.ctnMypage .packList .list .packBox .box .date{ background:url(../../images/ko/mem/main/bul02.gif) no-repeat 0 8px; padding:0 0 0 7px;}
+.ctnMypage .packList .list .packBox .box .price{ background:url(../../images/ko/mem/main/bul02.gif) no-repeat 0 8px; padding:0 0 0 7px; font-weight:bold; margin:0 0 8px 0;}
+.ctnMypage .packList .list .packBox .box .btnReserve{ background:url(../../images/ko/common/mypage/myplanBtnReserve.gif) no-repeat; width:83px; height:27px; display:block; position:absolute; right:0px; top:0;  vertical-align:middle; display:inline-block; line-height:100px; overflow:hidden;}
+.ctnMypage .packList .list .packBox label.packCheck{ position:absolute; left:-9999%;}
+.ctnMypage .packList .list .selBox{ position:relative; zoom:1; vertical-align:middle;}
+.ctnMypage .packList .list .selBox .ico{}
+.ctnMypage .packList .list .selBox .ico .img{ vertical-align:middle;}
+.ctnMypage .packList .list .selBox .checker{ position:absolute; right:9px; bottom:9px;}
+.ctnMypage .packList .list .selBox .icoAirline,
+.ctnMypage .packList .list .selBox .icoBreakfast,
+.ctnMypage .packList .list .selBox .icoCar{ display:inline-block; *display:inline; zoom:1; vertical-align:middle; background:url(../../images/ko/common/mypage/myplanIcoPackOpt.gif) no-repeat; width:40px; height:40px; overflow:hidden; line-height:100px;}
+.ctnMypage .packList .list .selBox .icoAirline{background-position:0px 0;}
+.ctnMypage .packList .list .selBox .icoBreakfast{ background-position:-45px 0;}
+.ctnMypage .packList .list .selBox .icoCar{background-position:-90px 0;}
+
+
+.ctnMypage .mpEventList { width:815px; overflow:hidden;}
+.ctnMypage .mpEventList .list { overflow:hidden; width:870px;zoom:1; vertical-align:middle; margin:-30px 0 0 0; padding-bottom:30px;}
+.ctnMypage .mpEventList .list .eventBox{  float:left; width:235px; margin:30px 55px 0px 0px; position:relative; display:block; zoom:1; vertical-align:middle;}
+.ctnMypage .mpEventList .list .eventBox .box{padding:0px; position:relative; }
+.ctnMypage .mpEventList .list .eventBox .box .checkBtn{ position:relative; height:27px; margin:0 0 5px 0;}
+.ctnMypage .mpEventList .list .eventBox .box .photo{margin:0 0 14px 0; position:relative;}
+.ctnMypage .mpEventList .list .eventBox .box .photo .img{ vertical-align:middle;}
+.ctnMypage .mpEventList .list .eventBox .box .icoParkview,
+.ctnMypage .mpEventList .list .eventBox .box .icoHinode,
+.ctnMypage .mpEventList .list .eventBox .box .icoContinental{ position:absolute; left:0px; bottom:0; background:url(../../images/ko/common/mypage/myplanEventIco.gif) no-repeat; height:27px; display:block; line-height:100px; overflow:hidden;}
+
+.ctnMypage .mpEventList .list .eventBox .box .icoCHE{ width:90px; background:url(../../images/ko/common/mypage/myplanEventIcoCHE.gif) no-repeat; position:absolute; left:0px; bottom:0; height:27px; display:block; line-height:100px; overflow:hidden; }
+.ctnMypage .mpEventList .list .eventBox .box .icoGCP{width:100px; background:url(../../images/ko/common/mypage/myplanEventIcoGCP.gif) no-repeat; position:absolute; left:0px; bottom:0; height:27px; display:block; line-height:100px; overflow:hidden; }
+.ctnMypage .mpEventList .list .eventBox .box .icoHIN{width:77px;  background:url(../../images/ko/common/mypage/myplanEventIcoHIN.gif) no-repeat; position:absolute; left:0px; bottom:0; height:27px; display:block; line-height:100px; overflow:hidden; }
+.ctnMypage .mpEventList .list .eventBox .box .icoPAR{width:113px;  background:url(../../images/ko/common/mypage/myplanEventIcoPAR.gif) no-repeat; position:absolute; left:0px; bottom:0; height:27px; display:block; line-height:100px; overflow:hidden; }
+.ctnMypage .mpEventList .list .eventBox .box .icoPSBQ{width:125px;  background:url(../../images/ko/common/mypage/myplanEventIcoPASTRY.gif) no-repeat; position:absolute; left:0px; bottom:0; height:27px; display:block; line-height:100px; overflow:hidden; }
+.ctnMypage .mpEventList .list .eventBox .box .icoNOMAL{ width:90px;  position:absolute; left:0px; bottom:0; height:27px; display:block; line-height:100px; overflow:hidden; }
+
+.ctnMypage .mpEventList .list .eventBox .box .tit,
+.ctnMypage .mpEventList .list .eventBox .box .tit a{ font-size:15px; font-weight:bold; color:#856f56; text-decoration:underline; color:#856f56; margin:0 0 5px 0; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;}
+.ctnMypage .mpEventList .list .eventBox .box .info{ margin:0 0 4px 0; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;}
+.ctnMypage .mpEventList .list .eventBox .box .date{ background:url(../../images/ko/mem/main/bul02.gif) no-repeat 0 8px; padding:0 0 0 7px;}
+.ctnMypage .mpEventList .list .eventBox .box .price{ background:url(../../images/ko/mem/main/bul02.gif) no-repeat 0 8px; padding:0 0 0 7px; font-weight:bold; margin:0 0 8px 0;}
+.ctnMypage .mpEventList .list .eventBox .box .btnReserve{ background:url(../../images/ko/common/mypage/myplanBtnReserve.gif) no-repeat; width:83px; height:27px; display:block; position:absolute; right:0px; top:0;  vertical-align:middle; display:inline-block; line-height:100px; overflow:hidden;}
+.ctnMypage .mpEventList .list .eventBox label.packCheck{ position:absolute; left:-9999%;}
+
+.ctnMypage .mpEventList .list .selBox{ position:relative; padding:10px; text-align:right; background:#CCC;zoom:1; vertical-align:middle;}
+.ctnMypage .mpEventList .list .selBox .checker{ }
+
+
+.ctnMypage .icoPack{ position:relative; background:url(../../images/ko/common/mypage/myplanGaoIco.gif) no-repeat; width:83px; height:27px; display:inline-block;  vertical-align:middle;}
+.ctnMypage .icoPack .name{ height:10px; line-height:100px; overflow:hidden; display:block;}
+.ctnMypage .icoPack .num{ position:absolute; top:4px; right:6px; width:20px; text-align:center; font-weight:bold; color:#FFF;}
+
+.ctnMypage .icoF{ background-position:0px 0px}
+.ctnMypage .icoC{ background-position:0px -30px}
+.ctnMypage .icoK{  background-position:0px -60px}
+
+
+.ctnMypage .gaoList { width:815px; overflow:hidden;}
+.ctnMypage .gaoList .list { overflow:hidden; width:860px;zoom:1; vertical-align:middle; margin:-30px 0 0 0; padding-bottom:30px;}
+.ctnMypage .gaoList .list .gaoBox{  float:left; width:171px; margin:30px 44px 0px 0px; position:relative; display:block; zoom:1; vertical-align:middle;}
+.ctnMypage .gaoList .list .gaoBox .box{  padding:0px; position:relative; }
+.ctnMypage .gaoList .list .gaoBox .checkBtn{ height:30px; width:171px; position:relative; zoom:1;}
+.ctnMypage .gaoList .list .gaoBox .ico{ position:absolute; right:0px; top:2px;}
+.ctnMypage .gaoList .list .gaoBox .ico .icoPack{ width:13px; height:13px; line-height:100px; overflow:hidden; display:inline-block;}
+.ctnMypage .gaoList .list .gaoBox .box .photo{ margin:0 0 10px 0;}
+.ctnMypage .gaoList .list .gaoBox .box .photo .img{ vertical-align:middle;}
+.ctnMypage .gaoList .list .gaoBox .tit{ padding:1px 0px; text-align:center; font-size:15px; font-weight:bold; color:#856f56; text-decoration:underline; color:#856f56; margin:0 0 5px 0; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;}
+.ctnMypage .gaoList .list .gaoBox .tit a{ color:#856f56; }
+.ctnMypage .gaoList .list .line{ border-bottom:#eceae1 solid 1px; height:20px; margin:0px 0 0 0; width:815px;  overflow:hidden; clear:both; line-height:0px; zoom:1; position:relative; vertical-align:middle;}
+.ctnMypage .gaoList .list .line hr{ display:none;}
+.ctnMypage .gaoList .list .gaoBox label.packCheck{ position:absolute; left:-9999%;}
+.ctnMypage .gaoList .list .selBox{ position:relative; padding:10px; text-align:right; background:#CCC;zoom:1; vertical-align:middle;}
+.ctnMypage .gaoList .list .selBox .checker{ }
+
+/*2013-0925 추가*/
+.eventNone{text-align: center; padding:50px 0}
+
+
+/*2013.11-1 추가*/
+.ctnMypageRsvRmPack .mypageWrap .bbsPriceTable{ float:none; width:100%;}
+.ctnMypageRsvRmPack .mypageWrap .bbsPriceTable td.price{ text-align:right; padding-right:40px;}
+.mypageWrap .bbsPriceTable{ float:left; border:none;  border-top:#9c8874 solid 1px; width:464px; border-collapse:collapse; }
+.mypageWrap .bbsPriceTable th,
+.mypageWrap .bbsPriceTable td{ border:none; border-bottom:#eceae1 solid 1px; padding:11px 10px 10px; text-align:center; line-height:16px; color:#1b1b1b}
+.mypageWrap .bbsPriceTable tr.last td{}
+.mypageWrap .bbsPriceTable th{ border-bottom:#cdcbbe solid 1px; font-weight:bold; color:#666666; padding:13px 10px 13px; line-height:17px;  background:#faf9f4; white-space:nowrap;}
+
+
+/*2015 new*/
+/*font & background & box & totototo*/
+.defaultText {color:#666666;}
+/*201505 my account summary*/
+.nameAcc {font-size:12px; margin:10px 0 20px;}
+.nameAcc strong {color:#a1886f; font-weight:bold;}
+
+.memGoldbox {border:3px solid #f1e3c4; display:block; padding:20px 40px; margin-bottom:40px;}
+.memGoldbox2 {border-top:3px solid #f1e3c4; border-bottom:1px solid #f1e3c4; display:block; padding:20px 40px; background:url(../../images/ko/mypage/goldbox_bg2.gif) no-repeat top left; margin-bottom:20px;}
+
+.memGoldbox2:before, .memGoldbox2:after {display:table; content:"";}
+.memGoldbox2:after {clear:both;}
+
+/* 2018 */
+.memGoldbox.defaultBox{padding: 45px 35px;}
+.memGoldbox.defaultBox .liBox>li+li{border-top:1px dotted #c1c1c1;padding-top:25px;margin-top:25px;}
+.memGoldbox.defaultBox .liBox>li>ul{overflow:hidden;}
+.memGoldbox.defaultBox .liBox>li>ul>li{float:left;width:auto;}
+.memGoldbox.defaultBox .textCon.defaultText {float:left;font-size: 16px;color:#666666;font-weight: bold;display:inline-block;margin:0 30px 0 0;}
+.memGoldbox.defaultBox .textCon.defaultText strong{color: #a1886f;margin: 0;padding: 0;font-weight: bold;font-size: 16px;padding-left: 15px;}
+.memGoldbox.defaultBox .promotion .textCon.defaultText .num{padding-left:0;}
+.memGoldbox.defaultBox .promotion .textCon.defaultText span{font-weight: normal;}
+.memGoldbox .warnBalloon .icoWarn{width:20px;height:20px;background:url(../../images/ko/hub/main/icoWarnPromotion.png) no-repeat;}
+.promotion .warnBalloon .warnBalloonInner{top:-87px;}
+.promotion:after{content:'';display:block;clear: both}
+.couponDown{margin-left:-20px;}
+.couponDown ul{overflow:hidden;display: table;width:100%;margin:20px 0 -20px 0;}
+.couponDown li{display: table-cell;width:25% !important;float:left;}
+.couponDown .coupon{display:block;margin:0 0 20px 20px;}
+.couponDown .coupon span{display:block;}
+.couponDown .coupon .couTop{position:relative;padding:9px 12px;background:#a1886f;font-size:13px;color: #fff;line-height:19px;height: 37px;}
+.couponDown .coupon .couTop:after{position:absolute;top:31px;right:12px;content: '';display:inline-block;width:7px;height:11px;background:url(../../images/ko/mypage/bg_coupon_arrrow.gif) no-repeat 0 0;}
+.couponDown .coupon .couTop em{display:inline-block;font-size:11px;color: #faf1d0;line-height:14px;}
+.couponDown .coupon .couTop .available{letter-spacing: -.05em}
+.couponDown .coupon .couBtm{height:17px;border:1px solid #d1c4b7;border-top:none;text-align:center;}
+
+
+.memGoldbox > .liBox {width:100%; /* min-height:65px; */}
+.memGoldbox > .liBox > .left {float:left; width:48%; background:url(../images/ko/mypage/gold_background_01.gif) no-repeat left top; height:50px;}
+.memGoldbox > .liBox > .left > .textCon {display:block; font-size:16px;font-weight:bold;  position:relative;/* left:90px; */top:25px;  }
+.memGoldbox > .liBox > .left > .textCon > strong {color:#a1886f; margin:0; padding:0; font-weight:bold; font-size:16px;padding-left: 15px; }
+
+.memGoldbox > .liBox > .right {float:right; width:50%; /*background:url(../images/ko/mypage/gold_background_02.gif) no-repeat right top;*/ height:50px;}
+.memGoldbox > .liBox > .right > .textCon {display:block; font-size:16px; font-weight:bold; position:relative; left:10px; top:25px;  }
+.memGoldbox > .liBox > .right > .textCon > strong {color:#a1886f; margin:0; padding:0;font-size:16px; padding-left: 15px; }
+
+
+.memGoldbox2 > .liBox {width:100%;}
+.memGoldbox2 > .liBox > .left {float:left; width:300px; }
+
+.memGoldbox2 > .liBox > .right {float:left;width:480px;}
+.memGoldbox2 > .liBox > .right > .boldCardBox {position:relative; top:2px;}
+
+
+
+.memGoldbox2 > .liBox > .right > .diamondT {text-align:right; color:#666666; font-size:12px; width:200px; display:block; text-align:middle; padding-bottom:10px; z-index:888; position:relative; left:300px; top:119px;}
+
+.memGoldbox2 > .liBox > .right > .diamondT > a.btn_mark {position:relative; top:10px;}
+
+/*201506신라 리워즈 포인트 조회*/
+.pointText1 {color:#666666; display: inline-block; width: 500px; }
+.pointText1 strong {font-size:14px; font-weight:bold; color:#a1886f; }
+.pointText1 strong.colorRed {font-size:18px; font-weight:bold; color:#b2503d; }
+
+
+
+.goldBox > .buttonBox {position:absolute; right:20px; top:20px;}
+
+
+/*201506포인트 사용 신청*/
+
+.emailBox > .emailText {font-size:14px; margin-bottom:10px;}
+.emailBox > .emailText a {text-decoration:underline;}
+.emailBox > .emailText a:hover {text-decoration:underline; color:#a34141;}
+
+.emailBox > .emailEtcText {font-size:11px;  display:block; padding:5px; margin:5px; border:1px solid #eaeaea; background-color:#f7f7f7; line-height:20px;}
+.emailBox > .emailEtcText strong { border-radius: 25px; -moz-border-radius:15px; -webkit-border-radius:15px; border: 1px solid; display:inline-block; color:#fff; font-size:10px; width:15px; height:15px; line-height:16px; text-align:center; background-color:#a34141;}
+
+.telText {color:#666666;}
+
+
+
+/*호텔이벤트 안내*/
+
+/* hotel Table Start 2015 */
+.roomPriceWrap2{ border:#e3d6c7 solid 1px; padding:23px 26px; margin:10px 10px 0 30px 0; overflow:hidden;}
+.hotelTable{ float:left; border:none;  border-top:#9c8874 solid 1px; width:100%; border-spacing:0; border-collapse:collapse; position:relative;}
+.hotelTable th,
+.hotelTable td{ border:none; border-bottom:#eceae1 solid 1px; padding:11px 10px 10px; text-align:center; line-height:16px; color:#1b1b1b; font-size:12px;}
+.hotelTable tr.last td{ border-bottom:#cdcbbe solid 1px;}
+.hotelTable th{ border-bottom:#cdcbbe solid 1px; font-weight:normal; color:#666666; padding:13px 10px 13px; line-height:17px;  background:#faf9f4; white-space:nowrap;}
+.hotelTable td.gallBox {text-align: left; padding: 0; margin: 0;}
+/*.hotelTable tbody tr {display:none;}
+.hotelTable tbody tr td #view {display:none;}
+.hotelTable tbody tr.clickme {display:block;}*/
+.hotelTable .clickme a {
+	 position:absolute;
+    width:780px;
+    text-indent:-9999px;
+    left:0;
+    background:#fff;
+    opacity:0;
+    -ms-filter:alpha(opacity=0);
+    filter:alpha(opacity=0);
+}
+
+
+.packList3 { width:780px; overflow:hidden;}
+.packList3 .list { overflow:hidden; width:780px;zoom:1; vertical-align:middle; margin:0 0 -10px 18px; padding-bottom:20px;}
+.packList3 .list .packBox{  float:left; width:235px; height:210px; margin:0 25px 0px 0px;  position:relative; display:block; zoom:1; vertical-align:middle;}
+.packList3 .list .packBox .box{padding:0px; position:relative; }
+.packList3 .list .packBox .box .checkBtn{ position:relative; height:27px; margin:0 0 5px 0;}
+.packList3 .list .packBox .box .photo{margin:0 0 14px 0; position:relative;}
+.packList3 .list .packBox .box .photo .img{ vertical-align:middle;}
+.packList3 .list .packBox .box .tit,
+.packList3 .list .packBox .box .tit a{ font-size:15px; font-weight:bold; color:#856f56; text-decoration:underline; color:#856f56; margin:0 0 5px 0; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;}
+.packList3 .list .packBox .box .info{ margin:0 0 4px 0; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;}
+.packList3 .list .packBox .box .date{ background:url(../../images/ko/mem/main/bul02.gif) no-repeat 0 6px; padding:0 0 0 7px;}
+.packList3 .list .packBox .box .price{ background:url(../../images/ko/mem/main/bul02.gif) no-repeat 0 6px; padding:0 0 0 7px; font-weight:bold; margin:0 0 8px 0;}
+.packList3 .list .packBox .box .btnReserve{ background:url(../images/ko/common/mypage/myplanBtnReserve.gif) no-repeat; width:83px; height:27px; display:block; position:absolute; right:0px; top:0;  vertical-align:middle; display:inline-block; line-height:100px; overflow:hidden;}
+.packList3 .list .packBox label.packCheck{ position:absolute; left:-9999%;}
+
+
+.packList3 .list .packBox .box .photo .ico{position:absolute; left:0px; bottom:0;  }
+.packList3 .list .packBox .box .photo .ico{height:27px; display:inline-block; line-height:100px; overflow:hidden; vertical-align:middle;}
+.packList3 .list .packBox .box .photo .icoARI{width:74px; background:url(../images/ko/mem/specialoffers/eventIcoAriake.gif) no-repeat; }
+.packList3 .list .packBox .box .photo .icoPAL{width:75px; background:url(../images/ko/mem/specialoffers/eventIcoPalsun.gif) no-repeat; }
+.packList3 .list .packBox .box .photo .icoFRC{width:100px;  background:url(../images/ko/mem/specialoffers/eventIcoFrench.gif) no-repeat;}
+.packList3 .list .packBox .box .photo .icoKRN{width:77px;  background:url(../images/ko/mem/specialoffers/eventIcoKorean.gif) no-repeat;}
+.packList3 .list .packBox .box .photo .icoLIB{width:101px;  background:url(../images/ko/mem/specialoffers/eventIcoLibrary.gif) no-repeat;}
+.packList3 .list .packBox .box .photo .icoPSBQ{width:125px;  background:url(../images/ko/mem/specialoffers/eventIcoPastry.gif) no-repeat; }
+.packList3 .list .packBox .box .photo .icoPAR{width:113px;  background:url(../images/ko/mem/specialoffers/eventIcoParkview.gif) no-repeat; }
+.packList3 .list .packBox .box .photo .icoSTORY{width:68px;  background:url(../images/ko/mem/specialoffers/eventIcoSyory.gif) no-repeat; }
+
+.hTitDining{ height:27px; padding:20px 0 0 20px;  margin:0 0 5px 0;}
+.hTitDining .tit{ float:left; background:url(../images/ko/mem/specialoffers/eventTitDining.gif) no-repeat; width:80%; height:27px; line-height:100px; overflow:hidden;}
+
+
+
+/*개인정보 보호를 위한 비밀번호 변경 안내*/
+.pmMod6_name {color: #444;}
+/*.pmMod6_name strong {color: #a1886f;}*/
+
+.guidance {padding: 10px; border: 1px solid #a1886f; background-color: #f7f4ea; margin-top: 10px;}
+.guidance p {color: #626262;}
+
+
+
+/*포인트 소급신청2*/
+.pointTitle{ height:30px; font-weight:bold; font-size:12px; margin:21px 0 0px 0;}
+.pointTitle .tit{ float:left; font-weight:bold; color:#444444; font-size:12px;}
+.pointTitle .info{ float:right; padding:3px 0 0 0;}
+
+
+/*20150630 탈회신청 마지막 댑스*/
+.memoText p {line-height: 30px; font-size: 14px !important; color: #101010;}
+
+.memoText ul {border: 1px solid #eceae1; background: #faf9f4; padding: 10px 20px; margin-top: 10px;}
+.memoText ul li {line-height: 30px; color: #444;}
+
+.breakBox {display: block; background:rgb(161, 136, 111); padding: 20px; text-align: center; font-size: 20px !important; color: #fff;}
+.breakBox strong {font-weight: bold;}
+
+
+/* 201803 */
+.promotionTxt{background:url(../../images/ko/mem/main/promotion-txt.gif) no-repeat;height:15px;line-height:100;overflow:hidden;margin:10px 0 23px;}
+.promotionBox{position:relative;background:#ececec;padding: 29px 25px;margin-bottom:25px;}
+.promotionBox ul{overflow:hidden;display: table}
+.promotionBox ul li{position:relative;display:table-cell;font-size: 13px;color: #1b1b1b;}
+.promotionBox ul li:before{content: '';display:inline-block;width:1px;height:23px;background:#cacaca;vertical-align:middle;margin: 0 20px;}
+.promotionBox ul li.first:before{background:none;margin: 0}
+.promotionBox span{display:inline-block;width:127px;vertical-align:middle;}
+.promotionBox li.last span{width:170px;}
+.promotionBox .proNum{display:inline-block;margin-left:10px;font-size: 18px;font-weight: bold;color: #b2503d;vertical-align:middle;}
+.promotionBox .btnPromotion{position: absolute;top: 50%;right: 25px;background:url(../../images/ko/mem/main/btnPromotion.gif) no-repeat; width:156px; height:27px; margin-top:-12px;display:inline-block; line-height:999; overflow:hidden;}
+.promotionList{margin-bottom:55px;}
+.promotionList li{font-size:13px;color: #666;padding-left:15px;text-indent:-17px;line-height:18px;}
+.tabList{}
+.tabList .tabProMenu{border-bottom:1px solid #e2d5c5;margin-bottom:25px;}
+.tabList .tabProMenu ul{overflow:hidden;}
+.tabList .tabProMenu ul li{height:36px;float:left;margin-left:2px;}
+.tabList .tabProMenu ul li.first{margin-left:0;}
+.tabList .tabProMenu .tm01{display:inline-block;width:218px;height:36px;background:url(../../images/ko/mem/main/tabMenu_01.gif) no-repeat;line-height:999; overflow:hidden;}
+.tabList .tabProMenu .tm02{display:inline-block;width:166px;height:36px;background:url(../../images/ko/mem/main/tabMenu_02.gif) no-repeat;line-height:999; overflow:hidden;}
+.tabList .tabProMenu a{display:block;}
+.tabList .tabProMenu li.tm01.on a{background:url(../../images/ko/mem/main/tabMenuOn_01.gif) no-repeat}
+.tabList .tabProMenu li.tm02.on a{background:url(../../images/ko/mem/main/tabMenuOn_02.gif) no-repeat}
+.tabList .tabCon>ul>li{display:none;border-bottom:1px solid #cdcbbe;}
+.tabList .tabCon>ul>li.on{display:block;}
+.tabList .tabCon .dateTbl{padding:0 !important;}
+.tabList .tabCon .dateTbl .dateList li{line-height:39px;}
+.tabList .tabCon .dateTbl .dateList li+li{border-top:1px solid #eceae1;}
+.btnDownPromotion{display:inline-block;width:129px; height:27px; background:url(../../images/ko/mem/main/btnDownPromotion.gif) no-repeat; line-height:999; overflow:hidden;margin-bottom:7px;}
+.downPriod{display:block;font-size: 11px;line-height:17px;}
+.downPriod em{display:block;}
+.notUse{font-size: 13px;color:#b2503d;font-weight:bold;display:block;}
+.notUse em{font-size:11px;font-weight:normal;}
+.Use, .expiration{font-size: 13px;font-weight:bold;display:block;}
+.Use em, .expiration em{font-size:11px;font-weight:normal;}
+.exPriod{font-size:11px;line-height:10px;}
+.exPriod em{display:block;}
+/*문의하기 팝업*/
+.popLayerPromotion{ width:412px; left:50%; top:325px; margin:0px 0 0 -206px; position:absolute;}
+.popLayerPromotion .popHead .tit{ background:url(../../images/ko/mem/main/popHeadTitMypage.gif) no-repeat 0 -248px;}
+.popLayerPromotion .proBox{border:1px solid #e9e9e9;color: #1b1b1b;background:#fbfbfb;font-size:13px;padding: 23px;text-align:center;line-height:18px;}
+.popLayerPromotion .proComent{font-size: 16px;font-weight:bold;margin-top:30px;}
+.popLayerPromotion .btnList{padding: 20px 0 0;}
+.popLayerPromotion .btnList a{margin:0;}
+.popLayerPromotion .btnDownload{ background:url(../../images/ko/common/mypage/btnDownload.gif) no-repeat 0px 0; width:87px; height:27px; display:inline-block; vertical-align:middle; line-height:100px; overflow:hidden;}
+.popLayerPromotion .btnCancel{ background:url(../../images/ko/common/mypage/qnaBtnCancel.gif) no-repeat 0 0; width:62px; height:27px; display:inline-block; vertical-align:middle; line-height:100px; overflow:hidden;}
+.popLayerPromotion .btnConfirm{ background:url(../../images/ko/common/mypage/btnConfirm.gif) no-repeat; width:62px; height:27px; vertical-align:middle; display:inline-block; line-height:100px; overflow:hidden;}
+
+/*201910 프로필 화면 내 마케팅활용보기 버튼 추가*/
+.btnViewAllPro {width: 63px;height: 23px;display: inline-block;vertical-align:middle; line-height: 99px; overflow: hidden; background: url(../../../images/ko/mypage/btnViewTerm.gif) no-repeat;}
+/*광고성 정보수신 동의 항목 너비 설정*/
+.ctnMypage.ctnUserInfo2 .emailRecepBox .rcvTerm{display:inline-block; width:120px}
+
+/*쿠폰함 2021-12-06*/
+.midMsg{ margin-bottom: 15px; }
+.midMsg .cpListNum{ color: #1b1b1b; letter-spacing: 0.5px; }

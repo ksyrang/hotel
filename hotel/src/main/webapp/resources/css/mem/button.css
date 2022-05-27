@@ -1,0 +1,51 @@
+/* CSS Document */
+
+
+.btnCom,
+.btnCom span{ background:url(../../images/ko/common/btnNormal.gif) no-repeat 0 0px; vertical-align:middle; color:#7d7d7d; height:26px; font:12px/26px Dotum; position:relative; overflow:visible; text-align:center; display:inline-block; text-decoration:none; white-space:nowrap; cursor:pointer;}
+.btnCom { margin:1px 0px 1px 0px; }
+.btnCom span { background-position:right 0px; padding:0 6px 0 4px; left:2px; top:0px; vertical-align:top; }
+.btnCom:hover { background-position:0 0px;}
+.btnCom:hover span { background-position:right 0px;}
+
+
+.btnSmall,
+.btnSmall span{ background:url(../../images/btnSmall.gif) no-repeat 0 0px; vertical-align:middle; color:#7d7d7d; height:16px; font:11px/19px Dotum; position:relative; overflow:visible; text-align:center; display:inline-block; text-decoration:none; white-space:nowrap; cursor:pointer;}
+.btnSmall { margin:1px 0px 1px 0px; }
+.btnSmall span { background-position:right 0px; padding:0 4px 0 2px; left:2px; top:0px; vertical-align:top; }
+.btnSmall:hover { background-position:0 0px;}
+.btnSmall:hover span { background-position:right 0px;}
+
+
+.btnNormal,
+.btnNormal span{ background:url(../../images/ko/common/btnNormal.gif) no-repeat 0 0px; vertical-align:middle; color:#7d7d7d; height:26px; font:12px/26px Dotum; position:relative; overflow:visible; text-align:center; display:inline-block; text-decoration:none; white-space:nowrap; cursor:pointer;}
+.btnNormal { margin:1px 0px 1px 0px; }
+.btnNormal span { background-position:right 0px; padding:0 6px 0 4px; left:2px; top:0px; vertical-align:top; }
+.btnNormal:hover { background-position:0 0px;}
+.btnNormal:hover span { background-position:right 0px;}
+
+.btnGray,
+.btnGray span{ background:url(../../images/btnGray.png) no-repeat 0 0px; vertical-align:middle; color:#FFF; height:23px; font:11px/23px Dotum; position:relative; overflow:visible; text-align:center; display:inline-block; text-decoration:none; white-space:nowrap; cursor:pointer;}
+.btnGray { margin:1px 0px 1px 0px; }
+.btnGray span { background-position:right 0px; padding:0 9px 0 6px; left:3px; top:0px; vertical-align:top; }
+.btnGray:hover { background-position:0 -30px;}
+.btnGray:hover span { background-position:right -30px;}
+
+
+.btnBlue,
+.btnBlue span{ background:url(../../images/btnSch.gif) no-repeat; height:25px; line-height:25px; position:relative; display:inline-block; *display:inline; zoom:1; vertical-align:middle; color:#FFF;}
+.btnBlue { margin:1px 0px 1px 0px;}
+.btnBlue span{ left:3px; vertical-align:top; background-position:right 0; padding:0 8px 0 5px}
+
+
+
+
+
+
+
+
+
+
+
+
+

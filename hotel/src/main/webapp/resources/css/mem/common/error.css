@@ -1,0 +1,53 @@
+/* CSS Document */
+
+/* NOT Found */
+.ctnError { margin: 0 auto; width: 465px; }
+.ctnError .wrapEr { padding-top: 20px; margin-top: 95px; background: url('../../images/ko/common/error/bgTopA.gif') 0 0 no-repeat; }
+.ctnError .wrapEr.bgno { background: none; }
+.ctnError .wrapEr.newBg { background: url('../../images/ko/common/error/bgTopB.gif') 0 0 no-repeat !important; }
+.ctnError .wrapEr.newBga { background: url('../../images/ko/common/error/bgTopC.gif') 0 0 no-repeat !important; }
+.ctnError .wrapEr .conTx p { margin-bottom: 20px; }
+.ctnError .wrapEr img { vertical-align: top; }
+
+
+/* 준비중 */
+.ctnError .wrapEr .leftNmA { float: left; width: 213px; background: #f1e3c4; padding: 20px 0 53px 20px; margin-right: 20px; }
+
+
+
+/* 어드민 에러 */
+.ctnErrorA { margin: 0 auto; width: 920px; }
+.ctnErrorA .wrapEr { padding-top: 20px; margin-top: 95px; }
+.ctnErrorA .wrapEr .message { width: 920px; padding-top: 20px; color: #666; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

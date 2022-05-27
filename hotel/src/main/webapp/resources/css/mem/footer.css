@@ -1,0 +1,144 @@
+/* CSS footer */
+
+/* 뉴스레터 신청 */
+.popLayerNewsLetter { width: 258px; text-align: center; left: 50%; margin: 0 0 0 -129px; position: absolute; top: 200px; }
+.popLayerNewsLetter .newsTxt { color: #666; font-weight: bold; font-family: dotum; margin-bottom: 20px; font-size: 12px; letter-spacing: -1px; }
+.popLayerNewsLetter .popHead .tit { padding: 5px 0 0 29px; text-align: left; width: 60%; line-height: 21px; }
+.popLayerNewsLetter .popHead .tit img { vertical-align: top; }
+
+
+
+/* 뉴스레터 수신거부 팝업 */
+.popLayerNewsDenyLetter { width: 328px; text-align: center; left: 50%; margin: 0 0 0 -164px; position: absolute; top: 200px; }
+.popLayerNewsDenyLetter .newsTxt { color: #666; font-weight: bold; font-family: dotum; margin-bottom: 20px; font-size: 12px; letter-spacing: -1px; }
+.popLayerNewsDenyLetter .popHead .tit { padding: 5px 0 0 29px; text-align: left; width: 60%; line-height: 21px; }
+.popLayerNewsDenyLetter .popHead .tit img { vertical-align: top; }
+
+/* 뉴스레터 수신거부  */
+.ctnPolicy.ctnNewsDenyLetter{width:355px;padding:50px 0;}
+.ctnNewsDenyLetter .headTit { margin-bottom: 30px; width:355px;height:47px; border-bottom:#432c10 solid 5px;}
+.ctnNewsDenyLetter .headTit .tit{ float:left; width:355px; height:35px; line-height:100px; overflow:hidden; background: url("../../images/ko/mem/main/newsLetterPdnTitleB.gif") no-repeat 0 0;}
+
+.ctnNewsDenyLetter .policyBoxA { border: 2px solid #e2d5c5; padding: 25px 9px; margin-bottom: 20px; }
+.ctnNewsDenyLetter .policyBoxA p { padding-bottom: 25px; }
+.ctnNewsDenyLetter .policyBoxA p.pdb0 { padding-bottom: 0; }
+.ctnNewsDenyLetter .policyBoxA .bulSqr li { padding-left: 10px; background: url("../../images/ko/mem/footer/bgDot.gif") no-repeat 0 8px; }
+
+
+.uiAttachFile { padding:1px 0; display:inline-block; *display:inline; zoom:1}
+.uiAttachFile label { display:inline-block; font-weight: bold; margin-right: 3px; }
+.uiAttachFile .uiform { display:inline-block; *display:inline; zoom:1; margin-right: 0px; }
+.btnAttach{ margin:0 0px 0 0;  vertical-align:middle; position: relative; width:66px;height: 27px; display:inline-block; *display:inline; overflow:hidden; zoom:1;}
+.btnAttach .btnNormal{ margin:0 0 0 0;}
+.uiAttachFile .btnSch{ background:url(../../images/ko/mem/footer/btnConformA.gif) no-repeat; width:66px;height: 27px; display:inline-block; line-height:100px; overflow:hidden; vertical-align:middle;}
+
+
+/* 이메일 주소 무단 수집 */
+.popLayerEmailAdCollect { width: 412px; left: 50%; margin: 0 0 0 -206px; position: absolute; top: 200px; }
+.popLayerEmailAdCollect .emailTxt { color: #666; font-weight: bold; font-family: dotum; margin-bottom: 15px; font-size: 12px; letter-spacing: -1px; line-height: 18px; }
+.popLayerEmailAdCollect .emailTxtA { color: #666; font-family: dotum; font-size: 12px; line-height: 18px;}
+.popLayerEmailAdCollect .popHead .tit { padding: 5px 0 0 29px; text-align: left; width: 60%; line-height: 21px; }
+.popLayerEmailAdCollect .popHead .tit img { vertical-align: top; }
+.mgb25 { margin-bottom: 25px; }
+
+
+/* 영상정보처리기기 운영방침  */
+.ctnPolicy { margin: auto; width: 866px; }
+.ctnPolicy .headTit .tit { background-position: 0 0; }
+.ctnMnPolicy .headTit .tit { background: url("../../images/ko/mem/main/subTitleMnPolicy.gif") no-repeat 0 0; }
+.ctnPolicy .textStr { color: #333; font-family: dotum; margin-top: 45px; }
+.ctnPolicy .mgPc { color: #333; font-family: dotum; margin-top: 30px; }
+.ctnMnPolicy .textStr li { color: #333; font-family: dotum; padding-bottom: 50px; }
+.ctnMnPolicy .textStr li h3 { font-weight: bold; font-size: 14px; margin-bottom: 20px; }
+.ctnMnPolicy .textStr li p.pdl10 { padding-left: 10px; }
+.mgb30{ margin-bottom: 30px; }
+.ctnMnPolicy .tableTypeD tr th { border-right: none; background: #faf9f7; border-top: 1px solid #cdcbbe; }
+.ctnMnPolicy .tableTypeD tr td { border-right: none; border-bottom: 1px solid #eceae1; }
+.ctnMnPolicy .tableTypeD tr.last td { border-bottom: 1px solid #cdcbbe; }
+
+
+/* 개인정보처리방침  */
+
+.ctnIndPolicy .headTit { margin-bottom: 30px; }
+/* .ctnIndPolicy .headTit .tit { background: url("../../images/ko/mem/main/subTitleIndPolicy.gif") no-repeat 0 0; } */
+.ctnIndPolicy .policyBoxA { border: 2px solid #e2d5c5; padding: 25px 9px; margin-bottom: 20px; }
+.ctnIndPolicy .policyBoxA p { padding-bottom: 25px; }
+.ctnIndPolicy .policyBoxA p.pdb0 { padding-bottom: 0; }
+.ctnIndPolicy .policyBoxA .bulSqr li { padding-left: 10px; background: url("../../images/ko/mem/footer/bgDot.gif") no-repeat 0 8px; }
+
+.ctnIndPolicy .policyBoxB { background: #f1f1f1; overflow: hidden; padding: 27px 0 27px 65px; margin-bottom: 30px; }
+.ctnIndPolicy .policyBoxB .boxList { width: 390px; float: left; }
+.ctnIndPolicy .policyBoxB .boxList li { width: 390px; }
+
+
+.ctnIndPolicy .textStrA { color: #333; font-family: dotum; }
+.ctnIndPolicy .mgPc { color: #333; font-family: dotum; margin-top: 5px; }
+.ctnIndPolicy .textStrA li { color: #333; font-family: dotum; padding-bottom: 20px; }
+.ctnIndPolicy .textStrA li h3 { font-weight: bold; font-size: 14px; margin-bottom: 10px; padding-bottom: 10px; border-bottom: 2px solid #e2d5c5; }
+.ctnIndPolicy .textStrA li p.pdl10 { padding-left: 10px; }
+
+
+.textStrA .tableInviPolicy { margin-top: 5px; }
+.textStrA .tableInviPolicy tr th { font-weight: bold; }
+.textStrA .tableInviPolicy tr td { line-height: 21px; }
+.textStrA .tableInviPolicy tr td ul li { padding: 0; text-align: left; line-height: 21px; }
+
+
+
+
+/* 사이트맵 */
+.contents.memSiteMap{width: 886px;float: none;margin: auto;}
+.ctnSiteMap .headTit { margin-bottom: 30px; }
+.ctnSiteMap .headTit .tit { background: url("../../images/ko/mem/main/subTitleSiteMap.gif") no-repeat 0 0; }
+.contents.memSiteMap .SitemapTit{margin-bottom: 30px;}
+
+/*20150610 사이트맵 컨텐츠 수정 요거 짤라 가세요*/
+.sitemapTop {overflow: hidden;}
+.sitemapTop .smBox { width: 214px; float: left; border-top: 1px solid #f4eee3; margin-right: 10px; padding-bottom: 30px; }
+.sitemapTop .smBox.mgr0 { margin-right: 0; }
+.sitemapTop .smBox h4 { padding: 22px 0 0 15px; height: 33px; border-bottom: 2px solid #b79d86; }
+.sitemapTop .smBox h4 img { vertical-align: top; line-height: 100%; }
+.sitemapTop .smBox .smBoxin { padding: 20px 0 0 15px; }
+.sitemapTop .smBox .smBoxin h5 { font-weight: bold; color: #633e10; font-family: dotum; font-size: 12px; margin-bottom: 15px; line-height: 100%; }
+.sitemapTop .smBox .smBoxin h5 a { font-weight: bold; color: #633e10; font-family: dotum; font-size: 12px; margin-bottom: 10px; }
+.sitemapTop .smBox .smBoxin ul { padding-bottom: 20px; }
+.sitemapTop .smBox .smBoxin ul li { background: url("../../images/ko/mem/footer/bulSqr.gif") no-repeat 0 9px; margin-bottom: 10px; padding-left: 12px; line-height: 100%; }
+.sitemapTop .smBox .smBoxin ul li.last { margin-bottom: 0; }
+.sitemapTop .smBox .smBoxin ul li a{ line-height: 21px; color: #876234; line-height: 100%; }
+.sitemapTop .smBox .smBoxin hr {color: #b79d86; margin-bottom: 15px; border: 1px solid;}
+
+/*구멤버십 관련 메뉴 삭제*/
+div.sitemapTop div:nth-of-type(3) h5:nth-of-type(4), div.sitemapTop div:nth-of-type(3) h5:nth-of-type(5){display:none;}
+
+
+
+.sitemapBtm {overflow: hidden; }
+.sitemapBtm .smBox { width: 201px; float: left; border-top: 1px solid #efefef; margin-right: 20px; padding-bottom: 30px; }
+.sitemapBtm .smBox.mgr0 { margin-right: 0; }
+.sitemapBtm .smBox h4 { padding: 22px 0 0 15px; height: 33px; border-bottom: 2px solid #a2a2a2; }
+.sitemapBtm .smBox h4 img { vertical-align: top; line-height: 100%; }
+.sitemapBtm .smBox .smBoxin { padding: 20px 0 0 15px; }
+.sitemapBtm .smBox .smBoxin h5 { font-weight: bold; color: #444; font-family: dotum; font-size: 12px; margin-bottom: 15px; line-height: 100%; }
+.sitemapBtm .smBox .smBoxin h5 a { font-weight: bold; color: #444; font-family: dotum; font-size: 12px; margin-bottom: 10px; }
+.sitemapBtm .smBox .smBoxin ul { padding-bottom: 20px; }
+.sitemapBtm .smBox .smBoxin ul li { background: url("../../images/ko/mem/footer/bulSqrA.gif") no-repeat 0 9px; margin-bottom: 10px; padding-left: 12px; line-height: 100%; }
+.sitemapBtm .smBox .smBoxin ul li.last { margin-bottom: 0; }
+.sitemapBtm .smBox .smBoxin ul li a{ line-height: 21px; color: #686868; line-height: 100%; }
+
+/*20150610 사이트맵 컨텐츠 수정 요거 짤라 가세요 끝 요기까지*/
+
+/*2013-10-22 추가*/
+.Noimg{width:866px; height:379px; border:1px solid #f4eee3}
+.Noimg p{font-size: 35px;text-align: center; line-height: 379px;}
+
+
+
+/* 뉴스레터 신청시 개인정보 수집 동의 2015-02-25 수정 */
+.popLayerNewsLetterAgree { width: 420px; text-align: center; left: 50%; margin: 0 0 0 -129px; position: absolute; top: 200px; }
+.popLayerNewsLetterAgree .newsTxt{ color: #666; font-weight: bold; font-family: dotum; margin:0 0 20px 0; font-size: 12px;letter-spacing: 0px; text-align:left;}
+.popLayerNewsLetterAgree .cont{ width:350px; margin-left:auto;}
+.popLayerNewsLetterAgree li{ color: #666; font-family: dotum; margin-bottom: 5px; font-size: 12px; letter-spacing: 0px; text-align:left;}
+.popLayerNewsLetterAgree .btnList{ margin-top:20px;}
+.popLayerNewsLetterAgree .popHead .tit { padding: 5px 0 0 29px; text-align: left; width: 60%; line-height: 21px; }
+.popLayerNewsLetterAgree .popHead .tit img { vertical-align: top; }
+

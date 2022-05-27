@@ -1,0 +1,429 @@
+/* 객실 CSS Document */
+
+
+
+/* �④�泥섎━ */
+.hidden { overflow: hidden; margin: 0; padding: 0; position: relative; width: 0; height: 0; }
+.hidden p { position: absolute; top: 0; left: 0; width: 0; height: 0; }
+.hidden ul { position: absolute; top: 0; left: 0; width: 0; height: 0; }
+.hidden dl,
+.hidden dt,
+.hidden dd{ position: absolute; top: 0; left: 0; width: 0; height: 0; }
+.hidden h1,
+.hidden h2,
+.hidden h3,
+.hidden h4{ position: absolute; top: 0; left: 0; width: 0; height: 0; }
+
+.accommodationImg{ width: 866px; margin-bottom:10px;}
+.accommodationImg img { vertical-align: top; }
+.keepArea { text-align:right; }
+.keepArea a { color:#444; font-size:11px; vertical-align: top; text-decoration:none; font-weight:normal;}
+.keepArea a.email { padding: 1px 0 1px 23px; margin-right:15px; background:url('../../images/ko/mem/accommodation/icoEmail.gif') 0 0 no-repeat; }
+.keepArea a.print { padding: 1px 0 1px 18px; background:url('../../images/ko/mem/accommodation/icoPrint.gif') 0 0 no-repeat;}
+
+.topCon{ overflow: hidden; margin-top:35px; }
+.topCon .leftArea{ width: 535px; float:left; height:107px; /*display:block; overflow: hidden; text-indent:-9999%; background:url('../../images/seoul/accommodation/deluxeTxta.gif') 0 0 no-repeat;*/}
+.topCon .rightArea{ width: 331px; float:right;}
+
+.mgt10 { margin-top: 10px; }
+.btmCon{ overflow: hidden; margin-top: 35px; }
+.ctnExBzDeluxe .btmCon{ overflow: hidden; }
+.btmCon .allArea{ width: 100%;}
+.btmCon .leftArea{ width: 535px; float:left;}
+.btmCon.btmConNewWid .leftArea{ width: 513px; }
+.btmCon .leftArea .topTxtwrap{ margin-bottom: 50px; }
+.btmCon .leftArea .topTxtwrap .topTxt{ width: 536px; }
+.btmCon .leftArea .topTxtwrap .topTxt img { vertical-align: top; }
+
+.btmCon .leftArea .btBtm { width: 100%; margin:40px 0 40px 0; }
+.btmCon .leftArea .btBtm a { display: inline-block; }
+.btmCon .leftArea .btBtm a img { vertical-align: top; }
+.btmCon .rightArea { width: 331px; float:right;}
+.btmCon.btmConNewWid .rightArea { width: 353px; float:right;}
+
+.tableTypeB{ margin:0; border:none; border-top:#e9e5e0 solid 1px; width: 497px; border-collapse:collapse; table-layout:fixed;}
+.tableTypeB th,
+.tableTypeB td{ border:none; padding:19px 0 20px 0; text-align:left; line-height:21px; border-bottom:#e9e5e0 solid 1px; color:#444;}
+.tableTypeB tr.first th,
+.tableTypeB tr.first td{ padding:24px 0 20px 0 !important; }
+.tableTypeB th{color:#444; border-bottom:#e9e5e0 solid 1px;}
+.tableTypeB td{ background:#FFF; color:#444;}
+.tableTypeB .last th,
+.tableTypeB .last td {border-bottom:#e9e5e0 solid 1px; }
+
+.introList li { background:url('../../images/ko/mem/accommodation/bgDot.gif') 0 8px no-repeat; padding-left: 8px; line-height: 21px; color: #444; }
+.introList li span.left { float: left;  }
+.introList li.ofh { height: 20px; }
+
+.txtst { color: #806925; font-weight: bold;}
+.channelView { text-decoration: underline; color: #856f56 !important; font-weight: bold; background:url('../../images/ko/mem/accommodation/icoTv.gif') 0 0 no-repeat; padding-left: 12px; margin-left: 11px;}
+.channelView span { font-weight: bold; background:url('../../images/ko/mem/accommodation/icoTvEnd.gif') right 0 no-repeat; padding-right: 15px; }
+.snsList { margin-top: 20px; width: 52px; height:23px;}
+.snsList li { width: 23px; float: left;}
+.snsList li.first { margin-right: 6px; }
+.snsList li a { background:url('../../images/ko/mem/accommodation/bgSns.gif') 0 0 no-repeat; width: 23px; height:23px; float: left;}
+.snsList li span { line-height: 90px; }
+.snsList li a.Twitter { width: 23px; height: 23px; background-position: 0 0; overflow: hidden; display: block;}
+.snsList li a.Facebook { width: 23px; height: 23px; background-position: -29px 0; overflow: hidden; display: block;}
+
+
+.btnLeft { text-align: left; margin-bottom: 40px; }
+.btnLeft img { vertical-align: top; }
+.btnSet { height:44px;}
+.btnSet li { width: 106px; float: left; margin-right: 6px;}
+.btnSet li.last { margin-right: 0 !important; }
+.btnSet li a { display: inline-block; } 
+.btnSet li a img { vertical-align: top; } 
+
+.btnSetb { height:44px;}
+.btnSetb li { width: 106px; float: left; margin-right: 6px;}
+.btnSetb li.last { margin-right: 0 !important; }
+.btnSetb li a { background:url('../../images/ko/mem/accommodation/btnSetb.gif') 0 0 no-repeat; width: 106px; height:44px; float: left; line-height: 100px; }
+.btnSetb li span { line-height: 100px; }
+.btnSetb li a.floorMap { width: 106px; height: 44px; background-position: 0 0; overflow: hidden; display: block;}
+.btnSetb li a.drinkMenu { width: 129px; height: 44px; background-position: -112px 0; overflow: hidden; display: block;}
+
+.btmConNewWid .btnSet { height:44px;}
+.btmConNewWid .btnSet li { float: left; width: auto; margin-right: 6px;}
+
+.packagePicw { width: 330px; margin-top: 8px; overflow: hidden; }
+.packagePic { width: 330px; height: 185px; position: relative; margin-top: 8px;}
+.packagePic .pic { width: 330px; height: 185px; display:block; }
+.packagePic p { position: absolute; bottom: 0; z-index: 10; padding: 12px 0 0 0; vertical-align: top; height: 44px; line-height: 17px;  width: 100%; color: #fff; text-align: center; }
+.packagePic .bgOvr { width: 100%; position: absolute; bottom: 0; z-index: 1; height: 60px; background-color: #000; filter:alpha(opacity=70); opacity: 0.7; -moz-opacity:0.5;  }
+
+
+.ctnExBzDeluxe .packagePic { width: 330px; height: 185px; position: relative; margin-top: 8px;}
+.ctnExBzDeluxe .packagePic .pic { width: 330px; height: 185px; display:block; }
+.ctnExBzDeluxe .packagePic p { position: absolute; bottom: 0; z-index: 10; padding: 12px 0 0 0; vertical-align: top; height: 44px; line-height: 17px;  width: 100%; color: #fff; text-align: center; }
+
+
+.conTitle1 { background: url("../../images/ko/mem/accommodation/dlPackageTit.gif") 0 0 no-repeat; height: 17px; margin-top: 40px; }
+.conTitle1 .tit { text-indent: -9999%; }
+.conTitle2 { background: url("../../images/ko/mem/accommodation/dlHtInfoTit.gif") 0 0 no-repeat; height: 12px; margin: 0 0 19px 0;}
+.conTitle2 .tit { text-indent: -9999%; }
+
+.HotelInfoBox { width: 100%; margin-top: 40px;}
+.HotelInfoBox .HotelBoxTop { background: #faf7ed; padding: 23px 17px 24px 17px; width: 298px;}
+.HotelInfoBox .HotelBoxTop .introLeft { float: left; width: 153px; }
+.HotelInfoBox .HotelBoxTop .introRight { float: left; width: 148px; }
+.HotelInfoBox .HotelBoxTop .introBtm { clear: both; min-height: 77px; padding-top: 18px; }
+.HotelInfoBox .HotelBoxTop .introBtm span { padding-left: 8px; color: #727272; font-size: 11px; }
+.HotelInfoBox .HotelBoxTop .tit { font-weight: bold; color: #444; background:url('../../images/ko/mem/accommodation/bgDot.gif') 0 8px no-repeat; padding-left: 8px; }
+.HotelInfoBox .HotelBoxTop .useIntro p { padding-left: 8px; color: #444; }
+.HotelInfoBox .HotelBoxBtm { background: #f0ece0; padding: 22px 25px 21px 17px;}
+.HotelInfoBox .HotelBoxBtm p { line-height: 18px; font-size: 11px; color: #444;}
+
+.bookWrap { float: left; height: 14px; position: relative; z-index: 1000; margin-left: 3px; }
+.icoBooking { position:relative; width:15px; height:12px; overflow:hidden; cursor:pointer; background:url('../../images/ko/mem/accommodation/question.gif') 0 0 no-repeat; padding: 1px 0 1px 0; display:inline-block; vertical-align: middle;  }
+.icoBooking a { position:absolute; left:-9999px; }
+.bfBoooking { color: #806925; font-size: 11px; vertical-align: middle; }
+
+
+/* 留덉쭊 */
+.newMgt { margin-top: 20px !important; }
+.newMgtA { margin-top: 665px !important; }
+.mgb40 { margin-bottom: 40px !important; }
+.mgt50 { margin-top: 50px !important; }
+.mgt40 { margin-top: 40px !important; }
+.mgt95 { margin-top: 95px !important; }
+
+
+
+/* Executive Business Deluxe */
+.listPic {width: 496px; }
+.listPic img { vertical-align: top; }
+.listPica {width: 496px; height:175px; display:block; overflow: hidden; text-indent:-9999%; background:url('../../images/ko/mem/accommodation/') 0 0 no-repeat;}
+
+
+.pdb0 { padding-bottom: 0 !important; }
+
+/* �꾨㈃怨듯넻 */
+.popLayerstFplan { width: 600px; left: 50%; margin: 0 0 0 -300px; position: absolute; top: 200px; }
+
+
+
+/* �꾩꽦梨꾨꼸蹂닿린 �앹뾽 */
+.popLayerAccSatellite_seoul { width: 489px; left: 50%; margin: 0 0 0 -300px; position: absolute; top: 200px; }
+.popLayerAccSatellite_seoul .popHead .tit { width: 147px; height:19px; display:block; padding: 8px 0 0 28px; overflow: hidden; text-indent:-9999%; background:url('../../images/ko/mem/accommodation/AccSatelliteTitle.gif') 28px 8px no-repeat; }
+.popLayerAccSatellite_seoul .scrollBox{ height:500px; overflow:auto; position:relative;
+	scrollbar-face-color:#fdf8ef;
+	scrollbar-shadow-color:#856f56;
+	scrollbar-highlight-color:#FDF8EF;
+	scrollbar-3dlight-color:#856f56;
+  	scrollbar-darkshadow-color:#FDF8EF;
+  	scrollbar-track-color:#fff;
+	scrollbar-arrow-color:#856f56;
+}
+.popLayerAccSatellite_seoul .scrollBox .scrollBoxIn{ zoom:1;}
+
+.tableTypeC.tableAccSatellite{ margin:0; }
+.tableTypeC.tableAccSatellite tr .bdrN { border-right: 0 !important; }
+.tableTypeC.tableAccSatellite thead th { height: auto; font-weight: bold; text-align: center; padding: 16px 0; color: #888; background:#faf9f4; }
+.tableTypeC.tableAccSatellite tbody th { height: auto; border-left: none; background: #f8f8f8; font-weight: bold; text-align: center; padding: 8px 0; color: #888; }
+.tableTypeC.tableAccSatellite tbody td { border-left: none; padding:6px 0 6px 0; font-family: Dotum; font-size: 12px; background: #fff; color: #1b1b1b; }
+.popLayerAccSatellite_seoul .askTxt { width: 91px; height:11px; display:block; margin-top: 10px; overflow: hidden; text-indent:-9999%; background:url('../../images/ko/mem/accommodation/AccSatelliteTxt.gif') 0 0 no-repeat; }
+
+
+
+
+/* ��*/
+.popLayerstFplan .popCtn .popWrap .onlyOne { border:#e2d5c5 solid 1px; }
+.popLayerstFplan .popCtn img { vertical-align: top; }
+.popLayerstFplan .popCtn .popWrap { width: 100%; }
+.popLayerstFplan .popHead .tit { padding: 7px 0 0 28px; width: auto; }
+.popLayerstFplan .popTab{ position:relative; overflow: hidden; padding:37px 0px 0 0px;}
+.popLayerstFplan .popTab .ctn { float: left; }
+.popLayerstFplan .popTab .ctn .tit{ position:absolute; top:0px;margin:0px; padding:0px; font-size:12px; font-weight:normal; }
+.popLayerstFplan .popTab .ctn .tit a{ display:block; padding:5px; height:26px; width:96px; line-height:26px;  border:#e2d5c5 solid 1px; background:#e2d5c5; color: #75604b; font-size: 12px; text-align:center; text-decoration:none; }
+.popLayerstFplan .popTab .ctn .box{ border:#e2d5c5 solid 1px; display:none; line-height: 0; padding:0; margin:0; }
+.popLayerstFplan .popTab .ctn1 .tit{ left:0px;}
+.popLayerstFplan .popTab .ctn2 .tit{ left:109px;}
+.popLayerstFplan .popTab .ctnOn .tit a{ height:27px; font-size:12px; line-height:26px; background: #fff; color: #75604b; border:#e2d5c5 solid 1px; border-bottom:none; }
+.popLayerstFplan .popTab .ctnOn .box{display:block; width: 534px; }
+
+.popLayer .popHead h2.tit img { vertical-align: top;}
+*:first-child+html .popLayer .popHead h2.tit img {margin-top:-45px;}
+
+
+
+/* Deluxe �꾨㈃ */
+.popLayerstDlx { width: 600px; left: 50%; margin: 0 0 0 -300px; position: absolute; top: 200px; }
+.popLayerstDlx .popHead .tit { width: 175px; height:18px; display:block; padding: 8px 0 0 28px; overflow: hidden; text-indent:-9999%; background:url('../../images/ko/mem/accommodation/DelxpopTitle.gif') 28px 7px no-repeat; }
+
+
+/* Business Deluxe �꾨㈃ */
+.popLayerbzDelxfplan { width: 600px; left: 50%; margin: 0 0 0 -300px; position: absolute; top: 200px; }
+.popLayerbzDelxfplan .popHead .tit { width: 175px; height:18px; display:block; padding: 8px 0 0 28px; overflow: hidden; text-indent:-9999%; background:url('../../images/ko/mem/accommodation/bzDelxpopTitle.gif') 28px 7px no-repeat; }
+
+/* Executive Business Deluxe �꾨㈃ */
+.popLayerefBzDelxfplan { width: 600px; left: 50%; margin: 0 0 0 -300px; position: absolute; top: 200px; }
+.popLayerefBzDelxfplan .popHead .tit { width: 259px; height:18px; display:block; padding: 8px 0 0 28px; overflow: hidden; text-indent:-9999%; background:url('../../images/ko/mem/accommodation/exBzDelxpopTitle.gif') 28px 7px no-repeat; }
+
+
+/* 예약1단계 객실 자세히 보기 팝업 */
+.popLayererAccImgView { width: 952px; left: 50%; margin: 0 0 0 -476px; position: absolute; top: 200px; }
+.popLayererAccImgView .popCtn img { border: 1px solid #eae0d4; vertical-align: top; }
+.popLayererAccImgView .popHead .tit { padding: 6px 0 0 28px; width: auto; line-height: 0 !important; }
+.popLayererAccImgView .popHead h2.tit img{margin-top:0px;}
+.popLayererAccImgView .slidePhotoBox { margin: 0;}
+.popLayererAccImgView .popCtn{height: 600px; overflow-y: scroll;}
+.popLayererAccImgView .btmCon img{border:0px;}
+.popLayererAccImgView .HotelInfoBox{margin-top:0 !important;}
+.popLayererAccImgView .bookWrap{display: none !important;}
+.popLayererAccImgView .channelView{display: none;}
+.popLayererAccImgView .firsta{display: none;}
+.popLayererAccImgView .tableTypeB .last th, 
+.popLayererAccImgView .tableTypeB .last td{border-bottom: 0px;}
+.popLayererAccImgView .leftArea .topTxtwrap .topTxt p,
+.popLayererAccImgView .leftArea .topTxtwrap .topTxt dl{display: none;}
+.popLayererAccImgView .HotelInfoBox .HotelBoxTop{line-height: 180%;}
+
+
+/* Executive Grand Deluxe �꾨㈃ */
+.popLayerereflExGdDelxfplan { width: 600px; left: 50%; margin: 0 0 0 -300px; position: absolute; top: 200px; }
+.popLayerereflExGdDelxfplan .popHead .tit { width: 234px; height:18px; display:block; padding: 8px 0 0 28px; overflow: hidden; text-indent:-9999%; background:url('../../images/ko/mem/accommodation/eflExGdDelxpopTitle.gif') 28px 8px no-repeat; }
+
+
+/*Superior �꾨㈃*/
+.popLayererSuperior { width: 600px; left: 50%; margin: 0 0 0 -300px; position: absolute; top: 200px; }
+.popLayererSuperior .popHead .tit { width: 234px; height:18px; display:block; padding: 8px 0 0 28px; overflow: hidden; text-indent:-9999%; background:url('../../images/ko/mem/accommodation/superiorpopTitle.gif') 28px 8px no-repeat; }
+
+/*Corner �꾨㈃*/
+.popLayererCorner { width: 600px; left: 50%; margin: 0 0 0 -300px; position: absolute; top: 200px; }
+.popLayererCorner .popHead .tit { width: 234px; height:18px; display:block; padding: 8px 0 0 28px; overflow: hidden; text-indent:-9999%; background:url('../../images/ko/mem/accommodation/cornerpopTitle.gif') 28px 8px no-repeat; }
+
+/*Premier�꾨㈃*/
+.popLayererPremier { width: 600px; left: 50%; margin: 0 0 0 -300px; position: absolute; top: 200px; }
+.popLayererPremier .popHead .tit { width: 234px; height:18px; display:block; padding: 8px 0 0 28px; overflow: hidden; text-indent:-9999%; background:url('../../images/ko/mem/accommodation/premierpopTitle.gif') 28px 8px no-repeat; }
+
+/*Royal�꾨㈃*/
+.popLayererRoyal { width: 600px; left: 50%; margin: 0 0 0 -300px; position: absolute; top: 200px; }
+.popLayererRoyal .popHead .tit { width: 234px; height:18px; display:block; padding: 8px 0 0 28px; overflow: hidden; text-indent:-9999%; background:url('../../images/ko/mem/accommodation/royelpopTitle.gif') 28px 8px no-repeat; }
+
+/*Shilla�꾨㈃*/
+.popLayererShilla { width: 600px; left: 50%; margin: 0 0 0 -300px; position: absolute; top: 200px; }
+.popLayererShilla .popHead .tit { width: 234px; height:18px; display:block; padding: 8px 0 0 28px; overflow: hidden; text-indent:-9999%; background:url('../../images/ko/mem/accommodation/shillapopTitle.gif') 28px 8px no-repeat; }
+
+/*Korean�꾨㈃*/
+.popLayererKorean { width: 600px; left: 50%; margin: 0 0 0 -300px; position: absolute; top: 200px; }
+.popLayererKorean .popHead .tit { width: 234px; height:18px; display:block; padding: 8px 0 0 28px; overflow: hidden; text-indent:-9999%; background:url('../../images/ko/mem/accommodation/koreanpopTitle.gif') 28px 8px no-repeat; }
+
+
+/*Presidential�꾨㈃*/
+.popLayererPresidential { width: 600px; left: 50%; margin: 0 0 0 -300px; position: absolute; top: 200px; }
+.popLayererPresidential .popHead .tit { width: 234px; height:18px; display:block; padding: 8px 0 0 28px; overflow: hidden; text-indent:-9999%; background:url('../../images/ko/mem/accommodation/presidentialpopTitle.gif') 28px 8px no-repeat; }
+
+
+/* 媛앹떎 �몃뜳��*/
+.ctnAcmd .headTit .tit { line-height: 100%; } 
+.topIntro_seoul {width: 680px; height:111px; display:block; overflow: hidden; text-indent:-9999%; background:url('../../images/ko/mem/accommodation/acmdInxTxt.gif') 0 0 no-repeat;}
+
+.ctnAcmdIndex .conTitle { background: url("../../images/ko/mem/accommodation/standardTit.gif") 0 0 no-repeat; height: 19px; margin-top: 50px; }
+.ctnAcmdIndex .conTitle.titMid { background: url("../../images/ko/mem/accommodation/eflTit.gif") 0 0 no-repeat  !important; height: 19px; }
+.ctnAcmdIndex .conTitle.titBtm { background: url("../../images/ko/mem/accommodation/suiteTit.gif") 0 0 no-repeat  !important; height: 19px; }
+.ctnAcmdIndex .conTitle .tit { text-indent: -9999%; }
+
+.ctnAcmd .baicBox { border-bottom: 1px solid #e8e4de;  margin: 25px 0 50px 0; overflow: hidden; }
+.ctnAcmd .baicBox .lBox { float: left; margin-right: 30px; width: 417px; margin-bottom:40px; }
+.ctnAcmd .baicBox .lBox .imgArea { display: inline-block; margin-bottom: 15px; }
+.ctnAcmd .baicBox .lBox .imgArea img { vertical-align: top; }
+.ctnAcmd .baicBox .rBox .imgArea img { vertical-align: top; }
+.ctnAcmd .baicBox .rBox { float: left; width: 417px; margin-bottom:40px; }
+.ctnAcmd .baicBox .rBox .imgArea { display: inline-block; margin-bottom: 15px; }
+.ctnAcmd .baicBox .expArea { overflow: hidden; }
+.ctnAcmd .baicBox .lBox .expArea .topExp { float: left; width: 246px; }
+.ctnAcmd .baicBox .lBox .expArea .topExp img { vertical-align: top; }
+/*
+.ctnAcmd .baicBox.btmBox .lBox { padding-bottom: 45px; }
+.ctnAcmd .baicBox.btmBox .rBox { padding-bottom: 45px; }
+*/
+.ctnAcmd .baicBox  .btnSet { float: right; }
+.ctnAcmd .baicBox .lBox .expArea .btnSet { float: right; width: 170px; position: relative; text-align:right; }
+.ctnAcmd .baicBox .lBox .expArea .btnSet .imgView { }
+.ctnAcmd .baicBox .lBox .expArea .btnSet .booking { }
+.ctnAcmd .baicBox .lBox .expArea .btnSet img { vertical-align: top; }
+.ctnAcmd .baicBox .rBox .expArea .topExp { float: left; width: 246px; }
+.ctnAcmd .baicBox .rBox .expArea .btnSet img { vertical-align: top; }
+
+
+.ctnAcmd .midBox { border-bottom: 1px solid #e8e4de; margin-top: 25px; }
+.ctnAcmd .btmBox { margin-top: 25px; border-bottom: 0; }
+
+
+/* 媛앹떎 �대찓�덊떚 �앹뾽 - �ㅽ깲�ㅻ뱶 */
+.popLayerAccAmenity { width: 600px; left: 50%; margin: 0 0 0 -300px; position: absolute; top: 200px; }
+.popLayerAccAmenity .popHead .tit { width: 112px; height:19px; display:block; padding: 8px 0 0 28px; overflow: hidden; text-indent:-9999%; background:url('../../images/ko/mem/accommodation/accAmenityPopTitle.gif') 28px 8px no-repeat; }
+.popLayerAccAmenity .allWrap { overflow: hidden; border-top: 1px solid #a1886f; border-bottom: 1px solid #a1886f; padding: 20px 0; }
+.popLayerAccAmenity .allWrap .left { float: left; border-right: 1px solid #eceae1; padding: 0 0 0 14px; width: 191px; height: 400px; }
+.popLayerAccAmenity .allWrap img { border:0; }
+.popLayerAccAmenity .allWrap h3 { margin-bottom: 20px; height: 11px; }
+.popLayerAccAmenity .allWrap h3 img { vertical-align: top; }
+.popLayerAccAmenity .allWrap ul.mgb50 { margin-bottom: 50px; }
+.popLayerAccAmenity .allWrap ul li { background:url('../../images/ko/mem/accommodation/bgDot.gif') 0 8px no-repeat; padding-left: 8px; line-height: 20px; color: #444; }
+.popLayerAccAmenity .allWrap .mid { float: left; border-right: 1px solid #eceae1; width: 154px; padding: 0 0 0 20px; height: 400px; }
+.popLayerAccAmenity .allWrap .right { float: left; padding: 0 0 0 20px; width: 135px; height: 400px; }
+
+.popLayerAccAmenity .allWrapA { overflow: hidden; border-top: 1px solid #a1886f; border-bottom: 1px solid #a1886f; padding: 20px 0; }
+.popLayerAccAmenity .allWrapA .left { float: left; border-right: 1px solid #eceae1; padding: 0 0 0 14px; width: 191px; height: 400px; }
+.popLayerAccAmenity .allWrapA img { border:0; }
+.popLayerAccAmenity .allWrapA h3 { margin-bottom: 20px; height: 11px; }
+.popLayerAccAmenity .allWrapA h3 img { vertical-align: top; }
+.popLayerAccAmenity .allWrapA ul.mgb50 { margin-bottom: 50px; }
+.popLayerAccAmenity .allWrapA ul li { background:url('../../images/ko/mem/accommodation/bgDot.gif') 0 8px no-repeat; padding-left: 8px; line-height: 20px; color: #444; }
+.popLayerAccAmenity .allWrapA .mid { float: left; border-right: 1px solid #eceae1; width: 154px; padding: 0 0 0 20px; height: 400px; }
+.popLayerAccAmenity .allWrapA .right { float: left; padding: 0 0 0 20px; width: 135px; height: 400px; }
+
+.popLayerAccAmenity .allWrapB { overflow: hidden; border-top: 1px solid #a1886f; border-bottom: 1px solid #a1886f; padding: 20px 0; }
+.popLayerAccAmenity .allWrapB .left { float: left; border-right: 1px solid #eceae1; padding: 0 0 0 14px; width: 191px; height: 400px; }
+.popLayerAccAmenity .allWrapB img { border:0; }
+.popLayerAccAmenity .allWrapB h3 { margin-bottom: 20px; height: 11px; }
+.popLayerAccAmenity .allWrapB h3 img { vertical-align: top; }
+.popLayerAccAmenity .allWrapB ul.mgb50 { margin-bottom: 50px; }
+.popLayerAccAmenity .allWrapB ul li { background:url('../../images/ko/mem/accommodation/bgDot.gif') 0 8px no-repeat; padding-left: 8px; line-height: 20px; color: #444; }
+.popLayerAccAmenity .allWrapB .mid { float: left; border-right: 1px solid #eceae1; width: 154px; padding: 0 0 0 20px; height: 400px; }
+.popLayerAccAmenity .allWrapB .right { float: left; padding: 0 0 0 20px; width: 135px; height: 400px; }
+
+/* 媛앹떎 �대찓�덊떚 �앹뾽 - �ㅽ깲�ㅻ뱶 */
+.popLayerAccAmenity_seoul { width: 600px; left: 50%; margin: 0 0 0 -300px; position: absolute; top: 200px; }
+.popLayerAccAmenity_seoul .popHead .tit { width: 112px; height:19px; display:block; padding: 8px 0 0 28px; overflow: hidden; text-indent:-9999%; background:url('../../images/ko/mem/accommodation/accAmenityPopTitle.gif') 28px 8px no-repeat; }
+.popLayerAccAmenity_seoul .allWrap { overflow: hidden; border-top: 1px solid #a1886f; border-bottom: 1px solid #a1886f; padding: 20px 0; }
+.popLayerAccAmenity_seoul .allWrap .left { float: left; border-right: 1px solid #eceae1; padding: 0 0 0 14px; width: 191px; height: 400px; }
+.popLayerAccAmenity_seoul .allWrap img { border:0; }
+.popLayerAccAmenity_seoul .allWrap h3 { margin-bottom: 20px; height: 11px; }
+.popLayerAccAmenity_seoul .allWrap h3 img { vertical-align: top; }
+.popLayerAccAmenity_seoul .allWrap ul.mgb50 { margin-bottom: 50px; }
+.popLayerAccAmenity_seoul .allWrap ul li { background:url('../../images/ko/mem/accommodation/bgDot.gif') 0 8px no-repeat; padding-left: 8px; line-height: 20px; color: #444; }
+.popLayerAccAmenity_seoul .allWrap .mid { float: left; border-right: 1px solid #eceae1; width: 154px; padding: 0 0 0 20px; height: 400px; }
+.popLayerAccAmenity_seoul .allWrap .right { float: left; padding: 0 0 0 20px; width: 135px; height: 400px; }
+
+.popLayerAccAmenity_seoul .allWrapA { overflow: hidden; border-top: 1px solid #a1886f; border-bottom: 1px solid #a1886f; padding: 20px 0; }
+.popLayerAccAmenity_seoul .allWrapA .left { float: left; border-right: 1px solid #eceae1; padding: 0 0 0 14px; width: 191px; height: 400px; }
+.popLayerAccAmenity_seoul .allWrapA img { border:0; }
+.popLayerAccAmenity_seoul .allWrapA h3 { margin-bottom: 20px; height: 11px; }
+.popLayerAccAmenity_seoul .allWrapA h3 img { vertical-align: top; }
+.popLayerAccAmenity_seoul .allWrapA ul.mgb50 { margin-bottom: 50px; }
+.popLayerAccAmenity_seoul .allWrapA ul li { background:url('../../images/ko/mem/accommodation/bgDot.gif') 0 8px no-repeat; padding-left: 8px; line-height: 20px; color: #444; }
+.popLayerAccAmenity_seoul .allWrapA .mid { float: left; border-right: 1px solid #eceae1; width: 154px; padding: 0 0 0 20px; height: 400px; }
+.popLayerAccAmenity_seoul .allWrapA .right { float: left; padding: 0 0 0 20px; width: 135px; height: 400px; }
+
+.popLayerAccAmenity_seoul .allWrapB { overflow: hidden; border-top: 1px solid #a1886f; border-bottom: 1px solid #a1886f; padding: 20px 0; }
+.popLayerAccAmenity_seoul .allWrapB .left { float: left; border-right: 1px solid #eceae1; padding: 0 0 0 14px; width: 191px; height: 400px; }
+.popLayerAccAmenity_seoul .allWrapB img { border:0; }
+.popLayerAccAmenity_seoul .allWrapB h3 { margin-bottom: 20px; height: 11px; }
+.popLayerAccAmenity_seoul .allWrapB h3 img { vertical-align: top; }
+.popLayerAccAmenity_seoul .allWrapB ul.mgb50 { margin-bottom: 50px; }
+.popLayerAccAmenity_seoul .allWrapB ul li { background:url('../../images/ko/mem/accommodation/bgDot.gif') 0 8px no-repeat; padding-left: 8px; line-height: 20px; color: #444; }
+.popLayerAccAmenity_seoul .allWrapB .mid { float: left; border-right: 1px solid #eceae1; width: 154px; padding: 0 0 0 20px; height: 400px; }
+.popLayerAccAmenity_seoul .allWrapB .right { float: left; padding: 0 0 0 20px; width: 135px; height: 400px; }
+
+
+
+
+/* All Rooms */
+.ctnallRooms .headTit .tit { background-position: 0 -550px; }
+.ctnallRooms .accImg { height: 94px; } 
+.ctnallRooms .accImg img { vertical-align: top; } 
+
+.tableTypeC{ margin:20px 0 0 0; width: 100%; border-collapse:collapse; table-layout:fixed;}
+.tableTypeC thead th { border-right: 1px solid #eceae1; border-bottom: 1px solid #eceae1; padding:14px 0 0 0; height: 28px; background: #faf9f7; vertical-align: top; line-height: 100%; }
+.tableTypeC thead th.bdL { border-left: 1px solid #eceae1; }
+.tableTypeC thead th img { vertical-align: top; line-height: 100%; }
+.tableTypeC tbody th img { vertical-align: top; line-height: 100%; }
+.tableTypeC tbody th { border-right: 1px solid #eceae1; border-left: 1px solid #eceae1; border-bottom: 1px solid #eceae1; height: 43px; padding: 0 0 0 15px; text-align: left; background: #faf9f7; line-height: 100%; vertical-align: middle; }
+.tableTypeC tbody td { border-right: 1px solid #eceae1; border-bottom: 1px solid #eceae1; color:#1b1b1b; text-align:center; padding:7px 0 6px 0; font-family: Dotum; font-size: 12px; background: #fff; line-height: 15px; }
+.tableTypeC tbody td.left { text-align:left !important; padding:7px 0 6px 10px !important; }
+.tableTypeC tr.first th,
+.tableTypeC tr.first td {border-top: 1px solid #cdcbbe; }
+.tableTypeC tr.last th,
+.tableTypeC tr.last td {border-bottom:#cdcbbe solid 1px; }
+
+
+
+/* 留먰뭾��*/
+.txtBalloon { display:none; background:url('../../images/ko/mem/accommodation/bgTxtBalloonTop.png') 0 top no-repeat; width: 294px; padding: 25px 0 0 0; position: absolute; top: 18px; right: -179px; z-index: 100; }
+.txtBalloon .txtBalloonIn { background:url('../../images/ko/mem/accommodation/bgTxtBalloonBt.png') 0 bottom no-repeat; width: 294px; padding: 0 0 20px 0; }
+.txtBalloon .txtBalloonIn .ballonCon { padding: 0 20px 0 20px;  }
+.txtBalloon .txtBalloonIn .ballonCon p { color: #626262; font-size: 11px; line-height: 13px; }
+.txtBalloon .txtBalloonIn .ballonCon p.first { margin-bottom: 15px; }
+.txtBalloon .txtBalloonIn .btnClose { position: absolute; right: 11px; top: 16px; background:url('../../images/ko/mem/accommodation/btnblClose.gif') 0 0 no-repeat; }
+.txtBalloon .txtBalloonIn .btnClose { display:block; height: 9px; overflow: hidden; text-indent:-9999%; width: 9px; }
+
+
+
+
+.ctnallRooms .keepArea{margin-top:10px;}
+
+
+.view_txt a {display: block; overflow: hidden; text-indent: -9999px;}
+
+.popLayerAccSatellite_seoul .popCtn { padding: 15px 27px 25px 27px !important; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

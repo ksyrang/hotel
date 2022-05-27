@@ -1,0 +1,1169 @@
+@charset "utf-8";
+
+/*약관동의*/
+.rewards_N .btnHead{ margin-top:25px; }
+.rewards_N .btnHead span{ height:27px; display:inline-block; vertical-align:middle; }
+.rewards_N .btnHead span a{ display:block; height:27px; }
+.rewards_N .btnHead span a img{ width:100%; }
+
+.rewards_N .Inpo_Tmini{ position:relative; padding-left:15px; }
+.rewards_N .Inpo_Tmini::before{ content:"□"; position:absolute; display:inline-block; font-size:14px; left:0; }
+
+.rewards_N .slash{ text-align:left; position:relative; }
+.rewards_N .slash div{ text-align:right; }
+.rewards_N .slash::before{ content:""; position:absolute; width:1px; height:180px; background-color:#eceae1; transform:rotate(-70deg); left:0; top:0; margin-left:86px; margin-top:-57px; }
+
+.rewards_N .tableTypeD_2New tr td{ letter-spacing:-0.5px; padding:6px 5px; }
+.rewards_N .tableTypeD_2New tr td:last-child{ text-align:left; }
+
+.rewards_N .pb5{ padding-bottom:5px; }
+
+/*마이페이지 - 객실예약확인*/
+.rewards_N.ctnMypage .schBox .selectWrap_rewards{ float:left; margin-right:10px; }
+.dateList_N{ float:left; height:27px; font-size:0; }
+.dateList_N li{ display:inline-block; text-align:center; margin-right:4px; }
+
+.rewards_N .btnDateNew{ background:url("../../images/ko/mem/main/btnDateNew.png") no-repeat; height:27px; vertical-align:middle; display:inline-block; line-height:100px; overflow:hidden; }
+.rewards_N .btnDateNew.btn3Mon{ background-position:0px 0px; width:50px; }
+.rewards_N .btnDateNew.btn6Mon{ background-position:-54px 0px; width:50px; }
+.rewards_N .btnDateNew.btn12Mon{ background-position:-108px 0px; width:56px; }
+
+.rewards_N .policyBox .box > p{ color:#888; line-height:16px; }
+.rewards_N .policyBox .box > p strong{ color:#101010; }
+
+/*popup*/
+/*약관동의 팝업*/
+.rewardsPop_N.popLayerAgreeAll{ top:194px; }
+.rewardsPop_N .clsBox{ margin-bottom:0; }
+.rewardsPop_N .mt0{ margin-top:0; }
+
+/*신라리워즈 가입 step*/
+/*step2 정보입력*/
+.rewards_N input::placeholder{ color:#bbb; }
+.rewards_N .tableJoinForm .btnPwHelp, .rewards_N .rwPromotion span{ font-size:12px; }
+
+/*마이페이지 프로필 수정*/
+.rewards_N table tr.first td.first span.name{ display:inline-block; margin-left:8px; }
+
+.rewards_N .marketingUseBox .btnViewAllPro{ background:url("../../images/ko/mypage/btnViewTerm.gif") no-repeat; }
+.rewards_N.ctnMypage.ctnUserInfo2 .tableJoinForm tr.last td.last{ padding:6px 14px; }
+.rewards_N.ctnMypage.ctnUserInfo2 .emailRecepBox .msgCheck3{ margin:0; }
+.rewards_N .mt15{ margin-top:15px; }
+.rewards_N .mt5{ margin-top:5px; }
+.rewards_N td p{ color:#727272; }
+
+/*마이페이지 신라리워즈 등급 및 포인트*/
+#oldHpopup{ display:none; }
+.rewards_N .account .userInfoTopBox{ margin:40px 0; }
+.rewards_N .userInfoTopBox .userInfoList1{ padding:15px 0 14px; }
+.rewards_N .userInfoTopBox .userInfoList1 strong{ font-family:'Arial'; display:inline-block; }
+.rewards_N .userInfoTopBox .userInfoList1 p{ font-size:14px; color:#333; line-height:14px; }
+.rewards_N .userInfoTopBox .userInfoList1 p:first-child strong{ color:#333; font-weight:normal; font-size:18px; margin-bottom:11px; }
+.rewards_N .userInfoTopBox .userInfoList1 p:last-child strong{ font-weight:bold; font-size:22px; text-transform:uppercase; }
+.rewards_N .userInfoTopBox .userInfoList1 p strong.bLevel{ color:#8f6349; }
+.rewards_N .userInfoTopBox .userInfoList1 p strong.sLevel{ color:#a8a9ad; }
+.rewards_N .userInfoTopBox .userInfoList1 p strong.gLevel{ color:#9a8872; }
+.rewards_N .userInfoTopBox .userInfoList1 p strong.dLevel{ color:#695d4a; }
+.rewards_N .userInfoTopBox .userInfoList2{ background-color:#f3f3f3; border-radius:3px; width:490px; height:70px; }
+.rewards_N .userInfoTopBox .userInfoList2 > ul{ font-size:0; padding:26px 0; }
+.rewards_N .userInfoTopBox .userInfoList2 > ul > li{ display:inline-block; position:relative; width:calc( 50% - 60px ); max-width:245px; padding:0 30px; clear:both; line-height:18px; }
+.rewards_N .userInfoTopBox .userInfoList2 > ul > li span{ color:#727272; font-size:12px; float:left; }
+.rewards_N .userInfoTopBox .userInfoList2 > ul > li strong{ color:#333; font-weight:bold; font-size:18px; font-family:'Arial'; float:right; }
+.rewards_N .userInfoTopBox .userInfoList2 > ul > li strong > b{ font-weight:normal; font-size:16px; font-family:'Helvetica'; }
+.rewards_N .userInfoTopBox .userInfoList2 > ul > li:last-child::before{ content:""; position:absolute; left:0; background-color:#e5e5e5; height:18px; width:1px; }
+
+.rewards_N .userInfoGraphBox{ border:1px solid #e3d6c6; height:315px; }
+.rewards_N .userInfoGraphBox .userInfoGraphWrap{ padding:29px 0; }
+.rewards_N .userInfoGraphBox .userInfoGraphWrap > div{ width:calc( 50% - 72px ); position:relative; height:255px; padding:0 36px; }
+.rewards_N .userInfoGraphBox .userInfoGraphWrap > div:last-child::before{ content:""; position:absolute; left:0; background-color:#e8e7e5; width:1px; height:100%; }
+
+.rewards_N .userInfoGraphBox .graphTit{ margin-bottom:18px; text-align:center; }
+.rewards_N .userInfoGraphBox .graphInfo{ height:178px; width:100%; overflow:hidden; }
+
+.rewards_N .userInfoGraphBox .graphTxt{ text-align:center; margin-top:18px; color:#727272; }
+.rewards_N .userInfoGraphBox .userTierTxt{ color:#333; font-size:14px; font-family:'Arial'; text-transform:uppercase; }
+.rewards_N .userInfoGraphBox .userNightTxt{ color:#856f56; font-family: Dotum,'돋움', sans-serif; }
+
+.rewards_N .account .userInfoTopBoxTit{ margin-bottom:15px; }
+.rewards_N .account .tierNoticeTxt{ margin-top:19px; }
+.rewards_N .account .tierNoticeTxt p{ color:#727272; }
+.rewards_N .account .linkTxt{ text-decoration:underline; color:#856f56; font-weight:bold; font-family: Dotum,'돋움', sans-serif; }
+
+.rewards_N .account .pointTableWrap{ margin-top:60px; }
+.rewards_N .account .pointTableWrap .pointTableTit{ margin-bottom:15px; }
+.rewards_N .account .pointTableTit .linkTxt{ margin-right:0; }
+
+/*신라리워즈 등급포인트 그래프 css*/
+.rewards_N .graph-list{ position:relative; text-align:center; width:217px; height:178px; margin:0 auto; }
+.rewards_N .graph-list::before, .rewards_N .graph-list::after{ content:""; position:absolute; }
+.rewards_N .graph-list::before{ border:12px solid #ededed; border-radius:50%; width:193px; height:193px; left:50%; margin-left:-108px; }
+.rewards_N .graph-list::after{ bottom:0; left:50%; margin-left:-90px; width:0px; height:0px; border-top:0; border-left:90px solid transparent; border-right:90px solid transparent; border-bottom:120px solid #fff; z-index:6; /*도넛 차트 슬라이스*/ }
+.rewards_N .graph-backLine span{ position:relative; z-index:6; }
+.rewards_N .graph-backLine span::before, .rewards_N .graph-backLine span::after{ content:""; position:absolute; top:0; width:1px; height:12px; background-color:#fff; }
+.rewards_N .graph-backLine span::before{ left:0; }
+.rewards_N .graph-backLine span::after{ right:0; }
+.rewards_N .graph-backLine span.backLine1::before{ margin-top:14px; }
+.rewards_N .graph-backLine span.backLine1::after{ margin-top:17px; }
+.rewards_N .graph-backLine span.backLine2::before, .rewards_N .graph-backLine span.backLine2::after{ margin-top:87px; }
+.rewards_N .graph-backLine span.backLine1::before{ transform:rotate(-45deg); -webkit-transform:rotate(-45deg); -ms-transform:rotate(-45deg); margin-left:-53px; }
+.rewards_N .graph-backLine span.backLine1::after{ transform:rotate(43deg); -webkit-transform:rotate(43deg); -ms-transform:rotate(43deg); margin-right:-57px; }
+.rewards_N .graph-backLine span.backLine2::before{ transform:rotate(96deg); -webkit-transform:rotate(96deg); -ms-transform:rotate(96deg); margin-left:-102px; }
+.rewards_N .graph-backLine span.backLine2::after{ transform:rotate(-96deg); -webkit-transform:rotate(-96deg); -ms-transform:rotate(-96deg); margin-right:-102px; }
+
+.rewards_N .graphIconWrap{ position:absolute; margin-top:70px; left:50%; margin-left:-9px; z-index:7; }
+.rewards_N .graphIconWrap> span{ display:inline-block; }
+
+.rewards_N .graphStandardInfo{ height:47px; width:114px; position:absolute; bottom:0; margin-bottom:10px; left:50%; margin-left:-57px; z-index:7; }
+.rewards_N .graphStandardInfo li{ font-size:13px; line-height:13px; letter-spacing:-0.2px; }
+.rewards_N .graphStandardInfo li strong{ font-family:Arial, sans-serif; }
+.rewards_N .graphStandardInfo li:first-child{ color:#333; padding-bottom:10px; }
+.rewards_N .graphStandardInfo li:first-child strong{ font-size:24px; }
+.rewards_N .graphStandardInfo li:last-child{ border-top:1px solid #e5e5e5; color:#999; padding-top:8px; box-sizing:border-box; }
+.rewards_N .graphStandardInfo li:last-child strong{ font-size:14px; font-weight:normal; }
+
+.rewards_N .graph-data .hidden{ display:none; }
+
+/*그래프*/
+.rewards_N .graph-data{ position:relative; height:217px; }
+.rewards_N .graph-data::after{ content:""; position:absolute; width:193px; height:193px; border-radius:50%; background-color:#fff; top:12px; left:12px; z-index:5; }
+.rewards_N .graph-data .circle-list::before{ content:""; position:absolute; border-radius:50%; width:217px; height:217px; clip:rect(0px, 109px, 217px, 0px); left:0; }
+.rewards_N .graph-data .circle-list{ position:absolute; width:217px; height:217px; clip:rect(0px, 217px, 217px, 109px); }
+
+/*등급별 색상*/
+.rewards_N .graph-data.brown .circle-list::before{ background-color:none; }
+.rewards_N .graph-data.silver .circle-list::before{ background-color:#a8a9ad; }
+.rewards_N .graph-data.gold .circle-list::before{ background-color:#9a8872; }
+.rewards_N .graph-data.diamond .circle-list::before{ background-color:#695d4a; }
+
+/*% 공통*/
+.rewards_N .slice2::before{ transform:rotate(50deg); -webkit-transform:rotate(50deg); -ms-transform:rotate(50deg); /*오른쪽 끝점 각도*/ }
+.rewards_N .slice2.circle-list{ transform:rotate(230deg); -webkit-transform:rotate(230deg); -ms-transform:rotate(230deg); /*왼쪽 시작점 각도*/ }
+
+/*brown, silver, gold 0% 일 때*/
+.rewards_N .graph-data.per0 .circle-list::before{ display:none; content:unset; }
+
+/*~10%일 때*/
+.rewards_N .per1 .slice2::before{ animation:spin01 .5s linear forwards; }
+.rewards_N .per2 .slice2::before{ animation:spin02 .5s linear forwards; }
+.rewards_N .per3 .slice2::before{ animation:spin03 .5s linear forwards; }
+.rewards_N .per4 .slice2::before{ animation:spin04 .5s linear forwards; }
+.rewards_N .per5 .slice2::before{ animation:spin05 .5s linear forwards; }
+.rewards_N .per6 .slice2::before{ animation:spin06 .5s linear forwards; }
+.rewards_N .per7 .slice2::before{ animation:spin07 .5s linear forwards; }
+.rewards_N .per8 .slice2::before{ animation:spin08 .5s linear forwards; }
+.rewards_N .per9 .slice2::before{ animation:spin09 .5s linear forwards; }
+.rewards_N .per10 .slice2::before{ animation:spin1 .5s linear forwards; }
+
+/*11%~20%일 때*/
+.rewards_N .per11 .slice2::before{ animation:spin1-1 .5s linear forwards; }
+.rewards_N .per12 .slice2::before{ animation:spin1-2 .5s linear forwards; }
+.rewards_N .per13 .slice2::before{ animation:spin1-3 .5s linear forwards; }
+.rewards_N .per14 .slice2::before{ animation:spin1-4 .5s linear forwards; }
+.rewards_N .per15 .slice2::before{ animation:spin1-5 .5s linear forwards; }
+.rewards_N .per16 .slice2::before{ animation:spin1-6 .5s linear forwards; }
+.rewards_N .per17 .slice2::before{ animation:spin1-7 .5s linear forwards; }
+.rewards_N .per18 .slice2::before{ animation:spin1-8 .5s linear forwards; }
+.rewards_N .per19 .slice2::before{ animation:spin1-9 .5s linear forwards; }
+.rewards_N .per20 .slice2::before{ animation:spin2 .5s linear forwards; }
+
+/*21%~30%일 때*/
+.rewards_N .per21 .slice2::before{ animation:spin2-1 .5s linear forwards; }
+.rewards_N .per22 .slice2::before{ animation:spin2-2 .5s linear forwards; }
+.rewards_N .per23 .slice2::before{ animation:spin2-3 .5s linear forwards; }
+.rewards_N .per24 .slice2::before{ animation:spin2-4 .5s linear forwards; }
+.rewards_N .per25 .slice2::before{ animation:spin2-5 .5s linear forwards; }
+.rewards_N .per26 .slice2::before{ animation:spin2-6 .5s linear forwards; }
+.rewards_N .per27 .slice2::before{ animation:spin2-7 .5s linear forwards; }
+.rewards_N .per28 .slice2::before{ animation:spin2-8 .5s linear forwards; }
+.rewards_N .per29 .slice2::before{ animation:spin2-9 .5s linear forwards; }
+.rewards_N .per30 .slice2::before{ animation:spin3 .5s linear forwards; }
+
+/*31%~40%일 때*/
+.rewards_N .per31 .slice2::before{ animation:spin3-1 .5s linear forwards; }
+.rewards_N .per32 .slice2::before{ animation:spin3-2 .5s linear forwards; }
+.rewards_N .per33 .slice2::before{ animation:spin3-3 .5s linear forwards; }
+.rewards_N .per34 .slice2::before{ animation:spin3-4 .5s linear forwards; }
+.rewards_N .per35 .slice2::before{ animation:spin3-5 .5s linear forwards; }
+.rewards_N .per36 .slice2::before{ animation:spin3-6 .5s linear forwards; }
+.rewards_N .per37 .slice2::before{ animation:spin3-7 .5s linear forwards; }
+.rewards_N .per38 .slice2::before{ animation:spin3-8 .5s linear forwards; }
+.rewards_N .per39 .slice2::before{ animation:spin3-9 .5s linear forwards; }
+.rewards_N .per40 .slice2::before{ animation:spin4 .5s linear forwards; }
+
+/*41%~50%일 때*/
+.rewards_N .per41 .slice2::before{ animation:spin4-1 .5s linear forwards; }
+.rewards_N .per42 .slice2::before{ animation:spin4-2 .5s linear forwards; }
+.rewards_N .per43 .slice2::before{ animation:spin4-3 .5s linear forwards; }
+.rewards_N .per44 .slice2::before{ animation:spin4-4 .5s linear forwards; }
+.rewards_N .per45 .slice2::before{ animation:spin4-5 .5s linear forwards; }
+.rewards_N .per46 .slice2::before{ animation:spin4-6 .5s linear forwards; }
+.rewards_N .per47 .slice2::before{ animation:spin4-7 .5s linear forwards; }
+.rewards_N .per48 .slice2::before{ animation:spin4-8 .5s linear forwards; }
+.rewards_N .per49 .slice2::before{ animation:spin4-9 .5s linear forwards; }
+.rewards_N .per50 .slice2::before{ animation:spin50 .5s linear forwards; }
+
+/*51%~60%일 때*/
+.rewards_N .per51 .slice1::before{ animation:spin5-1 .5s linear .5s forwards; }
+.rewards_N .per51 .slice2::before{ animation:spin51 .5s linear forwards; }
+
+.rewards_N .per52 .slice1::before{ animation:spin5-2 .5s linear .5s forwards; }
+.rewards_N .per52 .slice2::before{ animation:spin52 .5s linear forwards; }
+
+.rewards_N .per53 .slice1::before{ animation:spin5-3 .5s linear .5s forwards; }
+.rewards_N .per53 .slice2::before{ animation:spin53 .5s linear forwards; }
+
+.rewards_N .per54 .slice1::before{ animation:spin5-4 .5s linear .5s forwards; }
+.rewards_N .per54 .slice2::before{ animation:spin54 .5s linear forwards; }
+
+.rewards_N .per55 .slice1::before{ animation:spin5-5 .5s linear .5s forwards; }
+.rewards_N .per55 .slice2::before{ animation:spin55 .5s linear forwards; }
+
+.rewards_N .per56 .slice1::before{ animation:spin5-6 .5s linear .5s forwards; }
+.rewards_N .per56 .slice2::before{ animation:spin56 .5s linear forwards; }
+
+.rewards_N .per57 .slice1::before{ animation:spin5-7 .5s linear .5s forwards; }
+.rewards_N .per57 .slice2::before{ animation:spin57 .5s linear forwards; }
+
+.rewards_N .per58 .slice1::before{ animation:spin5-8 .5s linear .5s forwards; }
+.rewards_N .per58 .slice2::before{ animation:spin58 .5s linear forwards; }
+
+.rewards_N .per59 .slice1::before{ animation:spin5-9 .5s linear .5s forwards; }
+.rewards_N .per59 .slice2::before{ animation:spin59 .5s linear forwards; }
+
+.rewards_N .per60 .slice1::before{ animation:spin6 .5s linear .5s forwards; }
+.rewards_N .per60 .slice2::before{ animation:spin60 .5s linear forwards; }
+
+/*61%~70%일 때*/
+.rewards_N .per61 .slice1::before{ animation:spin6-1 .5s linear .5s forwards; }
+.rewards_N .per61 .slice2::before{ animation:spin61 .5s linear forwards; }
+
+.rewards_N .per62 .slice1::before{ animation:spin6-2 .5s linear .5s forwards; }
+.rewards_N .per62 .slice2::before{ animation:spin62 .5s linear forwards; }
+
+.rewards_N .per63 .slice1::before{ animation:spin6-3 .5s linear .5s forwards; }
+.rewards_N .per63 .slice2::before{ animation:spin63 .5s linear forwards; }
+
+.rewards_N .per64 .slice1::before{ animation:spin6-4 .5s linear .5s forwards; }
+.rewards_N .per64 .slice2::before{ animation:spin64 .5s linear forwards; }
+
+.rewards_N .per65 .slice1::before{ animation:spin6-5 .5s linear .5s forwards; }
+.rewards_N .per65 .slice2::before{ animation:spin65 .5s linear forwards; }
+
+.rewards_N .per66 .slice1::before{ animation:spin6-6 .5s linear .5s forwards; }
+.rewards_N .per66 .slice2::before{ animation:spin66 .5s linear forwards; }
+
+.rewards_N .per67 .slice1::before{ animation:spin6-7 .5s linear .5s forwards; }
+.rewards_N .per67 .slice2::before{ animation:spin67 .5s linear forwards; }
+
+.rewards_N .per68 .slice1::before{ animation:spin6-8 .5s linear .5s forwards; }
+.rewards_N .per68 .slice2::before{ animation:spin68 .5s linear forwards; }
+
+.rewards_N .per69 .slice1::before{ animation:spin6-9 .5s linear .5s forwards; }
+.rewards_N .per69 .slice2::before{ animation:spin69 .5s linear forwards; }
+
+.rewards_N .per70 .slice1::before{ animation:spin7 .5s linear .5s forwards; }
+.rewards_N .per70 .slice2::before{ animation:spin70 .5s linear forwards; }
+
+/*71%~80%일 때*/
+.rewards_N .per71 .slice1::before{ animation:spin7-1 .5s linear .5s forwards; }
+.rewards_N .per71 .slice2::before{ animation:spin71 .5s linear forwards; }
+
+.rewards_N .per72 .slice1::before{ animation:spin7-2 .5s linear .5s forwards; }
+.rewards_N .per72 .slice2::before{ animation:spin72 .5s linear forwards; }
+
+.rewards_N .per73 .slice1::before{ animation:spin7-3 .5s linear .5s forwards; }
+.rewards_N .per73 .slice2::before{ animation:spin73 .5s linear forwards; }
+
+.rewards_N .per74 .slice1::before{ animation:spin7-4 .5s linear .5s forwards; }
+.rewards_N .per74 .slice2::before{ animation:spin74 .5s linear forwards; }
+
+.rewards_N .per75 .slice1::before{ animation:spin7-5 .5s linear .5s forwards; }
+.rewards_N .per75 .slice2::before{ animation:spin75 .5s linear forwards; }
+
+.rewards_N .per76 .slice1::before{ animation:spin7-6 .5s linear .5s forwards; }
+.rewards_N .per76 .slice2::before{ animation:spin76 .5s linear forwards; }
+
+.rewards_N .per77 .slice1::before{ animation:spin7-7 .5s linear .5s forwards; }
+.rewards_N .per77 .slice2::before{ animation:spin77 .5s linear forwards; }
+
+.rewards_N .per78 .slice1::before{ animation:spin7-8 .5s linear .5s forwards; }
+.rewards_N .per78 .slice2::before{ animation:spin78 .5s linear forwards; }
+
+.rewards_N .per79 .slice1::before{ animation:spin7-9 .5s linear .5s forwards; }
+.rewards_N .per79 .slice2::before{ animation:spin79 .5s linear forwards; }
+
+.rewards_N .per80 .slice1::before{ animation:spin8 .5s linear .5s forwards; }
+.rewards_N .per80 .slice2::before{ animation:spin80 .5s linear forwards; }
+
+/*81%~90%일 때*/
+.rewards_N .per81 .slice1::before{ animation:spin8-1 .5s linear .5s forwards; }
+.rewards_N .per81 .slice2::before{ animation:spin81 .5s linear forwards; }
+
+.rewards_N .per82 .slice1::before{ animation:spin8-2 .5s linear .5s forwards; }
+.rewards_N .per82 .slice2::before{ animation:spin82 .5s linear forwards; }
+
+.rewards_N .per83 .slice1::before{ animation:spin8-3 .5s linear .5s forwards; }
+.rewards_N .per83 .slice2::before{ animation:spin83 .5s linear forwards; }
+
+.rewards_N .per84 .slice1::before{ animation:spin8-4 .5s linear .5s forwards; }
+.rewards_N .per84 .slice2::before{ animation:spin84 .5s linear forwards; }
+
+.rewards_N .per85 .slice1::before{ animation:spin8-5 .5s linear .5s forwards; }
+.rewards_N .per85 .slice2::before{ animation:spin85 .5s linear forwards; }
+
+.rewards_N .per86 .slice1::before{ animation:spin8-6 .5s linear .5s forwards; }
+.rewards_N .per86 .slice2::before{ animation:spin86 .5s linear forwards; }
+
+.rewards_N .per87 .slice1::before{ animation:spin8-7 .5s linear .5s forwards; }
+.rewards_N .per87 .slice2::before{ animation:spin87 .5s linear forwards; }
+
+.rewards_N .per88 .slice1::before{ animation:spin8-8 .5s linear .5s forwards; }
+.rewards_N .per88 .slice2::before{ animation:spin88 .5s linear forwards; }
+
+.rewards_N .per89 .slice1::before{ animation:spin8-9 .5s linear .5s forwards; }
+.rewards_N .per89 .slice2::before{ animation:spin89 .5s linear forwards; }
+
+.rewards_N .per90 .slice1::before{ animation:spin9 .5s linear .5s forwards; }
+.rewards_N .per90 .slice2::before{ animation:spin90 .5s linear forwards; }
+
+/*91%~100%일 때*/
+.rewards_N .per91 .slice1::before{ animation:spin9-1 .5s linear .5s forwards; }
+.rewards_N .per91 .slice2::before{ animation:spin91 .5s linear forwards; }
+
+.rewards_N .per92 .slice1::before{ animation:spin9-2 .5s linear .5s forwards; }
+.rewards_N .per92 .slice2::before{ animation:spin92 .5s linear forwards; }
+
+.rewards_N .per93 .slice1::before{ animation:spin9-3 .5s linear .5s forwards; }
+.rewards_N .per93 .slice2::before{ animation:spin93 .5s linear forwards; }
+
+.rewards_N .per94 .slice1::before{ animation:spin9-4 .5s linear .5s forwards; }
+.rewards_N .per94 .slice2::before{ animation:spin94 .5s linear forwards; }
+
+.rewards_N .per95 .slice1::before{ animation:spin9-5 .5s linear .5s forwards; }
+.rewards_N .per95 .slice2::before{ animation:spin95 .5s linear forwards; }
+
+.rewards_N .per96 .slice1::before{ animation:spin9-6 .5s linear .5s forwards; }
+.rewards_N .per96 .slice2::before{ animation:spin96 .5s linear forwards; }
+
+.rewards_N .per97 .slice1::before{ animation:spin9-7 .5s linear .5s forwards; }
+.rewards_N .per97 .slice2::before{ animation:spin97 .5s linear forwards; }
+
+.rewards_N .per98 .slice1::before{ animation:spin9-8 .5s linear .5s forwards; }
+.rewards_N .per98 .slice2::before{ animation:spin98 .5s linear forwards; }
+
+.rewards_N .per99 .slice1::before{ animation:spin9-9 .5s linear .5s forwards; }
+.rewards_N .per99 .slice2::before{ animation:spin99 .5s linear forwards; }
+
+.rewards_N .per100 .slice1::before{ animation:spin10 .5s linear .5s forwards; }
+.rewards_N .per100 .slice2::before{ animation:spin100 .5s linear forwards; }
+
+/*1%일 때*/
+@keyframes spin01 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(4.5deg); -webkit-transform:rotate(4.5deg); -ms-transform:rotate(4.5deg); }
+}
+
+/*2%일 때*/
+@keyframes spin02 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(5.4deg); -webkit-transform:rotate(5.4deg); -ms-transform:rotate(5.4deg); }
+}
+
+/*3%일 때*/
+@keyframes spin03 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(8.1deg); -webkit-transform:rotate(8.1deg); -ms-transform:rotate(8.1deg); }
+}
+
+/*4%일 때*/
+@keyframes spin04 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(10.8deg); -webkit-transform:rotate(10.8deg); -ms-transform:rotate(10.8deg); }
+}
+
+/*5%일 때*/
+@keyframes spin05 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(13.5deg); -webkit-transform:rotate(13.5deg); -ms-transform:rotate(13.5deg); }
+}
+
+/*6%일 때*/
+@keyframes spin06 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(16.2deg); -webkit-transform:rotate(16.2deg); -ms-transform:rotate(16.2deg); }
+}
+
+/*7%일 때*/
+@keyframes spin07 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(18.9deg); -webkit-transform:rotate(18.9deg); -ms-transform:rotate(18.9deg); }
+}
+
+/*8%일 때*/
+@keyframes spin08 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(21.6deg); -webkit-transform:rotate(21.6deg); -ms-transform:rotate(21.6deg); }
+}
+
+/*9%일 때*/
+@keyframes spin09 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(24.3deg); -webkit-transform:rotate(24.3deg); -ms-transform:rotate(24.3deg); }
+}
+
+/*10%일 때*/
+@keyframes spin1 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(27deg); -webkit-transform:rotate(27deg); -ms-transform:rotate(27deg); }
+}
+
+/*11%일 때*/
+@keyframes spin1-1 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(28.8deg); -webkit-transform:rotate(28.8deg); -ms-transform:rotate(28.8deg); }
+}
+
+/*12%일 때*/
+@keyframes spin1-2 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(29.7deg); -webkit-transform:rotate(29.7deg); -ms-transform:rotate(29.7deg); }
+}
+
+/*13%일 때*/
+@keyframes spin1-3 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(30.2deg); -webkit-transform:rotate(30.2deg); -ms-transform:rotate(30.2deg); }
+}
+
+/*14%일 때*/
+@keyframes spin1-4 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(31.9deg); -webkit-transform:rotate(31.9deg); -ms-transform:rotate(31.9deg); }
+}
+
+/*15%일 때*/
+@keyframes spin1-5 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(33.3deg); -webkit-transform:rotate(33.3deg); -ms-transform:rotate(33.3deg); }
+}
+
+/*16%일 때*/
+@keyframes spin1-6 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(36.24deg); -webkit-transform:rotate(36.24deg); -ms-transform:rotate(36.24deg); }
+}
+
+/*17%일 때*/
+@keyframes spin1-7 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(39.18deg); -webkit-transform:rotate(39.18deg); -ms-transform:rotate(39.18deg); }
+}
+
+/*18%일 때*/
+@keyframes spin1-8 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(42.52deg); -webkit-transform:rotate(42.52deg); -ms-transform:rotate(42.52deg); }
+}
+
+/*19%일 때*/
+@keyframes spin1-9 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(45.06deg); -webkit-transform:rotate(45.06deg); -ms-transform:rotate(45.06deg); }
+}
+
+/*20%일 때*/
+@keyframes spin2 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(48deg); -webkit-transform:rotate(48deg); -ms-transform:rotate(48deg); }
+}
+
+/*21%일 때*/
+@keyframes spin2-1 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(50.4deg); -webkit-transform:rotate(50.4deg); -ms-transform:rotate(50.4deg); }
+}
+
+/*22%일 때*/
+@keyframes spin2-2 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(52.8deg); -webkit-transform:rotate(52.8deg); -ms-transform:rotate(52.8deg); }
+}
+
+/*23%일 때*/
+@keyframes spin2-3 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(55.2deg); -webkit-transform:rotate(55.2deg); -ms-transform:rotate(55.2deg); }
+}
+
+/*24%일 때*/
+@keyframes spin2-4 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(57.6deg); -webkit-transform:rotate(57.6deg); -ms-transform:rotate(57.6deg); }
+}
+
+/*25%일 때*/
+@keyframes spin2-5 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(60deg); -webkit-transform:rotate(60deg); -ms-transform:rotate(60deg); }
+}
+
+/*26%일 때*/
+@keyframes spin2-6 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(63deg); -webkit-transform:rotate(63deg); -ms-transform:rotate(63deg); }
+}
+
+/*27%일 때*/
+@keyframes spin2-7 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(66deg); -webkit-transform:rotate(66deg); -ms-transform:rotate(66deg); }
+}
+
+/*28%일 때*/
+@keyframes spin2-8 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(69deg); -webkit-transform:rotate(69deg); -ms-transform:rotate(69deg); }
+}
+
+/*29%일 때*/
+@keyframes spin2-9 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(72deg); -webkit-transform:rotate(72deg); -ms-transform:rotate(72deg); }
+}
+
+/*30%일 때*/
+@keyframes spin3 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(75deg); -webkit-transform:rotate(75deg); -ms-transform:rotate(75deg); }
+}
+
+/*31%일 때*/
+@keyframes spin3-1 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(77.4deg); -webkit-transform:rotate(77.4deg); -ms-transform:rotate(77.4deg); }
+}
+
+/*32%일 때*/
+@keyframes spin3-2 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(79.8deg); -webkit-transform:rotate(79.8deg); -ms-transform:rotate(79.8deg); }
+}
+
+/*33%일 때*/
+@keyframes spin3-3 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(82.2deg); -webkit-transform:rotate(82.2deg); -ms-transform:rotate(82.2deg); }
+}
+
+/*34%일 때*/
+@keyframes spin3-4 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(84.6deg); -webkit-transform:rotate(84.6deg); -ms-transform:rotate(84.6deg); }
+}
+
+/*35%일 때*/
+@keyframes spin3-5 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(84.6deg); -webkit-transform:rotate(84.6deg); -ms-transform:rotate(84.6deg); }
+}
+
+/*36%일 때*/
+@keyframes spin3-6 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(89.4deg); -webkit-transform:rotate(89.4deg); -ms-transform:rotate(89.4deg); }
+}
+
+/*37%일 때*/
+@keyframes spin3-7 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(91.8deg); -webkit-transform:rotate(91.8deg); -ms-transform:rotate(91.8deg); }
+}
+
+/*38%일 때*/
+@keyframes spin3-8 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(94.2deg); -webkit-transform:rotate(94.2deg); -ms-transform:rotate(94.2deg); }
+}
+
+/*39%일 때*/
+@keyframes spin3-9 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(96.6deg); -webkit-transform:rotate(96.6deg); -ms-transform:rotate(96.6deg); }
+}
+
+/*40%일 때*/
+@keyframes spin4 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(99deg); -webkit-transform:rotate(99deg); -ms-transform:rotate(99deg); }
+}
+
+/*41%일 때*/
+@keyframes spin4-1 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(102.1deg); -webkit-transform:rotate(102.1deg); -ms-transform:rotate(102.1deg); }
+}
+
+/*42%일 때*/
+@keyframes spin4-2 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(105.2deg); -webkit-transform:rotate(105.2deg); -ms-transform:rotate(105.2deg); }
+}
+
+/*43%일 때*/
+@keyframes spin4-3 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(108.3deg); -webkit-transform:rotate(108.3deg); -ms-transform:rotate(108.3deg); }
+}
+
+/*44%일 때*/
+@keyframes spin4-4 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(111.4deg); -webkit-transform:rotate(111.4deg); -ms-transform:rotate(111.4deg); }
+}
+
+/*45%일 때*/
+@keyframes spin4-5 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(114.5deg); -webkit-transform:rotate(114.5deg); -ms-transform:rotate(114.5deg); }
+}
+
+/*46%일 때*/
+@keyframes spin4-6 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(117.6deg); -webkit-transform:rotate(117.6deg); -ms-transform:rotate(117.6deg); }
+}
+
+/*47%일 때*/
+@keyframes spin4-7 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(120.7deg); -webkit-transform:rotate(120.7deg); -ms-transform:rotate(120.7deg); }
+}
+
+/*48%일 때*/
+@keyframes spin4-8 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(123.8deg); -webkit-transform:rotate(123.8deg); -ms-transform:rotate(123.8deg); }
+}
+
+/*49%일 때*/
+@keyframes spin4-9 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(126.9deg); -webkit-transform:rotate(126.9deg); -ms-transform:rotate(126.9deg); }
+}
+
+/*50%일 때*/
+@keyframes spin50 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(130deg); -webkit-transform:rotate(130deg); -ms-transform:rotate(130deg); }
+}
+
+/*51%일 때*/
+@keyframes spin5-1 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(3.3deg); -webkit-transform:rotate(3.3deg); -ms-transform:rotate(3.3deg); }
+}
+@keyframes spin51 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(130deg); -webkit-transform:rotate(130deg); -ms-transform:rotate(130deg); }
+}
+
+/*52%일 때*/
+@keyframes spin5-2 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(6.6deg); -webkit-transform:rotate(6.6deg); -ms-transform:rotate(6.6deg); }
+}
+@keyframes spin52 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(130deg); -webkit-transform:rotate(130deg); -ms-transform:rotate(130deg); }
+}
+
+/*53%일 때*/
+@keyframes spin5-3 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(9.9deg); -webkit-transform:rotate(9.9deg); -ms-transform:rotate(9.9deg); }
+}
+@keyframes spin53 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(130deg); -webkit-transform:rotate(130deg); -ms-transform:rotate(130deg); }
+}
+
+/*54%일 때*/
+@keyframes spin5-4 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(13.2deg); -webkit-transform:rotate(13.2deg); -ms-transform:rotate(13.2deg); }
+}
+@keyframes spin54 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(130deg); -webkit-transform:rotate(130deg); -ms-transform:rotate(130deg); }
+}
+
+/*55%일 때*/
+@keyframes spin5-5 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(16.5deg); -webkit-transform:rotate(16.5deg); -ms-transform:rotate(16.5deg); }
+}
+@keyframes spin55 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(130deg); -webkit-transform:rotate(130deg); -ms-transform:rotate(130deg); }
+}
+
+/*56%일 때*/
+@keyframes spin5-6 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(19.8deg); -webkit-transform:rotate(19.8deg); -ms-transform:rotate(19.8deg); }
+}
+@keyframes spin56 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(130deg); -webkit-transform:rotate(130deg); -ms-transform:rotate(130deg); }
+}
+
+/*57%일 때*/
+@keyframes spin5-7 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(23.1deg); -webkit-transform:rotate(23.1deg); -ms-transform:rotate(23.1deg); }
+}
+@keyframes spin57 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(130deg); -webkit-transform:rotate(130deg); -ms-transform:rotate(130deg); }
+}
+
+/*58%일 때*/
+@keyframes spin5-8 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(26.4deg); -webkit-transform:rotate(26.4deg); -ms-transform:rotate(26.4deg); }
+}
+@keyframes spin58 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(130deg); -webkit-transform:rotate(130deg); -ms-transform:rotate(130deg); }
+}
+
+/*59%일 때*/
+@keyframes spin5-9 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(29.7deg); -webkit-transform:rotate(29.7deg); -ms-transform:rotate(29.7deg); }
+}
+@keyframes spin59 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(130deg); -webkit-transform:rotate(130deg); -ms-transform:rotate(130deg); }
+}
+
+/*60%일 때*/
+@keyframes spin6 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(33deg); -webkit-transform:rotate(33deg); -ms-transform:rotate(33deg); }
+}
+@keyframes spin60 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(130deg); -webkit-transform:rotate(130deg); -ms-transform:rotate(130deg); }
+}
+
+/*61%일 때*/
+@keyframes spin6-1 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(35.5deg); -webkit-transform:rotate(33deg); -ms-transform:rotate(33deg); }
+}
+@keyframes spin61 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(130deg); -webkit-transform:rotate(130deg); -ms-transform:rotate(130deg); }
+}
+
+/*62%일 때*/
+@keyframes spin6-2 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(38deg); -webkit-transform:rotate(38deg); -ms-transform:rotate(38deg); }
+}
+@keyframes spin62 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(130deg); -webkit-transform:rotate(130deg); -ms-transform:rotate(130deg); }
+}
+
+/*63%일 때*/
+@keyframes spin6-3 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(40.5deg); -webkit-transform:rotate(40.5deg); -ms-transform:rotate(40.5deg); }
+}
+@keyframes spin63 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(130deg); -webkit-transform:rotate(130deg); -ms-transform:rotate(130deg); }
+}
+
+/*64%일 때*/
+@keyframes spin6-4 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(43deg); -webkit-transform:rotate(43deg); -ms-transform:rotate(43deg); }
+}
+@keyframes spin64 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(130deg); -webkit-transform:rotate(130deg); -ms-transform:rotate(130deg); }
+}
+
+/*65%일 때*/
+@keyframes spin6-5 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(45.5deg); -webkit-transform:rotate(45.5deg); -ms-transform:rotate(45.5deg); }
+}
+@keyframes spin65 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(130deg); -webkit-transform:rotate(130deg); -ms-transform:rotate(130deg); }
+}
+
+/*66%일 때*/
+@keyframes spin6-6 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(48deg); -webkit-transform:rotate(48deg); -ms-transform:rotate(48deg); }
+}
+@keyframes spin66 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(130deg); -webkit-transform:rotate(130deg); -ms-transform:rotate(130deg); }
+}
+
+/*67%일 때*/
+@keyframes spin6-7 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(50.5deg); -webkit-transform:rotate(50.5deg); -ms-transform:rotate(50.5deg); }
+}
+@keyframes spin67 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(130deg); -webkit-transform:rotate(130deg); -ms-transform:rotate(130deg); }
+}
+
+/*68%일 때*/
+@keyframes spin6-8 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(53deg); -webkit-transform:rotate(53deg); -ms-transform:rotate(53deg); }
+}
+@keyframes spin68 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(130deg); -webkit-transform:rotate(130deg); -ms-transform:rotate(130deg); }
+}
+
+/*69%일 때*/
+@keyframes spin6-9 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(55.5deg); -webkit-transform:rotate(55.5deg); -ms-transform:rotate(55.5deg); }
+}
+@keyframes spin69 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(130deg); -webkit-transform:rotate(130deg); -ms-transform:rotate(130deg); }
+}
+
+/*70%일 때*/
+@keyframes spin7 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(58deg); -webkit-transform:rotate(58deg); -ms-transform:rotate(58deg); }
+}
+@keyframes spin70 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(130deg); -webkit-transform:rotate(130deg); -ms-transform:rotate(130deg); }
+}
+
+/*71%일 때*/
+@keyframes spin7-1 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(60.3deg); -webkit-transform:rotate(60.3deg); -ms-transform:rotate(60.3deg); }
+}
+@keyframes spin71 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(130deg); -webkit-transform:rotate(130deg); -ms-transform:rotate(130deg); }
+}
+
+/*72%일 때*/
+@keyframes spin7-2 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(62.6deg); -webkit-transform:rotate(62.6deg); -ms-transform:rotate(62.6deg); }
+}
+@keyframes spin72 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(130deg); -webkit-transform:rotate(130deg); -ms-transform:rotate(130deg); }
+}
+
+/*73%일 때*/
+@keyframes spin7-3 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(64.9deg); -webkit-transform:rotate(64.9deg); -ms-transform:rotate(64.9deg); }
+}
+@keyframes spin73 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(130deg); -webkit-transform:rotate(130deg); -ms-transform:rotate(130deg); }
+}
+
+/*74%일 때*/
+@keyframes spin7-4 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(67.2deg); -webkit-transform:rotate(67.2deg); -ms-transform:rotate(67.2deg); }
+}
+@keyframes spin74 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(130deg); -webkit-transform:rotate(130deg); -ms-transform:rotate(130deg); }
+}
+
+/*75%일 때*/
+@keyframes spin7-5 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(69.5deg); -webkit-transform:rotate(69.5deg); -ms-transform:rotate(69.5deg); }
+}
+@keyframes spin75 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(130deg); -webkit-transform:rotate(130deg); -ms-transform:rotate(130deg); }
+}
+
+/*76%일 때*/
+@keyframes spin7-6 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(71.8deg); -webkit-transform:rotate(71.8deg); -ms-transform:rotate(71.8deg); }
+}
+@keyframes spin76 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(130deg); -webkit-transform:rotate(130deg); -ms-transform:rotate(130deg); }
+}
+
+/*77%일 때*/
+@keyframes spin7-7 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(74.1deg); -webkit-transform:rotate(74.1deg); -ms-transform:rotate(74.1deg); }
+}
+@keyframes spin77 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(130deg); -webkit-transform:rotate(130deg); -ms-transform:rotate(130deg); }
+}
+
+/*78%일 때*/
+@keyframes spin7-8 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(76.4deg); -webkit-transform:rotate(76.4deg); -ms-transform:rotate(76.4deg); }
+}
+@keyframes spin78 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(130deg); -webkit-transform:rotate(130deg); -ms-transform:rotate(130deg); }
+}
+
+/*79%일 때*/
+@keyframes spin7-9 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(78.7deg); -webkit-transform:rotate(78.7deg); -ms-transform:rotate(78.7deg); }
+}
+@keyframes spin79 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(130deg); -webkit-transform:rotate(130deg); -ms-transform:rotate(130deg); }
+}
+
+/*80%일 때*/
+@keyframes spin8 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(81deg); -webkit-transform:rotate(81deg); -ms-transform:rotate(81deg); }
+}
+@keyframes spin80 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(130deg); -webkit-transform:rotate(130deg); -ms-transform:rotate(130deg); }
+}
+
+/*81%일 때*/
+@keyframes spin8-1 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(83.1deg); -webkit-transform:rotate(83.1deg); -ms-transform:rotate(83.1deg); }
+}
+@keyframes spin81 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(130deg); -webkit-transform:rotate(130deg); -ms-transform:rotate(130deg); }
+}
+
+/*82%일 때*/
+@keyframes spin8-2 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(85.2deg); -webkit-transform:rotate(85.2deg); -ms-transform:rotate(85.2deg); }
+}
+@keyframes spin82 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(130deg); -webkit-transform:rotate(130deg); -ms-transform:rotate(130deg); }
+}
+
+/*83%일 때*/
+@keyframes spin8-3 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(87.3deg); -webkit-transform:rotate(87.3deg); -ms-transform:rotate(87.3deg); }
+}
+@keyframes spin83 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(130deg); -webkit-transform:rotate(130deg); -ms-transform:rotate(130deg); }
+}
+
+/*84%일 때*/
+@keyframes spin8-4 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(89.4deg); -webkit-transform:rotate(89.4deg); -ms-transform:rotate(89.4deg); }
+}
+@keyframes spin84 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(130deg); -webkit-transform:rotate(130deg); -ms-transform:rotate(130deg); }
+}
+
+/*85%일 때*/
+@keyframes spin8-5 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(91.5deg); -webkit-transform:rotate(91.5deg); -ms-transform:rotate(91.5deg); }
+}
+@keyframes spin85 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(130deg); -webkit-transform:rotate(130deg); -ms-transform:rotate(130deg); }
+}
+
+/*86%일 때*/
+@keyframes spin8-6 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(93.6deg); -webkit-transform:rotate(93.6deg); -ms-transform:rotate(93.6deg); }
+}
+@keyframes spin86 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(130deg); -webkit-transform:rotate(130deg); -ms-transform:rotate(130deg); }
+}
+
+/*87%일 때*/
+@keyframes spin8-7 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(95.7deg); -webkit-transform:rotate(95.7deg); -ms-transform:rotate(95.7deg); }
+}
+@keyframes spin87 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(130deg); -webkit-transform:rotate(130deg); -ms-transform:rotate(130deg); }
+}
+
+/*88%일 때*/
+@keyframes spin8-8 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(97.8deg); -webkit-transform:rotate(97.8deg); -ms-transform:rotate(97.8deg); }
+}
+@keyframes spin88 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(130deg); -webkit-transform:rotate(130deg); -ms-transform:rotate(130deg); }
+}
+
+/*89%일 때*/
+@keyframes spin8-9 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(99.9deg); -webkit-transform:rotate(99.9deg); -ms-transform:rotate(99.9deg); }
+}
+@keyframes spin89 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(130deg); -webkit-transform:rotate(130deg); -ms-transform:rotate(130deg); }
+}
+
+/*90%일 때*/
+@keyframes spin9 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(102deg); -webkit-transform:rotate(102deg); -ms-transform:rotate(102deg); }
+}
+@keyframes spin90 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(130deg); -webkit-transform:rotate(130deg); -ms-transform:rotate(130deg); }
+}
+
+/*91%일 때*/
+@keyframes spin9-1 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(104.8deg); -webkit-transform:rotate(104.8deg); -ms-transform:rotate(104.8deg); }
+}
+@keyframes spin91 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(130deg); -webkit-transform:rotate(130deg); -ms-transform:rotate(130deg); }
+}
+
+/*92%일 때*/
+@keyframes spin9-2 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(107.6deg); -webkit-transform:rotate(107.6deg); -ms-transform:rotate(107.6deg); }
+}
+@keyframes spin92 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(130deg); -webkit-transform:rotate(130deg); -ms-transform:rotate(130deg); }
+}
+
+/*93%일 때*/
+@keyframes spin9-3 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(110.4deg); -webkit-transform:rotate(110.4deg); -ms-transform:rotate(110.4deg); }
+}
+@keyframes spin93 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(130deg); -webkit-transform:rotate(130deg); -ms-transform:rotate(130deg); }
+}
+
+/*94%일 때*/
+@keyframes spin9-4 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(113.2deg); -webkit-transform:rotate(113.2deg); -ms-transform:rotate(113.2deg); }
+}
+@keyframes spin94 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(130deg); -webkit-transform:rotate(130deg); -ms-transform:rotate(130deg); }
+}
+
+/*95%일 때*/
+@keyframes spin9-5 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(115deg); -webkit-transform:rotate(115deg); -ms-transform:rotate(115deg); }
+}
+@keyframes spin95 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(130deg); -webkit-transform:rotate(130deg); -ms-transform:rotate(130deg); }
+}
+
+/*96%일 때*/
+@keyframes spin9-6 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(118.8deg); -webkit-transform:rotate(118.8deg); -ms-transform:rotate(118.8deg); }
+}
+@keyframes spin96 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(130deg); -webkit-transform:rotate(130deg); -ms-transform:rotate(130deg); }
+}
+
+/*97%일 때*/
+@keyframes spin9-7 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(120.6deg); -webkit-transform:rotate(120.6deg); -ms-transform:rotate(120.6deg); }
+}
+@keyframes spin97 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(130deg); -webkit-transform:rotate(130deg); -ms-transform:rotate(130deg); }
+}
+
+/*98%일 때*/
+@keyframes spin9-8 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(122.4deg); -webkit-transform:rotate(122.4deg); -ms-transform:rotate(122.4deg); }
+}
+@keyframes spin98 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(130deg); -webkit-transform:rotate(130deg); -ms-transform:rotate(130deg); }
+}
+
+/*99%일 때*/
+@keyframes spin9-9 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(123.5deg); -webkit-transform:rotate(123.5deg); -ms-transform:rotate(123.5deg); }
+}
+@keyframes spin99 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(130deg); -webkit-transform:rotate(130deg); -ms-transform:rotate(130deg); }
+}
+
+/*100%일 때*/
+@keyframes spin10 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(130deg); -webkit-transform:rotate(130deg); -ms-transform:rotate(130deg); }
+}
+@keyframes spin100 {
+    from{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); }
+    to{ transform:rotate(130deg); -webkit-transform:rotate(130deg); -ms-transform:rotate(130deg); }
+}
+
+/*신라리워즈 포인트 안내*/
+.rewards_N .h20br{ height:20px; display:block; width:100%; }
+.rewards_N .h40br{ height:40px; display:block; width:100%; }
+.rewards_N .h60br{ height:60px; display:block; width:100%; }
+.rewards_N .UseimgBox{ padding:0; height:unset; margin:30px 0 50px; }
+
+/*신라리워즈 회원특전*/
+.rewards_N .rewardsMemInfoList{ margin:50px 0 40px; }
+.rewards_N .iconBg{ padding:20px 17px; background:#fdf8ef; }
+.rewards_N .iconUl2 li{ color:#727272; }

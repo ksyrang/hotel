@@ -1,0 +1,79 @@
+/* 한국어 CSS Document */
+
+/* 20151217 topmenu */
+.head .header .rewardTop .rewardTopMenu li a{ display:block; height:17px; display:block; font-size:9px; background:url(../../../images/ko/mem/rewardsMain/topMenu_ko.gif) no-repeat top left; text-indent:-9999%; overflow:hidden;}
+.head .header .rewardTop .rewardTopMenu li.earn a{ width:103px; background-position:-67px 0px}
+.head .header .rewardTop .rewardTopMenu li.benefits a{ width:67px; background-position:0px 0px}
+.head .header .rewardTop .rewardTopMenu li.offers a{ width:90px;background-position:-170px 0px}
+/* 20151217 타이틀 */
+
+.lnbAreaMypage .lnbMenu .tit{ background-position:0 -700px;}
+.lnbAreaInquires .lnbMenu .tit{ background-position:0 -1001px;}
+/* .lnbAreaMypage .lnbMenu .menu>li>a{ background:url(../../../images/ko/mem/main/NewlnbMypage_ko.jpg) no-repeat;}
+.lnbAreaMypage .lnbMenu .menu>li>a.on{background-image: url(../../../images/ko/mem/main/lnbMypageOn_ko.gif);} */
+/* .lnbArea .lnbMenu .menu li.m1 a{ background-position:0px 0px} */
+
+/* 20151217 footer 
+.foot .localBox .linkInfo .introduction a{ background:url(../../../images/ko/mem/main/localBoxLinkInfo2_ko.gif) no-repeat 0 0; }*/
+/* 20180517 footer */
+.foot .localBox .linkInfo .introduction{ background:url(../../../images/ko/mem/main/HublocalBoxLinkInfo.gif) no-repeat 0px 0; height:45px; width:390px; margin-left:32px;}
+/* 20151228 국문 허브 헤드  */
+.headHub .header .topNavi .list li a{ background-image:url(../../../images/ko/mem/main/topNavi_ko.gif)}
+.headHub .header .topNavi .list li.membership a{ width:80 px; background-position:-420px 0}
+.headHub .header .topNavi .list li.login a{ width:49px; background-position:-218px 0}
+.headHub .header .topNavi .list li.join a{ width:52px; background-position:-267px 0}
+.headHub .header .topNavi .list li.charge a{ width:100px; background-position:-319px 0}
+.headHub .header .topNavi .list li.logout a{ width:62px; background-position:-218px -37px}
+.headHub .header .topNavi .list li.mypage a{ width:78px; background-position:-280px -37px}
+
+.ctnMypage.ctnMypageRsv .boxRoomPack .hTit .tit{background: url(../../../images/ko/common/mypage/myRsvTit1_ko.gif) no-repeat; width:200px; height:30px; line-height:100px; overflow:hidden;}
+
+
+.ReservationBox .conBox .dlBox .reservationSet .searchBtn input.btnSearch {display: block;width:260px; height: 32px;background:url(../../..../../../images/ko/mem/rewardsMain/reservationBtn_ko.gif) no-repeat 0px 0px; text-indent:-9999%; overflow:hidden; border: none; margin-top: 11px;}
+.head .header .hotelBox{ background:#f1e3c4 url(../../../images/ko/mem/main/hotolIcon_ko.png) no-repeat 0px 0px;}
+.head .header .hotelBox.on{ background:#3e2b2c url(../../../images/ko/mem/main/hotolIcon_ko_on.png) no-repeat 0px 0px;}
+.head .header .hotelBox2{ position:absolute; left:0px; top:36px; width:97px; height:26px; background:url(../../..../../../images/ko/mem/rewardsMain/hotolIcon_ko.png) no-repeat 0px 0px; z-index:20;}
+
+.mainImg .seoulMain .sizeBox .menuBox li a.menu01 {background: url(../../../images/ko/hub/main/seoulText_ko.png) no-repeat -50px -161px; display: block; height: 49px;}
+.mainImg .seoulMain .sizeBox .menuBox li a.menu02 {background: url(../../../images/ko/hub/main/seoulText_ko.png) no-repeat -50px -211px; display: block; height: 49px; }
+.mainImg .seoulMain .sizeBox .menuBox li a.menu03 {background: url(../../../images/ko/hub/main//seoulText_ko.png) no-repeat -50px -261px; display: block; height: 49px; }
+.mainImg .seoulMain .sizeBox .menuBox li a.menu04 {background: url(../../../images/ko/hub/main/seoulText_ko.png) no-repeat -50px -310px; display: block; height: 49px; }
+.mainImg .seoulMain .sizeBox .menuBox li a.menu05 {background: url(../../../images/ko/hub/main/seoulText_ko.png) no-repeat -50px -361px; display: block; height: 49px; }
+
+.mainImg .jejuMain .sizeBox .menuBox li a.menu01 {background: url(../../../images/ko/hub/main/jejuText_ko.png) no-repeat -50px -161px; display: block; height: 49px; }
+.mainImg .jejuMain .sizeBox .menuBox li a.menu02 {background: url(../../../images/ko/hub/main/jejuText_ko.png) no-repeat -50px -211px; display: block; height: 49px; }
+.mainImg .jejuMain .sizeBox .menuBox li a.menu03 {background: url(../../../images/ko/hub/main/jejuText_ko.png) no-repeat -50px -261px; display: block; height: 49px; }
+.mainImg .jejuMain .sizeBox .menuBox li a.menu04 {background: url(../../../images/ko/hub/main/jejuText_ko.png) no-repeat -50px -310px; display: block; height: 49px; }
+.mainImg .jejuMain .sizeBox .menuBox li a.menu05 {background: url(../../../images/ko/hub/main/jejuText_ko.png) no-repeat -50px -361px; display: block; height: 49px; }
+
+.mainImg .stayMain .sizeBox .menuBox li a.menu01 {background: url(../../../images/ko/hub/main/stayText_ko.png) no-repeat -50px -161px; display: block; height: 49px; }
+.mainImg .stayMain .sizeBox .menuBox li a.menu02 {background: url(../../../images/ko/hub/main/stayText_ko.png) no-repeat -50px -211px; display: block; height: 49px; }
+.mainImg .stayMain .sizeBox .menuBox li a.menu03 {background: url(../../../images/ko/hub/main/stayText_ko.png) no-repeat -50px -261px; display: block; height: 49px; }
+.mainImg .stayMain .sizeBox .menuBox li a.menu04 {background: url(../../../images/ko/hub/main/stayText_ko.png) no-repeat -50px -310px; display: block; height: 49px; }
+.mainImg .stayMain .sizeBox .menuBox li a.menu05 {background: url(../../../images/ko/hub/main/stayText_ko.png) no-repeat -50px -361px; display: block; height: 49px; }
+
+/* 명품고택 팝업 */
+#oldHpopup {display:none;}
+.oldHback {width:100%; height:925px; position:fixed; filter:Alpha(opacity=50);opacity:0.5; background:#FFF; display:block; top:0; left:0;}
+.oldHwrap {width:728px; position:absolute; background:#FFF; border:#9b7f5b solid 5px; display:block; box-shadow:#555 1px 1px 1px; top:60px; left:50%; margin:0 0 0 -350px;}
+.oldHwrap .ctnTitle {background:#9b7f5b; height:30px; padding:6px 0 0 25px;}
+.oldHwrap .ctnWrap {padding:30px;}
+.oldHwrap .ctnWrap p {overflow:hidden; width:0px; height:0;}
+.oldHwrap .close {width:19px; height:19px; float:right; padding-right:25px;}
+.btnCtn {text-align:center; margin:30px 0 0 0;}
+.btnCtn .oldHbtn {background:url(../../../images/ko/hub/main/oldHpobtn.gif) no-repeat center; width:142px; height:44px; text-indent:-9999px; display:inline-block;}
+
+/* 2019-08-27 신라리워즈 */
+.lnbAreaSpOffer .lnbMenu .m3 .sMenu li.s1 a{ background-position:0 -50px}
+.lnbAreaSpOffer .lnbMenu .m3 .sMenu li.s2 a{ background-position:0 -75px}
+
+/* 메인 예약바 */
+.mainVisualHub .new_rsvBox .rsvSchHotel .rsvSchCont.htSch .htSchWrap .inpHtSch {width: 215px !important;}
+.mainVisualHub .new_rsvBox .rsvSchHotel .rsvSchCont.htCheck{width: 375px; margin: 0 31px 0 43px;}
+
+/* 예약스텝 */
+.container .new_rsvBox .rsvSchHotel .rsvSchCont.htCheck {width: 390px; margin: 0px 23px 0 36px !important;}
+.container .new_rsvBox .rsvSchHotel .rsvSchCont{margin-right: 0px !important;}
+
+/* 예약완료 */
+.new_rsvBox .rsvInfoType .roomPrice .totalP th{padding-right:40px;}

@@ -1,0 +1,53 @@
+
+
+.btnListRight {text-align:right; position:relative; right:0; width:100%; height:30px; display:block; margin-bottom:20px;}
+
+.btnListCenter {text-align:center; position:relative; right:0; width:50%; height:50px; display:inline-block; margin-bottom:20px; margin-top: 20px; width: 100%;}
+
+.memGoldbox2 > .liBox > .right > .boldCardBox > .btnHeight > .btn_benefit {display:inline-block; border:none; cursor:pointer; width:106px; height:30px; background:url(../../images/ko/btn/btn_benefit.gif) no-repeat left top; position:relative; top:74px;}
+.btn_rewInq {display:block; border:none; width:146px; height:30px; background:url(../../images/ko/btn/rewards_inq_btn.gif) no-repeat left top;}
+.btn_rewInq > span {font-size:0; overflow:hidden; text-indent: -9999999px;}
+.btn_point {display:block; border:none; width:160px; height:30px; background:url("../../images/ko/btn/btn_point.gif") no-repeat left top;}
+.btn_point > span {font-size:0; overflow:hidden; text-indent: -9999999px;}
+.btn_application {position:absolute; right:0; display:block; border:none; width:68px; height:30px; background:url(../../images/ko/btn/btn_application.gif) no-repeat left top;}
+.btn_application > span {font-size:0; overflow:hidden; text-indent: -9999999px;}
+.btn_retro {position:absolute; right:0; display:block; border:none; width:146px; height:30px; background:url(../../images/ko/btn/btn_retro.gif) no-repeat left top;}
+.btn_retro > span {font-size:0; overflow:hidden; text-indent: -9999999px;}
+
+
+.btn_retro2 {position:absolute; right:0; display:block; border:none; width:117px; height:30px; background:url(../../images/ko/btn/btn_retro2.gif) no-repeat left top;}
+.btn_retro2 > span {font-size:0; overflow:hidden; text-indent: -9999999px;}
+
+
+.btn_login1 {display:block; border:none; width:226px; height:40px; background:url(../../images/ko/btn/btn_login1.gif) no-repeat left top;}
+.btn_login1 > span {font-size:0; overflow:hidden; text-indent: -9999999px;}
+
+.btn_login2 {display:inline-block; border:none; width:74px; height:27px; background:url(../../images/ko/common/join/popFindIdBtnLogin.gif) no-repeat left top;}
+.btn_login2 > span {font-size:0; overflow:hidden; text-indent: -9999999px;}
+
+.btn_ok {display:block; border:none; width:68px; height:30px; background:url(../../images/ko/btn/btn_ok.gif) no-repeat left top;}
+.btn_ok > span {font-size:0; overflow:hidden; text-indent: -9999999px;}
+.btn_no {display:block; border:none; width:68px; height:30px; background:url(../../images/ko/btn/btn_no.gif) no-repeat left top;}
+.btn_no > span {font-size:0; overflow:hidden; text-indent: -9999999px;}
+
+
+
+.btnOnline {display:block; border:none; width:212px; height:40px; background:url(../../images/ko/btn/btnOnline.gif) no-repeat left top;}
+.btnOnline > span {font-size:0; overflow:hidden; text-indent: -9999999px;}
+
+.btn2 {padding-top: 10px;}
+
+.btn_ok2 {display:block; border:none; width:137px; height:44px; background:url(../../images/ko/btn/btn_ok2.gif) no-repeat left top;}
+.btn_ok2 > span {font-size:0; overflow:hidden; text-indent: -9999999px;}
+
+
+
+.btnInq_ok {display:block; border:none; width:99px; height:44px; background:url(../../images/ko/btn/inquiresBtn2.gif) no-repeat 0px 0px; vertical-align:middle; display:inline-block; line-height:100px; }
+.btnInq_ok > span {font-size:0; overflow:hidden; text-indent: -9999999px;}
+
+.btnInq_no {display:block; border:none; width:99px; height:44px; background:url(../../images/ko/btn/inquiresBtn2.gif) no-repeat -109px 0px; vertical-align:middle; display:inline-block; line-height:100px; }
+.btnInq_no > span {font-size:0; overflow:hidden; text-indent: -9999999px;}
+
+
+.btn_Calculator {display:inline-block; border:none; width:176px; height:30px; background:url(../../images/ko/btn/btn_Calculator.gif) no-repeat 0px 0px; vertical-align:middle; display:inline-block; line-height:100px; }
+.btn_Calculator > span {font-size:0; overflow:hidden; text-indent: -9999999px;}

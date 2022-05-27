@@ -1,0 +1,128 @@
+.besicText1 {color: #444; font-size: 12px; font-weight: bold; clear: both; margin-bottom: 10px;}
+
+.tableTItle {display: block; font-size: 15px; text-align: center; color: #444;}
+.tableTItle span.silver {display: block; font-weight: bold; color: #beb5a7}
+.tableTItle span.gold {display: block; font-weight: bold; color: #a59577}
+.tableTItle span.diamond {display: block; font-weight: bold; color: #4a3d31}
+
+/*.tableTypeA th.silverth {background-color: #e0d6c2;}
+.tableTypeA td.silverth {background-color: #e0d6c2;}*/
+
+
+.iconUl {padding: 0px; margin: 0px;}
+.iconUl li {background: url("../../images/ko/mem/main/bul02.gif") no-repeat 0px 10px; padding: 0px 0px 0px 10px; display: block; line-height: 25px; color: #444; font-size: 12px;}
+.iconUl li > sup {font-size: 11px; line-height:16px;}
+
+
+.iconUl2 {padding: 0px; margin: 0px;}
+.iconUl2 li { padding: 0px 0px 0px 10px; display: block; line-height: 25px; color: #444; font-size: 12px;}
+.iconUl2 li > sup {font-size: 13px;}
+/*20150702 추가 아래 한줄*/
+.iconUl2 li a {text-decoration: underline; font-weight: bold;}
+
+.useTextBox {margin-top: 20px;}
+.useTextBox li {background: url("../../images/ko/mem/main/bul02.gif") no-repeat 0px 12px; padding: 0px 0px 0px 10px; display: block; line-height: 25px; color: #666; font-size: 12px;}
+.useTextBox li > sup {font-size: 13px;}
+.useTextBox li > a {color: #633e10; text-decoration: underline;}
+
+
+.iconBg {padding: 10px; background: #f9f8f7;}
+.iconBg2 {padding: 10px 10px 10px 20px; background: #f9f8f7; margin-top: 20px;}
+
+.titBtnfloat {width: 100%; margin: 20px 0 20px 0; height: 30px;}
+.titBtnfloat .benefitsTitle {float: left;}
+.titBtnfloat .btnRight {float: right; display: inline-block;}
+
+
+/*내등급 미리 계산해보기*/
+
+
+.popLayerBenefits{ width:800px; left:50%; top:100px; margin:0px 0 0 -400px; position:absolute;}
+.popLayerBenefits .popHead .tit{ background:url(../../images/ko/mem/main/popHeadTitInOffersCalulator.gif) no-repeat 0 0px;}
+.popLayerBenefits .hTitS{ overflow:hidden; margin:0 0 5px 0;}
+.popLayerBenefits .hTitS .tit{ float:left; font-weight:bold; }
+.popLayerBenefits .hTitS .info{ float:right; }
+.popLayerBenefits .topMsgBox{ margin:0 0 10px 0;}
+.popLayerBenefits .estimateBox{ margin:0 0 30px 0;} 
+.popLayerBenefits .estimateBox .info{border:#eaeaea solid 1px; background:#fbfbfb; padding:15px 20px; margin:0px 0 10px 0;}
+.popLayerBenefits .estimateBox .btn{ text-align:right;}
+.popLayerBenefits .estimateBox .btn .btnEstimateDownload{ background:url(../../../images/ko/mem/inquires/inquiresBtn.gif) no-repeat -80px -170px; width:160px; height:27px; display:inline-block; vertical-align:middle; line-height:100px; overflow:hidden;}
+
+.popLayerBenefits .guideMsg{ background:#FFC; padding:10px; border:#90C solid 1px; margin:0 0 10px 0;}
+.popLayerBenefits .tableBene{margin:0 0 30px 0}
+.popLayerBenefits .tableBene th { padding-left:10px; font-weight: bold;}
+.popLayerBenefits .tableBene td { padding-left:10px;}
+.popLayerBenefits .tableBene th .ast{ margin-left:-10px;}
+.popLayerBenefits .tableBene input.benefits1{ width:100px; }
+.popLayerBenefits .tableBene input.benefits2{ width:100px; }
+.popLayerBenefits .tableBene input.benefits3{ width:100px; }
+.popLayerBenefits .tableBene input.benefits4{ width:100px; }
+.popLayerBenefits .tableBene textarea.qMemo{ width:580px; height:60px;}
+.popLayerBenefits .tableBene label.qMemo{ line-height:18px !important; display:inline-block;}
+.popLayerBenefits .tableBene tfoot td {text-align: center; border-bottom: 2px solid #eceae1}
+.popLayerBenefits .tableBene .bg {background: #fff7e5; text-align: center; font-size: 30px; font-weight: bold;}
+.popLayerBenefits .phoneSelBox{ display:inline; margin:0 10px 0 0;}
+.popLayerBenefits .fileGuideMsg{ padding:8px 0  0 0;}
+
+.popLayerBenefits label{ position:absolute; left:-9999%;}
+
+.popLayerBenefits .btnRegist{ background:url(../../images/ko/mem/inquires/inquiresBtn.gif) no-repeat 0px 0; width:99px; height:44px; display:inline-block; vertical-align:middle; line-height:100px; overflow:hidden;}
+.popLayerBenefits .btnCancel{ background:url(../../images/ko/mem/inquires/inquiresBtn.gif) no-repeat -109px 0; width:99px; height:44px; display:inline-block; vertical-align:middle; line-height:100px; overflow:hidden;}
+.popLayerBenefits .headTit .tit{ line-height:100px; overflow:hidden;}
+
+
+
+
+
+.popLayerOffersCalulator .headTit .tit{ background:url(../../images/ko/mem/inquires/customerPopTit.gif) no-repeat 0px -350px;}
+.popLayerOffersCalulator .topMsgBox{ background:url(../../images/ko/mem/inquires/customerPopMsg8.gif) no-repeat; height:60px; overflow:hidden;}
+.popLayerOffersCalulator .topMsgBox *{ position:absolute; left:-9999%;}
+
+
+
+.popCaluText {font-size: 12px; color: #666666; margin-bottom: 10px; line-height:20px;}
+.popCaluText strong {font-size: 14px; color: #444; font-weight: bold; display: block;}
+
+
+.cardfloatBox {padding: 10px 0 10px 0; display: block; clear: both; height: 160px; position: relative;}
+.cardfloatBox > li {display:inline-block; width: 197px; height: 163px; background: yellow;  float: left; margin-left: 35px; }
+
+.cardfloatBox > li > .tit {position: absolute; bottom: 0; padding: 0 0 13px 0; font-size: 12px; font-weight: bold; text-align: center; color: #666; margin: 0px auto; width: 197px;}
+.cardfloatBox > li > .tit span {display: block; font-size: 15px; color: #444;}
+
+.cardfloatBox li.sliverbg {background: url(../../images/ko/mem/shillaRewards/sliverBox.gif) no-repeat 0px 0px; }
+.cardfloatBox li.goldbg {background: url(../../images/ko/mem/shillaRewards/goldBox.gif) no-repeat 0px 0px; }
+.cardfloatBox li.diamondbg {background: url(../../images/ko/mem/shillaRewards/diamondBox.gif) no-repeat 0px 0px; }
+
+
+/*20150702 아래 세줄 셋트로 가져가세요.*/
+.UseimgBox {padding: 10px 0 20px 0; display: block; height: 200px;}
+.UseimgBox > li {float: left; padding-right: 13px;}
+.UseimgBox > li.last-child {padding-right: 0px;}
+
+.pointText2 {color:#666666;}
+.pointText2 strong {font-size:14px; font-weight:bold; color:#a1886f; }
+.pointText2 strong.colorRed {font-size:18px; font-weight:bold; color:#b2503d; }
+
+/*20150802*/
+.ctnSpOffer.oldMember{}
+.ctnSpOffer.oldMember .topMsg{ background:url(../../images/ko/mem/shillaRewards/oldMemText1.gif) no-repeat; width:100%; height:63px; margin:0 0 10px 0; line-height:100px; overflow:hidden; text-indent: -9999999px;}
+
+.ctnSpOffer.oldMember .titBox {}
+.ctnSpOffer.oldMember .titBox .titlS {float: left; background: url(../../images/ko/mem/shillaRewards/boxTitlS.gif) no-repeat; width: 330px; height: 30px; overflow:hidden;line-height:100px; text-indent: -9999999px;}
+.ctnSpOffer.oldMember .titBox .titlJ {float: left; background: url(../../images/ko/mem/shillaRewards/boxTitlJ.gif) no-repeat; width: 330px; height: 30px; overflow:hidden;line-height:100px; text-indent: -9999999px;}
+.ctnSpOffer.oldMember .titBox .btnBox {float: right;}
+.ctnSpOffer.oldMember .titBox .btnBox a {background: url("../../images/ko/mem/membership/dynastyBtnPointSch.gif") no-repeat; width: 94px; height: 23px; vertical-align: middle; display: inline-block; line-height: 100px; overflow: hidden;}
+
+.ctnSpOffer.oldMember .titBox:before, .ctnSpOffer.oldMember .titBox:after {
+	display: table;
+	content: "";
+}
+
+.ctnSpOffer.oldMember .titBox:after {
+	clear: both;
+}
+
+.ctnSpOffer.oldMember .DRText {/*background: url("../../images/ko/mem/shillaRewards/dynastyCardInfoImg2.gif") no-repeat;*/ height: 527px; margin-top: 20px;  margin-bottom: 20px;} 
+
+.ctnSpOffer.oldMember .DRText2 {/*background: url("../../images/ko/mem/shillaRewards/dynastyCardInfoImg4.gif") no-repeat;*/ height: 428px; margin-top: 20px;}

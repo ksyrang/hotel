@@ -1,0 +1,387 @@
+/* offers 181004 수정*/
+
+.ctnSpOffer{}
+.ctnSpOffer .icoPack {}
+.ctnSpOffer .icoPack .icoBox{ display:inline-block;padding: 0 10px;vertical-align:middle;height: 23px;line-height: 24px;background: #f4eee3;color: #856f56;border: 2px solid #e3d6c6;background: #f4eee3 }
+.ctnSpOffer .icoPack .icoBox:before{content: '';display: inline-block;width: 11px;height: 8px;background: url(../../images/ko/mem/specialoffers/icoBoxCheck.gif) no-repeat;margin-right: 5px;}
+.ctnSpOffer .icoPack .icoBox.on{ border: 2px solid #9a8268;}
+.ctnSpOffer .icoPack .icoBox.on:before{background: url(../../images/ko/mem/specialoffers/icoBoxCheck.gif) no-repeat 0 bottom;}
+
+/*Package*/
+.ctnSpOffer.ctnPackage{}
+.ctnSpOffer.ctnPackage .topMsg{ background:url(../../images/ko/mem/specialoffers/packageTopMsg01.gif)  no-repeat; width:532px; height:41px; margin:0 0 10px 0; line-height:100px;  text-indent:-9999%; overflow:hidden;}
+.ctnSpOffer.ctnPackage .topMsg2{ background:url(../../images/ko/mem/specialoffers/rewardsHotelTopMsg.gif)  no-repeat; width:531px; height:41px; margin:0 0 10px 0; line-height:100px;  text-indent:-9999%; overflow:hidden;}
+
+.ctnSpOffer.ctnPackage .topMsg3{ background:url(../../images/ko/mem/specialoffers/packageTopMsg01.gif)  no-repeat; width:531px; height:41px; margin:0 0 10px 0; line-height:100px;  text-indent:-9999%; overflow:hidden;}
+.ctnSpOffer.ctnPackage .topMsg4{ background:url(../../images/ko/mem/specialoffers/packageTopMsg02.gif)  no-repeat; width:531px; height:41px; margin:0 0 10px 0; line-height:100px;  text-indent:-9999%; overflow:hidden;}
+.ctnSpOffer.ctnPackage .topMsg5{ background:url(../../images/ko/mem/specialoffers/packageTopMsg03.gif)  no-repeat; width:531px; height:41px; margin:0 0 10px 0; line-height:100px;  text-indent:-9999%; overflow:hidden;}
+
+.ctnSpOfferTab {}
+.ctnSpOfferTab {overflow: hidden; position:relative; top:1px; margin-bottom:40px;}
+.ctnSpOfferTab li {float: left;border-top: 1px solid #cdcbbe;border-right: 1px solid #cdcbbe; border-bottom: 1px solid #a1886f;}
+.ctnSpOfferTab li:first-child {border-left: 1px solid #cdcbbe;}
+.ctnSpOfferTab li:first-child.on {margin-left: 0;}
+.ctnSpOfferTab li a {display: block;height: 38px;line-height: 38px; width:215px; font-size:14px;color: #727272;border-bottom: none;text-align: center;} /*190116 padding 삭제, width 값 수정*/
+.ctnSpOfferTab li.on {border: 1px solid #a1886f;border-bottom: 1px solid #fff;margin-left: -1px; }
+.ctnSpOfferTab li.on a{font-weight:700;color: #6e583e; }
+
+.eventBox{padding:20px 0;}
+
+/* 20170317 */
+.ctnSpOffer.ctnPackage .memPackWrap{/*border-top: 1px solid #eceae1;*/}
+.ctnSpOffer.ctnPackage .memPackWrap .memPackTit{line-height: 0;font-size: 0}
+.ctnSpOffer.ctnPackage .memPackWrap .memPackList>ul>li{position: relative;padding-bottom: 40px; margin-bottom:40px; border-bottom: 1px solid #eceae1; overflow: hidden;}
+.ctnSpOffer.ctnPackage .memPackWrap .memPackList .packThum{float: left;}
+.ctnSpOffer.ctnPackage .memPackWrap .memPackList .packThum img{width: 270px;height: 150px;}
+.ctnSpOffer.ctnPackage .memPackWrap .memPackList .packCon{margin-left: 310px;line-height:160%;}/*20180829 행간 추가*/
+.ctnSpOffer.ctnPackage .memPackWrap .memPackList .packCon dt{border-bottom: 1px dotted #bfbfbf;padding-bottom: 17px;margin-bottom: 17px;}
+.ctnSpOffer.ctnPackage .memPackWrap .memPackList .packCon dt a{font-size:16px;font-weight: 700;color: #856f56;text-decoration: underline;display: block;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;width: 430px}
+.ctnSpOffer.ctnPackage .memPackWrap .memPackList .packCon .date{display: block;color: #444;margin-top: 14px;}
+.ctnSpOffer.ctnPackage .memPackWrap .memPackList .packCon .descList {margin: 0 0 18px;color: #444;}
+.ctnSpOffer.ctnPackage .memPackWrap .memPackList .packCon .descList li {background:url(../../images/ko/common/bul02.gif) no-repeat 0 5px;padding-left: 10px;line-height: 16px;}
+.ctnSpOffer.ctnPackage .memPackWrap .memPackList .packCon .descList li+li{margin-top: 10px;}
+.ctnSpOffer.ctnPackage .memPackWrap .memPackList .packCon .price{font-weight: 700;color: #444}
+.ctnSpOffer.ctnPackage .memPackWrap .memPackList .packCon .price .secretPrice_login{margin-right:3px; color:#9c5718;}
+.ctnSpOffer.ctnPackage .memPackWrap .memPackList .packCon .secretPrice{padding-top:10px;}
+.ctnSpOffer.ctnPackage .memPackWrap .memPackList .packCon .secretPrice span{display:inline;}
+.ctnSpOffer.ctnPackage .memPackWrap .memPackList .packCon .secretPrice .Rtitle{font-size:13px;color:#3a3125;background: url(../../../images/mbl/ko/common/main/m_secretPrice.png) no-repeat 0px 1px;background-size: 9px;padding-left:16px}
+.ctnSpOffer.ctnPackage .memPackWrap .memPackList .packCon .secretPrice .Rnotice{font-size:11px; font-weight:normal;color:#727272; margin-left:5px;}
+.ctnSpOffer.ctnPackage .memPackWrap .memPackList .btnPackReservation{position: absolute;top: 0px;right: 0;}
+.ctnSpOffer.ctnPackage .memPackWrap .memPackList+h4{margin-top: 80px;}
+
+/* 20170317 끝*/
+
+.ctnSpOffer .schBox{ position: relative;padding:19px 190px 9px 35px; margin:30px 0 50px 0; border:#e3d6c6 solid 1px; zoom:1;min-height: 100px;}
+.ctnSpOffer .schBox:after{clear:both;content:"";display:block;font-size:0;height:0;line-height:0;visibility:hidden}
+.ctnSpOffer .schBox .date{ display:inline; padding:7px 0 0 0; margin:0 30px 0 0;}
+.ctnSpOffer .schBox .date .name{ width:66px; height:27px; background:url(../../images/ko/mem/specialoffers/packageLabelH1.gif) no-repeat; vertical-align:middle; display:inline-block; line-height:100px; overflow:hidden;}
+.ctnSpOffer .schBox .date label{ position:absolute; left:-9999%;}
+.ctnSpOffer .schBox .date input.dateStart,
+.ctnSpOffer .schBox .date input.dateEnd{ width:112px;}
+.ctnSpOffer .schBox .schType{display: inline-block;}
+.ctnSpOffer .schBox .schType span{color: #666;}
+.ctnSpOffer .schBox .schType .type{width:70px; height:27px; background:url(../../images/ko/seoul/specialoffers/packageLabelH3.gif) no-repeat; vertical-align:middle; display:inline-block; line-height:100px; overflow:hidden;}
+
+.ctnSpOffer .schBox .opt{overflow: hidden;margin-top: 20px;padding-top: 20px;border-top: 1px solid #eceae1;}
+.ctnSpOffer .schBox .opt .name{ float: left;width:70px; height:27px; background:url(../../images/ko/mem/specialoffers/packageLabelH2.gif) no-repeat; vertical-align:top; display:inline-block; line-height:100px; overflow:hidden;}
+.ctnSpOffer .schBox .opt .icoPack{float: left;display:inline-block; vertical-align:middle; zoom:1; *display:inline;width: 530px;}
+.ctnSpOffer .schBox .opt .icoPack li{float:left; margin:0 10px 10px 0;}
+.ctnSpOffer .schBox .opt .icoPack img{ vertical-align:middle;}
+
+.ctnSpOffer .btnList{ display:inline-block;position: absolute;top: 48px;right: 40px;padding-top: 0;}
+.ctnSpOffer .btnList .btnSch{ background:url(../../images/ko/mem/specialoffers/packageBtnSch1.gif) no-repeat; width:110px; height:34px; vertical-align:middle; display:inline-block; line-height:200px; overflow:hidden; }
+.ctnSpOffer .btnList .btnListL{float:right;}
+.ctnSpOffer .btnList .btnGoPkgList{ background:url(../../images/ko/seoul/specialoffers/packageViewBtnGoList.gif) no-repeat; width:86px; height:27px; display:inline-block; vertical-align:middle; line-height:100px; overflow:hidden;}
+.ctnSpOffer .btnList .btnReservation{ background:url(../../images/ko/seoul/specialoffers/packageViewBtnRsv.gif) no-repeat; width:90px; height:27px; display:inline-block; vertical-align:middle; line-height:100px; overflow:hidden;}
+
+
+.ctnSpOffer.ctnPackage .packageWrap{ border:#e5d9ca solid 1px; padding:10px; margin:0 0 20px 0;}
+.ctnSpOffer .bbsTotal{ overflow:hidden; margin:0 0 19px 0; padding:0 0 5px 0; border-bottom:#a78f77 solid 1px;}
+.ctnSpOffer .bbsTotal .count{ float:left; padding:8px 0 0 13px;}
+.ctnSpOffer .bbsTotal .tabMemCate{ float:right; padding:10px 0 0 0;}
+.ctnSpOffer .tabMemCate{ height:20px; margin:0 -10px 0 0;}
+.ctnSpOffer .tabMemCate li{ float:left; margin:0 0 0 0px;}
+.ctnSpOffer .tabMemCate li a{ display:block; padding:0px 15px; font-weight:normal; color:#666; text-decoration:none; background:url(../images/ko/common/mypage/membershipPointBar.gif) no-repeat 0 4px;}
+.ctnSpOffer .tabMemCate li a.on{ font-weight:bold}
+.ctnSpOffer .tabMemCate li.first a{ background:none;}
+/* .ctnSpOffer .packList { width:815px; overflow:hidden; padding:0 0 0 10px;}
+.ctnSpOffer .packList .list { overflow:hidden; width:870px;zoom:1; vertical-align:middle; margin:-30px 0 0 0; padding-bottom:30px;}
+.ctnSpOffer .packList .list .packBox{ width:824px; margin:30px 55px 0px 0px;  position:relative; display:block; zoom:1; vertical-align:middle;}
+.ctnSpOffer .packList .list .packBox .box{padding:0px; position:relative; }
+.ctnSpOffer .packList .list .packBox .box .flLeft > li {}
+.ctnSpOffer .packList .list .packBox .box .flLeft > li.left {display:block; float:left; width:235px;}
+.ctnSpOffer .packList .list .packBox .box .flLeft > li.left .checkBtn{ position:relative; height:27px; margin:0 0 5px 0;}
+.ctnSpOffer .packList .list .packBox .box .flLeft > li.left .photo{margin:0 0 14px 0}
+.ctnSpOffer .packList .list .packBox .box .flLeft > li.left .photo .img{ vertical-align:middle;}
+.ctnSpOffer .packList .list .packBox .box .flLeft > li.right {float:right; display:block; width:570px; margin-top:32px;}
+.ctnSpOffer .packList .list .packBox .box .flLeft > li.right .tit,
+.ctnSpOffer .packList .list .packBox .box .flLeft > li.right .tit a{ font-size:15px; font-weight:bold; color:#856f56; text-decoration:underline; color:#856f56; margin:0 0 5px 0; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;}
+.ctnSpOffer .packList .list .packBox .box .flLeft > li.right .info{ margin:0 0 10px 0; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;}
+.ctnSpOffer .packList .list .packBox .box .flLeft > li.right > p {color:#555555;}
+.ctnSpOffer .packList .list .packBox .box .flLeft > li.right .date > strong {background:url(../../images/ko/mem/main/bul02.gif) no-repeat 0 8px; padding:0 0 0 7px; font-weight:bold; display:inline-block; width:40px;}
+.ctnSpOffer .packList .list .packBox .box .flLeft > li.right .date > strong.price {margin-left:20px;}
+.ctnSpOffer .packList .list .packBox .box .flLeft > li.right .hotel {vertical-align:top; margin-top:10px; }
+.ctnSpOffer .packList .list .packBox .box .flLeft > li.right .hotel > strong { background:yellow url(../../images/ko/mem/main/bul02.gif) no-repeat 0 8px; padding:0 0 0 7px; margin:0 0 8px 0; font-weight:bold; display:inline-block; width:40px; }
+.ctnSpOffer .packList .list .packBox .box .flLeft > li.right .hotel > span {text-align:justify; font-weight:normal; display:inline-block; width:515px; background:red;}
+.ctnSpOffer .packList .list .packBox .box .flLeft > li.left .btnReserve{ background:url(../images/ko/common/mypage/myplanBtnReserve.gif) no-repeat; width:83px; height:27px; display:block; position:absolute; left:0px; top:0;  vertical-align:middle; display:inline-block; line-height:100px; overflow:hidden;}
+.ctnSpOffer .packList .list .packBox label.packCheck{ position:absolute; left:-9999%;} */
+
+/* .ctnSpOffer{overflow:hidden;} */
+.packList_mem {border:1px solid #e5d9ca; padding:10px 10px 10px 10px; }
+.packList_mem .box .btnReserve { background:url(../../images/ko/common/mypage/myplanBtnReserve.gif) no-repeat; width:83px; height:27px; display:block;line-height:100px; overflow:hidden; margin-bottom:5px;}
+.packList_mem .list .eventBox{padding:25px;border-bottom:1px solid #e7dbcd}
+.packList_mem .list .eventBox.last{padding-bottom:0;border-bottom:none}
+.packList_mem .box{overflow:hidden;paddingzoom:1}
+.packList_mem .box .photo{float:left;margin:0 24px 0 0}
+.packList_mem .box .listinfo{float:left;}
+.packList_mem .box .listinfo .tit{margin-bottom:10px;}
+.packList_mem .box .listinfo .tit a{font-size:15px;font-weight:bold;color:#856f56; text-decoration:underline;}
+.packList_mem .box .listinfo .info{overflow:hidden;width:534px;height:40px;padding:0 0 5px 0;margin-bottom:5px;border-bottom:1px solid #cecece;color:#000;}
+.packList_mem .box .listinfo .dateArea{margin-bottom:5px;color:#000;}
+.packList_mem .box .listinfo .date{display:inline-block;width:50px;font-weight:bold;color:#6d6d6d}
+.packList_mem .box .listinfo .pay{display:inline-block;width:50px;font-weight:bold;color:#6d6d6d}
+.packList_mem .box .listinfo .position{display:inline-block;width:50px;font-weight:bold;color:#6d6d6d}
+.packList_mem .box .listinfo .pay{margin-left:25px}
+.packList_mem .box .proListBox{overflow:hidden;zoom:1}
+.packList_mem .box .proListBox .position{float:left}
+.packList_mem .box .tabProperty{/* float:left;overflow:hidden;zoom:1;*/ display:inline-block;  width:480px; }
+.packList_mem .box .tabProperty li{/* float:left; */ display:inline; margin-right:15px;}
+/* .packList .box .tabProperty li:first-child{margin-left:0;} */
+.packList .box .tabProperty li a{/* font-weight:bold; */text-decoration:underline;color:#3b3b3b}
+.packList .box .tabProperty li a:hover,.packList .box .tabProperty li a:focus{color:#b1470a;}
+
+
+.ctnSpOffer .packList .list .selBox{ position:relative; zoom:1; vertical-align:middle;}
+.ctnSpOffer .packList .list .selBox .ico{}
+.ctnSpOffer .packList .list .selBox .ico .img{ vertical-align:middle;}
+.ctnSpOffer .packList .list .selBox .checker{ position:absolute; right:9px; bottom:9px;}
+.ctnSpOffer .packList .list .selBox .icoAirline,
+.ctnSpOffer .packList .list .selBox .icoBreakfast,
+.ctnSpOffer .packList .list .selBox .icoCar{ display:inline-block; *display:inline; zoom:1; vertical-align:middle; background:url(../images/ko/common/mypage/myplanIcoPackOpt.gif) no-repeat; width:40px; height:40px; overflow:hidden; line-height:100px;}
+.ctnSpOffer .packList .list .selBox .icoAirline{background-position:0px 0;}
+.ctnSpOffer .packList .list .selBox .icoBreakfast{ background-position:-45px 0;}
+.ctnSpOffer .packList .list .selBox .icoCar{background-position:-90px 0;}
+
+
+/*패키지보기*/
+.ctnSpOffer .snsLink { float: left; margin: 2px 5px 0 0;}
+.ctnSpOffer .snsLink .btnTwitter{background:url(../../images/ko/mem/membership/dynastyBtnSns.gif) no-repeat; width:23px; height:23px; vertical-align:middle; display:inline-block; line-height:100px; overflow:hidden;margin-right:5px;}
+.ctnSpOffer .snsLink .btnFacebook{ background:url(../../images/ko/mem/membership/dynastyBtnSns.gif) no-repeat -29px 0; width:23px; height:23px; vertical-align:middle; display:inline-block; line-height:100px; overflow:hidden;}
+.ctnPackageView{}
+.ctnPackageView .packageViewWrap{ margin:0 0 20px 0;}
+.ctnPackageView .packageViewWrap .infoBox{border-top:#cdcbbe solid 1px; margin:0 0 20px 0;}
+.ctnPackageView .packageViewWrap .infoBox .info1{ padding:0 20px 0 25px; height:47px; border-bottom:#cdcbbe solid 1px; background:#faf9f4}
+.ctnPackageView .packageViewWrap .infoBox .info3{ padding:0 20px 0 25px; height:80px; border-bottom:#cdcbbe solid 1px;/*  background:#faf9f4 */}
+.ctnPackageView .packageViewWrap .infoBox .info2{ padding:0 20px 0 25px;  height:47px; border-bottom:#cdcbbe solid 1px;}
+.ctnPackageView .packageViewWrap .infoBox .tit{margin:12px 10px 0 0; color:#856f56; font-size:15px; font-weight:bold; text-decoration:underline; float:left}
+.ctnPackageView .packageViewWrap .infoBox .date{margin:14px 0px 0 0; float:right; }
+.ctnPackageView .packageViewWrap .infoBox .amt{margin:14px 0px 0 0; float:left;}
+.ctnPackageView .packageViewWrap .infoBox .amt2{margin:14px 0px 0 0; clear: both; color:#555555;}
+.ctnPackageView .packageViewWrap .infoBox .info{ margin:0 0 8px 0; color:#444444}
+.ctnPackageView .packageViewWrap .infoBox .btnList{ padding:10px 0 0 0;}
+.ctnPackageView .packageViewWrap .infoBox .btnList .btnGoPkgList{ background:url(../../images/ko/mem/specialoffers/packageViewBtnGoList.gif) no-repeat; width:86px; height:27px; display:inline-block; vertical-align:middle; line-height:100px; overflow:hidden;}
+.ctnPackageView .packageViewWrap .infoBox .btnList .btnReservation{ background:url(../../images/ko/mem/specialoffers/packageViewBtnRsv.gif) no-repeat; width:90px; height:27px; display:inline-block; vertical-align:middle; line-height:100px; overflow:hidden;}
+.ctnPackageView .packageViewWrap .infoBox .btnList .btnListL{float:right}
+.ctnPackageView .packageViewWrap .infoBox .btnList .btnListR{float:right; width:140px;}
+.ctnPackageView .packageViewWrap .infoBox .opt{display:inline-block; margin:0 0 0 10px;}
+.ctnPackageView .packageViewWrap .infoBox .opt .amt{ font-weight:bold;}
+.ctnPackageView .packageViewWrap .infoBox .snsLink{ position:absolute; right:0px; top:0px;}.ctnPackageView .packageViewWrap .btnIcoPack{ height:64px; zoom:1;}
+.ctnPackageView .packageViewWrap .btnIcoPack:after{clear:both;content:"";display:block;font-size:0;height:0;line-height:0;visibility:hidden}
+.ctnPackageView .packageViewWrap .btnIcoPack li{ float: left; margin:0 5px 0 0;}
+.ctnPackageView .packageViewWrap .btnIcoPack .icoPack{ float:left; height:40px;}
+.ctnPackageView .packageViewWrap .btnIcoPack  .btnRsv{ float:right}
+.ctnPackageView .packageViewWrap .btnIcoPack  .btnRsv .btnReservation{ background:url(../../images/ko/mem/specialoffers/packageViewBtnRsv.gif) no-repeat; width:106px; height:44px; display:inline-block; vertical-align:middle; line-height:100px; overflow:hidden;}
+.ctnSpOffer.ctnPackageView .btnReservation2{ background:url(../../images/ko/mem/specialoffers/packageViewBtnRsv2.gif) no-repeat; width:83px; height:27px; display:inline-block; vertical-align:middle; line-height:100px; overflow:hidden;}
+.ctnPackageView .packageViewWrap .photoBox{ margin:0 0 20px 0;}
+.ctnPackageView .packageViewWrap .guideBoxA{ margin:0 0 10px 0; padding:15px 20px; background:#fbfbfb; border:#eaeaea solid 1px;}
+.ctnPackageView .packageViewWrap .guideBoxB{ margin:0 0 39px 0; padding:15px 20px 15px 36px; background:#fdf8ef; border:#f4eee4 solid 1px; color:#666666}
+.ctnPackageView .packageViewWrap .guideBoxB .tit{ font-weight:bold;}
+.ctnPackageView .packageViewWrap .guideBoxB .list{ margin:0 0 0 10px;}
+.ctnPackageView .packageViewWrap .guideBoxB .list li{ background:url(../../images/ko/mem/main/bul01.gif) no-repeat 0 8px; padding:0 0 0 10px;}
+.ctnPackageView .packageViewWrap .recomBox{ margin:0 0 30px 0;}
+.ctnPackageView .packageViewWrap .recomBox .hTit{border-bottom:#a1886f solid 3px; height:27px; margin:0 0 20px 0;}
+.ctnPackageView .packageViewWrap .recomBox .hTit .tit{ background:url(../../images/ko/mem/specialoffers/packageViewTit2.gif) no-repeat; height:27px; line-height:100px; overflow:hidden;}
+.ctnPackageView .packageViewWrap .recomBox .list{ padding:0 0 0 12px; overflow:hidden;}
+.ctnPackageView .packageViewWrap .recomBox .list li{ margin:0 10px 0 0; float:left;}
+.ctnPackageView .packageViewWrap .otherPack{padding:20px 25px; border:#e5d9ca solid 1px; overflow:hidden;}
+.ctnPackageView .packageViewWrap .otherPack .hTit { border-bottom:#a1886f solid 3px; height:27px; margin:0 0 20px 0;}
+.ctnPackageView .packageViewWrap .otherPack .hTit .tit{ background:url(../../images/ko/mem/specialoffers/packageViewTit1.gif) no-repeat; height:27px; line-height:100px; overflow:hidden;}
+.ctnSpOffer.ctnPackageView .btnList .btnListR{float:left; width:140px;}
+
+.packageSlideBox{ padding:0 0 0 23px; width:814px; height:183px; position:relative;}
+.packageSlideBox .ad-gallery{ width:765px;}
+.packageSlideBox .ad-gallery .ad-nav{}
+.packageSlideBox .ad-gallery .ad-back{ background:url(../../images/ko/mem/specialoffers/packageViewBtnPrev.gif) no-repeat; left:-23px; width:33px; height:120px; text-indent:-9999px; overflow:hidden;}
+.packageSlideBox .ad-gallery .ad-forward{ background:url(../../images/ko/mem/specialoffers/packageViewBtnNext.gif) no-repeat; right:-23px; width:33px; height:120px; text-indent:-9999px; overflow:hidden;}
+.packageSlideBox .ad-gallery .ad-thumbs li a img{ border:none ; opacity:1 !important; 	filter: alpha(opacity = 100) !important;}
+.packageSlideBox .ad-gallery .ad-thumbs li a{ text-align:center; width:235px; margin:auto; }
+.packageSlideBox .ad-gallery .ad-thumbs li a .tit{ font-weight:bold; display:block; padding:14px 0 0 0; text-align:left; font-size:15px; color:#856f56; text-decoration:underline; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;}
+.packageSlideBox .ad-gallery .ad-thumbs li a .date{background:url(../../images/ko/mem/main/bul02.gif) no-repeat 0 8px; text-align:left; padding:0 0 0 7px;}
+.packageSlideBox .ad-gallery .ad-thumbs li a .price{background:url(../../images/ko/mem/main/bul02.gif) no-repeat 0 8px; text-align:left; padding:0 0 0 7px; font-weight:bold; margin:0 0 8px 0;}
+.packageSlideBox .ad-gallery .ad-thumbs li{ padding-right:0px; width:255px; text-align:center; }
+
+
+
+
+/*Event*/
+.ctnSpOffer.ctnEvent{}
+.ctnSpOffer.ctnEvent .topMsg{ background:url(../../images/ko/mem/specialoffers/eventTopMsg.gif) no-repeat; width:531px; height:41px; margin:0 0 10px 0; line-height:100px; overflow:hidden;}
+.ctnSpOffer.ctnEvent .schBox{ padding:19px 35px; margin:0 0 10px 0; border:#e3d6c6 solid 1px; zoom:1; text-align:center;}
+.ctnSpOffer.ctnEvent .schBox:after{clear:both;content:"";display:block;font-size:0;height:0;line-height:0;visibility:hidden}
+.ctnSpOffer.ctnEvent .schBox .date{ display:inline-block; vertical-align:middle; padding:2px 0 0 0; margin:0 0px 0 0;}
+.ctnSpOffer.ctnEvent .schBox .date .name{ width:60px; height:27px; background:url(../../images/ko/mem/specialoffers/packageLabelH1.gif) no-repeat; vertical-align:middle; display:inline-block; line-height:100px; overflow:hidden;}
+.ctnSpOffer.ctnEvent .schBox .date label{ position:absolute; left:-9999%;}
+.ctnSpOffer.ctnEvent .schBox .date input.dateStart,
+.ctnSpOffer.ctnEvent .schBox .date input.dateEnd{ width:116px; margin:0 7px 0 0}
+.ctnSpOffer.ctnEvent .packageWrap{ border:#e5d9ca solid 1px; padding:10px;}
+.ctnSpOffer.ctnEvent .btnList{ display:inline-block;margin:0 0 30px 0; width:100%;}
+.ctnSpOffer.ctnEvent .btnList .btnSch{ background:url(../../images/ko/mem/specialoffers/packageBtnSch.gif) no-repeat; width:112px; height:40px; vertical-align:middle; display:inline-block; line-height:200px; overflow:hidden;}
+.ctnSpOffer.ctnEvent .packViewDesc{font-size: 16px;color: #444;line-height: 30px;margin-bottom: 35px; padding-bottom:35px; border-bottom:1px dotted #bfbfbf;}
+
+.ctnSpOffer.ctnEvent .eventWrap{ border:#e5d9ca solid 1px; padding:25px 24px;}
+.ctnSpOffer.ctnEvent .eventWrap .hTitDining{ border-top:#a78f77 solid 1px; height:27px; padding:20px 0 0 0;  margin:0 0 5px 0;}
+.ctnSpOffer.ctnEvent .eventWrap .hTitDining .tit{ float:left; background:url(../../images/ko/mem/specialoffers/eventTitDining.gif) no-repeat; width:100%; height:27px; line-height:100px; overflow:hidden;}
+.ctnSpOffer.ctnEvent .mpEventList { width:815px; overflow:hidden;}
+.ctnSpOffer.ctnEvent .mpEventList .list { overflow:hidden; width:870px;zoom:1; vertical-align:middle; margin:-30px 0 0 0; padding-bottom:30px;}
+.ctnSpOffer.ctnEvent .mpEventList .list .eventBox{  float:left; width:235px; margin:30px 55px 0px 0px; position:relative; display:block; zoom:1; vertical-align:middle;}
+.ctnSpOffer.ctnEvent .mpEventList .list .eventBox .box{padding:0px; position:relative; }
+.ctnSpOffer.ctnEvent .mpEventList .list .eventBox .box .photo{margin:0 0 14px 0; position:relative;}
+.ctnSpOffer.ctnEvent .mpEventList .list .eventBox .box .photo .img{ vertical-align:middle;}
+.ctnSpOffer.ctnEvent .mpEventList .list .eventBox .box .ico{position:absolute; left:0px; bottom:0;  }
+.ctnSpOffer.ctnEvent .ico{height:27px; display:inline-block; line-height:100px; overflow:hidden; vertical-align:middle;}
+.ctnSpOffer.ctnEvent .icoARI{ width:74px; background:url(../../images/ko/mem/specialoffers/eventIcoAriake.gif) no-repeat; }
+.ctnSpOffer.ctnEvent .icoPAL{width:75px; background:url(../../images/ko/mem/specialoffers/eventIcoPalsun.gif) no-repeat; }
+.ctnSpOffer.ctnEvent .icoFRC{width:100px;  background:url(../../images/ko/mem/specialoffers/eventIcoFrench.gif) no-repeat;}
+.ctnSpOffer.ctnEvent .icoKRN{width:77px;  background:url(../../images/ko/mem/specialoffers/eventIcoKorean.gif) no-repeat;}
+.ctnSpOffer.ctnEvent .icoLIB{width:101px;  background:url(../../images/ko/mem/specialoffers/eventIcoLibrary.gif) no-repeat;}
+.ctnSpOffer.ctnEvent .icoPSBQ{width:125px;  background:url(../../images/ko/mem/specialoffers/eventIcoPastry.gif) no-repeat; }
+.ctnSpOffer.ctnEvent .icoPAR{width:113px;  background:url(../../images/ko/mem/specialoffers/eventIcoParkview.gif) no-repeat; }
+.ctnSpOffer.ctnEvent .icoSTORY{width:68px;  background:url(../../images/ko/mem/specialoffers/eventIcoSyory.gif) no-repeat; }
+
+.ctnSpOffer.ctnEvent .mpEventList .list .eventBox .box .tit,
+.ctnSpOffer.ctnEvent .mpEventList .list .eventBox .box .tit a{ font-size:15px; font-weight:bold; color:#856f56; text-decoration:underline; color:#856f56; margin:0 0 5px 0; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;}
+.ctnSpOffer.ctnEvent .mpEventList .list .eventBox .box .info{ margin:0 0 4px 0; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;}
+.ctnSpOffer.ctnEvent .mpEventList .list .eventBox .box .date{ background:url(../../images/ko/mem/main/bul02.gif) no-repeat 0 8px; padding:0 0 0 7px;}
+.ctnSpOffer.ctnEvent .mpEventList .list .eventBox .box .price{ background:url(../../images/ko/mem/main/bul02.gif) no-repeat 0 8px; padding:0 0 0 7px; font-weight:bold; margin:0 0 8px 0;}
+.ctnSpOffer.ctnEvent .mpEventList .list .eventBox .box .place{ background:url(../../images/ko/mem/main/bul02.gif) no-repeat 0 8px; padding:0 0 0 7px; margin:0 0 8px 0;}
+
+
+.ctnSpOffer.ctnEventView{}
+.ctnSpOffer.ctnEventView img{ vertical-align:middle;}
+.ctnSpOffer.ctnEventView .eventCtn{ margin:0 0 20px 0;}
+.ctnSpOffer.ctnEventView .eventCtn .hBox{ border-top:#cdcbbe solid 1px; margin:0 0 10px 0;}
+.ctnSpOffer.ctnEventView .eventCtn .hBox .hB1{ padding:0 20px 0 25px; height:47px; border-bottom:#cdcbbe solid 1px; background:#faf9f4}
+.ctnSpOffer.ctnEventView .eventCtn .hBox .hB2{ padding:0 20px 0 25px;  height:47px; border-bottom:#cdcbbe solid 1px;}
+.ctnSpOffer.ctnEventView .eventCtn .hBox .ico{ margin:10px 10px 0 0; float:left}
+.ctnSpOffer.ctnEventView .eventCtn .hBox .name{margin:12px 10px 0 0; color:#856f56; font-size:15px; font-weight:bold; text-decoration:underline; float:left}
+.ctnSpOffer.ctnEventView .eventCtn .hBox .date{margin:14px 0px 0 0; float:right;}
+.ctnSpOffer.ctnEventView .eventCtn .hBox .amt{margin:5px 0px 0 0; float:left;}
+.ctnSpOffer.ctnEventView .eventCtn .hBox .snsLink{margin:7px 0px 0 0; position:relative; float:right;}
+.ctnSpOffer.ctnEventView .eventCtn .ctnBox{ margin:20px 0px 0 0; }
+.ctnSpOffer.ctnEventView .infoBox{ padding:20px 25px; margin:0 0 30px 0; border:#e5d9ca solid 1px; overflow:hidden;}
+.ctnSpOffer.ctnEventView .infoBox .photo{ float:left;}
+.ctnSpOffer.ctnEventView .infoBox .info{ float:right; width:608px; position:relative;}
+.ctnSpOffer.ctnEventView .infoBox .info .name{}
+.ctnSpOffer.ctnEventView .infoBox .info .txt{}
+.ctnSpOffer.ctnEventView .infoBox .info .btnGo{ border:#ede6db solid 1px; display:inline-block; padding:2px 8px; vertical-align:middle;}
+
+.ctnSpOffer.ctnEventView .otherEventWrap{ padding:20px 25px; border:#e5d9ca solid 1px; overflow:hidden;}
+.ctnSpOffer.ctnEventView .otherEventWrap{}
+.ctnSpOffer.ctnEventView .otherEventWrap .guideBoxB .list li{ background:url(../../images/ko/mem/main/bul01.gif) no-repeat 0 8px; padding:0 0 0 10px;}
+.ctnSpOffer.ctnEventView .otherEventWrap .otherPack{}
+.ctnSpOffer.ctnEventView .otherEventWrap .otherPack .hTit { border-bottom:#a1886f solid 3px; height:27px; margin:0 0 20px 0;}
+.ctnSpOffer.ctnEventView .otherEventWrap .otherPack .hTit .tit{ background:url(../../images/ko/mem/specialoffers/eventViewTit1.gif) no-repeat; height:27px; line-height:100px; overflow:hidden;}
+
+
+.ctnSpOffer.ctnEventView .btnList{ padding:10px 0 0 0;}
+.ctnSpOffer.ctnEventView .btnList .btnGoList{ background:url(../../images/ko/mem/specialoffers/packageViewBtnGoList.gif) no-repeat; width:86px; height:27px; display:inline-block; vertical-align:middle; line-height:100px; overflow:hidden;}
+
+.ctnSpOffer.ctnEventView .btnList .btnListL{float:right}
+.ctnSpOffer.ctnEventView .btnList .btnListR{float:left}
+
+.recomProduct{}
+.recomProduct .recomTit{background:url(../../images/ko/mem/specialoffers/recomProduct.gif) no-repeat; height:24px; line-height:24px; text-indent: -9999px;overflow:hidden;margin-bottom: 30px;}
+.recomProduct .recomTit.otherTit{background:url(../../images/ko/mem/specialoffers/otherProduct.gif) no-repeat;}
+.recomProduct .recomList{overflow: hidden;border-bottom: 1px solid #e2d5c5;padding-bottom: 30px;margin-bottom: 50px;}
+.recomProduct .recomList a{outline: none;}
+.recomProduct .recomList li{float: left;margin-left: 28px;width: 270px;}
+.recomProduct .recomList li.first{margin-left: 0;}
+.recomProduct .recomList dl{margin: 20px 0 0 ;color: #444}
+.recomProduct .recomList dl dt{font-size:16px;color:#856f56;font-weight: 700;margin: 10px 0 12px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}
+.recomProduct .recomList li:hover dl dt{text-decoration: underline;}
+.recomProduct .recomList .packPrice{font-weight: 700;margin: 7px 0 0 ;}
+
+/* offerSlide */
+.recomProduct .recomList.offerSlide>li{margin-left: 28px;}
+.offerSlide{position: relative;}
+.offerSlide .flex-control-nav.flex-control-paging{display: none;}
+.offerSlide .flex-direction-nav{overflow: hidden;width: 100%;}
+.offerSlide .flex-direction-nav .flex-nav-prev, .offerSlide .flex-direction-nav .flex-nav-next{display: inline-block;width: 35px;}
+.offerSlide .flex-direction-nav .flex-nav-prev{position: absolute;top: 47px;left: 0;margin-left: 0;}
+.offerSlide .flex-direction-nav .flex-nav-next{position: absolute;top: 47px;right: 0;margin-left: 0;}
+.offerSlide .flex-direction-nav .flex-nav-prev .flex-prev {display:inline-block;width:35px;height:70px;overflow: hidden;text-indent: -999px;background: url(../../images/ko/mem/specialoffers/offerSlideNav.png) no-repeat 0 0;}
+.offerSlide .flex-direction-nav .flex-nav-next .flex-next {display:inline-block;width:35px;height:70px;overflow: hidden;text-indent: -999px;background: url(../../images/ko/mem/specialoffers/offerSlideNav.png) no-repeat right 0;margin-right: 0;}
+
+
+
+/* 패키지 보기 20170221 */
+.packViewWrap{}
+.packViewWrap .packViewHead{margin: 20px 0 10px;overflow: hidden;text-align: right;}
+.packViewWrap .packViewHead .btnReservation{ background:url(../../images/ko/mem/specialoffers/packageViewBtnRsv.gif) no-repeat; width:86px; height:27px; display:inline-block; vertical-align:middle; line-height:100px; overflow:hidden;}
+
+.packViewWrap .packViewHead .btnGoPkg {margin-left: 1px;}
+.packViewWrap .packViewHead .btnGoPkg .btnGoPkgList{width:86px; height:27px; display:inline-block; vertical-align:middle;background:url(../../images/ko/mem/specialoffers/packageViewBtnGoList.gif) no-repeat; line-height:100px; overflow:hidden;}
+
+/* 패키지 보기 내용 */
+.packViewContent{}
+.packageTopImg, .packageTopTit{line-height: 0;font-size: 0;}
+.packViewContent .packViewDesc{font-size: 14px;color: #101010;line-height: 30px;margin-bottom: 35px;}/* 수정 2019-10-18 */
+.packViewContent .warnList{font-size:14px;color: #727272;line-height: 25px;margin:  0 0 25px;}
+.packViewContent .date{font-size: 14px;color: #444;padding-bottom: 35px;margin-bottom: 35px;border-bottom: 1px dotted #bfbfbf;}
+.packContact {padding: 27px 30px;background: #f1e4c4;color: #444;margin-bottom: 60px;overflow: hidden;}
+.packContact dl dt{font-size: 16px;font-weight: 700;padding-bottom: 12px;margin-bottom: 12px;border-bottom: 1px dotted #444;}
+.packContact dl dd{font-size:14px;line-height: 25px;}
+.packContact dl dd span{position: relative;}
+.packContact dl dd span.packTel{margin-right: 20px;}
+.packContact dl dd span.packTel:after{position: absolute;top: 1px;right: -10px;content: '';display: inline-block;width: 1px;height: 11px;background: #ccc;}
+.packContact.packBtm{margin-top:50px;padding-top: 24px;border-top: 3px solid #a1886f;}
+.packProductDesc{margin:50px 0 60px;}
+.packProductDesc dl+dl{margin: 50px 0 60px;}
+.packProductDesc dt{font-size: 14px;font-weight: 700;margin-bottom: 17px;color: #343434;}
+.packProductDesc dd{color: #444;}
+.packProductDesc dd img {vertical-align: middle;}
+.packProductDesc .packProductList {overflow: hidden;line-height: 0;}
+.packProductDesc .packProductList li{float: left;margin-left: 26px;width: 420px;}
+.packProductDesc .packProductList li.first{margin-left: 0;}
+.packProductDesc .packProductWarn{line-height: 25px;padding-left: 2px;color: #444;margin: 15px 0 5px;}
+.packProductDesc>ul{overflow: hidden;}
+.packProductDesc>ul>li{float: left;margin-left: 26px;width: 420px;}
+.packProductDesc>ul>li.first{margin-left: 0;}
+.packProductDesc .descImg{line-height: 0;font-size: 0;margin-bottom: 10px;}
+.packProductDesc .descTxt{line-height: 25px;}
+.buList{margin: 15px 0 0;}
+.buList li{background:url(../../images/ko/mem/main/bul02.gif) no-repeat 0 8px;padding-left: 10px;}
+.buList.multiLow li+li{margin-top: 10px;}
+.packTable .txtIndent{display: inline-block;width: 89px;}
+.facilitInfo{margin: 0 0 14px;color: #444;}
+.facilityDesc {margin: 0 0 60px}
+.facilityDesc dt{font-size: 16px;font-weight: 700;margin-bottom: 17px;color: #343434;}
+.facilityDesc dd{color: #444;margin: 0 0 17px;}
+.facilityDesc .rwLinkBox{overflow: hidden;border: 1px solid #eaeaea;padding: 25px 30px 5px;}
+.facilityDesc .rwLinkBox li{float: left;width: 32%;margin: 0 0 20px;background:url(../../images/ko/mem/main/bul02.gif) no-repeat 0 8px;padding-left: 10px;}
+.facilityDesc .rwLinkBox li a{color: #856f56;text-decoration: underline;}
+.useInfo{border: 1px solid #f4eee3;background: #fdf8ef;color: #444;padding: 25px 30px;margin: 0 0 30px;}
+.useInfo dt{font-size: 14px;font-weight: 700;margin: 25px 0 14px;}
+.useInfo dl dt:first-child{margin-top: 0;}
+.useInfo dd{line-height: 22px;color: #444}
+.useInfo dt.first{margin-top: 0;}
+.useInfo ul>li{background:url(../../images/ko/mem/main/bul02.gif) no-repeat 0 8px;padding-left: 10px;margin: 0 0 2px;line-height: 20px;}
+.useInfo ul>li>ul{margin: 4px 0 0;}
+.useInfo ul>li>ul>li{background: none;padding-left: 0;}
+.rwMem{line-height: 0;font-size: 0;margin: 0 0 60px}
+.packRequest{position: relative;overflow: hidden;padding: 30px 0 90px;border-top: 3px solid #a1886f;color: #444;}
+.packRequest dt{float: left;margin: 0 10px 0 0;}
+.packRequest .packTel:after{content: '';display: inline-block;width: 1px;height: 11px;background: #ccc;margin: 0 10px 0;position: relative; top: 1px;}
+.packRequest .packContactRight{position: absolute;top: 20px;right: 0;}
+.packRequest .packContactRight .btnGoPkgList{ background:url(../../images/ko/mem/specialoffers/packageViewBtnGoList.gif) no-repeat; width:86px; height:27px; display:inline-block; vertical-align:middle; line-height:100px; overflow:hidden;margin-left: 5px;}
+.packRequest .packContactRight .btnReservation{ background:url(../../images/ko/mem/specialoffers/packageViewBtnRsv.gif) no-repeat; width:86px; height:27px; display:inline-block; vertical-align:middle; line-height:100px; overflow:hidden;}
+.benefitTbl {border-top: 1px solid #cdcbbe;}
+.benefitTbl table{border-collapse:collapse;width: 100%;}
+.benefitTbl th{background: #faf9f4;border-bottom: 1px solid #cdcbbe;font-size: 14px;font-weight: 700;color: #856f56;text-align: center;padding: 25px 30px;line-height:160%}/*2018 행간 추가*/
+.benefitTbl td{border-bottom: 1px solid #cdcbbe;border-left: 1px solid #eceae1;padding: 25px 30px;color:#444;height: 50px;line-height:160%}/*2018 행간 추가*/
+.benefitTbl .tblPrice span{display: block;line-height: 25px;color:#444;}
+.benefitTbl .tblPrice span+span{margin-top: 10px;}
+.benefitTbl .tblPrice span strong{font-size: 14px;font-weight: 700;}
+.benefitTbl .tblList li{background:url(../../images/ko/mem/main/bul02.gif) no-repeat 0 7px;padding-left: 10px;line-height: 20px;}
+.benefitTbl .tblList li+li{margin-top: 5px;}
+/*리워즈 스테이 패키지상품 內 예약하기*/
+.resList{margin-bottom: 50px;}
+.resList dt{font-size: 16px;font-weight: 700;line-height:1;margin: 0 0 20px;}
+.resList ul>li{overflow:hidden;margin-right:-10px;}
+.resList .branch-tc{width:378px;float:left;border:1px solid #eaeae2;padding: 13px 20px 13px 28px;margin:0 10px 10px 0;}
+.resList .branch-tc .branch-c1{display:inline-block;float:left;width:280px;line-height:27px;font-size:14px;color:#22211d;font-weight:700;text-decoration:none;}
+.resList .branch-tc .branch-c2{display:none;float:left;width:156px;line-height:27px;color: #414141;}
+.resList .branch-tc .branch-c3{display:inline-block;float:right;width:85px;}
+.resList .branch-tc .branch-c3 .btnReservation{background:url(../../images/ko/mem/specialoffers/packageViewBtnRsv.gif) no-repeat; width:86px; height:27px; display:inline-block; vertical-align:middle; line-height:100px; overflow:hidden;}
+.resList .branch-tc.ty01{width:232px;}
+.resList .branch-tc.ty01 .branch-c1{width:150px;text-decoration:none;}

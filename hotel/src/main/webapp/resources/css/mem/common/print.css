@@ -1,0 +1,11 @@
+/* CSS Document */
+.head,
+.topVisual,
+.lnbArea,
+.foot,
+.tempLinkList,
+.keepArea { display: none; }
+.contain { padding: 0 !important; }
+.contain .container { margin: 0 !important; width:100%;}
+.contents { float: left; }
+
