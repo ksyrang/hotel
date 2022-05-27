@@ -37,11 +37,15 @@
 		</tr>
 		</thead>
 		<tr>
-			<td>dauen1</td>
+			<td><a href="admin_index?formpath=userInfo">dauen1</a></td>
 			<td>신다은(Shin DaEun)</td>
 			<td>1999.07.06</td>
 			<td>010-5620-1321</td>
 			<td>dauen1@naver.com</td>
+			<td style="width:100px;">
+			<input type="button" value="수정" class="listBtn">
+			<input type="button" value="삭제" class="listBtn">
+			</td>
 		</tr>
 		<tr>
 			<td>isddke22</td>
@@ -49,6 +53,10 @@
 			<td>1983.10.24</td>
 			<td>010-8372-1475</td>
 			<td>isddke22@gmail.com</td>
+			<td>
+			<input type="button" value="수정" class="listBtn">
+			<input type="button" value="삭제" class="listBtn">
+			</td>
 		</tr>
 	</table><br>
 	<b>총 회원수 : 2명</b>

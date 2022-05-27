@@ -67,6 +67,13 @@ public class HomeController {
 		return "admin/admin_userList";
 	}
 	
+	/* 회원 정보 */
+	@RequestMapping(value="userInfo", method = RequestMethod.GET)
+	public String admin_userInfo() {
+		logger.info("admin_userInfo");
+		return "admin/admin_userInfo";
+	}
+	
 	/*admin end*/
 	
 }

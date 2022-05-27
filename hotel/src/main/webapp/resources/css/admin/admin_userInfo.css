@@ -1,0 +1,9 @@
+@charset "UTF-8";
+
+.admin_userInfoTopLeft {float: left; padding-left: 50px; margin-bottom: 20px; font-size: 25px;} 
+.admin_userInfoTopRight {text-align: right; padding-right: 50px;}
+
+.admin_userInfoTableDiv {clear: left;}
+.admin_userInfoTable {width: 900px; height:500px; margin: auto; color:#907a61;}
+.admin_userInfoTable th {text-align: left; width: 70px;}
+.admin_userInfoTable td {background-color: #fef7f0; border: none; text-align: center;}
