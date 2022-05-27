@@ -12,13 +12,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-public class MemLoginJoinController {
+public class MemJoinSuccessController {
 	
-	private static final Logger logger = LoggerFactory.getLogger(MemLoginJoinController.class);
+	private static final Logger logger = LoggerFactory.getLogger(MemJoinSuccessController.class);
 
 	
-	@RequestMapping(value = "/memLoginJoinForm", method = RequestMethod.GET)
-	public String memLoginJoinForm(Locale locale, Model model) {
+	@RequestMapping(value = "/memJoinSuccessForm", method = RequestMethod.GET)
+	public String memJoinSuccessForm(Locale locale, Model model) {
 		logger.info("Welcome home! The client locale is {}.", locale);
 		
 		Date date = new Date();
@@ -28,6 +28,6 @@ public class MemLoginJoinController {
 		
 		model.addAttribute("serverTime", formattedDate );
 		
-		return "memLoginJoinForm";
+		return "memJoinSuccessForm";
 	}
 }	
