@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.care.hotel.resourceDAO.hotelDAO">
+
+
+
+	<select id="hotelCount" resultType="int">
+		SELECT count(*) FROM hotel
+	</select>
+	<select id="hotelList" resultType="com.care.hotel.resourceDTO.hotelDTO">
+		SELECT B.* FROM(
+			SELECT rownum rn, A.* FROM( 
+				SELECT * FROM hotel 
+				<choose>
+					<when test="sel == 'id'">
+						WHERE id like '%'||#{search}||'%'
+					</when>
+					<when test="sel == 'email'">
+						WHERE email like '%'||#{search}||'%'
+					</when>
+				</choose>
+			)A
+		)B WHERE rn BETWEEN #{b} and #{e}
+	</select>
+
+
+
+
+</mapper>
