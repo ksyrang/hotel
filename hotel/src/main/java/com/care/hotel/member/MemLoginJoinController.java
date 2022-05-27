@@ -1,4 +1,4 @@
-package com.care.hotel.login;
+package com.care.hotel.member;
 
 import java.text.DateFormat;
 import java.util.Date;
@@ -12,13 +12,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-public class MemLoginAgreeController {
+public class MemLoginJoinController {
 	
-	private static final Logger logger = LoggerFactory.getLogger(MemLoginAgreeController.class);
+	private static final Logger logger = LoggerFactory.getLogger(MemLoginJoinController.class);
 
 	
-	@RequestMapping(value = "/memLoginAgreeForm", method = RequestMethod.GET)
-	public String memLoginAgreeForm(Locale locale, Model model) {
+	@RequestMapping(value = "/memLoginJoinForm", method = RequestMethod.GET)
+	public String memLoginJoinForm(Locale locale, Model model) {
 		logger.info("Welcome home! The client locale is {}.", locale);
 		
 		Date date = new Date();
@@ -28,6 +28,6 @@ public class MemLoginAgreeController {
 		
 		model.addAttribute("serverTime", formattedDate );
 		
-		return "memLoginAgreeForm";
+		return "memLoginJoinForm";
 	}
 }	
