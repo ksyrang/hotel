@@ -36,4 +36,14 @@ public class HomeController {
 		return "home";
 	}
 	
+	@RequestMapping("main_header")
+	public String main_header() {
+		return "main_header";
+	}
+	
+	@RequestMapping("main_footer")
+	public String main_footer() {
+		return "main_footer";
+	}
+	
 }
