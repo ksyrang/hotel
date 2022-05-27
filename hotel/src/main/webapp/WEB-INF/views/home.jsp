@@ -1719,17 +1719,17 @@ function fncGoResv(){
 	<ul class="slides">
 <li class="first flex-active-slide" style="width: 100%; float: left; margin-right: -100%; position: relative; opacity: 0.953522; display: block; z-index: 2;">
 						<a href="https://www.shillahotels.com/membership/offers/pack/memViewRewardsPack.do?spofrId=24978">
-							<img class="img" src="/images/contents/main/MAIN_HUB/R0000001JH7P_KR.jpg" alt="[서울신라호텔] Rewards Urban Island - 따스한 햇살이 드리우는 어번 아일랜드 온수풀에서 봄날의 휴식을 즐겨보세요." draggable="false">
+							<img class="img" src="${pageContext.request.contextPath}/images/contents/main/MAIN_HUB/R0000001JH7P_KR.jpg" alt="[서울신라호텔] Rewards Urban Island - 따스한 햇살이 드리우는 어번 아일랜드 온수풀에서 봄날의 휴식을 즐겨보세요." draggable="false">
 						</a>
 					</li>
 <li style="width: 100%; float: left; margin-right: -100%; position: relative; opacity: 0; display: block; z-index: 1;" class="">
 						<a href="https://www.shillahotels.com/membership/offers/pack/memViewRewardsPack.do?spofrId=25948">
-							<img class="img" src="/images/contents/main/MAIN_HUB/R0000001L09O_KR.jpg" alt="[제주신라호텔] 서머 로맨스 -[2박 이상] 제주신라호텔에서 반짝이는 별빛 아래 여름날의 로맨스를 만들어 보세요." draggable="false">
+							<img class="img" src="${pageContext.request.contextPath}/images/contents/main/MAIN_HUB/R0000001L09O_KR.jpg" alt="[제주신라호텔] 서머 로맨스 -[2박 이상] 제주신라호텔에서 반짝이는 별빛 아래 여름날의 로맨스를 만들어 보세요." draggable="false">
 						</a>
 					</li>
 <li class="last" style="width: 100%; float: left; margin-right: -100%; position: relative; opacity: 0.046478; display: block; z-index: 1;">
 						<a href="https://www.shillahotels.com/membership/offers/pack/memViewRewardsPack.do?spofrId=24884">
-							<img class="img" src="/images/contents/main/MAIN_HUB/R0000001JH7F_KR.jpg" alt="[신라스테이] 신라스테이 Rewards The Freestyle Lounge 1705- 아늑하고 감성적으로 꾸며진 온돌 콘셉트룸에서 삼성전자 더 프리스타일과 함께 특별한 시간을 보내세요" draggable="false">
+							<img class="img" src="${pageContext.request.contextPath}/images/contents/main/MAIN_HUB/R0000001JH7F_KR.jpg" alt="[신라스테이] 신라스테이 Rewards The Freestyle Lounge 1705- 아늑하고 감성적으로 꾸며진 온돌 콘셉트룸에서 삼성전자 더 프리스타일과 함께 특별한 시간을 보내세요" draggable="false">
 						</a>
 					</li>
 </ul>
