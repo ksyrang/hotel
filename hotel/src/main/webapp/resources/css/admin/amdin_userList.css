@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+/* admin_userList */
+.admin_main {margin:auto; width: 1000px; margin-bottom: 20px; margin-top: 20px;}
+.admin_userCombo {height: 50px; margin-top: 10px; margin-left: 10px;}
+.admin_userCombobox {height: 25px;}
+
+.admin_userSearchTxt {height: 25px;}
+.admin_userSearchBtn {height: 25px; width: 50px; background-color: #f1e3c4;}
+
+
+.admin_userTable {width: 1000px; border: 1px solid; border-color: #61380B; border-collapse: collapse;}
+.admin_userTable th, td {border: 1px solid; border-color: #61380B}
+.admin_userTable th {height: 30px;}
+.admin_userTable td {text-align: center; height: 20px;}

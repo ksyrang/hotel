@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+/* admin_header */
+.amdin_header {background-color: #f1e3c4; height: 150px;}
+
+.admin_logo {float: left; padding-left: 40%;}
+.logo {width:200px; margin-top: 20px;}
+
+.admin_header_top {color:#907a61; text-align: right; margin-left: 10%; margin-right: 10%; padding-top: 10px;}
+
+/* admin_nav */
+.admin_nav {background-color: #f1e3c4; clear:left; padding-top: 25px; text-align: center;}
+.admin_nav a {color:#80715c; font-size: 17px; font-weight: 900; }
+.nav_margin {margin-left: 140px;}

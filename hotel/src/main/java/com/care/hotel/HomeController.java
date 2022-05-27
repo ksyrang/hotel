@@ -46,4 +46,27 @@ public class HomeController {
 		return "main_footer";
 	}
 	
+	/* admin start*/
+	@RequestMapping(value="admin")
+	public String admin_index(Model model) {
+		logger.info("admin_index");
+		model.addAttribute("formpath", "admin_index");
+		return "admin/admin_index";
+	}
+	
+	@RequestMapping(value="admin_index")
+	public void admin_index(String formpath, Model model) {
+		logger.info("admin_index?formpath="+formpath);
+		model.addAttribute("formpath", formpath);
+	}
+	
+	/* 회원 목록 */
+	@RequestMapping(value="userList", method = RequestMethod.GET)
+	public String admin_userList() {
+		logger.info("admin_userList");
+		return "admin/admin_userList";
+	}
+	
+	/*admin end*/
+	
 }
