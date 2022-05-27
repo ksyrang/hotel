@@ -1,0 +1,269 @@
+/*sc ì œì¼ì€í–‰ ì¶”ê°€*/
+.co_logo_sc {display: block; height: 212px;}
+
+
+/*Room Reservation*/
+
+/*Login*/
+.loginTit {display: block; height: 47px; border-bottom: 5px solid #432c10;}
+.loginTit .tit {background: url(../../images/ko/mem/main/subTitleJoin.gif) no-repeat 0px -43px; height: 47px; font-size:0; overflow:hidden; text-indent: -9999999px;}
+
+
+/*ë¹„íšŒì› ì˜ˆì•½í™•ì¸*/
+.noMemberTit {display: block; height: 47px; border-bottom: 5px solid #432c10;}
+.noMemberTit .tit {background: url(../../images/ko/mem/main/subTitleJoin.gif) no-repeat 0px -103px; height: 47px; font-size:0; overflow:hidden; text-indent: -9999999px;}
+
+
+/*ì‹ ë¼ë¦¬ì›Œì¦ˆ ë²ˆí˜¸ ì°¾ê¸°*/
+.numberSearchTit {display: block; height: 47px; border-bottom: 5px solid #432c10;}
+.numberSearchTit .tit {background: url(../../images/ko/mem/main/subTitleJoin.gif) no-repeat 0px -165px; height: 47px; font-size:0; overflow:hidden; text-indent: -9999999px;}
+
+
+/*ë¹„ë°€ë²ˆí˜¸ ì°¾ê¸°*/
+.passwordSearchTit {display: block; height: 47px; border-bottom: 5px solid #432c10;}
+.passwordSearchTit .tit {background: url(../../images/ko/mem/main/subTitleJoin.gif) no-repeat 0px -225px; height: 47px; font-size:0; overflow:hidden; text-indent: -9999999px;}
+
+/*ì˜¨ë¼ì¸ ê³„ì • í™œì„±í™”*/
+.onlineTit {display: block; height: 47px; border-bottom: 5px solid #432c10;}
+.onlineTit .tit {background: url(../../images/ko/mem/main/subTitleJoin.gif) no-repeat 0px -286px; height: 47px; font-size:0; overflow:hidden; text-indent: -9999999px;}
+
+
+/*Join*/
+.JoinTit {display: block; height: 47px; border-bottom: 5px solid #432c10;}
+.JoinTit .tit {background: url(../../images/ko/mem/main/subTitleJoin.gif) no-repeat 0px -343px; height: 47px; font-size:0; overflow:hidden; text-indent: -9999999px;}
+
+
+
+/*offers*/
+
+.rewardsOffersTit {display: block; height: 47px; border-bottom: 5px solid #432c10;}
+.rewardsOffersTit .tit {background: url(../../images/ko/mem/main/subTitleSpOffer.gif) no-repeat 0px 0px; height: 47px; font-size:0; overflow:hidden; text-indent: -9999999px;}
+
+
+.rewardsPackageTit {display: block; height: 47px; border-bottom: 5px solid #432c10;}
+.rewardsPackageTit .tit {background: url(../../images/ko/mem/main/subTitleSpOffer.gif) no-repeat 0px -48px; height: 47px; font-size:0; overflow:hidden; text-indent: -9999999px;}
+
+
+.rewardsEventTit {display: block; height: 47px; border-bottom: 5px solid #432c10;}
+.rewardsEventTit .tit {background: url(../../images/ko/mem/main/subTitleSpOffer.gif) no-repeat 0px -97px; height: 47px; font-size:0; overflow:hidden; text-indent: -9999999px;}
+
+
+/*my page*/
+
+.myAccountTit {display: block; height: 47px; border-bottom: 5px solid #432c10;}
+.myAccountTit .tit {background: url(../../images/ko/mem/main/subTitleMypage.gif) no-repeat 0px 0px; height: 47px; font-size:0; overflow:hidden; text-indent: -9999999px;}
+
+/* í”„ë¡œëª¨ì…˜ ìˆ™ë°•ê¶Œ*/
+.promotionTit {display: block; height: 47px; border-bottom: 5px solid #432c10;}
+.promotionTit .tit {background: url(../../images/ko/mem/main/subTitleMypage.gif) no-repeat 0px -653px; height: 47px; font-size:0; overflow:hidden; text-indent: -9999999px;}
+
+
+/*ì˜ˆì•½ í™•ì¸,ì·¨ì†Œ*/
+.myRservationTit {display: block; height: 47px; border-bottom: 5px solid #432c10;}
+.myRservationTit .tit {background: url(../../images/ko/mem/main/subTitleMypage.gif) no-repeat 0px -50px; height: 47px; font-size:0; overflow:hidden; text-indent: -9999999px;}
+
+/*í¬ì¸íŠ¸ ì¡°íšŒ*/
+.myPointsearchTit {display: block; height: 47px; border-bottom: 5px solid #432c10;}
+.myPointsearchTit .tit {background: url(../../images/ko/mem/main/subTitleMypage.gif) no-repeat 0px -98px; height: 47px; font-size:0; overflow:hidden; text-indent: -9999999px;}
+
+/*í¬ì¸íŠ¸ ì‚¬ìš© ì‹ ì²­*/
+.myPointuseTit {display: block; height: 47px; border-bottom: 5px solid #432c10;}
+.myPointuseTit .tit {background: url(../../images/ko/mem/main/subTitleMypage.gif) no-repeat 0px -147px; height: 47px; font-size:0; overflow:hidden; text-indent: -9999999px;}
+
+/*í¬ì¸íŠ¸ ì†Œê¸‰ì‹ ì²­*/
+.myPointretroactTit {display: block; height: 47px; border-bottom: 5px solid #432c10;}
+.myPointretroactTit .tit {background: url(../../images/ko/mem/main/subTitleMypage.gif) no-repeat 0px -201px; height: 47px; font-size:0; overflow:hidden; text-indent: -9999999px;}
+
+/*í”„ë¡œí•„ ìˆ˜ì •*/
+.myProfilemodifyTit {display: block; height: 47px; border-bottom: 5px solid #432c10;}
+.myProfilemodifyTit .tit {background: url(../../images/ko/mem/main/subTitleMypage.gif) no-repeat 0px -249px; height: 47px; font-size:0; overflow:hidden; text-indent: -9999999px;}
+
+
+
+
+
+
+
+/*ë¹„ë°€ë²ˆí˜¸ ë³€ê²½*/
+.myPasswordmodifyTit {display: block; height: 47px; border-bottom: 5px solid #432c10;}
+.myPasswordmodifyTit .tit {background: url(../../images/ko/mem/main/subTitleMypage.gif) no-repeat 0px -300px; height: 47px; font-size:0; overflow:hidden; text-indent: -9999999px;}
+
+/*ì‹ ë¼ë¦¬ì›Œì¦ˆ íƒˆíšŒìš”ì²­*/
+.mySecessionTit {display: block; height: 47px; border-bottom: 5px solid #432c10;}
+.mySecessionTit .tit {background: url(../../images/ko/mem/main/subTitleMypage.gif) no-repeat 0px -347px; height: 47px; font-size:0; overflow:hidden; text-indent: -9999999px;}
+
+/*ë¬¸ì˜ë‚´ì—­*/
+.myInquiryTit {display: block; height: 47px; border-bottom: 5px solid #432c10;}
+.myInquiryTit .tit {background: url(../../images/ko/mem/main/subTitleMypage.gif) no-repeat 0px -401px; height: 47px; font-size:0; overflow:hidden; text-indent: -9999999px;}
+
+/*í˜¸í…”ì´ë²¤íŠ¸ ì•ˆë‚´*/
+.myHoteleventTit {display: block; height: 47px; border-bottom: 5px solid #432c10;}
+.myHoteleventTit .tit {background: url(../../images/ko/mem/main/subTitleMypage.gif) no-repeat 0px -449px; height: 47px; font-size:0; overflow:hidden; text-indent: -9999999px;}
+
+/*ì¿ í°í•¨*/
+.ctnCouponTit {display: block; height: 47px; border-bottom: 5px solid #432c10;}
+.ctnCouponTit .tit {background: url(../../images/ko/mem/main/subTitleMypage.gif) no-repeat 0px -601px; height: 47px; font-size:0; overflow:hidden; text-indent: -9999999px;}
+
+/*ì‹ ë¼ ë¦¬ì›Œì¦ˆ ê°€ìž…*/
+.myRewardsjoinTit {display: block; height: 47px; /* border-bottom: 5px solid #432c10; */}
+.myRewardsjoinTit .tit {background: url(../../images/ko/mem/main/subTitleMypage.gif) no-repeat 0px -500px; height: 47px; font-size:0; overflow:hidden; text-indent: -9999999px;}
+
+/*ê°œì¸ì •ë³´ ë³´í˜¸ë¥¼ ìœ„í•œ ë¹„ë°€ë²ˆí˜¸ ë³€ê²½ ì•ˆë‚´*/
+.myPasswordmodify2Tit {display: block; height: 47px; border-bottom: 5px solid #432c10;}
+.myPasswordmodify2Tit .tit {background: url(../../images/ko/mem/main/subTitleMypage.gif) no-repeat 0px -552px; height: 47px; font-size:0; overflow:hidden; text-indent: -9999999px;}
+
+/*Shilla Rewards*/
+
+/*ì‹ ë¼ë¦¬ì›Œì¦ˆì˜ í˜œíƒ*/
+.rewardsBenefitTit {display: block; height: 47px; border-bottom: 5px solid #432c10;}
+.rewardsBenefitTit .tit {background: url(../../images/ko/mem/main/subTitleshillaRewards.gif) no-repeat 0px 0px; height: 47px; font-size:0; overflow:hidden; text-indent: -9999999px;}
+
+
+/*í¬ì¸íŠ¸ ì ë¦½/ì‚¬ìš©*/
+.rewardsPointTit {display: block; height: 47px; border-bottom: 5px solid #432c10;}
+.rewardsPointTit .tit {background: url(../../images/ko/mem/main/subTitleshillaRewards.gif) no-repeat 0px -45px; height: 47px; font-size:0; overflow:hidden; text-indent: -9999999px;}
+
+/*íšŒì›ì„ ìœ„í•œ ì´ë²¤íŠ¸*/
+.rewardsEventTit {display: block; height: 47px; border-bottom: 5px solid #432c10;}
+.rewardsEventTit .tit {background: url(../../images/ko/mem/main/subTitleshillaRewards.gif) no-repeat 0px -95px; height: 47px; font-size:0; overflow:hidden; text-indent: -9999999px;}
+
+
+/*í˜¸í…” íŒ¨í‚¤ì§€*/
+.hotelPackTit {display: block; height: 47px; border-bottom: 5px solid #432c10;}
+.hotelPackTit .tit {background: url(../../images/ko/mem/main/subTitleshillaRewards.gif) no-repeat 0px -144px; height: 47px; font-size:0; overflow:hidden; text-indent: -9999999px;}
+
+/*í˜¸í…” ì´ë²¤íŠ¸*/
+.hotelEventTit {display: block; height: 47px; border-bottom: 5px solid #432c10;}
+.hotelEventTit .tit {background: url(../../images/ko/mem/main/subTitleshillaRewards.gif) no-repeat 0px -195px; height: 47px; font-size:0; overflow:hidden; text-indent: -9999999px;}
+
+/*20150629 êµ¬ ë©¤ë²„ì‹­í¬ì¸íŠ¸ ì‚¬ìš©ì•ˆë‚´ íŽ˜ì´ì§€ ì¶”ê°€*/
+.oldMembershipTit {display: block; height: 47px; border-bottom: 5px solid #432c10;}
+.oldMembershipTit .tit {background: url(../../images/ko/mem/main/subTitleshillaRewards.gif) no-repeat 0px -252px; height: 47px; font-size:0; overflow:hidden; text-indent: -9999999px;}
+
+
+
+
+/*About THE SHILLA*/
+/*Overview*/
+.OverviewTit {display: block; height: 47px; border-bottom: 5px solid #432c10;}
+.OverviewTit .tit {background: url(../../images/ko/mem/main/subTitleAbout.gif) no-repeat 0px 0px; height: 47px; font-size:0; overflow:hidden; text-indent: -9999999px;}
+
+
+/*ì„œìš¸ì‹ ë¼í˜¸í…”*/
+.hotelSeoulTit {display: block; height: 47px; border-bottom: 5px solid #432c10;}
+.hotelSeoulTit .tit {background: url(../../images/ko/mem/main/subTitleAbout.gif) no-repeat 0px -65px; height: 47px; font-size:0; overflow:hidden; text-indent: -9999999px;}
+
+
+/*ì œì£¼ì‹ ë¼í˜¸í…”*/
+.hotelJejuTit {display: block; height: 47px; border-bottom: 5px solid #432c10;}
+.hotelJejuTit .tit {background: url(../../images/ko/mem/main/subTitleAbout.gif) no-repeat 0px -125px; height: 47px; font-size:0; overflow:hidden; text-indent: -9999999px;}
+
+
+/*ì‹ ë¼ìŠ¤í…Œì´*/
+.hotelStayTit {display: block; height: 47px; border-bottom: 5px solid #432c10;}
+.hotelStayTit .tit {background: url(../../images/ko/mem/main/subTitleAbout.gif) no-repeat 0px -185px; height: 47px; font-size:0; overflow:hidden; text-indent: -9999999px;}
+
+/*ì‹ ë¼ëª¨ë…¸ê·¸ëž¨*/
+.hotelMonoTit {display: block; height: 47px; border-bottom: 5px solid #432c10;}
+.hotelMonoTit .tit {background: url(../../images/ko/mem/main/subTitleAbout.gif) no-repeat 0px -1388px; height: 47px; font-size:0; overflow:hidden; text-indent: -9999999px;}
+
+
+
+/*Awards*/
+.hotelAwardsTit {display: block; height: 47px; border-bottom: 5px solid #432c10;}
+.hotelAwardsTit .tit {background: url(../../images/ko/mem/main/subTitleAbout.gif) no-repeat 0px -241px; height: 47px; font-size:0; overflow:hidden; text-indent: -9999999px;}
+
+
+
+/*Contact Us*/
+.hotelContactTit {display: block; height: 47px; border-bottom: 5px solid #432c10;}
+.hotelContactTit .tit {background: url(../../images/ko/mem/main/subTitleAbout.gif) no-repeat 0px -303px; height: 47px; font-size:0; overflow:hidden; text-indent: -9999999px;}
+
+
+/*ì‹ ë¼ë¦¬ì›Œì¦ˆ ë¬¸ì˜*/
+.shillarewardsInquiryTit {display: block; height: 47px; border-bottom: 5px solid #432c10;}
+.shillarewardsInquiryTit .tit {background: url(../../images/ko/mem/main/subTitleAbout.gif) no-repeat 0px -1321px; height: 47px; font-size:0; overflow:hidden; text-indent: -9999999px;}
+
+
+
+/*ì‹ ë¼í˜¸í…” ì´ìš©ë¬¸ì˜*/
+.shillahotelInquiryTit {display: block; height: 47px; border-bottom: 5px solid #432c10;}
+.shillahotelInquiryTit .tit {background: url(../../images/ko/mem/main/subTitleAbout.gif) no-repeat 0px -424px; height: 47px; font-size:0; overflow:hidden; text-indent: -9999999px;}
+
+
+
+/*ì‹ ë¼ìŠ¤í…Œì´ ì´ìš©ë¬¸ì˜*/
+.shillastayInquiryTit {display: block; height: 47px; border-bottom: 5px solid #432c10;}
+.shillastayInquiryTit .tit {background: url(../../images/ko/mem/main/subTitleAbout.gif) no-repeat 0px -484px; height: 47px; font-size:0; overflow:hidden; text-indent: -9999999px;}
+
+
+/*Sitemap*/
+.SitemapTit {display: block; height: 47px; border-bottom: 5px solid #432c10;}
+.SitemapTit .tit {background: url(../../images/ko/mem/main/subTitleAbout.gif) no-repeat 0px -544px; height: 47px; font-size:0; overflow:hidden; text-indent: -9999999px;}
+
+
+/*ì‹ ë¼ë¦¬ì›Œì¦ˆ ì•½ê´€*/
+.shillarewardsTwentyTit {display: block; height: 47px; border-bottom: 5px solid #432c10;}
+.shillarewardsTwentyTit .tit {background: url(../../images/ko/mem/main/subTitleAbout.gif) no-repeat 0px -605px; height: 47px; font-size:0; overflow:hidden; text-indent: -9999999px;}
+
+
+/*ê°œì¸ì •ë³´ì·¨ê¸‰ë°©ì¹¨*/
+.individualPolicyTit {display: block; height: 47px; border-bottom: 5px solid #432c10;}
+.individualPolicyTit .tit {background: url(../../images/ko/mem/main/subTitleAbout.gif) no-repeat 0px -665px; height: 47px; font-size:0; overflow:hidden; text-indent: -9999999px;}
+
+
+/*ì´ë©”ì¼ë¬´ë‹¨ìˆ˜ì§‘ê¸ˆì§€*/
+.emailADTit {display: block; height: 47px; border-bottom: 5px solid #432c10;}
+.emailADTit .tit {background: url(../../images/ko/mem/main/subTitleAbout.gif) no-repeat 0px -726px; height: 47px; font-size:0; overflow:hidden; text-indent: -9999999px;}
+
+
+/*ì˜ìƒì •ë³´ì²˜ë¦¬ê¸°ê¸° ìš´ì˜ë°©ì¹¨*/
+.managePolicyTit {display: block; height: 47px; border-bottom: 5px solid #432c10;}
+.managePolicyTit .tit {background: url(../../images/ko/mem/main/subTitleAbout.gif) no-repeat 0px -786px; height: 47px; font-size:0; overflow:hidden; text-indent: -9999999px;}
+
+
+/*The Shilla shop*/
+.shillShopTit {display: block; height: 47px; border-bottom: 5px solid #432c10;}
+.shillShopTit .tit {background: url(../../images/ko/mem/main/subTitleAbout.gif) no-repeat 0px -842px; height: 47px; font-size:0; overflow:hidden; text-indent: -9999999px;}
+
+
+
+/*ì‚¼ì„±ìƒí’ˆê¶Œ*/
+.samsungTit {display: block; height: 47px; border-bottom: 5px solid #432c10;}
+.samsungTit .tit {background: url(../../images/ko/mem/main/subTitleAbout.gif) no-repeat 0px -905px; height: 47px; font-size:0; overflow:hidden; text-indent: -9999999px;}
+
+
+
+/*ìœ¤ë¦¬ê²½ì˜*/
+.moraleTit {display: block; height: 47px; border-bottom: 5px solid #432c10;}
+.moraleTit .tit {background: url(../../images/ko/mem/main/subTitleAbout.gif) no-repeat 0px -965px; height: 47px; font-size:0; overflow:hidden; text-indent: -9999999px;}
+
+/*ê³ ê°ë¬¸ì˜*/
+.customerCenterTit {display: block; height: 47px; border-bottom: 5px solid #432c10;}
+.customerCenterTit .tit {background: url(../../images/ko/mem/main/subTitleAbout.gif) no-repeat 0px -1260px; height: 47px; font-size:0; overflow:hidden; text-indent: -9999999px;}
+
+/*20150629 ì¶”ê°€ íŽ˜ì´ì§€ ì‹ ë¼ë¦¬ì›Œì¦ˆ ì „í™˜ ì•ˆë‚´*/
+.ShillRChangeTit {display: block; height: 47px; border-bottom: 5px solid #432c10;}
+.ShillRChangeTit .tit {background: url(../../images/ko/mem/main/subTitleAbout.gif) no-repeat 0px -1082px; height: 47px; font-size:0; overflow:hidden; text-indent: -9999999px;}
+
+
+/*2016-01-18 í˜¸í…”ê°œë°œ íƒ€ì´í‹€ ì‹ ê·œ ì¶”ê°€*/
+.shillarewardsDevTit {display: block; height: 47px; border-bottom: 5px solid #432c10;}
+.shillarewardsDevTit .tit {background: url(../../images/ko/mem/main/subTitleAbout.gif) no-repeat 0px -1145px; height: 47px; font-size:0; overflow:hidden; text-indent: -9999999px;}
+
+/*ê¸°íƒ€ ë“±ë“± ë©”ë‰´ì— ì—†ëŠ” ì• ë“¤*/
+
+
+
+/*íšŒì‚¬ì†Œê°œ*/
+/*ë¸Œëžœë“œ ì†Œê°œ*/
+/*.hotelEventTit {display: block; height: 47px; border-bottom: 5px solid #432c10;}
+.hotelEventTit .tit {background: url(../images/ko/mem/main/subTitleshillaRewards.gif) no-repeat 0px -195px; height: 47px; font-size:0; overflow:hidden; text-indent: -9999999px;}*/
+
+/* 2019-08-27 */
+/* ì‹ ë¼ë¦¬ì›Œì¦ˆ ê°ì‹¤íŒ¨í‚¤ì§€ */
+.rewardsPackageTit2.new_2019 {display: block; height: 47px; border-bottom: 5px solid #432c10;}
+.rewardsPackageTit2.new_2019 .tit {background:url(../../images/ko/mem/main/subTitleSpOffer.gif) no-repeat 0px -152px; height: 47px; font-size:0; overflow:hidden; text-indent: -9999999px;}
+/* ì‹ ë¼ë¦¬ì›Œì¦ˆ ì´ë²¤íŠ¸ */
+.rewardsEventTit2.new_2019 {display: block; height: 47px; border-bottom: 5px solid #432c10;}
+.rewardsEventTit2.new_2019 .tit {background:url(../../images/ko/mem/main/subTitleSpOffer.gif) no-repeat 0px -202px; height: 47px; font-size:0; overflow:hidden; text-indent: -9999999px;}
