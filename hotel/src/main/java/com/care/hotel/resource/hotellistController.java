@@ -15,14 +15,14 @@ public class hotellistController {
 	@Autowired IhotelresourceSvc hotellistSVC;
 	
 	
-	@ResponseBody
+
 	@RequestMapping("hotellistProc")
-	public void hotelList(Model model, 
+	public String hotelList(Model model, 
 			@RequestParam(value = "currentPage", required = false, defaultValue = "1") int currentPage,
 			String select, String search) {
 		
 		hotellistSVC.hotelList(currentPage, select, search);//서비스 내부에서 session에 데이터를 업로드함
-//		return "amdin/hotel/hotellistForm";
+		return "forward:/admin_index?formpath=admin_hotelList";
 	}
 	
 	

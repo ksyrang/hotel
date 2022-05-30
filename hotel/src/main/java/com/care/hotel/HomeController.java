@@ -8,6 +8,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -72,6 +73,11 @@ public class HomeController {
 	public String admin_userInfo() {
 		logger.info("admin_userInfo");
 		return "admin/admin_userInfo";
+	}
+	@GetMapping("admin_hotelList")
+	public String admin_hotelList() {
+		
+		return "admin/hotel/hotellistForm";
 	}
 	
 	/*admin end*/
