@@ -11,5 +11,6 @@ public interface IhotelDAO {
 	ArrayList<hotelDTO> hotelList(@Param("b")int begin, @Param("e")int end, 
 			@Param("sel")String select, @Param("search")String search);
 	
+	ArrayList<hotelDTO> testhotelList();
 	int hotelCount();
 }

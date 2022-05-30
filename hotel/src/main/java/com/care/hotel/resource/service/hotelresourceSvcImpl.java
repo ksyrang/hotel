@@ -7,6 +7,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.care.hotel.common.PageService;
 import com.care.hotel.resourceDAO.IhotelDAO;
 import com.care.hotel.resourceDTO.hotelDTO;
 
@@ -26,8 +27,19 @@ public class hotelresourceSvcImpl implements IhotelresourceSvc{
 		ArrayList<hotelDTO> list = hotelDAO.hotelList(begin, end, select, search);
 		session.setAttribute("hotelList", list);
 		String url = "/hotel/hotellistProc?currentPage=";
-//		session.setAttribute("page", PageService.getNavi(currentPage, pageBlock, totalCount, url));
+		session.setAttribute("page", PageService.getNavi(currentPage, pageBlock, totalCount, url));
 	}
+//	@Override
+//	public void listtest() {
+//		ArrayList<hotelDTO> list = hotelDAO.testhotelList();
+//		for(hotelDTO DTO : list) {
+//			System.out.println(DTO.getHotelId());
+//			System.out.println(DTO.getHotelName());
+//			System.out.println(DTO.getPhoneNumber());
+//			System.out.println(DTO.getEmail());
+//		}
+//		session.setAttribute("hotelList", list);
+//	}
 	
 
 }

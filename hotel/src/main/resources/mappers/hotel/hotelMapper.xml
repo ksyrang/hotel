@@ -3,10 +3,11 @@
 <mapper namespace="com.care.hotel.resourceDAO.IhotelDAO">
 
 
-
+<!-- 호텔 테이블 내 row 개수  -->
 	<select id="hotelCount" resultType="int">
 		SELECT count(*) FROM hotel
 	</select>
+	<!-- 리스트 블러오기  -->
 	<select id="hotelList" resultType="com.care.hotel.resourceDTO.hotelDTO">
 		SELECT B.* FROM(
 			SELECT rownum rn, A.* FROM( 
@@ -22,7 +23,9 @@
 			)A
 		)B WHERE rn BETWEEN #{b} and #{e}
 	</select>
-
+	<select id="testhotelList" resultType="com.care.hotel.resourceDTO.hotelDTO">
+		SELECT * FROM hotel
+	</select>
 
 
 

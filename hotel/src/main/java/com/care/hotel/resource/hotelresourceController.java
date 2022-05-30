@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.care.hotel.resource.service.IhotelresourceSvc;
 
 @Controller
-public class hotellistController {
+public class hotelresourceController {
 	
 	@Autowired IhotelresourceSvc hotellistSVC;
 	
@@ -22,6 +22,7 @@ public class hotellistController {
 			String select, String search) {
 		
 		hotellistSVC.hotelList(currentPage, select, search);//서비스 내부에서 session에 데이터를 업로드함
+//		hotellistSVC.listtest();
 		return "forward:/admin_index?formpath=admin_hotelList";
 	}
 	

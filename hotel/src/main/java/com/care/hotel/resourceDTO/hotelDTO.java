@@ -4,10 +4,10 @@ public class hotelDTO {
 	private String hotelId;
 	private String hotelName;
 	private String zipCode;
-	private String hotelAddr1;
-	private String hotelAddr2;
+	private String Addr1;
+	private String Addr2;
 	private String phoneNumber;
-	private String emailNumber;
+	private String email;
 	
 	public String getHotelId() {
 		return hotelId;
@@ -27,17 +27,17 @@ public class hotelDTO {
 	public void setZipCode(String zipCode) {
 		this.zipCode = zipCode;
 	}
-	public String getHotelAddr1() {
-		return hotelAddr1;
+	public String getAddr1() {
+		return Addr1;
 	}
-	public void setHotelAddr1(String hotelAddr1) {
-		this.hotelAddr1 = hotelAddr1;
+	public void setAddr1(String addr1) {
+		Addr1 = addr1;
 	}
-	public String getHotelAddr2() {
-		return hotelAddr2;
+	public String getAddr2() {
+		return Addr2;
 	}
-	public void setHotelAddr2(String hotelAddr2) {
-		this.hotelAddr2 = hotelAddr2;
+	public void setAddr2(String addr2) {
+		Addr2 = addr2;
 	}
 	public String getPhoneNumber() {
 		return phoneNumber;
@@ -45,13 +45,13 @@ public class hotelDTO {
 	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
-	public String getEmailNumber() {
-		return emailNumber;
+	public String getEmail() {
+		return email;
 	}
-	public void setEmailNumber(String emailNumber) {
-		this.emailNumber = emailNumber;
+	public void setEmail(String email) {
+		this.email = email;
 	}
-	
+
 	
 
 }
