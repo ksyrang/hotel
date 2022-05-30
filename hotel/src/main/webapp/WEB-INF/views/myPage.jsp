@@ -327,7 +327,7 @@
 	  <!-- 로그인 -->
 	  <span class="loginArea">
 		<a href="javascript:ssoLogout();">로그아웃</a>
-		<a href="/membership/mypage/account/listAccount.do">마이페이지</a>
+		<a href="/hotel/myPage">마이페이지</a>
 		</span>
 	  <!-- 예약확인 추가 -->
 	  <div class="resvConfirm">
@@ -337,7 +337,7 @@
 					  <li class="dn1 first last">
 						  <ul class="listSt">
 							  <li class="st first st1">
-								  <a href="/membership/mypage/resv/memListResv.do"><span>객실<!-- 객실 --></span></a>
+								  <a href="/hotel/memListResv"><span>객실<!-- 객실 --></span></a>
 							  </li>
 							  <li class="st last st2">
 							  	  <a href="/fbresv/web/memDiningListResv.do"><span>다이닝<!-- 다이닝 --></span></a>
@@ -545,7 +545,7 @@
 	        <li class="first"><span class="hMenu1"><a href="/membership/inquires/aboutShilla/memOverView.do">호텔신라 소개</a></span></li>
 	        <li><span class="hMenu2"><a href="/membership/inquires/contactus/memIndex.do">고객문의</a></span></li>
 	        <li class="last"><span class="hMenu3">
-			<a href="/membership/offers/pack/memListRewardsPack.do">신라리워즈</a>
+			<a href="/hotel/myPage">신라리워즈</a>
 				</span>
 	        </li>
 	    </ul>
@@ -562,7 +562,7 @@
 					<ul class="menu">
 						<li class="m1 first">
 							<!-- 선택시 a태그에 class="on" -->
-							<a href="/membership/mypage/account/listAccount.do" class="on">
+							<a href="/hotel/myPage" class="on">
 								<span>신라리워즈 등급 및 포인트</span>
 							</a>
 						</li>
@@ -570,7 +570,7 @@
 							<a><span>예약 확인/취소</span></a>
 							<ul class="sMenu">
 								<li class="s1 first">
-									<a href="/membership/mypage/resv/memListResv.do">
+									<a href="/hotel/memListResv">
 										<span>객실/패키지</span>
 									</a>
 								</li>
@@ -618,22 +618,22 @@
 							<a><span>내정보</span></a>
 							<ul class="sMenu">
 								<li class="s1 first">
-									<a href="/membership/mypage/mbr/memSetPwCnfm.do">
+									<a href="/hotel/memSetPwCnfm">
 										<span>프로필 수정</span>
 									</a>
 								</li>
 								<li class="s2">
-									<a href="/membership/mypage/mbr/memSetPwMod.do">
+									<a href="/hotel/memSetPwMod">
 										<span>비밀번호 변경</span>
 									</a>
 								</li>
 								<li class="s3">
-									<a href="/membership/mypage/ask/memListAsk.do">
+									<a href="/hotel/memListAsk">
 										<span>문의 내역</span>
 									</a>
 								</li>
 								<li class="s4 last">
-									<a href="/membership/mypage/mbr/memSetPwDropfm.do?gubun=t">
+									<a href="/hotel/memSetPwDropfm?gubun=t">
 										<span>탈회요청</span>
 									</a>
 								</li>

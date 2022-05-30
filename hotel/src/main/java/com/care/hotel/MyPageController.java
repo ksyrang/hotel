@@ -39,4 +39,9 @@ private static final Logger logger = LoggerFactory.getLogger(MyPageController.cl
 	public String memDiningListResv() {
 		return "memDiningListResv";
 	}
+	
+	@RequestMapping("memSetPwCnfm")
+	public String memSetPwCnfm() {
+		return "memSetPwCnfm";
+	}
 }
