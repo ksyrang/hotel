@@ -16,6 +16,7 @@
 			<td style="width: 180px; height:20px;" align="center"><hr/></td>
 			<td style="width: 400px; height:20px;" align="center"><hr/></td>
 			<td style="width: 70px; height:20px;" align="center"><hr/></td>
+			<td style="width: 70px; height:20px;" align="center"><hr/></td>
 		</tr>
 		<c:forEach items="${hotel_List }">
 			<tr>

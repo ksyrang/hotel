@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.care.hotel.resource.service.IhotelresourceSvc;
 
@@ -13,13 +14,15 @@ public class hotellistController {
 	
 	@Autowired IhotelresourceSvc hotellistSVC;
 	
-	@RequestMapping("hotellistProcedure")
-	public String hotelList(Model model, 
+	
+	@ResponseBody
+	@RequestMapping("hotellistProc")
+	public void hotelList(Model model, 
 			@RequestParam(value = "currentPage", required = false, defaultValue = "1") int currentPage,
 			String select, String search) {
 		
 		hotellistSVC.hotelList(currentPage, select, search);//서비스 내부에서 session에 데이터를 업로드함
-		return "forward: /index?formpath=hotelList";
+//		return "amdin/hotel/hotellistForm";
 	}
 	
 	

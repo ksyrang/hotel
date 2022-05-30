@@ -7,13 +7,13 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.care.hotel.resourceDAO.hotelDAO;
+import com.care.hotel.resourceDAO.IhotelDAO;
 import com.care.hotel.resourceDTO.hotelDTO;
 
 @Service
 public class hotelresourceSvcImpl implements IhotelresourceSvc{
 	
-	@Autowired hotelDAO hotelDAO;
+	@Autowired IhotelDAO hotelDAO;
 	@Autowired HttpSession session;
 	
 	@Override
