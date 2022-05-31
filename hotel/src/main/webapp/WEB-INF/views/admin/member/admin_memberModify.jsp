@@ -1,3 +1,5 @@
+<!-- 회원쪽 회원가입과 비슷하게 수정할 것 -->
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
@@ -5,7 +7,7 @@
 <meta charset="UTF-8">
 <link href="${pageContext.request.contextPath}/resources/css/admin/amdin_memberList.css" rel="stylesheet" type="text/css">
 <link href="${pageContext.request.contextPath}/resources/css/admin/admin_memberInfo.css" rel="stylesheet" type="text/css">
-<title>admin_memberInfo</title>
+<title>admin_memberModify</title>
 </head>
 <body>
 <div class="admin_main">
@@ -28,7 +30,11 @@
 </tr>
 <tr>
 	<th>이메일</th><td><input type="text" name="email" value="dauen1@naver.com" readonly></td>
-	<th>성별</th><td><input type="text" name="gender" value="여"></td>
+	<th>성별</th><td>
+	<input type="radio" name="gender" value="m">남
+	<input type="radio" name="gender" value="w">여
+	<input type="radio" name="gender" value="n">선택안함
+	</td>
 </tr>
 <tr>
 	<th>주소</th><td>서울특별시 동작구 상도로 346-1</td>
