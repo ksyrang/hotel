@@ -33,12 +33,22 @@ public class AdminController {
 	@RequestMapping(value="memberInfoProc")
 	public String memberInfoProc(String memberId, Model model) {
 		logger.info("memberInfoProc");
-		if(memberId != null || memberId == "") {
+		if(memberId == null || memberId == "") {
 			return "redirect:memberListProc";
 		}
 		model.addAttribute("user", memberSvc.userInfo(memberId));
 		return "forward:/admin_index?formpath=memberInfo?memberId="+memberId;
 				
+	}
+	
+	@RequestMapping(value="memberModifyProc")
+	public String memberModifyProc(String memberId, Model model) {
+		logger.info("memberModifyProc");
+		if(memberId == null || memberId == "") {
+			return "redirect:memberListProc";
+		}
+		model.addAttribute("user", memberSvc.userInfo(memberId));
+		return "forward:/admin_index?formpath=memberModify?memberId="+memberId;
 	}
 
 }
