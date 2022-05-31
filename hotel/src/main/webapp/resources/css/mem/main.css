@@ -11,7 +11,7 @@ div.selector.focus {outline: 1px dotted #0066FF; }
 .head .header{ width:1200px; margin:0 auto 0 auto; height:90px; position:relative; background:url(../../images/ko/mem/main/headBg.gif) repeat-x; z-index:20;}
 .mainWrap .head .header{ width:1200px; margin:0 auto 0 auto; height:100px; position:relative;}
 /* .head .header .logo{ position:absolute; left:50%; top:0px; width:260px; margin:10px 0 0 -130px;} */
-.head .header .logo a{ display:inline-block;width: 202px;height:50px;margin-top: 20px; background:url(${pageContext.request.contextPath}/images/ko/mem/main/logo.gif); text-indent:-9999%; overflow:hidden; }
+.head .header .logo a{ display:inline-block;width: 202px;height:50px;margin-top: 20px; background:url(../../images/ko/mem/main/logo.gif); text-indent:-9999%; overflow:hidden; }
 
 .subBody { min-width: 1200px; /* background:url(../../images/ko/mem/main/hdBga.gif) 0 0 repeat-x;  */}
 

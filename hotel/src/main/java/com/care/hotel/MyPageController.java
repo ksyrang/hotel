@@ -44,4 +44,29 @@ private static final Logger logger = LoggerFactory.getLogger(MyPageController.cl
 	public String memSetPwCnfm() {
 		return "memSetPwCnfm";
 	}
+	
+	@RequestMapping("memSetMbrInfo")
+	public String memSetMbrInfo() {
+		return "memSetMbrInfo";
+	}
+	
+	@RequestMapping("memSetPwMod")
+	public String memSetPwMod() {
+		return "memSetPwMod";
+	}
+	
+	@RequestMapping("memListAsk")
+	public String memListAsk() {
+		return "memListAsk";
+	}
+	
+	@RequestMapping("memSetPwDropfm")
+	public String memSetPwDropfm() {
+		return "memSetPwDropfm";
+	}
+	
+	@RequestMapping("memSetMbrDropOut")
+	public String memSetMbrDropOut() {
+		return "memSetMbrDropOut";
+	}
 }

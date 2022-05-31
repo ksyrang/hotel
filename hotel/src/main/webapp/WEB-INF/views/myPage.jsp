@@ -254,10 +254,23 @@
 	<script src="/js/common.js" charset="UTF-8"></script>
 	<script src="/js/commonEx.js" charset="UTF-8"></script>
 	<script src="/js/jquery.slides.js" charset="UTF-8"></script>
-	<script src="/js/mbr/popLogin.js" charset="UTF-8"></script><div id="popLoginDiv" class="popLogin" style="display:none"></div>
-	<script src="/js/mbr/forIdPwd.js" charset="UTF-8"></script><div id="popForIdPwDiv" style="display:none">0</div>
-	<script src="/js/mbr/mbshPointRead.js" charset="UTF-8"></script><div id="mbshPotinRead" style="display:none"></div>
-	<script src="/js/resv/resvCalendar.js" charset="UTF-8"></script><script src="/js/resv/resvPromotionCalendar.js" charset="UTF-8"></script><script src="/js/resv/resv.js" charset="UTF-8"></script><script src="/js/resv/din.js" charset="UTF-8"></script><script src="/js/ask/ask.js" charset="UTF-8"></script><script src="/js/mbr/zipno.js" charset="UTF-8"></script><div id="zipNoLayerDiv" class="popLogin" style="display:none"></div><script src="/js/offers/makeAPlan.js" charset="UTF-8"></script><div id="makeAPlanLayerDiv" class="popLogin" style="display:none"></div><script src="/js/mbr/mbr_join.js" charset="UTF-8"></script><script src="/js/jquery.cookie.js" charset="UTF-8"></script>
+	<script src="/js/mbr/popLogin.js" charset="UTF-8"></script>
+	<div id="popLoginDiv" class="popLogin" style="display:none"></div>
+	<script src="/js/mbr/forIdPwd.js" charset="UTF-8"></script>
+	<div id="popForIdPwDiv" style="display:none">0</div>
+	<script src="/js/mbr/mbshPointRead.js" charset="UTF-8"></script>
+	<div id="mbshPotinRead" style="display:none"></div>
+	<script src="/js/resv/resvCalendar.js" charset="UTF-8"></script>
+	<script src="/js/resv/resvPromotionCalendar.js" charset="UTF-8"></script>
+	<script src="/js/resv/resv.js" charset="UTF-8"></script>
+	<script src="/js/resv/din.js" charset="UTF-8"></script>
+	<script src="/js/ask/ask.js" charset="UTF-8"></script>
+	<script src="/js/mbr/zipno.js" charset="UTF-8"></script>
+	<div id="zipNoLayerDiv" class="popLogin" style="display:none"></div>
+	<script src="/js/offers/makeAPlan.js" charset="UTF-8"></script>
+	<div id="makeAPlanLayerDiv" class="popLogin" style="display:none"></div>
+	<script src="/js/mbr/mbr_join.js" charset="UTF-8"></script>
+	<script src="/js/jquery.cookie.js" charset="UTF-8"></script>
 	<script src="/js/placeholders.js" charset="UTF-8"></script>
 	<script src="/js/rewards_new2020.js" charset="UTF-8"></script>
 	<script src="/js/dining_new2020.js" charset="UTF-8"></script>
@@ -323,7 +336,7 @@
 			</script>
 	
 	<div class="header">
-	  <h1 class="logo"><a href="/index.do">THE SHILLA HOTELS &amp; RESORTS</a></h1>
+	  <h1 class="logo"><a href="/hotel">THE SHILLA HOTELS &amp; RESORTS</a></h1>
 	  <!-- 로그인 -->
 	  <span class="loginArea">
 		<a href="javascript:ssoLogout();">로그아웃</a>
@@ -575,7 +588,7 @@
 									</a>
 								</li>
 								<li class="s2 last">
-									<a href="/fbresv/web/memDiningListResv.do"><span>다이닝</span></a>
+									<a href="#"><span>다이닝</span></a>
 								</li>
 							</ul>
 						</li>
@@ -583,17 +596,17 @@
 							<a><span>포인트</span></a>
 							<ul class="sMenu">
 								<li class="s1 first">
-									<a href="/membership/mypage/point/memListPointReference.do">
+									<a href="#">
 										<span>포인트조회</span>
 									</a>
 								</li>
 								<li class="s2">
-									<a href="/membership/mypage/point/memSetPointRetrospective.do">
+									<a href="#">
 										<span>포인트 조정신청</span>
 									</a>
 								</li>
 								<li class="s3 last">
-									<a href="/membership/mypage/point/memSetPointApplication.do">
+									<a href="#">
 										<span>삼성상품권 교환신청</span>
 									</a>
 								</li>
@@ -603,12 +616,12 @@
 							<a>쿠폰</a>
 							<ul class="sMenu">
 								<li class="s1 first">
-									<a href="/membership/mypage/coupon/memCouponList.do">
+									<a href="#">
 										<span>쿠폰함</span>
 									</a>
 								</li>
 								<li class="s2 last">
-									<a href="/membership/mypage/promotion/memPmtResvList.do">
+									<a href="#">
 										<span>프로모션 숙박권</span>
 									</a>
 								</li>
@@ -655,7 +668,9 @@
 	</script>
 	
 	<form name="myResvForm" id="myResvForm" method="get">
-	<input type="hidden" name="resvId" id="resvId" value="" autocomplete="off"><input type="hidden" name="legNumber" id="legNumber" value="" autocomplete="off"><div class="contents" id="contents">
+	<input type="hidden" name="resvId" id="resvId" value="" autocomplete="off">
+	<input type="hidden" name="legNumber" id="legNumber" value="" autocomplete="off">
+	<div class="contents" id="contents">
 		<div class="ctnMypage ctnPromotion rewards_N">
 			<div class="location">
 				<p class="list">
@@ -684,10 +699,12 @@
 								<span>회원번호</span>
 								<strong>2094148</strong>
 							</li>
+				<!-- by LYH
 							<li class="last">
 								<span>포인트</span>
 								<strong>0<b> P</b></strong>
 							</li>
+				 -->
 						</ul>
 					</div>
 				</div>
@@ -696,10 +713,12 @@
 					<div class="fl">
 						<img src="${pageContext.request.contextPath}/images/ko/mypage/graphTitTxt.gif" alt="등급 현황">
 					</div>
+			<!-- 
 					<div class="fr">
-						<a href="/membership/offers/benefits/memBenefitsIndex.do" title="등급별 혜택보기" class="linkTxt">
+						<a href="#" title="등급별 혜택보기" class="linkTxt">
 							등급별 혜택보기</a>
 					</div>
+			 -->
 				</div>
 				
 				<!-- 그래프 -->
@@ -742,12 +761,15 @@
 									</div>
 						</div>
 						<!-- 포인트 기준 -->
+				<!-- 
 						<div class="userPointGraph fr">
 							<div class="graphTit">
 								<img src="${pageContext.request.contextPath}/images/ko/mypage/graphTit2.gif" alt="포인트기준">
 							</div>
 							<div class="graphInfo">
+				-->
 								<!-- 포인트 기준 그래프 영역 -->
+				<!--
 								<div class="graph-list">
 									<div class="graph-backLine">
 										<span class="backLine1"></span>
@@ -772,11 +794,14 @@
 								</div>
 							</div>
 							<div class="graphTxt">
+				-->
 								<!-- BROWN, SILVER, GOLD 등급일 때 -->
+				<!-- 
 										<p>
 											<strong class="userTierTxt">SILVER</strong> 등급까지 <strong class="userNightTxt">100 P</strong> 남았습니다.</p>
 									</div>
 						</div>
+				 -->
 					</div>
 				</div>
 				<!-- 등급별 혜택보기 -->
@@ -784,12 +809,13 @@
 					<p>
 						※ 등급평가 및 조정은 1월 1일부터 12월 31일까지 (체크아웃기준) 1년간 이용한 실적기준</p>
 				</div>
+		<!-- by LYH : 포인터 내역 하지 않음
 				<div class="pointTableWrap">
 					<div class="pointTableTit clearfix">
 						<div class="fl">
 							<img src="${pageContext.request.contextPath}/images/ko/mypage/boardTitle1.gif" alt="최근 6개월 이내의 포인트 적립/사용 내역을 확인하실 수 있습니다.">
 						</div>
-						<a href="/membership/offers/earnUse/memEarnUseIndex.do" title="포인트 안내보기" class="linkTxt fr">
+						<a href="#" title="포인트 안내보기" class="linkTxt fr">
 							포인트 안내보기</a>
 					</div>
 					<table class="bbsList bbsQnaList" summary="호텔,구분,이용금액(원),적립포인트,사용포인트,이용날짜로 구성된 게시물 리스트 표">
@@ -815,6 +841,7 @@
 								</tbody>
 					</table>
 				</div>
+		 -->
 			</div>
 		</div>
 	</div>

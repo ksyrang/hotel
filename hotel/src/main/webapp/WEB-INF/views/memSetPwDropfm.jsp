@@ -4,7 +4,7 @@
 <html lang="ko" class="webkit chrome win  js portrait pc"><head>
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>프로필 수정 | 개인정보 | My Page | The Shilla Hotels &amp; Resorts</title>
+<title>신라리워즈 탈회 요청 | 개인정보 | My Page | The Shilla Hotels &amp; Resorts</title>
 <link href="${pageContext.request.contextPath}/css/mem/common.css" rel="stylesheet" type="text/css">
 <link href="${pageContext.request.contextPath}/css/mem/title_ko.css" rel="stylesheet" type="text/css">
 <link href="${pageContext.request.contextPath}/css/mem/common/print.css" rel="stylesheet" type="text/css" media="print">
@@ -13,8 +13,8 @@
 <link href="${pageContext.request.contextPath}/css/mem/common/lang-ko_N.css" rel="stylesheet" type="text/css">
 <link href="${pageContext.request.contextPath}/css/mem/common/btn_ko.css" rel="stylesheet" type="text/css">
 <link href="${pageContext.request.contextPath}/css/common/swiper.min.css" rel="stylesheet" type="text/css">
-<meta name="description" content="프로필 수정"><!-- <meta name="keywords" content="프로필 수정, My Page" /> -->
-<meta name="og:title" content="프로필 수정 | 개인정보 | My Page | The Shilla Hotels &amp; Resorts"> 
+<meta name="description" content="신라리워즈 탈회 요청"><!-- <meta name="keywords" content="신라리워즈 탈회 요청, My Page" /> -->
+<meta name="og:title" content="신라리워즈 탈회 요청 | 개인정보 | My Page | The Shilla Hotels &amp; Resorts"> 
 <!-- 검색엔진용 추가  180524 -->
 <meta name="keywords" content="신라스테이,신라호텔,서울신라호텔,제주신라호텔,호텔신라,럭셔리호텔,신라리워즈">
 <meta name="description" content="국내 최고 럭셔리 호텔인 호텔신라는 신라호텔과 신라스테이 브랜드를 보유하고 있습니다.">
@@ -238,14 +238,6 @@ function popCalendarLayerHide(){
 	$("#popCalendarDiv").attr("style","z-Index:99999;display:none;");
 }
 </script></head><body class="subBody"><div id="popCalendarDiv" class="popCalendar" style="display:none"></div>
-<link href="/css/mem/common.css" rel="stylesheet" type="text/css">
-<link href="/css/mem/title_ko.css" rel="stylesheet" type="text/css">
-<link href="/css/mem/common/print.css" rel="stylesheet" type="text/css" media="print">
-<link href="/css/mem/mainImages_ko.css" rel="stylesheet" type="text/css">
-<link href="/css/mem/common/reserve_new.css" rel="stylesheet" type="text/css">
-<link href="/css/mem/common/lang-ko_N.css" rel="stylesheet" type="text/css">
-<link href="/css/mem/common/btn_ko.css" rel="stylesheet" type="text/css">
-<link href="/css/common/swiper.min.css" rel="stylesheet" type="text/css">
 <script src="/js/json2.js" charset="UTF-8"></script>
 <script src="/js/jquery-1.8.3.js" charset="UTF-8"></script>
 <script src="/js/uniform.js" charset="UTF-8"></script>
@@ -333,17 +325,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </script>
 
 <div class="header">
-  <h1 class="logo"><a href="/hotel">THE SHILLA HOTELS &amp; RESORTS</a></h1>
+  <h1 class="logo"><a href="/index.do">THE SHILLA HOTELS &amp; RESORTS</a></h1>
   <!-- 로그인 -->
   <span class="loginArea">
 	<a href="javascript:ssoLogout();">로그아웃</a>
-	<a href="/hotel/myPage">마이페이지</a>
+	<a href="/membership/mypage/account/listAccount.do">마이페이지</a>
 	</span>
   <!-- 예약확인 추가 -->
   <div class="resvConfirm">
 		  <div class="resvConBox">
 			  <a class="btn" href="#">예약확인<!-- 예약확인 --></a>
-			  <ul class="list" style="display: none;">
+			  <ul class="list">
 				  <li class="dn1 first last">
 					  <ul class="listSt">
 						  <li class="st first st1">
@@ -361,7 +353,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- 한국어 영어 일어 시작  -->
     <div class="language">
 		<div class="globalBox">
-			<a class="btn" href="#">한국어</a><ul class="list" style="display: none;">
+			<a class="btn" href="#">한국어</a><ul class="list">
 				<li class="dn1 first last">
 					<ul class="listSt">
 						<li class="st first st3"><a href="/hub/cmm/setLang.do?lang=en"><span>English</span></a></li><li class="st st4"><a href="/hub/cmm/setLang.do?lang=ja"><span>日本語</span></a></li><li class="st last st5"><a href="/hub/cmm/setLang.do?lang=zh"><span>简体中文</span></a></li></ul>
@@ -572,7 +564,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				<ul class="menu">
 					<li class="m1 first">
 						<!-- 선택시 a태그에 class="on" -->
-						<a href="/hotel/myPage">
+						<a href="/membership/mypage/account/listAccount.do">
 							<span>신라리워즈 등급 및 포인트</span>
 						</a>
 					</li>
@@ -580,7 +572,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 						<a><span>예약 확인/취소</span></a>
 						<ul class="sMenu">
 							<li class="s1 first">
-								<a href="/hotel/memListResv">
+								<a href="/membership/mypage/resv/memListResv.do">
 									<span>객실/패키지</span>
 								</a>
 							</li>
@@ -628,22 +620,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 						<a><span>내정보</span></a>
 						<ul class="sMenu">
 							<li class="s1 first">
-								<a href="/hotel/memSetPwCnfm" class="on">
+								<a href="/membership/mypage/mbr/memSetPwCnfm.do">
 									<span>프로필 수정</span>
 								</a>
 							</li>
 							<li class="s2">
-								<a href="/hotel/memSetPwMod">
+								<a href="/membership/mypage/mbr/memSetPwMod.do">
 									<span>비밀번호 변경</span>
 								</a>
 							</li>
 							<li class="s3">
-								<a href="/hotel/memListAsk">
+								<a href="/membership/mypage/ask/memListAsk.do">
 									<span>문의 내역</span>
 								</a>
 							</li>
 							<li class="s4 last">
-								<a href="/hotel/memSetPwDropfm?gubun=t">
+								<a href="/membership/mypage/mbr/memSetPwDropfm.do?gubun=t" class="on">
 									<span>탈회요청</span>
 								</a>
 							</li>
@@ -675,7 +667,7 @@ function selectPwCnfm(){
 	}
 	var mbrInfo = './memSetMbrInfo.do';
 	var termi = './memSetMbrDropOut.do';
-	var gubun = '';
+	var gubun = 't';
 	$.ajax(
             {
                 url: './memSelectPwCnfm.do',
@@ -712,10 +704,10 @@ function selectPwCnfm(){
 		<input type="hidden" name="hiddenInputType" id="hiddenInputType" value="Y" autocomplete="off">
 				<div class="ctnMypage ctnUserInfo1">
 					<div class="location">
-								<p class="list"><span class="crPosit">현재 페이지 위치 : </span> &gt; 마이페이지 &gt; 내정보  &gt; <strong>프로필 수정</strong></p>
+								<p class="list"><span class="crPosit">현재 페이지 위치 : </span> &gt; 마이페이지 &gt; 내정보  &gt; <strong>신라리워즈 탈회 요청</strong></p>
 							</div>
-						<div class="myProfilemodifyTit">
-								<h4 class="tit">프로필 수정</h4>
+						<div class="mySecessionTit">
+								<h4 class="tit">신라리워즈 탈회 요청</h4>
 							</div>
 						<div class="msgBox">
 					YOONGHEE LEE님의 정보를 안전하게 보호하기 위해 비밀번호를 다시 한번 확인합니다.</div>
@@ -739,9 +731,6 @@ function selectPwCnfm(){
 				</tbody></table>
 				
 				<div class="btnList">
-					<a href="javascript:popForPw('mem');" id="popForPwButton" class="btnFindPw">
-						<span>비밀번호 찾기</span>
-					</a>
 					<a href="javascript:selectPwCnfm();" class="btnConfirm"><span>확인</span></a>
 				</div>
 				</div>

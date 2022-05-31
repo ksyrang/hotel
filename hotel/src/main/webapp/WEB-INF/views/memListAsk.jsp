@@ -4,7 +4,7 @@
 <html lang="ko" class="webkit chrome win  js portrait pc"><head>
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>프로필 수정 | 개인정보 | My Page | The Shilla Hotels &amp; Resorts</title>
+<title>문의 내역 | My Page | The Shilla Hotels &amp; Resorts</title>
 <link href="${pageContext.request.contextPath}/css/mem/common.css" rel="stylesheet" type="text/css">
 <link href="${pageContext.request.contextPath}/css/mem/title_ko.css" rel="stylesheet" type="text/css">
 <link href="${pageContext.request.contextPath}/css/mem/common/print.css" rel="stylesheet" type="text/css" media="print">
@@ -13,8 +13,8 @@
 <link href="${pageContext.request.contextPath}/css/mem/common/lang-ko_N.css" rel="stylesheet" type="text/css">
 <link href="${pageContext.request.contextPath}/css/mem/common/btn_ko.css" rel="stylesheet" type="text/css">
 <link href="${pageContext.request.contextPath}/css/common/swiper.min.css" rel="stylesheet" type="text/css">
-<meta name="description" content="프로필 수정"><!-- <meta name="keywords" content="프로필 수정, My Page" /> -->
-<meta name="og:title" content="프로필 수정 | 개인정보 | My Page | The Shilla Hotels &amp; Resorts"> 
+<meta name="description" content="문의 내역"><!-- <meta name="keywords" content="문의 내역, My Page" /> -->
+<meta name="og:title" content="문의 내역 | My Page | The Shilla Hotels &amp; Resorts"> 
 <!-- 검색엔진용 추가  180524 -->
 <meta name="keywords" content="신라스테이,신라호텔,서울신라호텔,제주신라호텔,호텔신라,럭셔리호텔,신라리워즈">
 <meta name="description" content="국내 최고 럭셔리 호텔인 호텔신라는 신라호텔과 신라스테이 브랜드를 보유하고 있습니다.">
@@ -238,14 +238,6 @@ function popCalendarLayerHide(){
 	$("#popCalendarDiv").attr("style","z-Index:99999;display:none;");
 }
 </script></head><body class="subBody"><div id="popCalendarDiv" class="popCalendar" style="display:none"></div>
-<link href="/css/mem/common.css" rel="stylesheet" type="text/css">
-<link href="/css/mem/title_ko.css" rel="stylesheet" type="text/css">
-<link href="/css/mem/common/print.css" rel="stylesheet" type="text/css" media="print">
-<link href="/css/mem/mainImages_ko.css" rel="stylesheet" type="text/css">
-<link href="/css/mem/common/reserve_new.css" rel="stylesheet" type="text/css">
-<link href="/css/mem/common/lang-ko_N.css" rel="stylesheet" type="text/css">
-<link href="/css/mem/common/btn_ko.css" rel="stylesheet" type="text/css">
-<link href="/css/common/swiper.min.css" rel="stylesheet" type="text/css">
 <script src="/js/json2.js" charset="UTF-8"></script>
 <script src="/js/jquery-1.8.3.js" charset="UTF-8"></script>
 <script src="/js/uniform.js" charset="UTF-8"></script>
@@ -333,17 +325,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </script>
 
 <div class="header">
-  <h1 class="logo"><a href="/hotel">THE SHILLA HOTELS &amp; RESORTS</a></h1>
+  <h1 class="logo"><a href="/index.do">THE SHILLA HOTELS &amp; RESORTS</a></h1>
   <!-- 로그인 -->
   <span class="loginArea">
 	<a href="javascript:ssoLogout();">로그아웃</a>
-	<a href="/hotel/myPage">마이페이지</a>
+	<a href="/membership/mypage/account/listAccount.do">마이페이지</a>
 	</span>
   <!-- 예약확인 추가 -->
   <div class="resvConfirm">
 		  <div class="resvConBox">
 			  <a class="btn" href="#">예약확인<!-- 예약확인 --></a>
-			  <ul class="list" style="display: none;">
+			  <ul class="list">
 				  <li class="dn1 first last">
 					  <ul class="listSt">
 						  <li class="st first st1">
@@ -361,7 +353,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- 한국어 영어 일어 시작  -->
     <div class="language">
 		<div class="globalBox">
-			<a class="btn" href="#">한국어</a><ul class="list" style="display: none;">
+			<a class="btn" href="#">한국어</a><ul class="list">
 				<li class="dn1 first last">
 					<ul class="listSt">
 						<li class="st first st3"><a href="/hub/cmm/setLang.do?lang=en"><span>English</span></a></li><li class="st st4"><a href="/hub/cmm/setLang.do?lang=ja"><span>日本語</span></a></li><li class="st last st5"><a href="/hub/cmm/setLang.do?lang=zh"><span>简体中文</span></a></li></ul>
@@ -572,7 +564,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				<ul class="menu">
 					<li class="m1 first">
 						<!-- 선택시 a태그에 class="on" -->
-						<a href="/hotel/myPage">
+						<a href="/membership/mypage/account/listAccount.do">
 							<span>신라리워즈 등급 및 포인트</span>
 						</a>
 					</li>
@@ -580,7 +572,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 						<a><span>예약 확인/취소</span></a>
 						<ul class="sMenu">
 							<li class="s1 first">
-								<a href="/hotel/memListResv">
+								<a href="/membership/mypage/resv/memListResv.do">
 									<span>객실/패키지</span>
 								</a>
 							</li>
@@ -628,22 +620,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 						<a><span>내정보</span></a>
 						<ul class="sMenu">
 							<li class="s1 first">
-								<a href="/hotel/memSetPwCnfm" class="on">
+								<a href="/membership/mypage/mbr/memSetPwCnfm.do">
 									<span>프로필 수정</span>
 								</a>
 							</li>
 							<li class="s2">
-								<a href="/hotel/memSetPwMod">
+								<a href="/membership/mypage/mbr/memSetPwMod.do">
 									<span>비밀번호 변경</span>
 								</a>
 							</li>
 							<li class="s3">
-								<a href="/hotel/memListAsk">
+								<a href="/membership/mypage/ask/memListAsk.do" class="on">
 									<span>문의 내역</span>
 								</a>
 							</li>
 							<li class="s4 last">
-								<a href="/hotel/memSetPwDropfm?gubun=t">
+								<a href="/membership/mypage/mbr/memSetPwDropfm.do?gubun=t">
 									<span>탈회요청</span>
 								</a>
 							</li>
@@ -654,99 +646,135 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		</div>
 	<div class="contents" id="contents">
 				<script type="text/javascript">
+<!--
 
-$(document).ready(function() { 
-	$("select, input").uniform();
-	
-	var meYn = 'null';
-	if(meYn == 'back'){
-		alert("잘못된 접근 방식입니다.");
-		
+
+
+
+function selectAskTypCd(askTypCd){
+    $('#askTypCd').val(askTypCd);
+    $('#curPageNo').val("1");
+    $('#mypageAskForm').attr('action','./listAsk.do').submit();
+}
+
+function selectHotlId(hotlId){
+    $('#hotlId').val(hotlId);
+    $('#curPageNo').val("1");
+    $('#mypageAskForm').attr('action','./listAsk.do').submit();
+}
+
+function selectViewAsk(hotlId, askNo , cmtSeq){
+    $('#hotlId').val(hotlId);
+    $('#askNo').val(askNo);
+    $('#cmtSeq').val(cmtSeq);
+	$('#mypageAskForm').attr('action', '/membership/mypage/ask/memViewAsk.do').submit();
+    
+}
+
+function selectListAsk(){
+    $('#mypageAskForm').attr('action','/membership/mypage/ask/memListAsk.do').submit();
+}
+
+/** 페이징 조회 */
+function goPage(pageNo){
+    $('#curPageNo').val(pageNo);
+    $('#mypageAskForm').attr('action','/membership/mypage/ask/memListAsk.do').submit();
+}
+
+/** 날짜 셋팅 */
+function dateSearch( monthNum ) {
+	searchDateSet('searchStrtDt' , 'searchEndDt' , monthNum );
+}
+
+/** 날짜 셋팅 */
+function dateWeekSearch( weekNum ) {
+	searchDateWeekSet('searchStrtDt' , 'searchEndDt' , weekNum );
+}
+
+function checkCalendar(searchEndDt,today){
+	if($("#searchStrtDt").val()!=null || $("#searchStrtDt").val().length !=0){
+		popCalendarLayer(searchEndDt,$("#searchStrtDt").val());
+	}else{
+		popCalendarLayer(searchEndDt,today); 
 	}
-}); 
-
-function selectPwCnfm(){
-	
-
-	if($.trim($('#mbrPw').val()) == ""){
-		alert(messages["msg.cmm.required"].replaceMsg(['비밀번호']));
-		$('#mbrPw').focus();
-		return;
-	}
-	var mbrInfo = './memSetMbrInfo.do';
-	var termi = './memSetMbrDropOut.do';
-	var gubun = '';
-	$.ajax(
-            {
-                url: './memSelectPwCnfm.do',
-                type: "post",
-                data: { "mbrPw": $("#mbrPw").val() },
-                dataType: "html",
-                error: function(){
-                	errorCheck = "fail";
-                },
-                success: function( strData ){
-                	if("success" == strData ){
-                		if(gubun != 't'){
-        			    	$('#pwCnfmForm').attr('action',mbrInfo).submit();
-                		}else{
-                			$('#pwCnfmForm').attr('action',termi).submit();
-                		}
-                	}else if("fail" == strData){
-                		alert('비밀번호가 일치하지 않습니다.');
-                		return;
-                	}else{
-                		alert("장시간 이용하지 않아 로그아웃되었습니다. 로그인 후 다시 이용해 주시기 바랍니다. ");
-                		$('#pwCnfmForm').attr("action", "/membership/mbr/login/memLogin.do").submit();
-                	}
-                }
-            }                           
-     );
-	
 }
 //-->
 </script>
-			<div class="contents" id="contents">
-		<form name="pwCnfmForm" id="pwCnfmForm" method="post" action="">
-		<input type="text" name="hiddenInputName" id="hiddenInputName" style="display:none" autocomplete="off" class="text">
-		<input type="hidden" name="hiddenInputType" id="hiddenInputType" value="Y" autocomplete="off">
-				<div class="ctnMypage ctnUserInfo1">
+
+<form name="mypageAskForm" id="mypageAskForm" method="post">
+	<input type="hidden" id="askNo" name="askNo" value="" autocomplete="off">
+	<input type="hidden" id="cmtSeq" name="cmtSeq" value="" autocomplete="off">
+	<input type="hidden" id="hotlId" name="hotlId" value="MBR" autocomplete="off">
+	<input type="hidden" id="askTypCd" name="askTypCd" value="" autocomplete="off">
+	
+	<div class="contents" id="contents">
+				<div class="ctnMypage ctnQna">
 					<div class="location">
-								<p class="list"><span class="crPosit">현재 페이지 위치 : </span> &gt; 마이페이지 &gt; 내정보  &gt; <strong>프로필 수정</strong></p>
+						<p class="list"><span class="crPosit">현재 페이지 위치 : </span> &gt; 마이페이지 &gt; 내정보 &gt; <strong>문의내역</strong></p>
+					</div>
+					
+					<div class="myInquiryTit">
+						<h4 class="tit">문의내역</h4>
+					</div>
+					
+					<div class="msg">회원님께서 문의하신 내역과 답변을 확인하실 수 있습니다.</div>
+					<div class="tabBox">
+						<div class="schBox">
+							<div class="dateOpt">
+								<strong class="tit">조회기간</strong>
+									<a href="javascript:dateWeekSearch( -1 );" class="btnDate btnDateWeek"><span>1주</span></a>
+									<a href="javascript:dateSearch( -1 );" class="btnDate btnDate1Mon"><span>1개월</span></a>
+									<a href="javascript:dateSearch( -3 );" class="btnDate btnDate3Mon"><span>3개월</span></a>
+									<a href="javascript:dateSearch( -6 );" class="btnDate btnDate6Mon"><span>6개월</span></a>
+									<a href="javascript:dateSearch( 'All' );" class="btnDate btnDateAll"><span>전체</span></a>
+								
+							<label for="searchStrtDt" class="dateStart">시작일</label>
+							<input type="text" class="dateStart uiform" id="searchStrtDt" name="searchStrtDt" value="" readonly="" onclick="popCalendarLayer('searchStrtDt','2022-05-30'); return false;" autocomplete="off">
+							<a href="javascript:popCalendarLayer('searchStrtDt','2022-05-30'); " class="btnCalendar"><span>달력</span></a>
+							
+							<label for="searchEndDt" class="dateEnd">종료일</label>
+							<input type="text" class="dateEnd uiform" id="searchEndDt" name="searchEndDt" value="" readonly="" onclick="popCalendarLayer('searchEndDt','2022-05-30'); return false;" autocomplete="off">
+							<a href="javascript:checkCalendar('searchEndDt','2022-05-30'); " class="btnCalendar"><span>달력</span></a>
 							</div>
-						<div class="myProfilemodifyTit">
-								<h4 class="tit">프로필 수정</h4>
-							</div>
-						<div class="msgBox">
-					YOONGHEE LEE님의 정보를 안전하게 보호하기 위해 비밀번호를 다시 한번 확인합니다.</div>
-			    <table class="tableTypeA tableUserInfo1" summary="아이디,비밀번호로 구성된 테이블">
-					<caption>프로필 수정</caption>
-					<colgroup>
-						<col width="17%" class="col1">
-						<col class="col2">
-					</colgroup>
-					<tbody><tr class="first">
-						<th scope="row" class="first">신라리워즈 번호</th>
-<td class="first">2094148</td>
+							<div class="btn"><a href="javascript:selectListAsk();" class="btnSch"><span>다음 단계로 이동</span></a></div>
+						</div>
+						<div class="bbsTotal">
+							<div class="count">Total : 0</div>
+						</div>
 						
-					</tr>
-					<tr class="last">
-						<th scope="row" class="last"><label for="mbrPw" class="pw">비밀번호</label></th>
-						<td class="last">
-							<input type="password" class="pw uiform password" id="mbrPw" name="mbrPw" maxlength="20" onkeydown="javascript: if(event.keyCode == 13) selectPwCnfm()" autocomplete="off">
-						</td>
-					</tr>
-				</tbody></table>
-				
-				<div class="btnList">
-					<a href="javascript:popForPw('mem');" id="popForPwButton" class="btnFindPw">
-						<span>비밀번호 찾기</span>
-					</a>
-					<a href="javascript:selectPwCnfm();" class="btnConfirm"><span>확인</span></a>
+						<table class="bbsList bbsQnaList" summary="번호,문의유형,제목,문의일자,답변여부로 구성된 게시물 리스트 표">
+							<caption>1:1문의내역리스트입니다.</caption>
+							<colgroup>
+							   <col width="8%" class="col1">
+							   <col width="16%" class="col2">
+							   <col width="15%" class="col3">
+							   <col width="*%" class="col4">
+							   <col width="13%" class="col5">
+							   <col width="10%" class="col6">
+							</colgroup>
+							<thead>
+								<tr>
+									<th class="num" scope="col">NO</th>
+									<th class="cate" scope="col">호텔</th>
+									<th class="cate" scope="col">문의유형</th>
+									<th class="tit" scope="col">제목</th>
+									<th class="date" scope="col">문의일자</th>
+									<th class="status" scope="col">답변여부</th>
+								</tr>
+							</thead>
+							<tbody>
+							
+								<tr class="trNoList first last">               
+											<td colspan="6">자료가 없습니다.</td>
+										</tr>
+						            </tbody>
+						</table>
+						
+					</div>
 				</div>
-				</div>
-		</form>
-			</div></div>
+			</div>
+			</form>
+</div>
 
 		</div>
 	
@@ -864,6 +892,6 @@ function selectPwCnfm(){
 t,p,m,g,u=function(b){return 0===l?b:b.filter(function(h){try{return m=parseInt(h.split("_")[1],10),m>(new Date).getTime()}catch(q){return!1}})};var r=function(b){if(0===l)return b;try{g=b.split("_");m=parseInt(g[1],10);if(m>(new Date).getTime())return b;g=g[0]+"_"+((new Date).getTime()+l);sessionStorage.setItem("_tab_id",g);return g}catch(h){return b}};var x=function(){if(!1===v)return"BACK/FORWARD";if(2>a.length)return"FORWARD";t=a[a.length-2];p=a[a.length-1];return t===e||p===e?"BACK":"FORWARD"},
 y=function(){c=JSON.parse(localStorage.getItem("_tab_ids"))||[];d=sessionStorage.getItem("_tab_id");c=u(c);if(c.length&&null!==d){var b=c.indexOf(d);-1<b&&c.splice(b,1);localStorage.setItem("_tab_ids",JSON.stringify(c))}},z=function(){var b=(new Date).getTime();"undefined"!==typeof performance&&"function"===typeof performance.now&&(b+=performance.now());return"xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g,function(h){var q=(b+16*Math.random())%16|0;b=Math.floor(b/16);return("x"===h?q:q&3|
 8).toString(16)})+(0<l?"_"+((new Date).getTime()+l):"")},A=function(b,h){return!(!0===h&&0!==b&&255!==b)};null===d?(d=z(),f=!0,sessionStorage.setItem("_tab_id",d)):d=r(d);c=u(c);-1===c.indexOf(d)&&(c.push(d),localStorage.setItem("_tab_ids",JSON.stringify(c)));r=c.length;if(window.PerformanceNavigation){a=a||[];var n=window.performance.navigation.redirectCount;if(A(window.performance.navigation.type,f))switch(window.performance.navigation.type){case 0:var k="NAVIGATE";a.push(e);break;case 1:k="RELOAD";
-0!==a.length&&a[a.length-1]===e||a.push(e);break;case 2:k=x();"FORWARD"===k?-1<document.referrer.indexOf(w)&&a.push(e):"BACK"===k?p!==e&&a.pop():a.push(e);break;default:k="OTHER",a.push(e)}else a.push(e);sessionStorage.setItem("_nav_path",JSON.stringify(a))}window.addEventListener("beforeunload",y);n={tabCount:r,redirectCount:n,navigationType:k,newTab:!0===f?"New":"Existing",tabId:d.replace(/_.+/,"")};window.google_tag_manager[google_tag_manager["GTM-T3LBJ26"].macro(82)].dataLayer.set("browsingBehavior",n);window.dataLayer.push({event:"custom.navigation",
+0!==a.length&&a[a.length-1]===e||a.push(e);break;case 2:k=x();"FORWARD"===k?-1<document.referrer.indexOf(w)&&a.push(e):"BACK"===k?p!==e&&a.pop():a.push(e);break;default:k="OTHER",a.push(e)}else a.push(e);sessionStorage.setItem("_nav_path",JSON.stringify(a))}window.addEventListener("beforeunload",y);n={tabCount:r,redirectCount:n,navigationType:k,newTab:!0===f?"New":"Existing",tabId:d.replace(/_.+/,"")};window.google_tag_manager[google_tag_manager["GTM-T3LBJ26"].macro(77)].dataLayer.set("browsingBehavior",n);window.dataLayer.push({event:"custom.navigation",
 browsingBehavior:n})}})();</script>
 </body></html>
