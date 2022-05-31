@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import com.care.hotel.common.PageService;
 import com.care.hotel.resourceDAO.IhotelDAO;
 import com.care.hotel.resourceDTO.hotelDTO;
+import com.care.hotel.resourceDTO.roomDTO;
 
 @Service
 public class hotelresourceSvcImpl implements IhotelresourceSvc{
@@ -29,17 +30,19 @@ public class hotelresourceSvcImpl implements IhotelresourceSvc{
 		String url = "/hotel/hotellistProc?currentPage=";
 		session.setAttribute("page", PageService.getNavi(currentPage, pageBlock, totalCount, url));
 	}
-//	@Override
-//	public void listtest() {
-//		ArrayList<hotelDTO> list = hotelDAO.testhotelList();
-//		for(hotelDTO DTO : list) {
-//			System.out.println(DTO.getHotelId());
-//			System.out.println(DTO.getHotelName());
-//			System.out.println(DTO.getPhoneNumber());
-//			System.out.println(DTO.getEmail());
-//		}
-//		session.setAttribute("hotelList", list);
-//	}
+	@Override
+	public void roomList(int currentPage, String select, String search) {
+		int pageBlock = 5; // 한 화면에 보여줄 데이터 수
+		int totalCount = hotelDAO.roomCount(); // 총 데이터의 수 
+		int end = currentPage * pageBlock; // 데이터의 끝 번호
+		int begin = end+1 - pageBlock; // 데이터의 시작 번호
+		
+		ArrayList<roomDTO> list = hotelDAO.roomList(begin, end, select, search);
+		session.setAttribute("roomList", list);
+		String url = "/hotel/roomlistProc?currentPage=";
+		session.setAttribute("page", PageService.getNavi(currentPage, pageBlock, totalCount, url));
+		
+	}
 	
 
 }

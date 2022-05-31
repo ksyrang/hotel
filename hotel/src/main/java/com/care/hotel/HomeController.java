@@ -79,7 +79,11 @@ public class HomeController {
 		
 		return "admin/hotel/hotellistForm";
 	}
-	
+	@GetMapping("admin_roomList")
+	public String admin_roomList() {
+		
+		return "admin/room/roomlistForm";
+	}	
 	/*admin end*/
 	
 }

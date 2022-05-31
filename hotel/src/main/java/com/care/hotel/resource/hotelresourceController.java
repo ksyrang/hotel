@@ -14,18 +14,22 @@ public class hotelresourceController {
 	
 	@Autowired IhotelresourceSvc hotellistSVC;
 	
-	
-
 	@RequestMapping("hotellistProc")
-	public String hotelList(Model model, 
+	public String hotellistProc(Model model, 
 			@RequestParam(value = "currentPage", required = false, defaultValue = "1") int currentPage,
 			String select, String search) {
 		
 		hotellistSVC.hotelList(currentPage, select, search);//서비스 내부에서 session에 데이터를 업로드함
-//		hotellistSVC.listtest();
 		return "forward:/admin_index?formpath=admin_hotelList";
 	}
-	
+	@RequestMapping("roomlistProc")
+	public String roomlistProc(Model model, 
+			@RequestParam(value = "currentPage", required = false, defaultValue = "1") int currentPage,
+			String select, String search) {
+		
+		hotellistSVC.roomList(currentPage, select, search);//서비스 내부에서 session에 데이터를 업로드함
+		return "forward:/admin_index?formpath=admin_roomList";
+	}
 	
 
 }
