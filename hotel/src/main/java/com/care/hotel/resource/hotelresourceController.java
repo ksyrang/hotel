@@ -31,6 +31,13 @@ public class hotelresourceController {
 		return "forward:/admin_index?formpath=admin_roomList";
 	}
 	
+	@RequestMapping("hotelInfoProc")
+	public String hotelInfoProc(String hotelId, Model model) {
+		if(hotelId ==""||hotelId == null) return "redirect:hotellistProc";
+		
+		model.addAttribute("hotelId",hotellistSVC.hotelInfo(hotelId));		
+		return "forward:/admin_index?formpath=admin_hotelInfo";
+	}	
 	
 
 }

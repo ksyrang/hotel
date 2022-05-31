@@ -59,6 +59,11 @@ public class hotelresourceSvcImpl implements IhotelresourceSvc{
 		String url = "/hotel/admin_index?formpath=memberList?currentPage=";
 		session.setAttribute("page", PageService.getNavi(currentPage, pageBlock, totalCount, url));
 	}
+	@Override
+	public hotelDTO hotelInfo(String hotelId) {
+		return hotelDAO.hotelInfo(hotelId);
+	}
 	
+
 
 }
