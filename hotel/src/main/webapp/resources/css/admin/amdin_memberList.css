@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+/* admin_memberList */
+.admin_main {margin:auto; width: 1000px; margin-bottom: 20px; margin-top: 20px;}
+.admin_memberCombo {height: 50px; margin-top: 10px; margin-left: 10px;}
+.admin_memberCombobox {height: 25px;}
+
+.admin_memberSearchTxt {height: 25px;}
+.admin_memberSearchBtn {height: 25px; width: 50px; background-color: #f1e3c4;}
+
+
+.admin_memberTable {width: 1000px; border: 1px solid; border-color: #61380B; border-collapse: collapse;}
+.admin_memberTable th, td {border: 1px solid; border-color: #61380B}
+.admin_memberTable th {height: 30px;}
+.admin_memberTable td {text-align: center; height: 20px;}
+.listBtn {background-color: #f1e3c4;}

@@ -62,18 +62,26 @@ public class HomeController {
 	}
 	
 	/* 회원 목록 */
-	@RequestMapping(value="userList", method = RequestMethod.GET)
-	public String admin_userList() {
-		logger.info("admin_userList");
-		return "admin/admin_userList";
+	@RequestMapping(value="memberList", method = RequestMethod.GET)
+	public String admin_memberList() {
+		logger.info("admin_memberList");
+		return "admin/member/admin_memberList";
 	}
 	
 	/* 회원 정보 */
-	@RequestMapping(value="userInfo", method = RequestMethod.GET)
-	public String admin_userInfo() {
-		logger.info("admin_userInfo");
-		return "admin/admin_userInfo";
+	@RequestMapping(value="memberInfo", method = RequestMethod.GET)
+	public String admin_memberInfo() {
+		logger.info("admin_memberInfo");
+		return "admin/member/admin_memberInfo";
 	}
+	
+	/*회원 수정 */
+	@RequestMapping(value="memberModify", method = RequestMethod.GET)
+	public String admin_memberModify() {
+		logger.info("admin_memberModify");
+		return "admin/member/admin_memberModify";
+	}
+	
 	@GetMapping("admin_hotelList")
 	public String admin_hotelList() {
 		

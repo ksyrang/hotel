@@ -3,8 +3,8 @@
 
 <head>
 <meta charset="UTF-8">
-<link href="${pageContext.request.contextPath}/resources/css/admin/amdin_userList.css" rel="stylesheet" type="text/css">
-<title>admin_userList</title>
+<link href="${pageContext.request.contextPath}/resources/css/admin/amdin_memberList.css" rel="stylesheet" type="text/css">
+<title>admin_memberList</title>
 </head>
 
 
@@ -13,20 +13,20 @@
 <div class="admin_main">
 
 
-<div class="admin_userCombo">
-	<select name="userCombo" class="admin_userCombobox">
+<div class="admin_memberCombo">
+	<select name="memberCombo" class="admin_memberCombobox">
 		<option value="none">===선택===</option>
 		<option value="id">아이디</option>
 		<option value="name">이름</option>
 		<option value="tel">전화번호</option>
 		<option value="eamil">이메일</option>
 	</select>
-	<input type="text" name="userSearch" class="admin_userSearchTxt">
-	<input type="button" name="userSearchBtn" value="검색" class="admin_userSearchBtn">
+	<input type="text" name="memberSearch" class="admin_memberSearchTxt">
+	<input type="button" name="memberSearchBtn" value="검색" class="admin_memberSearchBtn">
 </div>
 
 <div>
-	<table class="admin_userTable">
+	<table class="admin_memberTable">
 		<thead>
 		<tr>
 			<th>아이디</th>
@@ -37,13 +37,13 @@
 		</tr>
 		</thead>
 		<tr>
-			<td><a href="admin_index?formpath=userInfo">dauen1</a></td>
+			<td><a href="admin_index?formpath=memberInfo">dauen1</a></td>
 			<td>신다은(Shin DaEun)</td>
 			<td>1999.07.06</td>
 			<td>010-5620-1321</td>
 			<td>dauen1@naver.com</td>
 			<td style="width:100px;">
-			<input type="button" value="수정" class="listBtn">
+			<input type="button" value="수정" class="listBtn" onclick="location.href='admin_index?formpath=memberModify'">
 			<input type="button" value="삭제" class="listBtn">
 			</td>
 		</tr>
@@ -59,6 +59,16 @@
 			</td>
 		</tr>
 	</table><br>
+	
+	<!-- 페이징 -->
+	<div align="center">
+	<a href="">&lt;</a>
+	<a href="">1</a>
+	<a href="">2</a>
+	<a href="">3</a>
+	<a href="">&gt;</a>
+	</div>
+	
 	<b>총 회원수 : 2명</b>
 </div>
 

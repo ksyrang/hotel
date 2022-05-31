@@ -3,23 +3,23 @@
 
 <head>
 <meta charset="UTF-8">
-<link href="${pageContext.request.contextPath}/resources/css/admin/amdin_userList.css" rel="stylesheet" type="text/css">
-<link href="${pageContext.request.contextPath}/resources/css/admin/admin_userInfo.css" rel="stylesheet" type="text/css">
-<title>admin_userInfo</title>
+<link href="${pageContext.request.contextPath}/resources/css/admin/amdin_memberList.css" rel="stylesheet" type="text/css">
+<link href="${pageContext.request.contextPath}/resources/css/admin/admin_memberInfo.css" rel="stylesheet" type="text/css">
+<title>admin_memberInfo</title>
 </head>
 <body>
 <div class="admin_main">
 
-<div class="admin_userInfoTopLeft">
+<div class="admin_memberInfoTopLeft">
 	회원정보
 </div>
-<div class="admin_userInfoTopRight">
-	<input type="button" value="수정" class="listBtn">
+<div class="admin_memberInfoTopRight">
+	<input type="button" value="수정" class="listBtn" onclick="location.href='admin_index?formpath=memberModify'">
 	<input type="button" value="삭제" class="listBtn">
 </div>
 
-<div class="admin_userInfoTableDiv">
-<table class="admin_userInfoTable">
+<div class="admin_memberInfoTableDiv">
+<table class="admin_memberInfoTable">
 <tr>
 	<th>아이디</th><td>dauen1</td>
 	<th>이름(국문)</th><td>신다은</td>
