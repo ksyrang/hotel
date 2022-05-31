@@ -32,14 +32,14 @@
 	<table class="admin_memberTable">
 		<thead>
 		<tr>
-			<th>아이디</th>
-			<th>이름</th>
-			<th>생년월일</th>
-			<th>전화번호</th>
-			<th>이메일</th>
+			<th>ID</th>
+			<th>NAME</th>
+			<th>BIRTH</th>
+			<th>MOBILE</th>
+			<th>EMAIL</th>
 		</tr>
 		</thead>
-		<c:forEach var="memberdb" items=${memberList }>
+		<c:forEach var="memberdb" items="${memberList }">
 		<tr>
 			<td><a href="admin_index?formpath=memberInfo">${memberdb.memberId }</a></td>
 			<td>${memberdb.nameKR }(${memberdb.nameENG })</td>
@@ -52,17 +52,7 @@
 			</td>
 		</tr>
 		</c:forEach>
-		<tr>
-			<td>isddke22</td>
-			<td>김은영(Kim EunYoung)</td>
-			<td>1983.10.24</td>
-			<td>010-8372-1475</td>
-			<td>isddke22@gmail.com</td>
-			<td>
-			<input type="button" value="수정" class="listBtn">
-			<input type="button" value="삭제" class="listBtn">
-			</td>
-		</tr>
+		
 	</table><br>
 	
 	<!-- 페이징 -->

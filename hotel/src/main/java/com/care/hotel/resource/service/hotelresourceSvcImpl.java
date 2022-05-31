@@ -56,7 +56,7 @@ public class hotelresourceSvcImpl implements IhotelresourceSvc{
 		
 		ArrayList<memberDTO> list = memberDAO.memberList(begin, end, select, search);
 		session.setAttribute("memberList", list);
-		String url = "/hotel/memberlistProc?currentPage=";
+		String url = "/hotel/admin_index?formpath=memberList?currentPage=";
 		session.setAttribute("page", PageService.getNavi(currentPage, pageBlock, totalCount, url));
 	}
 	

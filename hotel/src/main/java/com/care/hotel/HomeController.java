@@ -6,11 +6,15 @@ import java.util.Locale;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.care.hotel.resource.service.IhotelresourceSvc;
 
 /**
  * Handles requests for the application home page.
@@ -62,10 +66,11 @@ public class HomeController {
 	}
 	
 	/* 회원 목록 */
-	@RequestMapping(value="memberList")
+	@RequestMapping(value="memberList", method = RequestMethod.GET)
 	public String admin_memberList() {
 		logger.info("admin_memberList");
 		return "admin/member/admin_memberList";
+		//return "forward:/admin_index?formpath=memberList";
 	}
 	
 	/* 회원 정보 */
