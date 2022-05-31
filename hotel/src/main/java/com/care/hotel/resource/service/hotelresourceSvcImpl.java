@@ -50,7 +50,7 @@ public class hotelresourceSvcImpl implements IhotelresourceSvc{
 	@Override
 	public void memberList(int currentPage, String select, String search) {
 		int pageBlock = 5; // 한 화면에 보여줄 데이터 수
-		int totalCount = memberDAO.memberCount(); // 총 데이터의 수 
+		int totalCount = memberDAO.memberCount(select, search); // 총 데이터의 수 
 		int end = currentPage * pageBlock; // 데이터의 끝 번호
 		int begin = end+1 - pageBlock; // 데이터의 시작 번호
 		

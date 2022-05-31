@@ -19,15 +19,15 @@
 
 <div class="admin_memberCombo">
 <form>
-	<select name="memberCombo" class="admin_memberCombobox">
-		<option value="none">===선택===</option>
-		<option value="id">아이디</option>
+	<select name="select" class="admin_memberCombobox">
+		<option value="">===선택===</option>
+		<option value="memberId">아이디</option>
 		<option value="name">이름</option>
 		<option value="mobile">전화번호</option>
-		<option value="eamil">이메일</option>
+		<option value="email">이메일</option>
 	</select>
-	<input type="text" name="memberSearch" class="admin_memberSearchTxt">
-	<input type="submit" name="memberSearchBtn" value="검색" onclick="search()" class="admin_memberSearchBtn">
+	<input type="text" name="search" class="admin_memberSearchTxt">
+	<input type="submit" name="memberSearchBtn" value="검색" class="admin_memberSearchBtn">
 </form>
 </div>
 
