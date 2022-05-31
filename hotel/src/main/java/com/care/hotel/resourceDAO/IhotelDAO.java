@@ -14,6 +14,6 @@ public interface IhotelDAO {
 	
 	int hotelCount();
 	int roomCount();
-
+	public hotelDTO hotelInfo(String hotelId);
 	ArrayList<roomDTO> roomList(int begin, int end, String select, String search);
 }

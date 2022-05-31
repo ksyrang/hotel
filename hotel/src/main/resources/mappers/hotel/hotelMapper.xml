@@ -7,26 +7,32 @@
 	<select id="hotelCount" resultType="int">
 		SELECT count(*) FROM hotel
 	</select>
-	<!-- 리스트 블러오기  -->
+<!-- 리스트 블러오기  -->
 	<select id="hotelList" resultType="com.care.hotel.resourceDTO.hotelDTO">
 		SELECT B.* FROM(
 			SELECT rownum rn, A.* FROM( 
 				SELECT * FROM hotel 
 				<choose>
 					<when test="sel == 'id'">
-						WHERE id like '%'||#{search}||'%'
+						WHERE hotelid like '%'||#{search}||'%'
 					</when>
 					<when test="sel == 'email'">
 						WHERE email like '%'||#{search}||'%'
+					</when>
+					<when test="sel == 'name'">
+						WHERE hotelname like '%'||#{search}||'%'
+					</when>
+					<when test="sel == 'tel'">
+						WHERE phonenumber like '%'||#{search}||'%'
 					</when>
 				</choose>
 			)A
 		)B WHERE rn BETWEEN #{b} and #{e}
 	</select>
-	<select id="testhotelList" resultType="com.care.hotel.resourceDTO.hotelDTO">
-		SELECT * FROM hotel
+	<!-- 호텔 정보 불러오기  -->
+	<select id="hotelInfo" resultType="com.care.hotel.resourceDTO.hotelDTO" parameterType="String">
+		SELECT * FROM hotel WHERE hotelid = #{hotelId}	
 	</select>
-
 
 
 </mapper>

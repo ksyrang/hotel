@@ -5,7 +5,20 @@
 
 <center>
 <div style="height: 20px;"></div>
-	<table>
+<form action="">
+	<select name="select" class="select" style="height: 25px;">
+		<option value="">전체</option>
+		<option value="id">아이디</option>
+		<option value="name">이름</option>
+		<option value="tel">전화번호</option>
+		<option value="email">이메일</option>
+	</select>
+	<input type="text" name="search" class="search">
+	<input type="submit" name="SearchBtn" value="검색" class="SearchBtn">
+</form>
+
+<div style="height: 20px;"></div>
+	<table >
 		<thead>
 			<tr>
 				<th style="width: 150px; height: 20px;" align="center">Hotel ID</th>
@@ -15,16 +28,19 @@
 				<th style="width: 100px; height: 20px;" align="center">수정 / 삭제</th>
 			</tr>
 		</thead>
-		<tr>
+		<tr><td colspan=5><hr/></td></tr>
+		<!-- <tr>
 			<td style="width: 150px; height:20px;" align="center"><hr/></td>
 			<td style="width: 250px; height:20px;" align="center"><hr/></td>
 			<td style="width: 150px; height:20px;" align="center"><hr/></td>
 			<td style="width: 200px; height:20px;" align="center"><hr/></td>
 			<td style="width: 100px; height:20px;" align="center"><hr/></td>
-		</tr>
-		<c:forEach var="hoteldb" items="${hotelList }">
+		</tr> -->
+		<c:forEach var="hoteldb" items="${sessionScope.hotelList }">
 			<tr>
-				<td style="width: 150px; height: 20px;" align="center">${hoteldb.hotelId }</td>
+				<td style="width: 150px; height: 20px;" align="center">
+				<a href="hotelInfoProc?hotelId=${hoteldb.hotelId}">${hoteldb.hotelId }</a>
+				</td>
 				<td style="width: 250px; height: 20px;" align="center">${hoteldb.hotelName }</td>
 				<td style="width: 150px; height: 20px;" align="center">${hoteldb.phoneNumber }</td>
 				<td style="width: 200px; height: 20px;" align="center">${hoteldb.email }</td>
@@ -32,9 +48,9 @@
 					<input type="button" value="수정"> <input type="button" value="삭제">
 				</td>
 			</tr>
-
 		</c:forEach>
-	
+		<tr><td colspan=5><hr/></td></tr>
 	</table>
+${sessionScope.page }
 <div style="height: 20px;"></div>
 </center>
