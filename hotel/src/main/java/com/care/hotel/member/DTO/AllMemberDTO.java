@@ -1,13 +1,12 @@
 package com.care.hotel.member.DTO;
 
-public class memberExDTO extends memberDTO{
+public class AllMemberDTO extends memberDTO{
 	
 	private String zipcode;
 	private String addr1;
 	private String addr2;
 	private String homePhone;
 	
-
 	public String getZipcode() {
 		return zipcode;
 	}
@@ -34,5 +33,4 @@ public class memberExDTO extends memberDTO{
 	}
 	
 	
-
 }

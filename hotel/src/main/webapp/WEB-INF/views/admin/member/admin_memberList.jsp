@@ -44,7 +44,7 @@
 		</thead>
 		<c:forEach var="memberdb" items="${sessionScope.memberList }">
 		<tr>
-			<td><a href="admin_index?formpath=memberInfo">${memberdb.memberId }</a></td>
+			<td><a href="${root }memberInfoProc?memberId=${memberdb.memberId}">${memberdb.memberId }</a></td>
 			<td>${memberdb.nameKR }(${memberdb.nameENG })</td>
 			<td>${memberdb.birthday }</td>
 			<td>${memberdb.mobile }</td>

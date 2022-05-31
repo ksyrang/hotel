@@ -21,7 +21,7 @@
 <div class="admin_memberInfoTableDiv">
 <table class="admin_memberInfoTable">
 <tr>
-	<th>아이디</th><td>dauen1</td>
+	<th>아이디</th><td>${user.memberId }</td>
 	<th>이름(국문)</th><td>신다은</td>
 	<th>이름(영문)</th><td>Shin DaEun</td>
 </tr>

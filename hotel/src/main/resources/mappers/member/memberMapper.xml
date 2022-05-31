@@ -6,22 +6,22 @@
 	<select id="memberCount" resultType="int">
 		SELECT count(*) FROM member
 		<choose>
-					<when test="sel == 'memberId'">
-						WHERE memberId like '%'||#{search}||'%'
-					</when>
-					<when test="sel == 'name'">
-						WHERE nameKR like '%'||#{search}||'%'
-					</when>
-					<when test="sel == 'name'">
-						WHERE nameENG like '%'||#{search}||'%'
-					</when>
-					<when test="sel == 'mobile'">
-						WHERE mobile like '%'||#{search}||'%'
-					</when>
-					<when test="sel == 'email'">
-						WHERE email like '%'||#{search}||'%'
-					</when>
-				</choose>
+				<when test="sel == 'memberId'">
+					WHERE memberId like '%'||#{search}||'%'
+				</when>
+				<when test="sel == 'name'">
+					WHERE nameKR like '%'||#{search}||'%'
+				</when>
+				<when test="sel == 'name'">
+					WHERE nameENG like '%'||#{search}||'%'
+				</when>
+				<when test="sel == 'mobile'">
+					WHERE mobile like '%'||#{search}||'%'
+				</when>
+				<when test="sel == 'email'">
+					WHERE email like '%'||#{search}||'%'
+				</when>
+			</choose>
 	</select>
 	<!--  member 테이블 리스트 불러오기 -->
 	<select id="memberList" resultType="com.care.hotel.member.DTO.memberDTO">
@@ -48,4 +48,15 @@
 			)A
 		)B WHERE rn BETWEEN #{b} and #{e}
 	</select>
+	
+	<!-- memberInfo -->
+	<select id="memberInfo" resultType="com.care.hotel.member.DTO.memberDTO">
+		SELECT * FROM member WHERE memberId=#{memberId}
+	</select>
+	
+	<!-- memberExInfo -->
+	<select id="memberExInfo" resultType="com.care.hotel.member.DTO.memberExDTO">
+		SELECT * FROM member_extra WHERE memberId=#{memberId}
+	</select>
+	
 </mapper>
