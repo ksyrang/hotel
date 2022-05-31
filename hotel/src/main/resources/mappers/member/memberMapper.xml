@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.care.hotel.member.DAO.memberDAO">
+
+	<!-- member 테이블 내 row 개수 -->
+	<select id="memberCount" resultType="int">
+		SELECT count(*) FROM member
+	</select>
+	<!--  member 테이블 리스트 불러오기 -->
+	<select id="memberList" resultType="com.care.hotel.member.DTO.memberDTO">
+		SELECT B.* FROM(
+			SELECT rownum rn, A.* FROM( 
+				SELECT * FROM member 
+				<choose>
+					<when test="sel == 'id'">
+						WHERE id like '%'||#{search}||'%'
+					</when>
+					<when test="sel == 'name'">
+						WHERE nameKR like '%'||#{search}||'%'
+					</when>
+					<when test="sel == 'name'">
+						WHERE nameENG like '%'||#{search}||'%'
+					</when>
+					<when test="sel == 'mobile'">
+						WHERE mobile like '%'||#{search}||'%'
+					</when>
+					<when test="sel == 'email'">
+						WHERE email like '%'||#{search}||'%'
+					</when>
+				</choose>
+			)A
+		)B WHERE rn BETWEEN #{b} and #{e}
+	</select>
+</mapper>

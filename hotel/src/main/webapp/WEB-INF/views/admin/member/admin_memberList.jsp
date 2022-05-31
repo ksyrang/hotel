@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+<c:url var="root" value="/" />
 
 <head>
 <meta charset="UTF-8">
@@ -18,7 +21,7 @@
 		<option value="none">===선택===</option>
 		<option value="id">아이디</option>
 		<option value="name">이름</option>
-		<option value="tel">전화번호</option>
+		<option value="mobile">전화번호</option>
 		<option value="eamil">이메일</option>
 	</select>
 	<input type="text" name="memberSearch" class="admin_memberSearchTxt">
@@ -36,17 +39,19 @@
 			<th>이메일</th>
 		</tr>
 		</thead>
+		<c:forEach var="memberdb" items=${memberList }>
 		<tr>
-			<td><a href="admin_index?formpath=memberInfo">dauen1</a></td>
-			<td>신다은(Shin DaEun)</td>
-			<td>1999.07.06</td>
-			<td>010-5620-1321</td>
-			<td>dauen1@naver.com</td>
+			<td><a href="admin_index?formpath=memberInfo">${memberdb.memberId }</a></td>
+			<td>${memberdb.nameKR }(${memberdb.nameENG })</td>
+			<td>${memberdb.birthday }</td>
+			<td>${memberdb.mobile }</td>
+			<td>${memberdb.email }</td>
 			<td style="width:100px;">
 			<input type="button" value="수정" class="listBtn" onclick="location.href='admin_index?formpath=memberModify'">
 			<input type="button" value="삭제" class="listBtn">
 			</td>
 		</tr>
+		</c:forEach>
 		<tr>
 			<td>isddke22</td>
 			<td>김은영(Kim EunYoung)</td>

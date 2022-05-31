@@ -31,5 +31,14 @@ public class hotelresourceController {
 		return "forward:/admin_index?formpath=admin_roomList";
 	}
 	
+	@RequestMapping("memberlistProc")
+	public String memberlistProc(Model model, 
+			@RequestParam(value = "currentPage", required = false, defaultValue = "1") int currentPage,
+			String select, String search) {
+		
+		hotellistSVC.memberList(currentPage, select, search);//서비스 내부에서 session에 데이터를 업로드함
+		return "forward:/admin_index?formpath=memberList";
+	}
+	
 
 }
