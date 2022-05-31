@@ -12,7 +12,7 @@ public interface IhotelDAO {
 	ArrayList<hotelDTO> hotelList(@Param("b")int begin, @Param("e")int end, 
 			@Param("sel")String select, @Param("search")String search);
 	
-	int hotelCount();
+	int hotelCount(@Param("sel")String select,  @Param("search")String search);
 	int roomCount();
 	public hotelDTO hotelInfo(String hotelId);
 	ArrayList<roomDTO> roomList(int begin, int end, String select, String search);

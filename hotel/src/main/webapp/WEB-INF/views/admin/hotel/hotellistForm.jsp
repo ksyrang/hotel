@@ -2,6 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <c:url var="root" value="/" />
+<link href="${pageContext.request.contextPath}/resources/css/admin/amdin_hotelList.css" rel="stylesheet" type="text/css">
 
 <center>
 <div style="height: 20px;"></div>
@@ -14,7 +15,7 @@
 		<option value="email">이메일</option>
 	</select>
 	<input type="text" name="search" class="search">
-	<input type="submit" name="SearchBtn" value="검색" class="SearchBtn">
+	<input type="submit" name="SearchBtn" value="검색" class="Btn">
 </form>
 
 <div style="height: 20px;"></div>
@@ -29,13 +30,6 @@
 			</tr>
 		</thead>
 		<tr><td colspan=5><hr/></td></tr>
-		<!-- <tr>
-			<td style="width: 150px; height:20px;" align="center"><hr/></td>
-			<td style="width: 250px; height:20px;" align="center"><hr/></td>
-			<td style="width: 150px; height:20px;" align="center"><hr/></td>
-			<td style="width: 200px; height:20px;" align="center"><hr/></td>
-			<td style="width: 100px; height:20px;" align="center"><hr/></td>
-		</tr> -->
 		<c:forEach var="hoteldb" items="${sessionScope.hotelList }">
 			<tr>
 				<td style="width: 150px; height: 20px;" align="center">
@@ -45,7 +39,7 @@
 				<td style="width: 150px; height: 20px;" align="center">${hoteldb.phoneNumber }</td>
 				<td style="width: 200px; height: 20px;" align="center">${hoteldb.email }</td>
 				<td style="width: 100px; height: 20px;" align="center">
-					<input type="button" value="수정"> <input type="button" value="삭제">
+					<input type="button" class="Btn" value="수정"> <b>/</b> <input type="button" class="Btn" value="삭제">
 				</td>
 			</tr>
 		</c:forEach>
