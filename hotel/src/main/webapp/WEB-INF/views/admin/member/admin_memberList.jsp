@@ -8,6 +8,7 @@
 <meta charset="UTF-8">
 <link href="${pageContext.request.contextPath}/resources/css/admin/amdin_memberList.css" rel="stylesheet" type="text/css">
 <title>admin_memberList</title>
+
 </head>
 
 
@@ -17,6 +18,7 @@
 
 
 <div class="admin_memberCombo">
+<form>
 	<select name="memberCombo" class="admin_memberCombobox">
 		<option value="none">===선택===</option>
 		<option value="id">아이디</option>
@@ -25,7 +27,8 @@
 		<option value="eamil">이메일</option>
 	</select>
 	<input type="text" name="memberSearch" class="admin_memberSearchTxt">
-	<input type="button" name="memberSearchBtn" value="검색" class="admin_memberSearchBtn">
+	<input type="submit" name="memberSearchBtn" value="검색" onclick="search()" class="admin_memberSearchBtn">
+</form>
 </div>
 
 <div>
@@ -39,7 +42,7 @@
 			<th>EMAIL</th>
 		</tr>
 		</thead>
-		<c:forEach var="memberdb" items="${memberList }">
+		<c:forEach var="memberdb" items="${sessionScope.memberList }">
 		<tr>
 			<td><a href="admin_index?formpath=memberInfo">${memberdb.memberId }</a></td>
 			<td>${memberdb.nameKR }(${memberdb.nameENG })</td>
@@ -57,14 +60,10 @@
 	
 	<!-- 페이징 -->
 	<div align="center">
-	<a href="">&lt;</a>
-	<a href="">1</a>
-	<a href="">2</a>
-	<a href="">3</a>
-	<a href="">&gt;</a>
+	${sessionScope.page }
 	</div>
 	
-	<b>총 회원수 : 2명</b>
+	<b>총 회원수 : ${sessionScope.memberCount }명</b>
 </div>
 
 </div>

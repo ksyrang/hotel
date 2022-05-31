@@ -21,7 +21,6 @@ public class AdminController {
 	public String memberListProc(Model model, 
 			@RequestParam(value = "currentPage", required = false, defaultValue = "1") int currentPage,
 			String select, String search) {
-		System.out.println("adminController-memberListProc");
 		logger.info("adminController-memberListProc");
 		
 		hotellistSVC.memberList(currentPage, select, search);//서비스 내부에서 session에 데이터를 업로드함
