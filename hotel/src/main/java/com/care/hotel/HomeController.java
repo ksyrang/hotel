@@ -97,7 +97,11 @@ public class HomeController {
 		
 		return "admin/hotel/hotelInfoform";
 	}	
-	
+	@GetMapping("admin_hotelInfoModify")
+	public String admin_hotelInfoModify() {
+		
+		return "admin/hotel/hotelInfomodifyform";
+	}	
 	@GetMapping("admin_roomList")
 	public String admin_roomList() {
 		

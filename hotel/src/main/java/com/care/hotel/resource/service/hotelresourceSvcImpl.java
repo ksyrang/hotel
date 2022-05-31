@@ -63,8 +63,16 @@ public class hotelresourceSvcImpl implements IhotelresourceSvc{
 	
 	@Override
 	public void hotelInfo(String hotelId) {
-		
-		session.setAttribute("hotelInfo", hotelDAO.hotelInfo(hotelId));
+		hotelDTO hotelInfo = hotelDAO.hotelInfo(hotelId);
+		System.out.println("getHotelId: "+hotelInfo.getHotelId());
+		System.out.println("getHotelName: "+hotelInfo.getHotelName());
+		System.out.println("getPhoneNumber: "+hotelInfo.getPhoneNumber());
+		System.out.println("getEmail: "+hotelInfo.getEmail());
+		System.out.println("getAddr1: "+hotelInfo.getAddr1());
+		System.out.println("getAddr2: "+hotelInfo.getAddr2());
+		System.out.println("getZipCode: "+hotelInfo.getZipCode());
+
+		session.setAttribute("hotelInfo", hotelInfo);
 	}
 	
 

@@ -38,5 +38,11 @@ public class hotelresourceController {
 		return "forward:/admin_index?formpath=admin_hotelInfo";
 	}	
 	
+	@RequestMapping("hotelModifyProc")
+	public String hotelModifyProc(String hotelId, Model model) {
+		if(hotelId ==""||hotelId == null) return "redirect:hotelModifyProc";
+		//수정 메소드 추가 필요
+		return "forward:/admin_index?formpath=admin_hotelInfo";
+	}	
 
 }
