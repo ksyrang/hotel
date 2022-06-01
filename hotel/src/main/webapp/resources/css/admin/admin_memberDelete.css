@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+.top_info {font-size: 25px;}
+
+.delteTabDiv {margin-top: 20px;}
+
+.adminLoginTable {border: none; width: 300px;}
+.adminLoginTable td {border: none; text-align: center;}
+.login_input {width:200px; height:40px;}
+.okBtn {width: 300px; height:40px; background-color: #f1e3c4;}

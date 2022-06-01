@@ -42,4 +42,40 @@ public class memberSvcImpl implements ImemberSvc{
 		return user;
 	}
 
+	@Override
+	public String memberModify(AllMemberDTO allMemberDto) {
+		int memberUpdateResult = memberDAO.memberUpdate(allMemberDto);
+		
+		memberExDTO memberExDto = new memberExDTO();
+		memberExDto.setMemberId(allMemberDto.getMemberId());
+		memberExDto.setZipcode(allMemberDto.getZipcode());
+		memberExDto.setAddr1(allMemberDto.getAddr1());
+		memberExDto.setAddr2(allMemberDto.getAddr2());
+		memberExDto.setHomePhone(allMemberDto.getHomePhone());
+		
+		int memberExUpdateResult = memberDAO.memberExUpdate(memberExDto);
+		
+		if(memberUpdateResult != 1 || memberExUpdateResult != 1) {
+			return "회원정보수정 실패";
+		} 
+		return "회원정보수정 완료";
+	}
+
+	@Override
+	public String adminCheck(String adminId, String adminPw, String memberId) {
+		String result = "[" + memberId + "]회원을 삭제했습니다.";
+		
+		if(adminId == null || adminId.isEmpty() || adminPw == null || adminPw.isEmpty()) 
+			result = "아이디 혹은 비밀번호를 확인해주세요.";
+		
+		if(!(adminId.equals("admin"))) 
+			result = "아이디 혹은 비밀번호를 확인해주세요.";
+		
+		if(!(adminPw.equals("1234"))) 
+			result = "아이디 혹은 비밀번호를 확인해주세요.";
+		
+		memberDAO.memberDelete(memberId);
+		return result;
+	}
+
 }

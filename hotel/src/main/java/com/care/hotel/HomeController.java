@@ -65,7 +65,7 @@ public class HomeController {
 		model.addAttribute("formpath", formpath);
 	}
 	
-	/* 회원 목록 */
+	/* 관리자 회원 목록 */
 	@RequestMapping(value="memberList", method = RequestMethod.GET)
 	public String admin_memberList() {
 		logger.info("admin_memberList");
@@ -73,18 +73,25 @@ public class HomeController {
 		//return "forward:/admin_index?formpath=memberList";
 	}
 	
-	/* 회원 정보 */
+	/* 관리자 회원 정보 */
 	@RequestMapping(value="memberInfo", method = RequestMethod.GET)
 	public String admin_memberInfo() {
 		logger.info("admin_memberInfo");
 		return "admin/member/admin_memberInfo";
 	}
 	
-	/*회원 수정 */
+	/* 관리자 회원 수정 */
 	@RequestMapping(value="memberModify", method = RequestMethod.GET)
 	public String admin_memberModify() {
 		logger.info("admin_memberModify");
 		return "admin/member/admin_memberModify";
+	}
+	
+	/* 관리자 회원 삭제*/
+	@RequestMapping(value="memberDelete", method = RequestMethod.GET)
+	public String admin_memberDelete() {
+		logger.info("admin_memberDelete");
+		return "admin/member/admin_memberDelete";
 	}
 	
 	@GetMapping("admin_hotelList")

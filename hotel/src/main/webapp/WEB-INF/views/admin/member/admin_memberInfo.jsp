@@ -16,7 +16,7 @@
 </div>
 <div class="admin_memberInfoTopRight">
 	<input type="button" value="수정" class="listBtn" onclick="location.href='${root }memberModifyProc?memberId=${user.memberId}'">
-	<input type="button" value="삭제" class="listBtn">
+	<input type="button" value="삭제" class="listBtn" onclick="location.href='${root }memberDeleteProc?memberId=${user.memberId}'">
 </div>
 
 <div class="admin_memberInfoTableDiv">

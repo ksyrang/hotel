@@ -59,4 +59,18 @@
 		SELECT * FROM member_extra WHERE memberId=#{memberId}
 	</select>
 	
+	<!-- memberUpdate -->
+	<update id="memberUpdate" parameterType="com.care.hotel.member.DTO.memberDTO">
+	UPDATE member 
+	SET nameKR=#{nameKR}, nameENG=#{nameENG}, birthday=#{birthday}, mobile=#{mobile}, pw=#{pw}, gender=#{gender}
+	WHERE memberId=#{memberId}
+	</update>
+	<!-- memberExUpdate -->
+	<update id="memberExUpdate" parameterType="com.care.hotel.member.DTO.memberExDTO">
+	UPDATE member_extra
+	SET zipcode=#{zipcode}, addr1=#{addr1}, addr2=#{addr2}, homePhone=#{homePhone}
+	WHERE memberId=#{memberId}
+	</update>
+	<!-- memberDelete -->
+	<delete id="memberDelete" parameterType="String"> DELETE FROM member WHERE memberId=#{memberId} </delete>
 </mapper>

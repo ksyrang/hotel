@@ -51,7 +51,7 @@
 			<td>${memberdb.email }</td>
 			<td style="width:100px;">
 			<input type="button" value="수정" class="listBtn" onclick="location.href='${root }memberModifyProc?memberId=${memberdb.memberId}'">
-			<input type="button" value="삭제" class="listBtn">
+			<input type="button" value="삭제" class="listBtn" onclick="location.href='${root }memberDeleteProc?memberId=${memberdb.memberId}'">
 			</td>
 		</tr>
 		</c:forEach>

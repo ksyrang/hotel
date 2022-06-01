@@ -17,8 +17,11 @@
 <div class="admin_memberInfoTopLeft">
 	회원수정
 </div>
+
+<form action="memberModifySaveProc" method="post">
+
 <div class="admin_memberInfoTopRight">
-	<input type="button" value="저장" class="listBtn">
+	<input type="submit" value="저장" class="listBtn">
 	<input type="button" value="취소" class="listBtn" onclick="location.href='${root }memberListProc'">
 </div>
 
@@ -28,6 +31,10 @@
 	<th>아이디</th><td><input type="text" name="memberID" value="${user.memberId }" readonly></td>
 	<th>이름(국문)</th><td><input type="text" name="nameKR"  value="${user.nameKR }"></td>
 	<th>이름(영문)</th><td><input type="text" name="nameENG"  value="${user.nameENG }"></td>
+</tr>
+<tr>
+	<th>비밀번호</th>
+	<td><input type="password" name="pw" value="${user.pw }"></td>
 </tr>
 <tr>
 	<th>생년월일</th><td><input type="text" name="birthday"  value="${user.birthday }"></td>
@@ -65,6 +72,8 @@
 </tr>
 </table>
 </div>
+</form>
+
 </div>
 
 </body>

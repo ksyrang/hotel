@@ -19,4 +19,9 @@ public interface memberDAO {
 	memberDTO memberInfo(String memberId);
 	
 	memberExDTO memberExInfo(String memberId);
+	
+	int memberUpdate(memberDTO memberDto);
+	int memberExUpdate(memberExDTO memberExDto);
+	
+	int memberDelete(String memeberId);
 }
