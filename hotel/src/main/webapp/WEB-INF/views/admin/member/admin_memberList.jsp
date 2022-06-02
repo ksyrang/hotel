@@ -10,8 +10,6 @@
 <title>admin_memberList</title>
 
 </head>
-
-
 <body>
 
 <c:if test="${not empty msg }">

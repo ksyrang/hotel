@@ -52,7 +52,7 @@ ${memberId } 회원을 정말 삭제하시겠습니까?
 	<td colspan="2"><input type="button" value="확인" onclick="check();" class="okBtn"></td>
 	</tr>
 </table>
-<input type="text" name="memberId" value="${memberId }">
+<input type="hidden" name="memberId" value="${memberId }">
 </form>
 </div>
 </div>

@@ -59,6 +59,11 @@
 		SELECT * FROM member_extra WHERE memberId=#{memberId}
 	</select>
 	
+	<!-- memberExInsert -->
+	<insert id="memberExInsert" parameterType="com.care.hotel.member.DTO.memberExDTO">
+		INSERT INTO member_extra VALUES(#{memberId}, #{zipcode}, #{addr1}, #{addr2}, #{homePhone} ) 
+	</insert>
+	
 	<!-- memberUpdate -->
 	<update id="memberUpdate" parameterType="com.care.hotel.member.DTO.memberDTO">
 	UPDATE member 

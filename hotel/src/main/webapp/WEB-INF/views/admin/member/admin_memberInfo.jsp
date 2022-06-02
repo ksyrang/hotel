@@ -9,6 +9,11 @@
 <title>admin_memberInfo</title>
 </head>
 <body>
+
+<c:if test="${not empty msg }">
+	<script>alert("${msg}");</script>
+</c:if>
+
 <div class="admin_main">
 
 <div class="admin_memberInfoTopLeft">

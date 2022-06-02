@@ -60,14 +60,22 @@ public class AdminController {
 	}
 	
 	/* 회원 수정 저장 */
-	@RequestMapping(value="memberModifySaveProc", method = RequestMethod.POST)
+	@RequestMapping(value="memberModifyProc", method = RequestMethod.POST)
 	public String memberModifySaveProc(AllMemberDTO allMemberDto, Model model) {
 		System.out.println(allMemberDto.getMemberId());
-		String result = memberSvc.memberModify(allMemberDto);
+		System.out.println(allMemberDto.getZipcode());
+		String result = "회원정보수정 실패";
+		
+		if(allMemberDto.getMemberId() != null) {
+			result = memberSvc.memberModify(allMemberDto);
+		}
+		
+		model.addAttribute("msg", result);
 		if(result.equals("회원정보수정 실패")) {
 			return "redirect:memberListProc";
+		} else {
+			return "forward:/admin_index?formpath=memberInfo?memberId="+allMemberDto.getMemberId();
 		}
-		return "forward:/admin_index?formpath=memberInfo?memberId="+allMemberDto.getMemberId();
 	}
 	
 	/* 회원 삭제 관리자 비밀번호 확인 */

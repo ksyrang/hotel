@@ -68,7 +68,7 @@ public class HomeController {
 	}
 	
 	/* 관리자 회원 목록 */
-	@RequestMapping(value="memberList", method = RequestMethod.GET)
+	@RequestMapping(value="memberList")
 	public String admin_memberList() {
 		logger.info("admin_memberList");
 		return "admin/member/admin_memberList";
@@ -76,7 +76,7 @@ public class HomeController {
 	}
 	
 	/* 관리자 회원 정보 */
-	@RequestMapping(value="memberInfo", method = RequestMethod.GET)
+	@RequestMapping(value="memberInfo")
 	public String admin_memberInfo() {
 		logger.info("admin_memberInfo");
 		return "admin/member/admin_memberInfo";

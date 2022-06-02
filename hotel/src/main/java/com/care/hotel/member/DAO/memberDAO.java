@@ -9,12 +9,13 @@ import com.care.hotel.member.DTO.AllMemberDTO;
 import com.care.hotel.member.DTO.memberDTO;
 import com.care.hotel.member.DTO.memberExDTO;
 
-@Repository
 public interface memberDAO {
 	ArrayList<memberDTO> memberList(@Param("b")int begin, @Param("e")int end, 
 			@Param("sel")String select, @Param("search")String search);
 	
 	int memberCount(@Param("sel")String select,  @Param("search")String search);
+	
+	int memberExInsert(memberExDTO memberExDto);
 	
 	memberDTO memberInfo(String memberId);
 	

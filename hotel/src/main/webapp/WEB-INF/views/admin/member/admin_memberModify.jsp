@@ -12,13 +12,17 @@
 <title>admin_memberModify</title>
 </head>
 <body>
+<c:if test="${not empty msg }">
+	<script>alert("${msg}");</script>
+</c:if>
+
 <div class="admin_main">
 
 <div class="admin_memberInfoTopLeft">
 	회원수정
 </div>
 
-<form action="memberModifySaveProc" method="post">
+<form action="memberModifyProc" method="post">
 
 <div class="admin_memberInfoTopRight">
 	<input type="submit" value="저장" class="listBtn">
@@ -28,7 +32,7 @@
 <div class="admin_memberInfoTableDiv">
 <table class="admin_memberInfoTable">
 <tr>
-	<th>아이디</th><td><input type="text" name="memberID" value="${user.memberId }" readonly></td>
+	<th>아이디</th><td><input type="text" name="memberId" value="${user.memberId }" readonly></td>
 	<th>이름(국문)</th><td><input type="text" name="nameKR"  value="${user.nameKR }"></td>
 	<th>이름(영문)</th><td><input type="text" name="nameENG"  value="${user.nameENG }"></td>
 </tr>
@@ -64,11 +68,11 @@
 	</td>
 </tr>
 <tr>
-	<th>주소</th><td>${user.addr1 }</td>
-	<th>우편번호</th><td>${user.zipcode }</td>
+	<th>주소</th><td><input type="text" name="addr1"  value="${user.addr1 }"></td>
+	<th>우편번호</th><td><input type="text" name="zipcode"  value="${user.zipcode }"></td>
 </tr>
 <tr>
-	<th>상세주소</th><td>${user.addr2 }</td>
+	<th>상세주소</th><td><input type="text" name="addr2"  value="${user.addr2 }"></td>
 </tr>
 </table>
 </div>
