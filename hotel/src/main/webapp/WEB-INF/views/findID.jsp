@@ -5,6 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>로그인 | The Shilla Hotels &amp; Resorts</title>
+<link href="${pageContext.request.contextPath}/css/mem/common.css" rel="stylesheet" type="text/css">
 <link href="${pageContext.request.contextPath}/css/mem/title_ko.css" rel="stylesheet" type="text/css">
 <link href="${pageContext.request.contextPath}/css/mem/common/print.css" rel="stylesheet" type="text/css" media="print">
 <link href="${pageContext.request.contextPath}/css/mem/mainImages_ko.css" rel="stylesheet" type="text/css">
@@ -236,7 +237,7 @@ function setCalendarControlDate(yyyy,mm,dd){
 function popCalendarLayerHide(){
 	$("#popCalendarDiv").attr("style","z-Index:99999;display:none;");
 }
-</script></head><body class="subBody joinBody"><div id="popCalendarDiv" class="popCalendar" style="display:none"></div><link href="/css/mem/common.css" rel="stylesheet" type="text/css">
+</script></head><body class="subBody joinBody"><div id="popCalendarDiv" class="popCalendar" style="display:none"></div>
 
 <script src="/js/json2.js" charset="UTF-8"></script>
 <script src="/js/jquery-1.8.3.js" charset="UTF-8"></script>

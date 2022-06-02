@@ -8,7 +8,7 @@ function popForId(hotlPath){
 	var errorCheck = "";
 	$.ajax(
             {
-            	url : '/membership/mem/forId/memViewMbrInfoforId.do',
+            	url : '/'+popPointHotlPath+'/findID.do',
                 type: "post",
                 dataType: "html",
                 error: function(){

@@ -13,13 +13,49 @@
 <link href="${pageContext.request.contextPath}/css/mem/common/lang-ko_N.css" rel="stylesheet" type="text/css">
 <link href="${pageContext.request.contextPath}/css/mem/common/btn_ko.css" rel="stylesheet" type="text/css">
 <link href="${pageContext.request.contextPath}/css/common/swiper.min.css" rel="stylesheet" type="text/css">
+<script src="${pageContext.request.contextPath}/js/json2.js" charset="UTF-8" type="text/javascript"></script>
+<script src="${pageContext.request.contextPath}/js/jquery-1.8.3.js" charset="UTF-8" type="text/javascript"></script>
+<script src="${pageContext.request.contextPath}/js/uniform.js" charset="UTF-8" type="text/javascript"></script>
+<script src="${pageContext.request.contextPath}/js/browser.js" charset="UTF-8" type="text/javascript"></script>
+<script src="${pageContext.request.contextPath}/js/style.hub.js" charset="UTF-8" type="text/javascript"></script>
+<script src="${pageContext.request.contextPath}/js/swiper.min.js" type="text/javascript"></script>
+<script src="${pageContext.request.contextPath}/js/style.advance.js" charset="UTF-8" type="text/javascript"></script><!-- 개선 : js 추가 -->
+<script src="${pageContext.request.contextPath}/js/resv/advResvCalendar.js" charset="UTF-8" type="text/javascript"></script> <!-- [2019_모션추가]3 달력 고도화 -->
+<script src="${pageContext.request.contextPath}/index.do/secu/messageJs.do" charset="UTF-8" type="text/javascript"></script>
+<script src="${pageContext.request.contextPath}/js/common.js" charset="UTF-8" type="text/javascript"></script>
+<script src="${pageContext.request.contextPath}/js/commonEx.js" charset="UTF-8" type="text/javascript"></script>
+<script src="${pageContext.request.contextPath}/js/jquery.slides.js" charset="UTF-8" type="text/javascript"></script>
+<script src="${pageContext.request.contextPath}/js/mbr/popLogin.js" charset="UTF-8" type="text/javascript"></script>
+<script src="${pageContext.request.contextPath}/js/mbr/forIdPwd.js" charset="UTF-8" type="text/javascript"></script>
+<script src="${pageContext.request.contextPath}/js/mbr/mbshPointRead.js" charset="UTF-8" type="text/javascript"></script>
+<script src="${pageContext.request.contextPath}/js/resv/resvCalendar.js" charset="UTF-8" type="text/javascript"></script>
+<script src="${pageContext.request.contextPath}/js/resv/resvPromotionCalendar.js" charset="UTF-8"></script>
+<script src="${pageContext.request.contextPath}/js/resv/resv.js" charset="UTF-8"></script>
+<script src="${pageContext.request.contextPath}/js/resv/din.js" charset="UTF-8"></script>
+<script src="${pageContext.request.contextPath}/js/ask/ask.js" charset="UTF-8"></script>
+<script src="${pageContext.request.contextPath}/js/mbr/zipno.js" charset="UTF-8"></script>
+<script src="${pageContext.request.contextPath}/js/offers/makeAPlan.js" charset="UTF-8"></script>
+<script src="${pageContext.request.contextPath}/js/mbr/mbr_join.js" charset="UTF-8"></script><script src="/js/jquery.cookie.js" charset="UTF-8"></script>
+<script src="${pageContext.request.contextPath}/js/placeholders.js" charset="UTF-8" type="text/javascript"></script>
+<script src="${pageContext.request.contextPath}/js/rewards_new2020.js" charset="UTF-8" type="text/javascript"></script>
+<script src="${pageContext.request.contextPath}/js/dining_new2020.js" charset="UTF-8" type="text/javascript"></script>
+<!--[if IE 6]><script src="/js/png24.js"></script><![endif]-->
+
+<script type="text/javascript">
+
+	</script>
 <meta name="description" content="로그인"><!-- <meta name="keywords" content="로그인" /> -->
 <meta name="og:title" content="로그인 | The Shilla Hotels &amp; Resorts">
 <!-- 검색엔진용 추가 180524 -->
 <meta name="keywords" content="신라스테이,신라호텔,서울신라호텔,제주신라호텔,호텔신라,럭셔리호텔,신라리워즈">
 <meta name="description" content="국내 최고 럭셔리 호텔인 호텔신라는 신라호텔과 신라스테이 브랜드를 보유하고 있습니다.">
 <meta name="subject" content="신라스테이 소개,신라 리워즈 안내,브랜드 및 호텔 소개,객실 패키지 안내,온라인 최저가 예약,">
-<script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script gtm="GTM-T3LBJ26" type="text/javascript" async="" src="https://www.google-analytics.com/gtm/optimize.js?id=OPT-NQ9CLZ3"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-30Y6N61ES4&amp;l=dataLayer&amp;cx=c"></script><script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-T3LBJ26"></script><script type="text/javascript">
+<script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script gtm="GTM-T3LBJ26" type="text/javascript" async="" src="https://www.google-analytics.com/gtm/optimize.js?id=OPT-NQ9CLZ3"></script>
+<script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-30Y6N61ES4&amp;l=dataLayer&amp;cx=c"></script>
+<script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-T3LBJ26"></script>
+<script type="text/javascript">
 
 document.write("<div id='popCalendarDiv' class='popCalendar' style='display:none' ></div>");
 
@@ -239,31 +275,11 @@ function popCalendarLayerHide(){
 }
 </script></head><body class="subBody joinBody"><div id="popCalendarDiv" class="popCalendar" style="display:none"></div>
 
-<script src="/js/json2.js" charset="UTF-8"></script>
-<script src="/js/jquery-1.8.3.js" charset="UTF-8"></script>
-<script src="/js/uniform.js" charset="UTF-8"></script>
-<script src="/js/browser.js" charset="UTF-8"></script>
-<script src="/js/style.hub.js" charset="UTF-8"></script>
-<script src="/js/swiper.min.js"></script>
-<script src="/js/style.advance.js" charset="UTF-8"></script><!-- 개선 : js 추가 -->
-<script src="/js/resv/advResvCalendar.js" charset="UTF-8"></script> <!-- [2019_모션추가]3 달력 고도화 -->
-<script src="/index.do/secu/messageJs.do" charset="UTF-8"></script>
-	<script src="/js/common.js" charset="UTF-8"></script>
-<script src="/js/commonEx.js" charset="UTF-8"></script>
-<script src="/js/jquery.slides.js" charset="UTF-8"></script>
-<script src="/js/mbr/popLogin.js" charset="UTF-8"></script><div id="popLoginDiv" class="popLogin" style="display:none"></div>
-<script src="/js/mbr/forIdPwd.js" charset="UTF-8"></script><div id="popForIdPwDiv" style="display:none">0</div>
-<script src="/js/mbr/mbshPointRead.js" charset="UTF-8"></script><div id="mbshPotinRead" style="display:none"></div>
-<script src="/js/resv/resvCalendar.js" charset="UTF-8"></script><script src="/js/resv/resvPromotionCalendar.js" charset="UTF-8"></script><script src="/js/resv/resv.js" charset="UTF-8"></script><script src="/js/resv/din.js" charset="UTF-8"></script><script src="/js/ask/ask.js" charset="UTF-8"></script><script src="/js/mbr/zipno.js" charset="UTF-8"></script><div id="zipNoLayerDiv" class="popLogin" style="display:none"></div><script src="/js/offers/makeAPlan.js" charset="UTF-8"></script><div id="makeAPlanLayerDiv" class="popLogin" style="display:none"></div><script src="/js/mbr/mbr_join.js" charset="UTF-8"></script><script src="/js/jquery.cookie.js" charset="UTF-8"></script>
-<script src="/js/placeholders.js" charset="UTF-8"></script>
-<script src="/js/rewards_new2020.js" charset="UTF-8"></script>
-<script src="/js/dining_new2020.js" charset="UTF-8"></script>
-<!--[if IE 6]><script src="/js/png24.js"></script><![endif]-->
-
-<script type="text/javascript">
-
-	</script>
-
+<div id="popForIdPwDiv" style="display:none">0</div>
+<div id="popLoginDiv" class="popLogin" style="display:none"></div>
+<div id="mbshPotinRead" style="display:none"></div>
+<div id="makeAPlanLayerDiv" class="popLogin" style="display:none"></div>
+<div id="zipNoLayerDiv" class="popLogin" style="display:none"></div>
 <!-- 운영인 경우만 Google Analytics 호출 -->
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -329,8 +345,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <h1 class="logo"><a href="/index.do">THE SHILLA HOTELS &amp; RESORTS</a></h1>
   <!-- 로그인 -->
   <span class="loginArea">
-	<a href="/membership/mbr/login/memLogin.do">로그인</a>
-    <a href="/mem/mbr/join/memViewBrowsewrap.do">신라리워즈 가입</a>
+	<a href="/hotel/memLoginForm">로그인</a>
+    <a href="/hotel/memJoinAgreeForm">신라리워즈 가입</a>
     </span>
   <!-- 예약확인 추가 -->
   <div class="resvConfirm">
@@ -437,7 +453,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			<div class="hCon" style="display:none;">
 				<div class="list1">
 					<dl>
-						<dt><a href="/index.do"><img src="/images/ko/mem/new_2019/main_tab1_tit1" alt="THE SHILLA"></a></dt>
+						<dt><a href="/index.do"><img src="${pageContext.request.contextPath}/images/ko/mem/new_2019/main_tab1_tit1" alt="THE SHILLA"></a></dt>
 						<dd>
 							<ul>
 							<li class="first"><a href="https://www.shilla.net/seoul/index.do?lang=ko">서울신라호텔</a></li>
@@ -1284,7 +1300,7 @@ function popRewardNo(rewardNo){
 											</form>
 										</fieldset>
 										<div class="btn">
-											<a class="btnJoin" href="/mem/mbr/join/memViewBrowsewrap.do"><span>신라리워즈 가입</span></a>
+											<a class="btnJoin" href="/hotel/memJoinAgreeForm"><span>신라리워즈 가입</span></a>
 											<a href="javascript:popForId('mem');" id="popForIdButton" class="btnLostId"><span>신라리워즈 번호 찾기</span></a>
 											<a href="javascript:popForPw('mem');" id="popForPwButton" class="btnLostPw"><span>비밀번호찾기</span></a>
 										</div>

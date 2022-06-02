@@ -30,4 +30,10 @@ public class MemLoginFormController {
 		
 		return "memLoginForm";
 	}
+	
+	@RequestMapping(value = "/findID", method = RequestMethod.POST)
+	public String findID() throws Exception{
+		return "findID";
+	}
+	
 }	
