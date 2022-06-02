@@ -83,4 +83,12 @@
 	</update>
 	<!-- memberDelete -->
 	<delete id="memberDelete" parameterType="String"> DELETE FROM member WHERE memberId=#{memberId} </delete>
+	<!-- 아이디 중복 확인 -->
+	<select id="isExistId" parameterType="String" resultType="int">
+		SELECT count(*) FROM login WHERE id=#{id}
+	</select>
+	<!-- 이메일 중복 확인 -->
+	<select id="isExistEmail" parameterType="String" resultType="int">
+		SELECT count(*) FROM login WHERE email=#{email}
+	</select>
 </mapper>

@@ -1,5 +1,7 @@
 package com.care.hotel.member.service;
 
+
+import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -8,6 +10,7 @@ import com.care.hotel.member.DAO.memberDAO;
 import com.care.hotel.member.DTO.AllMemberDTO;
 import com.care.hotel.member.DTO.memberDTO;
 import com.care.hotel.member.DTO.memberExDTO;
+import com.care.hotel.login.DTO.LoginDTO;
 
 @Service
 public class memberSvcImpl implements ImemberSvc{
@@ -96,6 +99,58 @@ public class memberSvcImpl implements ImemberSvc{
 		}
 		
 		return result;
+	}
+	
+	@Override
+	public String isExistId(String id) {
+		if (id == null)
+			return "아이디를 입력 후 다시 시도하세요.";
+		int count = memberDAO.isExistId(id);
+		if (count == 1)
+			return "중복 아이디 입니다.";
+
+		return "사용 가능한 아이디입니다.";
+	}
+	
+	@Override
+	public String isExistEmail(String email) {
+		if (email == null)
+			return "아이디를 입력 후 다시 시도하세요.";
+		int count = memberDAO.isExistEmail(email);
+		if (count == 1)
+			return "중복 아이디 입니다.";
+
+		return "사용 가능한 아이디입니다.";
+	}
+	
+	@Override
+	public String memberInsert(memberDTO memberDTO, memberExDTO memberExDTO) {
+		
+		if (memberDTO.getMemberId() == null || memberDTO.getMemberId().isEmpty())
+			return "아이디를 입력하세요.";
+
+		if (memberDTO.getPw() == null || memberDTO.getPw().isEmpty())
+			return "비밀번호를 입력하세요.";
+
+		if (memberDAO.isExistId(memberDTO.getMemberId()) > 0)
+			return "중복 아이디 입니다.";
+
+		if (memberDAO.isExistEmail(memberDTO.getEmail()) > 0)
+			return "중복 이메일 입니다.";
+
+		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+		String securePw = encoder.encode(memberDTO.getPw());
+		memberDTO.setPw(securePw);
+
+		memberDAO.memberInsert(memberDTO);
+
+		if ("m".equals(memberDTO.getGender()) || "w".equals(memberDTO.getGender()) || "n".equals(memberDTO.getGender()))
+			memberDAO.memberInsert(memberDTO);
+
+		if (!("".equals(memberExDTO.getZipcode())))
+			memberDAO.memberExInsert(memberExDTO);
+
+		return "가입 완료";
 	}
 
 }

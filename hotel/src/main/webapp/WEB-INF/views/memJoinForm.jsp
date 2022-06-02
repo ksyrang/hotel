@@ -949,7 +949,7 @@ function unCheck() {
 								<option value="">선택</option>
 								<option value="Miss." title="Ms.">
 											Ms.</option>
-									<option value="Mr." title="Mr.">
+									<option value="Mr." title="Mr." selected="">
 											Mr.</option>
 									</select></div>
 							<input type="text" class="lastNameEn uiform text" id="mbrNm" name="mbrNm" maxlength="30" value="" autocomplete="off">
@@ -962,110 +962,74 @@ function unCheck() {
 							<label for="mbrEnFnm" class="firstNameEn">First name(이름)</label>
 							<input id="mbrEnFnm" name="mbrEnFnm" onkeyup="this.value=this.value.replace(/[^a-z]/gi,'');" style="text-transform: uppercase;" type="text" class="lastNameEn uiform text" value="" maxlength="30" autocomplete="off"><label for="mbrEnLnm" class="lastNameEn">Last name(성)</label>
 							<input id="mbrEnLnm" name="mbrEnLnm" onkeyup="this.value=this.value.replace(/[^a-z]/gi,'');" style="text-transform: uppercase;" type="text" class="lastNameEn uiform text" value="" maxlength="30" autocomplete="off"></td>
+							
 					</tr>
+			
 					<!-- 생년월일 -->
 					<tr>
 						<th scope="row"><em class="ast">*</em> 생년월일</th>
 						<td>
-							<div class="selector" id="uniform-birthYear" style="width: 74px;"><span style="width: 49px; user-select: none;">1999</span><select class="uiform birthYear" id="birthYear" name="birthYear">
-								<option value="">선택</option>
-								<option value="2003" title="2003">2003</option>
-								<option value="2002" title="2002">2002</option>
-								<option value="2001" title="2001">2001</option>
-								<option value="2000" title="2000">2000</option>
-								<option value="1999" title="1999">1999</option>
-								<option value="1998" title="1998">1998</option>
-								<option value="1997" title="1997">1997</option>
-								<option value="1996" title="1996">1996</option>
-								<option value="1995" title="1995">1995</option>
-								<option value="1994" title="1994">1994</option>
-								<option value="1993" title="1993">1993</option>
-								<option value="1992" title="1992">1992</option>
-								<option value="1991" title="1991">1991</option>
-								<option value="1990" title="1990">1990</option>
-								<option value="1989" title="1989">1989</option>
-								<option value="1988" title="1988">1988</option>
-								<option value="1987" title="1987">1987</option>
-								<option value="1986" title="1986">1986</option>
-								<option value="1985" title="1985">1985</option>
-								<option value="1984" title="1984">1984</option>
-								<option value="1983" title="1983">1983</option>
-								<option value="1982" title="1982">1982</option>
-								<option value="1981" title="1981">1981</option>
-								<option value="1980" title="1980">1980</option>
-								<option value="1979" title="1979">1979</option>
-								<option value="1978" title="1978">1978</option>
-								<option value="1977" title="1977">1977</option>
-								<option value="1976" title="1976">1976</option>
-								<option value="1975" title="1975">1975</option>
-								<option value="1974" title="1974">1974</option>
-								<option value="1973" title="1973">1973</option>
-								<option value="1972" title="1972">1972</option>
-								<option value="1971" title="1971">1971</option>
-								<option value="1970" title="1970">1970</option>
-								<option value="1969" title="1969">1969</option>
-								<option value="1968" title="1968">1968</option>
-								<option value="1967" title="1967">1967</option>
-								<option value="1966" title="1966">1966</option>
-								<option value="1965" title="1965">1965</option>
-								<option value="1964" title="1964">1964</option>
-								<option value="1963" title="1963">1963</option>
-								<option value="1962" title="1962">1962</option>
-								<option value="1961" title="1961">1961</option>
-								<option value="1960" title="1960">1960</option>
-								<option value="1959" title="1959">1959</option>
-								<option value="1958" title="1958">1958</option>
-								<option value="1957" title="1957">1957</option>
-								<option value="1956" title="1956">1956</option>
-								<option value="1955" title="1955">1955</option>
-								<option value="1954" title="1954">1954</option>
-								<option value="1953" title="1953">1953</option>
-								<option value="1952" title="1952">1952</option>
-								<option value="1951" title="1951">1951</option>
-								<option value="1950" title="1950">1950</option>
-								<option value="1949" title="1949">1949</option>
-								<option value="1948" title="1948">1948</option>
-								<option value="1947" title="1947">1947</option>
-								<option value="1946" title="1946">1946</option>
-								<option value="1945" title="1945">1945</option>
-								<option value="1944" title="1944">1944</option>
-								<option value="1943" title="1943">1943</option>
-								<option value="1942" title="1942">1942</option>
-								<option value="1941" title="1941">1941</option>
-								<option value="1940" title="1940">1940</option>
-								<option value="1939" title="1939">1939</option>
-								<option value="1938" title="1938">1938</option>
-								<option value="1937" title="1937">1937</option>
-								<option value="1936" title="1936">1936</option>
-								<option value="1935" title="1935">1935</option>
-								<option value="1934" title="1934">1934</option>
-								<option value="1933" title="1933">1933</option>
-								<option value="1932" title="1932">1932</option>
-								<option value="1931" title="1931">1931</option>
-								<option value="1930" title="1930">1930</option>
-								<option value="1929" title="1929">1929</option>
-								<option value="1928" title="1928">1928</option>
-								<option value="1927" title="1927">1927</option>
-								<option value="1926" title="1926">1926</option>
-								<option value="1925" title="1925">1925</option>
-								<option value="1924" title="1924">1924</option>
-								<option value="1923" title="1923">1923</option>
-								<option value="1922" title="1922">1922</option>
-								<option value="1921" title="1921">1921</option>
-								<option value="1920" title="1920">1920</option>
-								<option value="1919" title="1919">1919</option>
-								<option value="1918" title="1918">1918</option>
-								<option value="1917" title="1917">1917</option>
-								<option value="1916" title="1916">1916</option>
-								<option value="1915" title="1915">1915</option>
-								<option value="1914" title="1914">1914</option>
-								<option value="1913" title="1913">1913</option>
-								<option value="1912" title="1912">1912</option>
-								</select></div>
-							<label for="birthYear" class="birthYear">.</label>
+						
+						<select name="year" style="width: 85px; height: 27px; line-height: 27px;">
+							<option value="" selected disabled>선택</option>
+							<option value="2003">2003</option>
+							<option value="2002">2002</option>
+							<option value="2001">2001</option>
+							<option value="2000">2000</option>
+							<option value="1999">1999</option>
+							<option value="1998">1998</option>
+							<option value="1997">1997</option>
+							<option value="1996">1996</option>
+							<option value="1995">1995</option>
+							<option value="1994">1994</option>
+							<option value="1993">1993</option>
+							<option value="1992">1992</option>
+							<option value="1991">1991</option>
+							<option value="1990">1990</option>
+							<option value="1989">1989</option>
+							<option value="1989">1988</option>
+							<option value="1987">1987</option>
+							<option value="1986">1986</option>
+							<option value="1986">1985</option>
+							<option value="1984">1984</option>
+							<option value="1983">1983</option>
+							<option value="1982">1982</option>
+							<option value="1981">1981</option>
+							<option value="1980">1980</option>
+							<option value="1979">1979</option>
+							<option value="1978">1978</option>
+							<option value="1977">1977</option>
+							<option value="1976">1976</option>
+							<option value="1975">1975</option>
+							<option value="1974">1974</option>
+							<option value="1973">1973</option>
+							<option value="1972">1972</option>
+							<option value="1971">1971</option>
+							<option value="1970">1970</option>
+							<option value="1969">1969</option>
+							<option value="1968">1968</option>
+							<option value="1967">1967</option>
+							<option value="1966">1966</option>
+							<option value="1965">1965</option>
+							<option value="1964">1964</option>
+							<option value="1963">1963</option>
+							<option value="1962">1962</option>
+							<option value="1961">1961</option>
+							<option value="1960">1960</option>
+						</select>
+							<!-- <div class="selector" id="uniform-birthYear" style="width: 74px;"><span style="width: 49px; user-select: none;">선택</span>
 							
-							<div class="selector" id="uniform-birthMonth" style="width: 71px;"><span style="width: 46px; user-select: none;">1</span><select class="uiform birthMonth" id="birthMonth" name="birthMonth" >
-								<option value="">선택</option>
+							
+							<select class="uiform birthYear" id="birthYear" name="birthYear">
+								<option value="" selected="selected">선택</option>
+								<option value="2003">2003</option>
+								<option value="2002">2002</option>
+								</select>
+								</div>
+							<label for="birthYear" class="birthYear">.</label>  -->
+							
+							<select name="month" style="width: 85px; height: 27px; line-height: 27px;">
+								<option value="" selected disabled>선택</option>
 								<option value="1" title="1">1</option>
 								<option value="2" title="2">2</option>
 								<option value="3" title="3">3</option>
@@ -1078,11 +1042,27 @@ function unCheck() {
 								<option value="10" title="10">10</option>
 								<option value="11" title="11">11</option>
 								<option value="12" title="12">12</option>
-								</select></div>
-							<label for="birthMonth" class="birthMonth"></label>
+							</select>
 							
-							<div class="selector" id="uniform-birthDay" style="width: 71px;"><span style="width: 46px; user-select: none;">1</span><select class="uiform birthDay" id="birthDay" name="birthDay" >
+						<!--  <div class="selector" id="uniform-birthMonth" style="width: 71px;"><span style="width: 46px; user-select: none;">1</span><select class="uiform birthMonth" id="birthMonth" name="birthMonth" >
 								<option value="">선택</option>
+								<option value="1" title="1" selected>1</option>
+								<option value="2" title="2">2</option>
+								<option value="3" title="3">3</option>
+								<option value="4" title="4">4</option>
+								<option value="5" title="5">5</option>
+								<option value="6" title="6">6</option>
+								<option value="7" title="7">7</option>
+								<option value="8" title="8">8</option>
+								<option value="9" title="9">9</option>
+								<option value="10" title="10">10</option>
+								<option value="11" title="11">11</option>
+								<option value="12" title="12">12</option>
+								</select></div>
+							<label for="birthMonth" class="birthMonth"></label>  -->
+							
+							<select name="month" style="width: 85px; height: 27px; line-height: 27px;">
+							<option value="" selected disabled>선택</option>
 								<option value="1" title="1">1</option>
 								<option value="2" title="2">2</option>
 								<option value="3" title="3">3</option>
@@ -1114,8 +1094,43 @@ function unCheck() {
 								<option value="29" title="29">29</option>
 								<option value="30" title="30">30</option>
 								<option value="31" title="31">31</option>
+							</select>
+							
+						<!--	<div class="selector" id="uniform-birthDay" style="width: 71px;"><span style="width: 46px; user-select: none;">선택</span><select class="uiform birthDay" id="birthDay" name="birthDay" >
+								<option value="">선택</option>
+								<option value="1" title="1" selected>1</option>
+								<option value="2" title="2">2</option>
+								<option value="3" title="3">3</option>
+								<option value="4" title="4">4</option>
+								<option value="5" title="5">5</option>
+								<option value="6" title="6">6</option>
+								<option value="7" title="7">7</option>
+								<option value="8" title="8">8</option>
+								<option value="9" title="9">9</option>
+								<option value="10" title="10">10</option>
+								<option value="11" title="11">11</option>
+								<option value="12" title="12">12</option>
+								<option value="13" title="13">13</option>
+								<option value="14" title="14">14</option>
+								<option value="15" title="15">15</option>
+								<option value="16" title="16">16</option>
+								<option value="17" title="17">17</option>
+								<option value="18" title="18">18</option>
+								<option value="19" title="19">19</option>
+								<option value="20" title="20">20</option>
+								<option value="21" title="21">21</option>
+								<option value="22" title="22">22</option>
+								<option value="23" title="23">23</option>
+								<option value="24" title="24">24</option>
+								<option value="25" title="25">25</option>
+								<option value="26" title="26">26</option>
+								<option value="27" title="27">27</option>
+								<option value="28" title="28">28</option>
+								<option value="29" title="29">29</option>
+								<option value="30" title="30">30</option>
+								<option value="31" title="31">31</option>
 								</select></div>
-							<label for="birthDay" class="birthDay">일</label>
+							<label for="birthDay" class="birthDay">일</label> -->
 							
 						</td>
 					</tr>
@@ -1130,7 +1145,7 @@ function unCheck() {
 							<div class="selector" id="uniform-emailDomainCd" style="width: 111px;"><span style="width: 86px; user-select: none;">직접입력</span><select id="emailDomainCd" class="emailDomainSel" onchange="javascript:$('#email2').val(this.value)">
 								<option value="">직접입력</option>
 
-									<option value="naver.com" title="naver.com">naver.com</option>
+									<option value="naver.com" title="naver.com" selected="">naver.com</option>
 
 									<option value="hanmail.net" title="hanmail.net">hanmail.net</option>
 
@@ -1153,7 +1168,7 @@ function unCheck() {
 						<td>
 							<label for="mbno1" class="phoneComp">휴대폰국번</label>
 							<div class="selector" id="uniform-mbno1" style="width: 67px;"><span style="width: 42px; user-select: none;">010</span><select class="uiform phoneComp" id="mbno1" name="mbno1">
-										<option value="010" title="010">010</option>
+										<option value="010" title="010" selected="">010</option>
 										<option value="011" title="011">011</option>
 										<option value="016" title="016">016</option>
 										<option value="017" title="017">017</option>
@@ -1178,7 +1193,7 @@ function unCheck() {
 							<label for="phno1" class="phoneComp">국번</label>
 							<div class="selector" id="uniform-phno1" style="width: 74px;"><span style="width: 49px; user-select: none;">선택</span><select class="uiform phoneHome" id="phno1" name="phno1">
 								<option value="">선택</option>
-								<option value="02" title="02">02</option>
+								<option value="02" title="02" selected="">02</option>
 								<option value="031" title="031">031</option>
 								<option value="032" title="032">032</option>
 								<option value="033" title="033">033</option>
