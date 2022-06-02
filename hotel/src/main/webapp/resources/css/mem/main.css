@@ -187,8 +187,8 @@ div.selector.focus {outline: 1px dotted #0066FF; }
 
 /* 20201214 마이페이지 1뎁스, 2뎁스 수정 */
 /* 1뎁스 */
-.lnbAreaMypage .lnbMenu .menu>li>a{ background:url(../../images/ko/mem/main/NewlnbMypage.jpg) no-repeat;}
-.lnbAreaMypage .lnbMenu .menu>li>a.on{background:url(../../images/ko/mem/main/NewlnbMypageOn.jpg) no-repeat;}
+.lnbAreaMypage .lnbMenu .menu>li>a{ background:url(../../images/ko/mem/main/NewlnbMypage1.jpg) no-repeat;}
+.lnbAreaMypage .lnbMenu .menu>li>a.on{background:url(../../images/ko/mem/main/NewlnbMypageOn1.jpg) no-repeat;}
 
 .lnbArea .lnbMenu .menu li.m1 a{ background-position:0px 0px}
 .lnbArea .lnbMenu .menu li.m2 a{ background-position:0px -21px}
@@ -198,8 +198,8 @@ div.selector.focus {outline: 1px dotted #0066FF; }
 
 /* 2뎁스 // 20201214 position 값 수정 */
 .lnbArea.lnbAreaMypage .lnbMenu .menu li.m6 a{ background-position:0px -350px}
-.lnbAreaMypage .lnbMenu .sMenu li a{ background:url("../../images/ko/mem/main/NewlnbSmMypage.jpg") no-repeat; }
-.lnbAreaMypage .lnbMenu .sMenu li a.on{ background:url("../../images/ko/mem/main/NewlnbSmMypageOn.jpg") no-repeat;}
+.lnbAreaMypage .lnbMenu .sMenu li a{ background:url("../../images/ko/mem/main/NewlnbSmMypage1.jpg") no-repeat; }
+.lnbAreaMypage .lnbMenu .sMenu li a.on{ background:url("../../images/ko/mem/main/NewlnbSmMypageOn1.jpg") no-repeat;}
 .lnbAreaMypage .lnbMenu .m2 .sMenu li.s1 a{ background-position:0 0;}
 .lnbAreaMypage .lnbMenu .m2 .sMenu li.s2 a{ background-position:0 -22px;}
 

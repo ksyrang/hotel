@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ include file="common/main_header.jsp" %>
+<%@ include file="../common/main_header.jsp" %>
 
 		
 		<div class="contain">
@@ -292,7 +292,7 @@
 		
 		</div>
 	
-<%@ include file="common/main_footer.jsp" %>
+<%@ include file="../common/main_footer.jsp" %>
 	
 </body>
 </html>

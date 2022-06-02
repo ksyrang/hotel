@@ -5,8 +5,8 @@ public class reservationDTO {
 	private String reservationNo;
 	private String memberId;
 	private String reservationDate;
-	private String checkinData;
-	private String checkoutData;
+	private String checkinDate;
+	private String checkoutDate;
 	private int guestNumber;
 	private String hotelId;
 	private String roomId;
@@ -33,17 +33,17 @@ public class reservationDTO {
 	public void setReservationDate(String reservationDate) {
 		this.reservationDate = reservationDate;
 	}
-	public String getCheckinData() {
-		return checkinData;
+	public String getCheckinDate() {
+		return checkinDate;
 	}
-	public void setCheckinData(String checkinData) {
-		this.checkinData = checkinData;
+	public void setCheckinDate(String checkinDate) {
+		this.checkinDate = checkinDate;
 	}
-	public String getCheckoutData() {
-		return checkoutData;
+	public String getCheckoutDate() {
+		return checkoutDate;
 	}
-	public void setCheckoutData(String checkoutData) {
-		this.checkoutData = checkoutData;
+	public void setCheckoutDate(String checkoutDate) {
+		this.checkoutDate = checkoutDate;
 	}
 	public int getGuestNumber() {
 		return guestNumber;

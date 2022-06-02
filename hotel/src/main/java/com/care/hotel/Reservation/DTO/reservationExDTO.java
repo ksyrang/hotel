@@ -1,6 +1,6 @@
 package com.care.hotel.Reservation.DTO;
 
-public class reservataionExDTO {
+public class reservationExDTO {
 	
 	private String reservationNo;
 	private String remark;

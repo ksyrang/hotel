@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.care.hotel.Reservation.DAO.reservationDAO">
+
+	<!-- reservation 테이블 내 memberId의 StartDate~EndDate 간의 row 개수 -->
+	<select id="reservationCount" resultType="int">
+		SELECT count(*) FROM reservation 
+		<choose>
+			<when test="sel == 'BOOKED_DATE'">
+				WHERE (reservatinDate BETWEEN #{startDt} AND #{endDt}) AND memberId == #{memberId}
+			</when>
+			<when test="sel == 'ARRIVAL_DATE'">
+				WHERE checkinDate BETWEEN #{startDt} AND #{endDt} AND memberId == #{memberId}
+			</when>
+		</choose>
+	</select>
+
+	<!--  reservation 테이블 리스트 불러오기 -->
+	<select id="reservationList" resultType="com.care.hotel.Reservation.DTO.reservationAllDTO">
+		SELECT D.* FROM(
+			SELECT rownum rn, C.* FROM( 
+				SELECT B.*, (SELECT A.hotelName FROM hotel A WHERE A.hotelId = B.hotelId) AS hotelName
+				FROM reservation B
+				<choose>
+					<when test="sel == 'BOOKED_DATE'">
+						WHERE (reservatinDate BETWEEN #{startDt} AND #{endDt}) AND memberId = #{memberId}
+					</when>
+					<when test="sel == 'ARRIVAL_DATE'">
+						WHERE checkinDate BETWEEN #{startDt} AND #{endDt} AND memberId = #{memberId}
+					</when>
+				</choose>
+			)C
+		)D WHERE rn BETWEEN #{b} and #{e}
+	</select>
+	
+</mapper>
