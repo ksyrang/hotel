@@ -14,6 +14,10 @@
 
 <body>
 
+<c:if test="${not empty msg }">
+	<script>alert("${msg}");</script>
+</c:if>
+
 <div class="admin_main">
 
 

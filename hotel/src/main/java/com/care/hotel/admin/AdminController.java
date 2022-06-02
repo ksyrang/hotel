@@ -1,5 +1,7 @@
 package com.care.hotel.admin;
 
+import javax.servlet.http.HttpSession;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -77,7 +79,7 @@ public class AdminController {
 		return "forward:/admin_index?formpath=memberDelete?memberId=" + memberId;
 	}
 	
-	@RequestMapping(value="memberDeleteCheckProc")
+	@RequestMapping(value="memberDeleteProc", method = RequestMethod.POST)
 	public String memberDeleteCheckProc(String adminId, String adminPw, String memberId, Model model) {
 		logger.info("memberDeleteCheckProc");
 		System.out.println(adminId);
@@ -86,21 +88,22 @@ public class AdminController {
 		
 		String result = "[" + memberId + "]회원을 삭제했습니다.";
 		
-		if(adminId == null || adminId == "" || adminPw == null || adminPw == "") 
+		if(adminId.isEmpty() || adminId == "" || adminPw.isEmpty() || adminPw  == "") { 
 			result = "아이디 혹은 비밀번호를 확인해주세요.";
-		
-		if(!(adminId.equals("admin"))) 
+		} else if(!(adminId.equals("admin"))) {
 			result = "아이디 혹은 비밀번호를 확인해주세요.";
-		
-		if(!(adminPw.equals("1234"))) 
+		} else if(!(adminPw.equals("1234"))) {
 			result = "아이디 혹은 비밀번호를 확인해주세요.";
+		} else {
+			result = memberSvc.adminCheck(adminId, adminPw, memberId);
+		}
+		model.addAttribute("msg", result);
 		
-		result = memberSvc.adminCheck(adminId, adminPw, memberId);
-		
-		if(result.equals("아이디 혹은 비밀번호를 확인해주세요."))
+		if(result.equals("아이디 혹은 비밀번호를 확인해주세요.")) {
 			return "forward:/admin_index?formpath=memberDelete?memberId=" + memberId;
-		
-		return "redirect:memberListProc";
+		}else {
+			return "redirect:memberListProc";
+		}
 	}
 
 }

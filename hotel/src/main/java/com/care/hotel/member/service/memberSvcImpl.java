@@ -65,16 +65,16 @@ public class memberSvcImpl implements ImemberSvc{
 	public String adminCheck(String adminId, String adminPw, String memberId) {
 		String result = "[" + memberId + "]회원을 삭제했습니다.";
 		
-		if(adminId == null || adminId.isEmpty() || adminPw == null || adminPw.isEmpty()) 
+		if(adminId == null || adminId  == "" || adminPw == null || adminPw == "") { 
 			result = "아이디 혹은 비밀번호를 확인해주세요.";
-		
-		if(!(adminId.equals("admin"))) 
+		} else if(!(adminId.equals("admin"))) {
 			result = "아이디 혹은 비밀번호를 확인해주세요.";
-		
-		if(!(adminPw.equals("1234"))) 
+		} else if(!(adminPw.equals("1234"))) {
 			result = "아이디 혹은 비밀번호를 확인해주세요.";
+		} else {
+			memberDAO.memberDelete(memberId);
+		}
 		
-		memberDAO.memberDelete(memberId);
 		return result;
 	}
 

@@ -4,6 +4,8 @@ import java.text.DateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+import javax.servlet.http.HttpSession;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -81,14 +83,14 @@ public class HomeController {
 	}
 	
 	/* 관리자 회원 수정 */
-	@RequestMapping(value="memberModify", method = RequestMethod.GET)
+	@RequestMapping(value="memberModify")
 	public String admin_memberModify() {
 		logger.info("admin_memberModify");
 		return "admin/member/admin_memberModify";
 	}
 	
 	/* 관리자 회원 삭제*/
-	@RequestMapping(value="memberDelete", method = RequestMethod.GET)
+	@RequestMapping(value="memberDelete")
 	public String admin_memberDelete() {
 		logger.info("admin_memberDelete");
 		return "admin/member/admin_memberDelete";
