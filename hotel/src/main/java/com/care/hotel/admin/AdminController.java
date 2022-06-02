@@ -89,7 +89,7 @@ public class AdminController {
 	}
 	
 	/* 회원 삭제 관리자 비밀번호 확인 */
-	@RequestMapping(value="memberDeleteProc", method = RequestMethod.GET)
+	@RequestMapping(value="memberDeleteProc")
 	public String memberDeleteProc(String memberId, Model model) {
 		logger.info("memberDeleteProc");
 		System.out.println("memberDeleteProc memberId : " + memberId);

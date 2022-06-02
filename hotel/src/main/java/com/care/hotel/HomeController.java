@@ -66,15 +66,19 @@ public class HomeController {
 		logger.info("admin_index?formpath="+formpath);
 		model.addAttribute("formpath", formpath);
 		// 수정 혹은 삭제 시 아이디 세션
-		System.out.println("세션에 담기 전 sessionMemberId : " + sessionMemberId);
-		if(sessionMemberId != null) {
-		 String sessionId = (String)session.getAttribute("sessionMemberId");
-		 System.out.println("세션에 저장되어 있는 sessionId : " + sessionId);
+		/*
+		 * System.out.println("세션에 담기 전 sessionMemberId : " + sessionMemberId);
+		 * if(sessionMemberId != null) { String sessionId =
+		 * (String)session.getAttribute("sessionMemberId");
+		 * System.out.println("세션에 저장되어 있는 sessionId : " + sessionId);
+		 */
 		 //if(formpath.equals("memberDelete")) { if(sessionId == null ||sessionId.equals(sessionMemberId) == false) {
-		 session.setAttribute("sessionMemberId", sessionMemberId);
-		 System.out.println("세션에 담은 후 sessionMemberId : " + sessionMemberId); 
+			/*
+			 * session.setAttribute("sessionMemberId", sessionMemberId);
+			 * System.out.println("세션에 담은 후 sessionMemberId : " + sessionMemberId);
+			 */
 		// } 
-		}
+		//}
 		
 	}
 	
