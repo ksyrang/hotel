@@ -57,7 +57,8 @@ public class hotelresourceController {
 //		if(result == 1) {
 //			return "forward:/admin_index?formpath=admin_hotelList";
 //		}
-		return "redirect:hotellistProc";
+		String hotelId = hotelInfo.getHotelId();
+		return "redirect:hotelInfoProc?hotelId="+hotelId;
 	}	
 
 }

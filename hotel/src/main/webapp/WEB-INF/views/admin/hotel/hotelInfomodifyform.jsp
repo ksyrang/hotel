@@ -30,6 +30,9 @@
 <form action="hotelModifyProc" method="post">
 	<table>
 		<tr>
+			<td><input type="button" value="뒤로가기" onclick="location.href='${root}hotellistProc'"/></td>
+		</tr>
+		<tr>
 			<th>호텔 이름</th>
 			<th><input type="text" name="hotelName" placeholder="호텔이름" value="${sessionScope.hotelInfo.hotelName }"></th>
 		</tr>
@@ -62,8 +65,8 @@
 		</tr>
 		<tr>
 			<td align='center' height=40 colspan=4>
-				<input type=submit value='회원 수정' style="width: 120px; "/>
-				<input type=reset value='취소' style="width: 120px; "/>	 
+				<input type="submit" value='회원 수정' style="width: 120px; "/>
+				<input type="reset" value='취소' style="width: 120px; "/>	 
 			</td>
 		</tr>
 	</table>

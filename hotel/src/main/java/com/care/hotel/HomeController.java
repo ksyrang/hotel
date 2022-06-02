@@ -127,6 +127,11 @@ public class HomeController {
 		
 		return "admin/room/roomlistForm";
 	}	
+	@GetMapping("hoteldelete")
+	public String hoteldelete() {
+		
+		return "admin/room/hoteldeleteForm";
+	}
 	/*admin end*/
 	
 }

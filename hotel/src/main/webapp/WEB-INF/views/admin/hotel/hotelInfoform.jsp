@@ -28,6 +28,10 @@
 		<tr>
 			<th>호텔 우편번호</th><td>${sessionScope.hotelInfo.zipCode }</td>
 		</tr>
+		<tr>
+			<td><input type="button" value="수정" onclick="location.href='${root }prehotelModifyProc?hotelId=${sessionScope.hotelInfo.hotelId}'"/></td>
+			<td><input type="button" value="뒤로가기" onclick="location.href='${root}hotellistProc'"/></td>
+		</tr>
 	</table>
 </form>
 
