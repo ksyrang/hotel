@@ -15,7 +15,7 @@ public class memberSvcImpl implements ImemberSvc{
 	
 	@Override
 	public AllMemberDTO userInfo(String memberId) {
-		System.out.println("memberSvc userInfo");
+		System.out.println("memberSvc_userInfo");
 		
 		memberDTO member = memberDAO.memberInfo(memberId);
 		memberExDTO memberEx = memberDAO.memberExInfo(memberId);

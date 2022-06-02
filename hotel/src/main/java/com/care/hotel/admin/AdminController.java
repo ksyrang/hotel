@@ -23,6 +23,7 @@ import com.care.hotel.resource.service.IhotelresourceSvc;
 public class AdminController {
 	@Autowired IhotelresourceSvc hotellistSVC;
 	@Autowired ImemberSvc memberSvc;
+	@Autowired HttpSession session;
 	
 	private static final Logger logger = LoggerFactory.getLogger(AdminController.class);
 	
@@ -43,8 +44,14 @@ public class AdminController {
 		if(memberId == null || memberId == "") {
 			return "redirect:memberListProc";
 		}
-		model.addAttribute("user", memberSvc.userInfo(memberId));
-		return "forward:/admin_index?formpath=memberInfo?memberId="+memberId;
+		String sessionMemberId = (String)session.getAttribute("sessionMemberId");
+		if(sessionMemberId != null) {
+			model.addAttribute("user", memberSvc.userInfo(sessionMemberId));
+			return "forward:/admin_index?formpath=memberInfo?memberId="+sessionMemberId;
+		}else {
+			model.addAttribute("user", memberSvc.userInfo(memberId));
+			return "forward:/admin_index?formpath=memberInfo?memberId="+memberId;
+		}
 				
 	}
 	
@@ -55,6 +62,7 @@ public class AdminController {
 		if(memberId == null || memberId == "") {
 			return "redirect:memberListProc";
 		}
+		
 		model.addAttribute("user", memberSvc.userInfo(memberId));
 		return "forward:/admin_index?formpath=memberModify?memberId="+memberId;
 	}
@@ -62,8 +70,8 @@ public class AdminController {
 	/* 회원 수정 저장 */
 	@RequestMapping(value="memberModifyProc", method = RequestMethod.POST)
 	public String memberModifySaveProc(AllMemberDTO allMemberDto, Model model) {
-		System.out.println(allMemberDto.getMemberId());
-		System.out.println(allMemberDto.getZipcode());
+		System.out.println("memberModifySaveProc memberId : " + allMemberDto.getMemberId());
+		System.out.println("memberModifySaveProc zipcode : " + allMemberDto.getZipcode());
 		String result = "회원정보수정 실패";
 		
 		if(allMemberDto.getMemberId() != null) {
@@ -74,7 +82,7 @@ public class AdminController {
 		if(result.equals("회원정보수정 실패")) {
 			return "redirect:memberListProc";
 		} else {
-			return "forward:/admin_index?formpath=memberInfo?memberId="+allMemberDto.getMemberId();
+			return "forward:/admin_index?formpath=memberInfo&sessionMemberId="+allMemberDto.getMemberId();
 		}
 	}
 	

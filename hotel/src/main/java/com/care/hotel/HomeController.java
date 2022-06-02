@@ -62,17 +62,21 @@ public class HomeController {
 	}
 	
 	@RequestMapping(value="admin_index")
-	public void admin_index(String formpath, String memberId,Model model, HttpSession session) {
+	public void admin_index(String formpath, String sessionMemberId,Model model, HttpSession session) {
 		logger.info("admin_index?formpath="+formpath);
-		
-		// 수정 혹은 삭제 시 아이디 세션
-		/*
-		 * String sessionId = (String)session.getAttribute("adminMemberIdSession");
-		 * if("memberInfo".equals(formpath)) { if(sessionId == null ||
-		 * sessionId.equals(memberId) == false) {
-		 * session.setAttribute("adminMemberIdSession", memberId); } }
-		 */
 		model.addAttribute("formpath", formpath);
+		// 수정 혹은 삭제 시 아이디 세션
+		System.out.println("세션에 담기 전 sessionMemberId : " + sessionMemberId);
+		if(sessionMemberId != null) {
+			String sessionId = (String)session.getAttribute("sessionMemberId");
+			
+			//if("memberInfo".equals(formpath)) {
+				if(sessionId == null || sessionId.equals(sessionMemberId) == false) {
+					session.setAttribute("sessionMemberId", sessionMemberId);
+					System.out.println("세션에 담은 후 sessionMemberId : " + sessionMemberId);
+				}
+			//}
+		}
 	}
 	
 	/* 관리자 회원 목록 */
