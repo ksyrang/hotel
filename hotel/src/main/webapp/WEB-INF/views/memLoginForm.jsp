@@ -1301,8 +1301,8 @@ function popRewardNo(rewardNo){
 										</fieldset>
 										<div class="btn">
 											<a class="btnJoin" href="/hotel/memJoinAgreeForm"><span>신라리워즈 가입</span></a>
-											<a href="javascript:popForId('mem');" id="popForIdButton" class="btnLostId"><span>신라리워즈 번호 찾기</span></a>
-											<a href="javascript:popForPw('mem');" id="popForPwButton" class="btnLostPw"><span>비밀번호찾기</span></a>
+											<a href="/hotel/findID" id="popForIdButton" class="btnLostId"><span>신라리워즈 번호 찾기</span></a>
+											<a href="/hotel/findPW" id="popForPwButton" class="btnLostPw"><span>비밀번호찾기</span></a>
 										</div>
 									</div>
 								</div>

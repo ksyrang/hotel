@@ -1454,7 +1454,7 @@ function getCookie(cookie_name) {
 			<!-- 신라 리워즈  약관동의 End -->
 
 			<div class="buttonwrapA">
-                <a href="#none" class="buttonstyleA" onclick="nextStep();">다음</a>&nbsp;&nbsp;<a href="/index.do" class="buttonstyleA">취소</a>
+                <a href="/hotel/memJoinForm" class="buttonstyleA" onclick="nextStep();">다음</a>&nbsp;&nbsp;<a href="/index.do" class="buttonstyleA">취소</a>
             </div>
 		</div>
 	</div>

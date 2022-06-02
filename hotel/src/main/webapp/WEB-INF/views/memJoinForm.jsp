@@ -254,7 +254,12 @@ function popCalendarLayerHide(){
 <script src="/js/mbr/popLogin.js" charset="UTF-8"></script><div id="popLoginDiv" class="popLogin" style="display:none"></div>
 <script src="/js/mbr/forIdPwd.js" charset="UTF-8"></script><div id="popForIdPwDiv" style="display:none">0</div>
 <script src="/js/mbr/mbshPointRead.js" charset="UTF-8"></script><div id="mbshPotinRead" style="display:none"></div>
-<script src="/js/resv/resvCalendar.js" charset="UTF-8"></script><script src="/js/resv/resvPromotionCalendar.js" charset="UTF-8"></script><script src="/js/resv/resv.js" charset="UTF-8"></script><script src="/js/resv/din.js" charset="UTF-8"></script><script src="/js/ask/ask.js" charset="UTF-8"></script><script src="/js/mbr/zipno.js" charset="UTF-8"></script><div id="zipNoLayerDiv" class="popLogin" style="display:none"></div><script src="/js/offers/makeAPlan.js" charset="UTF-8"></script><div id="makeAPlanLayerDiv" class="popLogin" style="display:none"></div><script src="/js/mbr/mbr_join.js" charset="UTF-8"></script><script src="/js/jquery.cookie.js" charset="UTF-8"></script>
+<script src="/js/resv/resvCalendar.js" charset="UTF-8"></script><script src="/js/resv/resvPromotionCalendar.js" charset="UTF-8"></script>
+<script src="/js/resv/resv.js" charset="UTF-8"></script><script src="/js/resv/din.js" charset="UTF-8"></script>
+<script src="/js/ask/ask.js" charset="UTF-8"></script><script src="/js/mbr/zipno.js" charset="UTF-8"></script><div id="zipNoLayerDiv" class="popLogin" style="display:none"></div>
+<script src="/js/offers/makeAPlan.js" charset="UTF-8"></script><div id="makeAPlanLayerDiv" class="popLogin" style="display:none"></div>
+<script src="/js/mbr/mbr_join.js" charset="UTF-8"></script>
+<script src="/js/jquery.cookie.js" charset="UTF-8"></script>
 <script src="/js/placeholders.js" charset="UTF-8"></script>
 <script src="/js/rewards_new2020.js" charset="UTF-8"></script>
 <script src="/js/dining_new2020.js" charset="UTF-8"></script>
@@ -329,8 +334,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <h1 class="logo"><a href="/index.do">THE SHILLA HOTELS &amp; RESORTS</a></h1>
   <!-- 로그인 -->
   <span class="loginArea">
-	<a href="/membership/mbr/login/memLogin.do">로그인</a>
-    <a href="/mem/mbr/join/memViewBrowsewrap.do">신라리워즈 가입</a>
+	<a href="/hotel/memLoginForm">로그인</a>
+    <a href="/hotel/memJoinAgreeForm">신라리워즈 가입</a>
     </span>
   <!-- 예약확인 추가 -->
   <div class="resvConfirm">
@@ -939,15 +944,15 @@ function unCheck() {
 						<th scope="row" class="first"><em class="ast">*</em> 성명(국문)</th>
 						<td class="first">
 							<label for="titlCd" class="nameH">경칭</label>
-							<div class="selector disabled" id="uniform-titlCd" style="width: 71px;"><span style="width: 46px; user-select: none;">
-											Mr.</span><select id="titlCd" class="nameH uiform" name="titlCd" disabled="disabled">
+							<div class="selector" id="uniform-titlCd" style="width: 71px;"><span style="width: 46px; user-select: none;">
+										선택</span><select id="titlCd" class="nameH uiform" name="titlCd">
 								<option value="">선택</option>
 								<option value="Miss." title="Ms.">
 											Ms.</option>
-									<option value="Mr." title="Mr." selected="selected">
+									<option value="Mr." title="Mr.">
 											Mr.</option>
 									</select></div>
-							<input type="text" class="lastNameEn uiform text" id="mbrNm" name="mbrNm" maxlength="30" value="최승호" readonly="readonly" autocomplete="off">
+							<input type="text" class="lastNameEn uiform text" id="mbrNm" name="mbrNm" maxlength="30" value="" autocomplete="off">
 						</td>
 					</tr>
 					
@@ -962,13 +967,13 @@ function unCheck() {
 					<tr>
 						<th scope="row"><em class="ast">*</em> 생년월일</th>
 						<td>
-							<div class="selector disabled" id="uniform-birthYear" style="width: 74px;"><span style="width: 49px; user-select: none;">1999</span><select class="uiform birthYear" id="birthYear" name="birthYear" onchange="javascript:daySelect3('birthYear','birthMonth','birthDay')" disabled="disabled">
+							<div class="selector" id="uniform-birthYear" style="width: 74px;"><span style="width: 49px; user-select: none;">1999</span><select class="uiform birthYear" id="birthYear" name="birthYear">
 								<option value="">선택</option>
 								<option value="2003" title="2003">2003</option>
 								<option value="2002" title="2002">2002</option>
 								<option value="2001" title="2001">2001</option>
 								<option value="2000" title="2000">2000</option>
-								<option value="1999" title="1999" selected="">1999</option>
+								<option value="1999" title="1999">1999</option>
 								<option value="1998" title="1998">1998</option>
 								<option value="1997" title="1997">1997</option>
 								<option value="1996" title="1996">1996</option>
@@ -1059,9 +1064,9 @@ function unCheck() {
 								</select></div>
 							<label for="birthYear" class="birthYear">.</label>
 							
-							<div class="selector disabled" id="uniform-birthMonth" style="width: 71px;"><span style="width: 46px; user-select: none;">1</span><select class="uiform birthMonth" id="birthMonth" name="birthMonth" onchange="javascript:daySelect3('birthYear','birthMonth','birthDay')" disabled="disabled">
+							<div class="selector" id="uniform-birthMonth" style="width: 71px;"><span style="width: 46px; user-select: none;">1</span><select class="uiform birthMonth" id="birthMonth" name="birthMonth" >
 								<option value="">선택</option>
-								<option value="1" title="1" selected="">1</option>
+								<option value="1" title="1">1</option>
 								<option value="2" title="2">2</option>
 								<option value="3" title="3">3</option>
 								<option value="4" title="4">4</option>
@@ -1076,7 +1081,7 @@ function unCheck() {
 								</select></div>
 							<label for="birthMonth" class="birthMonth"></label>
 							
-							<div class="selector disabled" id="uniform-birthDay" style="width: 71px;"><span style="width: 46px; user-select: none;">21</span><select class="uiform birthDay" id="birthDay" name="birthDay" disabled="disabled">
+							<div class="selector" id="uniform-birthDay" style="width: 71px;"><span style="width: 46px; user-select: none;">1</span><select class="uiform birthDay" id="birthDay" name="birthDay" >
 								<option value="">선택</option>
 								<option value="1" title="1">1</option>
 								<option value="2" title="2">2</option>
@@ -1098,7 +1103,7 @@ function unCheck() {
 								<option value="18" title="18">18</option>
 								<option value="19" title="19">19</option>
 								<option value="20" title="20">20</option>
-								<option value="21" title="21" selected="">21</option>
+								<option value="21" title="21">21</option>
 								<option value="22" title="22">22</option>
 								<option value="23" title="23">23</option>
 								<option value="24" title="24">24</option>
@@ -1147,8 +1152,8 @@ function unCheck() {
 						<th scope="row"><em class="ast">*</em> 휴대전화 </th>
 						<td>
 							<label for="mbno1" class="phoneComp">휴대폰국번</label>
-							<div class="selector disabled" id="uniform-mbno1" style="width: 67px;"><span style="width: 42px; user-select: none;">010</span><select class="uiform phoneComp" id="mbno1" name="mbno1" disabled="disabled">
-										<option value="010" title="010" selected="selected">010</option>
+							<div class="selector" id="uniform-mbno1" style="width: 67px;"><span style="width: 42px; user-select: none;">010</span><select class="uiform phoneComp" id="mbno1" name="mbno1">
+										<option value="010" title="010">010</option>
 										<option value="011" title="011">011</option>
 										<option value="016" title="016">016</option>
 										<option value="017" title="017">017</option>
@@ -1158,10 +1163,10 @@ function unCheck() {
 								
 							-
 							<label for="mbno2" class="phoneNum1">휴대폰앞번호</label>
-							<input type="text" class="uiform phoneNum1 text" id="mbno2" name="mbno2" readonly="readonly" value="5629" maxlength="4" onkeyup="this.value=this.value.replace(/[^\d\ ]/g, '')" autocomplete="off">
+							<input type="text" class="uiform phoneNum1 text" id="mbno2" name="mbno2" value="" maxlength="4" onkeyup="this.value=this.value.replace(/[^\d\ ]/g, '')" autocomplete="off">
 							-
 							<label for="mbno3" class="phoneNum2">휴대폰뒷번호</label>
-							<input type="text" class="uiform phoneNum2 text" id="mbno3" name="mbno3" readonly="readonly" value="7204" maxlength="4" onkeyup="this.value=this.value.replace(/[^\d\ ]/g, '')" autocomplete="off">
+							<input type="text" class="uiform phoneNum2 text" id="mbno3" name="mbno3" value="" maxlength="4" onkeyup="this.value=this.value.replace(/[^\d\ ]/g, '')" autocomplete="off">
 							
 							
 						</td>
@@ -1307,32 +1312,6 @@ function unCheck() {
 					
 				</tbody></table>
 				
-                <!-- 프로모션 코드 / 신라면세점 아이디 입력 -->
-                <div class="hTitS">
-                    <h4 class="tit">프로모션 코드 / 추천인 아이디 입력</h4>
-                </div>
-                <table class="tableTypeA tableJoinForm" summary="프로모션 코드 / 신라면세점 아이디 입력테이블입니다." style="margin-top:0px;">
-                        <caption>프로모션 코드 / 신라면세점 아이디 입력</caption>
-                        <colgroup>
-                            <col width="16%" class="col1">
-                            <col class="col2">
-                        </colgroup>
-                        <tbody>
-                        <tr class="first">
-                            <th scope="row" class="first">프로모션 코드</th>
-                            <td class="first"><input type="text" id="joinCd" name="joinCd" class="uiform text" maxlength="60" autocomplete="off" style="width:130px;text-transform: uppercase;">&nbsp; <em class="btnPwHelp"><span>이벤트 참여 시 제공받은 코드를 입력해주시기 바립니다. </span></em></td>
-                            </tr>
-                        <tr>
-                            <th scope="row">추천인 아이디</th>
-                            <td><input type="text" id="rcId" name="rcId" maxlength="60" class="uiform text" autocomplete="off" style="width:130px"></td>
-                        </tr>
-                        <tr class="last">
-                           <th class="last">면세점 아이디</th>
-                            <td class="last"><input type="text" id="dfId" name="dfId" maxlength="60" class="uiform text" autocomplete="off" style="width:130px"></td>
-                        </tr>
-                        </tbody>
-                </table>
-                <!-- 프로모션 코드 / 신라면세점 아이디 입력 끝-->
                 
 
 <div class="rwPromotion">
