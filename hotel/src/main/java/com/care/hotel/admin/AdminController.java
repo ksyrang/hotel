@@ -77,12 +77,26 @@ public class AdminController {
 		return "forward:/admin_index?formpath=memberDelete?memberId=" + memberId;
 	}
 	
-	@RequestMapping(value="memberDeleteCheckProc", method = RequestMethod.POST)
+	@RequestMapping(value="memberDeleteCheckProc")
 	public String memberDeleteCheckProc(String adminId, String adminPw, String memberId, Model model) {
 		logger.info("memberDeleteCheckProc");
+		System.out.println(adminId);
+		System.out.println(adminPw);
 		System.out.println(memberId);
 		
-		String result = memberSvc.adminCheck(adminId, adminPw, memberId);
+		String result = "[" + memberId + "]회원을 삭제했습니다.";
+		
+		if(adminId == null || adminId == "" || adminPw == null || adminPw == "") 
+			result = "아이디 혹은 비밀번호를 확인해주세요.";
+		
+		if(!(adminId.equals("admin"))) 
+			result = "아이디 혹은 비밀번호를 확인해주세요.";
+		
+		if(!(adminPw.equals("1234"))) 
+			result = "아이디 혹은 비밀번호를 확인해주세요.";
+		
+		result = memberSvc.adminCheck(adminId, adminPw, memberId);
+		
 		if(result.equals("아이디 혹은 비밀번호를 확인해주세요."))
 			return "forward:/admin_index?formpath=memberDelete?memberId=" + memberId;
 		
