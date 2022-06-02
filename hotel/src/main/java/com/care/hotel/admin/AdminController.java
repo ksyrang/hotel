@@ -44,14 +44,15 @@ public class AdminController {
 		if(memberId == null || memberId == "") {
 			return "redirect:memberListProc";
 		}
-		String sessionMemberId = (String)session.getAttribute("sessionMemberId");
-		if(sessionMemberId != null) {
-			model.addAttribute("user", memberSvc.userInfo(sessionMemberId));
-			return "forward:/admin_index?formpath=memberInfo?memberId="+sessionMemberId;
-		}else {
+		/*
+		 * String sessionMemberId = (String)session.getAttribute("sessionMemberId");
+		 * if(sessionMemberId != null) { model.addAttribute("user",
+		 * memberSvc.userInfo(sessionMemberId)); return
+		 * "forward:/admin_index?formpath=memberInfo?memberId="+sessionMemberId; }else {
+		 */
 			model.addAttribute("user", memberSvc.userInfo(memberId));
 			return "forward:/admin_index?formpath=memberInfo?memberId="+memberId;
-		}
+		//}
 				
 	}
 	
@@ -82,7 +83,8 @@ public class AdminController {
 		if(result.equals("회원정보수정 실패")) {
 			return "redirect:memberListProc";
 		} else {
-			return "forward:/admin_index?formpath=memberInfo&sessionMemberId="+allMemberDto.getMemberId();
+			//return "forward:/admin_index?formpath=memberInfo&sessionMemberId="+session.getAttribute("sessionMemberId");
+			return "forward:/memberInfoProc?memberId="+allMemberDto.getMemberId();
 		}
 	}
 	
@@ -90,8 +92,14 @@ public class AdminController {
 	@RequestMapping(value="memberDeleteProc", method = RequestMethod.GET)
 	public String memberDeleteProc(String memberId, Model model) {
 		logger.info("memberDeleteProc");
-		System.out.println(memberId);
+		System.out.println("memberDeleteProc memberId : " + memberId);
 		model.addAttribute("memberId", memberId);
+		/*
+		 * String sessionMemberId = (String)session.getAttribute("sessionMemberId");
+		 * if(memberId == null || sessionMemberId != null) {
+		 * model.addAttribute("memberId", sessionMemberId); return
+		 * "forward:/admin_index?formpath=memberDelete?memberId=" + sessionMemberId; }
+		 */
 		return "forward:/admin_index?formpath=memberDelete?memberId=" + memberId;
 	}
 	
@@ -104,19 +112,13 @@ public class AdminController {
 		
 		String result = "[" + memberId + "]회원을 삭제했습니다.";
 		
-		if(adminId.isEmpty() || adminId == "" || adminPw.isEmpty() || adminPw  == "") { 
-			result = "아이디 혹은 비밀번호를 확인해주세요.";
-		} else if(!(adminId.equals("admin"))) {
-			result = "아이디 혹은 비밀번호를 확인해주세요.";
-		} else if(!(adminPw.equals("1234"))) {
-			result = "아이디 혹은 비밀번호를 확인해주세요.";
-		} else {
-			result = memberSvc.adminCheck(adminId, adminPw, memberId);
-		}
+		result = memberSvc.adminCheck(adminId, adminPw, memberId);
+	
 		model.addAttribute("msg", result);
 		
 		if(result.equals("아이디 혹은 비밀번호를 확인해주세요.")) {
-			return "forward:/admin_index?formpath=memberDelete?memberId=" + memberId;
+			//return "forward:/admin_index?formpath=memberDelete&sessionMemberId=" + memberId;
+			return "forward:/memberDeleteProc?memberId=" + memberId;
 		}else {
 			return "redirect:memberListProc";
 		}
