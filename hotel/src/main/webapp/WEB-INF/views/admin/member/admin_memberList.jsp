@@ -42,6 +42,7 @@
 			<th>BIRTH</th>
 			<th>MOBILE</th>
 			<th>EMAIL</th>
+			<th>수정/삭제</th>
 		</tr>
 		</thead>
 		<c:forEach var="memberdb" items="${sessionScope.memberList }">

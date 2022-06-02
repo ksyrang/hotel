@@ -1,6 +1,7 @@
 package com.care.hotel.member.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.care.hotel.member.DAO.memberDAO;
@@ -44,6 +45,13 @@ public class memberSvcImpl implements ImemberSvc{
 
 	@Override
 	public String memberModify(AllMemberDTO allMemberDto) {
+		memberDTO memberDto = memberDAO.memberInfo(allMemberDto.getMemberId());
+		// 비밀번호 변경시, 새 비밀번호 암호화
+		if(!(memberDto.getPw().equals(allMemberDto.getPw()))) {
+			BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+			String securePw = encoder.encode(allMemberDto.getPw());
+			allMemberDto.setPw(securePw);
+		}
 		memberDAO.memberUpdate(allMemberDto);
 		// int memberExUpdateResult = memberDAO.memberExUpdate(allMemberDto);
 		
@@ -65,20 +73,6 @@ public class memberSvcImpl implements ImemberSvc{
 			insertMemberExDto.setHomePhone(allMemberDto.getHomePhone());
 			memberDAO.memberExInsert(insertMemberExDto);
 		}
-		
-		/*
-		 * memberExDTO memberExDto = new memberExDTO(); if(allMemberDto.getZipcode() !=
-		 * null) { memberExDto.setMemberId(allMemberDto.getMemberId());
-		 * memberExDto.setZipcode(allMemberDto.getZipcode());
-		 * memberExDto.setAddr1(allMemberDto.getAddr1());
-		 * memberExDto.setAddr2(allMemberDto.getAddr2()); }
-		 * if(allMemberDto.getHomePhone() != null) {
-		 * memberExDto.setMemberId(allMemberDto.getMemberId());
-		 * memberExDto.setHomePhone(allMemberDto.getHomePhone()); } if(memberExDto !=
-		 * null) {
-		 * 
-		 * }
-		 */
 		
 //		if(memberUpdateResult != 1 || memberExUpdateResult != 1) {
 //			return "회원정보수정 실패";

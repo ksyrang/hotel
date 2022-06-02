@@ -10,6 +10,27 @@
 <link href="${pageContext.request.contextPath}/resources/css/admin/amdin_memberList.css" rel="stylesheet" type="text/css">
 <link href="${pageContext.request.contextPath}/resources/css/admin/admin_memberInfo.css" rel="stylesheet" type="text/css">
 <title>admin_memberModify</title>
+<script type="text/javascript" src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script>
+	function daumPost() {
+	    new daum.Postcode({
+	        oncomplete: function(data) {
+	        	var addr = "";
+	        	// R == 도로명 주소, J == 지번 주소
+	        	if(data.userSelectedType == "R")
+	        		addr = data.roadAddress;
+	        	else
+	        		addr = data.jibunAddress;
+	        	
+	        	//우편 번호
+	        	document.getElementById('zipcode').value = data.zonecode;
+	        	document.getElementById('addr1').value = addr;
+	        	document.getElementById('addr2').focus();
+	        	
+	        }
+	    }).open();
+	}
+</script>
 </head>
 <body>
 <c:if test="${not empty msg }">
@@ -68,11 +89,12 @@
 	</td>
 </tr>
 <tr>
-	<th>주소</th><td><input type="text" name="addr1"  value="${user.addr1 }"></td>
-	<th>우편번호</th><td><input type="text" name="zipcode"  value="${user.zipcode }"></td>
+	<th>주소</th><td><input type="text" id="addr1" name="addr1"  value="${user.addr1 }"></td>
+	<th>우편번호</th><td><input type="text" id="zipcode" name="zipcode"  value="${user.zipcode }"></td>
 </tr>
 <tr>
-	<th>상세주소</th><td><input type="text" name="addr2"  value="${user.addr2 }"></td>
+	<th>상세주소</th><td><input type="text" id="addr2" name="addr2"  value="${user.addr2 }"></td>
+	<th></th><td><input type="button" value="우편번호 검색" onclick="daumPost()"></td>
 </tr>
 </table>
 </div>

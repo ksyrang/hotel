@@ -62,8 +62,16 @@ public class HomeController {
 	}
 	
 	@RequestMapping(value="admin_index")
-	public void admin_index(String formpath, Model model) {
+	public void admin_index(String formpath, String memberId,Model model, HttpSession session) {
 		logger.info("admin_index?formpath="+formpath);
+		
+		// 수정 혹은 삭제 시 아이디 세션
+		/*
+		 * String sessionId = (String)session.getAttribute("adminMemberIdSession");
+		 * if("memberInfo".equals(formpath)) { if(sessionId == null ||
+		 * sessionId.equals(memberId) == false) {
+		 * session.setAttribute("adminMemberIdSession", memberId); } }
+		 */
 		model.addAttribute("formpath", formpath);
 	}
 	
