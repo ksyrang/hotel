@@ -1,5 +1,7 @@
 package com.care.hotel.resource;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -8,11 +10,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.care.hotel.resource.service.IhotelresourceSvc;
+import com.care.hotel.resourceDTO.hotelDTO;
 
 @Controller
 public class hotelresourceController {
 	
 	@Autowired IhotelresourceSvc hotellistSVC;
+	@Autowired HttpSession session;
 	
 	@RequestMapping("hotellistProc")
 	public String hotellistProc(Model model, 
@@ -38,11 +42,20 @@ public class hotelresourceController {
 		return "forward:/admin_index?formpath=admin_hotelInfo";
 	}	
 	
+	@RequestMapping("prehotelModifyProc")
+	public String prehotelModifyProc(String hotelId, Model model) {
+		if(hotelId ==""||hotelId == null) return "redirect:hotellistProc";
+		hotellistSVC.hotelInfo(hotelId);
+		return "forward:/admin_index?formpath=admin_hotelInfoModify";
+	}	
+	
 	@RequestMapping("hotelModifyProc")
-	public String hotelModifyProc(String hotelId, Model model) {
-		if(hotelId ==""||hotelId == null) return "redirect:hotelModifyProc";
-		//수정 메소드 추가 필요
-		return "forward:/admin_index?formpath=admin_hotelInfo";
+	public String hotelModifyProc(hotelDTO hotelInfo, Model model) {
+		int result = hotellistSVC.hotelModify(hotelInfo);
+		if(result == 1) {
+			return "forward:/admin_index?formpath=admin_hotelList";
+		}
+		return "forward:/admin_index?formpath=admin_hotelInfoModify";
 	}	
 
 }

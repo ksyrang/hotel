@@ -75,6 +75,19 @@ public class hotelresourceSvcImpl implements IhotelresourceSvc{
 		session.setAttribute("hotelInfo", hotelInfo);
 	}
 	
+	@Override
+	public int hotelModify(hotelDTO hotelInfo) {
+		hotelDTO oldInfo = (hotelDTO)session.getAttribute("hotelInfo");
+		if(oldInfo.getHotelName().equals(hotelInfo.getHotelName()) && oldInfo.getEmail().equals(hotelInfo.getEmail())
+				&& oldInfo.getZipCode().equals(hotelInfo.getZipCode()) && oldInfo.getAddr1().equals(hotelInfo.getAddr1()) 
+				&& oldInfo.getAddr2().equals(hotelInfo.getAddr2())) {
+			return 2;//모든 정보가 같기 때문에 DB수정 불 필요
+		}
+		
+		hotelDAO.updateHotel(hotelInfo);
+		
+		return 2;
+	}
 
 
 }

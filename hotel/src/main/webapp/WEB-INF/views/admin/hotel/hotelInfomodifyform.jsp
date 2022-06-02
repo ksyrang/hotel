@@ -18,7 +18,7 @@
 		</tr>
 		<tr>
 			<th>호텔 이메일</th>
-			<td><input type="text" name="hotelEmail" placeholder="호텔 이메일" readonly="readonly" value="${sessionScope.hotelInfo.email }"></td>
+			<td><input type="text" name="hotelEmail" placeholder="호텔 이메일" value="${sessionScope.hotelInfo.email }"></td>
 		</tr>
 		<tr>
 			<th>호텔 연락처</th>
@@ -27,7 +27,7 @@
 		<tr>
 			<th>우편 번호</th>
 			<td>
-				<input type=text name='zipcode' id="zonecode" value="${sessionScope.hotelInfo.zipcode }" readonly="readonly"/> 
+				<input type=text name='zipcode' id="zonecode" value="${sessionScope.hotelInfo.zipCode }" readonly="readonly"/> 
 			</td>
 			<td><input type="button" value="우편번호 검색" onclick="daumPost()"></td>
 		</tr>
@@ -37,7 +37,7 @@
 		</tr>
 		<tr>
 			<th>상세 주소</th>
-			<td><input type=text name='addr1' id="addr2" value="${sessionScope.hotelInfo.addr1 }" readonly="readonly"/></td>
+			<td><input type=text name='addr1' id="addr2" value="${sessionScope.hotelInfo.addr2 }" readonly="readonly"/></td>
 		</tr>
 		<tr>
 			<td align='center' height=40 colspan=4>

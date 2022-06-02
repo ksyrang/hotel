@@ -16,4 +16,6 @@ public interface IhotelDAO {
 	int roomCount();
 	public hotelDTO hotelInfo(String hotelId);
 	ArrayList<roomDTO> roomList(int begin, int end, String select, String search);
+
+	void updateHotel(hotelDTO hotelInfo);
 }
