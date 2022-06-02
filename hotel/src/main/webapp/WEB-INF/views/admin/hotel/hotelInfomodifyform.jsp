@@ -4,7 +4,28 @@
 <c:url var="root" value="/" />
 //<script src="${root}/resources/check.js"></script>
 <link href="${pageContext.request.contextPath}/resources/css/admin/amdin_hotelList.css" rel="stylesheet" type="text/css">
+
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script>
+	function daumPost(){
+		
+	    new daum.Postcode({
+	        oncomplete: function(data) {
+	   			var addr = "";
+	   			// R == 도로명 주소, J == 지번 주소
+	   			if(data.userSelectedType == "R")
+	   				addr = data.roadAddress;
+	   			else{
+	   				addr = data.jibunAddress;
+	   			}
+	   			document.getElementById('zonecode').value= data.zonecode; // 우편번호
+	   			document.getElementById('addr1').value = addr;
+	   			document.getElementById('addr2').focus();
+	        }
+	    }).open();
+	    
+	}
+</script>
 <center>
 <form action="hotelModifyProc" method="post">
 	<table>
@@ -18,26 +39,26 @@
 		</tr>
 		<tr>
 			<th>호텔 이메일</th>
-			<td><input type="text" name="hotelEmail" placeholder="호텔 이메일" value="${sessionScope.hotelInfo.email }"></td>
+			<td><input type="text" name="Email" placeholder="호텔 이메일" value="${sessionScope.hotelInfo.email }"></td>
 		</tr>
 		<tr>
 			<th>호텔 연락처</th>
-			<td><input type="text" name="hotelEmail" placeholder="호텔 전화번호" value="${sessionScope.hotelInfo.phoneNumber }"></td>
+			<td><input type="text" name="phoneNumber" placeholder="호텔 전화번호" value="${sessionScope.hotelInfo.phoneNumber }"></td>
 		</tr>
 		<tr>
 			<th>우편 번호</th>
 			<td>
-				<input type=text name='zipcode' id="zonecode" value="${sessionScope.hotelInfo.zipCode }" readonly="readonly"/> 
+				<input type=text name='zipCode' id="zonecode" value="${sessionScope.hotelInfo.zipCode }" /> 
 			</td>
 			<td><input type="button" value="우편번호 검색" onclick="daumPost()"></td>
 		</tr>
 		<tr>
 			<th>주소</th>
-			<td><input type=text name='addr1' id="addr1" value="${sessionScope.hotelInfo.addr1 }" readonly="readonly"/></td> 
+			<td><input type=text name='Addr1' id="addr1" value="${sessionScope.hotelInfo.addr1 }" readonly="readonly"/></td> 
 		</tr>
 		<tr>
 			<th>상세 주소</th>
-			<td><input type=text name='addr1' id="addr2" value="${sessionScope.hotelInfo.addr2 }" readonly="readonly"/></td>
+			<td><input type=text name='Addr2' id="addr2" value="${sessionScope.hotelInfo.addr2 }" /></td>
 		</tr>
 		<tr>
 			<td align='center' height=40 colspan=4>

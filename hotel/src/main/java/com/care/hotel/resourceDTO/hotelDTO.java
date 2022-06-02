@@ -30,14 +30,14 @@ public class hotelDTO {
 	public String getAddr1() {
 		return Addr1;
 	}
-	public void setAddr1(String addr1) {
-		Addr1 = addr1;
+	public void setAddr1(String Addr1) {
+		this.Addr1 = Addr1;
 	}
 	public String getAddr2() {
 		return Addr2;
 	}
-	public void setAddr2(String addr2) {
-		Addr2 = addr2;
+	public void setAddr2(String Addr2) {
+		this.Addr2 = Addr2;
 	}
 	public String getPhoneNumber() {
 		return phoneNumber;

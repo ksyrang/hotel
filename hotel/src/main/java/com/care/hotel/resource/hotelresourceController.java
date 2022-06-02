@@ -5,6 +5,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -49,13 +50,14 @@ public class hotelresourceController {
 		return "forward:/admin_index?formpath=admin_hotelInfoModify";
 	}	
 	
-	@RequestMapping("hotelModifyProc")
+	@PostMapping("hotelModifyProc")
 	public String hotelModifyProc(hotelDTO hotelInfo, Model model) {
+		System.out.println("hotelModifyProc 진입");
 		int result = hotellistSVC.hotelModify(hotelInfo);
-		if(result == 1) {
-			return "forward:/admin_index?formpath=admin_hotelList";
-		}
-		return "forward:/admin_index?formpath=admin_hotelInfoModify";
+//		if(result == 1) {
+//			return "forward:/admin_index?formpath=admin_hotelList";
+//		}
+		return "redirect:hotellistProc";
 	}	
 
 }

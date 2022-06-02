@@ -48,7 +48,7 @@
 		SELECT * FROM hotel WHERE hotelid = #{hotelId}	
 	</select>
 	<update id="updateHotel" parameterType="com.care.hotel.resourceDTO.hotelDTO">
-		UPDATE hotel set HotelName=#{HotelName}, email=#{email}, addr1=#{addr1}, addr2=#{addr2}, zipcode=#{zipcode} WHERE hotelId=#{hotelId}
+		UPDATE hotel set hotelname=#{hotelName}, email=#{email}, addr1=#{Addr1}, addr2=#{Addr2}, zipcode=#{zipCode} WHERE hotelid=#{hotelId}
 	</update>
 	<delete id="deleteHotel" parameterType="String">
 		DELETE FROM hotel WHERE hotelId=#{hotelId}

@@ -63,27 +63,37 @@ public class hotelresourceSvcImpl implements IhotelresourceSvc{
 	
 	@Override
 	public void hotelInfo(String hotelId) {
+		hotelDTO tmp = (hotelDTO)session.getAttribute("hotelInfo");
 		hotelDTO hotelInfo = hotelDAO.hotelInfo(hotelId);
-		System.out.println("getHotelId: "+hotelInfo.getHotelId());
-		System.out.println("getHotelName: "+hotelInfo.getHotelName());
-		System.out.println("getPhoneNumber: "+hotelInfo.getPhoneNumber());
-		System.out.println("getEmail: "+hotelInfo.getEmail());
-		System.out.println("getAddr1: "+hotelInfo.getAddr1());
-		System.out.println("getAddr2: "+hotelInfo.getAddr2());
-		System.out.println("getZipCode: "+hotelInfo.getZipCode());
-
-		session.setAttribute("hotelInfo", hotelInfo);
+		if(tmp == null) session.setAttribute("hotelInfo", hotelInfo);
+//		System.out.println("getHotelId: "+hotelInfo.getHotelId());
+//		System.out.println("getHotelName: "+hotelInfo.getHotelName());
+//		System.out.println("getPhoneNumber: "+hotelInfo.getPhoneNumber());
+//		System.out.println("getEmail: "+hotelInfo.getEmail());
+//		System.out.println("getAddr1: "+hotelInfo.getAddr1());
+//		System.out.println("getAddr2: "+hotelInfo.getAddr2());
+//		System.out.println("getZipCode: "+hotelInfo.getZipCode());
+		
 	}
 	
 	@Override
 	public int hotelModify(hotelDTO hotelInfo) {
-		hotelDTO oldInfo = (hotelDTO)session.getAttribute("hotelInfo");
-		if(oldInfo.getHotelName().equals(hotelInfo.getHotelName()) && oldInfo.getEmail().equals(hotelInfo.getEmail())
-				&& oldInfo.getZipCode().equals(hotelInfo.getZipCode()) && oldInfo.getAddr1().equals(hotelInfo.getAddr1()) 
-				&& oldInfo.getAddr2().equals(hotelInfo.getAddr2())) {
-			return 2;//모든 정보가 같기 때문에 DB수정 불 필요
-		}
+//		hotelDTO oldInfo = (hotelDTO)session.getAttribute("hotelInfo");
+//		System.out.println(oldInfo.getHotelName());
 		
+//		if(oldInfo.getHotelName().equals(hotelInfo.getHotelName()) && oldInfo.getEmail().equals(hotelInfo.getEmail())
+//				&& oldInfo.getZipCode().equals(hotelInfo.getZipCode()) && oldInfo.getAddr1().equals(hotelInfo.getAddr1()) 
+//				&& oldInfo.getAddr2().equals(hotelInfo.getAddr2())) {
+//			return 2;//모든 정보가 같기 때문에 DB수정 불 필요
+//		}
+		System.out.println(hotelInfo.getHotelId());
+		System.out.println(hotelInfo.getHotelName());
+		System.out.println(hotelInfo.getPhoneNumber());
+		System.out.println(hotelInfo.getAddr1());
+		System.out.println(hotelInfo.getAddr2());
+		System.out.println(hotelInfo.getZipCode());
+		System.out.println(hotelInfo.getEmail());
+		System.out.println("hotelModifyProc DB 업데이트 진입");
 		hotelDAO.updateHotel(hotelInfo);
 		
 		return 2;
