@@ -34,7 +34,7 @@ public class loginServiceImpl implements IloginService {
 		}
 		if(DBhotel != null && !DBhotel.getHotelPw().equals(DBhotel.getHotelPw())) return 9;//매니저 비밀번호 오류
 		//admin 시
-		String adminId ="admin";//향수 수정 필요
+		String adminId ="admin";//향후 수정 필요
 		String adminPw ="admin";
 		if(adminId.equals(userId)&&adminPw.equals(userPw)) {
 			session.setAttribute("userId", adminId);
