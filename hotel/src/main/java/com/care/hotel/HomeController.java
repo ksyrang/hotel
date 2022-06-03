@@ -159,6 +159,14 @@ public class HomeController {
 		
 		return "admin/hotel/hoteldeleteForm";
 	}
+	
+	/* 관리자 예약 목록 */
+	@RequestMapping(value="admin_reservationList")
+	public String admin_reservationList() {
+		logger.info("admin_reservationList");
+		return "admin/reservation/admin_reservationList";
+	}
+	
 	/*admin end*/
 	
 }
