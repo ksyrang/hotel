@@ -1199,14 +1199,21 @@ function unCheck() {
 							<span class="emailConfirm"><a href="javascript:checkDuplicateEmail()">이메일 인증</a></span>
 						</td>
 					</tr>
-					
+					<tr>
+						<th scope="row"><em class="ast">*</em> 이메일 인증번호 </th>
+						<td>
+							<label for="mailNumb" class="mailNumb">인증번호</label>
+							<input type="text" class="uiform mailNumb text" id="mailNumb" name="mailNumb" value="" maxlength="4" onkeyup="this.value=this.value.replace(/[^\d\ ]/g, '')" autocomplete="off">
+							<span class="emailNumb"><a href="javascript:checkDuplicateEmail()">인증번호 확인</a></span>
+						</td>
+					</tr>
 					<!-- 휴대전화 -->
 					<tr>
 						<th scope="row"><em class="ast">*</em> 휴대전화 </th>
 						<td>
 							<label for="mbno1" class="phoneComp">휴대폰국번</label>
 							<select name="mobileFirst" style="width: 85px; height: 27px; line-height: 27px;">
-								<option value="010" title="010" selected>010</option>
+								<option value="010" title="010">010</option>
 								<option value="011" title="011">011</option>
 								<option value="016" title="016">016</option>
 								<option value="017" title="017">017</option>

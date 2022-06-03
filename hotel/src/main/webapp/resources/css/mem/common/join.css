@@ -3329,6 +3329,16 @@ input[placeholder],
     overflow: hidden;
 }
 
+.emailNumb a {
+    background: url(../../../images/ko/common/join/emailConfirm.gif) no-repeat;
+    width: 96px;
+    height: 27px;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 100px;
+    overflow: hidden;
+}
+
 .idConfirm a {
     background: url(../../../images/ko/common/join/idConfirm.gif) no-repeat;
     width: 96px;

@@ -15,6 +15,7 @@ import com.care.hotel.login.DTO.LoginDTO;
 @Service
 public class memberSvcImpl implements ImemberSvc{
 	@Autowired memberDAO memberDAO;
+	@Autowired private HttpSession session;
 	
 	@Override
 	public AllMemberDTO userInfo(String memberId) {
@@ -137,6 +138,11 @@ public class memberSvcImpl implements ImemberSvc{
 
 		if (memberDAO.isExistEmail(memberDTO.getMemberEmail()) > 0)
 			return "중복 이메일 입니다.";
+		
+		Boolean authStatus = (Boolean) session.getAttribute("authStatus");
+		if (authStatus == null || authStatus != true)
+			return "이메일 인증 후 가입 할 수 있습니다.";
+		
 
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 		String securePw = encoder.encode(memberDTO.getMemberPw());
