@@ -1196,7 +1196,7 @@ function unCheck() {
 									<option value="yahoo.co.kr" title="yahoo.co.kr">yahoo.co.kr</option>
 
 							</select></div> -->
-							<span class="emailConfirm"><a href="javascript:checkDuplicateEmail()">이메일 중복확인</a></span>
+							<span class="emailConfirm"><a href="javascript:checkDuplicateEmail()">이메일 인증</a></span>
 						</td>
 					</tr>
 					
