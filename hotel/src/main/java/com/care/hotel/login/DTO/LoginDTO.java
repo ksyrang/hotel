@@ -3,8 +3,7 @@ package com.care.hotel.login.DTO;
 public class LoginDTO {
 
 	private String memberId;
-	private String pw;
-	
+	private String memberPw;
 	
 	public String getMemberId() {
 		return memberId;
@@ -12,14 +11,11 @@ public class LoginDTO {
 	public void setMemberId(String memberId) {
 		this.memberId = memberId;
 	}
-	public String getPw() {
-		return pw;
+	public String getMemberPw() {
+		return memberPw;
 	}
-	public void setPw(String pw) {
-		this.pw = pw;
+	public void setMemberPw(String memberPw) {
+		this.memberPw = memberPw;
 	}
-	
-	
-	
 	
 }

@@ -2,37 +2,34 @@ package com.care.hotel.member.DTO;
 
 public class memberExDTO extends memberDTO{
 	
-	private String zipcode;
-	private String addr1;
-	private String addr2;
-	private String homePhone;
+	private String memberZipcode;
+	private String memberAddr1;
+	private String memberAddr2;
+	private String memberHomePhone;
 	
-
-	public String getZipcode() {
-		return zipcode;
+	public String getMemberZipcode() {
+		return memberZipcode;
 	}
-	public void setZipcode(String zipcode) {
-		this.zipcode = zipcode;
+	public void setMemberZipcode(String memberZipcode) {
+		this.memberZipcode = memberZipcode;
 	}
-	public String getAddr1() {
-		return addr1;
+	public String getMemberAddr1() {
+		return memberAddr1;
 	}
-	public void setAddr1(String addr1) {
-		this.addr1 = addr1;
+	public void setMemberAddr1(String memberAddr1) {
+		this.memberAddr1 = memberAddr1;
 	}
-	public String getAddr2() {
-		return addr2;
+	public String getMemberAddr2() {
+		return memberAddr2;
 	}
-	public void setAddr2(String addr2) {
-		this.addr2 = addr2;
+	public void setMemberAddr2(String memberAddr2) {
+		this.memberAddr2 = memberAddr2;
 	}
-	public String getHomePhone() {
-		return homePhone;
+	public String getMemberHomePhone() {
+		return memberHomePhone;
 	}
-	public void setHomePhone(String homePhone) {
-		this.homePhone = homePhone;
+	public void setMemberHomePhone(String memberHomePhone) {
+		this.memberHomePhone = memberHomePhone;
 	}
 	
-	
-
 }
