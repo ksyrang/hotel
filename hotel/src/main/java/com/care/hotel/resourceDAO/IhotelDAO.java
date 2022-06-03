@@ -9,13 +9,13 @@ import com.care.hotel.resourceDTO.roomDTO;
 
 public interface IhotelDAO {
 	
-	ArrayList<hotelDTO> hotelList(@Param("b")int begin, @Param("e")int end, 
+	public ArrayList<hotelDTO> hotelList(@Param("b")int begin, @Param("e")int end, 
 			@Param("sel")String select, @Param("search")String search);
 	
-	int hotelCount(@Param("sel")String select,  @Param("search")String search);
-	int roomCount();
+	public int hotelCount(@Param("sel")String select,  @Param("search")String search);
+	public int roomCount();
 	public hotelDTO hotelInfo(String hotelId);
-	ArrayList<roomDTO> roomList(int begin, int end, String select, String search);
+	public ArrayList<roomDTO> roomList(int begin, int end, String select, String search);
 
-	void updateHotel(hotelDTO hotelInfo);
+	public void updateHotel(hotelDTO hotelInfo);
 }

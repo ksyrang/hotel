@@ -29,19 +29,42 @@ public class HomeController {
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
-	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String home(Locale locale, Model model) {
-		logger.info("Welcome home! The client locale is {}.", locale);
-		
-		Date date = new Date();
-		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
-		
-		String formattedDate = dateFormat.format(date);
-		
-		model.addAttribute("serverTime", formattedDate );
-		
-		return "home";
+//	@RequestMapping(value = "/", method = RequestMethod.GET)
+//	public String home(Locale locale, Model model) {
+//		logger.info("Welcome home! The client locale is {}.", locale);
+//		
+//		Date date = new Date();
+//		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
+//		
+//		String formattedDate = dateFormat.format(date);
+//		
+//		model.addAttribute("serverTime", formattedDate );
+//		
+//		return "home";
+//	}
+	
+	/*//member sector//*/
+	@RequestMapping(value = "/")
+	public String home(Model model) {
+		model.addAttribute("formpath","home2");
+		return "index";
 	}
+	
+	@RequestMapping(value = "index")
+	public void index(String formpath, String sessionMemberId,Model model, HttpSession session) {
+		model.addAttribute("formpath",formpath);
+	}	
+	
+	@RequestMapping(value = "login")
+	public String login() {
+		return "member/memLoginForm";
+	}
+	
+	
+	@RequestMapping("home2")
+	public String home2() {
+		return "home2";
+	}	
 	
 	@RequestMapping("main_header")
 	public String main_header() {
@@ -53,7 +76,7 @@ public class HomeController {
 		return "main_footer";
 	}
 	
-	/* admin start*/
+	/*//admin sector//*/
 	@RequestMapping(value="admin")
 	public String admin_index(Model model) {
 		logger.info("admin_index");
@@ -65,6 +88,7 @@ public class HomeController {
 	public void admin_index(String formpath, String sessionMemberId,Model model, HttpSession session) {
 		logger.info("admin_index?formpath="+formpath);
 		model.addAttribute("formpath", formpath);
+		
 		// 수정 혹은 삭제 시 아이디 세션
 		/*
 		 * System.out.println("세션에 담기 전 sessionMemberId : " + sessionMemberId);
@@ -79,7 +103,6 @@ public class HomeController {
 			 */
 		// } 
 		//}
-		
 	}
 	
 	/* 관리자 회원 목록 */

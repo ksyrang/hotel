@@ -1,4 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<c:url var="root" value="/" />
+
 
 <html lang="ko" class="webkit chrome win  retina ratio1_25 js portrait tablet"><head>
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
@@ -127,7 +130,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <h1 class="logo"><a href="/test1/">THE SHINNANDA HOTELS</a></h1>
   <!-- 로그인 -->
   <span class="loginArea">
-	<a href="/membership/mbr/login/memLogin.do">로그인</a>
+	<a href="${root }index?formpath=login">로그인</a>
     <a href="/mem/mbr/join/memViewBrowsewrap.do">신난다리워즈 가입</a>
     </span>
   <!-- 예약확인 추가 -->
