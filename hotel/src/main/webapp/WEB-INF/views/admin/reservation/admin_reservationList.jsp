@@ -18,7 +18,7 @@
 <!-- 전체 div -->
 <div class="admin_mainDiv">
 <!-- 필터 div -->
-<div class="admin_searchFilter">
+<div class="admin_searchFilterDiv">
 	<form>
 		<!-- 호텔 필터링 -->
 		<select name="hotelSel" class="admin_hotelSearch">
