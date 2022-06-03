@@ -13,4 +13,4 @@
 .admin_memberTable th, td {border: 1px solid; border-color: #61380B}
 .admin_memberTable th {height: 30px;}
 .admin_memberTable td {text-align: center; height: 20px;}
-.listBtn {background-color: #f1e3c4;}
+.listBtn {background-color: #f1e3c4; border:0; outline:0; height: 30px; width: 45px;}

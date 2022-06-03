@@ -53,53 +53,69 @@
 <div class="admin_memberInfoTableDiv">
 <table class="admin_memberInfoTable">
 <tr>
-	<th>아이디</th><td><input type="text" name="memberId" value="${user.memberId }" readonly></td>
-	<th>이름(국문)</th><td><input type="text" name="memberNameKR"  value="${user.memberNameKR }"></td>
-	<th>이름(영문)</th><td><input type="text" name="memberNameENG"  value="${user.memberNameENG }"></td>
+	<th>* 아이디</th><td><input type="text" name="memberId" value="${user.memberId }" class="admin_input_basic" readonly ></td>
+	<th>* 비밀번호</th><td><input type="text" name="memberPw" value="${user.memberPw }" class="admin_input_basic" readonly></td>
 </tr>
 <tr>
-	<th>비밀번호</th>
-	<td><input type="password" name="memberPw" value="${user.memberPw }"></td>
+	<th>* 성명(국문)</th>
+	<td colspan="3"><input type="text" name="memberNameKR"  value="${user.memberNameKR }" class="admin_input_basic"></td>
 </tr>
 <tr>
-	<th>생년월일</th><td><input type="text" name="memberBirth"  value="${user.memberBirth }"></td>
-	<th>전화번호</th><td><input type="text" name="memberMobile"  value="${user.memberMobile }"></td>
-	<th>자택번호</th><td><input type="text" name="memberHomePhone"  value="${user.memberHomePhone }"></td>
+	<th>* 성명(영문)</th>
+	<td colspan="3">FirstName(이름) <input type="text" name="memberNameENG"  value="${user.memberNameENG }" class="admin_input_basic"> 
+	LastName(성) <input type="text" name="memberNameENG"  value="${user.memberNameENG }" class="admin_input_basic"></td>
 </tr>
 <tr>
-	<th>이메일</th><td><input type="text" name="memberEmail"  value="${user.memberEmail }" readonly></td>
-	<th>성별</th><td>
+	<th>* 생년월일</th><td><input type="text" name="memberBirth"  value="${user.memberBirth }" class="admin_input_basic"></td>
+
+	<th>* 성별</th><td>
 	<c:choose>
 		<c:when test="${user.memberGender eq 'm'}">
-			<input type="radio" name="memberGender" value="m" checked="checked">남
-			<input type="radio" name="memberGender" value="w">여
-			<input type="radio" name="memberGender" value="n">선택안함
+			<select name="memberGender" class="admin_genderCombo">
+				<option value="n">선택안함</option>
+				<option value="m" selected>남</option>
+				<option value="w">여</option>
+			</select>
 		</c:when>
 		<c:when test="${user.memberGender eq 'w'}">
-			<input type="radio" name="memberGender" value="m">남
-			<input type="radio" name="memberGender" value="w" checked="checked">여
-			<input type="radio" name="memberGender" value="n">선택안함
+			<select name="memberGender" class="admin_genderCombo">
+				<option value="n">선택안함</option>
+				<option value="m">남</option>
+				<option value="w"selected>여</option>
+			</select>
 		</c:when>
 		<c:when test="${user.memberGender eq 'n'}">
-			<input type="radio" name="memberGender" value="m">남
-			<input type="radio" name="memberGender" value="w">여
-			<input type="radio" name="memberGender" value="n" checked="checked">선택안함
+			<select name="memberGender" class="admin_genderCombo">
+				<option value="n" selected>선택안함</option>
+				<option value="m">남</option>
+				<option value="w">여</option>
+			</select>
 		</c:when>
 		<c:otherwise>
-			<input type="radio" name="memberGender" value="m">남
-			<input type="radio" name="memberGender" value="w">여
-			<input type="radio" name="memberGender" value="n" checked="checked">선택안함
+			<select name="memberGender" class="admin_genderCombo">
+				<option value="n" selected>선택안함</option>
+				<option value="m">남</option>
+				<option value="w">여</option>
+			</select>
 		</c:otherwise>
 	</c:choose>
-	</td>
 </tr>
 <tr>
-	<th>주소</th><td><input type="text" id="addr1" name="memberAddr1"  value="${user.memberAddr1 }"></td>
-	<th>우편번호</th><td><input type="text" id="zipcode" name="memberZipcode"  value="${user.memberZipcode }"></td>
+	<th>* 이메일</th><td colspan="3"><input type="text" name="memberEmail"  value="${user.memberEmail }" class="admin_input_basic" readonly></td>
 </tr>
 <tr>
-	<th>상세주소</th><td><input type="text" id="addr2" name="memberAddr2"  value="${user.memberAddr2 }"></td>
-	<th></th><td><input type="button" value="우편번호 검색" onclick="daumPost()"></td>
+	<th>* 휴대전화</th><td colspan="3"><input type="text" name="memberMobile"  value="${user.memberMobile }" class="admin_input_basic"></td>
+	
+</tr>
+<tr>
+<th>자택전화</th><td colspan="3"><input type="text" name="memberHomePhone"  value="${user.memberHomePhone }" class="admin_input_basic"></td>
+</tr>
+<tr>
+	<th>자택주소</th>
+	<td colspan="3"><input type="text" id="zipcode" name="memberZipcode"  value="${user.memberZipcode }" class="admin_input_zipcode">
+	<input type="button" value="우편번호 검색" onclick="daumPost()" class="admin_zipcodeSearchBtn"><br>
+	<input type="text" id="addr1" name="memberAddr1"  value="${user.memberAddr1 }" class="admin_input_address"><br>
+	<input type="text" id="addr2" name="memberAddr2"  value="${user.memberAddr2 }" class="admin_input_address"></td>
 </tr>
 </table>
 </div>

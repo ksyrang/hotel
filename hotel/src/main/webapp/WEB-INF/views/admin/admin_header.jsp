@@ -10,6 +10,18 @@
 	<div class="admin_header_top">
 		<a href="#">로그아웃</a>
 </div>
+
+<!-- 세션으로 manager/admin 구분(미완성) -->
+<!-- manager -->
+<!-- 
+<div class="admin_nav">
+	<a href="">예약관리</a>
+	<a href="${root }hotelInfoProc" class="nav_margin">호텔관리</a>
+	<a href="${root }roomlistProc" class="nav_margin">룸관리</a>
+</div>
+ -->
+
+<!-- admin -->
 <div class="admin_nav">
 	<a href="${root }memberListProc">회원관리</a>
 	<a href="${root }hotellistProc" class="nav_margin">호텔관리</a>

@@ -28,16 +28,17 @@
 <table class="admin_memberInfoTable">
 <tr>
 	<th>아이디</th><td>${user.memberId }</td>
-	<th>이름(국문)</th><td>${user.memberNameKR }</td>
-	<th>이름(영문)</th><td>${user.memberNameENG }</td>
+	<th>비밀번호</th><td>${user.memberPw }</td>
+</tr>
+<tr>
+	<th>성명(국문)</th><td colspan="3">${user.memberNameKR }</td>
+</tr>
+<tr>
+	<th>성명(영문)</th><td colspan="3">${user.memberNameENG }</td>
 </tr>
 <tr>
 	<th>생년월일</th><td>${user.memberBirth }</td>
-	<th>전화번호</th><td>${user.memberMobile }</td>
-	<th>자택번호</th><td>${user.memberHomePhone }</td>
-</tr>
-<tr>
-	<th>이메일</th><td>${user.memberEmail }</td>
+
 	<th>성별</th><td>
 		<c:choose>
 			<c:when test="${user.memberGender eq 'm'}">남</c:when>
@@ -51,12 +52,20 @@
 	</td>
 </tr>
 <tr>
-	<th>주소</th><td>${user.memberAddr1 }</td>
-	<th>우편번호</th><td>${user.memberZipcode }</td>
+	<th>이메일</th><td colspan="3">${user.memberEmail }</td>
 </tr>
 <tr>
-	<th>상세주소</th><td>${user.memberAddr2 }</td>
+	<th>휴대전화</th><td colspan="3">${user.memberMobile }</td>
 </tr>
+<tr>
+	<th>자택번호</th><td colspan="3">${user.memberHomePhone }</td>
+</tr>
+<tr>
+	<th>자택주소</th>
+	<td colspan="3">
+	${user.memberZipcode }<br>${user.memberAddr1 }<br>${user.memberAddr2 }</td>
+</tr>
+
 </table>
 </div>
 </div>
