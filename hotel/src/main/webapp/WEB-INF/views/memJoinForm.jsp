@@ -13,6 +13,12 @@
 <link href="${pageContext.request.contextPath}/css/mem/common/lang-ko_N.css" rel="stylesheet" type="text/css">
 <link href="${pageContext.request.contextPath}/css/mem/common/btn_ko.css" rel="stylesheet" type="text/css">
 <link href="${pageContext.request.contextPath}/css/common/swiper.min.css" rel="stylesheet" type="text/css">
+<style> 
+.opacity{background-color:#000000;    display: block;    height: 155%; left: 0;    margin: 0;    opacity: 0.5;    position: absolute;    top: 0;    width: 100%;   z-index: 1000;}
+.opacity{-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)"; /* IE 8 */ filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50); /* IE 7 and olders */   opacity: .5; }
+/*예약에서 로딩중*/
+.re-loader { position: absolute; z-index: 10; top: 57%;left: 47%;}
+</style> 
 <meta name="description" content="회원정보 입력"><!-- <meta name="keywords" content="신라리워즈 가입, 회원정보 입력" /> -->
 <meta name="og:title" content="회원정보 입력 | 신라리워즈 가입 | The Shilla Hotels &amp; Resorts">
 <!-- 검색엔진용 추가 180524 -->
@@ -237,7 +243,26 @@ function setCalendarControlDate(yyyy,mm,dd){
 function popCalendarLayerHide(){
 	$("#popCalendarDiv").attr("style","z-Index:99999;display:none;");
 }
-</script></head><body class="subBody joinBody"><div id="popCalendarDiv" class="popCalendar" style="display:none"></div>
+
+</script></head>
+<script type="text/javascript">
+function emailCheck() {
+$('#select[name=selectEmail]').change(function(){
+   $("#select option:selected").each(function () {
+		
+		if($(this).val()== '1'){ //직접입력일 경우
+			 $("#email02").val('');                        //값 초기화
+			 $("#email02").attr("disabled",false); //활성화
+		}else{ //직접입력이 아닐경우
+			 $("#email02").val($(this).text());      //선택값 입력
+			 $("#email02").attr("disabled",true); //비활성화
+		}
+   });
+});
+});
+</script>
+
+<body class="subBody joinBody"><div id="popCalendarDiv" class="popCalendar" style="display:none"></div>
 
 <script src="/js/json2.js" charset="UTF-8"></script>
 <script src="/js/jquery-1.8.3.js" charset="UTF-8"></script>
@@ -561,12 +586,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div></div>
 	
 	<div class="contain">
-		<style> 
-.opacity{background-color:#000000;    display: block;    height: 155%; left: 0;    margin: 0;    opacity: 0.5;    position: absolute;    top: 0;    width: 100%;   z-index: 1000;}
-.opacity{-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)"; /* IE 8 */ filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50); /* IE 7 and olders */   opacity: .5; }
-/*예약에서 로딩중*/
-.re-loader { position: absolute; z-index: 10; top: 57%;left: 47%;}
-</style> 
+
 <script type="text/javascript" src="/js/jquery.alphanumeric.js"></script>
 <script type="text/javascript">
 <!--
@@ -944,14 +964,20 @@ function unCheck() {
 						<th scope="row" class="first"><em class="ast">*</em> 성명(국문)</th>
 						<td class="first">
 							<label for="titlCd" class="nameH">경칭</label>
-							<div class="selector" id="uniform-titlCd" style="width: 71px;"><span style="width: 46px; user-select: none;">
+							<select name="gender" style="width: 85px; height: 27px; line-height: 27px;">
+							<option value="" selected disabled>선택</option>
+							<option value="M" title="M">남</option>
+							<option value="W" title="W." >여</option>
+							<option value="N" title="N" >선택안함</option>
+							</select>
+						<!--	<div class="selector" id="uniform-titlCd" style="width: 71px;"><span style="width: 46px; user-select: none;">
 										선택</span><select id="titlCd" class="nameH uiform" name="titlCd">
 								<option value="">선택</option>
 								<option value="Miss." title="Ms.">
 											Ms.</option>
-									<option value="Mr." title="Mr." selected="">
+									<option value="Mr." title="Mr." selected>
 											Mr.</option>
-									</select></div>
+									</select></div>  -->
 							<input type="text" class="lastNameEn uiform text" id="mbrNm" name="mbrNm" maxlength="30" value="" autocomplete="off">
 						</td>
 					</tr>
@@ -1061,7 +1087,7 @@ function unCheck() {
 								</select></div>
 							<label for="birthMonth" class="birthMonth"></label>  -->
 							
-							<select name="month" style="width: 85px; height: 27px; line-height: 27px;">
+							<select name="day" style="width: 85px; height: 27px; line-height: 27px;">
 							<option value="" selected disabled>선택</option>
 								<option value="1" title="1">1</option>
 								<option value="2" title="2">2</option>
@@ -1136,13 +1162,25 @@ function unCheck() {
 					</tr>
 					
 					<!-- 이메일 -->
+
 					<tr>
 						<th scope="row"><em class="ast">*</em> 이메일 </th>
 						<td>
-							<input id="email1" class="emailId uiform text" type="text" size="20" name="email1" value="" onkeyup="this.value=this.value.replace(/[^a-z0-9_.@-]/gi,'');" maxlength="40" title="이메일주소 입력" autocomplete="off">
+							<input id="email01" name="email01"  type="text" size="20" value="" onkeyup="this.value=this.value.replace(/[^a-z0-9_.@-]/gi,'');" maxlength="40" title="이메일주소 입력" autocomplete="off">
 							<span class="at">@</span> 
-							<input id="email2" class="emailDomain uiform text" type="text" size="20" value="" name="email2" onkeyup="this.value=this.value.replace(/[^a-z0-9_.@-]/gi,'');" maxlength="40" title="이메일주소 도메인 입력" autocomplete="off">
-							<div class="selector" id="uniform-emailDomainCd" style="width: 111px;"><span style="width: 86px; user-select: none;">직접입력</span><select id="emailDomainCd" class="emailDomainSel" onchange="javascript:$('#email2').val(this.value)">
+							
+							<input id="email02" name="email02"  type="text" size="20" value="" onkeyup="this.value=this.value.replace(/[^a-z0-9_.@-]/gi,'');" maxlength="40" title="이메일주소 도메인 입력" autocomplete="off">
+							<select id="selectEmail" name="selectEmail" style="width: 115px; height: 27px; line-height: 27px;" onchange="email02.value=this.value">
+							<option value="" selected disabled>E-Mail 선택</option>
+							<option value="blank">직접입력하기</option>
+							<option value="naver.com" title="naver.com">naver.com</option>
+							<option value="hanmail.net" title="hanmail.net">hanmail.net</option>
+							<option value="nate.com" title="nate.com">nate.com</option>
+							<option value="gmail.com" title="gmail.com">gmail.com</option>
+							<option value="hotmail.com" title="hotmail.com">hotmail.com</option>
+							<option value="yahoo.co.kr" title="yahoo.co.kr">yahoo.co.kr</option>
+							</select> 
+					<!--	<div class="selector" id="uniform-emailDomainCd" style="width: 111px;"><span style="width: 86px; user-select: none;">직접입력</span><select id="emailDomainCd" class="emailDomainSel" onchange="javascript:$('#email2').val(this.value)">
 								<option value="">직접입력</option>
 
 									<option value="naver.com" title="naver.com" selected="">naver.com</option>
@@ -1157,7 +1195,7 @@ function unCheck() {
 															
 									<option value="yahoo.co.kr" title="yahoo.co.kr">yahoo.co.kr</option>
 
-							</select></div>
+							</select></div> -->
 							<span class="emailConfirm"><a href="javascript:checkDuplicateEmail()">이메일 중복확인</a></span>
 						</td>
 					</tr>
@@ -1167,14 +1205,22 @@ function unCheck() {
 						<th scope="row"><em class="ast">*</em> 휴대전화 </th>
 						<td>
 							<label for="mbno1" class="phoneComp">휴대폰국번</label>
-							<div class="selector" id="uniform-mbno1" style="width: 67px;"><span style="width: 42px; user-select: none;">010</span><select class="uiform phoneComp" id="mbno1" name="mbno1">
-										<option value="010" title="010" selected="">010</option>
+							<select name="mobileFirst" style="width: 85px; height: 27px; line-height: 27px;">
+								<option value="010" title="010" selected>010</option>
+								<option value="011" title="011">011</option>
+								<option value="016" title="016">016</option>
+								<option value="017" title="017">017</option>
+								<option value="018" title="018">018</option>
+								<option value="019" title="019">019</option>
+							</select>
+						<!--  	<div class="selector" id="uniform-mbno1" style="width: 67px;"><span style="width: 42px; user-select: none;">010</span><select class="uiform phoneComp" id="mbno1" name="mbno1">
+										<option value="010" title="010" selected>010</option>
 										<option value="011" title="011">011</option>
 										<option value="016" title="016">016</option>
 										<option value="017" title="017">017</option>
 										<option value="018" title="018">018</option>
 										<option value="019" title="019">019</option>
-										</select></div>
+										</select></div>	-->
 								
 							-
 							<label for="mbno2" class="phoneNum1">휴대폰앞번호</label>
@@ -1191,9 +1237,9 @@ function unCheck() {
 						<th scope="row"> 자택전화</th>
 						<td>
 							<label for="phno1" class="phoneComp">국번</label>
-							<div class="selector" id="uniform-phno1" style="width: 74px;"><span style="width: 49px; user-select: none;">선택</span><select class="uiform phoneHome" id="phno1" name="phno1">
-								<option value="">선택</option>
-								<option value="02" title="02" selected="">02</option>
+							<select name="homeFirst" style="width: 85px; height: 27px; line-height: 27px;">
+								<option value=""selected disabled>선택</option>
+								<option value="02" title="02" >02</option>
 								<option value="031" title="031">031</option>
 								<option value="032" title="032">032</option>
 								<option value="033" title="033">033</option>
@@ -1220,7 +1266,38 @@ function unCheck() {
 								<option value="0507" title="0507">0507</option>
 								<option value="0505" title="0505">0505</option>
 								<option value="0303" title="0303">0303</option>
-								</select></div>
+							</select>
+							
+						<!-- 	<div class="selector" id="uniform-phno1" style="width: 74px;"><span style="width: 49px; user-select: none;">선택</span><select class="uiform phoneHome" id="phno1" name="phno1">
+								<option value=""selected disabled>선택</option>
+								<option value="02" title="02" >02</option>
+								<option value="031" title="031">031</option>
+								<option value="032" title="032">032</option>
+								<option value="033" title="033">033</option>
+								<option value="041" title="041">041</option>
+								<option value="042" title="042">042</option>
+								<option value="043" title="043">043</option>
+								<option value="044" title="044">044</option>
+								<option value="051" title="051">051</option>
+								<option value="052" title="052">052</option>
+								<option value="053" title="053">053</option>
+								<option value="054" title="054">054</option>
+								<option value="055" title="055">055</option>
+								<option value="061" title="061">061</option>
+								<option value="062" title="062">062</option>
+								<option value="063" title="063">063</option>
+								<option value="064" title="064">064</option>
+								<option value="0130" title="0130">0130</option>
+								<option value="080" title="080">080</option>
+								<option value="070" title="070">070</option>
+								<option value="0506" title="0506">0506</option>
+								<option value="0502" title="0502">0502</option>
+								<option value="0503" title="0503">0503</option>
+								<option value="0504" title="0504">0504</option>
+								<option value="0507" title="0507">0507</option>
+								<option value="0505" title="0505">0505</option>
+								<option value="0303" title="0303">0303</option>
+								</select></div>	 -->
 							-
 							<label for="phno2" class="phoneHome1">집전화앞번호</label>
 							<input type="text" class="uiform phoneHome1 text" id="phno2" name="phno2" maxlength="4" onkeyup="this.value=this.value.replace(/[^\d\ ]/g, '')" autocomplete="off">
