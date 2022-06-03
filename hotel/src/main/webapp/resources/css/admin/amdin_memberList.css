@@ -9,7 +9,7 @@
 .admin_memberSearchBtn {height: 25px; width: 50px; background-color: #f1e3c4;}
 
 
-.admin_memberTable {width: 1000px; border-collapse: collapse; border-color: #61380B; border-collapse: collapse;}
+.admin_memberTable {width: 1000px; border-color: #61380B; border-collapse: collapse;}
 .admin_memberTable tr {border-bottom: 1px solid; border-top: 1px solid;}
 .admin_memberTable th, td {border: none; border-color: #61380B}
 .admin_memberTable th {height: 30px;}
