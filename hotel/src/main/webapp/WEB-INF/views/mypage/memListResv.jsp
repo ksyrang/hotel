@@ -3,6 +3,28 @@
 <%@ include file="../common/main_header.jsp" %>
 <link href="${pageContext.request.contextPath}/resources/css/mem/title_ko.css" rel="stylesheet" type="text/css">
 <link href="${pageContext.request.contextPath}/resources/js/s/commonEx.js">
+<style>
+.lnbAreaMypage .lnbMenu .m2 .sMenu li.s1 a{ background-position:0 0;}
+.lnbAreaMypage .lnbMenu .m2 .sMenu li.s2 a{ background-position:0 -22px;}
+.lnbAreaMypage .lnbMenu .m2 .sMenu li.s3 a{ background-position:0 -44px;}
+.lnbAreaMypage .lnbMenu .m2 .sMenu li.s4 a{ background-position:0 -66px;}
+</style>
+<script type="text/javascript">
+	function check() {
+		startDt = document.getElementById('startDt');
+		endDt = document.getElementById('endDt');
+		
+		if(startDt.value == "" || endDt.value == "") {
+			alert('일자를 확인해주세요.');
+			return;
+		}
+		if(startDt.value > endDt.value) {
+			alert('시작일자가 종료일자보다 큽니다.');
+			return;
+		}
+		document.getElementById('f').submit();
+	}
+</script>
 	
 	<div class="contain">
 		<div class="container">
@@ -36,280 +58,6 @@
 			</div> <!-- lnbArea lnbAreaMypage -->
 		<div class="contents" id="contents">
 		
-<script type="text/javascript">
-jQuery(function() {
-
-	//openCtrlPopup('/membership/inquires/pop/reserveNotice.do','reserveNotice');
-	
-	//투숙일 조회 시
-	if($("#searchDateType").val() == "ARRIVAL_DATE") {
-		$(".btnDateNew").css("display","none");
-	} 
-	
-	//selectbox 변경 시
-	$("#searchDateType").change(function() {
-		$("#searchDateType option:selected").each(function () {
-			$("#searchStrtDt, #searchEndDt").val("");
-			if($(this).val() == "ARRIVAL_DATE") {
-				$(".btnDateNew").css("display","none");
-				searchDateSet('searchStrtDt', 'searchEndDt', 3);
-			} else {
-				$(".btnDateNew").css("display","inline-block");
-			}
-		});
-	});
-});
-
-$(function() {
-	$("select, input").uniform();
-});
-
-function searchResvList() {
-	$("#resvId").val("");
-	$('#myResvForm').attr('action', '/hotel/mypage/memListResv').submit();	
-}
-
-//팝업 오픈
-function openPopup(id) {
-	jQuery("html, body").stop().animate({scrollTop: 0}, 0);
-	jQuery(".dimmed").stop().show();
-	jQuery("#" + id).stop().show();
-}
-
-// 팝업 닫기
-function closePopup(id) {
-	jQuery("#" + id).stop().hide();
-	jQuery(".dimmed").stop().hide();
-}
-
-function goViewRpmResv(resvId, hotlId, source, roomTotalCnt) {
-	if(source == "OWS" || source == "WEB" || source == "APP" || source == "SNS" ){
-		if(("membership" == "hub") || ("membership" == "seoul" && hotlId != 'S') || ("membership" == "jeju" && hotlId != 'C')) {
-			var siteDomain = "";
-			$("#roomTotalCnt").val(roomTotalCnt);
-			$("#resvId").val(resvId);
-			$("#hotlId").val(hotlId);
-			$('#myResvForm').attr('action', '/membership/mypage/resv/memViewRpmResv.do').submit();
-		} else {
-			$("#roomTotalCnt").val(roomTotalCnt);
-			$("#resvId").val(resvId);
-			$("#hotlId").val(hotlId);
-			$('#myResvForm').attr('action', '/mbership/mypage/resv/memViewRpmResv.do').submit();
-		}
-	}else{
-		openPopup('ResvRouteInfo');
-	}
-}
-
-function dateSearch( monthNum ) {
-	//20201113
-	//기간 범위 선택 시
-	if($("#searchDateType").val() == "BOOKED_DATE") {	//예약일 기준
-		monthNum = Number(monthNum) * -1;
-	} else if($("#searchDateType").val() == "ARRIVAL_DATE") {	//투숙일 기준
-		monthNum = Math.abs(Number(monthNum));
-	} 
-	searchDateSet('searchStrtDt' , 'searchEndDt' , monthNum );
-}
-
-function dateWeekSearch( weekNum ) {
-	searchDateWeekSet('searchStrtDt' , 'searchEndDt' , weekNum );
-}
-
-function goRpmPage (pageNo) {
-	$('#rpmCurPageNo').val(pageNo);
-	$('#myResvForm').attr('action','/membership/mypage/resv/listResv.do').submit();
-}
-
-function goDinSpaPage (pageNo) {
-	$('#dinSpaCurPageNo').val(pageNo);
-	$('#myResvForm').attr('action','/membership/mypage/resv/listResv.do').submit();
-}
-
-function openRpmResvCanclPolcy() {
-	$.ajax({
-		url: URL_PREFIX + "/mypage/resv/rpmResvCanclPolcy.do",
-		cache: false,
-		type: "POST",
-		data:"data="
-	}).done(function( html ) {
-		$('body').prepend("<div id='rpmResvCanclPolcy' style='display:none'></div><div style='display: block;' class='mdScreen'></div>");
-		$("#rpmResvCanclPolcy").html(html);
-		$("#rpmResvCanclPolcy").show();
-		$("#rpmResvCanclPolcy").attr("tabindex",-1).focus();
-	}).fail(function(jqXHR, textStatus) {
-		alert( "openRpmResvCanclPolcy Request failed: " + textStatus );
-	}); // end of ajax
-}
-
-function closeRpmResvCanclPolcy() {
-	$("#rpmResvCanclPolcy").remove();
-	$(".mdScreen").remove();
-	$("#rpmResvCanclPolcyBtn").focus();
-}
-
-function checkCalendar(searchEndDt,today){
-	if($("#searchStrtDt").val()!=null || $("#searchStrtDt").val().length !=0){
-		popCalendarLayer(searchEndDt,$("#searchStrtDt").val());
-	}else{
-		popCalendarLayer(searchEndDt,today);
-	}
-}
-
-var thisYear = getCurrentYear();
-var thisMonth = getCurrentMonth();
-var thisDay = getCurrentDay();
-
-var selectedYear = thisYear;
-var selectedMonth = thisMonth;
-var selectedDay = "";
-
-function calendarDrawTable( calenderDivId , currentYear , currentMonth , currentDay ) {
-	if(currentMonth == 0){
-		currentYear = currentYear - 1;
-		currentMonth = 12;
-	}
-	var lastMonth =  currentMonth;
-	if(currentMonth == 12){
-		lastMonth = 1; 
-	}else{
-		lastMonth = lastMonth + 1;
-	}
-
-	var dayOfMonth = 1;
-	var validDay = 0;
-	var startDayOfWeek = getDayOfWeek(currentYear, currentMonth, dayOfMonth);
-	var daysInMonth = getDaysInMonth(currentYear, currentMonth);
-	
-	var months = [];
-	months.push(messages["javascript.calendar.january"]);
-	months.push(messages["javascript.calendar.february"]);
-	months.push(messages["javascript.calendar.march"]);
-	months.push(messages["javascript.calendar.april"]);
-	months.push(messages["javascript.calendar.may"]);
-	months.push(messages["javascript.calendar.june"]);
-	months.push(messages["javascript.calendar.july"]);
-	months.push(messages["javascript.calendar.august"]);
-	months.push(messages["javascript.calendar.september"]);
-	months.push(messages["javascript.calendar.october"]);
-	months.push(messages["javascript.calendar.november"]);
-	months.push(messages["javascript.calendar.december"]);
-
-    var table = "	<div class='dateCtl'>";
-
-	table = table + "	<div class='datePrev'><a class='btnPrev' href='javascript:calenderView(0,-1);' title='" + messages["javascript.calendar.pre.month.title"] + "'>&lt;</a></div>";
-	table = table + "	<div class='dateNow'>"+currentYear+"."+months[currentMonth-1]+"</div>";
-	table = table + "	<div class='dateNext'><a class='btnNext' href='javascript:calenderView(0,1);' title='" + messages["javascript.calendar.next.month.title"] + "'>"+" &gt;</a></div>";
-	table = table + "	</div>";
-
-    table = table + "	<table summary='" + messages["javascript.calendar.next.month.title"] + "'>";
-    table = table + "	<caption>" + messages["javascript.calendar.table.caption"].replaceMsg([months[currentMonth-1]]) + "</caption>";
-    table = table + "	<thead>";
-    table = table + "		<tr>";
-    table = table + "		<th scope='col' class='sun'><span>" + messages["javascript.calendar.table.col.sun"] + "</span></th>	";
-    table = table + "		<th scope='col' class='mon'><span>" + messages["javascript.calendar.table.col.mon"] + "</span></th>";
-    table = table + "		<th scope='col' class='tue'><span>" + messages["javascript.calendar.table.col.tue"] + "</span></th>";
-    table = table + "		<th scope='col' class='wed'><span>" + messages["javascript.calendar.table.col.wed"] + "</span></th>";
-    table = table + "		<th scope='col' class='thu'><span>" + messages["javascript.calendar.table.col.thu"] + "</span></th>";
-    table = table + "		<th scope='col' class='fri'><span>" + messages["javascript.calendar.table.col.fri"] + "</span></th>";
-    table = table + "		<th scope='col' class='sat'><span>" + messages["javascript.calendar.table.col.sat"] + "</span></th>";
-    table = table + "	</tr>	";
-    table = table + "	</thead>	";
-    table = table + "	<tbody>	";
-    
-    for(var week=0; week < 6; week++) {
-      table = table + "<tr>";
-      for(var dayOfWeek=0; dayOfWeek < 7; dayOfWeek++) {
-        if(week == 0 && startDayOfWeek == dayOfWeek) {
-          validDay = 1;
-        } else if (validDay == 1 && dayOfMonth > daysInMonth) {
-          validDay = 0;
-        }
-
-        if(validDay) {
-		  var viewMonth = currentMonth;
-		  var viewDay = dayOfMonth;
-		  
-		  if(currentMonth < 10 && viewMonth.length == 1 ){
-			viewMonth = "0"+currentMonth;
-		  }
-		  if(dayOfMonth < 10 && viewDay.length == 1 ){
-			viewDay = "0"+dayOfMonth;
-		  }
-		  
-		  if(thisYear == currentYear && thisMonth == viewMonth && thisDay == viewDay ){
-	          table = table + "<td><span class='today' >";
-		  }else{
-	          table = table + "<td><span  >";
-		  }
-		  table = table + "<div id='count_"+currentYear+viewMonth+viewDay+"'></div>";
-		  table = table + "<div id='"+currentYear+viewMonth+viewDay+"'>";
-		  table = table + "<a href=\"#none\" title='" + currentYear + messages["javascript.calendar.year.title"] + viewMonth + messages["javascript.calendar.month.title"] + viewDay + messages["javascript.calendar.day.title"]+"' onclick='javascript:setCalendarControlDate("+currentYear+","+viewMonth+","+viewDay+");'  >"+viewDay+"</a>";
-		  table = table + "</div>";
-		  table = table + "</span></td>";
-          dayOfMonth++;
-        } else {
-          table = table + "<td><span>&nbsp;</span></td>";
-        }
-      }
-      table = table + "</tr>";
-    }
-    table = table + "</tbody>";
-
-    table = table + "</table>";
-    
-    $("#"+calenderDivId).html(table);
-}
-  
-var DATE_ID = "";
-function popCalendarLayer(dateId , today){
-	DATE_ID = dateId;
-	if(today != '2022-06-02'){
-		today = today.split("-");
-		var originToday = "2022-06-02".split("-");
-		
-		var date1 = new Date(today[0],today[1],today[2]);
-		var date2 = new Date(originToday[0],originToday[1],originToday[2]);
-		
-		var diff = date2 - date1;
-		var currDay = 24 * 60 * 60 * 1000;// Ã¬ÂÂ * Ã«Â¶Â * Ã¬Â´Â * Ã«Â°ÂÃ«Â¦Â¬Ã¬ÂÂ¸Ã¬Â»Â¨
-	    var currMonth = currDay * 30;// Ã¬ÂÂ Ã«Â§ÂÃ«ÂÂ¬
-	    var currYear = currMonth * 12; // Ã«ÂÂ Ã«Â§ÂÃ«ÂÂ¬
-	    
-	    var year = parseInt(diff/currYear);
-	    var month = parseInt(diff/currMonth);
-
-		calenderEndView(  year , month);
-	}else{
-		calenderView(  "0" , "0");
-	}
-	var p = $("#"+dateId);
-	var offset = p.offset();
-	$("#popCalendarDiv").attr("style","z-Index:99999;display:;left:"+offset.left+"px; top:"+(offset.top+25)+"px;");
-}
-
-function calenderView( yearMovieNum , monthMovieNum ){
-	if (yearMovieNum == 0 && monthMovieNum == 0) {
-		selectedYear = thisYear;
-		selectedMonth = thisMonth;
-		selectedDay = thisDay;
-	}else{
-		selectedYear = new Date(selectedYear+yearMovieNum,selectedMonth+monthMovieNum,1).getFullYear();
-		selectedMonth = new Date(selectedYear+yearMovieNum,selectedMonth+monthMovieNum,1).getMonth();
-		selectedDay = new Date(selectedYear+yearMovieNum,selectedMonth+monthMovieNum,1).getDate();
-	}
-	calendarDrawTable( "popCalendarDiv" , selectedYear,selectedMonth,1);
-}
-
-//Ã¬Â¡Â°Ã­ÂÂ Ã¬ÂÂÃ¬ÂÂÃªÂ¸Â°ÃªÂ°ÂÃªÂ³Â¼ Ã¬Â¢ÂÃ«Â£ÂÃªÂ¸Â°ÃªÂ°ÂÃ¬ÂÂ´ Ã¬ÂÂÃ¬ÂÂÃ«ÂÂ Ã¬Â¢ÂÃ«Â£ÂÃªÂ¸Â°ÃªÂ°ÂÃ¬ÂÂ Ã¬ÂÂÃ«ÂÂ Ã­ÂÂ¨Ã¬ÂÂÃ«Â¥Â¼ Ã¬ÂÂ¬Ã¬ÂÂ©Ã­ÂÂ´Ã¬ÂÂ Ã«ÂÂ¬Ã«Â Â¥ Ã«ÂÂ¸Ã¬Â¶Â
-function calenderEndView( yearMovieNum , monthMovieNum ){
-	selectedYear = new Date(selectedYear,selectedMonth,1).getFullYear();
-	selectedMonth = new Date(selectedYear,selectedMonth,1).getMonth();
-	selectedDay = new Date(selectedYear,selectedMonth,1).getDate();
-	
-	calendarDrawTable( "popCalendarDiv" , selectedYear,selectedMonth,1);
-}
-</script>
 
 <form name="myResvForm" id="myResvForm" method="post">
 	<input type="hidden" name="resvId" id="resvId" value="" autocomplete="off">
@@ -332,32 +80,24 @@ function calenderEndView( yearMovieNum , monthMovieNum ){
 
 		<div class="mypageWrap">
 			<div class="schBox">
-				<div class="selectWrap_rewards"><!-- 20201113 -->
-		            <div class="selector" id="uniform-searchDateType" style="width: 138px;">
-		            	<span style="width: 113px; user-select: none;">예약 완료일 기준</span>
-		            	<select name="searchDateType" id="searchDateType">
-				            <option value="BOOKED_DATE" selected="">예약 완료일 기준</option>
-				            <option value="ARRIVAL_DATE">투숙일 기준</option>
-		            	</select>
-		            </div>
-	            </div>
-				<div class="dateOpt">
-					<a class="btnDateNew btn3Mon" href="javascript:dateSearch(3);"><span>3개월</span></a>
-	                <a class="btnDateNew btn6Mon" href="javascript:dateSearch(6);"><span>6개월</span></a>
-	                <a class="btnDateNew btn12Mon" href="javascript:dateSearch(12);"><span>12개월</span></a>
-					
-					<label class="dateStart" for="searchStrtDt">시작일</label>
-					
-					<input type="text" id="searchStrtDt" name="searchStrtDt" value="2022-03-02" class="dateStart uiform text" autocomplete="off">
-					<a class="btnCalendar" href="javascript:popCalendarLayer('searchStrtDt','2022-06-02'); "><span>달력</span></a>
-					~
-					<label class="dateEnd" for="searchEndDt">종료일</label>
-					<input type="text" id="searchEndDt" name="searchEndDt" value="2022-06-02" class="dateEnd uiform text" autocomplete="off">
-					<a class="btnCalendar" href="javascript:checkCalendar('searchEndDt','2022-06-02'); "><span>달력</span></a>
-				</div>
-				<div class="btn">
-					<a class="btnSch" href="javascript:searchResvList();"><span>다음 단계로 이동</span></a>
-				</div>
+	            <form>>
+			            <div class="selector" id="uniform-searchDateType" style="width: 138px;">
+			            	<span style="width: 113px; user-select: none;">예약 완료일 기준</span>
+			            	<select name="select">
+					            <option value="예약일" selected="">예약 완료일 기준</option>
+					            <option value="투숙일">투숙일 기준</option>
+			            	</select>
+			            </div>
+						<input type="date" name="startDt" id="startDt"/>
+						~
+						<input type="date" name="endDt" id="endDt"/>
+				<!-- 		
+						<input type="button" value="조회" onclick="check();" class="searchBtn">
+				 -->
+						<input type="submit" name="searchBtn" value="조회" class="searchBtn">
+						<input type="hidden" name="memberId" value="whiteyhl">
+				</form>
+				
 			</div> <!-- schBox -->
 			
 			<div class="box boxRoomPack">

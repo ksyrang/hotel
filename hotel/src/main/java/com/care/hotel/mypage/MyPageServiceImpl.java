@@ -18,13 +18,13 @@ public class MyPageServiceImpl implements IMyPageService{
 	@Autowired HttpSession session;
 
 	@Override
-	public void memListResv(int currentPage, String searchDateType, String startDate, String endDate, String memberId) {
+	public void memListResv(int currentPage, String select, String startDt, String endDt, String memberId) {
 		int pageBlock = 5; // 한 화면에 보여줄 데이터 수
-		int totalCount = reservationDAO.reservationCount(searchDateType, startDate, endDate, memberId); // 총 데이터의 수 
+		int totalCount = reservationDAO.reservationCount(select, startDt, endDt, memberId); // 총 데이터의 수 
 		int end = currentPage * pageBlock; // 데이터의 끝 번호
 		int begin = end+1 - pageBlock; // 데이터의 시작 번호
 		
-		ArrayList<reservationAllDTO> list = reservationDAO.reservationList(begin, end, searchDateType, startDate, endDate, memberId);
+		ArrayList<reservationAllDTO> list = reservationDAO.reservationList(begin, end, select, startDt, endDt, memberId);
 		session.setAttribute("reservationList", list);
 		String url = "/hotel/mypage/reservationListProc?currentPage=";
 		session.setAttribute("page", PageService.getNavi(currentPage, pageBlock, totalCount, url));

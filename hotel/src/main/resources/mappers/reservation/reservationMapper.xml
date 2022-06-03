@@ -6,12 +6,15 @@
 	<select id="reservationCount" resultType="int">
 		SELECT count(*) FROM reservation 
 		<choose>
-			<when test="sel == 'BOOKED_DATE'">
-				WHERE (reservatinDate BETWEEN #{startDt} AND #{endDt}) AND memberId == #{memberId}
+			<when test="select == '예약일'">
+				WHERE (reservationDate BETWEEN #{startDt} AND #{endDt}) AND memberId = #{memberId}
 			</when>
-			<when test="sel == 'ARRIVAL_DATE'">
-				WHERE checkinDate BETWEEN #{startDt} AND #{endDt} AND memberId == #{memberId}
+			<when test="select == '투숙일'">
+				WHERE (checkinDate BETWEEN #{startDt} AND #{endDt}) AND memberId = #{memberId}
 			</when>
+			<otherwise>
+				WHERE memberId = '####'
+			</otherwise>
 		</choose>
 	</select>
 
@@ -22,11 +25,11 @@
 				SELECT B.*, (SELECT A.hotelName FROM hotel A WHERE A.hotelId = B.hotelId) AS hotelName
 				FROM reservation B
 				<choose>
-					<when test="sel == 'BOOKED_DATE'">
-						WHERE (reservatinDate BETWEEN #{startDt} AND #{endDt}) AND memberId = #{memberId}
+					<when test="select == '예약일'">
+						WHERE (reservationDate BETWEEN #{startDt} AND #{endDt}) AND memberId = #{memberId}
 					</when>
-					<when test="sel == 'ARRIVAL_DATE'">
-						WHERE checkinDate BETWEEN #{startDt} AND #{endDt} AND memberId = #{memberId}
+					<when test="select == '투숙일'">
+						WHERE (checkinDate BETWEEN #{startDt} AND #{endDt}) AND memberId = #{memberId}
 					</when>
 				</choose>
 			)C

@@ -19,12 +19,15 @@ public class MyPageController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(MyPageController.class);
 	
-	@RequestMapping(value = "/mypage/memListResv", method = RequestMethod.GET)
+	@RequestMapping(value = "/mypage/memListResv")
 	public String memListResv(Model model, 
 			@RequestParam(value = "currentPage", required = false, defaultValue = "1") int currentPage,
-			String searchDateType, String startDate, String endDate, String memberId) {
+			String select, String startDt, String endDt, String memberId) {
 		logger.info("MyPageController-memListResv");
-		myPageService.memListResv(currentPage, searchDateType, startDate, endDate, memberId);//서비스 내부에서 session에 데이터를 업로드함
+		startDt = startDt.replaceAll("[^0-9]", "");
+		endDt = endDt.replaceAll("[^0-9]", "");
+		System.out.println(currentPage + "/" + select + "/" + startDt + "/ " + endDt + "/ " + memberId);
+		myPageService.memListResv(currentPage, select, startDt, endDt, memberId);//서비스 내부에서 session에 데이터를 업로드함
 		return "mypage/memListResv";
 	}
 	

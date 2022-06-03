@@ -12,11 +12,11 @@ import com.care.hotel.Reservation.DTO.reservationExDTO;
 @Repository
 public interface reservationDAO {
 	ArrayList<reservationAllDTO> reservationList(@Param("b")int begin, @Param("e")int end, 
-			@Param("sel")String searchDateType, @Param("startDt")String startDate, 
-			@Param("endDt")String endDate, @Param("memberId")String memberId);
+			@Param("select")String select, @Param("startDt")String startDt, 
+			@Param("endDt")String endDt, @Param("memberId")String memberId);
 	
-	int reservationCount(@Param("sel")String searchDateType,  @Param("startDt")String startDate, 
-			@Param("endDt")String endDate, @Param("memberId")String memberId);
+	int reservationCount(@Param("select")String select,  @Param("startDt")String startDt, 
+			@Param("endDt")String endDt, @Param("memberId")String memberId);
 	
 	reservationDTO reservationInfo(String memberId);
 	
