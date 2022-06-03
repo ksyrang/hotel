@@ -134,7 +134,7 @@ public class HomeController {
 	@GetMapping("hoteldelete")
 	public String hoteldelete() {
 		
-		return "admin/room/hoteldeleteForm";
+		return "admin/hotel/hoteldeleteForm";
 	}
 	/*admin end*/
 	
