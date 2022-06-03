@@ -24,6 +24,7 @@
 <!-- admin -->
 <div class="admin_nav">
 	<a href="${root }memberListProc">회원관리</a>
+	<a href="${root }admin_reservationListProc" class="nav_margin">예약관리</a>
 	<a href="${root }hotellistProc" class="nav_margin">호텔관리</a>
 	<a href="${root }roomlistProc" class="nav_margin">룸관리</a>
 	<a href="" class="nav_margin">매출관리</a>

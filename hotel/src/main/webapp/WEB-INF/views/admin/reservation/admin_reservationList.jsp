@@ -13,7 +13,22 @@
 <c:if test="${not empty msg }">
 	<script>alert("${msg}");</script>
 </c:if>
+<!-- 전체 div -->
+<div>
+<!-- 필터 div -->
+<div>
+	<form>
+		<!-- 호텔 필터링 -->
+		<select name="hotelSel">
+			<option value="">===선택===</option>
+		</select>
+		<!-- 예약번호 검색 -->
+		<input type="text" name="search">
+		<input type="submit" name="reservationSearchBtn" value="검색">
+	</form>
 
-hello
+</div>
+
+</div>
 
 </body>
