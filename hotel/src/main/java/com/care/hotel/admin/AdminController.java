@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.care.hotel.member.DTO.AllMemberDTO;
 import com.care.hotel.member.DTO.memberDTO;
@@ -39,9 +40,10 @@ public class AdminController {
 	
 	/* 회원 정보 */
 	@RequestMapping(value="memberInfoProc")
-	public String memberInfoProc(String memberId, Model model) {
+	public String memberInfoProc(String memberId, Model model, RedirectAttributes ra) {
 		logger.info("memberInfoProc");
 		if(memberId == null || memberId == "") {
+			ra.addFlashAttribute("msg", "memberInfoProc 오류 발생");
 			return "redirect:memberListProc";
 		}
 		/*
@@ -58,9 +60,10 @@ public class AdminController {
 	
 	/* 회원 수정 */
 	@RequestMapping(value="memberModifyProc")
-	public String memberModifyProc(String memberId, Model model) {
+	public String memberModifyProc(String memberId, Model model, RedirectAttributes ra) {
 		logger.info("memberModifyProc");
 		if(memberId == null || memberId == "") {
+			ra.addFlashAttribute("msg", "memberModifyProc 오류발생");
 			return "redirect:memberListProc";
 		}
 		
@@ -70,7 +73,7 @@ public class AdminController {
 	
 	/* 회원 수정 저장 */
 	@RequestMapping(value="memberModifyProc", method = RequestMethod.POST)
-	public String memberModifySaveProc(AllMemberDTO allMemberDto, Model model) {
+	public String memberModifySaveProc(AllMemberDTO allMemberDto, Model model, RedirectAttributes ra) {
 		System.out.println("memberModifySaveProc memberId : " + allMemberDto.getMemberId());
 		System.out.println("memberModifySaveProc zipcode : " + allMemberDto.getZipcode());
 		String result = "회원정보수정 실패";
@@ -79,12 +82,14 @@ public class AdminController {
 			result = memberSvc.memberModify(allMemberDto);
 		}
 		
-		model.addAttribute("msg", result);
 		if(result.equals("회원정보수정 실패")) {
+			ra.addFlashAttribute("msg", result);
 			return "redirect:memberListProc";
 		} else {
 			//return "forward:/admin_index?formpath=memberInfo&sessionMemberId="+session.getAttribute("sessionMemberId");
-			return "forward:/memberInfoProc?memberId="+allMemberDto.getMemberId();
+			model.addAttribute("msg", result);
+			return "forward:/memberInfoProc";
+			//?memberId="+allMemberDto.getMemberId();
 		}
 	}
 	
@@ -103,23 +108,28 @@ public class AdminController {
 		return "forward:/admin_index?formpath=memberDelete?memberId=" + memberId;
 	}
 	
-	@RequestMapping(value="memberDeleteProc", method = RequestMethod.POST)
-	public String memberDeleteCheckProc(String adminId, String adminPw, String memberId, Model model) {
+	@RequestMapping(value="memberDeleteCheckProc", method = RequestMethod.POST)
+	public String memberDeleteCheckProc(String adminId, String adminPw, String memberId, Model model, RedirectAttributes ra) {
 		logger.info("memberDeleteCheckProc");
-		System.out.println(adminId);
-		System.out.println(adminPw);
-		System.out.println(memberId);
+		System.out.println("memberDeleteCheckProc adminId : " + adminId);
+		System.out.println("memberDeleteCheckProc adminPw : " + adminPw);
+		System.out.println("memberDeleteCheckProc memberId : " + memberId);
 		
 		String result = "[" + memberId + "]회원을 삭제했습니다.";
 		
 		result = memberSvc.adminCheck(adminId, adminPw, memberId);
-	
-		model.addAttribute("msg", result);
 		
-		if(result.equals("아이디 혹은 비밀번호를 확인해주세요.")) {
+		System.out.println("memberDeleteCheckProc result : " + result);
+		boolean check = result.equals("아이디 혹은 비밀번호를 확인해주세요.");
+		System.out.println("memberDeleteCheckProc check : " + check);
+		
+		if(check == true) {
 			//return "forward:/admin_index?formpath=memberDelete&sessionMemberId=" + memberId;
-			return "forward:/memberDeleteProc?memberId=" + memberId;
+			model.addAttribute("msg", result);
+			return "forward:/memberDeleteProc";
+					//+ "?memberId=" + memberId;
 		}else {
+			ra.addFlashAttribute("msg", result);
 			return "redirect:memberListProc";
 		}
 	}

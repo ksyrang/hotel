@@ -38,7 +38,7 @@ ${memberId } 회원을 정말 삭제하시겠습니까?
 
 <div align="center" class="delteTabDiv">
 
-<form action="memberDeleteProc" method="post" id="f">
+<form action="memberDeleteCheckProc" method="post" id="f">
 <table class="adminLoginTable">
 	<tr>
 	<th>아이디</th>

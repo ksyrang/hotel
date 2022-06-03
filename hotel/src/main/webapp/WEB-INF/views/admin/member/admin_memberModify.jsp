@@ -85,6 +85,11 @@
 			<input type="radio" name="gender" value="w">여
 			<input type="radio" name="gender" value="n" checked="checked">선택안함
 		</c:when>
+		<c:otherwise>
+			<input type="radio" name="gender" value="m">남
+			<input type="radio" name="gender" value="w">여
+			<input type="radio" name="gender" value="n" checked="checked">선택안함
+		</c:otherwise>
 	</c:choose>
 	</td>
 </tr>
