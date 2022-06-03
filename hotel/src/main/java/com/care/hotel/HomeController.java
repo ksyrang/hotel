@@ -80,8 +80,8 @@ public class HomeController {
 	@RequestMapping(value="admin")
 	public String admin_index(Model model) {
 		logger.info("admin_index");
-		model.addAttribute("formpath", "admin_index");
-		return "admin/admin_index";
+		model.addAttribute("formpath", "home2");
+		return "admin_index";
 	}
 	
 	@RequestMapping(value="admin_index")
@@ -159,14 +159,13 @@ public class HomeController {
 		
 		return "admin/hotel/hoteldeleteForm";
 	}
-	
+ 	
 	/* 관리자 예약 목록 */
 	@RequestMapping(value="admin_reservationList")
 	public String admin_reservationList() {
 		logger.info("admin_reservationList");
 		return "admin/reservation/admin_reservationList";
 	}
-	
 	/*admin end*/
 	
 }

@@ -41,27 +41,35 @@
 			<td><input type="text" name="hotelId" placeholder="호텔아이디" readonly="readonly" value="${sessionScope.hotelInfo.hotelId }"></td>
 		</tr>
 		<tr>
+			<th>호텔 비밀번호</th>
+			<td><input type="password" name="hotelPw" placeholder="비밀번호"></td>
+		</tr>
+		<tr>
+			<th>호텔 비밀번호 확인</th>
+			<td><input type="password" name="hotelPwC" placeholder="비밀번호 확인"></td>
+		</tr>
+		<tr>
 			<th>호텔 이메일</th>
-			<td><input type="text" name="Email" placeholder="호텔 이메일" value="${sessionScope.hotelInfo.email }"></td>
+			<td><input type="text" name="hotelEmail" placeholder="호텔 이메일" value="${sessionScope.hotelInfo.hotelEmail }"></td>
 		</tr>
 		<tr>
 			<th>호텔 연락처</th>
-			<td><input type="text" name="phoneNumber" placeholder="호텔 전화번호" value="${sessionScope.hotelInfo.phoneNumber }"></td>
+			<td><input type="text" name="hotelPhoneNumber" placeholder="호텔 전화번호" value="${sessionScope.hotelInfo.hotelPhoneNumber }"></td>
 		</tr>
 		<tr>
 			<th>우편 번호</th>
 			<td>
-				<input type=text name='zipCode' id="zonecode" value="${sessionScope.hotelInfo.zipCode }" /> 
+				<input type=text name='hotelZipcode' id="zonecode" value="${sessionScope.hotelInfo.hotelZipcode }" /> 
 			</td>
 			<td><input type="button" value="우편번호 검색" onclick="daumPost()"></td>
 		</tr>
 		<tr>
 			<th>주소</th>
-			<td><input type=text name='Addr1' id="addr1" value="${sessionScope.hotelInfo.addr1 }" readonly="readonly"/></td> 
+			<td><input type=text name='hotelAddr1' id="addr1" value="${sessionScope.hotelInfo.hotelAddr1 }" readonly="readonly"/></td> 
 		</tr>
 		<tr>
 			<th>상세 주소</th>
-			<td><input type=text name='Addr2' id="addr2" value="${sessionScope.hotelInfo.addr2 }" /></td>
+			<td><input type=text name='hotelAddr2' id="addr2" value="${sessionScope.hotelInfo.hotelAddr2 }" /></td>
 		</tr>
 		<tr>
 			<td align='center' height=40 colspan=4>
