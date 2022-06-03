@@ -644,7 +644,7 @@ function fnCalcBirth() {
 	}
 }
 
-
+-->
 function saveMbrJoinForm( ) {
 	
 	if($.trim($('#titlCd').val()) == ""){
@@ -822,6 +822,7 @@ function saveMbrJoinForm( ) {
 		});
 	}
 }
+<!--
 var checkedEmail = false;
 function checkDuplicateEmail() {
 	$('#email').val($('#email1').val() + "@" + $('#email2').val());
@@ -883,6 +884,24 @@ function unCheck() {
 	$('.checked').removeAttr('class');
 }
 //-->
+
+function sendAuth(){
+		req = new XMLHttpRequest();
+		req.onreadystatechange = printMsg;
+		req.open('post', 'sendAuth');
+		req.send(document.getElementById('email').value);
+	}
+	
+function checkAuth(){
+		req = new XMLHttpRequest();
+		req.onreadystatechange = printMsg;
+		req.open('post', 'checkAuth');
+		req.setRequestHeader("Content-Type", "application/json; charset=UTF-8");
+		var number = document.getElementById('authNumber').value;
+		var data = {authNumber:number};
+		data = JSON.stringify(data);
+		req.send(data);
+	}
 </script>
 <form id="mbrJoinForm" name="mbrJoinForm" action="/mem/mbr/join/memSetMbrInfo.do" method="post"><input type="hidden" id="hotlUsePupsCd" name="hotlUsePupsCd" autocomplete="off">
 <input type="hidden" id="foodKindTypCd" name="foodKindTypCd" autocomplete="off">
@@ -1196,13 +1215,12 @@ function unCheck() {
 									<option value="yahoo.co.kr" title="yahoo.co.kr">yahoo.co.kr</option>
 
 							</select></div> -->
-							<span class="emailConfirm"><a href="javascript:checkDuplicateEmail()">이메일 인증</a></span>
+							<span class="emailConfirm"><a href="#" onclick="sendAuth()">이메일 인증</a></span>
 						</td>
 					</tr>
 					<tr>
 						<th scope="row"><em class="ast">*</em> 이메일 인증번호 </th>
 						<td>
-							<label for="mailNumb" class="mailNumb">인증번호</label>
 							<input type="text" class="uiform mailNumb text" id="mailNumb" name="mailNumb" value="" maxlength="4" onkeyup="this.value=this.value.replace(/[^\d\ ]/g, '')" autocomplete="off">
 							<span class="emailNumb"><a href="javascript:checkDuplicateEmail()">인증번호 확인</a></span>
 						</td>
@@ -1422,7 +1440,7 @@ function unCheck() {
 							
 				<br>
 				
-				<div class="btnList"><a href="javascript:saveMbrJoinForm();" class="btnJoinSend">가입신청</a></div>
+				<div class="btnList"><a href="#" onclick="saveMbrJoinForm()" class="btnJoinSend">가입신청</a></div>
 				
 			</div>
 		</div>
