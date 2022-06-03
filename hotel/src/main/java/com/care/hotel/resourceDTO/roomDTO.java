@@ -4,6 +4,7 @@ public class roomDTO {
 	
 	private String roomlId;
 	private String hotelId;
+	private String roomType;
 	private String bedType;
 	private int availablePerson;
 	
@@ -30,6 +31,12 @@ public class roomDTO {
 	}
 	public void setAvailablePerson(int availablePerson) {
 		this.availablePerson = availablePerson;
+	}
+	public String getRoomType() {
+		return roomType;
+	}
+	public void setRoomType(String roomType) {
+		this.roomType = roomType;
 	}
 	
 
