@@ -1,28 +1,49 @@
 package com.care.hotel.login.service;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import com.care.hotel.login.DAO.LoginDAO;
+import com.care.hotel.login.DAO.IloginDAO;
 import com.care.hotel.login.DTO.LoginDTO;
+import com.care.hotel.resourceDAO.IhotelDAO;
+import com.care.hotel.resourceDTO.hotelDTO;
 
 @Service
 public class loginServiceImpl implements IloginService {
 	
-	@Autowired LoginDAO loginDAO;
+	@Autowired IloginDAO loginDAO;
+	@Autowired IhotelDAO hotelDAO;
+	@Autowired HttpSession session;
 	
-	public int loginProc(LoginDTO mem) {
+	public int loginProc(String userId, String userPw) {
 		//DB에서 데이터 가져오기
-		LoginDTO DBmem =  loginDAO.loginInfo(mem.getMemberId());
-		//null 여부 확인
-		if(DBmem == null) return 0;//없는 아이디(회원)
-		//데이터 비교(암호화 시 암호화 비교 필요)
-//		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-//		if(!encoder.matches(mem.getMemberPw(), DBmem.getMemberPw())) return 1;//비밀번호 불일치
-		if(!mem.getMemberPw().equals(DBmem.getMemberPw())) return 1;//비밀번호 불일치
+		//1~3 맴버용 , 4~6 매니저용,  7,9 관리자, 0,9 공통
+		LoginDTO DBmem =  loginDAO.loginInfo(userId);
+		if(DBmem != null && DBmem.getMemberPw().equals(DBmem.getMemberPw())) {
+			session.setAttribute("userId", userId);
+			return 2;//맴버 로그인
+		}
+		if(DBmem != null && !DBmem.getMemberPw().equals(DBmem.getMemberPw())) return 9;//맴버 비밀번호 오류
+		hotelDTO DBhotel = hotelDAO.hotelInfo(userId);
+		if(DBhotel != null && DBhotel.getHotelPw().equals(DBhotel.getHotelPw())) {
+			session.setAttribute("userId", userId);
+			return 4;//매니저 로그인
+		}
+		if(DBhotel != null && !DBhotel.getHotelPw().equals(DBhotel.getHotelPw())) return 9;//매니저 비밀번호 오류
+		//admin 시
+		String adminId ="admin";//향수 수정 필요
+		String adminPw ="admin";
+		if(adminId.equals(userId)&&adminPw.equals(userPw)) {
+			session.setAttribute("userId", adminId);
+			return 7;
+		}if(adminId.equals(userId)&&!adminPw.equals(userPw)) {
+			return 9;
+		}
 		
-		return 2;//로그인 성공
+		return 0;//없는 Id
 	}
 
 }

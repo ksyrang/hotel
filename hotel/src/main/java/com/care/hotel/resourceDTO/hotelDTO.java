@@ -2,12 +2,14 @@ package com.care.hotel.resourceDTO;
 
 public class hotelDTO {
 	private String hotelId;
+	private String hotelPw;
 	private String hotelName;
-	private String zipCode;
-	private String Addr1;
-	private String Addr2;
-	private String phoneNumber;
-	private String email;
+	private String hotelZipcode;
+	private String hotelAddr1;
+	private String hotelAddr2;
+	private String hotelPhoneNumber;
+	private String hotelEmail;
+	
 	
 	public String getHotelId() {
 		return hotelId;
@@ -15,42 +17,49 @@ public class hotelDTO {
 	public void setHotelId(String hotelId) {
 		this.hotelId = hotelId;
 	}
+	public String getHotelPw() {
+		return hotelPw;
+	}
+	public void setHotelPw(String hotelPw) {
+		this.hotelPw = hotelPw;
+	}
 	public String getHotelName() {
 		return hotelName;
 	}
 	public void setHotelName(String hotelName) {
 		this.hotelName = hotelName;
 	}
-	public String getZipCode() {
-		return zipCode;
+	public String getHotelZipcode() {
+		return hotelZipcode;
 	}
-	public void setZipCode(String zipCode) {
-		this.zipCode = zipCode;
+	public void setHotelZipcode(String hotelZipcode) {
+		this.hotelZipcode = hotelZipcode;
 	}
-	public String getAddr1() {
-		return Addr1;
+	public String getHotelAddr1() {
+		return hotelAddr1;
 	}
-	public void setAddr1(String Addr1) {
-		this.Addr1 = Addr1;
+	public void setHotelAddr1(String hotelAddr1) {
+		this.hotelAddr1 = hotelAddr1;
 	}
-	public String getAddr2() {
-		return Addr2;
+	public String getHotelAddr2() {
+		return hotelAddr2;
 	}
-	public void setAddr2(String Addr2) {
-		this.Addr2 = Addr2;
+	public void setHotelAddr2(String hotelAddr2) {
+		this.hotelAddr2 = hotelAddr2;
 	}
-	public String getPhoneNumber() {
-		return phoneNumber;
+	public String getHotelPhoneNumber() {
+		return hotelPhoneNumber;
 	}
-	public void setPhoneNumber(String phoneNumber) {
-		this.phoneNumber = phoneNumber;
+	public void setHotelPhoneNumber(String hotelPhoneNumber) {
+		this.hotelPhoneNumber = hotelPhoneNumber;
 	}
-	public String getEmail() {
-		return email;
+	public String getHotelEmail() {
+		return hotelEmail;
 	}
-	public void setEmail(String email) {
-		this.email = email;
+	public void setHotelEmail(String hotelEmail) {
+		this.hotelEmail = hotelEmail;
 	}
+	
 
 	
 

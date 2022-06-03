@@ -10,23 +10,27 @@
 		<tr>
 			<th>호텔 이름</th><th>${sessionScope.hotelInfo.hotelName }</th>
 		</tr>
+
 		<tr>
 			<th>호텔 아이디</th><td>${sessionScope.hotelInfo.hotelId }</td>
 		</tr>
 		<tr>
-			<th>호텔 아이디</th><td>${sessionScope.hotelInfo.email }</td>
+			<th>호텔 비밀전호</th><th>${sessionScope.hotelInfo.hotelPw }</th>
 		</tr>
 		<tr>
-			<th>호텔 연락처</th><td>${sessionScope.hotelInfo.phoneNumber }</td>
+			<th>호텔 이메일</th><td>${sessionScope.hotelInfo.hotelEmail }</td>
 		</tr>
 		<tr>
-			<th rowspan="2">호텔 주소</th><td>${sessionScope.hotelInfo.addr1}</td>
+			<th>호텔 연락처</th><td>${sessionScope.hotelInfo.hotelPhoneNumber }</td>
 		</tr>
 		<tr>
-			<td>${sessionScope.hotelInfo.addr2 }</td>
+			<th rowspan="2">호텔 주소</th><td>${sessionScope.hotelInfo.hotelAddr1}</td>
 		</tr>
 		<tr>
-			<th>호텔 우편번호</th><td>${sessionScope.hotelInfo.zipCode }</td>
+			<td>${sessionScope.hotelInfo.hotelAddr2 }</td>
+		</tr>
+		<tr>
+			<th>호텔 우편번호</th><td>${sessionScope.hotelInfo.hotelZipcode }</td>
 		</tr>
 		<tr>
 			<td><input type="button" value="수정" onclick="location.href='${root }prehotelModifyProc?hotelId=${sessionScope.hotelInfo.hotelId}'"/></td>

@@ -69,24 +69,7 @@ public class hotelresourceSvcImpl implements IhotelresourceSvc{
 	
 	@Override
 	public int hotelModify(hotelDTO hotelInfo) {
-//		hotelDTO oldInfo = (hotelDTO)session.getAttribute("hotelInfo");
-//		System.out.println(oldInfo.getHotelName());
-		
-//		if(oldInfo.getHotelName().equals(hotelInfo.getHotelName()) && oldInfo.getEmail().equals(hotelInfo.getEmail())
-//				&& oldInfo.getZipCode().equals(hotelInfo.getZipCode()) && oldInfo.getAddr1().equals(hotelInfo.getAddr1()) 
-//				&& oldInfo.getAddr2().equals(hotelInfo.getAddr2())) {
-//			return 2;//모든 정보가 같기 때문에 DB수정 불 필요
-//		}
-//		System.out.println(hotelInfo.getHotelId());
-//		System.out.println(hotelInfo.getHotelName());
-//		System.out.println(hotelInfo.getPhoneNumber());
-//		System.out.println(hotelInfo.getAddr1());
-//		System.out.println(hotelInfo.getAddr2());
-//		System.out.println(hotelInfo.getZipCode());
-//		System.out.println(hotelInfo.getEmail());
-//		System.out.println("hotelModifyProc DB 업데이트 진입");
 		hotelDAO.updateHotel(hotelInfo);
-		
 		return 2;
 	}
 

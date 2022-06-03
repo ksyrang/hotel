@@ -36,8 +36,8 @@
 				<a href="hotelInfoProc?hotelId=${hoteldb.hotelId}">${hoteldb.hotelId }</a>
 				</td>
 				<td style="width: 250px; height: 20px;" align="center">${hoteldb.hotelName }</td>
-				<td style="width: 150px; height: 20px;" align="center">${hoteldb.phoneNumber }</td>
-				<td style="width: 200px; height: 20px;" align="center">${hoteldb.email }</td>
+				<td style="width: 150px; height: 20px;" align="center">${hoteldb.hotelPhoneNumber }</td>
+				<td style="width: 200px; height: 20px;" align="center">${hoteldb.hotelEmail }</td>
 				<td style="width: 100px; height: 20px;" align="center">
 					<input type="button" class="Btn" value="수정" onclick="location.href='${root }prehotelModifyProc?hotelId=${hoteldb.hotelId}'"> <b>/</b> 
 					<input type="button" class="Btn" value="삭제" onclick="location.href='${root  }admin_index?formpath=hoteldelete'">

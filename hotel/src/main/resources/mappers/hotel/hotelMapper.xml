@@ -11,13 +11,13 @@
 				WHERE hotelid like '%'||#{search}||'%'
 			</when>
 			<when test="sel == 'email'">
-				WHERE email like '%'||#{search}||'%'
+				WHERE hotelemail like '%'||#{search}||'%'
 			</when>
 			<when test="sel == 'name'">
 				WHERE hotelname like '%'||#{search}||'%'
 			</when>
 			<when test="sel == 'tel'">
-				WHERE phonenumber like '%'||#{search}||'%'
+				WHERE hotelphonenumber like '%'||#{search}||'%'
 			</when>
 		</choose>	
 	</select>
@@ -31,13 +31,13 @@
 						WHERE hotelid like '%'||#{search}||'%'
 					</when>
 					<when test="sel == 'email'">
-						WHERE email like '%'||#{search}||'%'
+						WHERE hotelemail like '%'||#{search}||'%'
 					</when>
 					<when test="sel == 'name'">
 						WHERE hotelname like '%'||#{search}||'%'
 					</when>
 					<when test="sel == 'tel'">
-						WHERE phonenumber like '%'||#{search}||'%'
+						WHERE hotelphonenumber like '%'||#{search}||'%'
 					</when>
 				</choose>
 			)A
@@ -48,7 +48,7 @@
 		SELECT * FROM hotel WHERE hotelid = #{hotelId}	
 	</select>
 	<update id="updateHotel" parameterType="com.care.hotel.resourceDTO.hotelDTO">
-		UPDATE hotel set hotelname=#{hotelName}, email=#{email}, addr1=#{Addr1}, addr2=#{Addr2}, zipcode=#{zipCode} WHERE hotelid=#{hotelId}
+		UPDATE hotel set hotelname=#{hotelName}, hotelpw=#{hotelPw}, hotelemail=#{hotelEmail}, hoteladdr1=#{hotelAddr1}, hoteladdr2=#{hotelAddr2}, hotelzipcode=#{hotelZipcode} WHERE hotelid=#{hotelId}
 	</update>
 	<delete id="deleteHotel" parameterType="String">
 		DELETE FROM hotel WHERE hotelId=#{hotelId}
