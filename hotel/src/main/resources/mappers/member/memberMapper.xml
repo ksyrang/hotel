@@ -10,16 +10,16 @@
 					WHERE memberId like '%'||#{search}||'%'
 				</when>
 				<when test="sel == 'name'">
-					WHERE nameKR like '%'||#{search}||'%'
+					WHERE memberNameKR like '%'||#{search}||'%'
 				</when>
 				<when test="sel == 'name'">
-					WHERE nameENG like '%'||#{search}||'%'
+					WHERE memberNameENG like '%'||#{search}||'%'
 				</when>
 				<when test="sel == 'mobile'">
-					WHERE mobile like '%'||#{search}||'%'
+					WHERE memberMobile like '%'||#{search}||'%'
 				</when>
 				<when test="sel == 'email'">
-					WHERE email like '%'||#{search}||'%'
+					WHERE memberEmail like '%'||#{search}||'%'
 				</when>
 			</choose>
 	</select>
@@ -33,16 +33,16 @@
 						WHERE memberId like '%'||#{search}||'%'
 					</when>
 					<when test="sel == 'name'">
-						WHERE nameKR like '%'||#{search}||'%'
+						WHERE memberNameKR like '%'||#{search}||'%'
 					</when>
 					<when test="sel == 'name'">
-						WHERE nameENG like '%'||#{search}||'%'
+						WHERE memberNameENG like '%'||#{search}||'%'
 					</when>
 					<when test="sel == 'mobile'">
-						WHERE mobile like '%'||#{search}||'%'
+						WHERE memberMobile like '%'||#{search}||'%'
 					</when>
 					<when test="sel == 'email'">
-						WHERE email like '%'||#{search}||'%'
+						WHERE memberEmail like '%'||#{search}||'%'
 					</when>
 				</choose>
 			)A
@@ -61,28 +61,29 @@
 	
 	<!-- memberInsert -->
 	<insert id="memberInsert" parameterType="com.care.hotel.member.DTO.memberDTO">
-		INSERT INTO member VALUES(#{memberId}, #{nameKR}, #{nameENG}, #{birthday}, #{mobile}, #{email}, #{gender}, #{pw} ) 
+		INSERT INTO member VALUES(#{memberId}, #{memberNameKR}, #{memberNameENG}, #{memberBirth}, #{memberMobile}, #{memberEmail}, #{memberGender}, #{memberPw} ) 
 	</insert>
 	
 	<!-- memberExInsert -->
 	<insert id="memberExInsert" parameterType="com.care.hotel.member.DTO.memberExDTO">
-		INSERT INTO member_extra VALUES(#{memberId}, #{zipcode}, #{addr1}, #{addr2}, #{homePhone} ) 
+		INSERT INTO member_extra VALUES(#{memberId}, #{memberZipcode}, #{memberAddr1}, #{memberAddr2}, #{memberHomePhone} ) 
 	</insert>
 	
 	<!-- memberUpdate -->
 	<update id="memberUpdate" parameterType="com.care.hotel.member.DTO.memberDTO">
 	UPDATE member 
-	SET nameKR=#{nameKR}, nameENG=#{nameENG}, birthday=#{birthday}, mobile=#{mobile}, pw=#{pw}, gender=#{gender}
+	SET memberNameKR=#{memberNameKR}, memberNameENG=#{memberNameENG}, memberBirth=#{memberBirth}, memberMobile=#{memberMobile}, memberPw=#{memberPw}, memberGender=#{memberGender}
 	WHERE memberId=#{memberId}
 	</update>
 	<!-- memberExUpdate -->
 	<update id="memberExUpdate" parameterType="com.care.hotel.member.DTO.memberExDTO">
 	UPDATE member_extra
-	SET zipcode=#{zipcode}, addr1=#{addr1}, addr2=#{addr2}, homePhone=#{homePhone}
+	SET memberZipcode=#{memberZipcode}, memberAddr1=#{memberAddr1}, memberAddr2=#{memberAddr2}, memberHomePhone=#{memberHomePhone}
 	WHERE memberId=#{memberId}
 	</update>
 	<!-- memberDelete -->
 	<delete id="memberDelete" parameterType="String"> DELETE FROM member WHERE memberId=#{memberId} </delete>
+	
 	<!-- 아이디 중복 확인 -->
 	<select id="isExistId" parameterType="String" resultType="int">
 		SELECT count(*) FROM login WHERE id=#{id}

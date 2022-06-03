@@ -48,10 +48,10 @@
 		<c:forEach var="memberdb" items="${sessionScope.memberList }">
 		<tr>
 			<td><a href="${root }memberInfoProc?memberId=${memberdb.memberId}">${memberdb.memberId }</a></td>
-			<td>${memberdb.nameKR }(${memberdb.nameENG })</td>
-			<td>${memberdb.birthday }</td>
-			<td>${memberdb.mobile }</td>
-			<td>${memberdb.email }</td>
+			<td>${memberdb.memberNameKR }(${memberdb.memberNameENG })</td>
+			<td>${memberdb.memberBirth }</td>
+			<td>${memberdb.memberMobile }</td>
+			<td>${memberdb.memberEmail }</td>
 			<td style="width:100px;">
 			<input type="button" value="수정" class="listBtn" onclick="location.href='${root }memberModifyProc?memberId=${memberdb.memberId}'">
 			<input type="button" value="삭제" class="listBtn" onclick="location.href='${root }memberDeleteProc?memberId=${memberdb.memberId}'">

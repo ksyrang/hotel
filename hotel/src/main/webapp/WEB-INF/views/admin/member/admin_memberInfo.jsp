@@ -28,34 +28,34 @@
 <table class="admin_memberInfoTable">
 <tr>
 	<th>아이디</th><td>${user.memberId }</td>
-	<th>이름(국문)</th><td>${user.nameKR }</td>
-	<th>이름(영문)</th><td>${user.nameENG }</td>
+	<th>이름(국문)</th><td>${user.memberNameKR }</td>
+	<th>이름(영문)</th><td>${user.memberNameENG }</td>
 </tr>
 <tr>
-	<th>생년월일</th><td>${user.birthday }</td>
-	<th>전화번호</th><td>${user.mobile }</td>
-	<th>자택번호</th><td>${user.homePhone }</td>
+	<th>생년월일</th><td>${user.memberBirth }</td>
+	<th>전화번호</th><td>${user.memberMobile }</td>
+	<th>자택번호</th><td>${user.memberHomePhone }</td>
 </tr>
 <tr>
-	<th>이메일</th><td>${user.email }</td>
+	<th>이메일</th><td>${user.memberEmail }</td>
 	<th>성별</th><td>
 		<c:choose>
-			<c:when test="${user.gender eq 'm'}">남</c:when>
+			<c:when test="${user.memberGender eq 'm'}">남</c:when>
 		</c:choose>
 		<c:choose>
-			<c:when test="${user.gender eq 'w'}">여</c:when>
+			<c:when test="${user.memberGender eq 'w'}">여</c:when>
 		</c:choose>
 		<c:choose>
-			<c:when test="${user.gender eq 'n'}">선택안함</c:when>
+			<c:when test="${user.memberGender eq 'n'}">선택안함</c:when>
 		</c:choose>
 	</td>
 </tr>
 <tr>
-	<th>주소</th><td>${user.addr1 }</td>
-	<th>우편번호</th><td>${user.zipcode }</td>
+	<th>주소</th><td>${user.memberAddr1 }</td>
+	<th>우편번호</th><td>${user.memberZipcode }</td>
 </tr>
 <tr>
-	<th>상세주소</th><td>${user.addr2 }</td>
+	<th>상세주소</th><td>${user.memberAddr2 }</td>
 </tr>
 </table>
 </div>

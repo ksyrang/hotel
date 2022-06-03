@@ -75,7 +75,7 @@ public class AdminController {
 	@RequestMapping(value="memberModifyProc", method = RequestMethod.POST)
 	public String memberModifySaveProc(AllMemberDTO allMemberDto, Model model, RedirectAttributes ra) {
 		System.out.println("memberModifySaveProc memberId : " + allMemberDto.getMemberId());
-		System.out.println("memberModifySaveProc zipcode : " + allMemberDto.getZipcode());
+		System.out.println("memberModifySaveProc zipcode : " + allMemberDto.getMemberZipcode());
 		String result = "회원정보수정 실패";
 		
 		if(allMemberDto.getMemberId() != null) {

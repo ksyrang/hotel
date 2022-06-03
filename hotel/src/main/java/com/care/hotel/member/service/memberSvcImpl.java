@@ -26,19 +26,19 @@ public class memberSvcImpl implements ImemberSvc{
 		AllMemberDTO user = new AllMemberDTO();
 		if(member != null) {
 			user.setMemberId(member.getMemberId());
-			user.setNameKR(member.getNameKR());
-			user.setNameENG(member.getNameENG());
-			user.setBirthday(member.getBirthday());
-			user.setMobile(member.getMobile());
-			user.setEmail(member.getEmail());
-			user.setPw(member.getPw());
-			user.setGender(member.getGender());
+			user.setMemberNameKR(member.getMemberNameKR());
+			user.setMemberNameENG(member.getMemberNameENG());
+			user.setMemberBirth(member.getMemberBirth());
+			user.setMemberMobile(member.getMemberMobile());
+			user.setMemberEmail(member.getMemberEmail());
+			user.setMemberPw(member.getMemberPw());
+			user.setMemberGender(member.getMemberGender());
 		}
 		if(memberEx != null) {
-			user.setZipcode(memberEx.getZipcode());
-			user.setAddr1(memberEx.getAddr1());
-			user.setAddr2(memberEx.getAddr2());
-			user.setHomePhone(memberEx.getHomePhone());
+			user.setMemberZipcode(memberEx.getMemberZipcode());
+			user.setMemberAddr1(memberEx.getMemberAddr1());
+			user.setMemberAddr2(memberEx.getMemberAddr2());
+			user.setMemberHomePhone(memberEx.getMemberHomePhone());
 		}
 		
 		System.out.println(user.getMemberId());
@@ -50,10 +50,10 @@ public class memberSvcImpl implements ImemberSvc{
 	public String memberModify(AllMemberDTO allMemberDto) {
 		memberDTO memberDto = memberDAO.memberInfo(allMemberDto.getMemberId());
 		// 비밀번호 변경시, 새 비밀번호 암호화
-		if(!(memberDto.getPw().equals(allMemberDto.getPw()))) {
+		if(!(memberDto.getMemberPw().equals(allMemberDto.getMemberPw()))) {
 			BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-			String securePw = encoder.encode(allMemberDto.getPw());
-			allMemberDto.setPw(securePw);
+			String securePw = encoder.encode(allMemberDto.getMemberPw());
+			allMemberDto.setMemberPw(securePw);
 		}
 		memberDAO.memberUpdate(allMemberDto);
 		// int memberExUpdateResult = memberDAO.memberExUpdate(allMemberDto);
@@ -61,19 +61,19 @@ public class memberSvcImpl implements ImemberSvc{
 		memberExDTO memberExDto = memberDAO.memberExInfo(allMemberDto.getMemberId());
 		if(memberExDto != null) {
 			memberExDto.setMemberId(allMemberDto.getMemberId());
-			memberExDto.setZipcode(allMemberDto.getZipcode());
-			memberExDto.setAddr1(allMemberDto.getAddr1());
-			memberExDto.setAddr2(allMemberDto.getAddr2());
-			memberExDto.setHomePhone(allMemberDto.getHomePhone());
+			memberExDto.setMemberZipcode(allMemberDto.getMemberZipcode());
+			memberExDto.setMemberAddr1(allMemberDto.getMemberAddr1());
+			memberExDto.setMemberAddr2(allMemberDto.getMemberAddr2());
+			memberExDto.setMemberHomePhone(allMemberDto.getMemberHomePhone());
 			
 			memberDAO.memberExUpdate(memberExDto);
 		} else {
 			memberExDTO insertMemberExDto = new memberExDTO();
 			insertMemberExDto.setMemberId(allMemberDto.getMemberId());
-			insertMemberExDto.setZipcode(allMemberDto.getZipcode());
-			insertMemberExDto.setAddr1(allMemberDto.getAddr1());
-			insertMemberExDto.setAddr2(allMemberDto.getAddr2());
-			insertMemberExDto.setHomePhone(allMemberDto.getHomePhone());
+			insertMemberExDto.setMemberZipcode(allMemberDto.getMemberZipcode());
+			insertMemberExDto.setMemberAddr1(allMemberDto.getMemberAddr1());
+			insertMemberExDto.setMemberAddr2(allMemberDto.getMemberAddr2());
+			insertMemberExDto.setMemberHomePhone(allMemberDto.getMemberHomePhone());
 			memberDAO.memberExInsert(insertMemberExDto);
 		}
 		
@@ -129,25 +129,25 @@ public class memberSvcImpl implements ImemberSvc{
 		if (memberDTO.getMemberId() == null || memberDTO.getMemberId().isEmpty())
 			return "아이디를 입력하세요.";
 
-		if (memberDTO.getPw() == null || memberDTO.getPw().isEmpty())
+		if (memberDTO.getMemberPw() == null || memberDTO.getMemberPw().isEmpty())
 			return "비밀번호를 입력하세요.";
 
 		if (memberDAO.isExistId(memberDTO.getMemberId()) > 0)
 			return "중복 아이디 입니다.";
 
-		if (memberDAO.isExistEmail(memberDTO.getEmail()) > 0)
+		if (memberDAO.isExistEmail(memberDTO.getMemberEmail()) > 0)
 			return "중복 이메일 입니다.";
 
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-		String securePw = encoder.encode(memberDTO.getPw());
-		memberDTO.setPw(securePw);
+		String securePw = encoder.encode(memberDTO.getMemberPw());
+		memberDTO.setMemberPw(securePw);
 
 		memberDAO.memberInsert(memberDTO);
 
-		if ("m".equals(memberDTO.getGender()) || "w".equals(memberDTO.getGender()) || "n".equals(memberDTO.getGender()))
+		if ("m".equals(memberDTO.getMemberGender()) || "w".equals(memberDTO.getMemberGender()) || "n".equals(memberDTO.getMemberGender()))
 			memberDAO.memberInsert(memberDTO);
 
-		if (!("".equals(memberExDTO.getZipcode())))
+		if (!("".equals(memberExDTO.getMemberZipcode())))
 			memberDAO.memberExInsert(memberExDTO);
 
 		return "가입 완료";
