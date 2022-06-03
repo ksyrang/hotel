@@ -66,19 +66,29 @@ public class AdminController {
 			ra.addFlashAttribute("msg", "memberModifyProc 오류발생");
 			return "redirect:memberListProc";
 		}
+		AllMemberDTO allMemberDto = memberSvc.userInfo(memberId);
+		model.addAttribute("user", allMemberDto);
+
+		//영문이름 firstName/LastName 구분
+		String memberNameEng = allMemberDto.getMemberNameENG();
+		String[] nameSplit = memberNameEng.split(" ");
+		model.addAttribute("lastName", nameSplit[0]);
+		model.addAttribute("firstName", nameSplit[1]);
 		
-		model.addAttribute("user", memberSvc.userInfo(memberId));
 		return "forward:/admin_index?formpath=memberModify?memberId="+memberId;
 	}
 	
 	/* 회원 수정 저장 */
 	@RequestMapping(value="memberModifyProc", method = RequestMethod.POST)
-	public String memberModifySaveProc(AllMemberDTO allMemberDto, Model model, RedirectAttributes ra) {
+	public String memberModifySaveProc(AllMemberDTO allMemberDto, String firstName, String lastName, Model model, RedirectAttributes ra) {
 		System.out.println("memberModifySaveProc memberId : " + allMemberDto.getMemberId());
+		System.out.println("memberModifySaveProc firstName : " + firstName + " memberModifySaveProc lastName : " + lastName);
 		System.out.println("memberModifySaveProc zipcode : " + allMemberDto.getMemberZipcode());
 		String result = "회원정보수정 실패";
-		
+		String memberNameENG = lastName + " " + firstName;
 		if(allMemberDto.getMemberId() != null) {
+			allMemberDto.setMemberNameENG(memberNameENG);
+			System.out.println("getMemberNameENG : " + allMemberDto.getMemberNameENG());
 			result = memberSvc.memberModify(allMemberDto);
 		}
 		

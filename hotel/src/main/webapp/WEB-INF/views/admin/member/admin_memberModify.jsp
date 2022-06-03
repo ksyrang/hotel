@@ -10,6 +10,22 @@
 <link href="${pageContext.request.contextPath}/resources/css/admin/amdin_memberList.css" rel="stylesheet" type="text/css">
 <link href="${pageContext.request.contextPath}/resources/css/admin/admin_memberInfo.css" rel="stylesheet" type="text/css">
 <title>admin_memberModify</title>
+<script>
+	function check() {
+		memberNameKR = document.getElementById('memberNameKR');
+		firstName = document.getElementById('firstName');
+		lastName = document.getElementById('lastName');
+		memberBirth = document.getElementById('memberBirth');
+		memberMobile = document.getElementById('memberMobile');
+		
+		if(memberNameKR.value == "" || firstName.value == "" || lastName.value == "" || memberBirth.value == "" || memberMobile.value == "") {
+			alert('필수 정보를 입력해주세요.');
+			return;
+		}
+		
+		document.getElementById('f').submit();
+	}
+</script>
 <script type="text/javascript" src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script>
 	function daumPost() {
@@ -43,10 +59,10 @@
 	회원수정
 </div>
 
-<form action="memberModifyProc" method="post">
+<form action="memberModifyProc" method="post" id="f">
 
 <div class="admin_memberInfoTopRight">
-	<input type="submit" value="저장" class="listBtn">
+	<input type="button" value="저장" class="listBtn" onclick="check();">
 	<input type="button" value="취소" class="listBtn" onclick="location.href='${root }memberListProc'">
 </div>
 
@@ -58,15 +74,15 @@
 </tr>
 <tr>
 	<th>* 성명(국문)</th>
-	<td colspan="3"><input type="text" name="memberNameKR"  value="${user.memberNameKR }" class="admin_input_basic"></td>
+	<td colspan="3"><input type="text" id="memberNameKR" name="memberNameKR"  value="${user.memberNameKR }" class="admin_input_basic"></td>
 </tr>
 <tr>
 	<th>* 성명(영문)</th>
-	<td colspan="3">FirstName(이름) <input type="text" name="memberNameENG"  value="${user.memberNameENG }" class="admin_input_basic"> 
-	LastName(성) <input type="text" name="memberNameENG"  value="${user.memberNameENG }" class="admin_input_basic"></td>
+	<td colspan="3">FirstName(이름) <input type="text" id="firstName" name="firstName"  value="${firstName }" class="admin_input_basic"> 
+	LastName(성) <input type="text" id="lastName" name="lastName"  value="${lastName }" class="admin_input_basic"></td>
 </tr>
 <tr>
-	<th>* 생년월일</th><td><input type="text" name="memberBirth"  value="${user.memberBirth }" class="admin_input_basic"></td>
+	<th>* 생년월일</th><td><input type="text" id="memberBirth" name="memberBirth"  value="${user.memberBirth }" class="admin_input_basic"></td>
 
 	<th>* 성별</th><td>
 	<c:choose>
@@ -104,7 +120,7 @@
 	<th>* 이메일</th><td colspan="3"><input type="text" name="memberEmail"  value="${user.memberEmail }" class="admin_input_basic" readonly></td>
 </tr>
 <tr>
-	<th>* 휴대전화</th><td colspan="3"><input type="text" name="memberMobile"  value="${user.memberMobile }" class="admin_input_basic"></td>
+	<th>* 휴대전화</th><td colspan="3"><input type="text" id="memberMobile" name="memberMobile"  value="${user.memberMobile }" class="admin_input_basic"></td>
 	
 </tr>
 <tr>
