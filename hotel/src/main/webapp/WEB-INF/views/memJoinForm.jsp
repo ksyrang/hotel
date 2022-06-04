@@ -884,15 +884,15 @@ function unCheck() {
 	$('.checked').removeAttr('class');
 }
 //-->
-
-function sendAuth(){
+	var req;	function sendAuth(){
 		req = new XMLHttpRequest();
 		req.onreadystatechange = printMsg;
 		req.open('post', 'sendAuth');
 		req.send(document.getElementById('email').value);
 	}
 	
-function checkAuth(){
+
+	function checkAuth(){
 		req = new XMLHttpRequest();
 		req.onreadystatechange = printMsg;
 		req.open('post', 'checkAuth');
@@ -903,7 +903,29 @@ function checkAuth(){
 		req.send(data);
 	}
 </script>
-<form id="mbrJoinForm" name="mbrJoinForm" action="/mem/mbr/join/memSetMbrInfo.do" method="post"><input type="hidden" id="hotlUsePupsCd" name="hotlUsePupsCd" autocomplete="off">
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script>
+	function daumPost(){
+		
+	    new daum.Postcode({
+	        oncomplete: function(data) {
+	   			var addr = "";
+	   			// R == 도로명 주소, J == 지번 주소
+	   			if(data.userSelectedType == "R")
+	   				addr = data.roadAddress;
+	   			else{
+	   				addr = data.jibunAddress;
+	   			}
+	   			document.getElementById('zonecode').value= data.zonecode; // 우편번호
+	   			document.getElementById('addr1').value = addr;
+	   			document.getElementById('addr2').focus();
+	        }
+	    }).open();
+	    
+	}
+</script>
+<form id="mbrJoinForm" name="mbrJoinForm" action="memberInsert" method="post">
+<input type="hidden" id="hotlUsePupsCd" name="hotlUsePupsCd" autocomplete="off">
 <input type="hidden" id="foodKindTypCd" name="foodKindTypCd" autocomplete="off">
 <input type="hidden" id="idOverlap" name="idOverlap" value="" autocomplete="off">
 <input type="hidden" id="annvTypCd" name="annvTypCd" value="" autocomplete="off">
@@ -959,7 +981,7 @@ function checkAuth(){
 					<ul class="step">
 						<li class="t1 first"><span>약관동의</span></li>
 						<li class="t2 on"><span>회원정보 입력</span></li>
-						<li class="t3 last"><span>약관동의</span></li>
+						<li class="t3 last"><span>가입완료</span></li>
 					</ul>
 				</div>			
 				
@@ -1215,14 +1237,14 @@ function checkAuth(){
 									<option value="yahoo.co.kr" title="yahoo.co.kr">yahoo.co.kr</option>
 
 							</select></div> -->
-							<span class="emailConfirm"><a href="#" onclick="sendAuth()">이메일 인증</a></span>
+							<input type="button" value="이메일 인증번호 전송" onclick="sendAuth()">
 						</td>
 					</tr>
 					<tr>
 						<th scope="row"><em class="ast">*</em> 이메일 인증번호 </th>
 						<td>
 							<input type="text" class="uiform mailNumb text" id="mailNumb" name="mailNumb" value="" maxlength="4" onkeyup="this.value=this.value.replace(/[^\d\ ]/g, '')" autocomplete="off">
-							<span class="emailNumb"><a href="javascript:checkDuplicateEmail()">인증번호 확인</a></span>
+							<input type="button" value="인증번호 확인" onclick="checkAuth()">
 						</td>
 					</tr>
 					<!-- 휴대전화 -->
@@ -1338,21 +1360,21 @@ function checkAuth(){
 							<div class="addressWrap">
 								<div class="zipcode">
 									<label class="zipcode1" for="zipcode1">우편번호앞자리</label>
-									<input type="text" class="zipcode1 uiform text" id="zipNo1" name="zipNo1" style="width: 100px;" readonly="" autocomplete="off">
+									<input type="text" class="zipcode1 uiform text" id="zonecode" name="zipcode" style="width: 100px;" readonly="readonly" autocomplete="off">
 <!-- 										- -->
 <!-- 										<input type="text" class="zipcode2 uiform" id="zipNo2" name="zipNo2"  readonly> -->
-									<a href="javascript:popZipNoSecuSearch('zipNo1','zipNo2','adr','detlAdr','adr','detlAdr');" id="zipbutton" class="btnSchAddress">주소찾기</a>
+									<input type="button" value="우편번호 검색" onclick="daumPost()">
 								</div>
 								
 								<div class="addressOld">
 										
 									<div class="address1">
 										<label class="address1" for="newAdr">주소구,동</label>
-										<input type="text" class="address1 uiform text" id="adr" name="adr" readonly="" autocomplete="off">
+										<input type="text" class="address1 uiform text" id="addr1" name="addr1" readonly="" autocomplete="off">
 									</div>
 									<div class="address2">
 										<label class="address2" for="newDetlAdr">상세주소</label>
-										<input type="text" class="address2 uiform text" id="detlAdr" name="detlAdr" maxlength="100" readonly="" autocomplete="off">
+										<input type="text" class="address2 uiform text" id="addr2" name="addr2" maxlength="100"  autocomplete="off">
 									</div>
 								</div>
 							</div>
@@ -1440,7 +1462,10 @@ function checkAuth(){
 							
 				<br>
 				
-				<div class="btnList"><a href="#" onclick="saveMbrJoinForm()" class="btnJoinSend">가입신청</a></div>
+				<div class="btnList">
+				<input type=submit value='회원 가입' onclick="" style="width: 120px; "/>
+				<input type=reset value='취소' style="width: 120px; "/>
+				</div>
 				
 			</div>
 		</div>

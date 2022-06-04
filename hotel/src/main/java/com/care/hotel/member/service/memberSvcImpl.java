@@ -114,17 +114,6 @@ public class memberSvcImpl implements ImemberSvc{
 	}
 	
 	@Override
-	public String isExistEmail(String email) {
-		if (email == null)
-			return "아이디를 입력 후 다시 시도하세요.";
-		int count = memberDAO.isExistEmail(email);
-		if (count == 1)
-			return "중복 아이디 입니다.";
-
-		return "사용 가능한 아이디입니다.";
-	}
-	
-	@Override
 	public String memberInsert(memberDTO memberDTO, memberExDTO memberExDTO) {
 		
 		if (memberDTO.getMemberId() == null || memberDTO.getMemberId().isEmpty())
@@ -135,9 +124,6 @@ public class memberSvcImpl implements ImemberSvc{
 
 		if (memberDAO.isExistId(memberDTO.getMemberId()) > 0)
 			return "중복 아이디 입니다.";
-
-		if (memberDAO.isExistEmail(memberDTO.getMemberEmail()) > 0)
-			return "중복 이메일 입니다.";
 		
 		Boolean authStatus = (Boolean) session.getAttribute("authStatus");
 		if (authStatus == null || authStatus != true)

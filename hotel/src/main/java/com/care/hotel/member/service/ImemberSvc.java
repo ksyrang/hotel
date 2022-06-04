@@ -16,9 +16,6 @@ public interface ImemberSvc {
 	
 	// 아이디 중복 확인
 	public String isExistId(String id);
-		
-	// 이메일 중복 확인
-	public String isExistEmail(String email);
 	
 	// 멤버 회원 가입 
 	public String memberInsert(memberDTO memberDTO, memberExDTO memberExDTO);
