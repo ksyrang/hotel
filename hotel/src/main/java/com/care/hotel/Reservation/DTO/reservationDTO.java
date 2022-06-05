@@ -4,12 +4,12 @@ public class reservationDTO {
 	
 	private String reservationNo;
 	private String memberId;
+	private String hotelId;
+	private String roomId;
 	private String reservationDate;
 	private String checkinDate;
 	private String checkoutDate;
 	private int guestNumber;
-	private String hotelId;
-	private String roomId;
 	private int baseAmount;
 	private String breakfastCheck;
 	private String reservationStatus;

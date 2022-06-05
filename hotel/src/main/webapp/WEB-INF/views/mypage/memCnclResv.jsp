@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ include file="../common/main_header.jsp" %>
 <c:url var="root" value="/" />
 <c:url var="mypage" value="/mypage/" />
 <link href="${pageContext.request.contextPath}/resources/css/mem/title_ko.css" rel="stylesheet" type="text/css">
@@ -9,22 +10,6 @@
 .lnbAreaMypage .lnbMenu .m2 .sMenu li.s3 a{ background-position:0 -44px;}
 .lnbAreaMypage .lnbMenu .m2 .sMenu li.s4 a{ background-position:0 -66px;}
 </style>
-<script type="text/javascript">
-	function check() {
-		startDt = document.getElementById('startDt');
-		endDt = document.getElementById('endDt');
-		
-		if(startDt.value == "" || endDt.value == "") {
-			alert('일자를 확인해주세요.');
-			return;
-		}
-		if(startDt.value > endDt.value) {
-			alert('시작일자가 종료일자보다 큽니다.');
-			return;
-		}
-		document.getElementById('f').submit();
-	}
-</script>
 	
 <div class="contain">
 	<div class="container">
@@ -76,27 +61,6 @@
 		<div class="topMsg">객실 및 패키지, 스파, 다이닝 예약 내역을 확인하실 수 있습니다.</div>
 
 		<div class="mypageWrap">
-			<div class="schBox">
-	            <form>
-			            <div class="selector" id="uniform-searchDateType" style="width: 138px;">
-			            	<span style="width: 113px; user-select: none;">예약 완료일 기준</span>
-			            	<select name="select">
-					            <option value="예약일" selected="">예약 완료일 기준</option>
-					            <option value="투숙일">투숙일 기준</option>
-			            	</select>
-			            </div>
-						<input type="date" name="startDt" id="startDt" value="${startDt}"/>
-						~
-						<input type="date" name="endDt" id="endDt" value="${endDt}"/>
-				<!-- 		
-						<input type="button" value="조회" onclick="check();" class="searchBtn">
-				 -->
-						<input type="submit" name="searchBtn" value="조회" class="searchBtn">
-						<input type="hidden" name="memberId" value="whiteyhl">
-				</form>
-				
-			</div> <!-- schBox -->
-			
 			<div class="box boxRoomPack">
 				<div class="hTit">
 					<h5 class="tit">Room/Package(객실/패키지)</h5>
@@ -197,3 +161,4 @@
 		</div> <!-- contents -->
 	</div> <!-- container -->
 </div> <!-- contain -->
+<%@ include file="../common/main_footer.jsp" %>

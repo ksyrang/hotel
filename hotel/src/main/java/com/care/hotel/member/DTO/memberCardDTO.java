@@ -3,10 +3,18 @@ package com.care.hotel.member.DTO;
 public class memberCardDTO{
 	
 	private String cardId;
+	private String memberId;
 	private String cardNo;
 	private String validityYyMm;//유효기간
 	private String CSV;
 	private String cardCompany;
+	
+	public String getMemberId() {
+		return memberId;
+	}
+	public void setMemberId(String memberId) {
+		this.memberId = memberId;
+	}
 	
 	public String getCardNo() {
 		return cardNo;

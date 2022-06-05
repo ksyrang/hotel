@@ -3,13 +3,13 @@ package com.care.hotel.payment.DTO;
 public class paymentDTO {
 	
 	private String paymentNo;
+	private String reservationNo;
+	private String memberId;
 	private String paymentDate;
 	private String paymentType;
 	private String paymentAmount;//결제 금액
 	private String referencePaymentNo;
 	private String paymentStatus;
-	private String reservationNo;
-	private String memberId;
 	
 	public String getPaymentNo() {
 		return paymentNo;

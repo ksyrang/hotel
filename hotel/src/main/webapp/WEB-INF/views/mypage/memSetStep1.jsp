@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ include file="common/main_header.jsp" %>
+<%@ include file="../common/main_header.jsp" %>
 	
 	<div class="contain">
 		<script src="/js/resv/advResvCalendar.js" charset="UTF-8"></script> 
@@ -4467,4 +4467,4 @@ http://www.shillastay.com/
  
 http://www.shillamonogram.com/
 </div>
-<%@ include file="common/main_footer.jsp" %>
+<%@ include file="../common/main_footer.jsp" %>
