@@ -1,8 +1,10 @@
 @charset "UTF-8";
 
 .admin_searchFilterDiv {height: 100px; margin-left: 10px; margin-bottom: 20px;}
-.admin_hotelSearch {height: 30px; width: 200px;}
+.admin_hotelSearch {height: 30px; width: 200px; margin-right: 20px;}
+.admin_reservationDate {height: 30px; margin-right: 20px;}
 .admin_reservationNoSearch {height: 30px; width: 150px;}
 
-.admin_reservationListTable {width: 1000px; border-color: #61380B; border-collapse: collapse;}
+.admin_reservationListTable {margin-top: 20px; width: 1000px; border-color: #61380B; border-collapse: collapse;}
 .admin_reservationListTable tr {border-bottom: 1px solid; border-top: 1px solid;}
+.admin_reservationListTable td {text-align: center;}

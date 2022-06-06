@@ -24,6 +24,8 @@
 		<select name="hotelSel" class="admin_hotelSearch">
 			<option value="">호텔명</option>
 		</select>
+		<!-- 날짜 필터링 -->
+		<input type="date" name="checkin" class="admin_reservationDate">~<input type="date" name="checkout" class="admin_reservationDate">
 		<!-- 예약번호 검색 -->
 		<input type="text" name="search" placeholder="예약번호" class="admin_reservationNoSearch">
 		<input type="submit" name="reservationSearchBtn" value="검색" class="admin_commonBtn">
