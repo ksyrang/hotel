@@ -127,7 +127,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 <div class="header">
-  <h1 class="logo"><a href="/test1/">THE SHINNANDA HOTELS</a></h1>
+  <h1 class="logo"><a href="${root }">THE SHINNANDA HOTELS</a></h1>
   <!-- 로그인 -->
   <span class="loginArea">
 	<a href="${root }index?formpath=login">로그인</a>
