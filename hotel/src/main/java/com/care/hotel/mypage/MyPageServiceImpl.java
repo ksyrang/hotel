@@ -51,4 +51,19 @@ public class MyPageServiceImpl implements IMyPageService{
 			return 1; // "아이디 혹은 비밀번호를 확인해주세요.";
 		}
 	}
+	
+	@Override
+	public int pwCnfm(String memberId, String memberPw) {
+		
+		if(memberId == null || memberId  == "" || memberPw == null || memberPw == "") { 
+			return 0; // 아이디 혹은 비밀번호를 확인해주세요
+		} 
+		memberDTO memberDto = memberDAO.memberInfo(memberId);
+		if(memberDto.getMemberId().equals(memberId) && memberDto.getMemberPw().equals(memberPw)) {
+			return 2; // "[" + reservationNo + "] 예약을 취소 했습니다.";
+			
+		} else {
+			return 1; // "아이디 혹은 비밀번호를 확인해주세요.";
+		}
+	}
 }

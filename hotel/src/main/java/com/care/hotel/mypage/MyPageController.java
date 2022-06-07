@@ -153,6 +153,27 @@ public class MyPageController {
 			return "redirect:memCnclResvProc?memberId="+memberId+"&reservationNo="+reservationNo+"&msg"+result;
 		}
 	}
+	
+	@RequestMapping(value="mypage/pwCnfmProc", method = RequestMethod.POST)
+	public String pwCnfmProc(String memberId, String memberPw, Model model, RedirectAttributes ra) {
+		logger.info("pwCnfmProc");
+		System.out.println("pwCnfmProc memberId : " + memberId);
+		System.out.println("pwCnfmProc memberPw : " + memberPw);
+		
+		String result = "";
+		
+		int check = myPageService.pwCnfm(memberId, memberPw);
+		System.out.println("pwCnfmProc check : " + check);
+		
+		if(check == 2) {
+			return "forward:/mypage_index?formpath=mypage/memSetMbrInfo";
+		}else {
+			result = "아이디와 비밀번호를 확인해 주세요.";
+			ra.addFlashAttribute("msg", result);
+			return "redirect:pwCnfmProc?memberId="+memberId+"&memberPw="+memberPw;
+		}
+	}
+	
 	@RequestMapping("/mypage/memCnclResv")
 	public String resvCancel() {
 		return "mypage/memCnclResv";
