@@ -21,25 +21,27 @@ public class loginServiceImpl implements IloginService {
 	public int loginProc(String userId, String userPw) {
 		//DB에서 데이터 가져오기
 		//1~3 맴버용 , 4~6 매니저용,  7,9 관리자, 0,9 공통
+		//member zone
 		LoginDTO DBmem =  loginDAO.loginInfo(userId);
-		if(DBmem != null && DBmem.getMemberPw().equals(DBmem.getMemberPw())) {
+		if(DBmem != null && DBmem.getMemberPw().equals(userPw)) {
 			session.setAttribute("userId", userId);
 			return 2;//맴버 로그인
 		}
-		if(DBmem != null && !DBmem.getMemberPw().equals(DBmem.getMemberPw())) return 9;//맴버 비밀번호 오류
+		if(DBmem != null && !DBmem.getMemberPw().equals(userPw)) return 9;//맴버 비밀번호 오류
+		//member zone end
 		hotelDTO DBhotel = hotelDAO.hotelInfo(userId);
-		if(DBhotel != null && DBhotel.getHotelPw().equals(DBhotel.getHotelPw())) {
+		if(DBhotel != null && DBhotel.getHotelPw().equals(userPw)) {
 			session.setAttribute("userId", userId);
 			return 4;//매니저 로그인
 		}
-		if(DBhotel != null && !DBhotel.getHotelPw().equals(DBhotel.getHotelPw())) return 9;//매니저 비밀번호 오류
+		if(DBhotel != null && !DBhotel.getHotelPw().equals(userPw)) return 9;//매니저 비밀번호 오류
 		//admin 시
 		String adminId ="admin";//향후 수정 필요
 		String adminPw ="admin";
 		if(adminId.equals(userId)&&adminPw.equals(userPw)) {
 			session.setAttribute("userId", adminId);
 			return 7;
-		}if(adminId.equals(userId)&&!adminPw.equals(userPw)) {
+		}else if(adminId.equals(userId)&&!adminPw.equals(userPw)) {
 			return 9;
 		}
 		

@@ -47,6 +47,7 @@ public class loginController {
 	@PostMapping("loginProc")
 	public String loginProc(String userId, String userPw) {
 		int result =loginSVC.loginProc(userId, userPw);
+		System.out.println(result);
 		if(result == 0) return "forward:/index?formpath=login"; // 없는 Id
 		else if(result == 2) return "forward:/"; //맴버 로그인
 		else if(result == 4) return "redirect:admin"; //매니저 로그인
