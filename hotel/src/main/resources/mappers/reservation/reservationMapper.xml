@@ -36,4 +36,7 @@
 		)D WHERE rn BETWEEN #{b} and #{e}
 	</select>
 	
+	<update id="reservationCancel" parameterType="String">
+		UPDATE reservation SET reservationStatus='9', cancelDate=#{cancelDt} WHERE reservationNo=#{resvNo}
+	</update>
 </mapper>

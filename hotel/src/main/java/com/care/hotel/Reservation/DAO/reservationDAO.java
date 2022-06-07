@@ -18,8 +18,6 @@ public interface reservationDAO {
 	int reservationCount(@Param("select")String select,  @Param("startDt")String startDt, 
 			@Param("endDt")String endDt, @Param("memberId")String memberId);
 	
-	reservationDTO reservationInfo(String memberId);
-	
-	reservationExDTO reservationExInfo(String memberId);
+	void reservationCancel(@Param("resvNo")String reservationNo, @Param("cancelDt")String cancelDate);
 	
 }

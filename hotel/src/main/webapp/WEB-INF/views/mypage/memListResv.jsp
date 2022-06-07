@@ -33,8 +33,10 @@
 				<h2 class="tit">마이페이지</h2>
 				<ul class="menu">
 					<li class="m1 first">
-						<!-- 선택시 a태그에 class="on" -->
+						<!-- 
 					<a href="/hotel/mypage/memListResv"><span>예약 확인/취소</span>	</a>
+						-->
+					<a href="/hotel/myPage"><span>예약 확인/취소</span>	</a>
 				</li>
 				<li class="m2 last">
 					<a><span>내정보</span></a>
@@ -85,9 +87,9 @@
 					            <option value="투숙일">투숙일 기준</option>
 			            	</select>
 			            </div>
-						<input type="date" name="startDt" id="startDt" value="${startDt}"/>
+						<input type="date" name="startDt" id="startDt" />
 						~
-						<input type="date" name="endDt" id="endDt" value="${endDt}"/>
+						<input type="date" name="endDt" id="endDt" />
 				<!-- 		
 						<input type="button" value="조회" onclick="check();" class="searchBtn">
 				 -->
@@ -187,7 +189,7 @@
 					<br>
 					<!-- 페이징 -->
 					<div align="center">
-						${sessionScope.page }
+						${sessionScope.page}
 					</div>
 				</div> <!-- priceScroll new -->
 			</div> <!-- box boxRoomPack -->

@@ -1,97 +1,45 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ include file="../common/main_header.jsp" %>
-	
+<c:url var="root" value="/" />
+<c:url var="mypage" value="/mypage/" />
+<link href="${pageContext.request.contextPath}/resources/css/mem/title_ko.css" rel="stylesheet" type="text/css">
+<style>
+.lnbAreaMypage .lnbMenu .m2 .sMenu li.s1 a{ background-position:0 0;}
+.lnbAreaMypage .lnbMenu .m2 .sMenu li.s2 a{ background-position:0 -22px;}
+.lnbAreaMypage .lnbMenu .m2 .sMenu li.s3 a{ background-position:0 -44px;}
+.lnbAreaMypage .lnbMenu .m2 .sMenu li.s4 a{ background-position:0 -66px;}
+</style>
 	<div class="contain">
-	
 		<div class="container">
-		
 			<div class="lnbArea lnbAreaMypage">
 			<div class="lnbMenu">
 				<h2 class="tit">마이페이지</h2>
 				<ul class="menu">
 					<li class="m1 first">
-						<!-- 선택시 a태그에 class="on" -->
-						<a href="/hotel/myPage">
-							<span>신라리워즈 등급 및 포인트</span>
+						<a href="/hotel/myPage"><span>예약 확인/취소</span>
 						</a>
 					</li>
-					<li class="m2">
-						<a><span>예약 확인/취소</span></a>
-						<ul class="sMenu">
-							<li class="s1 first">
-								<a href="/hotel/memListResv">
-									<span>객실/패키지</span>
-								</a>
-							</li>
-							<li class="s2 last">
-								<a href="/fbresv/web/memDiningListResv.do"><span>다이닝</span></a>
-							</li>
-						</ul>
-					</li>
-					<li class="m3">
-						<a><span>포인트</span></a>
-						<ul class="sMenu">
-							<li class="s1 first">
-								<a href="/membership/mypage/point/memListPointReference.do">
-									<span>포인트조회</span>
-								</a>
-							</li>
-							<li class="s2">
-								<a href="/membership/mypage/point/memSetPointRetrospective.do">
-									<span>포인트 조정신청</span>
-								</a>
-							</li>
-							<li class="s3 last">
-								<a href="/membership/mypage/point/memSetPointApplication.do">
-									<span>삼성상품권 교환신청</span>
-								</a>
-							</li>
-						</ul>
-					</li>
-					<li class="m4">
-						<a>쿠폰</a>
-						<ul class="sMenu">
-							<li class="s1 first">
-								<a href="/membership/mypage/coupon/memCouponList.do">
-									<span>쿠폰함</span>
-								</a>
-							</li>
-							<li class="s2 last">
-								<a href="/membership/mypage/promotion/memPmtResvList.do">
-									<span>프로모션 숙박권</span>
-								</a>
-							</li>
-						</ul>
-					</li>
-					<li class="m5 last">
+					<li class="m2 last">
 						<a><span>내정보</span></a>
 						<ul class="sMenu">
 							<li class="s1 first">
-								<a href="/hotel/memSetPwCnfm" class="on">
-									<span>프로필 수정</span>
-								</a>
+							<a href="/hotel/mypage/memSetPwCnfm" class="on"><span>프로필 수정</span></a>
 							</li>
 							<li class="s2">
-								<a href="/hotel/memSetPwMod">
-									<span>비밀번호 변경</span>
-								</a>
+								<a href="/hotel/mypage/memSetPwMod"><span>비밀번호 변경</span></a>
 							</li>
 							<li class="s3">
-								<a href="/hotel/memListAsk">
-									<span>문의 내역</span>
-								</a>
+								<a href="/hotel/mypage/memListAsk"><span>문의 내역</span></a>
 							</li>
 							<li class="s4 last">
-								<a href="/hotel/memSetPwDropfm?gubun=t">
-									<span>탈회요청</span>
-								</a>
+								<a href="/hotel/mypage/memSetPwDropfm?gubun=t"><span>탈회요청</span></a>
 							</li>
 						</ul>
 					</li>
 				</ul>
-			</div>
-		</div>
+			</div>  <!-- lnbMenu -->
+		</div> <!-- lnbArea lnbAreaMypage -->
 	<div class="contents" id="contents">
 				<script type="text/javascript">
 
