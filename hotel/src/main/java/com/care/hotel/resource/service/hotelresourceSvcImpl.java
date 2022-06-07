@@ -79,6 +79,18 @@ public class hotelresourceSvcImpl implements IhotelresourceSvc{
 		//session.setAttribute("allHotelInfo", hotelDtoList);
 		return hotelDtoList;
 	}
+	@Override
+	public boolean hotelDelte(String adminId, String adminPw) {
+		String adminDBId = "admin"; // 어드민 프로퍼티 만들면 변경 필요.
+		String adminDBPw = "admin";
+		if(adminId==null || adminPw == null) return false;
+		else if(!adminId.equals(adminDBId)) return false;
+		else if(!adminPw.equals(adminDBPw)) return false;
+		//실패 조건 end
+		hotelDAO.hotelDelete((String)session.getAttribute("hotelId"));
+		
+		return true;
 
+	}
 
 }

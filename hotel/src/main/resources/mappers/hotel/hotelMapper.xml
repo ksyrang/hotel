@@ -50,8 +50,8 @@
 	<update id="updateHotel" parameterType="com.care.hotel.resourceDTO.hotelDTO">
 		UPDATE hotel set hotelname=#{hotelName}, hotelpw=#{hotelPw}, hotelemail=#{hotelEmail}, hoteladdr1=#{hotelAddr1}, hoteladdr2=#{hotelAddr2}, hotelzipcode=#{hotelZipcode} WHERE hotelid=#{hotelId}
 	</update>
-	<delete id="deleteHotel" parameterType="String">
-		DELETE FROM hotel WHERE hotelId=#{hotelId}
+	<delete id="hotelDelete" parameterType="String">
+		DELETE FROM hotel WHERE hotelid=#{hotelId}
 	</delete>
 	
 	<!-- 모든 호텔 정보 불러오기 -->

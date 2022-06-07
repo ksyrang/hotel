@@ -21,4 +21,6 @@ public interface IhotelDAO {
 	
 	/* 모든 호텔 정보 불러오기 */
 	public ArrayList<hotelDTO> allHotelInfo();
+
+	public void hotelDelete(String hotelId);
 }

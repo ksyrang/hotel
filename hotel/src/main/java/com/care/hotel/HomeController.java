@@ -25,7 +25,8 @@ import com.care.hotel.resource.service.IhotelresourceSvc;
 public class HomeController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
-	
+
+	@Autowired HttpSession session;
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
@@ -155,8 +156,9 @@ public class HomeController {
 		return "admin/room/roomlistForm";
 	}	
 	@GetMapping("hoteldelete")
-	public String hoteldelete(Model model, String hotelName) {
-		model.addAttribute("hotelName",hotelName);
+	public String hoteldelete(Model model, String hotelId) {
+		String sessionhotelId = (String)session.getAttribute("hotelId");
+		if(sessionhotelId == null)	session.setAttribute("hotelId", hotelId);
 		return "admin/hotel/hoteldeleteForm";
 	}
  	

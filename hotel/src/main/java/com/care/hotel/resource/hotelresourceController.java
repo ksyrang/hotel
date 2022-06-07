@@ -1,5 +1,6 @@
 package com.care.hotel.resource;
 
+import javax.mail.Session;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -60,5 +61,11 @@ public class hotelresourceController {
 		String hotelId = hotelInfo.getHotelId();
 		return "redirect:hotelInfoProc?hotelId="+hotelId;
 	}	
-
+	@RequestMapping("hoteldeleteProc")
+	public String hoteldeleteProc(String hotelId, String adminId, String adminPw) {
+		boolean result = hotellistSVC.hotelDelte(adminId, adminPw);
+		
+		if(result) return "redirect:hotellistProc"; //성공
+		else return "redirect:/admin_index?formpath=hoteldelete"; // 실패
+	}
 }

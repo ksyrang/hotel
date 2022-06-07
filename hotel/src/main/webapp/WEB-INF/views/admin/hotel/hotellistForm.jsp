@@ -40,7 +40,7 @@
 				<td style="width: 200px; height: 20px;" align="center">${hoteldb.hotelEmail }</td>
 				<td style="width: 100px; height: 20px;" align="center">
 					<input type="button" class="Btn" value="수정" onclick="location.href='${root }prehotelModifyProc?hotelId=${hoteldb.hotelId}'"> <b>/</b> 
-					<input type="button" class="Btn" value="삭제" onclick="location.href='${root  }admin_index?formpath=hoteldelete&hotelName=${hoteldb.hotelName }'">
+					<input type="button" class="Btn" value="삭제" onclick="location.href='${root  }admin_index?formpath=hoteldelete&hotelId=${hoteldb.hotelId}'">
 				</td>
 			</tr>
 		</c:forEach>

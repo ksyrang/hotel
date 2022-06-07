@@ -8,16 +8,16 @@
 	<form action="hoteldeleteProc" method="post">
 		<table>
 			<tr>
-				<th>호텔 이름</th>
-				<td>${hotelName }</td>
+				<th>호텔 아이디</th>
+				<td>${hotelId }</td>
 			</tr>
 			<tr>
 				<th>관리자 아이디</th>
-				<td><input type="text" name="id" placeholder="아이디 입력"/></td>
+				<td><input type="text" name="adminId" placeholder="아이디 입력"/></td>
 			</tr>
 			<tr>
 				<th>관리자 패스워드</th>
-				<td><input type="text" name="pw" placeholder="비밀번호 입력"/></td>
+				<td><input type="text" name="adminPw" placeholder="비밀번호 입력"/></td>
 			</tr>
 			<tr>
 				<td colspan="2" align="center">

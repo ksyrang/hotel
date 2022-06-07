@@ -14,4 +14,5 @@ public interface IhotelresourceSvc {
 	
 	/* 모든 호텔 정보 보기 */
 	public ArrayList<hotelDTO> allHotelInfo();
+	public boolean hotelDelte(String adminId, String adminPw);
 }
