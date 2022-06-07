@@ -3,9 +3,7 @@ package com.care.hotel.member.DAO;
 import java.util.ArrayList;
 
 import org.apache.ibatis.annotations.Param;
-import org.springframework.stereotype.Repository;
 
-import com.care.hotel.member.DTO.AllMemberDTO;
 import com.care.hotel.member.DTO.memberDTO;
 import com.care.hotel.member.DTO.memberExDTO;
 

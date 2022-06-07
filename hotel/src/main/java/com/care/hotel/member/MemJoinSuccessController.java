@@ -17,8 +17,8 @@ public class MemJoinSuccessController {
 	private static final Logger logger = LoggerFactory.getLogger(MemJoinSuccessController.class);
 
 	
-	@RequestMapping(value = "/memJoinSuccessForm", method = RequestMethod.GET)
-	public String memJoinSuccessForm(Locale locale, Model model) {
+	@RequestMapping(value = "/memberInsert", method = RequestMethod.GET)
+	public String memberInsert(Locale locale, Model model) {
 		logger.info("Welcome home! The client locale is {}.", locale);
 		
 		Date date = new Date();
@@ -28,6 +28,6 @@ public class MemJoinSuccessController {
 		
 		model.addAttribute("serverTime", formattedDate );
 		
-		return "memJoinSuccessForm";
+		return "memberInsert";
 	}
 }	

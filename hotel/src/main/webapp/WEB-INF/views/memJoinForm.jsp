@@ -415,7 +415,7 @@ function fnCalcBirth() {
 }
 
 -->
-function saveMbrJoinForm( ) {
+function saveMbrJoinForm() {
 	
 	if($.trim($('#titlCd').val()) == ""){
 		alert(messages["msg.cmm.selected.required"].replaceMsg(['호칭']));
@@ -548,7 +548,7 @@ function saveMbrJoinForm( ) {
 		
 	    //신청버튼
 		 var string = $("form[name=mbrJoinForm]").serialize();
-		 $.post( "/mem/mbr/join/memSaveMbrInfo.do", string).done(function(data){
+		 $.post( "/${root }index?formpath=memJoinSuccessForm", string).done(function(data){
 		 
 			$('.opacity').hide();
 			$('.re-loader').hide();
@@ -654,15 +654,29 @@ function unCheck() {
 	$('.checked').removeAttr('class');
 }
 //-->
-	var req;	function sendAuth(){
+	
+	function isExistId(){
+		var req;
+		req = new XMLHttpRequest();
+		req.onreadystatechange = printMsg;
+		req.open('post', 'isExistId');
+		req.send(document.getElementById('memberId').value);
+	}	function sendAuth(){
+		var req;
 		req = new XMLHttpRequest();
 		req.onreadystatechange = printMsg;
 		req.open('post', 'sendAuth');
 		req.send(document.getElementById('email').value);
 	}
 	
+	function printMsg(){
+		var req;
+		var msg = document.getElementById('msg');
+		msg.innerHTML = req.responseText;
+	}
 
 	function checkAuth(){
+		var req;
 		req = new XMLHttpRequest();
 		req.onreadystatechange = printMsg;
 		req.open('post', 'checkAuth');
@@ -983,7 +997,7 @@ function unCheck() {
 							<input id="email02" name="email02"  type="text" size="20" value="" onkeyup="this.value=this.value.replace(/[^a-z0-9_.@-]/gi,'');" maxlength="40" title="이메일주소 도메인 입력" autocomplete="off">
 							<select id="selectEmail" name="selectEmail" style="width: 115px; height: 27px; line-height: 27px;" onchange="email02.value=this.value">
 							<option value="" selected disabled>E-Mail 선택</option>
-							<option value="blank">직접입력하기</option>
+							<option value="">직접입력하기</option>
 							<option value="naver.com" title="naver.com">naver.com</option>
 							<option value="hanmail.net" title="hanmail.net">hanmail.net</option>
 							<option value="nate.com" title="nate.com">nate.com</option>
@@ -1140,7 +1154,7 @@ function unCheck() {
 										
 									<div class="address1">
 										<label class="address1" for="newAdr">주소구,동</label>
-										<input type="text" class="address1 uiform text" id="addr1" name="addr1" readonly="" autocomplete="off">
+										<input type="text" class="address1 uiform text" id="addr1" name="addr1" readonly="readonly" autocomplete="off">
 									</div>
 									<div class="address2">
 										<label class="address2" for="newDetlAdr">상세주소</label>
@@ -1168,7 +1182,7 @@ function unCheck() {
 							<tbody><tr class="first">
 								<th scope="row" class="first"><em class="ast">*</em> 아이디</th>
 								<td class="first"><input type="text" id="lognId" name="lognId" class="uiform text" maxlength="15" autocomplete="off" style="width:130px">
-								<span class="idConfirm"><a href="javascript:checkDuplicateLognId()">아이디 중복확인</a></span><span class="msgCheck msgCheck2">5~12자  이내 영문 또는 영문/숫자 조합</span></td>
+								<span class="idConfirm"><input type="button" value="중복 확인" onclick="isExistId()"></span><span class="msgCheck msgCheck2">5~12자  이내 영문 또는 영문/숫자 조합</span></td>
 							</tr>
 					<tr>
 						<th scope="row"><em class="ast">*</em> 비밀번호</th>
@@ -1232,11 +1246,17 @@ function unCheck() {
 							
 				<br>
 				
+				
+               
+           		<!--  onclick="nextStep();"-->
+				
 				<div class="btnList">
-				<input type=submit value='회원 가입' onclick="" style="width: 120px; "/>
+				 <a href="${root }index?formpath=memberInsert" >회원가입</a>&nbsp;&nbsp;
+				  <a href="${root }index?formpath=memJoinForm">취소</a>
+			 	<input type=submit value='회원 가입' style="width: 120px;" onclick="" />
 				<input type=reset value='취소' style="width: 120px; "/>
 				</div>
-				
+			
 			</div>
 		</div>
 		</div>
@@ -1244,7 +1264,9 @@ function unCheck() {
 		 	 <img src="${pageContext.request.contextPath}/images/ko/common/loadingAnimation.gif" alt="">
 			</div>
 			<div class="opacity" style="display: none;"></div>
-	</form><div id="mbrJoinLayer"></div>
+	</form>
+	<div id="mbrJoinLayer"></div>
+	</div>
 	
 			
 			<div id="emailAdCollectPop" style="display:none"></div><div id="footerEmailLayer" style="display:none"></div><div class="foot footHub">
