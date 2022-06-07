@@ -9,6 +9,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -21,6 +22,7 @@ public class loginController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(loginController.class);
 	@Autowired private IloginService loginSVC;
+
 	
 	@RequestMapping(value = "/memLoginForm", method = RequestMethod.GET)
 	public String memLoginForm(Locale locale, Model model) {
@@ -52,5 +54,10 @@ public class loginController {
 		else if(result == 9) return "forward:/index?formpath=login"; //비밀번호 오류
 		
 		return "forward:index?formpath=home";
+	}
+	@GetMapping("logoutProc")
+	public String logoutProc() {
+		loginSVC.logoutProc();
+		return "redirect:/";
 	}
 }	

@@ -45,5 +45,9 @@ public class loginServiceImpl implements IloginService {
 		
 		return 0;//없는 Id
 	}
+	@Override
+	public void logoutProc() {
+		session.invalidate();
+	}
 
 }

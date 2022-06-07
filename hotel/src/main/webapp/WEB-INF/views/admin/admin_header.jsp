@@ -8,7 +8,7 @@
 </div>
 <div class="amdin_header">
 	<div class="admin_header_top">
-		<a href="#">로그아웃</a>
+		<a href="${root }logoutProc">로그아웃</a>
 </div>
 
 <!-- 세션으로 manager/admin 구분(미완성) -->
