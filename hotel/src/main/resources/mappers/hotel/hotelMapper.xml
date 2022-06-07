@@ -53,5 +53,10 @@
 	<delete id="deleteHotel" parameterType="String">
 		DELETE FROM hotel WHERE hotelId=#{hotelId}
 	</delete>
+	
+	<!-- 모든 호텔 정보 불러오기 -->
+	<select id="allHotelInfo" resultType="com.care.hotel.resourceDTO.hotelDTO">
+		SELECT * FROM hotel
+	</select>
 
 </mapper>

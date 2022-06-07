@@ -18,4 +18,7 @@ public interface IhotelDAO {
 	public ArrayList<roomDTO> roomList(int begin, int end, String select, String search);
 
 	public void updateHotel(hotelDTO hotelInfo);
+	
+	/* 모든 호텔 정보 불러오기 */
+	public ArrayList<hotelDTO> allHotelInfo();
 }

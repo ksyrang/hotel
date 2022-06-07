@@ -22,7 +22,10 @@
 	<form>
 		<!-- 호텔 필터링 -->
 		<select name="hotelSel" class="admin_hotelSearch">
-			<option value="">호텔명</option>
+				<option value="">호텔명</option>
+			<c:forEach var="hotelInfoList" items="${allHotelInfo }">
+				<option value="${hotelInfoList.hotelId }">${hotelInfoList.hotelName }</option>
+			</c:forEach>
 		</select>
 		<!-- 날짜 필터링 -->
 		<input type="date" name="checkin" class="admin_reservationDate">~<input type="date" name="checkout" class="admin_reservationDate">

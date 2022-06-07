@@ -72,6 +72,13 @@ public class hotelresourceSvcImpl implements IhotelresourceSvc{
 		hotelDAO.updateHotel(hotelInfo);
 		return 2;
 	}
+	/* 모든 호텔 정보 보기*/
+	@Override
+	public ArrayList<hotelDTO> allHotelInfo() {
+		ArrayList<hotelDTO> hotelDtoList = hotelDAO.allHotelInfo();
+		//session.setAttribute("allHotelInfo", hotelDtoList);
+		return hotelDtoList;
+	}
 
 
 }
