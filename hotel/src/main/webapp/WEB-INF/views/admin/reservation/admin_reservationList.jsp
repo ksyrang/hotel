@@ -9,6 +9,20 @@
 <link href="${pageContext.request.contextPath}/resources/css/admin/admin_commonCss.css" rel="stylesheet" type="text/css">
 <link href="${pageContext.request.contextPath}/resources/css/admin/admin_reservationList.css" rel="stylesheet" type="text/css">
 <title>admin_reservationList</title>
+<script>
+	function dateComparison() {
+		startDate = document.getElementById("startDate").value;
+		endDate = document.getElementById("endDate").value;
+		if(startDate == "") {
+			alert("시작날짜를 설정해주세요.");
+			
+		}
+		if(endDate < startDate) {
+			alert("날짜를 다시 선택해주세요.");
+			endDate.remove();
+		}
+	}
+</script>
 </head>
 <body>
 
@@ -21,16 +35,21 @@
 <div class="admin_searchFilterDiv">
 	<form>
 		<!-- 호텔 필터링 -->
-		<select name="hotelSel" class="admin_hotelSearch">
+		<select name="hotelSelect" class="admin_hotelSearch">
 				<option value="">호텔명</option>
 			<c:forEach var="hotelInfoList" items="${allHotelInfo }">
 				<option value="${hotelInfoList.hotelId }">${hotelInfoList.hotelName }</option>
 			</c:forEach>
 		</select>
 		<!-- 날짜 필터링 -->
-		<input type="date" name="checkin" class="admin_reservationDate">~<input type="date" name="checkout" class="admin_reservationDate">
+		<select name="dateBase" class="admin_dateSelete">
+			<option value="">날짜 기준</option>
+			<option value="reservationDate">예약일 기준</option>
+			<option value="checkinDate">체크인 기준</option>
+		</select>
+		<input type="date" name="startDate" class="admin_reservationDate">~<input type="date" name="endDate" class="admin_reservationDate2">
 		<!-- 예약번호 검색 -->
-		<input type="text" name="search" placeholder="예약번호" class="admin_reservationNoSearch">
+		<input type="text" name="reservationNoSearch" placeholder="예약번호" class="admin_reservationNoSearch">
 		<input type="submit" name="reservationSearchBtn" value="검색" class="admin_commonBtn">
 	</form>
 	<!-- 예약 목록 테이블 -->

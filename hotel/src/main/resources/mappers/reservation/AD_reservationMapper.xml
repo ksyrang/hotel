@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.care.hotel.Reservation.DAO.AD_reservationDAO">
+
+<!-- 예약 테이블 내 row 개수 -->
+	<select id="reservationCount" resultType="int">
+		SELECT count(*) FROM reservation 
+		<!-- hotelId  유무 -->
+		<choose>
+			<!-- hotelId O -->
+			<when test="hotelId != null">
+				WHERE hotelId=#{hotelId}
+				<!-- dateBase 유무 -->
+				<!-- dateBase O -->
+				<if test="dateBase != null">
+					<choose>
+						<!-- dateBase == reservationDate -->
+						<when test="dateBase =='reservationDate'">
+							AND reservationDate BETWEEN #{startDate} AND #{endDate}
+						</when>
+						<!-- dateBase == checkinDate -->
+						<when test="dateBase == 'checkinDate'">
+							AND checkinDate BETWEEN #{startDate} AND #{endDate}
+						</when>
+					</choose>
+				</if>
+				<!-- resNo O -->
+				<if test="resNo != null">
+					AND reservationNo like '%'||#{resNo}||'%'
+				</if>
+			</when>
+			
+			<!-- hotelId X -->
+			<when test="hotelId == null">
+				<!-- dateBase 유무 -->
+				
+				<choose>
+					<!-- dateBase O -->
+					<when test="dateBase != null">
+						<choose>
+							<!-- dateBase == reservationDate -->
+							<when test="dateBase =='reservationDate'">
+								AND reservationDate BETWEEN #{startDate} AND #{endDate}
+							</when>
+							<!-- dateBase == checkinDate -->
+							<when test="dateBase == 'checkinDate'">
+								AND checkinDate BETWEEN #{startDate} AND #{endDate}
+							</when>
+						</choose>
+					</when>
+				</choose>
+				<!-- resNo O -->
+				<if test="resNo != null">
+					AND reservationNo like '%'||#{resNo}||'%'
+				</if>
+			</when>
+		</choose>
+		<choose>
+			<when test="hotelId != null">
+				WHERE hotelId=#{hotelId}
+				<if test="dateBase != null">
+					<choose>
+						<when test="dateBase =='reservationDate'">
+							AND reservationDate BETWEEN #{startDate} AND #{endDate}
+						</when>
+						<when test="dateBase == 'checkinDate'">
+							AND checkinDate BETWEEN #{startDate} AND #{endDate}
+						</when>
+					</choose>
+				</if>
+				<if test="reservationNoSearch != null">
+					AND reservationNo like '%'||#{reservationNoSearch}||'%'
+				</if>
+			</when>
+			<when test="hotelId == null">
+				<choose>
+					<when test="dateBase != null">
+						<choose>
+							<when test="dateBase =='reservationDate'">
+								WHERE reservationDate BETWEEN #{startDate} AND #{endDate}
+							</when>
+							<when test="dateBase == 'checkinDate'">
+								WHERE checkinDate BETWEEN #{startDate} AND #{endDate}
+							</when>
+						</choose>
+						<if test="reservationNoSearch != null">
+							AND reservationNo like '%'||#{reservationNoSearch}||'%'
+						</if>
+					</when>
+					<when test="dateBase == null">
+						<if test="reservationNoSearch != null">
+							WHERE reservationNo like '%'||#{reservationNoSearch}||'%'
+						</if>
+					</when>
+				</choose>
+				
+			</when>
+		</choose>
+	</select>
+
+</mapper>
