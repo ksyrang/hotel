@@ -155,8 +155,8 @@ public class HomeController {
 		return "admin/room/roomlistForm";
 	}	
 	@GetMapping("hoteldelete")
-	public String hoteldelete() {
-		
+	public String hoteldelete(Model model, String hotelName) {
+		model.addAttribute("hotelName",hotelName);
 		return "admin/hotel/hoteldeleteForm";
 	}
  	

@@ -5,27 +5,23 @@
 <link href="${pageContext.request.contextPath}/resources/css/admin/amdin_hotelList.css" rel="stylesheet" type="text/css">
 
 <center>
-	<form action="hoteldeleteProd" method="post">
+	<form action="hoteldeleteProc" method="post">
 		<table>
 			<tr>
 				<th>호텔 이름</th>
-				<td>${hotel.hotelId }</td>
+				<td>${hotelName }</td>
 			</tr>
 			<tr>
-				<th>매니저 아이디</th>
-				<td><input type="text" name="managerId" value="${sessionScope.managerId }" readonly="readonly" /> </td>
+				<th>관리자 아이디</th>
+				<td><input type="text" name="id" placeholder="아이디 입력"/></td>
 			</tr>
 			<tr>
-				<th>패스워드</th>
+				<th>관리자 패스워드</th>
 				<td><input type="text" name="pw" placeholder="비밀번호 입력"/></td>
 			</tr>
 			<tr>
-				<th>패스워드 확인</th>
-				<td><input type="text" name="pwC" placeholder="비밀번호 입력"/></td>
-			</tr>
-			<tr>
 				<td colspan="2" align="center">
-					<input type="submit" value="확인"/>
+					<input type="submit" value="삭제"/>
 					<input type="reset" value="취소"/>
 				</td>
 			</tr>
