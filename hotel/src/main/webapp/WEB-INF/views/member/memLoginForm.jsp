@@ -45,7 +45,7 @@
 							</form>
 						</fieldset>
 						<div class="btn">
-							<a class="btnJoin" href="${root }index?formpath=memberJoin"><span>신라리워즈 가입</span></a>
+							<a class="btnJoin" href="${root }index?formpath=memJoinAgreeForm"><span>신라리워즈 가입</span></a>
 							<a href="${root }index?formpath=findID" id="popForIdButton" class="btnLostId"><span>신라리워즈 번호 찾기</span></a>
 							<a href="${root }index?formpath=findPW" id="popForPwButton" class="btnLostPw"><span>비밀번호찾기</span></a>
 						</div>
