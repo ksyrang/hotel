@@ -260,7 +260,7 @@ function popCalendarLayerHide(){
 
 	<div class="popHead">
 		<h2 class="tit">신라리워즈 번호 또는 아이디 찾기</h2>
-		<div class="btn"><a class="btnClose" href="javascript:popCloaeForId();"><span>닫기</span></a></div>
+		<div class="btn"><a class="btnClose" href="${root }index?formpath=login"><span>닫기</span></a></div>
 	</div>
 	<div class="popCtn">
 		<div class="step step1" style="display:" id="step1Div">
@@ -309,8 +309,8 @@ function popCalendarLayerHide(){
 						</dl>
 			</div>
 			<div class="btnList">
-				<a href="javascript:popForId('mem');" class="btnSubmit"><span>취소</span></a>
-				<a class="btnLostPw" href="javascript:popForPw('mem');"><span>비밀번호찾기</span></a> 
+				<a href="${root }index?formpath=memLoginForm" class="btnSubmit"><span>취소</span></a>
+				<a class="btnLostPw" id="popForPwButton" href="${root }index?formpath=findPW"><span>비밀번호찾기</span></a> 
 			</div>
 			
 		</div>
@@ -467,24 +467,6 @@ $(document).ready(function(e) {
 	if(resvYn == "Y"){
 		$(".tabForm .loginTab ul li").eq(1).trigger("click");
 	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 	// 비회원 예약 라디오 탭
 	$(".tabForm .rBtn input").on("click focus", function () {
