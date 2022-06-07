@@ -15,7 +15,7 @@
 			<th>호텔 아이디</th><td>${sessionScope.hotelInfo.hotelId }</td>
 		</tr>
 		<tr>
-			<th>호텔 비밀전호</th><th>${sessionScope.hotelInfo.hotelPw }</th>
+			<th>호텔 비밀전호</th><td>${sessionScope.hotelInfo.hotelPw }</td>
 		</tr>
 		<tr>
 			<th>호텔 이메일</th><td>${sessionScope.hotelInfo.hotelEmail }</td>
@@ -33,8 +33,9 @@
 			<th>호텔 우편번호</th><td>${sessionScope.hotelInfo.hotelZipcode }</td>
 		</tr>
 		<tr>
-			<td><input type="button" value="수정" onclick="location.href='${root }prehotelModifyProc?hotelId=${sessionScope.hotelInfo.hotelId}'"/></td>
-			<td><input type="button" value="뒤로가기" onclick="location.href='${root}hotellistProc'"/></td>
+			<td><input type="button" class="Btn" value="수정" onclick="location.href='${root }admin_index?formpath=admin_hotelInfo'"/></td>
+			<td><input type="button" class="Btn" value="삭제" onclick="location.href='${root  }admin_index?formpath=hoteldelete&hotelId=${hoteldb.hotelId}'"></td>
+			<td><input type="button" class="Btn" value="뒤로가기" onclick="location.href='${root}hotellistProc'"/></td>
 		</tr>
 	</table>
 </form>

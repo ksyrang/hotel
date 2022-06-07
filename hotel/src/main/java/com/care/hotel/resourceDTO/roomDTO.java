@@ -2,17 +2,17 @@ package com.care.hotel.resourceDTO;
 
 public class roomDTO {
 	
-	private String roomlId;
+	private String roomId;
 	private String hotelId;
 	private String roomType;
 	private String bedType;
 	private int availablePerson;
 	
-	public String getRoomlId() {
-		return roomlId;
+	public String getRoomId() {
+		return roomId;
 	}
-	public void setRoomlId(String roomlId) {
-		this.roomlId = roomlId;
+	public void setRoomId(String roomId) {
+		this.roomId = roomId;
 	}
 	public String getHotelId() {
 		return hotelId;

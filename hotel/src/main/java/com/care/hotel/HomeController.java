@@ -137,12 +137,11 @@ public class HomeController {
 	
 	@GetMapping("admin_hotelList")
 	public String admin_hotelList() {
-		
 		return "admin/hotel/hotellistForm";
 	}
 	@GetMapping("admin_hotelInfo")
 	public String admin_hotelInfo() {
-		
+//		if(session.getAttribute("hotelInfo") == null)
 		return "admin/hotel/hotelInfoform";
 	}	
 	@GetMapping("admin_hotelInfoModify")

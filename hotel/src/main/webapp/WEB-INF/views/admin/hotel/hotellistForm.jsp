@@ -6,7 +6,7 @@
 
 <center>
 <div style="height: 20px;"></div>
-<form action="">
+<form action=""><!-- 자기 자신의 map으로 가는데 list의 시작이 listproc이었기 때문에 proc으로 진행됨. -->
 	<select name="select" class="select" style="height: 25px;">
 		<option value="">전체</option>
 		<option value="id">아이디</option>
@@ -40,12 +40,12 @@
 				<td style="width: 200px; height: 20px;" align="center">${hoteldb.hotelEmail }</td>
 				<td style="width: 100px; height: 20px;" align="center">
 					<input type="button" class="Btn" value="수정" onclick="location.href='${root }prehotelModifyProc?hotelId=${hoteldb.hotelId}'"> <b>/</b> 
-					<input type="button" class="Btn" value="삭제" onclick="location.href='${root  }admin_index?formpath=hoteldelete&hotelId=${hoteldb.hotelId}'">
+					<input type="button" class="Btn" value="삭제" onclick="location.href='${root }admin_index?formpath=hoteldelete&hotelId=${hoteldb.hotelId}'">
 				</td>
 			</tr>
 		</c:forEach>
 		<tr><td colspan=5><hr/></td></tr>
 	</table>
-${sessionScope.page }
+${sessionScope.hotelPage }
 <div style="height: 20px;"></div>
 </center>
