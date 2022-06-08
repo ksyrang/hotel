@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+.admin_reservationInfoTopLeft {float: left; padding-left: 50px; margin-bottom: 20px; font-size: 25px;}
+.admin_reservationInfoTopRight {text-align: right; padding-right: 50px;}
+.admin_reservationTableDiv {clear: left;}
+
+.admin_TableHeader {width: 900px; height:70px; margin: auto; color:#907a61; border-collapse: collapse; text-align: left;}
+.admin_TableHeader th {background-color: #f7f7f7; color: #8d605e; font-size: 15px; padding-left: 10px;}
+
+.table_hotel {width: 250px;}
+.table_reservation {width: 350px;}
+.table_member {width: 300px;}
+
+.hotelInfoDiv {float:left; padding-left: 50px;}
+.admin_hotelTable {width: 250px; margin: auto; text-align: left;}
+
+.reservationInfoDiv {float:left;}
+.admin_reservationTable {width:350px;}
+
+.memberInfoDiv{float: left;}
+.admin_memberTable{width: 300px; margin:auto; text-align: left;}
+
+.paymentDiv{float: clear; width: 900px; height:70px; margin: auto; color:#907a61; border-collapse: collapse; text-align: left;}
+.admin_payTable {width: 900px; margin: auto; color:#907a61; border-collapse: collapse;}
+.admin_payTable th {background-color: #f7f7f7; color: #8d605e; font-size: 15px; padding-left: 10px; height: 70px; text-align: left;}
+.payTable_th1 {background-color: #f7f7f7; color: #8d605e; font-size: 15px; padding-left: 10px; height: 70px; width: 600px; text-align: left; font-weight: bold;}
+.payTable_th2 {background-color: #f7f7f7; color: #8d605e; font-size: 15px; padding-left: 10px; height: 70px; width: 300px; text-align: right; font-weight: bold;}
+.payTableLeft {width: 600px;text-align: left;}
+.payTableRight {width: 300px;text-align: right;}
