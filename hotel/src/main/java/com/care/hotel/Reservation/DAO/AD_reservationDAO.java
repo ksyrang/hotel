@@ -3,9 +3,11 @@ package com.care.hotel.Reservation.DAO;
 import java.util.ArrayList;
 
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
 import com.care.hotel.Reservation.DTO.reservationDTO;
 
+@Repository
 public interface AD_reservationDAO {
 
 	int reservationCount(@Param("hotelId")String hotelSelect, @Param("dateBase")String dateBase, @Param("startDate")String startDate, @Param("endDate")String endDate,

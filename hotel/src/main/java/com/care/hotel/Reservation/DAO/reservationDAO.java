@@ -20,4 +20,5 @@ public interface reservationDAO {
 	
 	void reservationCancel(@Param("resvNo")String reservationNo, @Param("cancelDt")String cancelDate);
 	
+	
 }
