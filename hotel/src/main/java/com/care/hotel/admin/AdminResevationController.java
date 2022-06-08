@@ -28,4 +28,11 @@ public class AdminResevationController {
 		reservationSvc.reservationList(currentPage, hotelSelect, dateBase, startDate, endDate, reservationNoSearch);
 		return "forward:/admin_index?formpath=admin_reservationList";
 	}
+	
+	/* 관리자 예약 상세 정보*/
+	@RequestMapping(value="admin_reservationInfoProc")
+	public String admin_reservationInfoProc(String reservationNo) {
+		logger.info("admin_reservationInfoProc");
+		return "forward:/admin_index?formpath=admin_reservationInfo";
+	}
 }

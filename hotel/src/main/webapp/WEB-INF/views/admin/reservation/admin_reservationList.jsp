@@ -58,7 +58,7 @@
 			<!-- forEach문 -->
 			<c:forEach var="resdb" items="${sessionScope.resList }">
 			<tr>
-				<td><a href="">${resdb.reservationNo }</a></td>
+				<td><a href="${root }admin_reservationInfoProc?reservationNo=${resdb.reservationNo}">${resdb.reservationNo }</a></td>
 				<td>${resdb.memberId }</td>
 				
 				<c:forEach var="hotelInfoList" items="${allHotelInfo }">
