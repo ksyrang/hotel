@@ -666,7 +666,7 @@ function unCheck() {
 		req = new XMLHttpRequest();
 		req.onreadystatechange = printMsg;
 		req.open('post', 'sendAuth');
-		req.send(document.getElementById('email').value);
+		req.send(document.getElementById('memberEmail').value);
 	}
 	
 	function printMsg(){
@@ -700,9 +700,9 @@ function unCheck() {
 	   			else{
 	   				addr = data.jibunAddress;
 	   			}
-	   			document.getElementById('zonecode').value= data.zonecode; // 우편번호
-	   			document.getElementById('addr1').value = addr;
-	   			document.getElementById('addr2').focus();
+	   			document.getElementById('memberZipcode').value= data.zonecode; // 우편번호
+	   			document.getElementById('memberAddr1').value = addr;
+	   			document.getElementById('memberAddr2').focus();
 	        }
 	    }).open();
 	    
@@ -789,7 +789,7 @@ function unCheck() {
 						<th scope="row" class="first"><em class="ast">*</em> 성명(국문)</th>
 						<td class="first">
 							<label for="titlCd" class="nameH">경칭</label>
-							<select name="gender" style="width: 85px; height: 27px; line-height: 27px;">
+							<select name="memberGender" id="memberGender" style="width: 85px; height: 27px; line-height: 27px;">
 							<option value="" selected disabled>선택</option>
 							<option value="M" title="M">남</option>
 							<option value="W" title="W." >여</option>
@@ -803,24 +803,24 @@ function unCheck() {
 									<option value="Mr." title="Mr." selected>
 											Mr.</option>
 									</select></div>  -->
-							<input type="text" class="lastNameEn uiform text" id="mbrNm" name="mbrNm" maxlength="30" value="" autocomplete="off">
+							<input type="text" class="lastNameEn uiform text" id="memberNameKR" name="memberNameKR" maxlength="30" value="" autocomplete="off">
 						</td>
 					</tr>
 					
 					<tr>
 						<th scope="row"><em class="ast">*</em> 성명(영문)</th>
-						<td>
-							<label for="mbrEnFnm" class="firstNameEn">First name(이름)</label>
-							<input id="mbrEnFnm" name="mbrEnFnm" onkeyup="this.value=this.value.replace(/[^a-z]/gi,'');" style="text-transform: uppercase;" type="text" class="lastNameEn uiform text" value="" maxlength="30" autocomplete="off"><label for="mbrEnLnm" class="lastNameEn">Last name(성)</label>
-							<input id="mbrEnLnm" name="mbrEnLnm" onkeyup="this.value=this.value.replace(/[^a-z]/gi,'');" style="text-transform: uppercase;" type="text" class="lastNameEn uiform text" value="" maxlength="30" autocomplete="off"></td>
+						<td id="memberNameENG">
+							<label for="memberNameENG" class="firstNameEn">First name(이름)</label>
+							<input id="memberNameENG" name="memberNameENG" onkeyup="this.value=this.value.replace(/[^a-z]/gi,'');" style="text-transform: uppercase;" type="text" class="lastNameEn uiform text" value="" maxlength="30" autocomplete="off">
+							<label for="mbrEnLnm" class="lastNameEn">Last name(성)</label>
+							<input id="memberNameENG" name="memberNameENG" onkeyup="this.value=this.value.replace(/[^a-z]/gi,'');" style="text-transform: uppercase;" type="text" class="lastNameEn uiform text" value="" maxlength="30" autocomplete="off"></td>
 							
 					</tr>
 			
 					<!-- 생년월일 -->
 					<tr>
 						<th scope="row"><em class="ast">*</em> 생년월일</th>
-						<td>
-						
+						<td id="memberBirth">
 						<select name="year" style="width: 85px; height: 27px; line-height: 27px;">
 							<option value="" selected disabled>선택</option>
 							<option value="2003">2003</option>
@@ -990,7 +990,7 @@ function unCheck() {
 
 					<tr>
 						<th scope="row"><em class="ast">*</em> 이메일 </th>
-						<td>
+						<td id="memberEmail">
 							<input id="email01" name="email01"  type="text" size="20" value="" onkeyup="this.value=this.value.replace(/[^a-z0-9_.@-]/gi,'');" maxlength="40" title="이메일주소 입력" autocomplete="off">
 							<span class="at">@</span> 
 							
@@ -1034,7 +1034,7 @@ function unCheck() {
 					<!-- 휴대전화 -->
 					<tr>
 						<th scope="row"><em class="ast">*</em> 휴대전화 </th>
-						<td>
+						<td id="memberMobile>
 							<label for="mbno1" class="phoneComp">휴대폰국번</label>
 							<select name="mobileFirst" style="width: 85px; height: 27px; line-height: 27px;">
 								<option value="010" title="010">010</option>
@@ -1066,7 +1066,7 @@ function unCheck() {
 					<!-- 자택전화 -->
 					<tr>
 						<th scope="row"> 자택전화</th>
-						<td>
+						<td id="memberHomePhone">
 							<label for="phno1" class="phoneComp">국번</label>
 							<select name="homeFirst" style="width: 85px; height: 27px; line-height: 27px;">
 								<option value=""selected disabled>선택</option>
@@ -1144,7 +1144,7 @@ function unCheck() {
 							<div class="addressWrap">
 								<div class="zipcode">
 									<label class="zipcode1" for="zipcode1">우편번호앞자리</label>
-									<input type="text" class="zipcode1 uiform text" id="zonecode" name="zipcode" style="width: 100px;" readonly="readonly" autocomplete="off">
+									<input type="text" class="zipcode1 uiform text" id="memberZipcode" name="memberZipcode" style="width: 100px;" readonly="readonly" autocomplete="off">
 <!-- 										- -->
 <!-- 										<input type="text" class="zipcode2 uiform" id="zipNo2" name="zipNo2"  readonly> -->
 									<input type="button" value="우편번호 검색" onclick="daumPost()">
@@ -1154,11 +1154,11 @@ function unCheck() {
 										
 									<div class="address1">
 										<label class="address1" for="newAdr">주소구,동</label>
-										<input type="text" class="address1 uiform text" id="addr1" name="addr1" readonly="readonly" autocomplete="off">
+										<input type="text" class="address1 uiform text" id="memberAddr1" name="admemberAddr1dr1" readonly="readonly" autocomplete="off">
 									</div>
 									<div class="address2">
 										<label class="address2" for="newDetlAdr">상세주소</label>
-										<input type="text" class="address2 uiform text" id="addr2" name="addr2" maxlength="100"  autocomplete="off">
+										<input type="text" class="address2 uiform text" id="memberAddr2" name="memberAddr2" maxlength="100"  autocomplete="off">
 									</div>
 								</div>
 							</div>
@@ -1181,14 +1181,14 @@ function unCheck() {
 						</colgroup>
 							<tbody><tr class="first">
 								<th scope="row" class="first"><em class="ast">*</em> 아이디</th>
-								<td class="first"><input type="text" id="lognId" name="lognId" class="uiform text" maxlength="15" autocomplete="off" style="width:130px">
+								<td class="first"><input type="text" id="memberId" name="memberId" class="uiform text" maxlength="15" autocomplete="off" style="width:130px">
 								<span class="idConfirm"><input type="button" value="중복 확인" onclick="isExistId()"></span><span class="msgCheck msgCheck2">5~12자  이내 영문 또는 영문/숫자 조합</span></td>
 							</tr>
 					<tr>
 						<th scope="row"><em class="ast">*</em> 비밀번호</th>
 						<td>
 							<label for="mbrPw" class="pwForm1">비밀번호</label>
-							<input type="password" class="pwForm1 uiform password" id="mbrPw" name="mbrPw" maxlength="20" autocomplete="off" style="width:130px">
+							<input type="password" class="pwForm1 uiform password" id="memberPw" name="memberPw" maxlength="20" autocomplete="off" style="width:130px">
 							<div class="pwGuideBox">
 								<a href="javascript:;" class="btnPwHelp"><span>비밀번호입력안내</span><em class="icoHelp"></em></a>
 								<div class="pwGuide" style="display: none;">

@@ -32,16 +32,16 @@
 					<when test="sel == 'memberId'">
 						WHERE memberId like '%'||#{search}||'%'
 					</when>
-					<when test="sel == 'name'">
+					<when test="sel == 'memberNameKR'">
 						WHERE memberNameKR like '%'||#{search}||'%'
 					</when>
-					<when test="sel == 'name'">
+					<when test="sel == 'memberNameENG'">
 						WHERE memberNameENG like '%'||#{search}||'%'
 					</when>
-					<when test="sel == 'mobile'">
+					<when test="sel == 'memberMobile'">
 						WHERE memberMobile like '%'||#{search}||'%'
 					</when>
-					<when test="sel == 'email'">
+					<when test="sel == 'memberEmail'">
 						WHERE memberEmail like '%'||#{search}||'%'
 					</when>
 				</choose>
@@ -82,14 +82,16 @@
 	WHERE memberId=#{memberId}
 	</update>
 	<!-- memberDelete -->
-	<delete id="memberDelete" parameterType="String"> DELETE FROM member WHERE memberId=#{memberId} </delete>
+	<delete id="memberDelete" parameterType="String">
+	 DELETE FROM member WHERE memberId=#{memberId} 
+	 </delete>
 	
 	<!-- 아이디 중복 확인 -->
 	<select id="isExistId" parameterType="String" resultType="int">
-		SELECT count(*) FROM login WHERE id=#{id}
+		SELECT count(*) FROM login WHERE memberId=#{memberId}
 	</select>
 	<!-- 이메일 중복 확인 -->
 	<select id="isExistEmail" parameterType="String" resultType="int">
-		SELECT count(*) FROM login WHERE email=#{email}
+		SELECT count(*) FROM login WHERE memberEmail=#{memberEmail}
 	</select>
 </mapper>
