@@ -1,5 +1,6 @@
 package com.care.hotel.Reservation.service;
 
+import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -29,19 +30,15 @@ public class ReservationSvcImpl implements IReservationSvc{
 		
 
 		ArrayList<reservationDTO> resList = reservationDAO.resList(begin, end, hotelSelect, dateBase, startDate, endDate, reservationNoSearch);
-		// reservationDate, checkinDate 포맷 변경
-		/*
-		 * for(int i = 0; i <= resList.size(); i++) { reservationDTO resDto =
-		 * resList.get(i); String strArr =
-		 * resList.get(i).getReservationDate().substring(0, 9);
-		 * resDto.setReservationDate(strArr);
-		 * 
-		 * resList.set(i, resDto); //int j =
-		 * resList.indexOf(resList.get(i).getReservationDate());
-		 * //resList.get(i).setReservationDate(format.format(resList.get(i).
-		 * getReservationDate())); //resList.set(j, reservationDTO); }
-		 */
-		
+		// reservationDate, checkinDate, baseAmount 포맷 변경
+		for(int i = 0; i < resList.size(); i++) {
+			reservationDTO resDto = resList.get(i);
+			String resDate = resList.get(i).getReservationDate().substring(0, 10);
+			String checkinDate = resList.get(i).getCheckinDate().substring(0, 10);
+			resDto.setReservationDate(resDate);
+			resDto.setCheckinDate(checkinDate);
+			resList.set(i, resDto);
+		}
 		session.setAttribute("resList", resList);
 		String url = "/hotel/admin_reservationListProc?currentPage=";
 		session.setAttribute("resPage", PageService.getNavi(currentPage, pageBlock, totalCount, url));
