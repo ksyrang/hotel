@@ -28,6 +28,7 @@ public class AdminController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(AdminController.class);
 	
+	//http://localhost:8085/hotel/memberListProc
 	/* 회원 목록 */
 	@RequestMapping(value="memberListProc", method = RequestMethod.GET)
 	public String memberListProc(Model model, 

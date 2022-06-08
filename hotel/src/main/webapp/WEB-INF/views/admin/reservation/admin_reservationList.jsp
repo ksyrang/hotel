@@ -9,20 +9,7 @@
 <link href="${pageContext.request.contextPath}/resources/css/admin/admin_commonCss.css" rel="stylesheet" type="text/css">
 <link href="${pageContext.request.contextPath}/resources/css/admin/admin_reservationList.css" rel="stylesheet" type="text/css">
 <title>admin_reservationList</title>
-<script>
-	function dateComparison() {
-		startDate = document.getElementById("startDate").value;
-		endDate = document.getElementById("endDate").value;
-		if(startDate == "") {
-			alert("시작날짜를 설정해주세요.");
-			
-		}
-		if(endDate < startDate) {
-			alert("날짜를 다시 선택해주세요.");
-			endDate.remove();
-		}
-	}
-</script>
+
 </head>
 <body>
 
@@ -67,25 +54,40 @@
 				<th>예약상태</th>
 				<th>수정/삭제/결제</th>
 			</tr>
-			
+			</thead>
 			<!-- forEach문 -->
+			<c:forEach var="resdb" items="${sessionScope.resList }">
 			<tr>
-				<td><a href="">8174720</a></td>
-				<td>dauen1</td>
-				<td>제주신라호텔</td>
-				<td>2003호</td>
-				<td>2022.06.03</td>
-				<td>2022.07.11</td>
-				<td>400,000원</td>
-				<td>예약</td>
+				<td><a href="">${resdb.reservationNo }</a></td>
+				<td>${resdb.memberId }</td>
+				
+				<c:forEach var="hotelInfoList" items="${allHotelInfo }">
+					<c:if test="${hotelInfoList.hotelId eq resdb.hotelId }">
+						<td>${hotelInfoList.hotelName }</td>
+					</c:if>
+				</c:forEach>
+				
+				<td>${resdb.roomId }호</td>
+				<td>${resdb.reservationDate }</td>
+				<td>${resdb.checkinDate }</td>
+				<td>${resdb.baseAmount }원</td>
+				
+				<td>
+				<c:choose>
+					<c:when test="${resdb.reservationStatus eq '0' }">예약</c:when>
+					<c:when test="${resdb.reservationStatus eq '1' }">체크인</c:when>
+					<c:when test="${resdb.reservationStatus eq '2' }">체크아웃</c:when>
+					<c:when test="${resdb.reservationStatus eq '9' }">취소</c:when>
+				</c:choose>
+				</td>
+				
 				<td>
 				<input type="button" value="수정" class="admin_commonBtn">
 				<input type="button" value="삭제" class="admin_commonBtn">
 				<input type="button" value="결제" class="admin_commonBtn">
 				</td>
 			</tr>
-		</thead>
-		
+			</c:forEach>
 		</table>
 	
 	</div>

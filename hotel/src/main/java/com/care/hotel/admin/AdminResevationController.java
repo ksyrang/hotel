@@ -25,11 +25,7 @@ public class AdminResevationController {
 			String hotelSelect, String dateBase, String startDate, String endDate,String reservationNoSearch) {
 		logger.info("admin_reservationListProc");
 		model.addAttribute("allHotelInfo", hotelresourceSvc.allHotelInfo());
-		System.out.println("hotelSelect : " + hotelSelect);
-		System.out.println("startDate : " + startDate);
-		System.out.println("endDate : " + endDate);
 		reservationSvc.reservationList(currentPage, hotelSelect, dateBase, startDate, endDate, reservationNoSearch);
-		//hotellistSVC.memberList(currentPage, select, search);//서비스 내부에서 session에 데이터를 업로드함
 		return "forward:/admin_index?formpath=admin_reservationList";
 	}
 }
