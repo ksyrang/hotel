@@ -68,9 +68,9 @@ public class hotelresourceController {
 	
 	@RequestMapping("roomInfoProc")
 	public String roomInfoProc(String roomId, Model model) {
-		if(roomId ==""||roomId == null) return "redirect:oomlistProc";
+		if(roomId ==""||roomId == null) return "redirect:roomlistProc";
 		hotellistSVC.roomInfo(roomId);
-		return "forward:/admin_index?formpath=admin_hotelInfo";
+		return "forward:/admin_index?formpath=admin_roomInfo";
 	}
 	
 	@RequestMapping("preroomModifyProc")

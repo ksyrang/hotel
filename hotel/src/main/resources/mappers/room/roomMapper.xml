@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.care.hotel.resourceDAO.IroomDAO">
+
+   <select id="roomCount" resultType="int">
+      SELECT count(*) FROM room
+      <choose>
+         <when test="sel == 'roomId'">
+            WHERE roomid like '%'||#{search}||'%'
+         </when>
+         <when test="sel == 'hotelId'">
+            WHERE hotelid like '%'||#{search}||'%'
+         </when>
+         <when test="sel == 'Rtype'">
+            WHERE roomtype like '%'||#{search}||'%'
+         </when>
+         <when test="sel == 'Btype'">
+            WHERE bedtype like '%'||#{search}||'%'
+         </when>
+         <when test="sel == 'person'">
+            WHERE availableperson like '%'||#{search}||'%'
+         </when>
+      </choose>
+   </select>
+
+   <select id="roomList" resultType="com.care.hotel.resourceDTO.roomDTO">
+      SELECT B.* FROM(
+         SELECT rownum rn, A.* FROM( 
+            SELECT * FROM room 
+            <choose>
+               <when test="sel == 'roomId'">
+                  WHERE roomid like '%'||#{search}||'%'
+               </when>
+               <when test="sel == 'hotelId'">
+                  WHERE hotelid like '%'||#{search}||'%'
+               </when>
+               <when test="sel == 'Rtype'">
+                  WHERE roomtype like '%'||#{search}||'%'
+               </when>
+               <when test="sel == 'Btype'">
+                  WHERE bedtype like '%'||#{search}||'%'
+               </when>
+               <when test="sel == 'person'">
+                  WHERE availableperson like '%'||#{search}||'%'
+               </when>
+            </choose>
+         )A
+      )B WHERE rn BETWEEN #{b} and #{e}
+   </select>
+   
+   <select id="roomInfo" resultType="com.care.hotel.resourceDTO.roomDTO" parameterType="String">
+      SELECT * FROM room WHERE roomid = #{roomId}   
+   </select>
+
+</mapper>

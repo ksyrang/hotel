@@ -33,7 +33,7 @@
 			<th>호텔 우편번호</th><td>${sessionScope.hotelInfo.hotelZipcode }</td>
 		</tr>
 		<tr>
-			<td><input type="button" class="Btn" value="수정" onclick="location.href='${root }admin_index?formpath=admin_hotelInfo'"/></td>
+			<td><input type="button" class="Btn" value="수정" onclick="location.href='${root }prehotelModifyProc?hotelId=${hoteldb.hotelId}'"/></td>
 			<td><input type="button" class="Btn" value="삭제" onclick="location.href='${root  }admin_index?formpath=hoteldelete&hotelId=${hoteldb.hotelId}'"></td>
 			<td><input type="button" class="Btn" value="뒤로가기" onclick="location.href='${root}hotellistProc'"/></td>
 		</tr>
