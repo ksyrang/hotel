@@ -30,4 +30,8 @@ public class MemJoinAgreeController {
 		
 		return "memJoinAgreeForm";
 	}
+	@RequestMapping(value = "/memJoinAgreeForm", method = RequestMethod.POST)
+	public String memberInsertPOST() throws Exception{
+		return "redirect:/index?formpath=memJoinForm";
+	}
 }	

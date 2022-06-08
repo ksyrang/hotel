@@ -35,15 +35,15 @@ public class MemJoinController {
 	}
 	
 	@RequestMapping(value = "/memJoinForm", method = RequestMethod.POST)
-	public String memJoinFormPOST(memberDTO memberDTO, memberExDTO memberExDTO, RedirectAttributes redirectAttributes) {
+	public String memJoinFormPOST(memberDTO memberDTO, memberExDTO memberExDTO, RedirectAttributes ra) {
 		
 		String hashedPw = BCrypt.hashpw(memberDTO.getMemberPw(), BCrypt.gensalt());
 		memberDTO.setMemberPw(hashedPw);
 		memberService.memberInsert(memberDTO, memberExDTO);
-        redirectAttributes.addFlashAttribute("msg", "REGISTERED");
+		ra.addFlashAttribute("msg", "REGISTERED");
 
 		
-		return "redirect:/index?formpath=memJoinSuccessForm";
+		return "redirect:/index?formpath=memberInsert";
 	}
 	
 	@RequestMapping(value = "memberInsert")
@@ -52,7 +52,7 @@ public class MemJoinController {
 	
 		if(msg.equals("가입 완료")) {
 			ra.addFlashAttribute("msg", msg);
-			return "redirect:/index?formpath=memJoinSuccessForm";
+			return "redirect:/index?formpath=memberInsert";
 		}else {
 			model.addAttribute("msg", msg);
 			return "forward:/index?formpath=memJoinForm";

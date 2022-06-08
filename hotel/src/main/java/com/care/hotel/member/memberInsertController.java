@@ -12,13 +12,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-public class MemJoinSuccessController {
+public class memberInsertController {
 	
-	private static final Logger logger = LoggerFactory.getLogger(MemJoinSuccessController.class);
+	private static final Logger logger = LoggerFactory.getLogger(memberInsertController.class);
 
 	
 	@RequestMapping(value = "/memberInsert", method = RequestMethod.GET)
-	public String memberInsert(Locale locale, Model model) {
+	public String memberInsertGET(Locale locale, Model model) {
 		logger.info("Welcome home! The client locale is {}.", locale);
 		
 		Date date = new Date();
@@ -30,4 +30,10 @@ public class MemJoinSuccessController {
 		
 		return "memberInsert";
 	}
+	
+	@RequestMapping(value = "/memberInsert", method = RequestMethod.POST)
+	public String memberInsertPOST() throws Exception{
+		return "forward:/";
+	}
+	
 }	

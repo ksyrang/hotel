@@ -583,7 +583,7 @@ function getCookie(cookie_name) {
 	<input type="hidden" name="EncodeData" value="AgAFQkQ2MDQf+bz3vizRwSLR/J45qh8dQZ5hSuAC//IPdSh5I7fYfXkIiExqglObe19CueftyLBiJ8R4H+XF7E8v1FI/yW3zMd9FvcFKtVOJXWMgndplmmzUEcAVpVoUnNoAjjIZXMKcTQbQAb12V0tbPfX19re+ivyh//Ktki+g4QPosLUfPNSqkSMpclBDzHw694sGtTTf2Eu7aH87plmia1Htmn1jEQWksrksI8YImyLg04hg4gH6xHpXhS7F8Q1udnmY6i9pgDA5Vf1EkF816uvM5DlTD84P39TkFMtqIt4l1O6yD7g5p1fT8e56wUCXAKqFK5cPz6OdKaVUzxGfky8Rmk2yT3UHKq1Oz6kME8yDxqM0bIQuOe8xU/Q71/0ldV2zAFIa6l66K2tBvZHvY42L4/nNBrcqYZGV5xlsU6dSiKYxrAbAwcARx8J07nogSl/U5f8Vwy3dtatKLvjB0oJtQNn8sw9yL0aVdEk7ruJwQamObOifnoJL4PQoCPj6y1LzRXQ=" autocomplete="off"> <!-- 위에서 업체정보를 암호화 한 데이타입니다. -->
 </form>
 
-<form name="viewBrowsewrapForm" id="viewBrowsewrapForm" method="post" action="memSetMbrInfo.do">
+<form name="viewBrowsewrapForm" id="viewBrowsewrapForm" method="post" action="${root }index?formpath=memJoinForm">
 <input type="hidden" id="sqMbPersnallyCertifictH" name="sqMbPersnallyCertifictH" value="" autocomplete="off">
 <input type="hidden" id="itCd" name="itCd" value="" autocomplete="off">
 <input type="hidden" id="mbrNm" name="mbrNm" autocomplete="off">

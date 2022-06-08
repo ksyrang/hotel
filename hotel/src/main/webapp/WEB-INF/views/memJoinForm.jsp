@@ -708,7 +708,7 @@ function unCheck() {
 	    
 	}
 </script>
-<form id="mbrJoinForm" name="mbrJoinForm" action="memberInsert" method="post">
+<form id="mbrJoinForm" name="mbrJoinForm" action="${root }index?formpath=memberInsert" method="post">
 <input type="hidden" id="hotlUsePupsCd" name="hotlUsePupsCd" autocomplete="off">
 <input type="hidden" id="foodKindTypCd" name="foodKindTypCd" autocomplete="off">
 <input type="hidden" id="idOverlap" name="idOverlap" value="" autocomplete="off">
@@ -785,7 +785,8 @@ function unCheck() {
 							<col class="col2">
 					</colgroup>
 					
-					<tbody><tr class="first">
+					<tbody>
+					<tr id="memberGender" class="first">
 						<th scope="row" class="first"><em class="ast">*</em> 성명(국문)</th>
 						<td class="first">
 							<label for="titlCd" class="nameH">경칭</label>
@@ -803,24 +804,25 @@ function unCheck() {
 									<option value="Mr." title="Mr." selected>
 											Mr.</option>
 									</select></div>  -->
-							<input type="text" class="lastNameEn uiform text" id="memberNameKR" name="memberNameKR" maxlength="30" value="" autocomplete="off">
+							<input type="text" class="lastNameEn uiform text" id="memberNameKR" name="mbrNm" maxlength="30" value="" autocomplete="off">
 						</td>
 					</tr>
 					
-					<tr>
+					<tr id="memberNameENG">
 						<th scope="row"><em class="ast">*</em> 성명(영문)</th>
-						<td id="memberNameENG">
-							<label for="memberNameENG" class="firstNameEn">First name(이름)</label>
-							<input id="memberNameENG" name="memberNameENG" onkeyup="this.value=this.value.replace(/[^a-z]/gi,'');" style="text-transform: uppercase;" type="text" class="lastNameEn uiform text" value="" maxlength="30" autocomplete="off">
+						<td>
+							<label for="mbrEnFnm" class="firstNameEn">First name(이름)</label>
+							<input id="mbrEnFnm" name="mbrEnFnm" onkeyup="this.value=this.value.replace(/[^a-z]/gi,'');" style="text-transform: uppercase;" type="text" class="lastNameEn uiform text" value="" maxlength="30" autocomplete="off">
 							<label for="mbrEnLnm" class="lastNameEn">Last name(성)</label>
-							<input id="memberNameENG" name="memberNameENG" onkeyup="this.value=this.value.replace(/[^a-z]/gi,'');" style="text-transform: uppercase;" type="text" class="lastNameEn uiform text" value="" maxlength="30" autocomplete="off"></td>
+							<input id="mbrEnLnm" name="mbrEnLnm" onkeyup="this.value=this.value.replace(/[^a-z]/gi,'');" style="text-transform: uppercase;" type="text" class="lastNameEn uiform text" value="" maxlength="30" autocomplete="off"></td>
 							
 					</tr>
 			
 					<!-- 생년월일 -->
-					<tr>
+					<tr id="memberBirth">
 						<th scope="row"><em class="ast">*</em> 생년월일</th>
-						<td id="memberBirth">
+						<td>
+						
 						<select name="year" style="width: 85px; height: 27px; line-height: 27px;">
 							<option value="" selected disabled>선택</option>
 							<option value="2003">2003</option>
@@ -988,14 +990,14 @@ function unCheck() {
 					
 					<!-- 이메일 -->
 
-					<tr>
+					<tr id="memberEmail">
 						<th scope="row"><em class="ast">*</em> 이메일 </th>
-						<td id="memberEmail">
+						<td>
 							<input id="email01" name="email01"  type="text" size="20" value="" onkeyup="this.value=this.value.replace(/[^a-z0-9_.@-]/gi,'');" maxlength="40" title="이메일주소 입력" autocomplete="off">
 							<span class="at">@</span> 
 							
 							<input id="email02" name="email02"  type="text" size="20" value="" onkeyup="this.value=this.value.replace(/[^a-z0-9_.@-]/gi,'');" maxlength="40" title="이메일주소 도메인 입력" autocomplete="off">
-							<select id="selectEmail" name="selectEmail" style="width: 115px; height: 27px; line-height: 27px;" onchange="email02.value=this.value">
+							<select id="memberEmail" name="memberEmail" style="width: 115px; height: 27px; line-height: 27px;" onchange="email02.value=this.value">
 							<option value="" selected disabled>E-Mail 선택</option>
 							<option value="">직접입력하기</option>
 							<option value="naver.com" title="naver.com">naver.com</option>
@@ -1032,9 +1034,9 @@ function unCheck() {
 						</td>
 					</tr>
 					<!-- 휴대전화 -->
-					<tr>
+					<tr id="memberMobile">
 						<th scope="row"><em class="ast">*</em> 휴대전화 </th>
-						<td id="memberMobile>
+						<td>
 							<label for="mbno1" class="phoneComp">휴대폰국번</label>
 							<select name="mobileFirst" style="width: 85px; height: 27px; line-height: 27px;">
 								<option value="010" title="010">010</option>
@@ -1064,9 +1066,9 @@ function unCheck() {
 						</td>
 					</tr>
 					<!-- 자택전화 -->
-					<tr>
+					<tr id="memberHomePhone">
 						<th scope="row"> 자택전화</th>
-						<td id="memberHomePhone">
+						<td>
 							<label for="phno1" class="phoneComp">국번</label>
 							<select name="homeFirst" style="width: 85px; height: 27px; line-height: 27px;">
 								<option value=""selected disabled>선택</option>
@@ -1143,7 +1145,7 @@ function unCheck() {
 						<td class="last">
 							<div class="addressWrap">
 								<div class="zipcode">
-									<label class="zipcode1" for="zipcode1">우편번호앞자리</label>
+									<label class="zipcode1" for="memberZipcode">우편번호앞자리</label>
 									<input type="text" class="zipcode1 uiform text" id="memberZipcode" name="memberZipcode" style="width: 100px;" readonly="readonly" autocomplete="off">
 <!-- 										- -->
 <!-- 										<input type="text" class="zipcode2 uiform" id="zipNo2" name="zipNo2"  readonly> -->
@@ -1153,20 +1155,19 @@ function unCheck() {
 								<div class="addressOld">
 										
 									<div class="address1">
-										<label class="address1" for="newAdr">주소구,동</label>
-										<input type="text" class="address1 uiform text" id="memberAddr1" name="admemberAddr1dr1" readonly="readonly" autocomplete="off">
+										<label class="address1" for="memberAddr1">주소구,동</label>
+										<input type="text" class="address1 uiform text" id="memberAddr1" name="memberAddr1" readonly="readonly" autocomplete="off">
 									</div>
 									<div class="address2">
-										<label class="address2" for="newDetlAdr">상세주소</label>
+										<label class="address2" for="memberAddr2">상세주소</label>
 										<input type="text" class="address2 uiform text" id="memberAddr2" name="memberAddr2" maxlength="100"  autocomplete="off">
 									</div>
 								</div>
-							</div>
-							
+							</div>	
 						</td>
 					</tr>
-					
-					</tbody></table>
+					</tbody>
+					</table>
 					
 					<!-- 웹사이트 비밀번호 입력 시작 -->
 					<div class="hTitS">
@@ -1187,7 +1188,7 @@ function unCheck() {
 					<tr>
 						<th scope="row"><em class="ast">*</em> 비밀번호</th>
 						<td>
-							<label for="mbrPw" class="pwForm1">비밀번호</label>
+							<label for="memberPw" class="pwForm1">비밀번호</label>
 							<input type="password" class="pwForm1 uiform password" id="memberPw" name="memberPw" maxlength="20" autocomplete="off" style="width:130px">
 							<div class="pwGuideBox">
 								<a href="javascript:;" class="btnPwHelp"><span>비밀번호입력안내</span><em class="icoHelp"></em></a>
@@ -1228,16 +1229,17 @@ function unCheck() {
 					<tr class="last">
 						<th scope="row" class="last"><em class="ast">*</em> 비밀번호 확인</th>
 						<td class="last">
-							<label for="mbrPw2" class="pwForm2">비밀번호 확인</label>
-							<input type="password" class="pwForm2 uiform password" id="mbrPw2" name="mbrPw2" maxlength="20" autocomplete="off" style="width:130px"> 
+							<label for="memberPwCheck" class="pwForm2">비밀번호 확인</label>
+							<input type="password" class="pwForm2 uiform password" id="memberPwCheck" name="memberPwCheck" maxlength="20" autocomplete="off" style="width:130px"> 
 						</td>
 					</tr>
 					
-				</tbody></table>
+				</tbody>
 				
-                
+				
+                </table>
 
-<div class="rwPromotion">
+				<div class="rwPromotion">
                    <span>※ 신라리워즈 가입 고객께는 모바일
    카드가 발급 되며 혜택 및 약관은
    홈페이지에서 확인 가능합니다.</span>   
