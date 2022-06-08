@@ -10,6 +10,7 @@
 <link href="${pageContext.request.contextPath}/resources/css/mem/common/lang-ko_N.css" rel="stylesheet" type="text/css">
 <link href="${pageContext.request.contextPath}/resources/css/common/swiper.min.css" rel="stylesheet" type="text/css">
 <link href="${pageContext.request.contextPath}/resources/css/admin/admin_header.css" rel="stylesheet" type="text/css">
+<link href="${pageContext.request.contextPath}/resources/css/mem/footer_custom.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 
@@ -24,8 +25,8 @@
 </script>
 <div class="localBox">
 	<div class="localBoxer">
-		<div class="admin_logo">
-			<a href="${root }memberListProc"><img  class="logo" src="${pageContext.request.contextPath}/resources/images/newLogo.gif"></a>
+		<div class="member_logo">
+			<a href="${root }"><img  class="logo" src="${pageContext.request.contextPath}/resources/images/newLogo.gif"></a>
 		</div>
 		<!-- 20191218 MG -->
 		<div class="brandWrap">
