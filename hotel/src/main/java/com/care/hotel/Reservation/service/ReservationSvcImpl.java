@@ -3,6 +3,7 @@ package com.care.hotel.Reservation.service;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 
 import javax.servlet.http.HttpSession;
 
@@ -26,7 +27,20 @@ public class ReservationSvcImpl implements IReservationSvc{
 		int end = currentPage * pageBlock; // 데이터의 끝 번호
 		int begin = end+1 - pageBlock; // 데이터의 시작 번호
 		
+
 		ArrayList<reservationDTO> resList = reservationDAO.resList(begin, end, hotelSelect, dateBase, startDate, endDate, reservationNoSearch);
+		// reservationDate, checkinDate 포맷 변경
+		/*
+		 * for(int i = 0; i <= resList.size(); i++) { reservationDTO resDto =
+		 * resList.get(i); String strArr =
+		 * resList.get(i).getReservationDate().substring(0, 9);
+		 * resDto.setReservationDate(strArr);
+		 * 
+		 * resList.set(i, resDto); //int j =
+		 * resList.indexOf(resList.get(i).getReservationDate());
+		 * //resList.get(i).setReservationDate(format.format(resList.get(i).
+		 * getReservationDate())); //resList.set(j, reservationDTO); }
+		 */
 		
 		session.setAttribute("resList", resList);
 		String url = "/hotel/admin_reservationListProc?currentPage=";
