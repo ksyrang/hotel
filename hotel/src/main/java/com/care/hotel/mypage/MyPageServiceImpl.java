@@ -7,16 +7,18 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.care.hotel.common.PageService;
 import com.care.hotel.Reservation.DAO.reservationDAO;
 import com.care.hotel.Reservation.DTO.reservationAllDTO;
+import com.care.hotel.common.PageService;
 import com.care.hotel.member.DAO.memberDAO;
 import com.care.hotel.member.DTO.memberDTO;
+import com.care.hotel.member.DTO.memberPwChngDTO;
 
 @Service
 public class MyPageServiceImpl implements IMyPageService{
 	@Autowired reservationDAO reservationDAO;
 	@Autowired memberDAO memberDAO;
+	@Autowired memberDTO memberDto;
 	@Autowired HttpSession session;
 
 	@Override
@@ -59,11 +61,48 @@ public class MyPageServiceImpl implements IMyPageService{
 			return 0; // 아이디 혹은 비밀번호를 확인해주세요
 		} 
 		memberDTO memberDto = memberDAO.memberInfo(memberId);
+		session.setAttribute("member", memberDto);
 		if(memberDto.getMemberId().equals(memberId) && memberDto.getMemberPw().equals(memberPw)) {
 			return 2; // "[" + reservationNo + "] 예약을 취소 했습니다.";
 			
 		} else {
 			return 1; // "아이디 혹은 비밀번호를 확인해주세요.";
+		}
+	}
+	
+	@Override
+	public int memSetUpdt(memberDTO memberDto) {
+		
+		if(memberDto.getMemberPw() == null || memberDto.getMemberPw()  == "") { 
+			return 0;
+		} 
+		memberDTO check = memberDAO.memberInfo(memberDto.getMemberId());
+		if(check != null) {
+			memberDAO.memberUpdate(memberDto);
+			return 2;
+		}else {
+			return 1;
+		}
+	}
+	
+	@Override
+	public int memSetPwUpdt(memberPwChngDTO memberPwChngDto) {
+		
+		if(memberPwChngDto.getMemberPw() == null || memberPwChngDto.getMemberPw()  == ""
+			|| memberPwChngDto.getMemberNewPw() == null || memberPwChngDto.getMemberNewPw()  == "" 
+			|| memberPwChngDto.getMemberNewPwCnfm() == null || memberPwChngDto.getMemberNewPwCnfm()  == "") { 
+			return 0;
+		} 
+		if(memberPwChngDto.getMemberNewPw().equals(memberPwChngDto.getMemberNewPwCnfm())) { 
+			return 1;
+		} 
+		memberDTO memberDto = memberDAO.memberInfo(memberPwChngDto.getMemberId());
+		if(memberDto.getMemberPw().equals(memberPwChngDto.getMemberPw())) {
+			memberDto.setMemberPw(memberPwChngDto.getMemberNewPw());
+			memberDAO.memberUpdate(memberDto);
+			return 2;
+		}else {
+			return 1;
 		}
 	}
 }

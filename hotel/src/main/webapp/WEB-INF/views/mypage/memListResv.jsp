@@ -79,7 +79,6 @@
 
 		<div class="mypageWrap">
 			<div class="schBox">
-	            <form>
 			            <div class="selector" id="uniform-searchDateType" style="width: 138px;">
 			            	<span style="width: 113px; user-select: none;">예약 완료일 기준</span>
 			            	<select name="select">
@@ -95,7 +94,6 @@
 				 -->
 						<input type="submit" name="searchBtn" value="조회" class="searchBtn">
 						<input type="hidden" name="memberId" value="whiteyhl">
-				</form>
 				
 			</div> <!-- schBox -->
 			

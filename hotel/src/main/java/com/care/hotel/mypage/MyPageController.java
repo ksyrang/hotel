@@ -11,10 +11,14 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import com.care.hotel.member.DTO.memberDTO;
+import com.care.hotel.member.DTO.memberPwChngDTO;
 
 @Controller
 public class MyPageController {
@@ -153,8 +157,8 @@ public class MyPageController {
 			return "redirect:memCnclResvProc?memberId="+memberId+"&reservationNo="+reservationNo+"&msg"+result;
 		}
 	}
-	
-	@RequestMapping(value="mypage/pwCnfmProc", method = RequestMethod.POST)
+//	, method = RequestMethod.POST
+	@PostMapping(value="mypage/pwCnfmProc")
 	public String pwCnfmProc(String memberId, String memberPw, Model model, RedirectAttributes ra) {
 		logger.info("pwCnfmProc");
 		System.out.println("pwCnfmProc memberId : " + memberId);
@@ -163,7 +167,7 @@ public class MyPageController {
 		String result = "";
 		
 		int check = myPageService.pwCnfm(memberId, memberPw);
-		System.out.println("pwCnfmProc check : " + check);
+		System.out.println("pwCnfmProc check 2(성공) : " + check);
 		
 		if(check == 2) {
 			return "forward:/mypage_index?formpath=mypage/memSetMbrInfo";
@@ -173,7 +177,54 @@ public class MyPageController {
 			return "redirect:pwCnfmProc?memberId="+memberId+"&memberPw="+memberPw;
 		}
 	}
-	
+//	, method = RequestMethod.POST
+	@PostMapping(value="mypage/memSetUpdtProc")
+	public String memSetUpdtProc(String memberPw, String memberId, memberDTO mem, Model model) {
+		logger.info("memSetUpdtProc");
+		System.out.println("getMemberId : "+mem.getMemberId());
+		System.out.println("getMemberPw : "+mem.getMemberPw());
+		System.out.println("getMemberNameKR : " + mem.getMemberNameKR());
+		System.out.println("getMemberNameENG : " + mem.getMemberNameENG());
+		
+		String result = "";
+		
+		int check = myPageService.memSetUpdt(mem);
+		System.out.println("memSetUpdtProc check 2 성공 : " + check);
+		
+		if(check == 2) {
+			result = "[" + mem.getMemberNameKR() + "]님 프로필 정보를 수정했습니다.";
+			model.addAttribute("msg", result);
+			return "forward:/mypage_index?formpath=mypage/memSetMbrInfo";
+		}else {
+			result = "[" + mem.getMemberNameKR() + "]님 프로필 정보 수정에 실패했습니다.";
+			model.addAttribute("msg", result);
+			return "forward:/mypage_index?formpath=mypage/memSetPwCnfm";
+		}
+	}
+//	, method = RequestMethod.POST
+	@PostMapping(value="mypage/memSetPwUpdtProc")
+	public String memSetPwUpdtProc(memberPwChngDTO mem, Model model) {
+		logger.info("memSetPwUpdtProc");
+		System.out.println("Id : "+mem.getMemberId());
+		System.out.println("Pw : "+mem.getMemberPw());
+		System.out.println("NewPw : "+mem.getMemberNewPw());
+		System.out.println("NewPwCnfm : "+mem.getMemberNewPwCnfm());
+		
+		String result = "";
+		
+		int check = myPageService.memSetPwUpdt(mem);
+		System.out.println("memSetPwUpdtProc check 2 성공 : " + check);
+		
+		if(check == 2) {
+			result = "[" + mem.getMemberId() + "]님 비밀정보를 수정했습니다.";
+			model.addAttribute("msg", result);
+			return "forward:/mypage_index?formpath=mypage";
+		}else {
+			result = "[" + mem.getMemberId() + "]님 비밀정보 수정에 실패했습니다.";
+			model.addAttribute("msg", result);
+			return "forward:/mypage_index?formpath=mypage/memSetPwCnfm";
+		}
+	}
 	@RequestMapping("/mypage/memCnclResv")
 	public String resvCancel() {
 		return "mypage/memCnclResv";

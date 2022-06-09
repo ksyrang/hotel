@@ -54,11 +54,11 @@
 			</div>  <!-- lnbMenu -->
 		</div> <!-- lnbArea lnbAreaMypage -->
 <div class="contents" id="contents">
-
+<h3>
+	<font color="red" >${msg } </font>
+</h3>
 <!-- <form name="pwCnfmForm" id="pwCnfmForm" method="post" action="">  -->
 <form action="pwCnfmProc" method="post" id="f">
-	<input type="text" name="hiddenInputName" id="hiddenInputName" style="display:none" autocomplete="off" class="text">
-	<input type="hidden" name="hiddenInputType" id="hiddenInputType" value="Y" autocomplete="off">
 	<div class="ctnMypage ctnUserInfo1">
 		<div class="location">
 			<p class="list">
@@ -95,7 +95,7 @@
 			</tbody>
 		</table>
 		<div class="btnList">
-			<input type="button" value="확인" onclick="check();" class="okBtn">
+			<input type="button" value="확인" onclick="check();" class="btnConfirm">
 		</div>
 	</div> <!-- "ctnMypage ctnUserInfo1" -->
 </form>

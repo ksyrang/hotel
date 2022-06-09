@@ -90,7 +90,7 @@
 							</tr>
 							<tr>
 								<td colspan="2">
-								<input type="button" value="확인" onclick="check();" class="okBtn">
+								<input type="button" value="확인" onclick="check();" class="btnConfirm">
 								</td>
 							</tr>
 						</table>
