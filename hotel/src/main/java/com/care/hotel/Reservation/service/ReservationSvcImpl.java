@@ -43,6 +43,7 @@ public class ReservationSvcImpl implements IReservationSvc{
 		
 	}
 
+	// 예약 정보
 	@Override
 	public reservationAllDTO reservationInfo(String reservationNo) {
 		reservationDTO reservation = reservationDAO.reservationInfo(reservationNo);
@@ -68,5 +69,14 @@ public class ReservationSvcImpl implements IReservationSvc{
 		}
 		
 		return resAll;
+	}
+
+	@Override
+	public String reservationModify(reservationDTO resDTO) {
+		reservationDTO oldresDTO = reservationInfo(resDTO.getReservationNo());
+		if(oldresDTO.getBreakfastCheck().equals(resDTO.getBreakfastCheck()) == false) {
+			reservationDAO.reservationUpdate(resDTO);
+		}
+		return "예약번호 " + resDTO.getReservationNo() + " 예약 수정이 완료되었습니다.";
 	}
 }

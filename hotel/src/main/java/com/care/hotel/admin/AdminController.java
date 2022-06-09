@@ -89,7 +89,6 @@ public class AdminController {
 		String memberNameENG = lastName + " " + firstName;
 		if(allMemberDto.getMemberId() != null) {
 			allMemberDto.setMemberNameENG(memberNameENG);
-			System.out.println("getMemberNameENG : " + allMemberDto.getMemberNameENG());
 			result = memberSvc.memberModify(allMemberDto);
 		}
 		

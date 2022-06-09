@@ -61,5 +61,12 @@
 	<select id="reservationExInfo" resultType="com.care.hotel.Reservation.DTO.reservationExDTO">
 		SELECT * FROM reservation_extra WHERE reservationNo = #{reservationNo}
 	</select>
+	
+	<!-- reservationUpdate -->
+	<update id="reservationUpdate" parameterType="com.care.hotel.Reservation.DTO.reservationDTO">
+		UPDATE reservation
+		SET breakfastCheck = #{breakfastCheck}
+		WHERE reservationNo = #{reservationNo}
+	</update>
 
 </mapper>

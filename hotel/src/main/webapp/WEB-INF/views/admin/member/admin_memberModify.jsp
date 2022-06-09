@@ -63,7 +63,7 @@
 
 <div class="admin_memberInfoTopRight">
 	<input type="button" value="저장" class="listBtn" onclick="check();">
-	<input type="button" value="취소" class="listBtn" onclick="location.href='${root }memberListProc'">
+	<input type="button" value="이전" class="listBtn" onclick="location.href='javascript:history.back();">
 </div>
 
 <div class="admin_memberInfoTableDiv">

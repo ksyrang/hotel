@@ -21,4 +21,6 @@ public interface AD_reservationDAO {
 
 	reservationExDTO reservationExInfo(String reservationNo);
 
+	void reservationUpdate(reservationDTO resDTO);
+
 }

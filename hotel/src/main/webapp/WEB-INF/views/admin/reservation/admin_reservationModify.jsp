@@ -18,12 +18,15 @@
 <div class="admin_mainDiv">
 <!-- top -->
 <div class="admin_reservationInfoTopLeft">
-	예약정보
+	예약 수정
 </div>
+
+<!-- form 태그 admin_reservationModifyProc -->
+<form action="admin_reservationModifyProc" method="post">
+<input type="hidden" name="reservationNo" value="${resInfo.reservationNo }">
 <div class="admin_reservationInfoTopRight">
-	<input type="button" value="예약수정" class="admin_commonBtn">
-	<input type="button" value="예약취소" class="admin_commonBtn">
-	<input type="button" value="결제" class="admin_commonBtnB">
+	<input type="submit" value="저장" class="admin_commonBtnB">
+	<input type="button" value="이전" class="admin_commonBtn" onclick="javascript:history.back();">
 </div>
 <!-- table -->
 <div class="admin_reservationTableDiv">
@@ -65,7 +68,20 @@
 			<td>투숙인원</td><td>${resInfo.guestNumber }명</td>
 		</tr>
 		<tr>
-			<td>조식</td><td>${resInfo.breakfastCheck }</td>
+			<td>조식</td>
+			<td>
+				<c:choose>
+					<c:when test="${resInfo.breakfastCheck eq 'Y'}">
+						<input type="radio" name="breakfastCheck" value="Y" checked="checked">Y
+						<input type="radio" name="breakfastCheck" value="N">N
+					</c:when>
+					<c:otherwise>
+						<input type="radio" name="breakfastCheck" value="Y">Y
+						<input type="radio" name="breakfastCheck" value="N" checked="checked">N
+					</c:otherwise>
+				</c:choose>
+				
+			</td>
 		</tr>
 		<tr>
 			<td>요청사항</td><td>${resInfo.remark }</td>
@@ -103,7 +119,7 @@
 		</tr>
 	</table>
 </div>
-
+</form>
 </div>
 
 </body>
