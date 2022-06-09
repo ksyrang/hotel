@@ -2,13 +2,14 @@ package com.care.hotel.Reservation.DTO;
 
 public class reservationAllDTO extends reservationDTO {
 	
-	private String hotelName;
+	private String remark;
 
-	public String getHotelName() {
-		return hotelName;
+	public String getRemark() {
+		return remark;
 	}
 
-	public void setHotelName(String hotelName) {
-		this.hotelName = hotelName;
+	public void setRemark(String remark) {
+		this.remark = remark;
 	}
+	
 }

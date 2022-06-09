@@ -1,10 +1,6 @@
 package com.care.hotel.Reservation.service;
 
-import java.text.DecimalFormat;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
 
 import javax.servlet.http.HttpSession;
 
@@ -12,7 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.care.hotel.Reservation.DAO.AD_reservationDAO;
+import com.care.hotel.Reservation.DTO.reservationAllDTO;
 import com.care.hotel.Reservation.DTO.reservationDTO;
+import com.care.hotel.Reservation.DTO.reservationExDTO;
 import com.care.hotel.common.PageService;
 
 @Service
@@ -30,7 +28,7 @@ public class ReservationSvcImpl implements IReservationSvc{
 		
 
 		ArrayList<reservationDTO> resList = reservationDAO.resList(begin, end, hotelSelect, dateBase, startDate, endDate, reservationNoSearch);
-		// reservationDate, checkinDate, baseAmount 포맷 변경
+		// reservationDate, checkinDate 포맷 변경
 		for(int i = 0; i < resList.size(); i++) {
 			reservationDTO resDto = resList.get(i);
 			String resDate = resList.get(i).getReservationDate().substring(0, 10);
@@ -43,5 +41,32 @@ public class ReservationSvcImpl implements IReservationSvc{
 		String url = "/hotel/admin_reservationListProc?currentPage=";
 		session.setAttribute("resPage", PageService.getNavi(currentPage, pageBlock, totalCount, url));
 		
+	}
+
+	@Override
+	public reservationAllDTO reservationInfo(String reservationNo) {
+		reservationDTO reservation = reservationDAO.reservationInfo(reservationNo);
+		reservationExDTO reservationEx = reservationDAO.reservationExInfo(reservationNo);
+		
+		reservationAllDTO resAll = new reservationAllDTO();
+		if(reservation != null) {
+			resAll.setReservationNo(reservation.getReservationNo());
+			resAll.setMemberId(reservation.getMemberId());
+			resAll.setHotelId(reservation.getHotelId());
+			resAll.setRoomId(reservation.getRoomId());
+			resAll.setReservationDate(reservation.getReservationDate().substring(0, 10));
+			resAll.setCheckinDate(reservation.getCheckinDate().substring(0, 10));
+			resAll.setCheckoutDate(reservation.getCheckoutDate().substring(0, 10));
+			resAll.setGuestNumber(reservation.getGuestNumber());
+			resAll.setBaseAmount(reservation.getBaseAmount());
+			resAll.setBreakfastCheck(reservation.getBreakfastCheck());
+			resAll.setReservationStatus(reservation.getReservationStatus());
+			resAll.setCancelDate(reservation.getCancelDate());
+		}
+		if(reservationEx != null) {
+			resAll.setRemark(reservationEx.getRemark());
+		}
+		
+		return resAll;
 	}
 }

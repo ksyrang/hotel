@@ -106,4 +106,10 @@ public class hotelresourceSvcImpl implements IhotelresourceSvc{
 		
 	}
 
+	@Override
+	public int roomModify(roomDTO roomInfo) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 }

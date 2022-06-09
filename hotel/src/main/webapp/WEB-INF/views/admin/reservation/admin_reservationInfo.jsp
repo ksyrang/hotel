@@ -38,36 +38,37 @@
 <!-- 호텔정보 div -->
 <div class="hotelInfoDiv">
 	<table class="admin_hotelTable">
-		<tr class="table_hotel"> <td>서울신라호텔</td> </tr>
-		<tr><td>서울특별시 종로구 상보로 71</td></tr>
-		<tr><td>(우: 03152)</td></tr>
-		<tr><td>Tel. 02-3712-1927</td></tr>
-		<tr><td>Email. aisnd@hotel.com</td></tr>
+		<tr class="table_hotel"> <td>${sessionScope.hotelInfo.hotelName }</td> </tr>
+		<tr><td>${sessionScope.hotelInfo.hotelAddr1}</td></tr>
+		<tr><td>${sessionScope.hotelInfo.hotelAddr2 }</td></tr>
+		<tr><td>(우: ${sessionScope.hotelInfo.hotelZipcode })</td></tr>
+		<tr><td>Tel. ${sessionScope.hotelInfo.hotelPhoneNumber }</td></tr>
+		<tr><td>Email. ${sessionScope.hotelInfo.hotelEmail }</td></tr>
 	</table>
 </div>
 <!-- 예약상세정보 div -->
 <div class="reservationInfoDiv">
 	<table class="admin_reservationTable">
 		<tr class="table_reservation">
-			<td>예약번호</td><td>923746</td>
+			<td>예약번호</td><td>${resInfo.reservationNo }</td>
 		</tr>
 		<tr>
-			<td>예약일</td><td>2022-06-10</td>
+			<td>예약일</td><td>${resInfo.reservationDate }</td>
 		</tr>
 		<tr>
-			<td>체크인/체크아웃</td><td>2022-07-10 ~ 2022-07-12(2박)</td>
+			<td>체크인/체크아웃</td><td>${resInfo.checkinDate } ~ ${resInfo.checkoutDate } (${period }박)</td>
 		</tr>
 		<tr>
-			<td>객실</td><td>standard/Family</td>
+			<td>객실</td><td>${resInfo.roomId }호</td>
 		</tr>
 		<tr>
-			<td>투숙인원</td><td>2명</td>
+			<td>투숙인원</td><td>${resInfo.guestNumber }명</td>
 		</tr>
 		<tr>
-			<td>조식</td><td>Y</td>
+			<td>조식</td><td>${resInfo.breakfastCheck }</td>
 		</tr>
 		<tr>
-			<td>요청사항</td><td>수건 세개 주세요.</td>
+			<td>요청사항</td><td>${resInfo.remark }</td>
 		</tr>
 	</table>
 </div>
@@ -76,13 +77,13 @@
 <div class="memberInfoDiv">
 	<table class="admin_memberTable">
 		<tr class="table_member">
-			<td>고객명</td><td>신다은(Shin DaEun)</td>
+			<td>고객명</td><td>${memberInfo.memberNameKR }(${memberInfo.memberNameENG })</td>
 		</tr>
 		<tr>
-			<td>연락처</td><td>010-5620-1321</td>
+			<td>연락처</td><td>${memberInfo.memberMobile }</td>
 		</tr>
 		<tr>
-			<td>이메일</td><td>dauen1@naver.com</td>
+			<td>이메일</td><td>${memberInfo.memberEmail }</td>
 		</tr>
 	</table>
 </div>
@@ -93,12 +94,12 @@
 			<th colspan="2">요금상세</th>
 		</tr>
 		<tr>
-			<td class="payTableLeft">서울신라호텔/standard/Family</td>
-			<td class="payTableRight">30000000원</td>
+			<td class="payTableLeft">${sessionScope.hotelInfo.hotelName }/${resInfo.roomId }호</td>
+			<td class="payTableRight">${resInfo.baseAmount }원</td>
 		</tr>
 		<tr>
 			<td class="payTable_th1">요금합계(부가가치세 포함)</td>
-			<td class="payTable_th2">30000000원</td>
+			<td class="payTable_th2">${resInfo.baseAmount }원</td>
 		</tr>
 	</table>
 </div>

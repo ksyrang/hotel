@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.care.hotel.Reservation.DAO.AD_reservationDAO">
 
-<!-- 예약 테이블 내 row 개수 -->
+	<!-- 예약 테이블 내 row 개수 -->
 	<select id="reservationCount" resultType="int">
 		SELECT count(*) FROM reservation 
 		<where>
@@ -50,6 +50,16 @@
 		</where>
 			)A
 		)B WHERE rn BETWEEN #{b} and #{e}
+	</select>
+	
+	<!-- reservation 테이블 불러오기 -->
+	<select id="reservationInfo" resultType="com.care.hotel.Reservation.DTO.reservationDTO">
+		SELECT * FROM reservation WHERE reservationNo = #{reservationNo}
+	</select>
+	
+	<!-- reservationEx 테이블 불러오기 -->
+	<select id="reservationExInfo" resultType="com.care.hotel.Reservation.DTO.reservationExDTO">
+		SELECT * FROM reservation_extra WHERE reservationNo = #{reservationNo}
 	</select>
 
 </mapper>
