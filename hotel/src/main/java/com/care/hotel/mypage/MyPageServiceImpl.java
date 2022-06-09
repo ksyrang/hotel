@@ -18,7 +18,6 @@ import com.care.hotel.member.DTO.memberPwChngDTO;
 public class MyPageServiceImpl implements IMyPageService{
 	@Autowired reservationDAO reservationDAO;
 	@Autowired memberDAO memberDAO;
-	@Autowired memberDTO memberDto;
 	@Autowired HttpSession session;
 
 	@Override
