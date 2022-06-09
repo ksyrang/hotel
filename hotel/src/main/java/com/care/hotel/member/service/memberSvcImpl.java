@@ -17,6 +17,7 @@ public class memberSvcImpl implements ImemberSvc{
 	@Autowired memberDAO memberDAO;
 	@Autowired private HttpSession session;
 	
+	
 	@Override
 	public AllMemberDTO userInfo(String memberId) {
 		System.out.println("memberSvc_userInfo");
@@ -114,34 +115,36 @@ public class memberSvcImpl implements ImemberSvc{
 	}
 	
 	@Override
-	public String memberInsert(memberDTO memberDTO, memberExDTO memberExDTO) {
+	public String memberJoin(memberDTO member, memberExDTO memberEx) throws Exception {
 		
-		if (memberDTO.getMemberId() == null || memberDTO.getMemberId().isEmpty())
-			return "아이디를 입력하세요.";
+//		if (memberDTO.getMemberId() == null || memberDTO.getMemberId().isEmpty())
+//			return "아이디를 입력하세요.";
+//
+//		if (memberDTO.getMemberPw() == null || memberDTO.getMemberPw().isEmpty())
+//			return "비밀번호를 입력하세요.";
+//
+//		if (memberDAO.isExistId(memberDTO.getMemberId()) > 0)
+//			return "중복 아이디 입니다.";
+//		
+//		Boolean authStatus = (Boolean) session.getAttribute("authStatus");
+//		if (authStatus == null || authStatus != true)
+//			return "이메일 인증 후 가입 할 수 있습니다.";
+//		
+//
+//		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+//		String securePw = encoder.encode(memberDTO.getMemberPw());
+//		memberDTO.setMemberPw(securePw);
 
-		if (memberDTO.getMemberPw() == null || memberDTO.getMemberPw().isEmpty())
-			return "비밀번호를 입력하세요.";
+		memberDAO.memberInsert(member);
+		memberDAO.memberExInsert(memberEx);
 
-		if (memberDAO.isExistId(memberDTO.getMemberId()) > 0)
-			return "중복 아이디 입니다.";
-		
-		Boolean authStatus = (Boolean) session.getAttribute("authStatus");
-		if (authStatus == null || authStatus != true)
-			return "이메일 인증 후 가입 할 수 있습니다.";
-		
+		if ("m".equals(member.getMemberGender()) || "w".equals(member.getMemberGender()) || "n".equals(member.getMemberGender()))
+			memberDAO.memberInsert(member);
 
-		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-		String securePw = encoder.encode(memberDTO.getMemberPw());
-		memberDTO.setMemberPw(securePw);
-
-		memberDAO.memberInsert(memberDTO);
-
-		if ("m".equals(memberDTO.getMemberGender()) || "w".equals(memberDTO.getMemberGender()) || "n".equals(memberDTO.getMemberGender()))
-			memberDAO.memberInsert(memberDTO);
-
-		if (!("".equals(memberExDTO.getMemberZipcode())))
-			memberDAO.memberExInsert(memberExDTO);
-
+		if (!("".equals(memberEx.getMemberZipcode())))
+			memberDAO.memberExInsert(memberEx);
+		if (!("".equals(memberEx.getMemberHomePhone())))
+			memberDAO.memberExInsert(memberEx);
 		return "가입 완료";
 	}
 

@@ -30,34 +30,38 @@ public class MemJoinController {
 	
 	@RequestMapping(value = "/memJoinForm", method = RequestMethod.GET)
 	public String memJoinFormGET() throws Exception{
-		
+		logger.info("회원가입 페이지 진입");
 		return "memJoinForm";
 	}
 	
 	@RequestMapping(value = "/memJoinForm", method = RequestMethod.POST)
-	public String memJoinFormPOST(memberDTO memberDTO, memberExDTO memberExDTO, RedirectAttributes ra) {
+	public String memJoinFormPOST(memberDTO member, memberExDTO memberExDTO, Model model, RedirectAttributes ra) throws Exception {
 		
-		String hashedPw = BCrypt.hashpw(memberDTO.getMemberPw(), BCrypt.gensalt());
-		memberDTO.setMemberPw(hashedPw);
-		memberService.memberInsert(memberDTO, memberExDTO);
-		ra.addFlashAttribute("msg", "REGISTERED");
-
+		logger.info("join 진입");
 		
-		return "redirect:/index?formpath=memberInsert";
-	}
-	
-	@RequestMapping(value = "memberInsert")
-	public String memberInsert(memberDTO memberDTO, memberExDTO memberExDTO, Model model, RedirectAttributes ra) {
-		String msg = memberService.memberInsert(memberDTO, memberExDTO);
-	
+		//회원가입 서비스 진행
+		String msg = memberService.memberJoin(member, memberExDTO);
 		if(msg.equals("가입 완료")) {
 			ra.addFlashAttribute("msg", msg);
 			return "redirect:/index?formpath=memberInsert";
 		}else {
 			model.addAttribute("msg", msg);
-			return "forward:/index?formpath=memJoinForm";
+			return "forward:/";
 		}	
 	}
+	
+//	@RequestMapping(value = "memberInsert")
+//	public String memberInsert(memberDTO memberDTO, memberExDTO memberExDTO, Model model, RedirectAttributes ra) {
+//		String msg = memberService.memberInsert(memberDTO, memberExDTO);
+//	
+//		if(msg.equals("가입 완료")) {
+//			ra.addFlashAttribute("msg", msg);
+//			return "redirect:/index?formpath=memberInsert";
+//		}else {
+//			model.addAttribute("msg", msg);
+//			return "forward:/index?formpath=memJoinForm";
+//		}	
+//	}
 	
 	@PostMapping(value = "isExistId", produces = "application/json; charset=UTF-8")
 	@ResponseBody

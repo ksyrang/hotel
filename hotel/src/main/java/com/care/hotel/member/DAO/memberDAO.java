@@ -15,7 +15,7 @@ public interface memberDAO {
 	
 	int memberExInsert(memberExDTO memberExDto);
 	
-	int memberInsert(memberDTO memberDto);
+	int memberInsert(memberDTO member);
 	
 	memberDTO memberInfo(String memberId);
 	

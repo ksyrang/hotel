@@ -18,5 +18,5 @@ public interface ImemberSvc {
 	public String isExistId(String id);
 	
 	// 멤버 회원 가입 
-	public String memberInsert(memberDTO memberDTO, memberExDTO memberExDTO);
+	public String memberJoin(memberDTO member, memberExDTO memberEx) throws Exception;
 }

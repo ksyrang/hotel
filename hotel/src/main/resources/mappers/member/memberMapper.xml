@@ -66,7 +66,7 @@
 	
 	<!-- memberExInsert -->
 	<insert id="memberExInsert" parameterType="com.care.hotel.member.DTO.memberExDTO">
-		INSERT INTO member_extra VALUES(#{memberId}, #{memberZipcode}, #{memberAddr1}, #{memberAddr2}, #{memberHomePhone} ) 
+		INSERT INTO member_extra VALUES(#{memberId}, #{memberZipcode, jdbcType=VARCHAR2}, #{memberAddr1, jdbcType=VARCHAR2}, #{memberAddr2, jdbcType=VARCHAR2}, #{memberHomePhone, jdbcType=VARCHAR2} ) 
 	</insert>
 	
 	<!-- memberUpdate -->
@@ -88,10 +88,10 @@
 	
 	<!-- 아이디 중복 확인 -->
 	<select id="isExistId" parameterType="String" resultType="int">
-		SELECT count(*) FROM login WHERE memberId=#{memberId}
+		SELECT count(*) FROM member WHERE memberId=#{memberId}
 	</select>
 	<!-- 이메일 중복 확인 -->
 	<select id="isExistEmail" parameterType="String" resultType="int">
-		SELECT count(*) FROM login WHERE memberEmail=#{memberEmail}
+		SELECT count(*) FROM member WHERE memberEmail=#{memberEmail}
 	</select>
 </mapper>
