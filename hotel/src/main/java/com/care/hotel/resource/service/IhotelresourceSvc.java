@@ -3,6 +3,7 @@ package com.care.hotel.resource.service;
 import java.util.ArrayList;
 
 import com.care.hotel.resourceDTO.hotelDTO;
+import com.care.hotel.resourceDTO.roomDTO;
 
 public interface IhotelresourceSvc {
 	
@@ -20,5 +21,7 @@ public interface IhotelresourceSvc {
 	
 	/* 모든 호텔 정보 보기 */
 	public ArrayList<hotelDTO> allHotelInfo();
+
+	public int roomModify(roomDTO roomInfo);
 	
 }

@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.care.hotel.resource.service.IhotelresourceSvc;
 import com.care.hotel.resourceDTO.hotelDTO;
+import com.care.hotel.resourceDTO.roomDTO;
 
 @Controller
 public class hotelresourceController {
@@ -30,7 +31,7 @@ public class hotelresourceController {
 	@RequestMapping("hotelInfoProc")
 	public String hotelInfoProc(String hotelId, Model model) {
 		if(hotelId ==""||hotelId == null) return "redirect:hotellistProc";
-		hotellistSVC.hotelInfo(hotelId);
+		if(session.getAttribute("hotelInfo") == null) hotellistSVC.hotelInfo(hotelId);
 		return "forward:/admin_index?formpath=admin_hotelInfo";
 	}	
 	@RequestMapping("prehotelModifyProc")
@@ -40,9 +41,17 @@ public class hotelresourceController {
 	}
 	
 	@PostMapping("hotelModifyProc")
-	public String hotelModifyProc(hotelDTO hotelInfo, Model model) {
-		System.out.println("hotelModifyProc 진입");
-		int result = hotellistSVC.hotelModify(hotelInfo);
+	public String hotelModifyProc(hotelDTO hotelInfo, String hotelPw, String hotelPwC, Model model) {
+		if((hotelPw == null || hotelPw.isEmpty()) && (hotelPwC == null || hotelPwC.isEmpty())) {//null일 경우 기존의 PW를 입력
+			hotelInfo.setHotelPw(((hotelDTO)session.getAttribute("hotelInfo")).getHotelPw());
+		}
+		else if(!hotelPw.equals(hotelPwC)) {
+			return "forward:/admin_index?formpath=admin_hotelInfoModify";
+		}
+		System.out.println("pw : "+hotelInfo.getHotelPw());
+//		int result = hotellistSVC.hotelModify(hotelInfo);
+//		System.out.println("업데이트 결과"+result);
+		
 //		if(result == 1) {
 //			return "forward:/admin_index?formpath=admin_hotelList";
 //		}
@@ -77,6 +86,17 @@ public class hotelresourceController {
 	public String preroomModifyProc(String roomId, Model model) {
 		if(roomId ==""||roomId == null) return "redirect:roomlistProc";
 		hotellistSVC.roomInfo(roomId);
-		return "forward:/admin_index?formpath=admin_roomInfoModify";
+		return "forward:/admin_index?formpath=";
 	}
+	
+	@RequestMapping("roomModifyProc")
+	public String roomModifyProc(roomDTO roomInfo, Model model) {
+		int result = hotellistSVC.roomModify(roomInfo);
+//		if(result == 1) {
+//			return "forward:/admin_index?formpath=admin_hotelList";
+//		}
+		String roomId = roomInfo.getHotelId();
+		return "redirect:roomInfoProc?roomId="+roomId;
+	}
+	
 }

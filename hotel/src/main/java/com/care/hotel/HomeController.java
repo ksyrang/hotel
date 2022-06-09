@@ -170,6 +170,12 @@ public class HomeController {
 		return "admin/room/roomInfoForm";
 	}
  	
+	@GetMapping("admin_roomInfoModify")
+	public String admin_roomInfoModify() {
+		
+		return "admin/room/roomInfomodifyform";
+	}
+	
 	/* 관리자 예약 목록 */
 	@RequestMapping(value="admin_reservationList")
 	public String admin_reservationList() {
