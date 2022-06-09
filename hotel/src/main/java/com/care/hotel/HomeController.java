@@ -151,7 +151,7 @@ public class HomeController {
 		return "admin/hotel/hotelInfomodifyform";
 	}	
 	
-	@GetMapping("admin_hoteldelete")
+	@GetMapping("admin_hotelDelete")
 	public String admin_hoteldelete(Model model, String hotelId) {
 		session.setAttribute("hotelId", hotelId);
 		return "admin/hotel/hoteldeleteForm";
