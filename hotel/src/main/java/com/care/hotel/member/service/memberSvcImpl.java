@@ -104,18 +104,19 @@ public class memberSvcImpl implements ImemberSvc{
 	}
 	
 	@Override
-	public String isExistId(String id) {
-		if (id == null)
-			return "아이디를 입력 후 다시 시도하세요.";
-		int count = memberDAO.isExistId(id);
-		if (count == 1)
-			return "중복 아이디 입니다.";
-
-		return "사용 가능한 아이디입니다.";
+	public memberDTO isExistId(String memberId) {
+		if (memberId == null)
+			System.out.println("아이디를 입력 후 다시 시도하세요.");
+			
+		memberDTO member = memberDAO.isExistId(memberId);
+		if (member != null)
+			System.out.println("중복 아이디 입니다.");
+		System.out.println("사용 가능한 아이디입니다.");
+		return member;
 	}
 	
 	@Override
-	public String memberJoin(memberDTO member, memberExDTO memberEx) throws Exception {
+	public String memberJoin(memberDTO member, memberExDTO memberExDTO) throws Exception {
 		
 //		if (memberDTO.getMemberId() == null || memberDTO.getMemberId().isEmpty())
 //			return "아이디를 입력하세요.";
@@ -134,17 +135,21 @@ public class memberSvcImpl implements ImemberSvc{
 //		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 //		String securePw = encoder.encode(memberDTO.getMemberPw());
 //		memberDTO.setMemberPw(securePw);
-
-		memberDAO.memberInsert(member);
-		memberDAO.memberExInsert(memberEx);
+		
+		
+			memberDAO.memberInsert(member);
+			memberDAO.memberExInsert(memberExDTO);
+		
+		
+		
 
 		if ("m".equals(member.getMemberGender()) || "w".equals(member.getMemberGender()) || "n".equals(member.getMemberGender()))
 			memberDAO.memberInsert(member);
 
-		if (!("".equals(memberEx.getMemberZipcode())))
-			memberDAO.memberExInsert(memberEx);
-		if (!("".equals(memberEx.getMemberHomePhone())))
-			memberDAO.memberExInsert(memberEx);
+		if (!("".equals(memberExDTO.getMemberZipcode())))
+			memberDAO.memberExInsert(memberExDTO);
+		if (!("".equals(memberExDTO.getMemberHomePhone())))
+			memberDAO.memberExInsert(memberExDTO);
 		return "가입 완료";
 	}
 

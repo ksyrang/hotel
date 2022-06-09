@@ -37,16 +37,16 @@ public class MemJoinController {
 	@RequestMapping(value = "/memJoinForm", method = RequestMethod.POST)
 	public String memJoinFormPOST(memberDTO member, memberExDTO memberExDTO, Model model, RedirectAttributes ra) throws Exception {
 		
-		logger.info("join 진입");
-		
+		logger.info("회원 데이터 생성");
 		//회원가입 서비스 진행
 		String msg = memberService.memberJoin(member, memberExDTO);
-		if(msg.equals("가입 완료")) {
+		System.out.println("msg : " + msg);
+		if(!(msg.equals("가입 완료"))) {
 			ra.addFlashAttribute("msg", msg);
-			return "redirect:/index?formpath=memberInsert";
+			return "redirect:memjoinForm";
 		}else {
 			model.addAttribute("msg", msg);
-			return "forward:/";
+			return "forward:/index?formpath=memberInsert";
 		}	
 	}
 	
@@ -65,8 +65,8 @@ public class MemJoinController {
 	
 	@PostMapping(value = "isExistId", produces = "application/json; charset=UTF-8")
 	@ResponseBody
-	public String isExistId(@RequestBody(required = false) String id) {
-		String msg = memberService.isExistId(id);
-		return msg;
+	public memberDTO isExistId(@RequestBody(required = false) String memberId) {
+		memberDTO member = memberService.isExistId(memberId);
+		return member;
 	}
 }	

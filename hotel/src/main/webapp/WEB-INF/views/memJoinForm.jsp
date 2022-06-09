@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="ko" class="webkit chrome win  retina ratio1_25 js portrait tabletwide"><head>
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
@@ -87,23 +88,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <dl class="skipNavi">
 	<dt>THE SHILLA 바로가기 메뉴</dt><dd><a class="goContents" href="#contents">본문으로 바로가기</a></dd></dl>
-
-
-		<script type="text/javascript">
-	$(document).ready(function(){
-		$(".findBtn a").click(function(){
-		 	$(".findBox").slideToggle("fast");
-		});
-	});
-	function ssoLogout() {
-		location.href = "/mem/login/SSOLogout.do";
-
-	}
-	$( "#benefitBtn" ).click(function() {
-		  $( "#showCardbox" ).show( "slow" );
-		  $( "#hiddencardbox" ).hide( "slow" );
-	});
-</script>
 
 <script>
 	document.oncontextmenu = function(){ // 컨텍스트 메뉴금지
@@ -391,30 +375,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					<tr class="first">
 						<th scope="row" class="first"><em class="ast">*</em> 성명(국문)</th>
 						<td class="first">
-							<label for="titlCd" class="nameH">경칭</label>
+							<label for="memberGender" class="nameH">경칭</label>
 							<select name="memberGender" id="memberGender" style="width: 85px; height: 27px; line-height: 27px;">
 							<option value="" selected disabled>선택</option>
-							<option value="M" title="M">남</option>
-							<option value="W" title="W." >여</option>
-							<option value="N" title="N" >선택안함</option>
+							<option value="m" title="m">남</option>
+							<option value="w" title="w" >여</option>
+							<option value="n" title="n" >선택안함</option>
 							</select>
-						<!--	<div class="selector" id="uniform-titlCd" style="width: 71px;"><span style="width: 46px; user-select: none;">
-										선택</span><select id="titlCd" class="nameH uiform" name="titlCd">
-								<option value="">선택</option>
-								<option value="Miss." title="Ms.">
-											Ms.</option>
-									<option value="Mr." title="Mr." selected>
-											Mr.</option>
-									</select></div>  -->
-							<input type="text" class="lastNameEn uiform text" id="memberNameKR" name="memberNameKR" maxlength="30" value="" autocomplete="off">
+
+							<input type="text" class="lastNameEn uiform text" id="memberNameKR" name="memberNameKR" maxlength="30" value="" autocomplete="off" />
 						</td>
 					</tr>
 					
 					<tr>
 						<th scope="row"><em class="ast">*</em> 성명(영문)</th>
 						<td>
-							<label for="memberNameENG" class="firstNameEn">띄어쓰기 없이 적기</label>
-							<input id="memberNameENG" name="memberNameENG" onkeyup="this.value=this.value.replace(/[^a-z]/gi,'');" style="text-transform: uppercase;" type="text" class="lastNameEn uiform text" value="" maxlength="30" autocomplete="off">
+							<input id="memberNameENG" name="memberNameENG" placeholder='띄어쓰기 없이 작성' onkeyup="this.value=this.value.replace(/[^a-z]/gi,'');" style="text-transform: uppercase;" type="text" class="lastNameEn uiform text" value="" maxlength="30" autocomplete="off" />
 						</td>
 							
 					</tr>
@@ -423,13 +399,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					<tr>
 						<th scope="row"><em class="ast">*</em> 생년월일</th>
 						<td>
-						<input id="memberBirth" name="memberBirth" placeholder="-빼고 8자리로 작성" onkeyup="this.value=this.value.replace(/[^0-9]/gi,'');" style="text-transform: uppercase;" type="text" class="lastNameEn uiform text" value="" maxlength="8" autocomplete="off">
+						<input id="memberBirth" name="memberBirth" placeholder='- 빼고 8자리로 작성' onkeyup="this.value=this.value.replace(/[^0-9]/gi,'');" style="text-transform: uppercase;" type="text" class="lastNameEn uiform text" value="" maxlength="8" autocomplete="off" />
 						</td>
 					</tr>
 					
 					<!-- 이메일 -->
 
-					<tr id="memberEmail">
+					<tr>
 						<th scope="row"><em class="ast">*</em> 이메일 </th>
 						<td>
 							<input id="memberEmail" name="memberEmail"  type="text" size="20" value="" onkeyup="this.value=this.value.replace(/[^a-z0-9_.@-]/gi,'');" maxlength="40" title="이메일주소 입력" autocomplete="off"> 
@@ -444,70 +420,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 						</td>
 					</tr>
 					<!-- 휴대전화 -->
-					<tr id="memberMobile">
+					<tr>
 						<th scope="row"><em class="ast">*</em> 휴대전화 </th>
 						<td>
-							<label for="mbno1" class="phoneComp">휴대폰국번</label>
-							<select name="mobileFirst" style="width: 85px; height: 27px; line-height: 27px;">
-								<option value="010" title="010">010</option>
-								<option value="011" title="011">011</option>
-								<option value="016" title="016">016</option>
-								<option value="017" title="017">017</option>
-								<option value="018" title="018">018</option>
-								<option value="019" title="019">019</option>
-							</select>
-						-
-							<label for="mbno2" class="phoneNum1">휴대폰앞번호</label>
-							<input type="text" class="uiform phoneNum1 text" id="mbno2" name="mbno2" value="" maxlength="4" onkeyup="this.value=this.value.replace(/[^\d\ ]/g, '')" autocomplete="off">
-							-
-							<label for="mbno3" class="phoneNum2">휴대폰뒷번호</label>
-							<input type="text" class="uiform phoneNum2 text" id="mbno3" name="mbno3" value="" maxlength="4" onkeyup="this.value=this.value.replace(/[^\d\ ]/g, '')" autocomplete="off">
-							
-							
+							<input type="text" class="uiform phoneNum2 text" placeholder='- 빼고 작성' id="memberMobile" name="memberMobile" value="" maxlength="11" onkeyup="this.value=this.value.replace(/[^\d\ ]/g, '')" autocomplete="off">	
 						</td>
 					</tr>
 					<!-- 자택전화 -->
-					<tr id="memberHomePhone">
+					<tr>
 						<th scope="row"> 자택전화</th>
 						<td>
-							<label for="phno1" class="phoneComp">국번</label>
-							<select name="homeFirst" style="width: 85px; height: 27px; line-height: 27px;">
-								<option value=""selected disabled>선택</option>
-								<option value="02" title="02" >02</option>
-								<option value="031" title="031">031</option>
-								<option value="032" title="032">032</option>
-								<option value="033" title="033">033</option>
-								<option value="041" title="041">041</option>
-								<option value="042" title="042">042</option>
-								<option value="043" title="043">043</option>
-								<option value="044" title="044">044</option>
-								<option value="051" title="051">051</option>
-								<option value="052" title="052">052</option>
-								<option value="053" title="053">053</option>
-								<option value="054" title="054">054</option>
-								<option value="055" title="055">055</option>
-								<option value="061" title="061">061</option>
-								<option value="062" title="062">062</option>
-								<option value="063" title="063">063</option>
-								<option value="064" title="064">064</option>
-								<option value="0130" title="0130">0130</option>
-								<option value="080" title="080">080</option>
-								<option value="070" title="070">070</option>
-								<option value="0506" title="0506">0506</option>
-								<option value="0502" title="0502">0502</option>
-								<option value="0503" title="0503">0503</option>
-								<option value="0504" title="0504">0504</option>
-								<option value="0507" title="0507">0507</option>
-								<option value="0505" title="0505">0505</option>
-								<option value="0303" title="0303">0303</option>
-							</select>
-							-
-							<label for="phno2" class="phoneHome1">집전화앞번호</label>
-							<input type="text" class="uiform phoneHome1 text" id="phno2" name="phno2" maxlength="4" onkeyup="this.value=this.value.replace(/[^\d\ ]/g, '')" autocomplete="off">
-							-
-							<label for="phno3" class="phoneHome2">집전화뒷번호</label>
-							<input type="text" class="uiform phoneHome2 text" id="phno3" name="phno3" maxlength="4" onkeyup="this.value=this.value.replace(/[^\d\ ]/g, '')" autocomplete="off">
-							
+							<input type="text" class="uiform phoneHome2 text" placeholder='- 빼고 작성' id="memberHomePhone" name="memberHomePhone" maxlength="10" onkeyup="this.value=this.value.replace(/[^\d\ ]/g, '')" autocomplete="off">
 						</td>
 					</tr>
 					<tr class="last">
@@ -553,7 +476,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 							<tbody><tr class="first">
 								<th scope="row" class="first"><em class="ast">*</em> 아이디</th>
 								<td class="first"><input type="text" id="memberId" name="memberId" class="uiform text" maxlength="15" autocomplete="off" style="width:130px">
-								<span class="idConfirm"><input type="button" value="중복 확인" onclick="isExistId()"></span><span class="msgCheck msgCheck2">5~12자  이내 영문 또는 영문/숫자 조합</span></td>
+								<span class="idConfirm"><input type="button" value="중복 확인" onclick="isExistId()"></span><span class="msgCheck msgCheck2">8자  이내 영문 또는 영문/숫자 조합</span></td>
 							</tr>
 					<tr>
 						<th scope="row"><em class="ast">*</em> 비밀번호</th>
@@ -597,10 +520,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
            		<!--  onclick="nextStep();"-->
 				
 				<div class="btnList">
-				 <a href="${root }index?formpath=memberInsert" >회원가입</a>&nbsp;&nbsp;
-				  <a href="${root }index?formpath=memJoinForm">취소</a>
-			 	<input type=button class="join_button" value='회원 가입' style="width: 120px;" />
-				<input type=reset value='취소' style="width: 120px; "/>
+			 	<input type=button value='회원 가입' onclick="location.href='${root }index?formpath=memberInsert'" style="width: 60px;" />
+				<input type=reset value='취소' style="width: 60px; "/>
 				</div>
 			
 			</div>
@@ -618,7 +539,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	$(document).ready(function(){
 	//회원가입 버튼(회원가입 기능 작동)
 		$(".join_button").click(function(){
-			$("#join_form").attr("action", "${root }index?formpath=memJoinForm");
+			$("#join_form").attr("action", "${root }index?formpath=memberInsert");
 			$("#join_form").submit();
 		});
 	});

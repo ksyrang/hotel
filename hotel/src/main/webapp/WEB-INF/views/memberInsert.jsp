@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="ko" class="webkit chrome win  retina ratio1_25 js portrait tabletwide"><head>
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
@@ -20,7 +21,11 @@
 <meta name="description" content="국내 최고 럭셔리 호텔인 호텔신라는 신라호텔과 신라스테이 브랜드를 보유하고 있습니다.">
 <meta name="subject" content="신라스테이 소개,신라 리워즈 안내,브랜드 및 호텔 소개,객실 패키지 안내,온라인 최저가 예약,">
 </head><body class="subBody joinBody"><div id="popCalendarDiv" class="popCalendar" style="display:none"></div>
-
+<c:if test="${not empty msg }">
+	<script>alert("${msg}");</script>
+</c:if>
+    <jsp:useBean id="member" class="com.care.hotel.member.DTO.memberDTO"/>
+    <jsp:setProperty property="*" name="member"/>
 <script src="/js/json2.js" charset="UTF-8"></script>
 <script src="/js/jquery-1.8.3.js" charset="UTF-8"></script>
 <script src="/js/uniform.js" charset="UTF-8"></script>
@@ -83,24 +88,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <dl class="skipNavi">
 	<dt>THE SHILLA 바로가기 메뉴</dt><dd><a class="goContents" href="#contents">본문으로 바로가기</a></dd></dl>
 
-
-	<div class="head headHub">
-		<script type="text/javascript">
-	$(document).ready(function(){
-		$(".findBtn a").click(function(){
-		 	$(".findBox").slideToggle("fast");
-		});
-	});
-	function ssoLogout() {
-		location.href = "/mem/login/SSOLogout.do";
-
-	}
-	$( "#benefitBtn" ).click(function() {
-		  $( "#showCardbox" ).show( "slow" );
-		  $( "#hiddencardbox" ).hide( "slow" );
-	});
-</script>
-
 <script>
 	document.oncontextmenu = function(){ // 컨텍스트 메뉴금지
 		return false;
@@ -111,22 +98,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	
 	<div class="contain">
 		<script type="text/javascript">
-<!--
-$(window.document).ready(function(){
-	var todayDt = new Date();
-	var startDt = new Date();
-	startDt.setFullYear("2019");	
-	startDt.setMonth("0");	
-	startDt.setDate("1");	
-	
-	if ( todayDt >= startDt){
-		$("#join").show();
-	}else{
-		$("#join").hide();
-	}
-	
-});
-//-->
 </script>
 
 <div class="container">
@@ -148,26 +119,22 @@ $(window.document).ready(function(){
 			</div>
 			<div class="top">
 				<h3 class="tit">감사합니다</h3>
-				<p class="info1">${memberDTO.getMemberNameKR }님께서는 신라리워즈에 정상적으로 가입되셨습니다.</p>
+				<p class="info1">${member.memberNameKR }님께서는 신라리워즈에 정상적으로 가입되셨습니다.</p>
 			</div>
 				
 			<!-- 추가 멤버십 박스 시작 -->
 				<div class="goldBox bold3px">
 					<ul class="rewardsBox">
-						<li class="first"><img src="${pageContext.request.contextPath}/images/ko/common/join/joinGoldbox_text1.png" alt="신라 리워즈 번호"></li>
-						<li class="reWnum last">2094836</li>
-					</ul>
-					<ul class="rewardsBox">
 						<li class="first"><img src="${pageContext.request.contextPath}/images/ko/common/join/joinGoldbox_text2.png" alt="아이디"></li>
-						<li class="reWnum last">${memberDTO.getMemberId }</li>
+						<li class="reWnum last">${member.memberId}</li>
 					</ul>
 					<div class="glayBox">
-						신라리워즈 번호는 가입 시 기재하신 이메일로도 발송되었습니다. <br> 로그인 하신 후 다양한 혜택과 서비스를 경험해보시기 바랍니다.</div>
+					 로그인 하신 후 다양한 혜택과 서비스를 경험해보시기 바랍니다.</div>
 				</div>
 			<!-- 추가 멤버십 박스 끝 -->
 			<br>
 			<div class="btnList">
-				<a href="${root }index?formpath=memLoginForm" class="btnGoLogin">로그인</a>
+				<a href="${root }index?formpath=login" class="btnGoLogin">로그인</a>
 			</div>
 		</div>
 	</div>
