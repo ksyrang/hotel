@@ -153,8 +153,7 @@ public class HomeController {
 	
 	@GetMapping("admin_hoteldelete")
 	public String admin_hoteldelete(Model model, String hotelId) {
-		String sessionhotelId = (String)session.getAttribute("hotelId");
-		if(sessionhotelId == null)	session.setAttribute("hotelId", hotelId);
+		session.setAttribute("hotelId", hotelId);
 		return "admin/hotel/hoteldeleteForm";
 	}
  	/* 룸 관리 */
@@ -178,8 +177,7 @@ public class HomeController {
 	
 	@GetMapping("admin_roomDelete")
 	public String admin_roomDelete(Model model, String roomId) {
-		String sessionroomId = (String)session.getAttribute("roomId");
-		if(sessionroomId == null)	session.setAttribute("roomId", roomId);
+		session.setAttribute("roomId", roomId);
 		return "admin/room/roomdeleteForm";
 	}
 	
