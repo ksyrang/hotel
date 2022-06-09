@@ -388,7 +388,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					</colgroup>
 					
 					<tbody>
-					<tr id="memberGender" class="first">
+					<tr class="first">
 						<th scope="row" class="first"><em class="ast">*</em> 성명(국문)</th>
 						<td class="first">
 							<label for="titlCd" class="nameH">경칭</label>
@@ -406,121 +406,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 									<option value="Mr." title="Mr." selected>
 											Mr.</option>
 									</select></div>  -->
-							<input type="text" class="lastNameEn uiform text" id="memberNameKR" name="mbrNm" maxlength="30" value="" autocomplete="off">
+							<input type="text" class="lastNameEn uiform text" id="memberNameKR" name="memberNameKR" maxlength="30" value="" autocomplete="off">
 						</td>
 					</tr>
 					
-					<tr id="memberNameENG">
+					<tr>
 						<th scope="row"><em class="ast">*</em> 성명(영문)</th>
 						<td>
-							<label for="mbrEnFnm" class="firstNameEn">First name(이름)</label>
-							<input id="mbrEnFnm" name="mbrEnFnm" onkeyup="this.value=this.value.replace(/[^a-z]/gi,'');" style="text-transform: uppercase;" type="text" class="lastNameEn uiform text" value="" maxlength="30" autocomplete="off">
-							<label for="mbrEnLnm" class="lastNameEn">Last name(성)</label>
-							<input id="mbrEnLnm" name="mbrEnLnm" onkeyup="this.value=this.value.replace(/[^a-z]/gi,'');" style="text-transform: uppercase;" type="text" class="lastNameEn uiform text" value="" maxlength="30" autocomplete="off"></td>
+							<label for="memberNameENG" class="firstNameEn">띄어쓰기 없이 적기</label>
+							<input id="memberNameENG" name="memberNameENG" onkeyup="this.value=this.value.replace(/[^a-z]/gi,'');" style="text-transform: uppercase;" type="text" class="lastNameEn uiform text" value="" maxlength="30" autocomplete="off">
+						</td>
 							
 					</tr>
 			
 					<!-- 생년월일 -->
-					<tr id="memberBirth">
+					<tr>
 						<th scope="row"><em class="ast">*</em> 생년월일</th>
 						<td>
-						
-						<select name="year" style="width: 85px; height: 27px; line-height: 27px;">
-							<option value="" selected disabled>선택</option>
-							<option value="2003">2003</option>
-							<option value="2002">2002</option>
-							<option value="2001">2001</option>
-							<option value="2000">2000</option>
-							<option value="1999">1999</option>
-							<option value="1998">1998</option>
-							<option value="1997">1997</option>
-							<option value="1996">1996</option>
-							<option value="1995">1995</option>
-							<option value="1994">1994</option>
-							<option value="1993">1993</option>
-							<option value="1992">1992</option>
-							<option value="1991">1991</option>
-							<option value="1990">1990</option>
-							<option value="1989">1989</option>
-							<option value="1989">1988</option>
-							<option value="1987">1987</option>
-							<option value="1986">1986</option>
-							<option value="1986">1985</option>
-							<option value="1984">1984</option>
-							<option value="1983">1983</option>
-							<option value="1982">1982</option>
-							<option value="1981">1981</option>
-							<option value="1980">1980</option>
-							<option value="1979">1979</option>
-							<option value="1978">1978</option>
-							<option value="1977">1977</option>
-							<option value="1976">1976</option>
-							<option value="1975">1975</option>
-							<option value="1974">1974</option>
-							<option value="1973">1973</option>
-							<option value="1972">1972</option>
-							<option value="1971">1971</option>
-							<option value="1970">1970</option>
-							<option value="1969">1969</option>
-							<option value="1968">1968</option>
-							<option value="1967">1967</option>
-							<option value="1966">1966</option>
-							<option value="1965">1965</option>
-							<option value="1964">1964</option>
-							<option value="1963">1963</option>
-							<option value="1962">1962</option>
-							<option value="1961">1961</option>
-							<option value="1960">1960</option>
-						</select>
-								<select name="month" style="width: 85px; height: 27px; line-height: 27px;">
-								<option value="" selected disabled>선택</option>
-								<option value="1" title="1">1</option>
-								<option value="2" title="2">2</option>
-								<option value="3" title="3">3</option>
-								<option value="4" title="4">4</option>
-								<option value="5" title="5">5</option>
-								<option value="6" title="6">6</option>
-								<option value="7" title="7">7</option>
-								<option value="8" title="8">8</option>
-								<option value="9" title="9">9</option>
-								<option value="10" title="10">10</option>
-								<option value="11" title="11">11</option>
-								<option value="12" title="12">12</option>
-							</select>
-							<select name="day" style="width: 85px; height: 27px; line-height: 27px;">
-							<option value="" selected disabled>선택</option>
-								<option value="1" title="1">1</option>
-								<option value="2" title="2">2</option>
-								<option value="3" title="3">3</option>
-								<option value="4" title="4">4</option>
-								<option value="5" title="5">5</option>
-								<option value="6" title="6">6</option>
-								<option value="7" title="7">7</option>
-								<option value="8" title="8">8</option>
-								<option value="9" title="9">9</option>
-								<option value="10" title="10">10</option>
-								<option value="11" title="11">11</option>
-								<option value="12" title="12">12</option>
-								<option value="13" title="13">13</option>
-								<option value="14" title="14">14</option>
-								<option value="15" title="15">15</option>
-								<option value="16" title="16">16</option>
-								<option value="17" title="17">17</option>
-								<option value="18" title="18">18</option>
-								<option value="19" title="19">19</option>
-								<option value="20" title="20">20</option>
-								<option value="21" title="21">21</option>
-								<option value="22" title="22">22</option>
-								<option value="23" title="23">23</option>
-								<option value="24" title="24">24</option>
-								<option value="25" title="25">25</option>
-								<option value="26" title="26">26</option>
-								<option value="27" title="27">27</option>
-								<option value="28" title="28">28</option>
-								<option value="29" title="29">29</option>
-								<option value="30" title="30">30</option>
-								<option value="31" title="31">31</option>
-							</select>
+						<input id="memberBirth" name="memberBirth" placeholder="-빼고 8자리로 작성" onkeyup="this.value=this.value.replace(/[^0-9]/gi,'');" style="text-transform: uppercase;" type="text" class="lastNameEn uiform text" value="" maxlength="8" autocomplete="off">
 						</td>
 					</tr>
 					
@@ -529,21 +432,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					<tr id="memberEmail">
 						<th scope="row"><em class="ast">*</em> 이메일 </th>
 						<td>
-							<input id="email01" name="email01"  type="text" size="20" value="" onkeyup="this.value=this.value.replace(/[^a-z0-9_.@-]/gi,'');" maxlength="40" title="이메일주소 입력" autocomplete="off">
-							<span class="at">@</span> 
-							
-							<input id="email02" name="email02"  type="text" size="20" value="" onkeyup="this.value=this.value.replace(/[^a-z0-9_.@-]/gi,'');" maxlength="40" title="이메일주소 도메인 입력" autocomplete="off">
-							<select id="memberEmail" name="memberEmail" style="width: 115px; height: 27px; line-height: 27px;" onchange="email02.value=this.value">
-							<option value="" selected disabled>E-Mail 선택</option>
-							<option value="">직접입력하기</option>
-							<option value="naver.com" title="naver.com">naver.com</option>
-							<option value="hanmail.net" title="hanmail.net">hanmail.net</option>
-							<option value="nate.com" title="nate.com">nate.com</option>
-							<option value="gmail.com" title="gmail.com">gmail.com</option>
-							<option value="hotmail.com" title="hotmail.com">hotmail.com</option>
-							<option value="yahoo.co.kr" title="yahoo.co.kr">yahoo.co.kr</option>
-							</select> 
-						<input type="button" value="이메일 인증번호 전송" onclick="sendAuth()">
+							<input id="memberEmail" name="memberEmail"  type="text" size="20" value="" onkeyup="this.value=this.value.replace(/[^a-z0-9_.@-]/gi,'');" maxlength="40" title="이메일주소 입력" autocomplete="off"> 
+							<input type="button" value="이메일 인증번호 전송" onclick="sendAuth()">
 						</td>
 					</tr>
 					<tr>

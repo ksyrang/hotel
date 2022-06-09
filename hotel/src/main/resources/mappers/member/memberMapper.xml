@@ -66,7 +66,7 @@
 	
 	<!-- memberExInsert -->
 	<insert id="memberExInsert" parameterType="com.care.hotel.member.DTO.memberExDTO">
-		INSERT INTO member_extra VALUES(#{memberId}, #{memberZipcode, jdbcType=VARCHAR2}, #{memberAddr1, jdbcType=VARCHAR2}, #{memberAddr2, jdbcType=VARCHAR2}, #{memberHomePhone, jdbcType=VARCHAR2} ) 
+		INSERT INTO member_extra VALUES(#{memberId}, #{memberZipcode}, #{memberAddr1}, #{memberAddr2}, #{memberHomePhone} ) 
 	</insert>
 	
 	<!-- memberUpdate -->
