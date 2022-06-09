@@ -176,10 +176,10 @@ public class HomeController {
 		return "admin/room/roomInfomodifyform";
 	}
 	
-	@GetMapping("admin_roomdelete")
-	public String admin_roomdelete(Model model, String hotelId) {
+	@GetMapping("admin_roomDelete")
+	public String admin_roomDelete(Model model, String roomId) {
 		String sessionroomId = (String)session.getAttribute("roomId");
-		if(sessionroomId == null)	session.setAttribute("roomId", hotelId);
+		if(sessionroomId == null)	session.setAttribute("roomId", roomId);
 		return "admin/room/roomdeleteForm";
 	}
 	

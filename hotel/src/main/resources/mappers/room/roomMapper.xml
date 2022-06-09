@@ -51,5 +51,10 @@
    <select id="roomInfo" resultType="com.care.hotel.resourceDTO.roomDTO" parameterType="String">
       SELECT * FROM room WHERE roomid = #{roomId}   
    </select>
-
+   <update id="roomUpdate" parameterType="com.care.hotel.resourceDTO.roomDTO">
+      UPDATE room set hotelid=#{hotelid}, roomtype=#{roomType}, bedtype=#{bedType}, availableperson=#{availablePerson}WHERE roomid=#{roomId}
+   </update>   
+   <delete id="roomDelete" parameterType="String">
+      DELETE FROM room WHERE roomid=#{roomId}
+   </delete>
 </mapper>

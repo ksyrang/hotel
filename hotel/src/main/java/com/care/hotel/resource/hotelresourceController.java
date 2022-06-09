@@ -58,10 +58,14 @@ public class hotelresourceController {
 		return "redirect:hotelInfoProc?hotelId="+hotelId;
 	}	
 	@RequestMapping("hoteldeleteProc")
-	public String hoteldeleteProc(String hotelId, String adminId, String adminPw) {
+	public String hoteldeleteProc(String adminId, String adminPw) {
+		String hotelId = (String)session.getAttribute("hotelId");
 		boolean result = hotellistSVC.hotelDelte(hotelId, adminId, adminPw);
 		
-		if(result) return "redirect:hotellistProc"; //성공
+		if(result) {
+			session.removeAttribute("hotelId");
+			return "redirect:hotellistProc"; //성공
+		}
 		else return "redirect:/admin_index?formpath=admin_hoteldelete"; // 실패
 	}
 	
@@ -99,10 +103,14 @@ public class hotelresourceController {
 	}
 	
 	@RequestMapping("roomdeleteProc")
-	public String roomdeleteProc(String roomId, String adminId, String adminPw) {
+	public String roomdeleteProc(String adminId, String adminPw) {
+		String roomId = (String)session.getAttribute("roomId");
+		System.out.println("roomId : "+roomId);
 		boolean result = hotellistSVC.roomDelete(roomId, adminId, adminPw);
-		
-		if(result) return "redirect:roomlistProc"; //성공
+		if(result) {
+			session.removeAttribute("roomId");
+			return "redirect:roomlistProc"; //성공
+		}
 		else return "redirect:/admin_index?formpath=admin_roomdelete"; // 실패
 	}
 	

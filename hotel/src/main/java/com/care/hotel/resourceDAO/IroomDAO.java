@@ -17,9 +17,7 @@ public interface IroomDAO {
 	public roomDTO roomInfo(String roomId);
 
 	public int roomUpdate(roomDTO roomInfo);
-	
 
-
-	public void roomDelete(String roomId);
+	public void roomDelete(String sroomId);
 
 }

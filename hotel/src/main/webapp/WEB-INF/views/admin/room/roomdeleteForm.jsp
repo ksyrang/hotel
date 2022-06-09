@@ -9,7 +9,7 @@
 		<table>
 			<tr>
 				<th>룸 아이디</th>
-				<td>${roomId }</td>
+				<td>${sessionScope.roomId }</td>
 			</tr>
 			<tr>
 				<th>관리자 아이디</th>
