@@ -58,4 +58,10 @@ public class AdminResevationController {
 		model.addAttribute("period", period);
 		return "forward:/admin_index?formpath=admin_reservationInfo";
 	}
+	
+	/* 관리자 예약 수정 */
+	@RequestMapping(value="admin_reservationModifyProc")
+	public String admin_reservationModifyProc() {
+		return "forward:/admin_index?formpath=admin_reservationModify";
+	}
 }

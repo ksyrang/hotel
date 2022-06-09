@@ -196,6 +196,13 @@ public class HomeController {
 		return "admin/reservation/admin_reservationInfo";
 	}
 	
+	/* 관리자 예약 수정 */
+	@RequestMapping(value="admin_reservationModify")
+	public String admin_reservationModify() {
+		logger.info("admin_reservationModify");
+		return "admin/reservation/admin_reservationModify";
+	}
+	
 	/*admin end*/
 	
 }

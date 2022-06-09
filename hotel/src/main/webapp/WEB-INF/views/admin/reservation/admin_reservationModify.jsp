@@ -8,7 +8,7 @@
 <meta charset="UTF-8">
 <link href="${pageContext.request.contextPath}/resources/css/admin/admin_commonCss.css" rel="stylesheet" type="text/css">
 <link href="${pageContext.request.contextPath}/resources/css/admin/admin_reservationInfo.css" rel="stylesheet" type="text/css">
-<title>admin_reservationInfo</title>
+<title>admin_reservationModify</title>
 </head>
 <body>
 <c:if test="${not empty msg }">
@@ -21,7 +21,7 @@
 	예약정보
 </div>
 <div class="admin_reservationInfoTopRight">
-	<input type="button" value="예약수정" class="admin_commonBtn" onclick="location.href='${root }admin_reservationModifyProc?reservationNo=${resInfo.reservationNo }'">
+	<input type="button" value="예약수정" class="admin_commonBtn">
 	<input type="button" value="예약취소" class="admin_commonBtn">
 	<input type="button" value="결제" class="admin_commonBtnB">
 </div>
