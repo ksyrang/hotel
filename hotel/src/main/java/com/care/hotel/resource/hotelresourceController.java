@@ -31,7 +31,7 @@ public class hotelresourceController {
 	@RequestMapping("hotelInfoProc")
 	public String hotelInfoProc(String hotelId, Model model) {
 		if(hotelId ==""||hotelId == null) return "redirect:hotellistProc";
-		if(session.getAttribute("hotelInfo") == null) hotellistSVC.hotelInfo(hotelId);
+		hotellistSVC.hotelInfo(hotelId);
 		return "forward:/admin_index?formpath=admin_hotelInfo";
 	}	
 	@RequestMapping("prehotelModifyProc")
@@ -49,9 +49,8 @@ public class hotelresourceController {
 			return "forward:/admin_index?formpath=admin_hotelInfoModify";
 		}
 		System.out.println("pw : "+hotelInfo.getHotelPw());
-//		int result = hotellistSVC.hotelModify(hotelInfo);
-//		System.out.println("업데이트 결과"+result);
-		
+		int result = hotellistSVC.hotelModify(hotelInfo);
+		System.out.println("업데이트 결과"+result);		
 //		if(result == 1) {
 //			return "forward:/admin_index?formpath=admin_hotelList";
 //		}
@@ -60,10 +59,10 @@ public class hotelresourceController {
 	}	
 	@RequestMapping("hoteldeleteProc")
 	public String hoteldeleteProc(String hotelId, String adminId, String adminPw) {
-		boolean result = hotellistSVC.hotelDelte(adminId, adminPw);
+		boolean result = hotellistSVC.hotelDelte(hotelId, adminId, adminPw);
 		
 		if(result) return "redirect:hotellistProc"; //성공
-		else return "redirect:/admin_index?formpath=hoteldelete"; // 실패
+		else return "redirect:/admin_index?formpath=admin_hoteldelete"; // 실패
 	}
 	
 	@RequestMapping("roomlistProc")
@@ -86,7 +85,7 @@ public class hotelresourceController {
 	public String preroomModifyProc(String roomId, Model model) {
 		if(roomId ==""||roomId == null) return "redirect:roomlistProc";
 		hotellistSVC.roomInfo(roomId);
-		return "forward:/admin_index?formpath=";
+		return "forward:/admin_index?formpath=admin_roomInfoModify";
 	}
 	
 	@RequestMapping("roomModifyProc")
@@ -95,8 +94,16 @@ public class hotelresourceController {
 //		if(result == 1) {
 //			return "forward:/admin_index?formpath=admin_hotelList";
 //		}
-		String roomId = roomInfo.getHotelId();
+		String roomId = roomInfo.getRoomId();
 		return "redirect:roomInfoProc?roomId="+roomId;
+	}
+	
+	@RequestMapping("roomdeleteProc")
+	public String roomdeleteProc(String roomId, String adminId, String adminPw) {
+		boolean result = hotellistSVC.roomDelete(roomId, adminId, adminPw);
+		
+		if(result) return "redirect:roomlistProc"; //성공
+		else return "redirect:/admin_index?formpath=admin_roomdelete"; // 실패
 	}
 	
 }

@@ -151,8 +151,8 @@ public class HomeController {
 		return "admin/hotel/hotelInfomodifyform";
 	}	
 	
-	@GetMapping("hoteldelete")
-	public String hoteldelete(Model model, String hotelId) {
+	@GetMapping("admin_hoteldelete")
+	public String admin_hoteldelete(Model model, String hotelId) {
 		String sessionhotelId = (String)session.getAttribute("hotelId");
 		if(sessionhotelId == null)	session.setAttribute("hotelId", hotelId);
 		return "admin/hotel/hoteldeleteForm";
@@ -176,6 +176,13 @@ public class HomeController {
 		return "admin/room/roomInfomodifyform";
 	}
 	
+	@GetMapping("admin_roomdelete")
+	public String admin_roomdelete(Model model, String hotelId) {
+		String sessionroomId = (String)session.getAttribute("roomId");
+		if(sessionroomId == null)	session.setAttribute("roomId", hotelId);
+		return "admin/room/roomdeleteForm";
+	}
+	
 	/* 관리자 예약 목록 */
 	@RequestMapping(value="admin_reservationList")
 	public String admin_reservationList() {
@@ -188,6 +195,7 @@ public class HomeController {
 		logger.info("admin_reservationInfo");
 		return "admin/reservation/admin_reservationInfo";
 	}
+	
 	/*admin end*/
 	
 }
