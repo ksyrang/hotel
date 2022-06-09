@@ -86,4 +86,18 @@ public class AdminResevationController {
 		model.addAttribute("msg", reservationSvc.reservationModify(resDTO));
 		return "forward:/admin_reservationInfoProc";
 	}
+	
+	/* 예약 삭제시 관리자 or 호텔 아이디/비밀번호 확인 */
+	@RequestMapping(value="admin_reservationDeleteProc")
+	public String admin_reservationDeleteProc(String reservationNo, Model model) {
+		model.addAttribute(reservationNo);
+		return "forward:/admin_index?formpath=admin_reservationDelete?reservationNo=" + reservationNo;
+	}
+	
+	/* 관리자 or 호텔 아이디/비밀번호 확인 post */
+	@RequestMapping(value="admin_reservationDeleteProc", method = RequestMethod.POST)
+	public String admin_reservationDeleteProc(String reservationNo, String id, String pw, Model model) {
+	
+		return "forward:/admin_index?formpath=admin_reservationDelete?reservationNo=" + reservationNo;
+	}
 }

@@ -203,6 +203,13 @@ public class HomeController {
 		return "admin/reservation/admin_reservationModify";
 	}
 	
+	/* 관리자 예약 삭제 */
+	@RequestMapping(value="admin_reservationDelete")
+	public String admin_reservationDelete() {
+		logger.info("admin_reservationDelete");
+		return "admin/reservation/admin_reservationDelete";
+	}
+	
 	/*admin end*/
 	
 }
