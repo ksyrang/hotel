@@ -1,0 +1,6 @@
+@charset "UTF-8";
+
+.payTable {width: 500px; margin:auto; border-collapse: collapse; color:#907a61;}
+.payTable th {width : 150px; background-color: #f7f7f7; color: #8d605e; padding-left: 10px;}
+
+.selectPayment {width: 300px;}

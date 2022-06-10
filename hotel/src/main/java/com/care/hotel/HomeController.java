@@ -117,21 +117,18 @@ public class HomeController {
 	/* 관리자 회원 정보 */
 	@RequestMapping(value="memberInfo")
 	public String admin_memberInfo() {
-		logger.info("admin_memberInfo");
 		return "admin/member/admin_memberInfo";
 	}
 	
 	/* 관리자 회원 수정 */
 	@RequestMapping(value="memberModify")
 	public String admin_memberModify() {
-		logger.info("admin_memberModify");
 		return "admin/member/admin_memberModify";
 	}
 	
 	/* 관리자 회원 삭제*/
 	@RequestMapping(value="memberDelete")
 	public String admin_memberDelete() {
-		logger.info("admin_memberDelete");
 		return "admin/member/admin_memberDelete";
 	}
 	/* 호텔 관리 */
@@ -190,28 +187,30 @@ public class HomeController {
 	/* 관리자 예약 목록 */
 	@RequestMapping(value="admin_reservationList")
 	public String admin_reservationList() {
-		logger.info("admin_reservationList");
 		return "admin/reservation/admin_reservationList";
 	}
 	/* 관리자 예약 상세 정보*/
 	@RequestMapping(value="admin_reservationInfo")
 	public String admin_reservationInfo() {
-		logger.info("admin_reservationInfo");
 		return "admin/reservation/admin_reservationInfo";
 	}
 	
 	/* 관리자 예약 수정 */
 	@RequestMapping(value="admin_reservationModify")
 	public String admin_reservationModify() {
-		logger.info("admin_reservationModify");
 		return "admin/reservation/admin_reservationModify";
 	}
 	
 	/* 관리자 예약 삭제 */
 	@RequestMapping(value="admin_reservationDelete")
 	public String admin_reservationDelete() {
-		logger.info("admin_reservationDelete");
 		return "admin/reservation/admin_reservationDelete";
+	}
+	
+	/* 관리자 결제 페이지 */
+	@RequestMapping(value="payPage")
+	public String payPage() {
+		return "admin/payment/payPage";
 	}
 	
 	/*admin end*/
