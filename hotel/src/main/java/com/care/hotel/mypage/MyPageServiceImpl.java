@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.care.hotel.Reservation.DAO.reservationDAO;
-import com.care.hotel.Reservation.DTO.reservationAllDTO;
+import com.care.hotel.Reservation.DTO.reservationHotelDTO;
 import com.care.hotel.common.PageService;
 import com.care.hotel.member.DAO.memberDAO;
 import com.care.hotel.member.DTO.memberDTO;
@@ -27,12 +27,12 @@ public class MyPageServiceImpl implements IMyPageService{
 		int end = currentPage * pageBlock; // 데이터의 끝 번호
 		int begin = end+1 - pageBlock; // 데이터의 시작 번호
 		
-		ArrayList<reservationAllDTO> list = reservationDAO.reservationList(begin, end, select, startDt, endDt, memberId);
+		ArrayList<reservationHotelDTO> list = reservationDAO.reservationList(begin, end, select, startDt, endDt, memberId);
 		session.setAttribute("reservationList", list);
 		session.setAttribute("select", select);
 		session.setAttribute("startDt", startDt);
 		session.setAttribute("endDt", endDt);
-		String url = "memListResvProc?currentPage=";
+		String url = "mypage_index?formpath=memListResvProc&currentPage=";
 		session.setAttribute("page", PageService.getNavi(currentPage, pageBlock, totalCount, url));
 		session.setAttribute("reservationCount", totalCount);
 	}

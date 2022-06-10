@@ -75,6 +75,7 @@
 .ctnMypage .bbsQnaList { margin:0 0 0px 0;}
 .ctnMypage .bbsQnaList .trReply td{ background:#fdf8f3;}
 .ctnMypage .btnGoList{ background:url(../../images/ko/common/mypage/btnGoList.gif) no-repeat; width:62px; height:27px; vertical-align:middle; display:inline-block; line-height:100px; overflow:hidden;}
+.ctnMypage .btnCancel1{ background:url(../../images/ko/common/mypage/btnCancel1.gif) no-repeat; width:62px; height:27px; vertical-align:middle; display:inline-block; line-height:100px; overflow:hidden;}
 .ctnMypage.ctnQna .btnQna{ background:url(../../images/ko/common/mypage/btnBbsQna.gif) no-repeat; width:85px; height:27px; vertical-align:middle; display:inline-block; line-height:100px; overflow:hidden;}
 
 

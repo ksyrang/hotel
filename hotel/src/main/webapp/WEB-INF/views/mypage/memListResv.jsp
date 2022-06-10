@@ -56,10 +56,7 @@
 			</div> <!-- lnbMenu -->
 		</div> <!-- lnbArea lnbAreaMypage -->
 <div class="contents" id="contents">
-		
-<form name="myResvForm" id="myResvForm" method="post">
-	<input type="hidden" name="resvId" id="resvId" value="" autocomplete="off">
-	<input type="hidden" name="hotlId" id="hotlId" value="" autocomplete="off">
+ <form id="f">
 	<div class="ctnMypage ctnMypageRsv ctnMypageRsvRmPack rewards_N">
 		<div class="location">
 			<p class="list">
@@ -71,29 +68,31 @@
 		<div class="myRservationTit">
 			<h4 class="tit">예약확인/취소</h4>
 		</div>
-
-		<div class="topMsg">객실 및 패키지, 스파, 다이닝 예약 내역을 확인하실 수 있습니다.</div>
-
+		<div style="height: 30px;">
+			<h2>
+				<font size="2" color="blue" face="돋음">[ ${userId} ] 님의 객실 예약 내역을 확인하실 수 있습니다.</font>
+			</h2>
+		</div>
+		<!-- 
+		<div class="topMsg">예약 내역을 확인하실 수 있습니다.</div>
+		 -->
 		<div class="mypageWrap">
 			<div class="schBox">
-			            <div class="selector" id="uniform-searchDateType" style="width: 138px;">
-			            	<span style="width: 113px; user-select: none;">예약 완료일 기준</span>
-			            	<select name="select">
-					            <option value="예약일" selected="">예약 완료일 기준</option>
+			            <div >
+			            	<select name="select" style="height: 27px;">
+					            <option value="예약일">예약일 기준</option>
 					            <option value="투숙일">투숙일 기준</option>
 			            	</select>
+							<input type="date" name="startDt" id="startDt" />
+							~
+							<input type="date" name="endDt" id="endDt" />
+							<input type="button" value="조회" onclick="check();" class="searchBtn">
 			            </div>
-						<input type="date" name="startDt" id="startDt" />
-						~
-						<input type="date" name="endDt" id="endDt" />
 				<!-- 		
-						<input type="button" value="조회" onclick="check();" class="searchBtn">
+							<input type="submit" name="searchBtn" value="조회" class="searchBtn">
 				 -->
-						<input type="submit" name="searchBtn" value="조회" class="searchBtn">
-						<input type="hidden" name="memberId" value="whiteyhl">
 				
 			</div> <!-- schBox -->
-			
 			<div class="box boxRoomPack">
 				<div class="hTit">
 					<h5 class="tit">Room/Package(객실/패키지)</h5>
@@ -106,9 +105,10 @@
 		                    <col width="*" class="col2">
 		                    <col width="10%" class="col3">
 		                    <col width="10%" class="col4">
-		                    <col width="20%" class="col5">
+		                    <col width="12%" class="col5">
 		                    <col width="12%" class="col6">
 		                    <col width="12%" class="col7">
+		                    <col width="12%" class="col8">
 						</colgroup>
 	                    <thead>
 	                        <tr>
@@ -116,6 +116,7 @@
 								<th scope="col">호텔</th>
 								<th scope="col">객실</th>
 								<th scope="col">숙박 인원</th>
+								<th scope="col">예약일</th>
 								<th scope="col">체크인/<br>체크아웃</th>
 								<th scope="col">예약상태</th>
 								<th scope="col">취소</th>
@@ -124,7 +125,7 @@
 	                </table>
 	            </div> <!-- rsvTableTit -->
 	            
-				<div class="priceScroll new">
+				<div class="priceScroll">
 					<table summary="번호,호텔,상품명,체크인/체크아웃,등록일자,상태로 구성된 게시물 리스트 표" class="bbsList bbsRsvList">
 						<caption>예약리스트</caption>
 						<colgroup>
@@ -132,9 +133,10 @@
 		                    <col width="*" class="col2">
 		                    <col width="10%" class="col3">
 		                    <col width="10%" class="col4">
-		                    <col width="20%" class="col5">
+		                    <col width="12%" class="col5">
 		                    <col width="12%" class="col6">
 		                    <col width="12%" class="col7">
+		                    <col width="12%" class="col8">
 						</colgroup>
 						<tbody>
 							<c:choose>
@@ -145,16 +147,17 @@
 											<td scope="col">${resvList.hotelName }</td>
 											<td scope="col">${resvList.roomId }</td>
 											<td scope="col">${resvList.guestNumber }</td>
+											<td scope="col">${resvList.reservationDate }</td>
 											<td scope="col">${resvList.checkinDate }/<br>${resvList.checkoutDate }</td>
 											<c:choose>
 												<c:when test="${resvList.reservationStatus eq '0'}">
 													<td scope="col" style="color: blue">RESERVATION</td>
-													<td scope="col"><input type="button" value="취소" class="listBtn" 
+													<td scope="col"><input type="button" value="취소" class="btnCancel1" 
 														onclick="location.href='${mypage}memCnclResvProc?memberId=${resvList.memberId}&reservationNo=${resvList.reservationNo}'"></td>
 												</c:when>
 												<c:when test="${resvList.reservationStatus eq '1'}">
 													<td scope="col">CHECK_IN</td>
-													<td scope="col"><input type="button" value="취소" class="listBtn" 
+													<td scope="col"><input type="button" value="취소" class="btnCancel1" 
 														onclick="location.href='${mypage}memCnclResvProc?memberId=${resvList.memberId}&reservationNo=${resvList.reservationNo}'"></td>
 												</c:when>
 												<c:when test="${resvList.reservationStatus eq '2'}">
@@ -175,7 +178,7 @@
 								</c:when>
 								<c:otherwise>
 									<tr class="trNoList first last">
-										<td colspan="6">자료가 없습니다.</td>
+										<td colspan="7">자료가 없습니다.</td>
 									</tr>
 								</c:otherwise>
 							</c:choose>

@@ -4,6 +4,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
+import javax.mail.Session;
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
@@ -23,13 +24,13 @@ import com.care.hotel.member.DTO.memberPwChngDTO;
 @Controller
 public class MyPageController {
 	@Autowired IMyPageService myPageService;
+	@Autowired HttpSession session;
 	
 	private static final Logger logger = LoggerFactory.getLogger(MyPageController.class);
 	
-	/*//mypage sector//*/
 	@RequestMapping(value="myPage")
 	public String mypage_index(Model model) {
-		logger.info("mypage");
+		logger.info("mypage_index");
 		model.addAttribute("formpath", "memListResvProc");
 		return "mypage_index";
 	}
@@ -38,21 +39,6 @@ public class MyPageController {
 	public void mypage_index(String formpath, String sessionMemberId,Model model, HttpSession session) {
 		logger.info("mypage_index?formpath="+formpath);
 		model.addAttribute("formpath", formpath);
-		
-		// 수정 혹은 삭제 시 아이디 세션
-		/*
-		 * System.out.println("세션에 담기 전 sessionMemberId : " + sessionMemberId);
-		 * if(sessionMemberId != null) { String sessionId =
-		 * (String)session.getAttribute("sessionMemberId");
-		 * System.out.println("세션에 저장되어 있는 sessionId : " + sessionId);
-		 */
-		 //if(formpath.equals("memberDelete")) { if(sessionId == null ||sessionId.equals(sessionMemberId) == false) {
-			/*
-			 * session.setAttribute("sessionMemberId", sessionMemberId);
-			 * System.out.println("세션에 담은 후 sessionMemberId : " + sessionMemberId);
-			 */
-		// } 
-		//}
 	}
 	
 	@RequestMapping(value = "memListResvProc")
@@ -60,7 +46,7 @@ public class MyPageController {
 			@RequestParam(value = "currentPage", required = false, defaultValue = "1") int currentPage,
 			String select, String startDt, String endDt, String memberId) {
 		logger.info("memListResvProc GET");
-		if(memberId == null) memberId ="whiteyhl";
+		memberId = (String)session.getAttribute("userId");
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 		Calendar calendar = Calendar.getInstance();
 		Date dateObj = calendar.getTime();
