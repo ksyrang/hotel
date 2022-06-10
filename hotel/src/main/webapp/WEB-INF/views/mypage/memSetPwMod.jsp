@@ -44,7 +44,6 @@
 	<font color="red" >${msg } </font>
 </h3>
 <form action="memSetPwUpdtProc" method="post">
-	<input type="hidden" id="memberId" name="memberId" value="" autocomplete="off">
 	<div class="ctnMypage ctnPwMod">
 		<div class="location">
 			<p class="list"><span class="crPosit">현재 페이지 위치 : </span> &gt; 마이페이지 &gt; 내정보  &gt; <strong>비밀번호 변경</strong></p>
@@ -68,29 +67,29 @@
 					<tbody>
 						<tr class="first">
 							<th scope="row" class="first">
-								<label for="memberID" class="memberId">아이디</label></th>
+								<label for="memberId" class="memberId">아이디</label></th>
 							<td class="first">
-								<input type="text" class="memberID" id="memberID" name="mbrId" maxlength="8" style="width: 100px;" autocomplete="off">
+								<input type="text" class="memberId" id="memberId" name="memberId" maxlength="8" style="width: 100px;" autocomplete="off">
 							</td>
 						</tr>
 						<tr>
 							<th scope="row">
 								<label for="memberPw" class="memberPw">현재 비밀번호</label></th>
 							<td>
-								<input type="password" class="memberPw" id="memberPw" name="mbrPw" maxlength="20" style="width: 143px;" autocomplete="off">
+								<input type="password" class="memberPw" id="memberPw" name="memberPw" maxlength="20" style="width: 143px;" autocomplete="off">
 							</td>
 						</tr>
 						<tr>
 							<th scope="row"><label for="memberNewPw" class="pwNew">새 비밀번호</label></th>
 							<td>
-								<input type="password" class="memberNewPw1" id="memberNewPw1" name="memberNewPw1" maxlength="20" style="width: 143px;" autocomplete="off">
+								<input type="password" class="memberNewPw" id="memberNewPw" name="memberNewPw" maxlength="20" style="width: 143px;" autocomplete="off">
 								<span class="msgCheck">8~20자 이내 영문/숫자 조합(특수문자 입력 가능)</span>
 							</td>
 						</tr>
 						<tr class="last">
-							<th scope="row" class="last"><label for="memberNewPw2" class="memberNewPw2">새 비밀번호 확인</label></th>
+							<th scope="row" class="last"><label for="memberNewPwCnfm" class="memberNewPwCnfm">새 비밀번호 확인</label></th>
 							<td class="last">
-								<input type="password" class="memberNewPw2" id="memberNewPw2" name="memberNewPw2" maxlength="20" style="width: 143px;" autocomplete="off">
+								<input type="password" class="memberNewPwCnfm" id="memberNewPwCnfm" name="memberNewPwCnfm" maxlength="20" style="width: 143px;" autocomplete="off">
 							</td>
 						</tr>
 					</tbody>

@@ -10,4 +10,5 @@ public interface IMyPageService {
 	public int pwCnfm(String memberId, String memberPw);
 	public int memSetUpdt(memberDTO memberDto);
 	public int memSetPwUpdt(memberPwChngDTO memberPwChngDto);
+	public int memSetDropOut(String memberId);
 }

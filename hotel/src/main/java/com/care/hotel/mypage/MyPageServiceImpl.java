@@ -92,13 +92,29 @@ public class MyPageServiceImpl implements IMyPageService{
 			|| memberPwChngDto.getMemberNewPwCnfm() == null || memberPwChngDto.getMemberNewPwCnfm()  == "") { 
 			return 0;
 		} 
-		if(memberPwChngDto.getMemberNewPw().equals(memberPwChngDto.getMemberNewPwCnfm())) { 
+		if(!memberPwChngDto.getMemberNewPw().equals(memberPwChngDto.getMemberNewPwCnfm())) { 
 			return 1;
 		} 
 		memberDTO memberDto = memberDAO.memberInfo(memberPwChngDto.getMemberId());
 		if(memberDto.getMemberPw().equals(memberPwChngDto.getMemberPw())) {
 			memberDto.setMemberPw(memberPwChngDto.getMemberNewPw());
 			memberDAO.memberUpdate(memberDto);
+			return 2;
+		}else {
+			return 3;
+		}
+	}
+	
+	
+	@Override
+	public int memSetDropOut(String memberId) {
+		
+		if(memberId == null || memberId == "") { 
+			return 0;
+		} 
+		memberDTO memberDto = memberDAO.memberInfo(memberId);
+		if(memberDto != null) {
+			memberDAO.memberDelete(memberId);
 			return 2;
 		}else {
 			return 1;

@@ -159,10 +159,13 @@ public class MyPageController {
 	}
 //	, method = RequestMethod.POST
 	@PostMapping(value="mypage/pwCnfmProc")
-	public String pwCnfmProc(String memberId, String memberPw, Model model, RedirectAttributes ra) {
+	public String pwCnfmProc(String memberId, String memberPw, String gubun, Model model, RedirectAttributes ra) {
 		logger.info("pwCnfmProc");
+		System.out.println("pwCnfmProc gubun : " + gubun);
 		System.out.println("pwCnfmProc memberId : " + memberId);
 		System.out.println("pwCnfmProc memberPw : " + memberPw);
+		
+		model.addAttribute("memberId", memberId);
 		
 		String result = "";
 		
@@ -170,11 +173,14 @@ public class MyPageController {
 		System.out.println("pwCnfmProc check 2(성공) : " + check);
 		
 		if(check == 2) {
-			return "forward:/mypage_index?formpath=mypage/memSetMbrInfo";
+			if(gubun == "" || gubun == null)
+				return "forward:/mypage_index?formpath=mypage/memSetMbrInfo";
+			else
+				return "forward:/mypage_index?formpath=mypage/memSetMbrDropOut";
 		}else {
 			result = "아이디와 비밀번호를 확인해 주세요.";
 			ra.addFlashAttribute("msg", result);
-			return "redirect:pwCnfmProc?memberId="+memberId+"&memberPw="+memberPw;
+			return "redirect:pwCnfmProc"+memberId+"&memberPw="+memberPw;
 		}
 	}
 //	, method = RequestMethod.POST
@@ -218,11 +224,33 @@ public class MyPageController {
 		if(check == 2) {
 			result = "[" + mem.getMemberId() + "]님 비밀정보를 수정했습니다.";
 			model.addAttribute("msg", result);
-			return "forward:/mypage_index?formpath=mypage";
+			return "forward:/mypage_index?formpath=myPage";
 		}else {
 			result = "[" + mem.getMemberId() + "]님 비밀정보 수정에 실패했습니다.";
 			model.addAttribute("msg", result);
-			return "forward:/mypage_index?formpath=mypage/memSetPwCnfm";
+			return "forward:/mypage_index?formpath=mypage/memSetPwMod";
+		}
+	}
+	
+//	, method = RequestMethod.POST
+	@PostMapping(value="mypage/memSetDropProc")
+	public String memSetDropProc(String memberId, Model model) {
+		logger.info("memSetDropProc");
+		System.out.println("Id : "+memberId);
+		
+		String result = "";
+		
+		int check = myPageService.memSetDropOut(memberId);
+		System.out.println("memSetDropProc check 2 성공 : " + check);
+		
+		if(check == 2) {
+			result = "[" + memberId + "]님 회원탈회 신청이 완료되었습니다.";
+			model.addAttribute("msg", result);
+			return "forward:/mypage_index?formpath=myPage";
+		}else {
+			result = "[" + memberId + "]님 회원탈회 신청이 실패했습니다.";
+			model.addAttribute("msg", result);
+			return "forward:/mypage_index?formpath=mypage/memSetMbrDropOut";
 		}
 	}
 	@RequestMapping("/mypage/memCnclResv")
@@ -256,7 +284,8 @@ public class MyPageController {
 	}
 	
 	@RequestMapping("/mypage/memSetMbrDropOut")
-	public String memSetMbrDropOut() {
+	public String memSetMbrDropOut(String memberId, Model model) {
+		model.addAttribute("memberId", memberId);
 		return "mypage/memSetMbrDropOut";
 	}
 	

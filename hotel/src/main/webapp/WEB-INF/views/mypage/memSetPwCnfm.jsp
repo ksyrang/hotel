@@ -30,14 +30,13 @@
 				<h2 class="tit">마이페이지</h2>
 				<ul class="menu">
 					<li class="m1 first">
-						<a href="/hotel/myPage"><span>예약 확인/취소</span>
-						</a>
+						<a href="/hotel/myPage"><span>예약 확인/취소</span></a>
 					</li>
 					<li class="m2 last">
 						<a><span>내정보</span></a>
 						<ul class="sMenu">
 							<li class="s1 first">
-							<a href="/hotel/mypage/memSetPwCnfm" class="on"><span>프로필 수정</span></a>
+								<a href="/hotel/mypage/memSetPwCnfm" class="on"><span>프로필 수정</span></a>
 							</li>
 							<li class="s2">
 								<a href="/hotel/mypage/memSetPwMod"><span>비밀번호 변경</span></a>
@@ -72,7 +71,7 @@
 		</div>
 		
 		<div class="msgBox">프로필 정보를 안전하게 보호하기 위해 비밀번호를 다시 한번 확인합니다.</div>
-		
+		<input type="hidden" id="gubun" name="gubun" value="${gubun}" autocomplete="off">
 		<table class="tableTypeA tableUserInfo1" summary="아이디,비밀번호로 구성된 테이블">
 			<caption>프로필 수정</caption>
 			<colgroup>

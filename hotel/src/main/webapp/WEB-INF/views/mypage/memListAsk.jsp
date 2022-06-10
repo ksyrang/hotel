@@ -1,153 +1,46 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ include file="../common/main_header.jsp" %>
+<c:url var="root" value="/" />
+<c:url var="mypage" value="/mypage/" />
+<link href="${pageContext.request.contextPath}/resources/css/mem/title_ko.css" rel="stylesheet" type="text/css">
+<style>
+.lnbAreaMypage .lnbMenu .m2 .sMenu li.s1 a{ background-position:0 0;}
+.lnbAreaMypage .lnbMenu .m2 .sMenu li.s2 a{ background-position:0 -22px;}
+.lnbAreaMypage .lnbMenu .m2 .sMenu li.s3 a{ background-position:0 -44px;}
+.lnbAreaMypage .lnbMenu .m2 .sMenu li.s4 a{ background-position:0 -66px;}
+</style>
 
-	<div class="contain">
-	
-		<div class="container">
-		
-			<div class="lnbArea lnbAreaMypage">
+<div class="contain">
+	<div class="container">
+		<div class="lnbArea lnbAreaMypage">
 			<div class="lnbMenu">
 				<h2 class="tit">마이페이지</h2>
 				<ul class="menu">
 					<li class="m1 first">
-						<!-- 선택시 a태그에 class="on" -->
-						<a href="/membership/mypage/account/listAccount.do">
-							<span>신라리워즈 등급 및 포인트</span>
-						</a>
+						<a href="/hotel/myPage"><span>예약 확인/취소</span>	</a>
 					</li>
-					<li class="m2">
-						<a><span>예약 확인/취소</span></a>
-						<ul class="sMenu">
-							<li class="s1 first">
-								<a href="/membership/mypage/resv/memListResv.do">
-									<span>객실/패키지</span>
-								</a>
-							</li>
-							<li class="s2 last">
-								<a href="/fbresv/web/memDiningListResv.do"><span>다이닝</span></a>
-							</li>
-						</ul>
-					</li>
-					<li class="m3">
-						<a><span>포인트</span></a>
-						<ul class="sMenu">
-							<li class="s1 first">
-								<a href="/membership/mypage/point/memListPointReference.do">
-									<span>포인트조회</span>
-								</a>
-							</li>
-							<li class="s2">
-								<a href="/membership/mypage/point/memSetPointRetrospective.do">
-									<span>포인트 조정신청</span>
-								</a>
-							</li>
-							<li class="s3 last">
-								<a href="/membership/mypage/point/memSetPointApplication.do">
-									<span>삼성상품권 교환신청</span>
-								</a>
-							</li>
-						</ul>
-					</li>
-					<li class="m4">
-						<a>쿠폰</a>
-						<ul class="sMenu">
-							<li class="s1 first">
-								<a href="/membership/mypage/coupon/memCouponList.do">
-									<span>쿠폰함</span>
-								</a>
-							</li>
-							<li class="s2 last">
-								<a href="/membership/mypage/promotion/memPmtResvList.do">
-									<span>프로모션 숙박권</span>
-								</a>
-							</li>
-						</ul>
-					</li>
-					<li class="m5 last">
+					<li class="m2 last">
 						<a><span>내정보</span></a>
 						<ul class="sMenu">
 							<li class="s1 first">
-								<a href="/membership/mypage/mbr/memSetPwCnfm.do">
-									<span>프로필 수정</span>
-								</a>
+								<a href="/hotel/mypage/memSetPwCnfm"><span>프로필 수정</span></a>
 							</li>
 							<li class="s2">
-								<a href="/membership/mypage/mbr/memSetPwMod.do">
-									<span>비밀번호 변경</span>
-								</a>
+								<a href="/hotel/mypage/memSetPwMod"><span>비밀번호 변경</span></a>
 							</li>
 							<li class="s3">
-								<a href="/membership/mypage/ask/memListAsk.do" class="on">
-									<span>문의 내역</span>
-								</a>
+								<a href="/hotel/mypage/memListAsk" class="on"><span>문의 내역</span></a>
 							</li>
 							<li class="s4 last">
-								<a href="/membership/mypage/mbr/memSetPwDropfm.do?gubun=t">
-									<span>탈회요청</span>
-								</a>
+								<a href="/hotel/mypage/memSetPwDropfm?gubun=t"><span>탈회요청</span></a>
 							</li>
 						</ul>
 					</li>
 				</ul>
-			</div>
-		</div>
-	<div class="contents" id="contents">
-				<script type="text/javascript">
-<!--
-
-
-
-
-function selectAskTypCd(askTypCd){
-    $('#askTypCd').val(askTypCd);
-    $('#curPageNo').val("1");
-    $('#mypageAskForm').attr('action','./listAsk.do').submit();
-}
-
-function selectHotlId(hotlId){
-    $('#hotlId').val(hotlId);
-    $('#curPageNo').val("1");
-    $('#mypageAskForm').attr('action','./listAsk.do').submit();
-}
-
-function selectViewAsk(hotlId, askNo , cmtSeq){
-    $('#hotlId').val(hotlId);
-    $('#askNo').val(askNo);
-    $('#cmtSeq').val(cmtSeq);
-	$('#mypageAskForm').attr('action', '/membership/mypage/ask/memViewAsk.do').submit();
-    
-}
-
-function selectListAsk(){
-    $('#mypageAskForm').attr('action','/membership/mypage/ask/memListAsk.do').submit();
-}
-
-/** 페이징 조회 */
-function goPage(pageNo){
-    $('#curPageNo').val(pageNo);
-    $('#mypageAskForm').attr('action','/membership/mypage/ask/memListAsk.do').submit();
-}
-
-/** 날짜 셋팅 */
-function dateSearch( monthNum ) {
-	searchDateSet('searchStrtDt' , 'searchEndDt' , monthNum );
-}
-
-/** 날짜 셋팅 */
-function dateWeekSearch( weekNum ) {
-	searchDateWeekSet('searchStrtDt' , 'searchEndDt' , weekNum );
-}
-
-function checkCalendar(searchEndDt,today){
-	if($("#searchStrtDt").val()!=null || $("#searchStrtDt").val().length !=0){
-		popCalendarLayer(searchEndDt,$("#searchStrtDt").val());
-	}else{
-		popCalendarLayer(searchEndDt,today); 
-	}
-}
-//-->
-</script>
+			</div> <!-- lnbMenu -->
+		</div> <!-- lnbArea lnbAreaMypage -->
+<div class="contents" id="contents">
 
 <form name="mypageAskForm" id="mypageAskForm" method="post">
 	<input type="hidden" id="askNo" name="askNo" value="" autocomplete="off">
@@ -158,7 +51,10 @@ function checkCalendar(searchEndDt,today){
 	<div class="contents" id="contents">
 				<div class="ctnMypage ctnQna">
 					<div class="location">
-						<p class="list"><span class="crPosit">현재 페이지 위치 : </span> &gt; 마이페이지 &gt; 내정보 &gt; <strong>문의내역</strong></p>
+						<p class="list">
+							<span class="crPosit">현재 페이지 위치 : </span> &gt; 마이페이지 &gt; 내정보 &gt; 
+							<strong>문의내역</strong>
+						</p>
 					</div>
 					
 					<div class="myInquiryTit">
@@ -221,10 +117,8 @@ function checkCalendar(searchEndDt,today){
 					</div>
 				</div>
 			</div>
-			</form>
-</div>
-
-		</div>
-	
-	</div>
+</form>
+		</div> <!-- contents -->
+	</div> <!-- container -->
+</div> <!-- contain -->
 <%@ include file="../common/main_footer.jsp" %>
