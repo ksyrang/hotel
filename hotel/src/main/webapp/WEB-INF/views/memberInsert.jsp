@@ -21,9 +21,6 @@
 <meta name="description" content="국내 최고 럭셔리 호텔인 호텔신라는 신라호텔과 신라스테이 브랜드를 보유하고 있습니다.">
 <meta name="subject" content="신라스테이 소개,신라 리워즈 안내,브랜드 및 호텔 소개,객실 패키지 안내,온라인 최저가 예약,">
 </head><body class="subBody joinBody"><div id="popCalendarDiv" class="popCalendar" style="display:none"></div>
-<c:if test="${not empty msg }">
-	<script>alert("${msg}");</script>
-</c:if>
     <jsp:useBean id="member" class="com.care.hotel.member.DTO.memberDTO"/>
     <jsp:setProperty property="*" name="member"/>
 <script src="/js/json2.js" charset="UTF-8"></script>

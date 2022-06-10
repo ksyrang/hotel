@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.care.hotel.member.DTO.memberDTO;
+import com.care.hotel.member.DTO.memberExDTO;
 import com.care.hotel.resource.service.IhotelresourceSvc;
 
 /**
@@ -61,6 +63,10 @@ public class HomeController {
 		return "member/memLoginForm";
 	}
 	
+	@RequestMapping(value="memberJoin")
+	public String memberJoin(memberDTO member, memberExDTO memberExDto) {
+		return "memJoinForm";
+	}
 	
 	@RequestMapping("home2")
 	public String home2() {

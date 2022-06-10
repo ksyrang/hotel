@@ -12,13 +12,13 @@ public class memberInsertController {
 	private static final Logger logger = LoggerFactory.getLogger(memberInsertController.class);
 
 	
-	@RequestMapping(value = "/memberInsert")
-	public String memberInsertGET() throws Exception{
-		logger.info("회원가입 완료");
-		
-		return "memberInsert";
-	}
-	
+//	@RequestMapping(value = "/memberInsert")
+//	public String memberInsertGET() throws Exception{
+//		logger.info("회원가입 완료");
+//		
+//		return "memberInsert";
+//	}
+//	
 
 	
 }	

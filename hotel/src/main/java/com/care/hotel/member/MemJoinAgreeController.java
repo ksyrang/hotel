@@ -17,9 +17,9 @@ public class MemJoinAgreeController {
 	private static final Logger logger = LoggerFactory.getLogger(MemJoinAgreeController.class);
 
 	
-	@RequestMapping(value = "/memJoinAgreeForm", method = RequestMethod.GET)
+	@RequestMapping(value = "memJoinAgreeForm")
 	public String memJoinAgreeForm(Locale locale, Model model) {
-		logger.info("Welcome home! The client locale is {}.", locale);
+		logger.info("약관동의");
 		
 		Date date = new Date();
 		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
@@ -30,8 +30,17 @@ public class MemJoinAgreeController {
 		
 		return "memJoinAgreeForm";
 	}
-	@RequestMapping(value = "/memJoinAgreeForm", method = RequestMethod.POST)
-	public String memberInsertPOST() throws Exception{
-		return "redirect:/index?formpath=memJoinForm";
+	@RequestMapping(value = "memJoinForm")
+	public String memJoinForm(Locale locale, Model model) {
+		logger.info("회원정보 입력");
+		
+		Date date = new Date();
+		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
+		
+		String formattedDate = dateFormat.format(date);
+		
+		model.addAttribute("serverTime", formattedDate );
+		
+		return "memJoinForm";
 	}
 }	

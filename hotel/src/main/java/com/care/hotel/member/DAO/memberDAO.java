@@ -13,9 +13,9 @@ public interface memberDAO {
 	
 	int memberCount(@Param("sel")String select,  @Param("search")String search);
 	
-	int memberExInsert(memberExDTO memberExDto);
+	void memberExInsert(memberExDTO memberExDto);
 	
-	int memberInsert(memberDTO member);
+	void memberInsert(memberDTO member);
 	
 	memberDTO memberInfo(String memberId);
 	

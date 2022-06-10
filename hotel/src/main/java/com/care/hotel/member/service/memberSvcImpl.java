@@ -116,41 +116,31 @@ public class memberSvcImpl implements ImemberSvc{
 	}
 	
 	@Override
-	public String memberJoin(memberDTO member, memberExDTO memberExDTO) throws Exception {
+	public String memberJoin(memberDTO member, memberExDTO memberExDto) {
+		String id = member.getMemberId();
+		String nameKR = member.getMemberNameKR();
+		String nameENG = member.getMemberNameENG();
+		String birth = member.getMemberBirth();
+		String mobile = member.getMemberMobile();
+		String email = member.getMemberEmail();
+		String pw = member.getMemberPw();
+		String gender = member.getMemberGender();
 		
-//		if (memberDTO.getMemberId() == null || memberDTO.getMemberId().isEmpty())
-//			return "아이디를 입력하세요.";
-//
-//		if (memberDTO.getMemberPw() == null || memberDTO.getMemberPw().isEmpty())
-//			return "비밀번호를 입력하세요.";
-//
-//		if (memberDAO.isExistId(memberDTO.getMemberId()) > 0)
-//			return "중복 아이디 입니다.";
-//		
-//		Boolean authStatus = (Boolean) session.getAttribute("authStatus");
-//		if (authStatus == null || authStatus != true)
-//			return "이메일 인증 후 가입 할 수 있습니다.";
-//		
-//
-//		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-//		String securePw = encoder.encode(memberDTO.getMemberPw());
-//		memberDTO.setMemberPw(securePw);
-		
-		
+		if(!(id.isEmpty() || nameKR.isEmpty() || nameENG.isEmpty() || birth.isEmpty() || mobile.isEmpty() || email.isEmpty() || pw.isEmpty() || gender.isEmpty())) {
 			memberDAO.memberInsert(member);
-			memberDAO.memberExInsert(memberExDTO);
+		}	
 		
-		
-		
-
-		if ("m".equals(member.getMemberGender()) || "w".equals(member.getMemberGender()) || "n".equals(member.getMemberGender()))
-			memberDAO.memberInsert(member);
-
-		if (!("".equals(memberExDTO.getMemberZipcode())))
-			memberDAO.memberExInsert(memberExDTO);
-		if (!("".equals(memberExDTO.getMemberHomePhone())))
-			memberDAO.memberExInsert(memberExDTO);
+		if (!("".equals(memberExDto.getMemberZipcode()) || "".equals(memberExDto.getMemberAddr1()) || "".equals(memberExDto.getMemberAddr2()) || "".equals(memberExDto.getMemberHomePhone()))) {
+			memberDAO.memberExInsert(memberExDto);
+		}
 		return "가입 완료";
+		
 	}
+			
+		
+
+		
+		
 
 }
+	

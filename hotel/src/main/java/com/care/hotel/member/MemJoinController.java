@@ -28,40 +28,57 @@ public class MemJoinController {
 
 	
 	
-	@RequestMapping(value = "/memJoinForm", method = RequestMethod.GET)
-	public String memJoinFormGET() throws Exception{
-		logger.info("회원가입 페이지 진입");
-		return "memJoinForm";
+//	@RequestMapping(value = "memJoinForm", method = RequestMethod.GET)
+//	public String memJoinFormGET() {
+//		logger.info("회원가입 페이지 진입");
+//		return "memJoinForm";
+//	}
+//	
+	@RequestMapping(value = "memberJoinProc")
+	public String memberJoinProc(String memberId, memberDTO member, memberExDTO memberExDto, Model model, RedirectAttributes ra){
+		
+		logger.info("memberJoinProc");
+		//회원가입 서비스 진행
+		
+		if(memberId == null || memberId == "") {
+			ra.addFlashAttribute("msg", "memberJoinProc 오류발생");
+			return "redirect:/index?formpath=memJoinAgreeForm";
+		}
+		model.addAttribute("msg");
+		return "forward:/index?formpath=memJoinForm";
+		
 	}
 	
-	@RequestMapping(value = "/memJoinForm", method = RequestMethod.POST)
-	public String memJoinFormPOST(memberDTO member, memberExDTO memberExDTO, Model model, RedirectAttributes ra) throws Exception {
+	@RequestMapping(value = "memberJoinProc", method = RequestMethod.POST)
+	public String memberJoinSaveProc(memberDTO member, memberExDTO memberExDto, Model model, RedirectAttributes ra){
 		
-		logger.info("회원 데이터 생성");
-		//회원가입 서비스 진행
-		String msg = memberService.memberJoin(member, memberExDTO);
+		
+		
+		String msg = memberService.memberJoin(member, memberExDto);
 		System.out.println("msg : " + msg);
 		if(!(msg.equals("가입 완료"))) {
 			ra.addFlashAttribute("msg", msg);
-			return "redirect:memjoinForm";
+			return "redirect:/index?formpath=memJoinAgreeForm";
 		}else {
 			model.addAttribute("msg", msg);
 			return "forward:/index?formpath=memberInsert";
-		}	
+		}
+		
 	}
 	
-//	@RequestMapping(value = "memberInsert")
-//	public String memberInsert(memberDTO memberDTO, memberExDTO memberExDTO, Model model, RedirectAttributes ra) {
-//		String msg = memberService.memberInsert(memberDTO, memberExDTO);
-//	
-//		if(msg.equals("가입 완료")) {
-//			ra.addFlashAttribute("msg", msg);
-//			return "redirect:/index?formpath=memberInsert";
-//		}else {
-//			model.addAttribute("msg", msg);
-//			return "forward:/index?formpath=memJoinForm";
-//		}	
-//	}
+	@RequestMapping(value = "memberInsert")
+	public String memJoinForm(Locale locale, Model model) {
+		logger.info("회원가입 완료");
+		
+		Date date = new Date();
+		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
+		
+		String formattedDate = dateFormat.format(date);
+		
+		model.addAttribute("serverTime", formattedDate );
+		
+		return "memberInsert";
+	}
 	
 	@PostMapping(value = "isExistId", produces = "application/json; charset=UTF-8")
 	@ResponseBody

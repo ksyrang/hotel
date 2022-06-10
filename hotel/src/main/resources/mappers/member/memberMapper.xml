@@ -61,7 +61,7 @@
 	
 	<!-- memberInsert -->
 	<insert id="memberInsert" parameterType="com.care.hotel.member.DTO.memberDTO">
-		INSERT INTO member VALUES(#{memberId}, #{memberNameKR}, #{memberNameENG}, #{memberBirth}, #{memberMobile}, #{memberEmail}, #{memberGender}, #{memberPw} ) 
+		INSERT INTO member VALUES(#{memberId}, #{memberNameKR}, #{memberNameENG}, #{memberBirth}, #{memberMobile}, #{memberEmail}, #{memberPw}, #{memberGender} ) 
 	</insert>
 	
 	<!-- memberExInsert -->

@@ -333,7 +333,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	    
 	}
 </script>
-<form id="join_form" name="join_form" action="memberJoin" method="post">
+<form action="memberJoinProc" method="post">
 
 
 	<div class="container">
@@ -520,10 +520,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
            		<!--  onclick="nextStep();"-->
 				
 				<div class="btnList">
-			 	<input type=button value='회원 가입' onclick="location.href='${root }index?formpath=memberInsert'" style="width: 60px;" />
+			 	<input type=submit  value='회원 가입'  style="width: 60px;" />
 				<input type=reset value='취소' style="width: 60px; "/>
 				</div>
-			
+			<!--  -->
 			</div>
 		</div>
 		</div>
