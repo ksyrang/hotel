@@ -84,7 +84,7 @@
 				<td>
 				<input type="button" value="수정" class="admin_commonBtn" onclick="location.href='${root }admin_reservationModifyProc?reservationNo=${resdb.reservationNo }'">
 				<input type="button" value="삭제" class="admin_commonBtn" onclick="location.href='${root }admin_reservationDeleteProc?reservationNo=${resdb.reservationNo }'">
-				<input type="button" value="결제" class="admin_commonBtn">
+				<input type="button" value="결제" class="admin_commonBtn" onclick="location.href='${root }payPageProc?reservationNo=${resdb.reservationNo }'">
 				</td>
 			</tr>
 			</c:forEach>

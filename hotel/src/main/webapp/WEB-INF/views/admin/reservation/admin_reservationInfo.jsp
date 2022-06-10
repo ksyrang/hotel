@@ -23,8 +23,8 @@
 <div class="admin_reservationInfoTopRight">
 	<input type="button" value="목록" class="admin_commonBtn" onclick="location.href='${root }admin_reservationListProc'">
 	<input type="button" value="예약수정" class="admin_commonBtn" onclick="location.href='${root }admin_reservationModifyProc?reservationNo=${resInfo.reservationNo }'">
-	<input type="button" value="예약취소" class="admin_commonBtn" onclick="location.href='${root }admin_reservationDeleteProc?reservationNo=${resdb.reservationNo }'">
-	<input type="button" value="결제" class="admin_commonBtnB">
+	<input type="button" value="예약취소" class="admin_commonBtn" onclick="location.href='${root }admin_reservationDeleteProc?reservationNo=${resInfo.reservationNo }'">
+	<input type="button" value="결제" class="admin_commonBtnB" onclick="location.href='${root }payPageProc?reservationNo=${resInfo.reservationNo }'">
 </div>
 <!-- table -->
 <div class="admin_reservationTableDiv">

@@ -1,6 +1,16 @@
 @charset "UTF-8";
 
-.payTable {width: 500px; margin:auto; border-collapse: collapse; color:#907a61;}
-.payTable th {width : 150px; background-color: #f7f7f7; color: #8d605e; padding-left: 10px;}
+.payTable {width: 500px; margin:auto; border-collapse: collapse; color:#907a61; margin-top:50px;}
+.payTable th {width : 150px; height: 40px; background-color: #f7f7f7; color: #8d605e; padding-left: 10px; text-align: left;}
+.payTable td {padding-left: 10px;}
 
-.selectPayment {width: 300px;}
+.selectPayment {width: 300px; height: 35px;}
+.selectCompany {width: 100px; height: 20px;}
+.input_cardNo {width:40px; height: 20px;}
+.input_validity {width:30px; height: 20px;}
+.input_csv {width:30px; height: 20px;}
+
+
+.payDiv { width: 520px; margin:auto; padding-top : 20px;}
+.payCancleBtn {width: 250px; background-color: #856f57; border:0; outline:0; height: 40px; color: white;}
+.payPayBtn {width: 250px; background-color:  #3a3125; border:0; outline:0; height: 40px; color: white;}
