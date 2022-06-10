@@ -14,6 +14,7 @@ import com.care.hotel.resourceDAO.IhotelDAO;
 import com.care.hotel.resourceDAO.IroomDAO;
 import com.care.hotel.resourceDTO.hotelDTO;
 import com.care.hotel.resourceDTO.roomDTO;
+import com.care.hotel.resourceDTO.roommodiDTO;
 
 @Service
 public class hotelresourceSvcImpl implements IhotelresourceSvc{
@@ -109,10 +110,21 @@ public class hotelresourceSvcImpl implements IhotelresourceSvc{
    }
    
    @Override
-   public int roomModify(roomDTO roomInfo) {
-      int result = roomDAO.roomUpdate(roomInfo);
-      return result;
+   public void roomModify(roomDTO roomInfo) {
+	   String oldId = ((roomDTO)session.getAttribute("roomInfo")).getRoomId();
+	   if(oldId.equals(roomInfo.getRoomId()))	   roomDAO.roomUpdate(roomInfo);
+	   else {
+		   roommodiDTO tmp = new roommodiDTO();
+		   tmp.setRoomId(roomInfo.getRoomId());
+		   tmp.setHotelId(roomInfo.getHotelId());
+		   tmp.setRoomType(roomInfo.getRoomType());
+		   tmp.setBedType(roomInfo.getBedType());
+		   tmp.setAvailablePerson(roomInfo.getAvailablePerson());
+		   tmp.setOldId(oldId);
+		   roomDAO.roomUpdateId(tmp);
+	   }
    }
+   
    @Override
    public boolean roomDelete(String roomId, String adminId, String adminPw) {
       String adminDBId = "admin"; // 어드민 프로퍼티 만들면 변경 필요.
@@ -126,6 +138,14 @@ public class hotelresourceSvcImpl implements IhotelresourceSvc{
       return true;
 
    }
+   
+   @Override
+   public void allhotelList() {
+	   ArrayList<hotelDTO> list = hotelDAO.allhotelidList();
+	   session.setAttribute("hotelidList", list);
+   }
+   
+   
    
    
 }

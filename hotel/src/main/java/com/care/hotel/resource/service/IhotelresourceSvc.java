@@ -21,8 +21,10 @@ public interface IhotelresourceSvc {
    
    /* 모든 호텔 정보 보기 */
    public ArrayList<hotelDTO> allHotelInfo();
+   
+   public void allhotelList();
 
-   public int roomModify(roomDTO roomInfo);
+   public void roomModify(roomDTO roomInfo);
 
    public boolean roomDelete(String roomId, String adminId, String adminPw);
    

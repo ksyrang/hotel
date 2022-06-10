@@ -2,22 +2,28 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <c:url var="root" value="/" />
-//<script src="${root}/resources/check.js"></script>
+<script src="${root}/resources/check.js"></script>
 <link href="${pageContext.request.contextPath}/resources/css/admin/amdin_hotelList.css" rel="stylesheet" type="text/css">
 
+
 <center>
-<form action="roomModifyProc" method="post">
+<form action="roomAddProc" method="post">
 	<table>
 		<tr>
-			<td><input type="button" value="뒤로가기" onclick="location.href='${root}roomlistProc'"/></td>
+			<td><input type="button" value="뒤로가기" onclick="location.href='${root}hotellistProc'"/></td>
 		</tr>
 		<tr>
 			<th>방 아이디</th>
-			<th><input type="text" name="roomId" placeholder="방 아이디" value="${sessionScope.roomInfo.roomId }"></th>
+			<td><input type="text" name="roomId" placeholder="방 아이디"></td>
 		</tr>
 		<tr>
 			<th>호텔 아이디</th>
-			<td><input type="text" name="hotelId" placeholder="호텔아이디" readonly="readonly" value="${sessionScope.roomInfo.hotelId }"></td>
+			<td><select name="hotelSel" class="select" style=" width:152px; height: 25px;">
+				<option value="">전체</option>
+				<c:forEach var="List" items="${hotelidList }">
+					<option value="${List.hotelId }">${List.hotelName }</option>
+				</c:forEach>
+			</select></td>
 		</tr>
 		<tr>
 			<th>방 형태</th>

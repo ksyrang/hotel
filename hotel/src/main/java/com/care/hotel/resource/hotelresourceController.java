@@ -1,6 +1,5 @@
 package com.care.hotel.resource;
 
-import javax.mail.Session;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +8,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.care.hotel.resource.service.IhotelresourceSvc;
 import com.care.hotel.resourceDTO.hotelDTO;
@@ -18,25 +16,25 @@ import com.care.hotel.resourceDTO.roomDTO;
 @Controller
 public class hotelresourceController {
 	
-	@Autowired IhotelresourceSvc hotellistSVC;
+	@Autowired IhotelresourceSvc hotelresSVC;
 	@Autowired HttpSession session;
 	
 	@RequestMapping("hotellistProc")
 	public String hotellistProc(Model model, 
 			@RequestParam(value = "currentPage", required = false, defaultValue = "1") int currentPage,
 			String select, String search) {
-		hotellistSVC.hotelList(currentPage, select, search);//서비스 내부에서 session에 데이터를 업로드함
+		hotelresSVC.hotelList(currentPage, select, search);//서비스 내부에서 session에 데이터를 업로드함
 		return "forward:/admin_index?formpath=admin_hotelList";
 	}
 	@RequestMapping("hotelInfoProc")
 	public String hotelInfoProc(String hotelId, Model model) {
 		if(hotelId ==""||hotelId == null) return "redirect:hotellistProc";
-		hotellistSVC.hotelInfo(hotelId);
+		hotelresSVC.hotelInfo(hotelId);
 		return "forward:/admin_index?formpath=admin_hotelInfo";
 	}	
 	@RequestMapping("prehotelModifyProc")
 	public String prehotelModifyProc(String hotelId, Model model) {
-		if(session.getAttribute("hotelInfo") == null) hotellistSVC.hotelInfo(hotelId);
+		if(session.getAttribute("hotelInfo") == null) hotelresSVC.hotelInfo(hotelId);
 		return "forward:/admin_index?formpath=admin_hotelInfoModify";
 	}
 	
@@ -49,18 +47,18 @@ public class hotelresourceController {
 			return "forward:/admin_index?formpath=admin_hotelInfoModify";
 		}
 		System.out.println("pw : "+hotelInfo.getHotelPw());
-		int result = hotellistSVC.hotelModify(hotelInfo);
+		int result = hotelresSVC.hotelModify(hotelInfo);
 		System.out.println("업데이트 결과"+result);		
 //		if(result == 1) {
 //			return "forward:/admin_index?formpath=admin_hotelList";
 //		}
 		String hotelId = hotelInfo.getHotelId();
-		return "redirect:hotelInfoProc?hotelId="+hotelId;
+		return "redirect:/hotelInfoProc?hotelId="+hotelId;
 	}	
 	@RequestMapping("hoteldeleteProc")
 	public String hoteldeleteProc(String adminId, String adminPw) {
 		String hotelId = (String)session.getAttribute("hotelId");
-		boolean result = hotellistSVC.hotelDelte(hotelId, adminId, adminPw);
+		boolean result = hotelresSVC.hotelDelte(hotelId, adminId, adminPw);
 		
 		if(result) {
 			session.removeAttribute("hotelId");
@@ -74,44 +72,60 @@ public class hotelresourceController {
 			@RequestParam(value = "currentPage", required = false, defaultValue = "1") int currentPage,
 			String select, String search) {
 		
-		hotellistSVC.roomList(currentPage, select, search);//서비스 내부에서 session에 데이터를 업로드함
+		hotelresSVC.roomList(currentPage, select, search);//서비스 내부에서 session에 데이터를 업로드함
 		return "forward:/admin_index?formpath=admin_roomList";
 	}
 	
 	@RequestMapping("roomInfoProc")
 	public String roomInfoProc(String roomId, Model model) {
 		if(roomId ==""||roomId == null) return "redirect:roomlistProc";
-		hotellistSVC.roomInfo(roomId);
+		hotelresSVC.roomInfo(roomId);
 		return "forward:/admin_index?formpath=admin_roomInfo";
 	}
 	
 	@RequestMapping("preroomModifyProc")
 	public String preroomModifyProc(String roomId, Model model) {
 		if(roomId ==""||roomId == null) return "redirect:roomlistProc";
-		hotellistSVC.roomInfo(roomId);
+		hotelresSVC.roomInfo(roomId);
 		return "forward:/admin_index?formpath=admin_roomInfoModify";
 	}
 	
 	@RequestMapping("roomModifyProc")
 	public String roomModifyProc(roomDTO roomInfo, Model model) {
-		int result = hotellistSVC.roomModify(roomInfo);
-//		if(result == 1) {
-//			return "forward:/admin_index?formpath=admin_hotelList";
-//		}
+	
+		hotelresSVC.roomModify(roomInfo);
 		String roomId = roomInfo.getRoomId();
-		return "redirect:roomInfoProc?roomId="+roomId;
+		return "redirect:/roomInfoProc?roomId="+roomId;
 	}
 	
 	@RequestMapping("roomdeleteProc")
 	public String roomdeleteProc(String adminId, String adminPw) {
 		String roomId = (String)session.getAttribute("roomId");
 		System.out.println("roomId : "+roomId);
-		boolean result = hotellistSVC.roomDelete(roomId, adminId, adminPw);
+		boolean result = hotelresSVC.roomDelete(roomId, adminId, adminPw);
 		if(result) {
 			session.removeAttribute("roomId");
 			return "redirect:roomlistProc"; //성공
 		}
 		else return "redirect:/admin_index?formpath=admin_roomdelete"; // 실패
 	}
+	
+	@RequestMapping("preroomaddProc")
+	public String preroomaddProc() {
+		hotelresSVC.allhotelList();
+		return "redirect:/admin_index?formpath=admin_roomAdd";
+	}
+	
+//	@RequestMapping("roomAddProc")
+//	public String roomAddProc(roomDTO roomInfo, String hotelSel) {
+//		roomInfo.setHotelId(hotelSel);
+//		int result = hotelresSVC.roomAdd(roomInfo);
+//		
+//		if(result == 1) {
+//			return "forward:/roomlistProc";
+//		}
+//		
+//	}
+	
 	
 }

@@ -6,6 +6,7 @@ import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import com.care.hotel.resourceDTO.roomDTO;
+import com.care.hotel.resourceDTO.roommodiDTO;
 
 @Repository
 public interface IroomDAO {
@@ -16,8 +17,10 @@ public interface IroomDAO {
 
 	public roomDTO roomInfo(String roomId);
 
-	public int roomUpdate(roomDTO roomInfo);
+	public void roomUpdate(roomDTO roomInfo);
 
 	public void roomDelete(String sroomId);
+	
+	public void roomUpdateId(roommodiDTO roomInfo);
 
 }
