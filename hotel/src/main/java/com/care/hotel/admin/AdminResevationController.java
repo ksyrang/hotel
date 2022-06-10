@@ -69,9 +69,9 @@ public class AdminResevationController {
 		AllMemberDTO memberAll = memberSvc.userInfo(resAll.getMemberId());
 		model.addAttribute("resInfo", resAll);
 		model.addAttribute("memberInfo",memberAll);
-		/* 호텔 정보는 세션에 담아서 전달*/
+		// 호텔 정보는 세션에 담아서 전달
 		hotelresourceSvc.hotelInfo(resAll.getHotelId());
-		/* 체크아웃 - 체크인*/
+		// 체크아웃 - 체크인
 		Date checkout = new SimpleDateFormat("yyyy-MM-dd").parse(resAll.getCheckoutDate());
 		Date checkin = new SimpleDateFormat("yyyy-MM-dd").parse(resAll.getCheckinDate());
 		long diffSec = (checkout.getTime() - checkin.getTime()) / 1000; //초차이
@@ -90,14 +90,24 @@ public class AdminResevationController {
 	/* 예약 삭제시 관리자 or 호텔 아이디/비밀번호 확인 */
 	@RequestMapping(value="admin_reservationDeleteProc")
 	public String admin_reservationDeleteProc(String reservationNo, Model model) {
-		model.addAttribute(reservationNo);
+		model.addAttribute("reservationNo", reservationNo);
 		return "forward:/admin_index?formpath=admin_reservationDelete?reservationNo=" + reservationNo;
 	}
 	
 	/* 관리자 or 호텔 아이디/비밀번호 확인 post */
-	@RequestMapping(value="admin_reservationDeleteProc", method = RequestMethod.POST)
-	public String admin_reservationDeleteProc(String reservationNo, String id, String pw, Model model) {
-	
-		return "forward:/admin_index?formpath=admin_reservationDelete?reservationNo=" + reservationNo;
+	@RequestMapping(value="admin_reservationDeleteCheckProc", method = RequestMethod.POST)
+	public String admin_reservationDeleteCheckProc(String reservationNo, String id, String pw, Model model, RedirectAttributes ra) {
+		logger.info("admin_reservationDeleteCheckProc");
+		System.out.println("admin_reservationDeleteCheckProc" + reservationNo);
+		String result = reservationSvc.reservationDelete(reservationNo, id, pw);
+		boolean check = result.equals("아이디 혹은 비밀번호를 확인해주세요.");
+		if(check == true) {
+			model.addAttribute("msg", result);
+			return "forward:/admin_reservationDeleteProc";
+					//?reservationNo=" + reservationNo;
+		}else {
+			ra.addFlashAttribute("msg", result);
+			return "redirect:admin_reservationListProc";
+		}
 	}
 }

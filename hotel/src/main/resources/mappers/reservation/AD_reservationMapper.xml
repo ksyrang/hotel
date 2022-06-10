@@ -68,5 +68,10 @@
 		SET breakfastCheck = #{breakfastCheck}
 		WHERE reservationNo = #{reservationNo}
 	</update>
+	
+	<!-- reservationDelete -->
+	<delete id="reservationDelete" parameterType="String">
+		DELETE FROM reservation WHERE reservationNo=#{reservationNo} 
+	</delete>
 
 </mapper>

@@ -11,4 +11,6 @@ public interface IReservationSvc {
 	public reservationAllDTO reservationInfo(String reservationNo);
 	
 	public String reservationModify(reservationDTO resDTO);
+	
+	public String reservationDelete(String reservationNo, String id, String pw);
 }

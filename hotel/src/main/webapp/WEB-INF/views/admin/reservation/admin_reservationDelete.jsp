@@ -7,13 +7,13 @@
 <meta charset="UTF-8">
 <link href="${pageContext.request.contextPath}/resources/css/admin/amdin_memberList.css" rel="stylesheet" type="text/css">
 <link href="${pageContext.request.contextPath}/resources/css/admin/admin_memberDelete.css" rel="stylesheet" type="text/css">
-<title>admin_memberDelete</title>
+<title>admin_reservationDelete</title>
 <script>
 	function check() {
-		adminId = document.getElementById('adminId');
-		adminPw = document.getElementById('adminPw');
+		id = document.getElementById('id');
+		pw = document.getElementById('pw');
 		
-		if(adminId.value == "" || adminPw.value == "") {
+		if(id.value == "" || pw.value == "") {
 			alert('아이디 혹은 비밀번호를 확인해주세요.');
 			return;
 		}
@@ -33,26 +33,26 @@
 	예약삭제
 </div>
 <div align="center">
-${memberId } 회원을 정말 삭제하시겠습니까?
+예약번호 ${reservationNo } 예약을 정말 삭제하시겠습니까?
 </div>
 
 <div align="center" class="delteTabDiv">
 
-<form action="memberDeleteCheckProc" method="post" id="f">
+<form action="admin_reservationDeleteCheckProc" method="post" id="f">
 <table class="adminLoginTable">
 	<tr>
 	<th>아이디</th>
-	<td><input type="text" id="adminId" name="adminId" placeholder="ID" class="login_input"></td>
+	<td><input type="text" id="id" name="id" placeholder="ID" class="login_input"></td>
 	</tr>
 	<tr>
 	<th>비밀번호</th>
-	<td><input type="password" id="adminPw" name="adminPw" placeholder="PASSWORD" class="login_input"></td>
+	<td><input type="password" id="pw" name="pw" placeholder="PASSWORD" class="login_input"></td>
 	</tr>
 	<tr>
-	<td colspan="2"><input type="button" value="확인" onclick="check();" class="okBtn"></td>
+	<td colspan="2"><input type="button" value="확인" onclick="check();" class="okBtnB"></td>
 	</tr>
 </table>
-<input type="hidden" name="memberId" value="${memberId }">
+<input type="hidden" name="reservationNo" value="${reservationNo }">
 </form>
 </div>
 </div>

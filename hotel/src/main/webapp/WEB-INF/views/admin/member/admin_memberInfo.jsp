@@ -20,6 +20,7 @@
 	회원정보
 </div>
 <div class="admin_memberInfoTopRight">
+	<input type="button" value="목록" class="listBtn" onclick="location.href='${root }memberListProc'">
 	<input type="button" value="수정" class="listBtn" onclick="location.href='${root }memberModifyProc?memberId=${user.memberId}'">
 	<input type="button" value="삭제" class="listBtn" onclick="location.href='${root }memberDeleteProc?memberId=${user.memberId}'">
 </div>

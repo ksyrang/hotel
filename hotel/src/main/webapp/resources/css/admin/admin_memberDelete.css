@@ -7,4 +7,5 @@
 .adminLoginTable {border: none; width: 300px;}
 .adminLoginTable td {border: none; text-align: center;}
 .login_input {width:200px; height:40px;}
-.okBtn {width: 300px; height:40px; background-color: #f1e3c4;}
+.okBtn {width: 300px; height:40px; background-color: #f1e3c4; border:0; outline:0;}
+.okBtnB {width: 300px; height:40px; background-color: #856f57; border:0; outline:0; color: white;}

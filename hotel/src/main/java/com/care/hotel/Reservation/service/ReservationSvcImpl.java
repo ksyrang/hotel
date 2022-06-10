@@ -12,10 +12,14 @@ import com.care.hotel.Reservation.DTO.reservationAllDTO;
 import com.care.hotel.Reservation.DTO.reservationDTO;
 import com.care.hotel.Reservation.DTO.reservationExDTO;
 import com.care.hotel.common.PageService;
+import com.care.hotel.resource.service.IhotelresourceSvc;
+import com.care.hotel.resourceDAO.IhotelDAO;
+import com.care.hotel.resourceDTO.hotelDTO;
 
 @Service
 public class ReservationSvcImpl implements IReservationSvc{
 	@Autowired AD_reservationDAO reservationDAO;
+	@Autowired IhotelDAO hotelDAO;
 	@Autowired HttpSession session;
 	
 	@Override
@@ -78,5 +82,36 @@ public class ReservationSvcImpl implements IReservationSvc{
 			reservationDAO.reservationUpdate(resDTO);
 		}
 		return "예약번호 " + resDTO.getReservationNo() + " 예약 수정이 완료되었습니다.";
+	}
+
+	@Override
+	public String reservationDelete(String reservationNo, String id, String pw) {
+		String result = "예약번호 " + reservationNo + "예약을 취소했습니다.";
+		
+		// 아이디 혹은 비밀번호 미입력시
+		if(id == null || id == "" || pw == null || pw == "") {
+			result = "아이디 혹은 비밀번호를 확인해주세요.";
+		}
+		
+		// 호텔 id, pw 불러오기
+		hotelDTO hotelInfo = hotelDAO.hotelInfo(id);
+		
+		// hotelInfo에 데이터가 있을 시
+		if(hotelInfo != null) {
+			if(id.equals(session.getAttribute("userId")) && pw.equals(hotelInfo.getHotelPw())) {
+				reservationDAO.reservationDelete(reservationNo);
+			}else {
+				result = "아이디 혹은 비밀번호를 확인해주세요.";
+			}
+		}else {
+			// 관리자 id, pw가 맞을 시
+			if(id.equals("admin") && pw.equals("1234")) {
+				reservationDAO.reservationDelete(reservationNo);
+			}else {
+				result = "아이디 혹은 비밀번호를 확인해주세요.";
+			}
+		}
+		
+		return result;
 	}
 }
