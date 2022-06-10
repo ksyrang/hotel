@@ -100,8 +100,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <script type="text/javascript" src="/js/jquery.alphanumeric.js"></script>
 <script type="text/javascript">
-
-/* function saveMbrJoinForm() {
+/*
+ function saveMbrJoinForm() {
 	
 	if($.trim($('#titlCd').val()) == ""){
 		alert(messages["msg.cmm.selected.required"].replaceMsg(['호칭']));
@@ -218,7 +218,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		$('#lognId').focus();
 		return;
 	}
-
+ }
+	
 	if(gbn == false){
 		
 		gbn = true;
@@ -277,7 +278,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			alert('생성이 실패하였습니다.');
 		});
 	}
-}
+
  */
 	
 	function isExistId(){
