@@ -145,6 +145,15 @@ public class hotelresourceSvcImpl implements IhotelresourceSvc{
 	   session.setAttribute("hotelidList", list);
    }
    
+   @Override
+	public int roomcheck(String roomId) {
+		return roomDAO.checkRoom(roomId);
+	}
+   
+   @Override
+	public void roomAdd(roomDTO roomInfo) {
+		roomDAO.roomAdd(roomInfo);
+	}
    
    
    

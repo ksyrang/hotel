@@ -111,21 +111,27 @@ public class hotelresourceController {
 	}
 	
 	@RequestMapping("preroomaddProc")
-	public String preroomaddProc() {
+	public String preroomaddProc(Model model) {
 		hotelresSVC.allhotelList();
 		return "redirect:/admin_index?formpath=admin_roomAdd";
 	}
 	
-//	@RequestMapping("roomAddProc")
-//	public String roomAddProc(roomDTO roomInfo, String hotelSel) {
-//		roomInfo.setHotelId(hotelSel);
-//		int result = hotelresSVC.roomAdd(roomInfo);
-//		
-//		if(result == 1) {
-//			return "forward:/roomlistProc";
-//		}
-//		
-//	}
+	@RequestMapping("roomAddProc")
+	public String roomAddProc(roomDTO roomInfo, String hotelSel) {
+		roomInfo.setHotelId(hotelSel);
+		session.setAttribute("addroomInfo", roomInfo);
+		int check = hotelresSVC.roomcheck(roomInfo.getRoomId());		
+		System.out.println("check num: "+check);
+		if(check > 0) {
+			return "forward:/preroomaddProc";
+		}
+		hotelresSVC.roomAdd(roomInfo);
+		session.removeAttribute("addroomInfo");
+//		if(result == 1) return "forward:/roomlistProc"; //이상 발생
+		
+		return "redirect:/roomlistProc";//성공
+		
+	}
 	
 	
 }

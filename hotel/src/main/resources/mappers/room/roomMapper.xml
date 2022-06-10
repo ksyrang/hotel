@@ -51,13 +51,27 @@
    <select id="roomInfo" resultType="com.care.hotel.resourceDTO.roomDTO" parameterType="String">
       SELECT * FROM room WHERE roomid = #{roomId}   
    </select>
+	
 	<update id="roomUpdate" parameterType="com.care.hotel.resourceDTO.roomDTO">
       UPDATE room set roomid=#{roomId}, hotelid=#{hotelId}, roomtype=#{roomType}, bedtype=#{bedType}, availableperson=#{availablePerson}WHERE roomid=#{roomId}
    </update> 
+	
 	<update id="roomUpdateId" parameterType="com.care.hotel.resourceDTO.roommodiDTO">
 		UPDATE room set roomid=#{roomId}, hotelid=#{hotelId}, roomtype=#{roomType}, bedtype=#{bedType}, availableperson=#{availablePerson}WHERE roomid=#{oldId}
 	</update>    
+  
    <delete id="roomDelete" parameterType="String">
       DELETE FROM room WHERE roomid=#{roomId}
    </delete>
+   
+	<select id="checkRoom" resultType="int" parameterType="String">
+      SELECT count(*) FROM room WHERE roomid=#{roomId}
+      </select>
+      
+	<insert id="roomAdd" parameterType="com.care.hotel.resourceDTO.roomDTO">
+		INSERT INTO room (ROOMID, HOTELID, ROOMTYPE, BEDTYPE, AVAILABLEPERSON) VALUES (#{roomId},#{hotelId},#{roomType},#{bedType},#{availablePerson})
+
+	</insert>
+   
+   
 </mapper>

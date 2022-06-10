@@ -17,6 +17,7 @@ public interface IhotelresourceSvc {
    
    public void roomList(int currentPage, String select, String search);
    public void roomInfo(String roomId);
+   public int roomcheck(String roomId);
    
    
    /* 모든 호텔 정보 보기 */
@@ -27,5 +28,7 @@ public interface IhotelresourceSvc {
    public void roomModify(roomDTO roomInfo);
 
    public boolean roomDelete(String roomId, String adminId, String adminPw);
+
+   public void roomAdd(roomDTO roomInfo);
    
 }

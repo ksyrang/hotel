@@ -23,4 +23,8 @@ public interface IroomDAO {
 	
 	public void roomUpdateId(roommodiDTO roomInfo);
 
+	public int checkRoom(String roomId);
+
+	public void roomAdd(roomDTO roomInfo);
+
 }
