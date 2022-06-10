@@ -181,6 +181,12 @@ public class HomeController {
 		return "admin/room/roomdeleteForm";
 	}
 	
+	@GetMapping("admin_roomAdd")
+	public String admin_roomAdd() {
+		
+		return "admin/room/roomAddform";
+	}
+	
 	/* 관리자 예약 목록 */
 	@RequestMapping(value="admin_reservationList")
 	public String admin_reservationList() {
