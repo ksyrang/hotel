@@ -138,6 +138,10 @@ public class HomeController {
 		return "admin/member/admin_memberDelete";
 	}
 	/* 호텔 관리 */
+	@GetMapping("admin_hotelAdd")
+	public String admin_hotelAdd () {
+		return "admin/hotel/hoteladdForm";
+	}
 	@GetMapping("admin_hotelList")
 	public String admin_hotelList() {
 		return "admin/hotel/hotellistForm";
@@ -145,7 +149,7 @@ public class HomeController {
 	@GetMapping("admin_hotelInfo")
 	public String admin_hotelInfo() {
 //		if(session.getAttribute("hotelInfo") == null)
-		return "admin/hotel/hotelInfoform";
+		return "admin/hotel/hotelInfoForm";
 	}	
 	
 	@GetMapping("admin_hotelInfoModify")

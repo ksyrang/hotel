@@ -30,5 +30,10 @@ public interface IhotelresourceSvc {
    public boolean roomDelete(String roomId, String adminId, String adminPw);
 
    public void roomAdd(roomDTO roomInfo);
+
+   public hotelDTO hotelCheck(String hotelId);
+
+   public void hotelAdd(hotelDTO hotelInfo);
+
    
 }

@@ -132,6 +132,21 @@ public class hotelresourceController {
 		return "redirect:/roomlistProc";//성공
 		
 	}
-	
+	@RequestMapping("hoteladdProc")
+	public String hoteladdProc(hotelDTO hotelInfo, String hotelPwC) {
+		session.setAttribute("hotelAdd", hotelInfo);
+		if(hotelInfo.getHotelId() == null|| hotelInfo.getHotelId() == "")return "redirect:/admin_index?formpath=admin_hotelAdd";			
+		if(!hotelInfo.getHotelPw().equals(hotelPwC)) return "redirect:/admin_index?formpath=admin_hotelAdd";			
+		//확인 사항 : hotelId, hotelName
+		hotelDTO check = hotelresSVC.hotelCheck(hotelInfo.getHotelId());
+		if(check == null) {//check.getHotelId()==null || check.getHotelId()=="" || check.getHotelName()==null || check.getHotelName()!=""
+			session.removeAttribute("hotelAdd");
+			hotelresSVC.hotelAdd(hotelInfo);
+		}else return "redirect:/admin_index?formpath=admin_hotelAdd";
+		//유일성 비교 완료
+
+						
+		return "redirect:/hotellistProc";
+	}
 	
 }

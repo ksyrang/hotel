@@ -46,7 +46,7 @@
 		</tr>
 		<tr>
 			<td align='center' height=40 colspan=5>
-				<input type="submit" value='수정' style="width: 120px; "/>
+				<input type="submit" value='객실 추가 	' style="width: 120px; "/>
 				<input type="reset" value='취소' style="width: 120px; "/>	 
 			</td>
 		</tr>

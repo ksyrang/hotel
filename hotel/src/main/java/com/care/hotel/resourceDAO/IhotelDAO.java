@@ -25,5 +25,9 @@ public interface IhotelDAO {
    public void hotelDelete(String hotelId);
 
    public ArrayList<hotelDTO> allhotelidList();
+
+   public hotelDTO checkHotel(String hotelId);
+
+   public void hotelAdd(hotelDTO hotelInfo);
    
 }

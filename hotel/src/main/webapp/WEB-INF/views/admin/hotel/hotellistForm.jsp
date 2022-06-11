@@ -16,6 +16,8 @@
 	</select>
 	<input type="text" name="search" class="search">
 	<input type="submit" name="SearchBtn" value="검색" class="Btn">
+	<input type="button" name="addBtn" value="호텔 추가" onclick="location.href='${root }admin_index?formpath=admin_hotelAdd'" class = "Btn">
+
 </form>
 
 <div style="height: 20px;"></div>

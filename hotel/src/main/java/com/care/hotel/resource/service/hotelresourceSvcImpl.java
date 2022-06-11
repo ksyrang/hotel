@@ -154,7 +154,16 @@ public class hotelresourceSvcImpl implements IhotelresourceSvc{
 	public void roomAdd(roomDTO roomInfo) {
 		roomDAO.roomAdd(roomInfo);
 	}
+    
+   @Override
+	public hotelDTO hotelCheck(String hotelId) {
+		return hotelDAO.checkHotel(hotelId);
+	}
    
+   @Override
+	public void hotelAdd(hotelDTO hotelInfo) {
+	   hotelDAO.hotelAdd(hotelInfo);
+	}
    
    
 }
