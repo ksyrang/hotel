@@ -3,8 +3,10 @@
 
 <c:url var="root" value="/" />
 <link href="${pageContext.request.contextPath}/resources/css/admin/amdin_hotelList.css" rel="stylesheet" type="text/css">
+<link href="${pageContext.request.contextPath}/resources/css/admin/amdin_memberList.css" rel="stylesheet" type="text/css">
 
 <center>
+<div class="admin_main">
 	<form action="hoteldeleteProc" method="post">
 		<table>
 			<tr>
@@ -26,10 +28,6 @@
 				</td>
 			</tr>
 		</table>
-		
-	
 	</form>	
-
-
-
+</div>
 </center>

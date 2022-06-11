@@ -2,6 +2,7 @@
 
 .footer_logo{ margin:auto; width:250px; height:100px; position:relative; left: -1%; }
 .logo {width:200px; margin-top: 20px;}
+.admin_main {margin:auto; width: 1000px; margin-bottom: 20px; margin-top: 20px;}
 /*로고 사이즈 변경 끝*/
 /* .footer_logo{ position:absolute;  overflow:hidden;}
 .footer_logo{ float:left; width:800px; height:123px; position:relative; }  */
