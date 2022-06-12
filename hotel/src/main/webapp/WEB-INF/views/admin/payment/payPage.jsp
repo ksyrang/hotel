@@ -19,19 +19,24 @@
 			row.style.display = 'none';
 		}
 	}
+	
+	var req;
 	// 카드정보 가져오기 checkbox를 누르면 고객의 카드 정보를 불러온다.
 	function getCreditInfo(checked) {
-		cardCompany = document.getElementById('cardCompany');
-		cardNo1 = document.getElementById('cardNo1');
-		cardNo2 = document.getElementById('cardNo2');
-		cardNo3 = document.getElementById('cardNo3');
-		cardNo4 = document.getElementById('cardNo4');
-		validityMm = document.getElementById('validityMm');
-		validityYy = document.getElementById('validityYy');
-		csv = document.getElementById('csv');
+		var cardCompany = document.getElementById('cardCompany');
+		var cardNo1 = document.getElementById('cardNo1');
+		var cardNo2 = document.getElementById('cardNo2');
+		var cardNo3 = document.getElementById('cardNo3');
+		var cardNo4 = document.getElementById('cardNo4');
+		var validityMm = document.getElementById('validityMm');
+		var validityYy = document.getElementById('validityYy');
+		var csv = document.getElementById('csv');
+		
 		if(checked.checked == true) {
-			cardCompany.value="카카오뱅크";
-			cardNo1.value = "1111";
+			req = new XMLHttpRequest();
+			req.onreadystatechange = printInfo;
+			req.open('post', 'getCreditInfo');
+			req.send(${memberDTO.memberId});
 		}else {
 			cardCompany.value = "";
 			cardNo1.value = "";
@@ -43,11 +48,18 @@
 			csv.value = "";
 		}
 	}
+	
+	// 체크박스 선택 시
+	function printInfo() {
+		if(req.readyState == 4 && req.status == 200){
+			//alert(req.responseText);
+		}
+	}
 </script>
 </head>
 <body>
 <div class="admin_mainDiv">
-
+<input type="hidden" id="memberId" value="${memberDTO.memberId }">
 <table class="payTable">
 	<tr><th>결제번호</th><td>${paymentNo }</td></tr>
 	<tr><th>예약번호</th><td>${resDTO.reservationNo }</td></tr>
@@ -74,13 +86,13 @@
 			<option value="농협은행">농협은행</option>	
 			<option value="카카오뱅크">카카오뱅크</option>	
 		</select><br/>
-		카드번호 : <input type="text" name="cardNo1" id="cardNo1" value="8271" class="input_cardNo"> 
-		<input type="password" name="cardNo2" id="cardNo2" value="2937"  class="input_cardNo">
-		<input type="password" name="cardNo3" id="cardNo3" value="2748"  class="input_cardNo"> 
-		<input type="text" name="cardNo4" id="cardNo4" value="9726"  class="input_cardNo"><br/>
-		유효기간 : <input type="text" name="validityMm" id="validityMm" value="08" class="input_validity">/
-		<input type="text" name="validityYy" id="validityYy" value="27" class="input_validity"><br/>
-		CSV : <input type="text" name="csv" id="csv" value="364" class="input_csv"><br/>
+		카드번호 : <input type="text" name="cardNo1" id="cardNo1" value="${cardNo1 }" class="input_cardNo"> 
+		<input type="password" name="cardNo2" id="cardNo2" value="${cardNo2 }"  class="input_cardNo">
+		<input type="password" name="cardNo3" id="cardNo3" value="${cardNo3 }"  class="input_cardNo"> 
+		<input type="text" name="cardNo4" id="cardNo4" value="${cardNo4 }"  class="input_cardNo"><br/>
+		유효기간 : <input type="text" name="validityMm" id="validityMm" value="${validityMm }" class="input_validity">/
+		<input type="text" name="validityYy" id="validityYy" value="${validityYy }" class="input_validity"><br/>
+		CSV : <input type="text" name="csv" id="csv" value="${csv }" class="input_csv"><br/>
 	</td></tr>
 	<tr><th>결제금액</th><td>${resDTO.baseAmount }원</td></tr>
 </table>

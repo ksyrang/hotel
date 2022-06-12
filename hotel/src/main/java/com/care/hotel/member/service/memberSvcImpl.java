@@ -20,8 +20,6 @@ public class memberSvcImpl implements ImemberSvc{
 	
 	@Override
 	public AllMemberDTO userInfo(String memberId) {
-		System.out.println("memberSvc_userInfo");
-		
 		memberDTO member = memberDAO.memberInfo(memberId);
 		memberExDTO memberEx = memberDAO.memberExInfo(memberId);
 		
@@ -42,8 +40,6 @@ public class memberSvcImpl implements ImemberSvc{
 			user.setMemberAddr2(memberEx.getMemberAddr2());
 			user.setMemberHomePhone(memberEx.getMemberHomePhone());
 		}
-		
-		System.out.println(user.getMemberId());
 		
 		return user;
 	}
