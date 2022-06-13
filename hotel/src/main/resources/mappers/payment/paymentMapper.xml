@@ -2,10 +2,70 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.care.hotel.payment.DAO.paymentDAO">
 
+<!-- 결제 테이블 내 row 개수 -->
+<select id="paymentCount" resultType="int">
+	SELECT count(*) FROM payment
+	<where>
+		<choose>
+			<when test='hotelId != null and hotelId != "" '>
+				hotelId=#{hotelId}
+			</when>
+			<when test='startDate != "" and startDate != null'>
+				 <![CDATA[
+					paymentDate >= #{startDate}
+				]]>
+			</when>
+			<when test='endDate != "" and endDate != null'>
+				<![CDATA[
+					paymentDate <= #{endDate}
+				]]>
+			</when>
+			<when test='paymentStatus != null'>
+				paymentStatus=#{paymentStatus}
+			</when>
+			<when test='memberId != null and memberId != ""'>
+				memberId like '%'||#{memberId}||'%'
+			</when>
+		</choose>
+	</where>
+</select>
+
+<!-- paymentList -->
+<select id="paymentList" resultType="com.care.hotel.payment.DTO.paymentDTO">
+	SELECT B.* FROM(
+		SELECT rownum rn, A.* FROM( 
+			SELECT * FROM payment
+		<where>
+			<choose>
+				<when test='hotelId != null and hotelId != "" '>
+					hotelId=#{hotelId}
+				</when>
+				<when test='startDate != "" and startDate != null'>
+				 <![CDATA[
+					paymentDate >= #{startDate}
+				]]>
+				</when>
+				<when test='endDate != "" and endDate != null'>
+				 <![CDATA[
+					paymentDate <= #{endDate}
+				]]>
+				</when>
+				<when test='paymentStatus != null'>
+					paymentStatus=#{paymentStatus}
+				</when>
+				<when test='memberId != null and memberId != "" '>
+					memberId like '%'||#{memberId}||'%'
+				</when>
+			</choose>
+		</where>
+			)A
+		)B WHERE rn BETWEEN #{b} and #{e}
+</select>
+
 <!-- insertPayment -->
 <insert id="insertPayment" parameterType="com.care.hotel.payment.DTO.paymentDTO">
-	INSERT INTO payment(paymentNo, reservationNo, memberId, paymentDate, paymentType, paymentAmount, paymentStatus)
-	VALUES(#{paymentNo}, #{reservationNo}, #{memberId}, #{paymentDate}, #{paymentType}, #{paymentAmount}, #{paymentStatus})
+	INSERT INTO payment(paymentNo, reservationNo, memberId, hotelId, paymentDate, paymentType, paymentAmount, paymentStatus)
+	VALUES(#{paymentNo}, #{reservationNo}, #{memberId}, #{hotelId}, #{paymentDate}, #{paymentType}, #{paymentAmount}, #{paymentStatus})
 </insert>
 
 </mapper>

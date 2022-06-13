@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -25,6 +26,7 @@ import com.care.hotel.member.service.IMemberCardSvc;
 import com.care.hotel.member.service.ImemberSvc;
 import com.care.hotel.payment.DTO.paymentDTO;
 import com.care.hotel.payment.service.IPaymentService;
+import com.care.hotel.resource.service.IhotelresourceSvc;
 
 @Controller
 public class AdminPaymentController {
@@ -32,11 +34,15 @@ public class AdminPaymentController {
 	@Autowired IReservationSvc reservationSvc;
 	@Autowired ImemberSvc memberSvc;
 	@Autowired IMemberCardSvc cardSvc;
-	
+	@Autowired IhotelresourceSvc hotelresourceSvc;
 	
 	// 매출 목록
-	@RequestMapping(value="paymentListProc")
-	public String paymentListProc() {
+	@RequestMapping(value="paymentListProc", method = RequestMethod.GET)
+	public String paymentListProc(Model model, 
+			@RequestParam(value = "currentPage", required = false, defaultValue = "1") int currentPage,
+			String hotelSelect, String startDate, String endDate, String StatusSelect,String memberId) {
+		model.addAttribute("allHotelInfo", hotelresourceSvc.allHotelInfo());
+		paymentSvc.paymentList(currentPage, hotelSelect, startDate, endDate, StatusSelect, memberId);
 		return "forward:/admin_index?formpath=paymentList";
 	}
 	

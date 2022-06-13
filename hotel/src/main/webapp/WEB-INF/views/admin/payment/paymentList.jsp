@@ -8,7 +8,7 @@
 <meta charset="UTF-8">
 <link href="${pageContext.request.contextPath}/resources/css/admin/admin_commonCss.css" rel="stylesheet" type="text/css">
 <link href="${pageContext.request.contextPath}/resources/css/admin/admin_reservationList.css" rel="stylesheet" type="text/css">
-<title>admin_reservationList</title>
+<title>paymentList</title>
 
 </head>
 <body>
@@ -23,7 +23,7 @@
 	<form>
 		<!-- 호텔 필터링 -->
 		<c:if test="${sessionScope.userId eq 'admin' }">
-		<select name="hotelSelect" class="admin_hotelSearch">
+		<select name="hotelSelect" id="hotelSelect" class="admin_hotelSearch">
 				<option value="">호텔명</option>
 			<c:forEach var="hotelInfoList" items="${allHotelInfo }">
 				<option value="${hotelInfoList.hotelId }">${hotelInfoList.hotelName }</option>
@@ -31,14 +31,15 @@
 		</select>
 		</c:if>
 		<!-- 날짜 필터링 -->
-		<select name="dateBase" class="admin_dateSelete">
-			<option value="">날짜 기준</option>
-			<option value="reservationDate">예약일 기준</option>
-			<option value="checkinDate">체크인 기준</option>
+		<input type="date" id="startDate" name="startDate" class="admin_reservationDate">~<input type="date" id="endDate" name="endDate" class="admin_reservationDate2">
+		<!-- 결제상태 필터링 -->
+		<select name="StatusSelect" id="StatusSelect" class="admin_hotelSearch">
+			<option value="">결제상태</option>
+			<option value="0">결제완료</option>
+			<option value="1">결제취소</option>
 		</select>
-		<input type="date" name="startDate" class="admin_reservationDate">~<input type="date" name="endDate" class="admin_reservationDate2">
-		<!-- 예약번호 검색 -->
-		<input type="text" name="reservationNoSearch" placeholder="예약번호" class="admin_reservationNoSearch">
+		<!-- 회원아이디 검색 -->
+		<input type="text" name="memberId" id="memberId" placeholder="회원 아이디" class="admin_reservationNoSearch">
 		<input type="submit" name="reservationSearchBtn" value="검색" class="admin_commonBtn">
 	</form>
 	<!-- 예약 목록 테이블 -->
@@ -46,15 +47,15 @@
 		<table class="admin_reservationListTable">
 		<thead>
 			<tr>
+				<th>결제번호</th>
 				<th>예약번호</th>
 				<th>회원ID</th>
-				<th>호텔명</th>
-				<th>객실</th>
-				<th>예약날짜</th>
-				<th>체크인</th>
-				<th>금액</th>
-				<th>예약상태</th>
-				<th>수정/취소/결제</th>
+				<th>호텔명/객실</th>
+				<th>결제일자</th>
+				<th>결제타입</th>
+				<th>결제금액</th>
+				<th>결제상태</th>
+				<th>결제취소</th>
 			</tr>
 			</thead>
 			<!-- forEach문 -->
@@ -106,9 +107,9 @@
 			</tr>
 			</c:forEach>
 		</table><br>
-	<b>총 예약수 : ${sessionScope.resCount }</b><br>
+	<b>총 예약수 : ${sessionScope.paymentCount }</b><br>
 	<div align="center">
-		${sessionScope.resPage }
+		${sessionScope.paymentPage }
 	</div>
 	
 	

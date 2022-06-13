@@ -5,6 +5,7 @@ public class paymentDTO {
 	private String paymentNo;
 	private String reservationNo;
 	private String memberId;
+	private String hotelId;
 	private String paymentDate;
 	private String paymentType;
 	private String paymentAmount;//결제 금액
@@ -58,6 +59,12 @@ public class paymentDTO {
 	}
 	public void setMemberId(String memberId) {
 		this.memberId = memberId;
+	}
+	public String getHotelId() {
+		return hotelId;
+	}
+	public void setHotelId(String hotelId) {
+		this.hotelId = hotelId;
 	}
 	
 	

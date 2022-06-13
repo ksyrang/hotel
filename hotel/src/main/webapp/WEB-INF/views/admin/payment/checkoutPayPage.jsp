@@ -140,6 +140,7 @@
 <input type="hidden" name="reservationNo" value="${resDTO.reservationNo }">
 <input type="hidden" name="memberId" id="memberId" value="${memberDTO.memberId }">
 <input type="hidden" name="paymentDate" value="${paymentDate }">
+<input type="hidden" name="hotelId" value="${resDTO.hotelId }">
 <input type="hidden" name="reservationStatus" value="${resDTO.reservationStatus }">
 
 <table class="payTable">
