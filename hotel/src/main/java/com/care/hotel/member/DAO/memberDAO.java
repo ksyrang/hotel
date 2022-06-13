@@ -3,6 +3,7 @@ package com.care.hotel.member.DAO;
 import java.util.ArrayList;
 
 import org.apache.ibatis.annotations.Param;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.care.hotel.member.DTO.memberDTO;
 import com.care.hotel.member.DTO.memberExDTO;
@@ -30,6 +31,6 @@ public interface memberDAO {
 	
 	int isExistEmail(String memberEmail);
 	
-	memberDTO memberIdFind(String memberId, String memberNameENG,String memberEmail);
+	memberDTO memberIdFind(@Param("memberNameENG")String memberNameENG, @Param("memberEmail")String memberEmail);
 	
 }

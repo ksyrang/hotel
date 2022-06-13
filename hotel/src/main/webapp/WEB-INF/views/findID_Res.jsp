@@ -62,18 +62,18 @@ window.onload = function() {
 <div class="popLayer popLayerFindId">
 
 	<div class="popHead">
-		<h2 class="tit">신라리워즈 번호 또는 아이디 찾기</h2>
+		<h2 class="tit">신라리워즈 아이디 찾기</h2>
 		<div class="btn"><a class="btnClose" href="${root }index?formpath=login"><span>닫기</span></a></div>
 	</div>
 	<div class="popCtn">
 		<div class="step step2" style="display:" id="step2Div">
-
-			<div class="resultbox">
+			<p class="msg1">신라리워즈 아이디 찾기 결과는 다음과 같습니다.</p>
+			<div class="formBox">
 				<dl>
 					<dd>
-						<strong>[${member.memberNameENG}]</strong>
+						<strong>${member.memberNameENG}님의</strong>
 						<br>
-						<h2>"ID -"</h2>
+						"ID - "
 						<strong>[${member.memberId}]</strong>
 					</dd>
 				</dl>	

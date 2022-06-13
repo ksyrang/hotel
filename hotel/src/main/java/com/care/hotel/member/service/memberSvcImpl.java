@@ -6,9 +6,12 @@ import java.io.PrintWriter;
 
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.care.hotel.member.DAO.memberDAO;
 import com.care.hotel.member.DTO.AllMemberDTO;
@@ -139,26 +142,21 @@ public class memberSvcImpl implements ImemberSvc{
 			
 		
 	@Override
-	public String findID(String memberId, String memberNameENG,String memberEmail) throws Exception{
-		memberDTO member = new memberDTO();
-		String id = null;
-		String nameENG = member.getMemberNameENG();
-		String email = member.getMemberEmail();
+	public String findID(memberDTO member) throws Exception{
+		String memberNameENG = member.getMemberNameENG();
+		String memberEmail = member.getMemberEmail();
+		member = memberDAO.memberIdFind(memberNameENG, memberEmail);
 		
-		String result = "가입된 아이디는 [" + id + "] 입니다.";
+		String memberId = member.getMemberId();
+		String result = "가입된 아이디는 [" + memberId + "] 입니다.";
 		
-		if(nameENG.isEmpty() || email.isEmpty()) {
+		if(memberNameENG.isEmpty() || memberEmail.isEmpty()) {
 			result="다시 입력해주세요.";
 		}else {
-		 member = memberDAO.memberIdFind(id, nameENG, email);
-			if(member == null) {
-				result="다시 입력해주세요.";
-			}else {
-				id = member.getMemberId();
-				result="가입된 아이디는 [" + id + "] 입니다.";
-			}
+			result="가입된 아이디는 [" + memberId + "] 입니다.";	
 		}
 		return result;
+		
 	}
 
 

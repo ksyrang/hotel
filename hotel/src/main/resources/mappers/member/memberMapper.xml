@@ -95,7 +95,7 @@
 		SELECT count(*) FROM member WHERE memberEmail=#{memberEmail}
 	</select>
 	<!-- 아이디 찾기 -->
-	<select id="memberIdFind" parameterType="com.care.hotel.member.DTO.memberDTO" resultType="int">
-		SELECT memberId FROM member WHERE memberNameENG=#{memberNameENG} and memberEmail=#{memberEmail}
+	<select id="memberIdFind" parameterType="String" resultType="com.care.hotel.member.DTO.memberDTO">
+		SELECT * FROM member WHERE memberNameENG=#{memberNameENG} and memberEmail=#{memberEmail}
 	</select>
 </mapper>

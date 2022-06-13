@@ -63,7 +63,7 @@ window.onload = function() {
 <div class="popLayer popLayerFindId">
 
 	<div class="popHead">
-		<h2 class="tit">신라리워즈 번호 또는 아이디 찾기</h2>
+		<h2 class="tit">신라리워즈 아이디 찾기</h2>
 		<div class="btn"><a class="btnClose" href="${root }index?formpath=login"><span>닫기</span></a></div>
 	</div>
 	<div class="popCtn">
@@ -79,7 +79,8 @@ window.onload = function() {
 					<tbody><tr>
 						<th scope="row"><span class="nameK">성명(영문)</span></th>
 						<td>
-							<input id="memberNameENG" name="memberNameENG" placeholder='띄어쓰기 없이 작성' onkeyup="this.value=this.value.replace(/[^a-z]/gi,'');" style="text-transform: uppercase;" type="text" class="lastNameEn uiform text" value="" maxlength="30" autocomplete="off" />
+						<!-- style="text-transform: uppercase;" -->
+							<input id="memberNameENG" name="memberNameENG" placeholder='띄어쓰기 없이 작성' onkeyup="this.value=this.value.replace(/[^a-z]/gi,'');"  type="text" class="lastNameEn uiform text" value="" maxlength="30" autocomplete="off" />
 						</td>
 					</tr>
 					<tr>
