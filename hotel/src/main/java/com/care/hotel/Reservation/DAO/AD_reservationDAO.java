@@ -23,6 +23,10 @@ public interface AD_reservationDAO {
 
 	void reservationUpdate(reservationDTO resDTO);
 	
-	void reservationDelete(String reservationNo);
+	// 예약 상태- 취소로 변경
+	void reservationDelete(reservationDTO resDTO);
+	
+	// 예약 상태 - 체크인(1)로 변경
+	void resStatusCheckin(String reservationNo);
 
 }

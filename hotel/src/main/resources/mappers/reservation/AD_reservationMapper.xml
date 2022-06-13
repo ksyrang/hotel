@@ -70,8 +70,18 @@
 	</update>
 	
 	<!-- reservationDelete -->
-	<delete id="reservationDelete" parameterType="String">
-		DELETE FROM reservation WHERE reservationNo=#{reservationNo} 
-	</delete>
+	<update id="reservationDelete" parameterType="com.care.hotel.Reservation.DTO.reservationDTO">
+		UPDATE reservation
+		SET reservationStatus = #{reservationStatus}, cancelDate = to_date(#{cancelDate},'YYYY-MM-DD')
+		WHERE reservationNo = #{reservationNo}
+	</update>
+	
+	<!-- resStatusCheckin -->
+	<update id="resStatusCheckin" parameterType="String">
+		UPDATE reservation
+		SET reservationStatus = '1'
+		WHERE reservationNo = #{reservationNo}
+	</update>
+	
 
 </mapper>

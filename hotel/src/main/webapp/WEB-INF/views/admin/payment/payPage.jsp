@@ -74,13 +74,62 @@
 			}
 		}
 	}
+	
+	function submitCheck() {
+		var paymentType = document.getElementById('paymentType');
+		var cardCompany = document.getElementById('cardCompany');
+		var cardNo1 = document.getElementById('cardNo1');
+		var cardNo2 = document.getElementById('cardNo2');
+		var cardNo3 = document.getElementById('cardNo3');
+		var cardNo4 = document.getElementById('cardNo4');
+		var validityMm = document.getElementById('validityMm');
+		var validityYy = document.getElementById('validityYy');
+		var csv = document.getElementById('csv');
+		if(paymentType.value == '1'){
+			if(cardCompany.value == "" || cardNo1.value == "" || cardNo2.value == "" || cardNo3.value == ""
+					|| cardNo4.value == "" || validityMm.value == "" || validityYy == "" || csv == ""){
+				alert("신용/체크카드 정보를 입력해주세요.");
+				return;
+			}
+			if(cardNo1.value.length != 4 || cardNo2.value.length != 4 || cardNo3.value.length != 4 || cardNo4.value.length != 4){
+				alert("카드 번호를 정확히 입력해주세요.");
+				return;
+			}
+			if(validityMm.value.length != 2 || validityYy.value.length != 2) {
+				alert("유효기간을 정확히 입력해주세요.");
+				return;
+			}
+			validityMmNum = validityMm.value * 1;
+			validityYyNum = validityYy.value * 1;
+			if(validityMmNum < 0 || validityMmNum >= 13 || validityYyNum < 22) {
+				alert("유효기간을 정확히 입력해주세요.");
+				return;
+			}
+			if(csv.value.length != 3) {
+				alert("csv를 정확히 입력해주세요.");
+				return;
+			}
+		}
+		document.getElementById('f').submit();
+	}
 
 </script>
 
 </head>
 <body>
+<c:if test="${not empty msg }">
+	<script>alert("${msg}");</script>
+</c:if>
 <div class="admin_mainDiv">
-<input type="hidden" id="memberId" value="${memberDTO.memberId }">
+
+<form action="PaymentProc" method="post" id='f'>
+
+<input type="hidden" name="paymentNo" value="${paymentNo }">
+<input type="hidden" name="reservationNo" value="${resDTO.reservationNo }">
+<input type="hidden" name="memberId" id="memberId" value="${memberDTO.memberId }">
+<input type="hidden" name="paymentDate" value="${paymentDate }">
+<input type="hidden" name="paymentAmount" value="${resDTO.baseAmount }">
+
 <table class="payTable">
 	<tr><th>결제번호</th><td>${paymentNo }</td></tr>
 	<tr><th>예약번호</th><td>${resDTO.reservationNo }</td></tr>
@@ -119,7 +168,8 @@
 </table>
 <div class="payDiv">
 	<input type="button" value="취소" class="payCancleBtn" onclick="javascript:history.back();">
-	<input type="button" value="결제" class="payPayBtn">
+	<input type="button" value="결제" class="payPayBtn" onclick="submitCheck()">
 </div>
+</form>
 </div>
 </body>

@@ -13,7 +13,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.care.hotel.Reservation.DTO.reservationDTO;
 import com.care.hotel.Reservation.service.IReservationSvc;
@@ -21,6 +23,7 @@ import com.care.hotel.member.DTO.memberCardDTO;
 import com.care.hotel.member.DTO.memberDTO;
 import com.care.hotel.member.service.IMemberCardSvc;
 import com.care.hotel.member.service.ImemberSvc;
+import com.care.hotel.payment.DTO.paymentDTO;
 import com.care.hotel.payment.service.IPaymentService;
 
 @Controller
@@ -46,8 +49,6 @@ public class AdminPaymentController {
 		// 카드 정보 불러오기
 		memberCardDTO cardDTO = cardSvc.cardInfo(resDTO.getMemberId());
 		if(cardDTO != null) {
-			//model.addAttribute("cardDTO", cardDTO);
-			
 			//모델에 값 넣어주기
 			model.addAttribute("cardCompany", cardDTO.getCardCompany());
 			model.addAttribute("cardNo1", cardDTO.getCardNo().substring(0, 4));
@@ -61,7 +62,7 @@ public class AdminPaymentController {
 		return "forward:/admin_index?formpath=payPage";
 	}
 	
-	
+	// 고객 카드 정보 넘기기
 	@PostMapping(value = "getCreditInfo", produces = "application/json;charset=UTF-8")
 	@ResponseBody
 	public Map<String, String> getCreditInfo(@RequestBody(required = false)String memberId, Model model) {
@@ -88,5 +89,13 @@ public class AdminPaymentController {
 		return cardInfo;
 	}
 	 
+	// 결제 버튼을 눌렀을 때
+	@RequestMapping(value="PaymentProc", method=RequestMethod.POST)
+	public String PaymentProc(paymentDTO paymentDTO, RedirectAttributes ra) {
+		String result = paymentSvc.insertPayment(paymentDTO);
+		ra.addAttribute("msg", result);
+		return "redirect:admin_reservationListProc";
+		
+	}
 
 }
