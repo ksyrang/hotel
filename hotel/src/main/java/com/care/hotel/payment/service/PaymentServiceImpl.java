@@ -35,13 +35,31 @@ public class PaymentServiceImpl implements IPaymentService{
 		return paymentDate;
 	}
 
-	// 결제 테이블에 데이터 insert, 예약 상태 변경(1)
+	// 결제 테이블에 데이터 insert, 예약 상태 변경
 	@Override
-	public String insertPayment(paymentDTO paymentDTO) {
+	public String insertPayment(paymentDTO paymentDTO, String reservationStatus) {
+		if(paymentDTO.getPaymentAmount() == null || paymentDTO.getPaymentAmount() == "") {
+			paymentDTO.setPaymentAmount("0");
+		}
+		reservationDTO resDTO = resDAO.reservationInfo(paymentDTO.getReservationNo());
+		// 결제상태 -> 완료
 		paymentDTO.setPaymentStatus("0");
 		paymentDAO.insertPayment(paymentDTO);
-		resDAO.resStatusCheckin(paymentDTO.getReservationNo());
-		return "예약번호 " + paymentDTO.getReservationNo() + " 결제가 완료되었습니다.";
+		
+		// 예약 상태 : 예약 -> 체크인
+		if(reservationStatus.equals("0")) {
+			// 예약 상태 : 0 -> 1
+			resDTO.setReservationStatus("1");
+			resDAO.resStatusCheckin(resDTO);
+			return "예약번호 " + paymentDTO.getReservationNo() + " 체크인이 완료되었습니다.";
+		} else {
+		// 예약 상태 : 체크인 -> 체크아웃
+			// 예약상태 1 -> 2
+			resDTO.setReservationStatus("2");
+			resDAO.resStatusCheckin(resDTO);
+			return "예약번호 " + paymentDTO.getReservationNo() + " 체크아웃이 완료되었습니다.";
+		}
+		
 	}
 	
 }

@@ -129,6 +129,7 @@
 <input type="hidden" name="memberId" id="memberId" value="${memberDTO.memberId }">
 <input type="hidden" name="paymentDate" value="${paymentDate }">
 <input type="hidden" name="paymentAmount" value="${resDTO.baseAmount }">
+<input type="hidden" name="reservationStatus" value="${resDTO.reservationStatus }">
 
 <table class="payTable">
 	<tr><th>결제번호</th><td>${paymentNo }</td></tr>

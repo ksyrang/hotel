@@ -60,13 +60,13 @@
 		</c:forEach>
 		
 	</table><br>
-	
+	<b>총 회원수 : ${sessionScope.memberCount }명</b><br>
 	<!-- 페이징 -->
 	<div align="center">
 	${sessionScope.page }
 	</div>
 	
-	<b>총 회원수 : ${sessionScope.memberCount }명</b>
+	
 </div>
 
 </div>

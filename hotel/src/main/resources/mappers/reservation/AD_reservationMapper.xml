@@ -77,9 +77,9 @@
 	</update>
 	
 	<!-- resStatusCheckin -->
-	<update id="resStatusCheckin" parameterType="String">
+	<update id="resStatusCheckin" parameterType="com.care.hotel.Reservation.DTO.reservationDTO">
 		UPDATE reservation
-		SET reservationStatus = '1'
+		SET reservationStatus = #{reservationStatus}
 		WHERE reservationNo = #{reservationNo}
 	</update>
 	

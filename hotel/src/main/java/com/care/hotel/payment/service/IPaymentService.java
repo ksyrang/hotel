@@ -7,6 +7,6 @@ public interface IPaymentService {
 	public String createPaymentNo();
 	// 결제일 생성
 	public String getPaymentDate();
-	// 결제 테이블에 데이터 insert, 예약 상태 변경(1)
-	public String insertPayment(paymentDTO paymentDTO);
+	// 결제 테이블에 데이터 insert, 예약 상태 변경
+	public String insertPayment(paymentDTO paymentDTO, String reservationStatus);
 }
