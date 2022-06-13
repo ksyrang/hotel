@@ -91,7 +91,7 @@
 					<c:when test="${resdb.reservationStatus eq '1' }">
 						<input type="button" value="수정" class="admin_commonBtnG" disabled>
 						<input type="button" value="취소" class="admin_commonBtnG" disabled>
-						<input type="button" value="결제" class="admin_commonBtn" onclick="location.href='${root }payPageProc?reservationNo=${resdb.reservationNo }'">
+						<input type="button" value="결제" class="admin_commonBtn" onclick="location.href='${root }checkoutPayPageProc?reservationNo=${resdb.reservationNo }'">
 					</c:when>
 					<c:otherwise>
 						<input type="button" value="수정" class="admin_commonBtnG" disabled>

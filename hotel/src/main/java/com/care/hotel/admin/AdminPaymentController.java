@@ -97,5 +97,11 @@ public class AdminPaymentController {
 		return "redirect:admin_reservationListProc";
 		
 	}
+	
+	// 체크아웃 시 추가결제 페이지
+	@RequestMapping(value="checkoutPayPageProc")
+	public String checkoutPayPageProc() {
+		return "forward:/admin_index?formpath=checkoutPayPage";
+	}
 
 }
