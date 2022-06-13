@@ -50,6 +50,20 @@ public class loginController {
 		
 		return "findIDForm";
 	}
+	
+	@RequestMapping(value = "findPWForm")
+	public String findPWForm(Locale locale, Model model) {
+		logger.info("비밀번호 찾기");
+		
+		Date date = new Date();
+		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
+		
+		String formattedDate = dateFormat.format(date);
+		
+		model.addAttribute("serverTime", formattedDate );
+		
+		return "findPWForm";
+	}
 //	@RequestMapping(value = "findID", method = RequestMethod.POST)
 //	public String findID() throws Exception{
 //		return "findID";

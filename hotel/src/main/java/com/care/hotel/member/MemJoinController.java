@@ -45,21 +45,33 @@ public class MemJoinController {
 			return "redirect:/index?formpath=memJoinAgreeForm";
 		}
 		model.addAttribute("msg");
+		
+		String memberNameEng = member.getMemberNameENG();
+		String[] nameSplit = memberNameEng.split(" ");
+		model.addAttribute("lastName", nameSplit[0]);
+		model.addAttribute("firstName", nameSplit[1]);
+		
 		return "forward:/index?formpath=memJoinForm";
 		
 	}
 	
 	@RequestMapping(value = "memberJoinProc", method = RequestMethod.POST)
-	public String memberJoinSaveProc(memberDTO member, memberExDTO memberExDto, Model model, RedirectAttributes ra){
-		
-		String msg = memberService.memberJoin(member, memberExDto);
+	public String memberJoinSaveProc(memberDTO member, memberExDTO memberExDto, String firstName, String lastName, Model model, RedirectAttributes ra){
+		String memberNameENG = lastName + " " + firstName;
+		String msg = "가입 완료";
 		System.out.println("msg : " + msg);
-		if(!(msg.equals("가입 완료"))) {
-			ra.addFlashAttribute("msg", msg);
-			return "redirect:/index?formpath=memJoinAgreeForm";
-		}else {
+		
+		if(member.getMemberId() != null) {
+			member.setMemberNameENG(memberNameENG);
+			msg = memberService.memberJoin(member, memberExDto);
+		}
+		
+		if(msg.equals("가입 완료")) {
 			model.addAttribute("msg", msg);
 			return "forward:/index?formpath=memberInsert";
+		}else {
+			ra.addFlashAttribute("msg", msg);
+			return "redirect:/index?formpath=memJoinAgreeForm";
 		}
 		
 	}

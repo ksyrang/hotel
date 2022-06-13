@@ -27,5 +27,8 @@ public interface ImemberSvc {
 	public String memberJoin(memberDTO member, memberExDTO memberExDTO);
 	
 	// 아이디 찾기
-	public String findID(HttpServletRequest request, memberDTO member);
+	public String findID(String memberNameENG, String memberEmail);
+	
+	// 비밀번호 찾기
+	public String findPW(String memberId, String memberNameENG, String memberEmail);
 }

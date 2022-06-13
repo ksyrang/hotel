@@ -72,8 +72,13 @@ public class HomeController {
 	}
 	
 	@RequestMapping(value="findID")
-	public String findID(HttpServletRequest request, memberDTO member) {
+	public String findID(String memberNameENG, String memberEmail) {
 		return "findIDForm";
+	}
+	
+	@RequestMapping(value="findPW")
+	public String findPW(String memberId, String memberNameENG, String memberEmail) {
+		return "findPWForm";
 	}
 //	@RequestMapping(value="findID")
 //	public String findID(@Param("memberId")String memberId,@Param("memberNameENG")String memberNameENG, @Param("memberEmail")String memberEmail) {

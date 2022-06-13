@@ -71,10 +71,10 @@ window.onload = function() {
 			<div class="formBox">
 				<dl>
 					<dd>
-						<strong>${member.memberNameENG}님의</strong>
+						<strong>${sessionScope.findMemberNameENG}님의</strong>
 						<br>
 						"ID - "
-						<strong>[${member.memberId}]</strong>
+						<strong>[${sessionScope.findMemberID}]</strong>
 					</dd>
 				</dl>	
 			</div>

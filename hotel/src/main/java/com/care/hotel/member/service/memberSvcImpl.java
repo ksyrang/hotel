@@ -143,23 +143,51 @@ public class memberSvcImpl implements ImemberSvc{
 			
 		
 	@Override
-	public String findID(HttpServletRequest request, memberDTO member){
+	public String findID(String memberNameENG, String memberEmail){
+	
+		String result = "다시 입력해주세요.";
 
-		String memberId = request.getParameter("memberId");
-		String memberNameENG = request.getParameter("memberNameENG");
-		String memberEmail = request.getParameter("memberEmail");
-		
-		member = memberDAO.memberIdFind(memberNameENG, memberEmail);
-		
-		String result = "가입된 아이디는 [" + memberId + "] 입니다.";
-		
-		if(memberNameENG.isEmpty() || memberEmail.isEmpty()) {
-			result="다시 입력해주세요.";
+		// 이름, 이메일이 빈 값이 아닐 때
+		if(memberNameENG != null || memberEmail != null) {
+		   memberDTO member = memberDAO.memberIdFind(memberNameENG, memberEmail);
+		   System.out.println("member.getMemberId() : " + member.getMemberId());
+		   System.out.println("memberNameENG : " + memberNameENG);
+		   session.setAttribute("findMemberNameENG", memberNameENG);
+		   // 해당 값인 memberDTO가 있을 때
+		   if(member != null) {
+		      result="가입된 아이디는 [ " + member.getMemberId() + "]입니다.";
+		      session.setAttribute("findMemberID", member.getMemberId());
+		   }  
 		}else {
-			result="가입된 아이디는 [" + memberId + "] 입니다.";	
+		// 이름, 이메일이 빈 값일 때
+		   result="다시 입력해주세요.";
 		}
+		
 		return result;
 		
+		
+	}
+
+	@Override
+	public String findPW(String memberId, String memberNameENG, String memberEmail) {
+		String result = "다시 입력해주세요.";
+
+		// 이름, 이메일이 빈 값이 아닐 때
+		if(memberId != null || memberNameENG != null || memberEmail != null) {
+		   memberDTO member = memberDAO.memberPwFind(memberId, memberNameENG, memberEmail);
+		   System.out.println("member.getMemberPw()" + member.getMemberPw());
+		   session.setAttribute("findMemberNameENG", memberNameENG);
+		   // 해당 값인 memberDTO가 있을 때
+		   if(member != null) {
+		      result="회원의 비밀번호는 [ " + member.getMemberPw() + "]입니다.";
+		      session.setAttribute("findMemberPw", member.getMemberPw());
+		   }  
+		}else {
+		// 이름, 이메일이 빈 값일 때
+		   result="다시 입력해주세요.";
+		}
+		
+		return result;
 	}
 
 

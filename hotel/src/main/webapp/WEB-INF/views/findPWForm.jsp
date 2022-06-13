@@ -55,7 +55,7 @@
 </div>
 
 
-<form id="forPwForm" name="forPwForm" action="" method="POST"> 
+<form action="findPWProc" method="POST"> 
 
 <div class="popLayer popLayerFindPw">
 	<div class="popHead">
@@ -63,7 +63,54 @@
 		<div class="btn"><a class="btnClose" href="${root }index?formpath=login"><span>닫기</span></a></div>
 	</div>
 	<div class="popCtn">
-		
+		<div class="formBox">
+						<table class="tableFormBox" summary="성명,이메일,휴대폰으로 구성된테이블입니다">
+							<caption>회원정보로 비밀번호찾기</caption>
+							<colgroup>
+								<col width="25%">
+								<col>
+							</colgroup>
+							<tbody><tr>
+								<th scope="row"><label for="idInput" class="idInput">신라리워즈 번호 또는 아이디</label></th>
+								<td><input type="text" id="memberId" name="memberId" value="" size="15"></td>
+							</tr>
+							<tr>
+							<th scope="row"><label for="idInput" class="idInput2">성명</label></th>
+								<td>
+									<div class="inputForm2">
+										<div class="Fname">
+											<label for="firstName">First Name</label>
+											<input type="text" class="firstName input uiform" id="firstName" name="firstName" placeholder="First name(이름)" style=" width:130px; text-transform: uppercase;" onkeyup="this.value=this.value.replace(/[^a-z]/gi,'');">
+										</div>
+										<div class="Lname">
+											<label for="lastName">Last Name</label>
+											<input type="text" class="lastName input uiform" id="lastName" name="lastName" placeholder="Last name(성)" style="width:130px; text-transform: uppercase;" onkeyup="this.value=this.value.replace(/[^a-z]/gi,'');">
+										</div>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" style="text-align:left;">
+									<label for="findIdOpt1" class="findIdOpt1">이메일 </label>
+								</th>
+								<td>
+									<label class="emailId" for="emailId">이메일아이디 </label>
+									<input id="memberEmail" name="memberEmail" type="text" style="width: 254px;" onkeyup="this.value=this.value.replace(/[^a-z0-9_.@-]/gi,'');" maxlength="40">
+								</td>
+							</tr>
+						</tbody></table>
+					</div>
+					<div class="btnList">
+						<input type="submit"  value='비밀번호 확인'  style="width: 80px;" />
+						<a href="${root }index?formpath=login" class="btnCancel"><span>취소</span></a>
+					</div>
+					
+					<div class="guideBox">
+						<span class="box1"><span class="txt1">로그인을 하시려면</span> <a href="${root }index?formpath=login" class="btnLogin"><span>로그인</span></a> </span>
+						<span class="box2"><span class="txt3">아이디를 찾으시려면?</span> <a href="${root }index?formpath=findID" class="btnLostId"><span>아이디찾기</span></a> </span>
+					</div>
+	
+<!--  	
 		<div class="step step1" id="step1Div">
 			<ul class="tabBox">
 			<li class="ctn ctn1 ctnOn">
@@ -79,7 +126,7 @@
 							</colgroup>
 							<tbody><tr>
 								<th scope="row"><label for="idInput" class="idInput">신라리워즈 번호 또는 아이디</label></th>
-								<td><input type="text" class="uiform idInput" id="rewardNum" name="rewardNum" value="" size="15"></td>
+								<td><input type="text" class="uiform idInput" id="memberId" name="memberId" value="" size="15"></td>
 							</tr>
 							<tr>
 							<th scope="row"><label for="idInput" class="idInput2">성명</label></th>
@@ -87,11 +134,11 @@
 									<div class="inputForm2">
 										<div class="Fname">
 											<label for="firstName">First Name</label>
-											<input type="text" class="firstName input uiform" id="mbrEnFnm" name="mbrEnFnm" placeholder="First name(이름)" style=" width:130px; text-transform: uppercase;" onkeyup="this.value=this.value.replace(/[^a-z]/gi,'');">
+											<input type="text" class="firstName input uiform" id="firstName" name="firstName" placeholder="First name(이름)" style=" width:130px; text-transform: uppercase;" onkeyup="this.value=this.value.replace(/[^a-z]/gi,'');">
 										</div>
 										<div class="Lname">
 											<label for="lastName">Last Name</label>
-											<input type="text" class="lastName input uiform" id="mbrEnLnm" name="mbrEnLnm" placeholder="Last name(성)" style="width:130px; text-transform: uppercase;" onkeyup="this.value=this.value.replace(/[^a-z]/gi,'');">
+											<input type="text" class="lastName input uiform" id="lastName" name="lastName" placeholder="Last name(성)" style="width:130px; text-transform: uppercase;" onkeyup="this.value=this.value.replace(/[^a-z]/gi,'');">
 										</div>
 									</div>
 								</td>
@@ -103,38 +150,13 @@
 								</th>
 								<td>
 									<label class="emailId" for="emailId">이메일아이디 </label>
-									<input id="email" name="email" class="emailId uiform text" type="text" style="width: 260px;" size="15">
-								</td>
-							</tr>
-							<tr>
-								<th scope="row" style="text-align:left;">
-									<input type="radio" name="findPwOpt" class="findIdOpt2 uiform" id="findIdOpt2" value="mbno">
-									<label for="findIdOpt2" class="findIdOpt2">휴대전화 </label>
-								</th>
-								<td>
-																			
-									<label for="phoneComp" class="phoneComp">휴대폰국번</label>
-									<select class="uiform phoneComp" id="findPwMbno1" name="findPwMbno1" style="width: 80px;">
-										<option value="010" title="010">010</option>
-										<option value="011" title="011">011</option>
-										<option value="016" title="016">016</option>
-										<option value="017" title="017">017</option>
-										<option value="018" title="018">018</option>
-										<option value="019" title="019">019</option>
-										</select>
-									
-									-
-									<label for="phoneNum1" class="phoneNum1">휴대폰앞번호</label>
-									<input type="text" class="uiform phoneNum1" id="findPwMbno2" name="findPwMbno2" size="12">
-									-
-									<label for="phoneNum2" class="phoneNum2">휴대폰뒷번호</label>
-									<input type="text" class="uiform phoneNum2" id="findPwMbno3" name="findPwMbno3" size="12">
+									<input id="memberEmail" name="memberEmail" type="text" style="width: 254px;" onkeyup="this.value=this.value.replace(/[^a-z0-9_.@-]/gi,'');" maxlength="40">
 								</td>
 							</tr>
 						</tbody></table>
 					</div>
 					<div class="btnList">
-						<a href="javascript:selectPopForPw();" class="btnSubmit"><span>확인</span></a>
+						<input type="submit"  value='비밀번호 확인'  style="width: 80px;" />
 						<a href="${root }index?formpath=login" class="btnCancel"><span>취소</span></a>
 					</div>
 					
@@ -147,7 +169,7 @@
 		</ul>
 		
 		</div>
-		
+		-->	
 		<div class="step step4" style="display:none;" id="step3Div">
 			<div class="resultBox">
 				<dl>

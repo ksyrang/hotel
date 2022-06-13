@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html lang="ko" class="webkit chrome win  retina ratio1_25 js portrait tabletwide"><head>
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -20,31 +19,18 @@
 <meta name="keywords" content="신라스테이,신라호텔,서울신라호텔,제주신라호텔,호텔신라,럭셔리호텔,신라리워즈">
 <meta name="description" content="국내 최고 럭셔리 호텔인 호텔신라는 신라호텔과 신라스테이 브랜드를 보유하고 있습니다.">
 <meta name="subject" content="신라스테이 소개,신라 리워즈 안내,브랜드 및 호텔 소개,객실 패키지 안내,온라인 최저가 예약,">
-<script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script gtm="GTM-T3LBJ26" type="text/javascript" async="" src="https://www.google-analytics.com/gtm/optimize.js?id=OPT-NQ9CLZ3"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-30Y6N61ES4&amp;l=dataLayer&amp;cx=c"></script><script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-T3LBJ26"></script><script type="text/javascript">
-
-document.write("<div id='popCalendarDiv' class='popCalendar' style='display:none' ></div>");
-
-</script>
-<script>
-
-window.onload = function() {
-	document.getElementById('submit').onclick = function() {
-		
-		if ( document.pfrm.memberNameENG.value.trim() == '' || ) {
-			alert( '이름을 입력해주세요' );
-			return false;
-		}
-		if ( document.pfrm.memberEmail.value.trim() == '' ) {
-			alert( '메일을 입력해주세요' );
-			return false;
-		}
-		document.pfrm.submit();
-	}
+<style> 
+#mask {  
+  position:absolute;  
+  left:0;
+  top:0;
+  z-index:99999;  
+  background-color:#000;  
+  display:none;  
 }
-</script>
+</style> 
 </head><body class="subBody joinBody"><div id="popCalendarDiv" class="popCalendar" style="display:none"></div>
-<jsp:useBean id="member" class="com.care.hotel.member.DTO.memberDTO"/>
-<jsp:setProperty property="*" name="member"/>
+
 <script src="/js/json2.js" charset="UTF-8"></script>
 <script src="/js/jquery-1.8.3.js" charset="UTF-8"></script>
 <script src="/js/uniform.js" charset="UTF-8"></script>
@@ -59,104 +45,106 @@ window.onload = function() {
 <script src="/js/jquery.slides.js" charset="UTF-8"></script>
 <script src="/js/mbr/popLogin.js" charset="UTF-8"></script><div id="popLoginDiv" class="popLogin" style="display:none"></div>
 <script src="/js/mbr/forIdPwd.js" charset="UTF-8"></script><div id="popForIdPwDiv" style="display: block;" tabindex="-1">
-<form action="findIDProc" method="POST" name="pfrm">
-<div class="popLayer popLayerFindId">
 
+<!-- <script src="http://code.jquery.com/jquery-latest.js"></script>  -->
+
+<div id="mask">
+	 <div align="center" style=" position : relative;  left : 10px;  top  : 35%; ">
+	 <img src="${pageContext.request.contextPath}/images/ko/common/loadingAnimation.gif" alt="">
+	 </div>
+</div>
+
+
+<form action="findPWProc" method="POST"> 
+
+<div class="popLayer popLayerFindPw">
 	<div class="popHead">
-		<h2 class="tit">신라리워즈 아이디 찾기</h2>
+			<h2 class="tit">비밀번호찾기</h2>
 		<div class="btn"><a class="btnClose" href="${root }index?formpath=login"><span>닫기</span></a></div>
 	</div>
 	<div class="popCtn">
-		<div  style="display:">
-
+		<div class="step step1" id="step1Div">
+<!--  		<ul class="tabBox">
+			<li class="ctn ctn1 ctnOn">
+					<h3 class="tit"><a href="javascript:;"><span>임시 비밀번호 발급</span></a></h3>
+				<div class="box findInfoBox">
+					<p class="msg">회원가입 시 등록하신 이메일 및 휴대폰으로 임시비밀번호를 발급해드립니다.</p>
+					-->	
+						<p class="msg1">신라리워즈 비밀번호 찾기 결과는 다음과 같습니다.</p>
 			<div class="formBox">
-				<table class="tableFormBox" summary="성명,이메일,휴대폰으로 구성된테이블입니다.">
-					<caption>회원정보로 아이디찾기</caption>
-					<colgroup>
-						<col width="25%">
-						<col>
-					</colgroup>
-					<tbody><tr>
-						<th scope="row"><span class="nameK">성명(영문)</span></th>
-						<td>
-							<div class="inputForm2">
-										<div class="Fname">
-											<label for="firstName">First Name</label>
-											<input type="text" class="firstName input uiform" id="firstName" name="firstName" placeholder="First name(이름)" style=" width:130px; text-transform: uppercase;" onkeyup="this.value=this.value.replace(/[^a-z]/gi,'');">
-										</div>
-										<div class="Lname">
-											<label for="lastName">Last Name</label>
-											<input type="text" class="lastName input uiform" id="lastName" name="lastName" placeholder="Last name(성)" style="width:130px; text-transform: uppercase;" onkeyup="this.value=this.value.replace(/[^a-z]/gi,'');">
-										</div>
-							</div>
-						</td>
-					</tr>
-					<tr>
-						<th scope="row">
-							<label class="emailId" for="emailId">이메일 </label>
-						</th>
-						<td>
-							<input id="memberEmail" name="memberEmail" type="text" style="width: 254px;" onkeyup="this.value=this.value.replace(/[^a-z0-9_.@-]/gi,'');" maxlength="40">
-							<!-- <input type="hidden" id="memNameId" name="memNameId" value=""> -->
-						</td>
-					</tr>
-				</tbody></table>
-				
+				<dl>
+					<dd>
+						<strong>${sessionScope.findMemberNameENG}님의</strong>
+						<br>
+						"PW - "
+						<strong>[${sessionScope.findMemberPW}]</strong>
+					</dd>
+				</dl>	
 			</div>
-			
-			<div class="btnList">
-			<button type="submit" id="submit" class="btnSubmit">확인</button>
-				<a href="javascript:selectPopForId();" id="submit" class="btnSubmit"><span>확인</span></a>
-				<input type="submit"  value='아이디 확인'  style="width: 80px;" />
-			</div>
-			
+					</div>
+					<div class="btnList">
+						<input type="submit"  value='아이디 확인'  style="width: 80px;" />
+						<a href="${root }index?formpath=login" class="btnCancel"><span>취소</span></a>
+					</div>
+					
+					<div class="guideBox">
+						<span class="box1"><span class="txt1">로그인을 하시려면</span> <a href="${root }index?formpath=login" class="btnLogin"><span>로그인</span></a> </span>
+						<span class="box2"><span class="txt3">아이디를 찾으시려면?</span> <a href="${root }index?formpath=findID" class="btnLostId"><span>아이디찾기</span></a> </span>
+					</div>
+<!--  				
+			</li>
+		</ul>
+				-->	
 		</div>
 		
-		<!-- 아이디찾기 결과선택 -->
-		<div class="step step2" style="display:none" id="step2Div">
-			<div class="resultBox">
-				<dl><dd>	${member.memberId }
-						</dd></dl>
-			</div>
-			<div class="btnList">
-				<a href="${root }index?formpath=login" class="btnSubmit"><span>취소</span></a>
-				<a class="btnLostPw" id="popForPwButton" href="${root }index?formpath=findPW"><span>비밀번호찾기</span></a> 
-			</div>
-			
-		</div>
-		
-		<!-- 아이디찾기 결과끝 -->
-		<div class="step step3" style="display:none" id="step3Div">
+		<div class="step step4" style="display:none;" id="step3Div">
 			<div class="resultBox">
 				<dl>
 					<dd>
-						입력하신 정보로 신라리워즈 번호를 찾을 수 없습니다.</dd>
+						입력하신 정보에 해당하는 회원 정보를 찾을 수 없습니다.</dd>
 				</dl>
 			</div>
 			<div class="btnList">
-				<a class="btnLostId" href="${root }index?formpath=findID"><span>신라리워즈 번호 또는 아이디 찾기</span></a> 
-				<a class="btnJoin" href="${root }index?formpath=memJoinAgreeForm"><span>신라리워즈 가입</span></a>
+				<a class="btnLostId" href="javascript:popForId('mem');"><span>신라리워즈 번호 또는 아이디 찾기</span></a> 
+				<a class="btnJoin" href="/mem/mbr/join/memViewBrowsewrap.do"><span>신라리워즈 가입</span></a>
 			</div>
 		</div>
 		
-		<!-- 아이디찾기 30개 넘음 -->
-		<div class="step step3" style="display:none" id="step4Div">
+		<div class="step step3" style="display:none;" id="step4Div">
 			<div class="resultBox">
 				<dl>
 					<dd>
-						신라리워즈 번호 찾기를 진행할 수 없습니다.<br>신라리워즈 고객센터로 문의하세요.<br>02-2230-5528</dd>
+						온라인 계정등록을 하지 않으셨습니다.<br>계정등록하기를 통하여 임시 비밀번호를 발급받으시기 바랍니다.</dd>
 				</dl>
 			</div>
 			<div class="btnList">
-<a class="btnSubmit" href="${root }index?formpath=login"><span>닫기</span></a> 
+				<a class="btnLostId" href="javascript:popForId('mem');"><span>신라리워즈 번호 또는 아이디 찾기</span></a> 
+				<a class="btnJoin" href="/mem/mbr/join/memViewBrowsewrap.do"><span>신라리워즈 가입</span></a>
 			</div>
 		</div>
 		
-	</div>
-	<div class="btnAcc"><a class="btnClose" href="${root }index?formpath=login"><span>닫기</span></a></div>
+		<div class="step step3" style="display:none;" id="step5Div">
+			<div class="resultBox">
+				<dl>
+					<dd>
+						신라리워즈 탈회 절차가 진행 중입니다.</dd>
+				</dl>
+			</div>
+			<div class="btnList">
+				<a class="btnLostId" href="javascript:popForId('mem');"><span>신라리워즈 번호 또는 아이디 찾기</span></a> 
+				<a class="btnJoin" href="/mem/mbr/join/memViewBrowsewrap.do"><span>신라리워즈 가입</span></a>
+			</div>
+		</div>
+	
+	<div class="btnAcc"><a class="btnClose" href="javascript:popCloaeForPw();"><span>닫기</span></a></div>
+</div>
+
+
 </div>
 </form>
 <div class="mdScreen" style="display: block; height: 1292px;"></div>
+
+
 </div>
 <script src="/js/mbr/mbshPointRead.js" charset="UTF-8"></script><div id="mbshPotinRead" style="display:none"></div>
 <script src="/js/resv/resvCalendar.js" charset="UTF-8"></script><script src="/js/resv/resvPromotionCalendar.js" charset="UTF-8"></script><script src="/js/resv/resv.js" charset="UTF-8"></script><script src="/js/resv/din.js" charset="UTF-8"></script><script src="/js/ask/ask.js" charset="UTF-8"></script><script src="/js/mbr/zipno.js" charset="UTF-8"></script><div id="zipNoLayerDiv" class="popLogin" style="display:none"></div><script src="/js/offers/makeAPlan.js" charset="UTF-8"></script><div id="makeAPlanLayerDiv" class="popLogin" style="display:none"></div><script src="/js/mbr/mbr_join.js" charset="UTF-8"></script><script src="/js/jquery.cookie.js" charset="UTF-8"></script>
@@ -206,11 +194,34 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <dl class="skipNavi">
 	<dt>THE SHILLA 바로가기 메뉴</dt><dd><a class="goContents" href="#contents">본문으로 바로가기</a></dd></dl>
 
-
-	
-	<div class="contain">
+<div class="subWrap subWrapHub">
+	<div class="head headHub">
 		<script type="text/javascript">
+	$(document).ready(function(){
+		$(".findBtn a").click(function(){
+		 	$(".findBox").slideToggle("fast");
+		});
+	});
+	function ssoLogout() {
+		location.href = "/membership/login/SSOLogout.do";
 
+	}
+	$( "#benefitBtn" ).click(function() {
+		  $( "#showCardbox" ).show( "slow" );
+		  $( "#hiddencardbox" ).hide( "slow" );
+	});
+</script>
+
+<script>
+	document.oncontextmenu = function(){ // 컨텍스트 메뉴금지
+		return false;
+	};
+</script>
+</div></div>
+	
+<div class="contain">
+		<script type="text/javascript">
+	
 jQuery(function() {
 
 
@@ -277,6 +288,24 @@ $(document).ready(function(e) {
 	if(resvYn == "Y"){
 		$(".tabForm .loginTab ul li").eq(1).trigger("click");
 	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 	// 비회원 예약 라디오 탭
 	$(".tabForm .rBtn input").on("click focus", function () {
@@ -839,7 +868,7 @@ function popRewardNo(rewardNo){
 
 
 </script>
-
+</div>
 <!-- 예약 조회 안내 레이어 팝업 -->
 <div id="ResvInquirypPop" style="display:none;">
 	<div class="popLayer popLayerRegistCard new_popLayer diningPop" tabindex="-1" style="width: 430px;">

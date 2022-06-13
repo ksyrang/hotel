@@ -33,4 +33,5 @@ public interface memberDAO {
 	
 	memberDTO memberIdFind(@Param("memberNameENG")String memberNameENG, @Param("memberEmail")String memberEmail);
 	
+	memberDTO memberPwFind(@Param("memberId")String memberId, @Param("memberNameENG")String memberNameENG, @Param("memberEmail")String memberEmail);
 }

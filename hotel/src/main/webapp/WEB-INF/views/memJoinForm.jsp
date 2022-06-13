@@ -391,7 +391,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					<tr>
 						<th scope="row"><em class="ast">*</em> 성명(영문)</th>
 						<td>
-							<input id="memberNameENG" name="memberNameENG" placeholder='띄어쓰기 없이 작성' onkeyup="this.value=this.value.replace(/[^a-z]/gi,'');" style="text-transform: uppercase;" type="text" class="lastNameEn uiform text" value="" maxlength="30" autocomplete="off" />
+							<div class="inputForm2">
+										<div class="Fname">
+											<label for="firstName">First Name</label>
+											<input type="text" class="firstName input uiform" id="firstName" name="firstName" placeholder="First name(이름)" style=" width:130px; text-transform: uppercase;" onkeyup="this.value=this.value.replace(/[^a-z]/gi,'');">
+										</div>
+										<div class="Lname">
+											<label for="lastName">Last Name</label>
+											<input type="text" class="lastName input uiform" id="lastName" name="lastName" placeholder="Last name(성)" style="width:130px; text-transform: uppercase;" onkeyup="this.value=this.value.replace(/[^a-z]/gi,'');">
+										</div>
+							</div>
 						</td>
 							
 					</tr>
