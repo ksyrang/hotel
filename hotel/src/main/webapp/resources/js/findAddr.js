@@ -3,6 +3,7 @@
 //<c:url var="root" value="/" />
 //<script src="${root}/resources/check.js"></script>
 //<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+
 function daumPost() {
 	    new daum.Postcode({
 	        oncomplete: function(data) {
