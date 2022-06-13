@@ -37,11 +37,23 @@ public class loginController {
 		
 		return "memLoginForm";
 	}
-	
-	@RequestMapping(value = "/findID", method = RequestMethod.POST)
-	public String findID() throws Exception{
-		return "findID";
+	@RequestMapping(value = "findIDForm")
+	public String findIDForm(Locale locale, Model model) {
+		logger.info("아이디 찾기");
+		
+		Date date = new Date();
+		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
+		
+		String formattedDate = dateFormat.format(date);
+		
+		model.addAttribute("serverTime", formattedDate );
+		
+		return "findIDForm";
 	}
+//	@RequestMapping(value = "findID", method = RequestMethod.POST)
+//	public String findID() throws Exception{
+//		return "findID";
+//	}
 	
 	
 	@PostMapping("loginProc")

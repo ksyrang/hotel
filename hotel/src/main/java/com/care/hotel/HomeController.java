@@ -4,9 +4,11 @@ import java.text.DateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.apache.ibatis.annotations.Param;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -69,11 +71,14 @@ public class HomeController {
 		return "memJoinForm";
 	}
 	
+	@RequestMapping(value="findID")
+	public String findID(HttpServletRequest request, memberDTO member) {
+		return "findIDForm";
+	}
 //	@RequestMapping(value="findID")
-//	public String findID(HttpServletResponse response, String email) throws Exception {
-//		return "findID";
+//	public String findID(@Param("memberId")String memberId,@Param("memberNameENG")String memberNameENG, @Param("memberEmail")String memberEmail) {
+//		return "findIDForm";
 //	}
-	
 	@RequestMapping("home2")
 	public String home2() {
 		return "home2";

@@ -1,5 +1,6 @@
 package com.care.hotel.member.service;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.ibatis.annotations.Param;
@@ -26,5 +27,5 @@ public interface ImemberSvc {
 	public String memberJoin(memberDTO member, memberExDTO memberExDTO);
 	
 	// 아이디 찾기
-	public String findID(memberDTO member) throws Exception;
+	public String findID(HttpServletRequest request, memberDTO member);
 }

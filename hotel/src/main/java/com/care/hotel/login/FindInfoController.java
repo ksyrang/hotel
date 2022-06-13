@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.Locale;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.apache.ibatis.annotations.Param;
 import org.slf4j.Logger;
@@ -26,9 +27,9 @@ public class FindInfoController {
 	private static final Logger logger = LoggerFactory.getLogger(FindInfoController.class);
 	@Autowired private memberSvcImpl memberService;
 	@Autowired memberDAO memberDao;
-
+	
 	@RequestMapping(value = "findIDProc")
-	public String findIDProc(memberDTO member,  Model model, RedirectAttributes ra) throws Exception{
+	public String findIDProc( memberDTO member,  Model model, RedirectAttributes ra){
 		logger.info("FindIDProc");
 		String memberId = member.getMemberId();
 		if(memberId == null || memberId == "") {
@@ -40,10 +41,12 @@ public class FindInfoController {
 	}
 	
 	@RequestMapping(value = "findIDProc", method = RequestMethod.POST)
-	public String findIDSaveProc(HttpServletRequest request, memberDTO member, Model model, RedirectAttributes ra) throws Exception{
+	public String findIDSaveProc(HttpServletRequest request, memberDTO member, @Param("memberId")String memberId,
+			@Param("memberNameENG")String memberNameENG, @Param("memberEmail")String memberEmail, 
+			Model model, RedirectAttributes ra) {
 		logger.info("FindIDSaveProc");
-
-		String result = memberService.findID(member);
+		String result = "가입된 아이디는 [" + memberId + "] 입니다.";
+		result = memberService.findID(request, member);
 		
 		boolean check = result.equals("다시 입력해주세요.");
 		System.out.println(request.getParameter("memberId"));
@@ -51,10 +54,10 @@ public class FindInfoController {
 		System.out.println(request.getParameter("memberEmail"));
 		if(check == true) {
 			ra.addFlashAttribute("msg", result);
-			return "redirect:/index?formpath=findID";
+			return "redirect:/index?formpath=login";
 		}else {
 			model.addAttribute("msg", result);
-			//model.addAttribute("id", member.getMemberId());
+			request.setAttribute("id", member.getMemberId());
 			return "forward:/index?formpath=findID_Res";
 		}
 	}

@@ -80,8 +80,8 @@ window.onload = function() {
 			</div>
 			
 			<div class="btnList">
-			<button type="submit" id="submit" class="btnSubmit">확인</button>
-				<a href="javascript:selectPopForId();" class="btnSubmit"><span>확인</span></a>
+				<a href="${root }index?formpath=login" class="btnSubmit"><span>확인</span></a>
+				<a href="${root }index?formpath=findPW"><span>비밀번호 찾기</span></a> 
 			</div>
 			
 		</div>

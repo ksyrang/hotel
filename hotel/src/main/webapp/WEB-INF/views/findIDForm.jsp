@@ -67,7 +67,7 @@ window.onload = function() {
 		<div class="btn"><a class="btnClose" href="${root }index?formpath=login"><span>닫기</span></a></div>
 	</div>
 	<div class="popCtn">
-		<div class="step step1" style="display:" id="step1Div">
+		<div  style="display:">
 
 			<div class="formBox">
 				<table class="tableFormBox" summary="성명,이메일,휴대폰으로 구성된테이블입니다.">
@@ -79,8 +79,8 @@ window.onload = function() {
 					<tbody><tr>
 						<th scope="row"><span class="nameK">성명(영문)</span></th>
 						<td>
-						<!-- style="text-transform: uppercase;" -->
-							<input id="memberNameENG" name="memberNameENG" placeholder='띄어쓰기 없이 작성' onkeyup="this.value=this.value.replace(/[^a-z]/gi,'');"  type="text" class="lastNameEn uiform text" value="" maxlength="30" autocomplete="off" />
+						<!--  -->
+							<input id="memberNameENG" name="memberNameENG" placeholder='띄어쓰기 없이 작성' onkeyup="this.value=this.value.replace(/[^a-z]/gi,'');" style="text-transform: uppercase;"  type="text" class="lastNameEn uiform text" value="" maxlength="30" autocomplete="off" />
 						</td>
 					</tr>
 					<tr>

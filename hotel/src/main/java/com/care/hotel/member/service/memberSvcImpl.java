@@ -4,6 +4,7 @@ package com.care.hotel.member.service;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
@@ -142,12 +143,14 @@ public class memberSvcImpl implements ImemberSvc{
 			
 		
 	@Override
-	public String findID(memberDTO member) throws Exception{
-		String memberNameENG = member.getMemberNameENG();
-		String memberEmail = member.getMemberEmail();
+	public String findID(HttpServletRequest request, memberDTO member){
+
+		String memberId = request.getParameter("memberId");
+		String memberNameENG = request.getParameter("memberNameENG");
+		String memberEmail = request.getParameter("memberEmail");
+		
 		member = memberDAO.memberIdFind(memberNameENG, memberEmail);
 		
-		String memberId = member.getMemberId();
 		String result = "가입된 아이디는 [" + memberId + "] 입니다.";
 		
 		if(memberNameENG.isEmpty() || memberEmail.isEmpty()) {
