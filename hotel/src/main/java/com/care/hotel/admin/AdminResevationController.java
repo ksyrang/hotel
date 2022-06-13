@@ -4,6 +4,8 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import javax.servlet.http.HttpSession;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +29,7 @@ public class AdminResevationController {
 	@Autowired IhotelresourceSvc hotelresourceSvc;
 	@Autowired IReservationSvc reservationSvc;
 	@Autowired ImemberSvc memberSvc;
+	@Autowired HttpSession session;
 	
 	private static final Logger logger = LoggerFactory.getLogger(AdminResevationController.class);
 	
@@ -35,7 +38,6 @@ public class AdminResevationController {
 	public String admin_reservationListProc(Model model, 
 			@RequestParam(value = "currentPage", required = false, defaultValue = "1") int currentPage,
 			String hotelSelect, String dateBase, String startDate, String endDate,String reservationNoSearch) {
-		logger.info("admin_reservationListProc");
 		model.addAttribute("allHotelInfo", hotelresourceSvc.allHotelInfo());
 		reservationSvc.reservationList(currentPage, hotelSelect, dateBase, startDate, endDate, reservationNoSearch);
 		return "forward:/admin_index?formpath=admin_reservationList";

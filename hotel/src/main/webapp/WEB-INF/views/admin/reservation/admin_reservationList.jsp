@@ -22,12 +22,14 @@
 <div class="admin_searchFilterDiv">
 	<form>
 		<!-- 호텔 필터링 -->
+		<c:if test="${sessionScope.userId eq 'admin' }">
 		<select name="hotelSelect" class="admin_hotelSearch">
 				<option value="">호텔명</option>
 			<c:forEach var="hotelInfoList" items="${allHotelInfo }">
 				<option value="${hotelInfoList.hotelId }">${hotelInfoList.hotelName }</option>
 			</c:forEach>
 		</select>
+		</c:if>
 		<!-- 날짜 필터링 -->
 		<select name="dateBase" class="admin_dateSelete">
 			<option value="">날짜 기준</option>

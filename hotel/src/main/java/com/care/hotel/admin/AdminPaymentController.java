@@ -97,16 +97,9 @@ public class AdminPaymentController {
 	public String PaymentProc(paymentDTO paymentDTO, String reservationStatus, RedirectAttributes ra) {
 		String result = "";
 		result = paymentSvc.insertPayment(paymentDTO, reservationStatus);
-		ra.addAttribute("msg", result);
+		ra.addFlashAttribute("msg", result);
 		return "redirect:admin_reservationListProc";
 		
 	}
 	
-	// 체크아웃 시 추가결제 페이지 결제 버튼
-	@RequestMapping(value="checkoutPaymentProc")
-	public String checkoutPaymentProc(String reservationNo, Model model) {
-		
-		return "";
-	}
-
 }
