@@ -33,6 +33,13 @@ public class AdminPaymentController {
 	@Autowired ImemberSvc memberSvc;
 	@Autowired IMemberCardSvc cardSvc;
 	
+	
+	// 매출 목록
+	@RequestMapping(value="paymentListProc")
+	public String paymentListProc() {
+		return "forward:/admin_index?formpath=paymentList";
+	}
+	
 	@RequestMapping(value="payPageProc")
 	public String payPageProc(String reservationNo, String reservationStatus, Model model) {
 		// 결제번호, 결제일 구하기

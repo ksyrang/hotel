@@ -230,6 +230,12 @@ public class HomeController {
 	}
 	
 	/* 관리자 체크아웃 추가 결제 페이지 */
+	@RequestMapping(value="paymentList")
+	public String paymentList() {
+		return "admin/payment/paymentList";
+	}
+	
+	/* 관리자 매출 목록 */
 	@RequestMapping(value="checkoutPayPage")
 	public String checkoutPayPage() {
 		return "admin/payment/checkoutPayPage";
