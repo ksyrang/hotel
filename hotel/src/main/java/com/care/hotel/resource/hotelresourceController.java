@@ -143,10 +143,9 @@ public class hotelresourceController {
 			session.removeAttribute("hotelAdd");
 			hotelresSVC.hotelAdd(hotelInfo);
 		}else return "redirect:/admin_index?formpath=admin_hotelAdd";
-		//유일성 비교 완료
-
-						
+		//유일성 비교 완료			
 		return "redirect:/hotellistProc";
 	}
+
 	
 }

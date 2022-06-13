@@ -228,8 +228,9 @@ public class HomeController {
 	public String admin_statisticsMain() {
 		return "admin/statistics/statisticsMainForm";
 	}
-	
-	
+
 	/*admin end*/
+
+//	@RequestMapping("reservationMain")
 	
 }

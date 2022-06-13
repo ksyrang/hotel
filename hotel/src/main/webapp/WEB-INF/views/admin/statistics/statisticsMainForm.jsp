@@ -10,15 +10,26 @@
 호텔별 예약 그래프 일, 월, 년 
 예약 대비 결제 비율?(막대? 선형? 파이?
  --> 
- <div class="admin_main">
-  <canvas id="myChart"></canvas>
-   
+ <script src="${pageContext.request.contextPath}/resources/js/KJS/kjs.js"></script>
+ 
+ 
+<div class="admin_main">
+	<select name="searchTitle" class="searchTitle"  style="height: 25px;"><!-- onchange="send()" -->
+		<option value="">전체</option>
+	<c:forEach var="List" items="${sessionScope.hotelidList }">
+		<option value="${List.hotelId }">${List.hotelName }</option>
+	</c:forEach>
+	</select>
+	<canvas id="myChart"></canvas>
+
 </div>
 
 
  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
- <script>
-  const labels = [//원하는 항목을 넣으면 될듯
+<script src="${pageContext.request.contextPath}/resources/js/chart/chart.js"></script><!-- 이렇게도 된다. -->
+<%--  <script>
+ var userId = '<%=(String)session.getAttribute("userId")%>';
+  const labels = [//가로 축 항목
     'January',
     'February',
     'March',
@@ -27,20 +38,25 @@
     'June',
   ];
 
-  const data = {
+  const data = {//원하는 오브젝트를 넣어햐 할때
     labels: labels,
     datasets: [{
       label: 'data1',
       backgroundColor: 'rgb(255, 99, 132)',//사각형과 점 내부 채움
       borderColor: 'rgb(255, 99, 132)',//사격형과 외부 선의 색
-      data: [0, 10, 5, 2, 20, 30, 45],//내부에 들어갈 데이터
+      data: [0, 10, 5, 2, 20, 30],//내부에 들어갈 데이터, 맨 마지막에 하나더 값을 넣으면 세로축 최대값이 지정할 수 있다.
     }]
   };
 
   const config = {
     type: 'line',//그래프의 형태를 결정 짓는 다
     data: data,
-    options: {}
+    options: {
+    	title :{
+    		display: true,
+  			text: 'test'
+    	}
+    }
   };
 
   const myChart = new Chart(
@@ -48,7 +64,7 @@
     config
   );
   </script>
-
+ --%>
 
   <%-- 
 <center>
