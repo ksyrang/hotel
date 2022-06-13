@@ -26,7 +26,7 @@ public class PaymentServiceImpl implements IPaymentService{
 	@Autowired HttpSession session;
 	
 	@Override
-	public void paymentList(int currentPage, String hotelSelect, String startDate, String endDate, String StatusSelect, String memberId) {
+	public void paymentList(int currentPage, String hotelSelect, String startDate, String endDate, String typeSelect, String StatusSelect, String memberId) {
 		int pageBlock = 5; // 한 화면에 보여줄 데이터 수
 		int end = currentPage * pageBlock; // 데이터의 끝 번호
 		int begin = end+1 - pageBlock; // 데이터의 시작 번호
@@ -41,15 +41,14 @@ public class PaymentServiceImpl implements IPaymentService{
 			if(hotelDTO.getHotelId().equals(userId)) {
 				// session이 매니저일 때
 				hotelSelect = hotelDTO.getHotelId();
-				totalCount = paymentDAO.paymentCount(hotelSelect, startDate, endDate, StatusSelect, memberId); // 총 데이터의 수 
-				paymentList = paymentDAO.paymentList(begin, end, hotelSelect, startDate, endDate, StatusSelect, memberId);
+				totalCount = paymentDAO.paymentCount(hotelSelect, startDate, endDate, typeSelect, StatusSelect, memberId); // 총 데이터의 수 
+				paymentList = paymentDAO.paymentList(begin, end, hotelSelect, startDate, endDate, typeSelect, StatusSelect, memberId);
 			} else {
 				// session이 관리자일 때 
-				totalCount = paymentDAO.paymentCount(hotelSelect, startDate, endDate, StatusSelect, memberId); // 총 데이터의 수 
-				paymentList = paymentDAO.paymentList(begin, end, hotelSelect, startDate, endDate, StatusSelect, memberId);
+				totalCount = paymentDAO.paymentCount(hotelSelect, startDate, endDate, typeSelect, StatusSelect, memberId); // 총 데이터의 수 
+				paymentList = paymentDAO.paymentList(begin, end, hotelSelect, startDate, endDate, typeSelect, StatusSelect, memberId);
 			}
 		}
-		
 		// paymentDate 포맷 변경
 		for(int i = 0; i < paymentList.size(); i++) {
 			paymentDTO paymentDTO = paymentList.get(i);
@@ -58,10 +57,11 @@ public class PaymentServiceImpl implements IPaymentService{
 			
 			paymentList.set(i, paymentDTO);
 		}
+		
+		session.setAttribute("paymentCount", totalCount);
 		session.setAttribute("paymentList", paymentList);
 		String url = "/hotel/paymentList.jsp?currentPage=";
 		session.setAttribute("paymentPage", PageService.getNavi(currentPage, pageBlock, totalCount, url));
-		session.setAttribute("paymentCount", totalCount);
 	}
 	
 	// paymentNo 구하기

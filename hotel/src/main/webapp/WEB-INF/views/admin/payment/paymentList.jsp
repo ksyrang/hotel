@@ -9,7 +9,28 @@
 <link href="${pageContext.request.contextPath}/resources/css/admin/admin_commonCss.css" rel="stylesheet" type="text/css">
 <link href="${pageContext.request.contextPath}/resources/css/admin/admin_reservationList.css" rel="stylesheet" type="text/css">
 <title>paymentList</title>
-
+<!-- <script>
+	function check() {
+		var startDate = document.getElementById('startDate');
+		var endDate = document.getElementById('endDate');
+		
+		if(startDate.value != null || startDate.value != ""){
+			if(endDate.value == null || endDate.value == ""){
+				alert("검색 종료일을 선택해주세요.");
+				return;
+			}
+		}
+		
+		if(endDate.value != null || endDate.value != "") {
+			if(startDate.value == null || startDate.value == ""){
+				alert("검색 시작일을 선택해주세요.");
+				return;
+			}
+		}
+		
+		document.getElementById('f').submit();
+	}
+</script> -->
 </head>
 <body>
 
@@ -20,7 +41,7 @@
 <div class="admin_mainDiv">
 <!-- 필터 div -->
 <div class="admin_searchFilterDiv">
-	<form>
+	<form id='f'>
 		<!-- 호텔 필터링 -->
 		<c:if test="${sessionScope.userId eq 'admin' }">
 		<select name="hotelSelect" id="hotelSelect" class="admin_hotelSearch">
@@ -32,16 +53,29 @@
 		</c:if>
 		<!-- 날짜 필터링 -->
 		<input type="date" id="startDate" name="startDate" class="admin_reservationDate">~<input type="date" id="endDate" name="endDate" class="admin_reservationDate2">
+		<!-- 결제 타입 필터링 -->
+		<select name="typeSelect" id="typeSelect" class="admin_dateSelete">
+			<option value="">결제타입</option>
+			<option value="1">신용/체크카드</option>
+			<option value="2">무통장입금</option>
+			<option value="3">휴대폰결제</option>
+			<option value="4">카카오페이</option>
+			<option value="5">네이버페이</option>
+			<option value="6">토스</option>
+		</select>
 		<!-- 결제상태 필터링 -->
-		<select name="StatusSelect" id="StatusSelect" class="admin_hotelSearch">
+		<select name="StatusSelect" id="StatusSelect" class="admin_dateSelete">
 			<option value="">결제상태</option>
 			<option value="0">결제완료</option>
 			<option value="1">결제취소</option>
 		</select>
 		<!-- 회원아이디 검색 -->
 		<input type="text" name="memberId" id="memberId" placeholder="회원 아이디" class="admin_reservationNoSearch">
-		<input type="submit" name="reservationSearchBtn" value="검색" class="admin_commonBtn">
+		<input type="submit" name="reservationSearchBtn" value="검색" class="admin_commonBtn" >
 	</form>
+	<div align="left" style="margin-top:20px;">
+		검색 결과 매출액 / 총 매출액  : <b>10000000원 /  900000000원</b>
+	</div>
 	<!-- 예약 목록 테이블 -->
 	<div>
 		<table class="admin_reservationListTable">
@@ -50,7 +84,7 @@
 				<th>결제번호</th>
 				<th>예약번호</th>
 				<th>회원ID</th>
-				<th>호텔명/객실</th>
+				<th>호텔명</th>
 				<th>결제일자</th>
 				<th>결제타입</th>
 				<th>결제금액</th>
@@ -59,47 +93,51 @@
 			</tr>
 			</thead>
 			<!-- forEach문 -->
-			<c:forEach var="resdb" items="${sessionScope.resList }">
+			<c:forEach var="paymentList" items="${sessionScope.paymentList }">
 			<tr>
-				<td><a href="${root }admin_reservationInfoProc?reservationNo=${resdb.reservationNo}">${resdb.reservationNo }</a></td>
-				<td>${resdb.memberId }</td>
+				<td><a href="${root }admin_reservationInfoProc?reservationNo=${paymentList.paymentNo}">${paymentList.paymentNo }</a></td>
+				<td>${paymentList.reservationNo }</td>
+				<td>${paymentList.memberId }</td>
 				
 				<c:forEach var="hotelInfoList" items="${allHotelInfo }">
-					<c:if test="${hotelInfoList.hotelId eq resdb.hotelId }">
+					<c:if test="${hotelInfoList.hotelId eq paymentList.hotelId }">
 						<td>${hotelInfoList.hotelName }</td>
 					</c:if>
 				</c:forEach>
 				
-				<td>${resdb.roomId }호</td>
-				<td>${resdb.reservationDate }</td>
-				<td>${resdb.checkinDate }</td>
-				<td>${resdb.baseAmount }원</td>
+				<td>${paymentList.paymentDate }</td>
 				
 				<td>
 				<c:choose>
-					<c:when test="${resdb.reservationStatus eq '0' }"><font style="color:#81d742">예약</font></c:when>
-					<c:when test="${resdb.reservationStatus eq '1' }">체크인</c:when>
-					<c:when test="${resdb.reservationStatus eq '2' }">체크아웃</c:when>
-					<c:when test="${resdb.reservationStatus eq '9' }"><font style="color:red">취소</font></c:when>
+					<c:when test="${paymentList.paymentType eq '1'}">신용/체크카드</c:when>
+					<c:when test="${paymentList.paymentType eq '2'}">무통장입금</c:when>
+					<c:when test="${paymentList.paymentType eq '3'}">휴대폰결제</c:when>
+					<c:when test="${paymentList.paymentType eq '4'}">카카오페이</c:when>
+					<c:when test="${paymentList.paymentType eq '5'}">네이버페이</c:when>
+					<c:when test="${paymentList.paymentType eq '6'}">토스</c:when>
+				</c:choose>
+				</td>
+				
+				
+				<td>${paymentList.paymentAmount }원</td>
+				
+				<td>
+				<c:choose>
+					<c:when test="${paymentList.paymentStatus eq '0' }"><font style="color:#5ea540">결제완료</font></c:when>
+					<c:when test="${paymentList.paymentStatus eq '1' }"><font style="color:red">결제취소</font></c:when>
 				</c:choose>
 				</td>
 				
 				<td>
 				<c:choose>
-					<c:when test="${resdb.reservationStatus eq '0' }">
-						<input type="button" value="수정" class="admin_commonBtn" onclick="location.href='${root }admin_reservationModifyProc?reservationNo=${resdb.reservationNo }'">
-						<input type="button" value="취소" class="admin_commonBtn" onclick="location.href='${root }admin_reservationDeleteProc?reservationNo=${resdb.reservationNo }'">
-						<input type="button" value="결제" class="admin_commonBtn" onclick="location.href='${root }payPageProc?reservationNo=${resdb.reservationNo }&reservationStatus=${resdb.reservationStatus }'">
+					<c:when test="${paymentList.paymentStatus eq '0' }">
+						<input type="button" value="결제취소" class="admin_commonBtn" onclick="location.href='${root }admin_reservationModifyProc?reservationNo=${paymentList.paymentNo }'">
 						</c:when>
-					<c:when test="${resdb.reservationStatus eq '1' }">
-						<input type="button" value="수정" class="admin_commonBtnG" disabled>
-						<input type="button" value="취소" class="admin_commonBtnG" disabled>
-						<input type="button" value="결제" class="admin_commonBtn" onclick="location.href='${root }payPageProc?reservationNo=${resdb.reservationNo }&reservationStatus=${resdb.reservationStatus }'">
+					<c:when test="${paymentList.paymentStatus eq '1' }">
+						<input type="button" value="결제취소" class="admin_commonBtnG" disabled>
 					</c:when>
 					<c:otherwise>
-						<input type="button" value="수정" class="admin_commonBtnG" disabled>
-						<input type="button" value="취소" class="admin_commonBtnG" disabled>
-						<input type="button" value="결제" class="admin_commonBtnG" disabled>
+						<input type="button" value="결제취소" class="admin_commonBtnG" disabled>
 					</c:otherwise>
 				</c:choose>
 				
@@ -107,7 +145,7 @@
 			</tr>
 			</c:forEach>
 		</table><br>
-	<b>총 예약수 : ${sessionScope.paymentCount }</b><br>
+	<b>총 결제 건수 : ${sessionScope.paymentCount }</b><br>
 	<div align="center">
 		${sessionScope.paymentPage }
 	</div>

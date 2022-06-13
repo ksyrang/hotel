@@ -5,7 +5,7 @@ import com.care.hotel.payment.DTO.paymentDTO;
 public interface IPaymentService {
 	
 	// 결제 목록
-	public void paymentList(int currentPage, String hotelSelect, String startDate, String endDate, String StatusSelect,String memberId);
+	public void paymentList(int currentPage, String hotelSelect, String startDate, String endDate, String typeSelect, String StatusSelect,String memberId);
 	// 결제번호 생성
 	public String createPaymentNo();
 	// 결제일 생성

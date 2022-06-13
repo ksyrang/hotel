@@ -13,9 +13,9 @@ public interface paymentDAO {
 	void insertPayment(paymentDTO paymentDTO);
 
 	int paymentCount(@Param("hotelId")String hotelSelect, @Param("startDate")String startDate,
-			@Param("endDate")String endDate, @Param("paymentStatus")String statusSelect, @Param("memberId")String memberId);
+			@Param("endDate")String endDate, @Param("paymentType")String typeSelect, @Param("paymentStatus")String statusSelect, @Param("memberId")String memberId);
 
 	ArrayList<paymentDTO> paymentList(@Param("b")int begin, @Param("e")int end, @Param("hotelId")String hotelSelect, 
-			@Param("startDate")String startDate, @Param("endDate")String endDate, @Param("paymentStatus")String statusSelect, @Param("memberId")String memberId);
+			@Param("startDate")String startDate, @Param("endDate")String endDate, @Param("paymentType")String typeSelect, @Param("paymentStatus")String statusSelect, @Param("memberId")String memberId);
 
 }

@@ -10,17 +10,13 @@
 			<when test='hotelId != null and hotelId != "" '>
 				hotelId=#{hotelId}
 			</when>
-			<when test='startDate != "" and startDate != null'>
-				 <![CDATA[
-					paymentDate >= #{startDate}
-				]]>
+			<when test='startDate != "" and startDate != null and endDate != "" and endDate != null'>
+				paymentDate BETWEEN #{startDate} AND #{endDate}
 			</when>
-			<when test='endDate != "" and endDate != null'>
-				<![CDATA[
-					paymentDate <= #{endDate}
-				]]>
-			</when>
-			<when test='paymentStatus != null'>
+			<when test="paymentType != null and paymentType != ''">
+					paymentType=#{paymentType}
+				</when>
+			<when test="paymentStatus != null and paymentStatus != ''">
 				paymentStatus=#{paymentStatus}
 			</when>
 			<when test='memberId != null and memberId != ""'>
@@ -40,17 +36,13 @@
 				<when test='hotelId != null and hotelId != "" '>
 					hotelId=#{hotelId}
 				</when>
-				<when test='startDate != "" and startDate != null'>
-				 <![CDATA[
-					paymentDate >= #{startDate}
-				]]>
+				<when test='startDate != "" and startDate != null and endDate != "" and endDate != null'>
+					paymentDate BETWEEN #{startDate} AND #{endDate}
 				</when>
-				<when test='endDate != "" and endDate != null'>
-				 <![CDATA[
-					paymentDate <= #{endDate}
-				]]>
+				<when test="paymentType != null and paymentType != ''">
+					paymentType=#{paymentType}
 				</when>
-				<when test='paymentStatus != null'>
+				<when test="paymentStatus != null and paymentStatus != ''">
 					paymentStatus=#{paymentStatus}
 				</when>
 				<when test='memberId != null and memberId != "" '>

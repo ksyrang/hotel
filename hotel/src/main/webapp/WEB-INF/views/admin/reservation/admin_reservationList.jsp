@@ -41,6 +41,7 @@
 		<input type="text" name="reservationNoSearch" placeholder="예약번호" class="admin_reservationNoSearch">
 		<input type="submit" name="reservationSearchBtn" value="검색" class="admin_commonBtn">
 	</form>
+	
 	<!-- 예약 목록 테이블 -->
 	<div>
 		<table class="admin_reservationListTable">
@@ -76,7 +77,7 @@
 				
 				<td>
 				<c:choose>
-					<c:when test="${resdb.reservationStatus eq '0' }"><font style="color:#81d742">예약</font></c:when>
+					<c:when test="${resdb.reservationStatus eq '0' }"><font style="color:#5ea540">예약</font></c:when>
 					<c:when test="${resdb.reservationStatus eq '1' }">체크인</c:when>
 					<c:when test="${resdb.reservationStatus eq '2' }">체크아웃</c:when>
 					<c:when test="${resdb.reservationStatus eq '9' }"><font style="color:red">취소</font></c:when>

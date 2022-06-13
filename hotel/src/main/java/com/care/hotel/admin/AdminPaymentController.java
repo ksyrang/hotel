@@ -40,9 +40,9 @@ public class AdminPaymentController {
 	@RequestMapping(value="paymentListProc", method = RequestMethod.GET)
 	public String paymentListProc(Model model, 
 			@RequestParam(value = "currentPage", required = false, defaultValue = "1") int currentPage,
-			String hotelSelect, String startDate, String endDate, String StatusSelect,String memberId) {
+			String hotelSelect, String startDate, String endDate, String typeSelect, String StatusSelect,String memberId) {
 		model.addAttribute("allHotelInfo", hotelresourceSvc.allHotelInfo());
-		paymentSvc.paymentList(currentPage, hotelSelect, startDate, endDate, StatusSelect, memberId);
+		paymentSvc.paymentList(currentPage, hotelSelect, startDate, endDate, typeSelect, StatusSelect, memberId);
 		return "forward:/admin_index?formpath=paymentList";
 	}
 	

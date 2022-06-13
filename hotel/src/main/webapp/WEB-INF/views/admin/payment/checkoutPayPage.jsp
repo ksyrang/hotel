@@ -151,11 +151,11 @@
 	<tr><th>결제수단</th><td>
 		<select name="paymentType" id="paymentType" onchange="selectPayType()" class="selectPayment">
 			<option value="1" selected>신용/체크카드</option>
-			<option value="">무통장입금</option>
-			<option value="2">휴대폰결제</option>
-			<option value="3">카카오페이</option>
-			<option value="">네이버페이</option>
-			<option value="">토스</option>
+			<option value="2">무통장입금</option>
+			<option value="3">휴대폰결제</option>
+			<option value="4">카카오페이</option>
+			<option value="5">네이버페이</option>
+			<option value="6">토스</option>
 		</select>
 	</td></tr>
 	<!-- 결제 타입에 따라 부가정보 입력 가능 -->
