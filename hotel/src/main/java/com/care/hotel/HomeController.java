@@ -223,6 +223,13 @@ public class HomeController {
 		return "admin/payment/payPage";
 	}
 	
+	/* 관리자 통계 메인 */
+	@RequestMapping("admin_statisticsMain")
+	public String admin_statisticsMain() {
+		return "admin/statistics/statisticsMainForm";
+	}
+	
+	
 	/*admin end*/
 	
 }

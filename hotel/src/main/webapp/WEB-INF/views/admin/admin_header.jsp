@@ -35,7 +35,10 @@
 	</c:choose>
 	<a href="${root }roomlistProc" class="nav_margin">객실 관리</a>
 	<a href="" class="nav_margin">매출 관리</a>
-	<a href="" class="nav_margin">통계</a>
+	<c:if test="${sessionScope.userId eq 'admin' }">
+		<a href="${root }admin_index?formpath=admin_statisticsMain" class="nav_margin">통계</a>
+	</c:if>
+	
 </div>
 	
 
