@@ -24,10 +24,27 @@
 
 document.write("<div id='popCalendarDiv' class='popCalendar' style='display:none' ></div>");
 
+</script>
+<script>
 
-
-</script></head><body class="subBody joinBody"><div id="popCalendarDiv" class="popCalendar" style="display:none"></div>
-
+window.onload = function() {
+	document.getElementById('submit').onclick = function() {
+		
+		if ( document.pfrm.memberNameENG.value.trim() == '' || ) {
+			alert( '이름을 입력해주세요' );
+			return false;
+		}
+		if ( document.pfrm.memberEmail.value.trim() == '' ) {
+			alert( '메일을 입력해주세요' );
+			return false;
+		}
+		document.pfrm.submit();
+	}
+}
+</script>
+</head><body class="subBody joinBody"><div id="popCalendarDiv" class="popCalendar" style="display:none"></div>
+<jsp:useBean id="member" class="com.care.hotel.member.DTO.memberDTO"/>
+<jsp:setProperty property="*" name="member"/>
 <script src="/js/json2.js" charset="UTF-8"></script>
 <script src="/js/jquery-1.8.3.js" charset="UTF-8"></script>
 <script src="/js/uniform.js" charset="UTF-8"></script>
@@ -42,8 +59,7 @@ document.write("<div id='popCalendarDiv' class='popCalendar' style='display:none
 <script src="/js/jquery.slides.js" charset="UTF-8"></script>
 <script src="/js/mbr/popLogin.js" charset="UTF-8"></script><div id="popLoginDiv" class="popLogin" style="display:none"></div>
 <script src="/js/mbr/forIdPwd.js" charset="UTF-8"></script><div id="popForIdPwDiv" style="display: block;" tabindex="-1">
-
-<form id="forIdForm" name="forIdForm" action="findIDProc" method="POST">
+<form action="findIDProc" method="POST" name="pfrm">
 <div class="popLayer popLayerFindId">
 
 	<div class="popHead">
@@ -61,7 +77,7 @@ document.write("<div id='popCalendarDiv' class='popCalendar' style='display:none
 						<col>
 					</colgroup>
 					<tbody><tr>
-						<th scope="row"><span class="nameK">성명</span></th>
+						<th scope="row"><span class="nameK">성명(영문)</span></th>
 						<td>
 							<input id="memberNameENG" name="memberNameENG" placeholder='띄어쓰기 없이 작성' onkeyup="this.value=this.value.replace(/[^a-z]/gi,'');" style="text-transform: uppercase;" type="text" class="lastNameEn uiform text" value="" maxlength="30" autocomplete="off" />
 						</td>
@@ -72,7 +88,7 @@ document.write("<div id='popCalendarDiv' class='popCalendar' style='display:none
 						</th>
 						<td>
 							<input id="memberEmail" name="memberEmail" type="text" style="width: 254px;" onkeyup="this.value=this.value.replace(/[^a-z0-9_.@-]/gi,'');" maxlength="40">
-							<input type="hidden" id="memNameId" name="memNameId" value="">
+							<!-- <input type="hidden" id="memNameId" name="memNameId" value=""> -->
 						</td>
 					</tr>
 				</tbody></table>
@@ -80,7 +96,9 @@ document.write("<div id='popCalendarDiv' class='popCalendar' style='display:none
 			</div>
 			
 			<div class="btnList">
-				<a href="javascript:selectPopForId();" class="btnSubmit"><span>확인</span></a>
+			<button type="submit" id="submit" class="btnSubmit">확인</button>
+				<a href="javascript:selectPopForId();" id="submit" class="btnSubmit"><span>확인</span></a>
+				<input type="submit"  value='아이디 확인'  style="width: 80px;" />
 			</div>
 			
 		</div>
@@ -88,8 +106,8 @@ document.write("<div id='popCalendarDiv' class='popCalendar' style='display:none
 		<!-- 아이디찾기 결과선택 -->
 		<div class="step step2" style="display:none" id="step2Div">
 			<div class="resultBox">
-				<dl>
-						</dl>
+				<dl><dd>	${member.memberId }
+						</dd></dl>
 			</div>
 			<div class="btnList">
 				<a href="${root }index?formpath=login" class="btnSubmit"><span>취소</span></a>
@@ -107,7 +125,7 @@ document.write("<div id='popCalendarDiv' class='popCalendar' style='display:none
 				</dl>
 			</div>
 			<div class="btnList">
-				<a class="btnLostId" href="javascript:popForId('membership');"><span>신라리워즈 번호 또는 아이디 찾기</span></a> 
+				<a class="btnLostId" href="${root }index?formpath=findID"><span>신라리워즈 번호 또는 아이디 찾기</span></a> 
 				<a class="btnJoin" href="${root }index?formpath=memJoinAgreeForm"><span>신라리워즈 가입</span></a>
 			</div>
 		</div>

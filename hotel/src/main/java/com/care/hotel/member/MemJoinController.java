@@ -52,8 +52,6 @@ public class MemJoinController {
 	@RequestMapping(value = "memberJoinProc", method = RequestMethod.POST)
 	public String memberJoinSaveProc(memberDTO member, memberExDTO memberExDto, Model model, RedirectAttributes ra){
 		
-		
-		
 		String msg = memberService.memberJoin(member, memberExDto);
 		System.out.println("msg : " + msg);
 		if(!(msg.equals("가입 완료"))) {

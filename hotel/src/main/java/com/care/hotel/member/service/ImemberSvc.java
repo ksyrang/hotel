@@ -22,5 +22,6 @@ public interface ImemberSvc {
 	// 멤버 회원 가입 
 	public String memberJoin(memberDTO member, memberExDTO memberExDTO);
 	
-	public memberDTO findID(HttpServletResponse response, String email) throws Exception;
+	// 아이디 찾기
+	public String findID(String memberId, String memberNameENG,String memberEmail) throws Exception;
 }

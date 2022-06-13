@@ -139,22 +139,26 @@ public class memberSvcImpl implements ImemberSvc{
 			
 		
 	@Override
-	public memberDTO findID(HttpServletResponse response, String email) throws Exception{
-		response.setContentType("text/html;charset=utf-8");
-		PrintWriter out = response.getWriter();
-		memberDTO member = memberDAO.memberIdFind(email);
+	public String findID(String memberId, String memberNameENG,String memberEmail) throws Exception{
+		memberDTO member = new memberDTO();
+		String id = null;
+		String nameENG = member.getMemberNameENG();
+		String email = member.getMemberEmail();
 		
+		String result = "가입된 아이디는 [" + id + "] 입니다.";
 		
-		if (member == null) {
-			out.println("<script>");
-			out.println("alert('가입된 아이디가 없습니다.');");
-			out.println("history.go(-1);");
-			out.println("</script>");
-			out.close();
-			return null;
-		} else {
-			return member;
+		if(nameENG.isEmpty() || email.isEmpty()) {
+			result="다시 입력해주세요.";
+		}else {
+		 member = memberDAO.memberIdFind(id, nameENG, email);
+			if(member == null) {
+				result="다시 입력해주세요.";
+			}else {
+				id = member.getMemberId();
+				result="가입된 아이디는 [" + id + "] 입니다.";
+			}
 		}
+		return result;
 	}
 
 
