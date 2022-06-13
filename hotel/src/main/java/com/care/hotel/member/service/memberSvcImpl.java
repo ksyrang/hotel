@@ -1,6 +1,10 @@
 package com.care.hotel.member.service;
 
 
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -134,6 +138,25 @@ public class memberSvcImpl implements ImemberSvc{
 	}
 			
 		
+	@Override
+	public memberDTO findID(HttpServletResponse response, String email) throws Exception{
+		response.setContentType("text/html;charset=utf-8");
+		PrintWriter out = response.getWriter();
+		memberDTO member = memberDAO.memberIdFind(email);
+		
+		
+		if (member == null) {
+			out.println("<script>");
+			out.println("alert('가입된 아이디가 없습니다.');");
+			out.println("history.go(-1);");
+			out.println("</script>");
+			out.close();
+			return null;
+		} else {
+			return member;
+		}
+	}
+
 
 		
 		

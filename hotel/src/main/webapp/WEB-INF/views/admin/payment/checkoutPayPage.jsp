@@ -85,6 +85,7 @@
 		var validityMm = document.getElementById('validityMm');
 		var validityYy = document.getElementById('validityYy');
 		var csv = document.getElementById('csv');
+		var paymentAmount = document.getElementById('paymentAmount');
 		if(paymentType.value == '1'){
 			if(cardCompany.value == "" || cardNo1.value == "" || cardNo2.value == "" || cardNo3.value == ""
 					|| cardNo4.value == "" || validityMm.value == "" || validityYy == "" || csv == ""){
@@ -110,6 +111,17 @@
 				return;
 			}
 		}
+		
+		if(paymentAmount.value < 0) {
+			alert("추가 결제 금액을 정확히 입력해주세요.")
+		}
+		if(paymentAmount.value == "" || paymentAmount.value == '0') {
+			if(confirm("추가 결제 금액이 없습니다. 계속하시겠습니까?") == false) {
+				return;
+			}
+		}else if(confirm(paymentAmount.value + "원을 추가 결제 하시겠습니까?") == false){
+			return;
+		}
 		document.getElementById('f').submit();
 	}
 
@@ -128,7 +140,6 @@
 <input type="hidden" name="reservationNo" value="${resDTO.reservationNo }">
 <input type="hidden" name="memberId" id="memberId" value="${memberDTO.memberId }">
 <input type="hidden" name="paymentDate" value="${paymentDate }">
-<input type="hidden" name="paymentAmount" value="${resDTO.baseAmount }">
 <input type="hidden" name="reservationStatus" value="${resDTO.reservationStatus }">
 
 <table class="payTable">
@@ -166,6 +177,7 @@
 		CSV : <input type="text" name="csv" id="csv" value="${csv }" class="input_csv"><br/>
 	</td></tr>
 	<tr><th>결제금액</th><td>${resDTO.baseAmount }원</td></tr>
+	<tr><th>추가결제금액</th><td><input type="text" id="paymentAmount" name="paymentAmount" class="input_paymentAmount">원</td></tr>
 </table>
 <div class="payDiv">
 	<input type="button" value="취소" class="payCancleBtn" onclick="javascript:history.back();">

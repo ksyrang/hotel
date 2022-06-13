@@ -29,4 +29,7 @@ public interface memberDAO {
 	memberDTO isExistId(String memberId);
 	
 	int isExistEmail(String email);
+	
+	memberDTO memberIdFind(String email);
+	
 }

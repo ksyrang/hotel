@@ -52,7 +52,7 @@
 				<th>체크인</th>
 				<th>금액</th>
 				<th>예약상태</th>
-				<th>수정/삭제/결제</th>
+				<th>수정/취소/결제</th>
 			</tr>
 			</thead>
 			<!-- forEach문 -->
@@ -74,21 +74,41 @@
 				
 				<td>
 				<c:choose>
-					<c:when test="${resdb.reservationStatus eq '0' }">예약</c:when>
+					<c:when test="${resdb.reservationStatus eq '0' }"><font style="color:#81d742">예약</font></c:when>
 					<c:when test="${resdb.reservationStatus eq '1' }">체크인</c:when>
 					<c:when test="${resdb.reservationStatus eq '2' }">체크아웃</c:when>
-					<c:when test="${resdb.reservationStatus eq '9' }">취소</c:when>
+					<c:when test="${resdb.reservationStatus eq '9' }"><font style="color:red">취소</font></c:when>
 				</c:choose>
 				</td>
 				
 				<td>
-				<input type="button" value="수정" class="admin_commonBtn" onclick="location.href='${root }admin_reservationModifyProc?reservationNo=${resdb.reservationNo }'">
-				<input type="button" value="삭제" class="admin_commonBtn" onclick="location.href='${root }admin_reservationDeleteProc?reservationNo=${resdb.reservationNo }'">
-				<input type="button" value="결제" class="admin_commonBtn" onclick="location.href='${root }payPageProc?reservationNo=${resdb.reservationNo }'">
+				<c:choose>
+					<c:when test="${resdb.reservationStatus eq '0' }">
+						<input type="button" value="수정" class="admin_commonBtn" onclick="location.href='${root }admin_reservationModifyProc?reservationNo=${resdb.reservationNo }'">
+						<input type="button" value="취소" class="admin_commonBtn" onclick="location.href='${root }admin_reservationDeleteProc?reservationNo=${resdb.reservationNo }'">
+						<input type="button" value="결제" class="admin_commonBtn" onclick="location.href='${root }payPageProc?reservationNo=${resdb.reservationNo }&reservationStatus=${resdb.reservationStatus }'">
+						</c:when>
+					<c:when test="${resdb.reservationStatus eq '1' }">
+						<input type="button" value="수정" class="admin_commonBtnG" disabled>
+						<input type="button" value="취소" class="admin_commonBtnG" disabled>
+						<input type="button" value="결제" class="admin_commonBtn" onclick="location.href='${root }payPageProc?reservationNo=${resdb.reservationNo }&reservationStatus=${resdb.reservationStatus }'">
+					</c:when>
+					<c:otherwise>
+						<input type="button" value="수정" class="admin_commonBtnG" disabled>
+						<input type="button" value="취소" class="admin_commonBtnG" disabled>
+						<input type="button" value="결제" class="admin_commonBtnG" disabled>
+					</c:otherwise>
+				</c:choose>
+				
 				</td>
 			</tr>
 			</c:forEach>
-		</table>
+		</table><br>
+	<b>총 예약수 : ${sessionScope.resCount }</b><br>
+	<div align="center">
+		${sessionScope.resPage }
+	</div>
+	
 	
 	</div>
 

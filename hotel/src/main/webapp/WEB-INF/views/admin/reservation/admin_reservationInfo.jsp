@@ -22,9 +22,23 @@
 </div>
 <div class="admin_reservationInfoTopRight">
 	<input type="button" value="목록" class="admin_commonBtn" onclick="location.href='${root }admin_reservationListProc'">
-	<input type="button" value="예약수정" class="admin_commonBtn" onclick="location.href='${root }admin_reservationModifyProc?reservationNo=${resInfo.reservationNo }'">
-	<input type="button" value="예약취소" class="admin_commonBtn" onclick="location.href='${root }admin_reservationDeleteProc?reservationNo=${resInfo.reservationNo }'">
-	<input type="button" value="결제" class="admin_commonBtnB" onclick="location.href='${root }payPageProc?reservationNo=${resInfo.reservationNo }'">
+	<c:choose>
+		<c:when test="${resInfo.reservationStatus eq '0' }">
+			<input type="button" value="수정" class="admin_commonBtn" onclick="location.href='${root }admin_reservationModifyProc?reservationNo=${resInfo.reservationNo }'">
+			<input type="button" value="취소" class="admin_commonBtn" onclick="location.href='${root }admin_reservationDeleteProc?reservationNo=${resInfo.reservationNo }'">
+			<input type="button" value="결제" class="admin_commonBtn" onclick="location.href='${root }payPageProc?reservationNo=${resInfo.reservationNo }&reservationStatus=${resInfo.reservationStatus }'">
+			</c:when>
+		<c:when test="${resInfo.reservationStatus eq '1' }">
+			<input type="button" value="수정" class="admin_commonBtnG" disabled>
+			<input type="button" value="취소" class="admin_commonBtnG" disabled>
+			<input type="button" value="결제" class="admin_commonBtn" onclick="location.href='${root }payPageProc?reservationNo=${resInfo.reservationNo }&reservationStatus=${resInfo.reservationStatus }'">
+		</c:when>
+		<c:otherwise>
+			<input type="button" value="수정" class="admin_commonBtnG" disabled>
+			<input type="button" value="취소" class="admin_commonBtnG" disabled>
+			<input type="button" value="결제" class="admin_commonBtnG" disabled>
+		</c:otherwise>
+	</c:choose>
 </div>
 <!-- table -->
 <div class="admin_reservationTableDiv">

@@ -4,6 +4,7 @@ import java.text.DateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
@@ -67,6 +68,11 @@ public class HomeController {
 	public String memberJoin(memberDTO member, memberExDTO memberExDto) {
 		return "memJoinForm";
 	}
+	
+//	@RequestMapping(value="findID")
+//	public String findID(HttpServletResponse response, String email) throws Exception {
+//		return "findID";
+//	}
 	
 	@RequestMapping("home2")
 	public String home2() {
@@ -221,6 +227,12 @@ public class HomeController {
 	@RequestMapping(value="payPage")
 	public String payPage() {
 		return "admin/payment/payPage";
+	}
+	
+	/* 관리자 체크아웃 추가 결제 페이지 */
+	@RequestMapping(value="checkoutPayPage")
+	public String checkoutPayPage() {
+		return "admin/payment/checkoutPayPage";
 	}
 	
 	/* 관리자 통계 메인 */

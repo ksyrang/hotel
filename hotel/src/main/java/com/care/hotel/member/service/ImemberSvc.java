@@ -1,5 +1,7 @@
 package com.care.hotel.member.service;
 
+import javax.servlet.http.HttpServletResponse;
+
 import com.care.hotel.member.DTO.AllMemberDTO;
 import com.care.hotel.member.DTO.memberDTO;
 import com.care.hotel.member.DTO.memberExDTO;
@@ -19,4 +21,6 @@ public interface ImemberSvc {
 	
 	// 멤버 회원 가입 
 	public String memberJoin(memberDTO member, memberExDTO memberExDTO);
+	
+	public memberDTO findID(HttpServletResponse response, String email) throws Exception;
 }

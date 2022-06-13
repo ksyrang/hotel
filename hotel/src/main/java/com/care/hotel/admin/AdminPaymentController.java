@@ -13,7 +13,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.care.hotel.Reservation.DTO.reservationDTO;
 import com.care.hotel.Reservation.service.IReservationSvc;
@@ -21,6 +23,7 @@ import com.care.hotel.member.DTO.memberCardDTO;
 import com.care.hotel.member.DTO.memberDTO;
 import com.care.hotel.member.service.IMemberCardSvc;
 import com.care.hotel.member.service.ImemberSvc;
+import com.care.hotel.payment.DTO.paymentDTO;
 import com.care.hotel.payment.service.IPaymentService;
 
 @Controller
@@ -29,11 +32,9 @@ public class AdminPaymentController {
 	@Autowired IReservationSvc reservationSvc;
 	@Autowired ImemberSvc memberSvc;
 	@Autowired IMemberCardSvc cardSvc;
-	private static final Logger logger = LoggerFactory.getLogger(AdminResevationController.class);
 	
 	@RequestMapping(value="payPageProc")
-	public String payPageProc(String reservationNo, Model model) {
-		logger.info("payPageProc");
+	public String payPageProc(String reservationNo, String reservationStatus, Model model) {
 		// 결제번호, 결제일 구하기
 		model.addAttribute("paymentNo", paymentSvc.createPaymentNo());
 		model.addAttribute("paymentDate", paymentSvc.getPaymentDate());
@@ -46,8 +47,6 @@ public class AdminPaymentController {
 		// 카드 정보 불러오기
 		memberCardDTO cardDTO = cardSvc.cardInfo(resDTO.getMemberId());
 		if(cardDTO != null) {
-			//model.addAttribute("cardDTO", cardDTO);
-			
 			//모델에 값 넣어주기
 			model.addAttribute("cardCompany", cardDTO.getCardCompany());
 			model.addAttribute("cardNo1", cardDTO.getCardNo().substring(0, 4));
@@ -58,10 +57,15 @@ public class AdminPaymentController {
 			model.addAttribute("validityYy",  cardDTO.getValidityYyMm().substring(0,2));
 			model.addAttribute("csv", cardDTO.getCSV());
 		}
-		return "forward:/admin_index?formpath=payPage";
+		
+		if(reservationStatus.equals("0")) {
+			return "forward:/admin_index?formpath=payPage";
+		} else {
+			return "forward:/admin_index?formpath=checkoutPayPage";
+		}
 	}
 	
-	
+	// 고객 카드 정보 넘기기
 	@PostMapping(value = "getCreditInfo", produces = "application/json;charset=UTF-8")
 	@ResponseBody
 	public Map<String, String> getCreditInfo(@RequestBody(required = false)String memberId, Model model) {
@@ -83,10 +87,26 @@ public class AdminPaymentController {
 				cardInfo.put("cardDTONull", "cardDTONull");
 			}
 		} else {
-			
+			cardInfo.put("cardDTONull", "cardDTONull");
 		}
 		return cardInfo;
 	}
 	 
+	// 결제 버튼을 눌렀을 때
+	@RequestMapping(value="PaymentProc", method=RequestMethod.POST)
+	public String PaymentProc(paymentDTO paymentDTO, String reservationStatus, RedirectAttributes ra) {
+		String result = "";
+		result = paymentSvc.insertPayment(paymentDTO, reservationStatus);
+		ra.addAttribute("msg", result);
+		return "redirect:admin_reservationListProc";
+		
+	}
+	
+	// 체크아웃 시 추가결제 페이지 결제 버튼
+	@RequestMapping(value="checkoutPaymentProc")
+	public String checkoutPaymentProc(String reservationNo, Model model) {
+		
+		return "";
+	}
 
 }
