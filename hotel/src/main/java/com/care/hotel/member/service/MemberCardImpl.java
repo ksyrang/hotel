@@ -12,7 +12,10 @@ public class MemberCardImpl implements IMemberCardSvc{
 
 	@Override
 	public memberCardDTO cardInfo(String memberId) {
-		memberCardDTO cardDTO = cardDAO.cardInfo(memberId);
+		memberCardDTO cardDTO = new memberCardDTO();
+		if(memberId != null) {
+			cardDTO = cardDAO.cardInfo(memberId);
+		}
 		return cardDTO;
 	}
 

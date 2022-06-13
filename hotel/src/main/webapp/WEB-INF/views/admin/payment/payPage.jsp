@@ -9,6 +9,8 @@
 <link href="${pageContext.request.contextPath}/resources/css/admin/admin_payPage.css" rel="stylesheet" type="text/css">
 <title>payPage</title>
 <script>
+	var req;
+	
 	// 결제수단이 신용/체크카드 일 경우 카드 정보를 뿌려준다.
 	function selectPayType(){
 		paymentType = document.getElementById('paymentType');
@@ -19,8 +21,6 @@
 			row.style.display = 'none';
 		}
 	}
-	
-	var req;
 	// 카드정보 가져오기 checkbox를 누르면 고객의 카드 정보를 불러온다.
 	function getCreditInfo(checked) {
 		var cardCompany = document.getElementById('cardCompany');
@@ -35,8 +35,8 @@
 		if(checked.checked == true) {
 			req = new XMLHttpRequest();
 			req.onreadystatechange = printInfo;
-			req.open('post', 'getCreditInfo');
-			req.send(${memberDTO.memberId});
+			req.open('POST', 'getCreditInfo');
+			req.send('${memberDTO.memberId }');
 		}else {
 			cardCompany.value = "";
 			cardNo1.value = "";
@@ -49,13 +49,34 @@
 		}
 	}
 	
-	// 체크박스 선택 시
 	function printInfo() {
+		var cardCompany = document.getElementById('cardCompany');
+		var cardNo1 = document.getElementById('cardNo1');
+		var cardNo2 = document.getElementById('cardNo2');
+		var cardNo3 = document.getElementById('cardNo3');
+		var cardNo4 = document.getElementById('cardNo4');
+		var validityMm = document.getElementById('validityMm');
+		var validityYy = document.getElementById('validityYy');
+		var csv = document.getElementById('csv');
 		if(req.readyState == 4 && req.status == 200){
-			//alert(req.responseText);
+			var result = JSON.parse(req.responseText);
+			if(result.cardDTONull != "cardDTONull") {
+				cardCompany.value = result.cardCompany;
+				cardNo1.value = result.cardNo1;
+				cardNo2.value = result.cardNo2;
+				cardNo3.value = result.cardNo3;
+				cardNo4.value = result.cardNo4;
+				validityMm.value = result.validityMm;
+				validityYy.value = result.validityYy;
+				csv.value = result.csv;
+			}else {
+				alert("고객의 카드 정보가 없습니다.");
+			}
 		}
 	}
+
 </script>
+
 </head>
 <body>
 <div class="admin_mainDiv">
@@ -79,12 +100,12 @@
 	<tr id="creditInfo"><th>신용/체크카드 정보</th><td>
 		<input type="checkbox" id="checkCredit" onchange="getCreditInfo(this)" checked>고객 카드정보 가져오기<br/>
 		카드사 : <select name="cardCompany" id="cardCompany" class="selectCompany">
-			<option value="">카드사</option>	
-			<option value="국민은행" selected>국민은행</option>	
-			<option value="우리은행">우리은행</option>	
-			<option value="신한은행">신한은행</option>	
-			<option value="농협은행">농협은행</option>	
-			<option value="카카오뱅크">카카오뱅크</option>	
+			<option value="" <c:if test="${cardCompany != null }">selected</c:if>>카드사</option>	
+			<option value="국민은행" <c:if test="${cardCompany == '국민은행' }">selected</c:if>>국민은행</option>	
+			<option value="우리은행" <c:if test="${cardCompany == '우리은행' }">selected</c:if>>우리은행</option>	
+			<option value="신한은행" <c:if test="${cardCompany == '신한은행' }">selected</c:if>>신한은행</option>	
+			<option value="농협은행" <c:if test="${cardCompany == '농협은행' }">selected</c:if>>농협은행</option>	
+			<option value="카카오뱅크" <c:if test="${cardCompany == '카카오뱅크' }">selected</c:if>>카카오뱅크</option>	
 		</select><br/>
 		카드번호 : <input type="text" name="cardNo1" id="cardNo1" value="${cardNo1 }" class="input_cardNo"> 
 		<input type="password" name="cardNo2" id="cardNo2" value="${cardNo2 }"  class="input_cardNo">
