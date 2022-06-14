@@ -14,26 +14,26 @@
 <script>
 window.onload= send;
 
-function start(){
-	var button = document.getElementById('button');//동작을 제어할 오브젝트
-	button.onclick=send;
-}
 
 var req;
 function send(){//데이터 송신 메소드
-	//alert('onload start');
+	//alert('onload start');	
+	
 	req = new XMLHttpRequest();
 	req.onreadystatechange = textChang;
-	req.open('post','jsontest');
+	req.open('post','chartUpdate');
 	req.send(null);
 }
-const hotels =[]; 
+
+const hotelsName =[]; 
+
 function textChang(){//데이터 수신 메소드
+	console.log('test');
 	if(req.readyState == 4 && req.status == 200) {
 		jDatas = JSON.parse(req.responseText);//json확장자의 파일에서 가져오 데이터 뭉치
-		hdata ="";
+		console.log(jDatas);
 		for(i=0;i<jDatas.cd.length;i++){//jDatas.length = 대집합의 개수(1개), jDatas.cd.length = cd안에 있는 라인 수
-			hotels[i] = jDatas.cd[i].hotelName;
+			hotelsName[i] = jDatas.cd[i].hotelName;
 		}
 	}
 
@@ -54,28 +54,17 @@ function textChang(){//데이터 수신 메소드
 </div>
 </center>
 
- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
- <script>
- 
-  const labels = [//가로 축 항목
-  	'February',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
-  ];
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
 
   const data = {//원하는 오브젝트를 넣어햐 할때
-    labels: hotels,
-    datasets: [
-		{
-			label: 'data1',
-			backgroundColor: 'red',//rgb(255, 99, 132) 사각형과 점 내부 채움
-			borderColor: 'red',//사격형과 외부 선의 색
-			data: [10, 10, 5, 2, 20, 30],//내부에 들어갈 데이터, 맨 마지막에 하나더 값을 넣으면 세로축 최대값이 지정할 수 있다.
-		}
-   	]
+    labels: hotelsName,
+    datasets: [{
+        label: 'My First dataset',
+        backgroundColor: 'rgb(255, 99, 132)',
+        borderColor: 'rgb(255, 99, 132)',
+        data: [0, 10, 5, 2, 20, 30, 45],
+      }]
   };
 
   const config = {
@@ -93,49 +82,6 @@ function textChang(){//데이터 수신 메소드
     document.getElementById('myChart'),
     config
   );
-  </script>
 
-  <%-- 
-<center>
-<div class="admin_main">
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<canvas id="myChart" width="100" height="50"></canvas>
-<script>
-const ctx = document.getElementById('myChart').getContext('2d');
-const myChart = new Chart(ctx, {
-    type: 'bar',
-    data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-        datasets: [{
-            label: '# of Votes',
-            data: [12, 19, 3, 5, 2, 3],
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
-            ],
-            borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
-            ],
-            borderWidth: 1
-        }]
-    },
-    options: {
-        scales: {
-            y: {
-                beginAtZero: true
-            }
-        }
-    }
-});
-</script>
-</div>	
-</center> --%>
+  
+  </script>

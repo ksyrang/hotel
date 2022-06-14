@@ -40,18 +40,17 @@ public class hotelresourceController {
 	
 	@PostMapping("hotelModifyProc")
 	public String hotelModifyProc(hotelDTO hotelInfo, String hotelPw, String hotelPwC, Model model) {
+
+		System.out.println("hotelModifyProc 진입");
 		if((hotelPw == null || hotelPw.isEmpty()) && (hotelPwC == null || hotelPwC.isEmpty())) {//null일 경우 기존의 PW를 입력
 			hotelInfo.setHotelPw(((hotelDTO)session.getAttribute("hotelInfo")).getHotelPw());
 		}
 		else if(!hotelPw.equals(hotelPwC)) {
+//			session.setAttribute("msg", "비밀번호 불일치");
 			return "forward:/admin_index?formpath=admin_hotelInfoModify";
 		}
-		System.out.println("pw : "+hotelInfo.getHotelPw());
 		int result = hotelresSVC.hotelModify(hotelInfo);
-		System.out.println("업데이트 결과"+result);		
-//		if(result == 1) {
-//			return "forward:/admin_index?formpath=admin_hotelList";
-//		}
+
 		String hotelId = hotelInfo.getHotelId();
 		return "redirect:/hotelInfoProc?hotelId="+hotelId;
 	}	

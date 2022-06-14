@@ -7,6 +7,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.care.hotel.payment.DAO.paymentDAO;
 import com.care.hotel.resourceDAO.IhotelDAO;
 import com.care.hotel.resourceDTO.hotelDTO;
 
@@ -15,6 +16,7 @@ import com.care.hotel.resourceDTO.hotelDTO;
 public class statisticsSvcImple implements IstatisticsSvc {
 	
 	@Autowired IhotelDAO hotelDAO;
+	@Autowired paymentDAO paymentDAO;
 	@Autowired HttpSession session;
 	
 
@@ -26,19 +28,28 @@ public class statisticsSvcImple implements IstatisticsSvc {
 	
 	@Override
 	public String jsonreturn() {
-		ArrayList<hotelDTO> list = hotelDAO.allhotelidList();
-		String encData = hotelNameToJason(list);
+		ArrayList<hotelDTO> hotelInfolist = hotelDAO.allhotelidList();
+		ArrayList<Integer> hotelAmountList = new ArrayList<Integer>();
+		for(hotelDTO info : hotelInfolist) {
+			int result = paymentDAO.getHotelTotalAmount(info.getHotelId());
+			hotelAmountList.add(result);
+		}
+		
+		String encData = hotelNameToJason(hotelInfolist, hotelAmountList);
 //		return null;
 		return encData;
 	}
 	
-	private String hotelNameToJason(ArrayList<hotelDTO> list) {
+	private String hotelNameToJason(ArrayList<hotelDTO> hotelInfolist, ArrayList<Integer> hotelAmountList) {
 		String result = "{\"cd\" : [";
-		for(hotelDTO ajax : list) {
+		int i = 0;
+		for(hotelDTO ajax : hotelInfolist) {
 			result += "{ \"hotelId\" : \"";
 			result += ajax.getHotelId()+"\",";
 			result += " \"hotelName\" : \"";
 			result += ajax.getHotelName()+"\" },";
+//			result += " \"hotelAmount\" : \"";
+//			result += hotelAmountList.get(i++)+"\" },";
 		}
 		result = result.substring(0,result.length()-1);
 		result += "]}";

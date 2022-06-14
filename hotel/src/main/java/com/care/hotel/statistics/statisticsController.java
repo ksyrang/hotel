@@ -23,16 +23,17 @@ public class statisticsController {
 		statisticsSvc.allhotelList();
 		return "forward:/admin_index?formpath=admin_statisticsMain";
 	}
-	@GetMapping("chartUpdate")
-	public String chartUpdate() {
 
-		return "forward:/admin_index?formpath=admin_statisticsMain";
-	}
-	
+	/*
+	 * @GetMapping("chartUpdate") public String chartUpdate() {
+	 * 
+	 * return "forward:/admin_index?formpath=admin_statisticsMain"; }
+	 */
 	@ResponseBody
-	@PostMapping("jsontest")
-	public String jsontest(@RequestBody (required = false)HashMap<String, String> map) {
+	@PostMapping("chartUpdate")
+	public String chartUpdate(@RequestBody (required = false)HashMap<String, String> map) {
 		String result = statisticsSvc.jsonreturn();
+		System.out.println(result);
 		return result;
 	}
 }

@@ -2,11 +2,16 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <c:url var="root" value="/" />
-//<script src="${root}/resources/check.js"></script>
+<script src="${root}/resources/check.js"></script>
 <link href="${pageContext.request.contextPath}/resources/css/admin/amdin_hotelList.css" rel="stylesheet" type="text/css">
 <link href="${pageContext.request.contextPath}/resources/css/admin/amdin_memberList.css" rel="stylesheet" type="text/css">
 
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+
+<c:if test="${not empty sessionScope.msg }">
+	<script>alert("${msg}");</script>
+</c:if>
+
 <script>
 	function daumPost(){
 		
