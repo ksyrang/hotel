@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<c:url var="root" value="/" />
 <!DOCTYPE html>
 <html lang="ko" class="webkit chrome win  retina ratio1_25 js portrait tabletwide"><head>
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
@@ -19,7 +21,50 @@
 <meta name="keywords" content="신라스테이,신라호텔,서울신라호텔,제주신라호텔,호텔신라,럭셔리호텔,신라리워즈">
 <meta name="description" content="국내 최고 럭셔리 호텔인 호텔신라는 신라호텔과 신라스테이 브랜드를 보유하고 있습니다.">
 <meta name="subject" content="신라스테이 소개,신라 리워즈 안내,브랜드 및 호텔 소개,객실 패키지 안내,온라인 최저가 예약,">
-<script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script gtm="GTM-T3LBJ26" type="text/javascript" async="" src="https://www.google-analytics.com/gtm/optimize.js?id=OPT-NQ9CLZ3"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-30Y6N61ES4&amp;l=dataLayer&amp;cx=c"></script><script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-T3LBJ26"></script></head><body class="subBody joinBody"><div id="popCalendarDiv" class="popCalendar" style="display:none"></div>
+<script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script gtm="GTM-T3LBJ26" type="text/javascript" async="" src="https://www.google-analytics.com/gtm/optimize.js?id=OPT-NQ9CLZ3"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-30Y6N61ES4&amp;l=dataLayer&amp;cx=c"></script><script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-T3LBJ26"></script>
+<script>
+
+	function sendNext(){
+		// 필수 동의
+		var checkAgree1_Y = document.getElementById('checkAgree1_Y');
+		var checkAgree2_Y = document.getElementById('checkAgree2_Y');
+		var checkAgree6_Y = document.getElementById('checkAgree6_Y');
+		var checkAgree6_N = document.getElementById('checkAgree6_N');
+		
+		// 선택 동의
+		var checkAgree4_Y = document.getElementById('checkAgree4_Y');
+		var checkAgree4_N = document.getElementById('checkAgree4_N');
+		var checkAgree7_Y = document.getElementById('checkAgree7_Y');
+		var checkAgree7_N = document.getElementById('checkAgree7_N');
+		
+		if(checkAgree1_Y.checked && checkAgree2_Y.checked && checkAgree6_Y.checked) {
+			if(!(checkAgree4_Y.checked || checkAgree4_N.checked)) {
+				alert("마케팅 수신 여부를 선택해주세요.");
+				return;
+			}
+			if(!(checkAgree7_Y.checked || checkAgree7_N.checked)) {
+				alert("개인정보 제 3자 제공 동의 여부를 선택해주세요.");
+				return;
+			}
+		} else {
+			alert("필수 체크입니다");
+			return;
+		}
+		
+		if(checkAgree4_N.checked) {
+			alert("마케팅 수신 거부");
+		}
+		if(checkAgree7_N.checked) {
+			alert("개인정보 제 3자 제공 동의 거부");
+		}
+		
+		document.getElementById('f').submit();
+		
+	} 
+</script>
+</head>
+
+<body class="subBody joinBody"><div id="popCalendarDiv" class="popCalendar" style="display:none"></div>
 
 <script src="/js/json2.js" charset="UTF-8"></script>
 <script src="/js/jquery-1.8.3.js" charset="UTF-8"></script>
@@ -42,9 +87,6 @@
 <script src="/js/dining_new2020.js" charset="UTF-8"></script>
 <!--[if IE 6]><script src="/js/png24.js"></script><![endif]-->
 
-<script type="text/javascript">
-
-	</script>
 
 <!-- 운영인 경우만 Google Analytics 호출 -->
 <!-- Google Tag Manager -->
@@ -54,25 +96,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-T3LBJ26');</script>
 <!-- End Google Tag Manager -->
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-119797985-1"></script>
-
-<script>
-
-  window.dataLayer = window.dataLayer || [];
-
-  function gtag(){dataLayer.push(arguments);}
-
-  gtag('js', new Date());
-
- 
-
-  gtag('config', 'UA-119797985-1');
-
-</script>
-
 
 
 <!-- Google Tag Manager (noscript) -->
@@ -86,297 +109,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 	
-	<div class="contain">
-		<script type="text/javascript">
-
-$(document).ready(function() { 
-	
-	if("" == "emailOverlap"){
-		alert('이미 가입된 email 주소입니다.');
-	}
-	if("" == "urlError"){
-		alert('잘못된 경로로 진입하였습니다.');
-	}
-	if("" == "getCertNoError"){
-		alert('이메일인증이 실패하였습니다.');
-	}
-	
-	$(".mbrChk").prop("disabled", true);
-
-	// PC 회원가입 레이어팝업 show
-	fncGetPopup();
-
-	// 신라리워즈 약관 전체 동의
-	$("#mbr_chk_all").click(function(){
-		if($(this).is(":checked")){
-			$(".mbrChkY").prop("checked", true);			
-			$(".mbrChkN").prop("checked", false);
-			$(".mbrChk").prop("disabled", false);
-			$(".mbrChk").prop("checked", true);
-			$("#mktArea").removeClass("opacity").addClass("opacity2");
-		}else{
-			$(".mbrChkN").prop("checked", true);
-			$(".mbrChkY").prop("checked", false);
-			$(".mbrChk").prop("checked", false);
-			$(".mbrChk").prop("checked", false);
-			$(".mbrChk").prop("disabled", true);
-			$("#mktArea").removeClass("opacity2").addClass("opacity");
-		}
-	});
-	
-	$(".mbrChkY").click(function(){
-		var chkFlag = true;
-		$(".mbrChkY").each(function(){
-			if(!$(this).is(":checked")){
-				chkFlag = false;
-			}
-		});
-		chkFlag == true ? $("#mbr_chk_all").prop("checked", true) : $("#mbr_chk_all").prop("checked", false);
-	});
-	
-	$(".mbrChkN").click(function(){
-		var chkFlag = true;
-		$(".mbrChkY").each(function(){
-			if(!$(this).is(":checked")){
-				chkFlag = false;
-			}
-		});
-		chkFlag == true ? $("#mbr_chk_all").prop("checked", true) : $("#mbr_chk_all").prop("checked", false);
-	});
-	
-	// 매체별 광고성 정보 수신 동의 체크박스
-	$(".mbrChk").click(function(){
-		var objId = $(this).attr("id");
-		var chkFlag = true;
-		if($(this).is(":checked")){
-			if(objId == "marketingAll"){
-				$(".mbrChk").prop("checked", true);
-			}else{
-				
-				$(".mbrChk").each(function(){
-					if(!$(this).is(":checked") && $(this).attr("id") != "marketingAll"){
-						chkFlag = false;
-					}
-				});
-				
-				chkFlag == true ? $("#marketingAll").prop("checked", true) : $("#marketingAll").prop("checked", false);
-			}
-		}else{
-			if(objId == "marketingAll"){
-				$(".mbrChk").prop("checked", false);
-			}else{
-				$(".mbrChk").each(function(){
-					if(!$(this).is(":checked")){
-						chkFlag = false;
-					}
-				});
-				chkFlag == true ? $("#marketingAll").prop("checked", true) : $("#marketingAll").prop("checked", false);
-			}
-		}
-		
-		
-	});
-	
-	// 개인정보 마케팅 활용 동의 선택값에 따라 CSS 수정
-	$(".mktAgree").click(function(){
-		if($(this).attr("id") == "checkAgree4_Y"){
-			$("#mktArea").removeClass("opacity").addClass("opacity2");
-			$(".mbrChk").prop("disabled", false);
-		}else{
-			$("#mktArea").removeClass("opacity2").addClass("opacity");
-			$(".mbrChk").prop("checked", false);
-			$(".mbrChk").prop("disabled", true);
-		}
-	});
-});
+<div class="contain">
 
 
-function nextStep(){
-	
-	if(!$("#checkAgree1_Y").is(":checked")){
-		$("#checkAgree1_Y").focus();
-		alert("신라리워즈 이용약관에 대한 동의는 필수 선택사항입니다.");
-		return;
-	}
-	
-	if(!$("#checkAgree2_Y").is(":checked")){
-		$("#checkAgree2_Y").focus();
-		alert("개인정보 수집, 이용에 대한 동의는 필수 선택사항입니다.");
-		return;
-	}
-	
-	if(!$("#checkAgree6_Y").is(":checked")){
-		$("#checkAgree6_Y").focus();
-		alert("개인정보 제3자 제공에 대한 동의는 필수 선택사항입니다.");
-		return;
-	}
-	
-	if($("#checkAgree4_Y").is(":checked")){
-		if(!$("#marketingSms").is(":checked") && !$("#marketingNews").is(":checked")) {
-			$("#checkAgree4_Y").focus();
-			alert(messages["javascript.alert.join.check4"]);
-			return;
-		}
-	}
-
-	fnPopup();
-}
-
-function popPrivacyInc(number){
-	var privacyIncLayerDiv = $("#privacyIncLayerDiv");
-	$.ajax(
-            {
-                url: 'index?formpath=memJoinAgreeForm,
-                type: "post",
-                dataType: "html",
-                error: function(){
-                },
-                success: function( strData ){
-                	privacyIncLayerDiv.html(strData);
-                	privacyIncLayerDiv.show();
-                	$(".popLayer").attr("tabindex",-1);
-                	$(".popLayer").focus();
-                }
-            }                           
-     );
-}
-
-function fnPopup(){
-	var windowW = 500;  // 창의 가로 길이
-    var windowH = 550;  // 창의 세로 길이
-    var left = Math.ceil((window.screen.width - windowW)/2);
-    var top = Math.ceil((window.screen.height - windowH)/2);
-	window.open('', 'popupChk', 'width='+windowW+', height='+windowH+', top='+top+', left='+left+', fullscreen=no, menubar=no, status=no, toolbar=no, titlebar=yes, location=no, scrollbar=no');
-	document.form_chk.action = "https://nice.checkplus.co.kr/CheckPlusSafeModel/checkplus.cb";
-	document.form_chk.target = "popupChk";
-	document.form_chk.submit();
-}
-
-function authCallBack(authInfo){
-	
-	if(authInfo.resultCode == "200"){
-		$("#mbrNm").val(authInfo.sName);
-		$("#birth").val(authInfo.sBirthDate);
-		$("#titlCd").val(authInfo.sGender);
-		$("#ipinDI").val(authInfo.sDupInfo);
-		$("#ipinCI").val(authInfo.sConnInfo);
-		$("#mbno").val(authInfo.sMobileNo);
-		$("#mbno1").val(authInfo.mbno1);
-		$("#mbno2").val(authInfo.mbno2);
-		$("#mbno3").val(authInfo.mbno3);
-		
-		$("form[name=viewBrowsewrapForm]").submit();
-	}else{
-		alert(authInfo.resultMsg);
-	}
-}
-
-function fncGetPopup(){
-		$.ajax({
-			url: "/mem/mbr/join/getPopup.do",
-			data : { "hotlId": "HUB" },
-			cache: false,
-			type: "POST",
-			success : function(json){
-				var data = jQuery.parseJSON(json);
-				var isPopup = data.model.isPopup;
-				if ( isPopup == "Y" ) {
-					for(var i = 0; i < data.model.popupVoList.length; i++){
-						var viewObj = data.model.popupVoList[i];
-						
-						var popupSize = viewObj.popSize;
-						var popupLoc = viewObj.popLoc;
-						var opt ;
-
-						if (getCookie("popup_"+viewObj.dbbsId+"_KR_"+ i) != "done") {
-							var url = "/hub/popup/joinPopup.do?dbbsId="+viewObj.dbbsId+"&hotlId=HUB&langTypCd=KR&viewIdx="+i;
-							var opt = "";
-							
-							if(popupSize != ""){
-								var popSize = popupSize.split(":");
-								if(popSize.length > 1){
-									opt = "width="+popSize[0]+",height="+popSize[1];
-								}
-							}
-							
-							if(popupLoc != ""){
-								var popLoc = popupLoc.split(":");
-								if(popLoc.length > 1){
-									if(opt != "") opt = opt + ","; 
-									opt = opt + "top="+popLoc[0]+",left="+popLoc[1];
-								}
-							}
-							
-							if(opt != "") opt = opt + ",";  
-							opt = opt + 'scrollbars=no,status=no';
-							window.open(url, viewObj.dbbsId+i, opt);
-
-						}
-						
-					}	
-				}
-			}
-		});
-}
-
-
-function getCookie(cookie_name) {
-    var isCookie = false;
-    var start, end;
-    var i = 0;
-
-    // cookie 문자열 전체를 검색
-    while(i <= document.cookie.length) {
-         start = i;
-         end = start + cookie_name.length;
-         // cookie_name과 동일한 문자가 있다면
-         if(document.cookie.substring(start, end) == cookie_name) {
-             isCookie = true;
-             break;
-         }
-         i++;
-    }
-
-    // cookie_name 문자열을 cookie에서 찾았다면
-    if(isCookie) {
-        start = end + 1;
-        end = document.cookie.indexOf(";", start);
-        // 마지막 부분이라는 것을 의미(마지막에는 ";"가 없다)
-        if(end < start)
-            end = document.cookie.length;
-        // cookie_name에 해당하는 value값을 추출하여 리턴한다.
-        return document.cookie.substring(start, end);
-    }
-    // 찾지 못했다면
-    return "";
-}
-</script>
-<div id="termsIncLayerDiv" class="popLogin" style="display:none"></div>
-<div id="privacyIncLayerDiv" class="popLogin" style="display:none"></div>
-
-<form id="termsForm" name="termsForm">
-<input type="hidden" id="termsRole" name="termsRole" autocomplete="off">
-<input type="hidden" id="termsTitle" name="termsTitle" autocomplete="off">
-</form>
-
-<!-- 본인인증 서비스 Form-->
-<form name="form_chk" method="post">
-	<input type="hidden" name="m" value="checkplusSerivce" autocomplete="off">     <!-- 필수 데이타로, 누락하시면 안됩니다. -->
-	<input type="hidden" name="EncodeData" value="AgAFQkQ2MDQf+bz3vizRwSLR/J45qh8dQZ5hSuAC//IPdSh5I7fYfXkIiExqglObe19CueftyLBiJ8R4H+XF7E8v1FI/yW3zMd9FvcFKtVOJXWMgndplmmzUEcAVpVoUnNoAjjIZXMKcTQbQAb12V0tbPfX19re+ivyh//Ktki+g4QPosLUfPNSqkSMpclBDzHw694sGtTTf2Eu7aH87plmia1Htmn1jEQWksrksI8YImyLg04hg4gH6xHpXhS7F8Q1udnmY6i9pgDA5Vf1EkF816uvM5DlTD84P39TkFMtqIt4l1O6yD7g5p1fT8e56wUCXAKqFK5cPz6OdKaVUzxGfky8Rmk2yT3UHKq1Oz6kME8yDxqM0bIQuOe8xU/Q71/0ldV2zAFIa6l66K2tBvZHvY42L4/nNBrcqYZGV5xlsU6dSiKYxrAbAwcARx8J07nogSl/U5f8Vwy3dtatKLvjB0oJtQNn8sw9yL0aVdEk7ruJwQamObOifnoJL4PQoCPj6y1LzRXQ=" autocomplete="off"> <!-- 위에서 업체정보를 암호화 한 데이타입니다. -->
-</form>
-
-<form name="viewBrowsewrapForm" id="viewBrowsewrapForm" method="post" action="memJoinAgreeProc">
-<input type="hidden" id="sqMbPersnallyCertifictH" name="sqMbPersnallyCertifictH" value="" autocomplete="off">
-<input type="hidden" id="itCd" name="itCd" value="" autocomplete="off">
-<input type="hidden" id="mbrNm" name="mbrNm" autocomplete="off">
-<input type="hidden" id="birth" name="birth" autocomplete="off">
-<input type="hidden" id="titlCd" name="titlCd" autocomplete="off">
-<input type="hidden" id="ipinDI" name="ipinDI" autocomplete="off">
-<input type="hidden" id="ipinCI" name="ipinCI" autocomplete="off">
-<input type="hidden" id="mbno" name="mbno" autocomplete="off">
-<input type="hidden" id="mbno1" name="mbno1" autocomplete="off">
-<input type="hidden" id="mbno2" name="mbno2" autocomplete="off">
-<input type="hidden" id="mbno3" name="mbno3" autocomplete="off">
+<form action="memJoinAgreeProc" id='f'>
 
 <div class="container">
 	<div class="contents" id="contents">
@@ -478,36 +214,6 @@ function getCookie(cookie_name) {
 <p class="Inpo_Tmini">신라리워즈 회원등급 조정 기준</p><br>
 <p>- 회원 등급 조정은 아래의 조정 기준(연간 숙박일수 또는 연간 적립 포인트) 중 어느 하나의 승급 조건을 우선 충족하는 경우 해당 등급으로 조정됩니다.</p><br>
 
-<table class="tableTypeD_2" border="1" cellspacing="0" cellpadding="0" summary="신라리워즈 회원등급 조정 기준">
-	<caption>신라리워즈 회원등급 조정 기준</caption>
-	<thead>
-		<tr>
-			<th class="slash">
-				<div>등급</div>조정 기준
-			</th>
-			<th>브라운</th>
-			<th>실버</th>
-			<th>골드</th>
-			<th>다이아몬드</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td>연간 숙박일수</td>
-			<td>-</td>
-			<td>1 일 이상</td>
-			<td>10 일 이상</td>
-			<td>50 일 이상</td>
-		</tr>
-		<tr>
-			<td>연간 적립 포인트</td>
-			<td>-</td>
-			<td>100 포인트 이상</td>
-			<td>5만 포인트 이상</td>
-			<td>20만 포인트 이상</td>
-		</tr>
-	</tbody>
-</table>
 
 <p>5. 제 4항의 회원 등급 조정 기준과 관련한 연간 숙박일수 및 연간 적립 포인트 인정 세부 조건은 다음과 같습니다.</p><br>
 <p>(1) 연간 숙박일수</p><br>
@@ -526,229 +232,6 @@ function getCookie(cookie_name) {
 <p>10. 회원 등급별로 차등 서비스 혜택을 제공하며, 회원 등급별 서비스 및 혜택 및 이용 세부 조건은 다음과 같습니다.</p><br>
 
 <p>(1) 회원 등급별 서비스 혜택</p><br>
-<table class="tableTypeD_2 tableTypeD_2New" border="0" cellspacing="0" cellpadding="0" summary="회원 등급별 서비스 혜택">
-    <colgroup>
-        <col width="11%" class="col1">
-        <col width="25%" class="col2">
-        <col width="8%" class="col3">
-        <col width="8%" class="col4">
-        <col width="8%" class="col5">
-        <col width="11%" class="col6">
-        <col width="26%" class="col7">
-    </colgroup>
-    <thead>
-        <tr>
-            <th>회원<br>등급</th>
-            <th colspan="5">등급별 서비스 혜택</th>
-            <th>비고</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td></td>
-            <td></td>
-            <td>서울<br>신라</td>
-            <td>제주<br>신라</td>
-            <td>신라<br>스테이</td>
-            <td>신라모노그램<br>다낭</td>
-            <td></td>
-        </tr>
-
-        <tr>
-            <td>브라운</td>
-            <td>· 포인트 적립<br>(객실 매출의 3%, 식음 매출의 1%)</td>
-            <td>●</td>
-            <td>●</td>
-            <td>●</td>
-            <td>●</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td rowspan="2">실버</td>
-            <td>· 포인트 적립<br>(객실 매출의 3%, 식음 매출의 1%)</td>
-            <td>●</td>
-            <td>●</td>
-            <td>●</td>
-            <td>●</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>· 객실 전용 1만 포인트 사용권</td>
-            <td>●</td>
-            <td>●</td>
-            <td></td>
-            <td></td>
-            <td>· 연 1회 제공<br>
-                · 서울/제주 각 1매<br>
-                · 정규 예약을 통한 이용에 한정<br>
-                · 유효기간 내 사용 (이월 사용 불가)<br>
-                · 타쿠폰 및 할인 서비스 등과 중복사용 불가<br>
-                · 앱 전용 포인트 사용권으로, 모바일 앱에서 사용권 확인 가능
-            </td>
-        </tr>
-        <tr>
-            <td rowspan="7">골드</td>
-            <td>· 포인트 적립<br>(객실 매출의 4%, 식음 매출의 1.5%)</td>
-            <td>●</td>
-            <td>●</td>
-            <td>●</td>
-            <td>●</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>· 객실 전용 3만 포인트 사용권</td>
-            <td>●</td>
-            <td>●</td>
-            <td></td>
-            <td></td>
-            <td>
-                · 연 1회 제공<br>
-                · 정규 예약을 통한 이용에 한정<br>
-                · 유효기간 내 사용 (이월 사용 불가)<br>
-                · 타쿠폰 및 할인 서비스 등과 중복사용 불가<br>
-                · 앱 전용 포인트 사용권으로, 모바일 앱에서 사용권 확인 가능<br>
-            </td>
-        </tr>
-        <tr>
-            <td>· 식음업장 5% 할인</td>
-            <td>●</td>
-            <td>●</td>
-            <td>●</td>
-            <td>●</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>· 투숙중 Laundry 10% 할인</td>
-            <td>●</td>
-            <td>●</td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>
-                · 투숙중 무료 Laundry 서비스<br>
-                • 서울신라 : 셔츠 1개 다림질<br>
-                • 제주신라 : 셔츠 1개 세탁
-            </td>
-            <td>●</td>
-            <td>●</td>
-            <td></td>
-            <td></td>
-            <td>투숙 당 1회 제공<br>* 제주신라 세탁 서비스 혜택은 물세탁이 가능한 셔츠(면티셔츠)에 한하여 제공됩니다.</td>
-        </tr>
-        <tr>
-            <td>· 객실 3회 업그레이드<br>(1회 한하여 스위트 객실 업그레이드 제공)</td>
-            <td>●</td>
-            <td>●</td>
-            <td></td>
-            <td>●</td>
-            <td>
-                · 정규 예약을 통한 이용에 한정<br>
-                · 투숙 당 1회(3박 이내) 제공<br>
-                (Gold 등급 유효기간 내 3회 한정)
-            </td>
-        </tr>
-        <tr>
-            <td>· 72시간 예약 개런티</td>
-            <td></td>
-            <td></td>
-            <td>●</td>
-            <td>●</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td rowspan="9">다이아몬드</td>
-            <td>· 포인트<br>(객실 매출의 5%, 식음 매출의 2%)</td>
-            <td>●</td>
-            <td>●</td>
-            <td>●</td>
-            <td>●</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>· 객실 전용 10만 포인트 사용권 </td>
-            <td>●</td>
-            <td>●</td>
-            <td></td>
-            <td></td>
-            <td>
-                · 연 1회 제공<br>
-                · 정규 예약을 통한 이용에 한정<br>
-                · 유효기간 내 사용 (이월 사용 불가)<br>
-                · 타쿠폰 및 할인 서비스 등과 중복사용 불가<br>
-                · 앱 전용 포인트 사용권으로, 모바일 앱에서 사용권 확인 가능
-            </td>
-        </tr>
-        <tr>
-            <td>· 식음업장 10% 할인</td>
-            <td>●</td>
-            <td>●</td>
-            <td>●</td>
-            <td>●</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>· 투숙중 Laundry 15% 할인</td>
-            <td>●</td>
-            <td>●</td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>
-                · 투숙중 무료 Laundry 서비스<br>
-                • 서울신라 : 정장 1벌, 셔츠 1개 다림질<br>
-                • 제주신라 : 상, 하의 각 1개 세탁
-            </td>
-            <td>●</td>
-            <td>●</td>
-            <td></td>
-            <td></td>
-            <td>투숙 당 1회 제공<br>* 제주신라 세탁 서비스 혜택은 물세탁이 가능한 셔츠(면티셔츠), 긴바지에 한하여 제공됩니다.</td>
-        </tr>
-        <tr>
-            <td>· 객실5회 업그레이드<br>(1회 한하여 스위트 객실 업그레이드 제공)</td>
-            <td>●</td>
-            <td>●</td>
-            <td></td>
-            <td>●</td>
-            <td>
-                · 정규 예약을 통한 이용에 한정<br>
-                · 투숙 당 1회(3박 이내) 제공<br>
-                (Diamond 등급 유효기간 내 5회 한정)
-            </td>
-        </tr>
-        <tr>
-            <td>· Early Check-In(12시), Late Check-Out (15시)</td>
-            <td>●</td>
-            <td></td>
-            <td>●</td>
-            <td>●</td>
-            <td>호텔별 예약 상황 등에 따라 서비스 제공이 제한될 수 있습니다.</td>
-        </tr>
-        <tr>
-            <td>· 라운지 무료 이용(본인 포함 2 인까지)</td>
-            <td>●</td>
-            <td>●</td>
-            <td></td>
-            <td></td>
-            <td>
-                · 정규 예약을 통한 이용에 한정<br>
-                · 호텔별 예약 상황 등에 따라 서비스 제공이 제한될 수 있습니다.
-            </td>
-        </tr>
-        <tr>
-            <td>· 48시간 예약 개런티</td>
-            <td>●</td>
-            <td></td>
-            <td>●</td>
-            <td>●</td>
-            <td></td>
-        </tr>
-    </tbody>
-</table>
 
 <p>(2) 회원 등급별 서비스 혜택 이용 세부 조건</p><br>
 <p>
@@ -857,7 +340,6 @@ function getCookie(cookie_name) {
 				<hr class="hrstyleA">
 				<div class="hTitS">
 	                <h4 class="tit">개인정보 제3자 제공에 대한 동의 (필수)</h4>
-	                </div>
 	            </div>
 	            <div class="policyBox">
 	                <div class="box">
@@ -911,6 +393,7 @@ function getCookie(cookie_name) {
 				<hr style="border-bottom:1px dashed #ede4d6;margin:20px 0 20px 0;height:0px;background:transparent;border-top:0;border-right:0;border-left:0;">
 				<div class="hTitS">
 	                <h4 class="tit">개인정보 제3자 제공 및 국외이전 동의 (선택)</h4>
+	                <div class="info"><a href="#none" onclick="popPrivacyInc(7);" id="privacyIncbutton_7" class="btnViewAll">전체보기</a>
 	                </div>
 	            </div>
 	            <div class="policyBox">
@@ -975,14 +458,16 @@ function getCookie(cookie_name) {
 			<!-- 신라 리워즈  약관동의 End -->
 
 			<div class="buttonwrapA">
-                <input type=submit  class="buttonstyleA" style="margin-bottom:13px;" onclick="nextStep();" />
-                 &nbsp;&nbsp;<a href="${root }index?formpath=memJoinForm" class="buttonstyleA" onclick="nextStep();">다음</a>
+               <!--  <input type="button" id="nextBtn" class="buttonstyleA" style="margin-bottom:13px;"> -->
+               <input type="button" class="buttonstyleA" value="확인" style="margin-bottom:13px;"onclick="sendNext();">
                 &nbsp;&nbsp;<a href="/hotel/" class="buttonstyleA">취소</a>
             </div>
 		</div>
 	</div>
 </div>
-</form><div id="emailAdCollectPop" style="display:none"></div><div id="footerEmailLayer" style="display:none"></div><div class="foot foo</div>tHub">
+</form>
+</div>
+<div id="emailAdCollectPop" style="display:none"></div><div id="footerEmailLayer" style="display:none"></div><div class="foot foo</div>tHub">
 			<script type="text/javascript">
 	function openIdInfo() {
 		var url = "http://www.ftc.go.kr/bizCommPop.do?wrkr_no=2038143363";
@@ -990,10 +475,5 @@ function getCookie(cookie_name) {
 	}
 </script>
 </div>
-<script type="text/javascript" id="">document.all&&!document.addEventListener||window.proxied_alert||(window.proxied_alert=window.alert,window.alert=function(){var a=arguments[0]?arguments[0]:"null";dataLayer.push({event:"alert_showed",alert_message:a});return proxied_alert.apply(this,arguments)});</script><script type="text/javascript" id="">(function(){if(null==sessionStorage.getItem("_PageViewCounter")||void 0==sessionStorage.getItem("_PageViewCounter"))sessionStorage.setItem("_PageViewCounter",1);else{var f=0;f=parseInt(sessionStorage.getItem("_PageViewCounter"));f+=1;sessionStorage.setItem("_PageViewCounter",f)}var v=!0,l=2592E5;if(window.Storage){var c=JSON.parse(localStorage.getItem("_tab_ids"))||[],d=sessionStorage.getItem("_tab_id"),a=JSON.parse(sessionStorage.getItem("_nav_path")),e=document.location.href;f=!1;var w=document.location.origin,
-t,p,m,g,u=function(b){return 0===l?b:b.filter(function(h){try{return m=parseInt(h.split("_")[1],10),m>(new Date).getTime()}catch(q){return!1}})};var r=function(b){if(0===l)return b;try{g=b.split("_");m=parseInt(g[1],10);if(m>(new Date).getTime())return b;g=g[0]+"_"+((new Date).getTime()+l);sessionStorage.setItem("_tab_id",g);return g}catch(h){return b}};var x=function(){if(!1===v)return"BACK/FORWARD";if(2>a.length)return"FORWARD";t=a[a.length-2];p=a[a.length-1];return t===e||p===e?"BACK":"FORWARD"},
-y=function(){c=JSON.parse(localStorage.getItem("_tab_ids"))||[];d=sessionStorage.getItem("_tab_id");c=u(c);if(c.length&&null!==d){var b=c.indexOf(d);-1<b&&c.splice(b,1);localStorage.setItem("_tab_ids",JSON.stringify(c))}},z=function(){var b=(new Date).getTime();"undefined"!==typeof performance&&"function"===typeof performance.now&&(b+=performance.now());return"xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g,function(h){var q=(b+16*Math.random())%16|0;b=Math.floor(b/16);return("x"===h?q:q&3|
-8).toString(16)})+(0<l?"_"+((new Date).getTime()+l):"")},A=function(b,h){return!(!0===h&&0!==b&&255!==b)};null===d?(d=z(),f=!0,sessionStorage.setItem("_tab_id",d)):d=r(d);c=u(c);-1===c.indexOf(d)&&(c.push(d),localStorage.setItem("_tab_ids",JSON.stringify(c)));r=c.length;if(window.PerformanceNavigation){a=a||[];var n=window.performance.navigation.redirectCount;if(A(window.performance.navigation.type,f))switch(window.performance.navigation.type){case 0:var k="NAVIGATE";a.push(e);break;case 1:k="RELOAD";
-0!==a.length&&a[a.length-1]===e||a.push(e);break;case 2:k=x();"FORWARD"===k?-1<document.referrer.indexOf(w)&&a.push(e):"BACK"===k?p!==e&&a.pop():a.push(e);break;default:k="OTHER",a.push(e)}else a.push(e);sessionStorage.setItem("_nav_path",JSON.stringify(a))}window.addEventListener("beforeunload",y);n={tabCount:r,redirectCount:n,navigationType:k,newTab:!0===f?"New":"Existing",tabId:d.replace(/_.+/,"")};window.google_tag_manager[google_tag_manager["GTM-T3LBJ26"].macro(59)].dataLayer.set("browsingBehavior",n);window.dataLayer.push({event:"custom.navigation",
-browsingBehavior:n})}})();</script>
+
 </body></html>

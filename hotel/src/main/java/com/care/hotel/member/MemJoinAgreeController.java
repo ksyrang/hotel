@@ -8,8 +8,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 public class MemJoinAgreeController {
@@ -18,36 +22,22 @@ public class MemJoinAgreeController {
 
 	
 	@RequestMapping(value = "memJoinAgreeForm")
-	public String memJoinAgreeForm(Locale locale, Model model) {
+	public String memJoinAgreeForm(Model model) {
 		logger.info("약관동의");
-		
-		Date date = new Date();
-		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
-		
-		String formattedDate = dateFormat.format(date);
-		
-		model.addAttribute("serverTime", formattedDate );
 		
 		return "memJoinAgreeForm";
 	}
 	
-	@RequestMapping(value = "memJoinAgreeProc", method = RequestMethod.POST)
-	public String memJoinAgreeProc() {
-		
+	@RequestMapping(value = "memJoinAgreeProc")
+	public String memJoinAgreeProc(Model model) {
+		logger.info("약관동의");
 		
 		return "forward:/index?formpath=memJoinForm";
 	}
 	
 	@RequestMapping(value = "memJoinForm")
-	public String memJoinForm(Locale locale, Model model) {
+	public String memJoinForm(Model model) {
 		logger.info("회원정보 입력");
-		
-		Date date = new Date();
-		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
-		
-		String formattedDate = dateFormat.format(date);
-		
-		model.addAttribute("serverTime", formattedDate );
 		
 		return "memJoinForm";
 	}
