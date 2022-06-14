@@ -17,12 +17,6 @@
 	<script>alert("${msg}");</script>
 </c:if>
 
-<c:if test="${sessionScope.userId == null }">
-	<script>
-	alert("로그인 후 다시 이용해주세요.");
-	</script>
-</c:if>
-
 <!-- 전체 div -->
 <div class="admin_mainDiv">
 <!-- 필터 div -->

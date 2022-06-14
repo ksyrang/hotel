@@ -123,12 +123,10 @@ public class PaymentServiceImpl implements IPaymentService{
 					String strCardId = Integer.toString(cardId);
 					cardDTO.setCardId(strCardId);
 					cardDAO.cardInsert(cardDTO);
-					System.out.println("credit-card insert 완료 : " + cardDTO.getCardId());
 				} else {
 				// 고객의 카드 정보가 db에 있을 경우
 					cardDTO.setCardId(oldCardDTO.getCardId());
 					cardDAO.cardUpdate(cardDTO);
-					System.out.println("credit-card update 완료 : " + cardDTO.getCardId());
 				}
 			}
 		}
@@ -151,6 +149,37 @@ public class PaymentServiceImpl implements IPaymentService{
 			return "예약번호 " + paymentDTO.getReservationNo() + " 체크아웃이 완료되었습니다.";
 		}
 		
+	}
+
+	// 결제 정보
+	@Override
+	public paymentDTO paymentInfo(String paymentNo) {
+		paymentDTO paymentDTO = paymentDAO.paymentInfo(paymentNo);
+		return paymentDTO;
+	}
+
+	@Override
+	public String canclePayment(paymentDTO paymentDTO, String reservationStatus) {
+		reservationDTO resDTO = resDAO.reservationInfo(paymentDTO.getReservationNo());
+		paymentDTO oldPaymentDTO = paymentDAO.paymentInfo(paymentDTO.getReferencePaymentNo());
+		
+		// 예약 상태가 체크인(1) 일 때
+		if(reservationStatus.equals("1")) {
+			// 예약 상태: 체크인(1)->예약취소(9)
+			resDTO.setReservationStatus("9");
+			resDAO.resStatusCheckin(resDTO);
+		}
+		
+		// 기존 결제 테이블 상태 : 결제완료(0)->결제취소(1)
+		oldPaymentDTO.setPaymentStatus("1");
+		paymentDAO.payStatus(oldPaymentDTO);
+		
+		// 결제 테이블 insert
+		paymentDTO.setPaymentStatus("2");
+		paymentDTO.setPaymentAmount("-" + oldPaymentDTO.getPaymentAmount());
+		paymentDAO.insertCanclePayment(paymentDTO);
+
+		return "결제번호 [" + paymentDTO.getReferencePaymentNo() + "] 결제가 취소되었습니다.";
 	}
 
 	

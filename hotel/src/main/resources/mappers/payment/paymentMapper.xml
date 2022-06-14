@@ -26,9 +26,10 @@
 			<if test="paymentStatus != null and paymentStatus != ''">AND paymentStatus=#{paymentStatus}</if>
 			<if test='memberId != null and memberId != ""'>AND memberId like '%'||#{memberId}||'%'</if>
 		</where>
+		ORDER BY paymentDate DESC, paymentNo DESC
 			)A
 		)B WHERE rn BETWEEN #{b} and #{e}
-		ORDER BY paymentNo DESC
+		
 </select>
 
 <!-- getTotalAmount -->
@@ -55,6 +56,24 @@
 <insert id="insertPayment" parameterType="com.care.hotel.payment.DTO.paymentDTO">
 	INSERT INTO payment(paymentNo, reservationNo, memberId, hotelId, paymentDate, paymentType, paymentAmount, paymentStatus, cardId)
 	VALUES(#{paymentNo}, #{reservationNo}, #{memberId}, #{hotelId}, #{paymentDate}, #{paymentType}, #{paymentAmount}, #{paymentStatus}, #{cardId})
+</insert>
+
+<!-- paymentInfo -->
+<select id="paymentInfo" resultType="com.care.hotel.payment.DTO.paymentDTO">
+	SELECT * FROM payment WHERE paymentNo=#{paymentNo}
+</select>
+
+<!-- payStatus -->
+<update id="payStatus" parameterType="com.care.hotel.payment.DTO.paymentDTO">
+	UPDATE payment
+	SET paymentStatus = #{paymentStatus}
+	WHERE paymentNo = #{paymentNo}
+</update>
+
+<!-- insertCanclePayment -->
+<insert id="insertCanclePayment" parameterType="com.care.hotel.payment.DTO.paymentDTO">
+	INSERT INTO payment(paymentNo, reservationNo, memberId, hotelId, paymentDate, paymentType, paymentAmount, referencePaymentNo, paymentStatus, cardId)
+	VALUES(#{paymentNo}, #{reservationNo}, #{memberId}, #{hotelId}, #{paymentDate}, #{paymentType}, #{paymentAmount}, #{referencePaymentNo}, #{paymentStatus}, #{cardId})
 </insert>
 
 </mapper>

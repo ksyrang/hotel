@@ -3,14 +3,9 @@ package com.care.hotel.admin;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.print.attribute.HashPrintJobAttributeSet;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -84,7 +79,6 @@ public class AdminPaymentController {
 	@PostMapping(value = "getCreditInfo", produces = "application/json;charset=UTF-8")
 	@ResponseBody
 	public Map<String, String> getCreditInfo(@RequestBody(required = false)String memberId, Model model) {
-		System.out.println("getCreditInfo : " + memberId);
 		Map<String, String> cardInfo = new HashMap<>();
 		
 		if(memberId != null) {
@@ -118,10 +112,45 @@ public class AdminPaymentController {
 		
 	}
 	
-	// 결제 취소 버튼 눌렀을 때
+	// 결제 취소 페이지
 	@RequestMapping(value="payCanclePageProc")
-	public String payCanclePageProc(String paymentNo) {
+	public String payCanclePageProc(String referencePaymentNo, Model model) {
+		// 결제번호, 결제일 구하기
+		model.addAttribute("paymentNo", paymentSvc.createPaymentNo());
+		model.addAttribute("paymentDate", paymentSvc.getPaymentDate());
+		// 결제 테이블 불러오기
+		paymentDTO oldPaymentDTO = paymentSvc.paymentInfo(referencePaymentNo);
+		model.addAttribute("oldPaymentDTO", oldPaymentDTO);
+		// 예약 테이블 불러오기
+		reservationDTO resDTO = reservationSvc.reservationInfo(oldPaymentDTO.getReservationNo());
+		model.addAttribute("resDTO", resDTO);
+		// 고객 테이블 불러오기
+		memberDTO memberDTO = memberSvc.userInfo(oldPaymentDTO.getMemberId());
+		model.addAttribute("memberDTO", memberDTO);
+		// 카드 정보 불러오기
+		memberCardDTO cardDTO = cardSvc.cardInfo(oldPaymentDTO.getMemberId());
+		if(cardDTO != null) {
+			//모델에 값 넣어주기
+			model.addAttribute("cardId", cardDTO.getCardId());
+			model.addAttribute("cardCompany", cardDTO.getCardCompany());
+			model.addAttribute("cardNo1", cardDTO.getCardNo().substring(0, 4));
+			model.addAttribute("cardNo2", cardDTO.getCardNo().substring(4, 8));
+			model.addAttribute("cardNo3", cardDTO.getCardNo().substring(8, 12));
+			model.addAttribute("cardNo4", cardDTO.getCardNo().substring(12));
+			model.addAttribute("validityMm", cardDTO.getValidityYyMm().substring(2,4));
+			model.addAttribute("validityYy",  cardDTO.getValidityYyMm().substring(0,2));
+			model.addAttribute("CSV", cardDTO.getCSV());
+		}
+		
 		return "forward:/admin_index?formpath=payCanclePage";
+	}
+	
+	// 결제 취소 버튼 눌렀을 때
+	@RequestMapping(value="payCancleProc", method=RequestMethod.POST)
+	public String payCancleProc(paymentDTO paymentDTO, String reservationStatus, RedirectAttributes ra) {
+		String result = paymentSvc.canclePayment(paymentDTO, reservationStatus);
+		ra.addFlashAttribute("msg", result);
+		return "redirect:paymentListProc";
 	}
 	
 }

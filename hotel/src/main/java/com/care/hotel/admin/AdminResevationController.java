@@ -6,19 +6,15 @@ import java.util.Date;
 
 import javax.servlet.http.HttpSession;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.care.hotel.Reservation.DTO.reservationAllDTO;
-import com.care.hotel.Reservation.DTO.reservationDTO;
 import com.care.hotel.Reservation.service.IReservationSvc;
 import com.care.hotel.member.DTO.AllMemberDTO;
 import com.care.hotel.member.service.ImemberSvc;
@@ -30,8 +26,6 @@ public class AdminResevationController {
 	@Autowired IReservationSvc reservationSvc;
 	@Autowired ImemberSvc memberSvc;
 	@Autowired HttpSession session;
-	
-	private static final Logger logger = LoggerFactory.getLogger(AdminResevationController.class);
 	
 	/* 예약 목록 */
 	@RequestMapping(value="admin_reservationListProc", method = RequestMethod.GET)
@@ -46,7 +40,6 @@ public class AdminResevationController {
 	/* 관리자 예약 상세 정보*/
 	@RequestMapping(value="admin_reservationInfoProc")
 	public String admin_reservationInfoProc(String reservationNo, Model model) throws ParseException {
-		logger.info("admin_reservationInfoProc");
 		/* 예약정보, 고객정보는 모델에 담아서 전달 */
 		reservationAllDTO resAll = reservationSvc.reservationInfo(reservationNo);
 		AllMemberDTO memberAll = memberSvc.userInfo(resAll.getMemberId());
@@ -99,8 +92,6 @@ public class AdminResevationController {
 	/* 관리자 or 호텔 아이디/비밀번호 확인 post */
 	@RequestMapping(value="admin_reservationDeleteCheckProc", method = RequestMethod.POST)
 	public String admin_reservationDeleteCheckProc(String reservationNo, String id, String pw, Model model, RedirectAttributes ra) {
-		logger.info("admin_reservationDeleteCheckProc");
-		System.out.println("admin_reservationDeleteCheckProc" + reservationNo);
 		String result = reservationSvc.reservationDelete(reservationNo, id, pw);
 		boolean check = result.equals("아이디 혹은 비밀번호를 확인해주세요.");
 		if(check == true) {

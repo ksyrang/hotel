@@ -38,13 +38,6 @@
 	<script>alert("${msg}");</script>
 </c:if>
 
-<c:if test="${sessionScope.userId == null }">
-	<script>
-	alert("로그인 후 다시 이용해주세요.");
-	</script>
-</c:if>
-
-
 <!-- 전체 div -->
 <div class="admin_mainDiv">
 <!-- 필터 div -->
@@ -134,14 +127,14 @@
 				<c:choose>
 					<c:when test="${paymentList.paymentStatus eq '0' }"><font style="color:blue">결제완료</font></c:when>
 					<c:when test="${paymentList.paymentStatus eq '1' }"><font style="color:red">결제취소</font></c:when>
-					<c:when test="${paymentList.paymentStatus eq '2' }"><font style="color:red">환불</font></c:when>
+					<c:when test="${paymentList.paymentStatus eq '2' }"><font style="color:green">환불</font></c:when>
 				</c:choose>
 				</td>
 				
 				<td>
 				<c:choose>
 					<c:when test="${paymentList.paymentStatus eq '0' }">
-						<input type="button" value="결제취소" class="admin_commonBtn" onclick="location.href='${root }payCanclePageProc?paymentNo=${paymentList.paymentNo }'">
+						<input type="button" value="결제취소" class="admin_commonBtn" onclick="location.href='${root }payCanclePageProc?referencePaymentNo=${paymentList.paymentNo }'">
 						</c:when>
 					<c:otherwise>
 						<input type="button" value="결제취소" class="admin_commonBtnG" disabled>

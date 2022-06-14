@@ -28,9 +28,9 @@
 					<if test="dateBase == 'checkinDate'">AND checkinDate BETWEEN to_date(#{startDate},'YYYY-MM-DD') AND to_date(#{endDate},'YYYY-MM-DD')</if>
 					<if test='reservationNo != null and reservationNo != ""'>AND reservationNo like '%'||#{reservationNo}||'%'</if>
 				</where>
+				ORDER BY reservationDate DESC, checkinDate ASC
 			)A
 		)B WHERE rn BETWEEN #{b} and #{e}
-		ORDER BY reservationDate DESC, checkinDate ASC
 	</select>
 	
 	<!-- reservation 테이블 불러오기 -->

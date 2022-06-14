@@ -25,6 +25,12 @@ public interface paymentDAO {
 	Integer getfilterAmount(@Param("hotelId")String hotelSelect, @Param("startDate")String startDate, @Param("endDate")String endDate, @Param("paymentType")String typeSelect, 
 			@Param("paymentStatus")String statusSelect, @Param("memberId")String memberId);
 
+	paymentDTO paymentInfo(String paymentNo);
+
+	void payStatus(paymentDTO oldPaymentDTO);
+
+	void insertCanclePayment(paymentDTO paymentDTO);
+
 	
 
 }
