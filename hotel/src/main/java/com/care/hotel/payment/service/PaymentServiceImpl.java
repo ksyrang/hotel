@@ -36,19 +36,34 @@ public class PaymentServiceImpl implements IPaymentService{
 		
 		ArrayList<paymentDTO> paymentList = new ArrayList<paymentDTO>();
 		int totalCount = 0;
+		int totalAmount = 0; //총매출금액
+		Integer filterAmount = 0; // 필터링된 금액
+		
+		int check = 1; // session이 관리자면 1, 호텔이면 2
 		
 		for(hotelDTO hotelDTO : hotelList) {
 			if(hotelDTO.getHotelId().equals(userId)) {
 				// session이 매니저일 때
 				hotelSelect = hotelDTO.getHotelId();
-				totalCount = paymentDAO.paymentCount(hotelSelect, startDate, endDate, typeSelect, StatusSelect, memberId); // 총 데이터의 수 
-				paymentList = paymentDAO.paymentList(begin, end, hotelSelect, startDate, endDate, typeSelect, StatusSelect, memberId);
-			} else {
-				// session이 관리자일 때 
-				totalCount = paymentDAO.paymentCount(hotelSelect, startDate, endDate, typeSelect, StatusSelect, memberId); // 총 데이터의 수 
-				paymentList = paymentDAO.paymentList(begin, end, hotelSelect, startDate, endDate, typeSelect, StatusSelect, memberId);
+				check = 2;
 			}
 		}
+		
+		if(check == 2) {
+			// session이 매니저일 때
+			totalCount = paymentDAO.paymentCount(hotelSelect, startDate, endDate, typeSelect, StatusSelect, memberId); // 총 데이터의 수 
+			paymentList = paymentDAO.paymentList(begin, end, hotelSelect, startDate, endDate, typeSelect, StatusSelect, memberId);
+			totalAmount = paymentDAO.getHotelTotalAmount(hotelSelect);
+			filterAmount = paymentDAO.getfilterAmount(hotelSelect, startDate, endDate, typeSelect, StatusSelect, memberId);
+			
+		} else {
+			// session이 관리자일 때 
+			totalCount = paymentDAO.paymentCount(hotelSelect, startDate, endDate, typeSelect, StatusSelect, memberId); // 총 데이터의 수 
+			paymentList = paymentDAO.paymentList(begin, end, hotelSelect, startDate, endDate, typeSelect, StatusSelect, memberId);
+			totalAmount = paymentDAO.getTotalAmount();
+			filterAmount = paymentDAO.getfilterAmount(hotelSelect, startDate, endDate, typeSelect, StatusSelect, memberId);
+		}
+		
 		// paymentDate 포맷 변경
 		for(int i = 0; i < paymentList.size(); i++) {
 			paymentDTO paymentDTO = paymentList.get(i);
@@ -57,6 +72,11 @@ public class PaymentServiceImpl implements IPaymentService{
 			
 			paymentList.set(i, paymentDTO);
 		}
+		
+		// totalAmount가 세션에 저장
+		session.setAttribute("totalAmount", totalAmount);
+		// filterAmount 세션에 저장
+		session.setAttribute("filterAmount", filterAmount);
 		
 		session.setAttribute("paymentCount", totalCount);
 		session.setAttribute("paymentList", paymentList);

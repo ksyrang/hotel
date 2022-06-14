@@ -18,4 +18,13 @@ public interface paymentDAO {
 	ArrayList<paymentDTO> paymentList(@Param("b")int begin, @Param("e")int end, @Param("hotelId")String hotelSelect, 
 			@Param("startDate")String startDate, @Param("endDate")String endDate, @Param("paymentType")String typeSelect, @Param("paymentStatus")String statusSelect, @Param("memberId")String memberId);
 
+	int getTotalAmount();
+
+	int getHotelTotalAmount(@Param("hotelId")String hotelSelect);
+	
+	Integer getfilterAmount(@Param("hotelId")String hotelSelect, @Param("startDate")String startDate, @Param("endDate")String endDate, @Param("paymentType")String typeSelect, 
+			@Param("paymentStatus")String statusSelect, @Param("memberId")String memberId);
+
+	
+
 }

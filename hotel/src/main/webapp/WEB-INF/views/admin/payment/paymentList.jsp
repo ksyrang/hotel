@@ -37,6 +37,14 @@
 <c:if test="${not empty msg }">
 	<script>alert("${msg}");</script>
 </c:if>
+
+<c:if test="${sessionScope.userId == null }">
+	<script>
+	alert("로그인 후 다시 이용해주세요.");
+	</script>
+</c:if>
+
+
 <!-- 전체 div -->
 <div class="admin_mainDiv">
 <!-- 필터 div -->
@@ -68,13 +76,14 @@
 			<option value="">결제상태</option>
 			<option value="0">결제완료</option>
 			<option value="1">결제취소</option>
+			<option value="2">환불</option>
 		</select>
 		<!-- 회원아이디 검색 -->
 		<input type="text" name="memberId" id="memberId" placeholder="회원 아이디" class="admin_reservationNoSearch">
 		<input type="submit" name="reservationSearchBtn" value="검색" class="admin_commonBtn" >
 	</form>
 	<div align="left" style="margin-top:20px;">
-		검색 결과 매출액 / 총 매출액  : <b>10000000원 /  900000000원</b>
+		검색 결과 매출액 / 총 매출액  : <b>${sessionScope.filterAmount }원 /  ${sessionScope.totalAmount }원</b>
 	</div>
 	<!-- 예약 목록 테이블 -->
 	<div>
@@ -125,6 +134,7 @@
 				<c:choose>
 					<c:when test="${paymentList.paymentStatus eq '0' }"><font style="color:#5ea540">결제완료</font></c:when>
 					<c:when test="${paymentList.paymentStatus eq '1' }"><font style="color:red">결제취소</font></c:when>
+					<c:when test="${paymentList.paymentStatus eq '2' }"><font style="color:red">환불</font></c:when>
 				</c:choose>
 				</td>
 				

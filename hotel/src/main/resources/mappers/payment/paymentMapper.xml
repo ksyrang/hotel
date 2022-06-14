@@ -6,23 +6,11 @@
 <select id="paymentCount" resultType="int">
 	SELECT count(*) FROM payment
 	<where>
-		<choose>
-			<when test='hotelId != null and hotelId != "" '>
-				hotelId=#{hotelId}
-			</when>
-			<when test='startDate != "" and startDate != null and endDate != "" and endDate != null'>
-				paymentDate BETWEEN #{startDate} AND #{endDate}
-			</when>
-			<when test="paymentType != null and paymentType != ''">
-					paymentType=#{paymentType}
-				</when>
-			<when test="paymentStatus != null and paymentStatus != ''">
-				paymentStatus=#{paymentStatus}
-			</when>
-			<when test='memberId != null and memberId != ""'>
-				memberId like '%'||#{memberId}||'%'
-			</when>
-		</choose>
+		<if test='hotelId != null and hotelId != ""'>hotelId=#{hotelId}</if>
+		<if test='startDate != "" and startDate != null and endDate != "" and endDate != null'>AND paymentDate BETWEEN #{startDate} AND #{endDate}</if>
+		<if test="paymentType != null and paymentType != ''">AND paymentType=#{paymentType}</if>
+		<if test="paymentStatus != null and paymentStatus != ''">AND paymentStatus=#{paymentStatus}</if>
+		<if test='memberId != null and memberId != ""'>AND memberId like '%'||#{memberId}||'%'</if>
 	</where>
 </select>
 
@@ -32,26 +20,34 @@
 		SELECT rownum rn, A.* FROM( 
 			SELECT * FROM payment
 		<where>
-			<choose>
-				<when test='hotelId != null and hotelId != "" '>
-					hotelId=#{hotelId}
-				</when>
-				<when test='startDate != "" and startDate != null and endDate != "" and endDate != null'>
-					paymentDate BETWEEN #{startDate} AND #{endDate}
-				</when>
-				<when test="paymentType != null and paymentType != ''">
-					paymentType=#{paymentType}
-				</when>
-				<when test="paymentStatus != null and paymentStatus != ''">
-					paymentStatus=#{paymentStatus}
-				</when>
-				<when test='memberId != null and memberId != "" '>
-					memberId like '%'||#{memberId}||'%'
-				</when>
-			</choose>
+			<if test='hotelId != null and hotelId != ""'>hotelId=#{hotelId}</if>
+			<if test='startDate != "" and startDate != null and endDate != "" and endDate != null'>AND paymentDate BETWEEN #{startDate} AND #{endDate}</if>
+			<if test="paymentType != null and paymentType != ''">AND paymentType=#{paymentType}</if>
+			<if test="paymentStatus != null and paymentStatus != ''">AND paymentStatus=#{paymentStatus}</if>
+			<if test='memberId != null and memberId != ""'>AND memberId like '%'||#{memberId}||'%'</if>
 		</where>
 			)A
 		)B WHERE rn BETWEEN #{b} and #{e}
+</select>
+
+<!-- getTotalAmount -->
+<select id="getTotalAmount" resultType="int">
+	SELECT sum(paymentAmount) FROM payment
+</select>
+<!-- getHotelTotalAmount -->
+<select id="getHotelTotalAmount" resultType="int">
+	SELECT sum(paymentAmount) FROM payment WHERE hotelId=#{hotelId}
+</select>
+<!-- getfilterAmount -->
+<select id="getfilterAmount" resultType="Integer">
+	SELECT sum(paymentAmount) FROM payment
+	<where>
+		<if test='hotelId != null and hotelId != ""'>hotelId=#{hotelId}</if>
+		<if test='startDate != "" and startDate != null and endDate != "" and endDate != null'>AND paymentDate BETWEEN #{startDate} AND #{endDate}</if>
+		<if test="paymentType != null and paymentType != ''">AND paymentType=#{paymentType}</if>
+		<if test="paymentStatus != null and paymentStatus != ''">AND paymentStatus=#{paymentStatus}</if>
+		<if test='memberId != null and memberId != ""'>AND memberId like '%'||#{memberId}||'%'</if>
+	</where>
 </select>
 
 <!-- insertPayment -->
