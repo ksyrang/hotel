@@ -10,27 +10,55 @@
 호텔별 예약 그래프 일, 월, 년 
 예약 대비 결제 비율?(막대? 선형? 파이?
  --> 
- <script src="${pageContext.request.contextPath}/resources/js/KJS/kjs.js"></script>
  
- 
+<script>
+window.onload= send;
+
+function start(){
+	var button = document.getElementById('button');//동작을 제어할 오브젝트
+	button.onclick=send;
+}
+
+var req;
+function send(){//데이터 송신 메소드
+	//alert('onload start');
+	req = new XMLHttpRequest();
+	req.onreadystatechange = textChang;
+	req.open('post','jsontest');
+	req.send(null);
+}
+const hotels =[]; 
+function textChang(){//데이터 수신 메소드
+	if(req.readyState == 4 && req.status == 200) {
+		jDatas = JSON.parse(req.responseText);//json확장자의 파일에서 가져오 데이터 뭉치
+		hdata ="";
+		for(i=0;i<jDatas.cd.length;i++){//jDatas.length = 대집합의 개수(1개), jDatas.cd.length = cd안에 있는 라인 수
+			hotels[i] = jDatas.cd[i].hotelName;
+		}
+	}
+
+} 
+ </script>
+
+ <center>
 <div class="admin_main">
 	<select name="searchTitle" class="searchTitle"  style="height: 25px;"><!-- onchange="send()" -->
 		<option value="">전체</option>
-	<c:forEach var="List" items="${sessionScope.hotelidList }">
+	<c:forEach var="List" items="${sessionScope.hotelList }">
 		<option value="${List.hotelId }">${List.hotelName }</option>
 	</c:forEach>
 	</select>
+
 	<canvas id="myChart"></canvas>
 
 </div>
-
+</center>
 
  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="${pageContext.request.contextPath}/resources/js/chart/chart.js"></script><!-- 이렇게도 된다. -->
-<%--  <script>
- var userId = '<%=(String)session.getAttribute("userId")%>';
+ <script>
+ 
   const labels = [//가로 축 항목
-    'January',
+  	'February',
     'February',
     'March',
     'April',
@@ -39,17 +67,19 @@
   ];
 
   const data = {//원하는 오브젝트를 넣어햐 할때
-    labels: labels,
-    datasets: [{
-      label: 'data1',
-      backgroundColor: 'rgb(255, 99, 132)',//사각형과 점 내부 채움
-      borderColor: 'rgb(255, 99, 132)',//사격형과 외부 선의 색
-      data: [0, 10, 5, 2, 20, 30],//내부에 들어갈 데이터, 맨 마지막에 하나더 값을 넣으면 세로축 최대값이 지정할 수 있다.
-    }]
+    labels: hotels,
+    datasets: [
+		{
+			label: 'data1',
+			backgroundColor: 'red',//rgb(255, 99, 132) 사각형과 점 내부 채움
+			borderColor: 'red',//사격형과 외부 선의 색
+			data: [10, 10, 5, 2, 20, 30],//내부에 들어갈 데이터, 맨 마지막에 하나더 값을 넣으면 세로축 최대값이 지정할 수 있다.
+		}
+   	]
   };
 
   const config = {
-    type: 'line',//그래프의 형태를 결정 짓는 다
+    type: 'bar',//그래프의 형태를 결정 짓는 다
     data: data,
     options: {
     	title :{
@@ -64,7 +94,6 @@
     config
   );
   </script>
- --%>
 
   <%-- 
 <center>
