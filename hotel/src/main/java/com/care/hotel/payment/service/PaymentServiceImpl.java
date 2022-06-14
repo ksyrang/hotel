@@ -38,8 +38,8 @@ public class PaymentServiceImpl implements IPaymentService{
 		ArrayList<hotelDTO> hotelList = hotelDAO.allHotelInfo();
 		
 		ArrayList<paymentDTO> paymentList = new ArrayList<paymentDTO>();
-		int totalCount = 0;
-		int totalAmount = 0; //총매출금액
+		Integer totalCount = 0;
+		Integer totalAmount = 0; //총매출금액
 		Integer filterAmount = 0; // 필터링된 금액
 		
 		int check = 1; // session이 관리자면 1, 호텔이면 2
@@ -83,7 +83,7 @@ public class PaymentServiceImpl implements IPaymentService{
 		
 		session.setAttribute("paymentCount", totalCount);
 		session.setAttribute("paymentList", paymentList);
-		String url = "/hotel/paymentList.jsp?currentPage=";
+		String url = "/hotel/paymentListProc?currentPage=";
 		session.setAttribute("paymentPage", PageService.getNavi(currentPage, pageBlock, totalCount, url));
 	}
 	
@@ -111,29 +111,32 @@ public class PaymentServiceImpl implements IPaymentService{
 		if(paymentDTO.getPaymentAmount() == null || paymentDTO.getPaymentAmount() == "") {
 			paymentDTO.setPaymentAmount("0");
 		}
-		reservationDTO resDTO = resDAO.reservationInfo(paymentDTO.getReservationNo());
-		memberCardDTO oldCardDTO = cardDAO.cardInfo(paymentDTO.getMemberId());
 		
-		// 카드 정보 자동저장
-		if(cardDTO != null) {
-			// 고객의 카드 정보가 db에 없을 경우
-			if(oldCardDTO == null) {
-				Integer cardId = cardDAO.getMaxCardId() + 1;
-				String strCardId = Integer.toString(cardId);
-				cardDTO.setCardId(strCardId);
-				cardDAO.cardInsert(cardDTO);
-				System.out.println("credit-card insert 완료 : " + cardDTO.getCardId());
-			} else {
-			// 고객의 카드 정보가 db에 있을 경우
-				cardDTO.setCardId(oldCardDTO.getCardId());
-				cardDAO.cardUpdate(cardDTO);
-				System.out.println("credit-card update 완료 : " + cardDTO.getCardId());
+		// 신용/체크 카드 일 시
+		if(paymentDTO.getPaymentType().equals("1")) {
+			memberCardDTO oldCardDTO = cardDAO.cardInfo(paymentDTO.getMemberId());
+			// 카드 정보 자동저장
+			if(cardDTO != null) {
+				// 고객의 카드 정보가 db에 없을 경우
+				if(oldCardDTO == null) {
+					Integer cardId = cardDAO.getMaxCardId() + 1;
+					String strCardId = Integer.toString(cardId);
+					cardDTO.setCardId(strCardId);
+					cardDAO.cardInsert(cardDTO);
+					System.out.println("credit-card insert 완료 : " + cardDTO.getCardId());
+				} else {
+				// 고객의 카드 정보가 db에 있을 경우
+					cardDTO.setCardId(oldCardDTO.getCardId());
+					cardDAO.cardUpdate(cardDTO);
+					System.out.println("credit-card update 완료 : " + cardDTO.getCardId());
+				}
 			}
 		}
 		// 결제상태 -> 완료
 		paymentDTO.setPaymentStatus("0");
 		paymentDAO.insertPayment(paymentDTO);
 		
+		reservationDTO resDTO = resDAO.reservationInfo(paymentDTO.getReservationNo());
 		// 예약 상태 : 예약 -> 체크인
 		if(reservationStatus.equals("0")) {
 			// 예약 상태 : 0 -> 1

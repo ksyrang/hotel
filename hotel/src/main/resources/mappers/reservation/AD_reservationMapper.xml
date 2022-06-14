@@ -30,6 +30,7 @@
 				</where>
 			)A
 		)B WHERE rn BETWEEN #{b} and #{e}
+		ORDER BY reservationDate DESC, checkinDate ASC
 	</select>
 	
 	<!-- reservation 테이블 불러오기 -->

@@ -62,6 +62,7 @@ public class AdminPaymentController {
 		memberCardDTO cardDTO = cardSvc.cardInfo(resDTO.getMemberId());
 		if(cardDTO != null) {
 			//모델에 값 넣어주기
+			model.addAttribute("cardId", cardDTO.getCardId());
 			model.addAttribute("cardCompany", cardDTO.getCardCompany());
 			model.addAttribute("cardNo1", cardDTO.getCardNo().substring(0, 4));
 			model.addAttribute("cardNo2", cardDTO.getCardNo().substring(4, 8));
@@ -89,6 +90,7 @@ public class AdminPaymentController {
 		if(memberId != null) {
 			memberCardDTO cardDTO = cardSvc.cardInfo(memberId);
 			if(cardDTO != null) {
+				cardInfo.put("cardId", cardDTO.getCardId());
 				cardInfo.put("cardCompany", cardDTO.getCardCompany());
 				cardInfo.put("cardNo1", cardDTO.getCardNo().substring(0, 4));
 				cardInfo.put("cardNo2", cardDTO.getCardNo().substring(4, 8));
@@ -114,6 +116,12 @@ public class AdminPaymentController {
 		ra.addFlashAttribute("msg", result);
 		return "redirect:admin_reservationListProc";
 		
+	}
+	
+	// 결제 취소 버튼 눌렀을 때
+	@RequestMapping(value="payCanclePageProc")
+	public String payCanclePageProc(String paymentNo) {
+		return "forward:/admin_index?formpath=payCanclePage";
 	}
 	
 }

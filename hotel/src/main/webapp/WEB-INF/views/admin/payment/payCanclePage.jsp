@@ -150,6 +150,7 @@
 	<!-- 결제 타입에 따라 부가정보 입력 가능 -->
 	<tr id="creditInfo"><th>신용/체크카드 정보</th><td>
 		<input type="checkbox" id="checkCredit" onchange="getCreditInfo(this)" checked>고객 카드정보 가져오기<br/>
+		<font style="color:red">*카드 정보는 자동으로 저장됩니다.</font>
 		카드사 : <select name="cardCompany" id="cardCompany" class="selectCompany">
 			<option value="" <c:if test="${cardCompany != null }">selected</c:if>>카드사</option>	
 			<option value="국민은행" <c:if test="${cardCompany == '국민은행' }">selected</c:if>>국민은행</option>	

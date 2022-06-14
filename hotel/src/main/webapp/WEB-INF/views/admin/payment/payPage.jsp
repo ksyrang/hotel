@@ -50,6 +50,7 @@
 	}
 	
 	function printInfo() {
+		var cardId = document.getElementById('cardId');
 		var cardCompany = document.getElementById('cardCompany');
 		var cardNo1 = document.getElementById('cardNo1');
 		var cardNo2 = document.getElementById('cardNo2');
@@ -61,6 +62,7 @@
 		if(req.readyState == 4 && req.status == 200){
 			var result = JSON.parse(req.responseText);
 			if(result.cardDTONull != "cardDTONull") {
+				cardId.value = result.cardId;
 				cardCompany.value = result.cardCompany;
 				cardNo1.value = result.cardNo1;
 				cardNo2.value = result.cardNo2;
@@ -140,6 +142,7 @@
 <input type="hidden" name="reservationStatus" value="${resDTO.reservationStatus }">
 
 <!-- 카드 정보 저장 -->
+<input type="hidden" id="cardId" name="cardId" value="${cardId }">
 <input type="hidden" id="cardNo" name="cardNo">
 <input type="hidden" id="validityYyMm" name="validityYyMm">
 
@@ -176,6 +179,7 @@
 		유효기간 : <input type="text" name="validityMm" id="validityMm" value="${validityMm }" class="input_validity">/
 		<input type="text" name="validityYy" id="validityYy" value="${validityYy }" class="input_validity"><br/>
 		CSV : <input type="text" name="CSV" id="CSV" value="${CSV }" class="input_csv"><br/>
+		<font style="color:red">*카드 정보는 자동으로 저장됩니다.</font>
 	</td></tr>
 	<tr><th>결제금액</th><td>${resDTO.baseAmount }원</td></tr>
 </table>

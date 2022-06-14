@@ -11,6 +11,7 @@ public class paymentDTO {
 	private String paymentAmount;//결제 금액
 	private String referencePaymentNo;
 	private String paymentStatus;
+	private String cardId;
 	
 	public String getPaymentNo() {
 		return paymentNo;
@@ -65,6 +66,12 @@ public class paymentDTO {
 	}
 	public void setHotelId(String hotelId) {
 		this.hotelId = hotelId;
+	}
+	public String getCardId() {
+		return cardId;
+	}
+	public void setCardId(String cardId) {
+		this.cardId = cardId;
 	}
 	
 	

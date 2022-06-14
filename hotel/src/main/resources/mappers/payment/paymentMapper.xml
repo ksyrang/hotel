@@ -28,14 +28,15 @@
 		</where>
 			)A
 		)B WHERE rn BETWEEN #{b} and #{e}
+		ORDER BY paymentNo DESC
 </select>
 
 <!-- getTotalAmount -->
-<select id="getTotalAmount" resultType="int">
+<select id="getTotalAmount" resultType="Integer">
 	SELECT sum(paymentAmount) FROM payment
 </select>
 <!-- getHotelTotalAmount -->
-<select id="getHotelTotalAmount" resultType="int">
+<select id="getHotelTotalAmount" resultType="Integer">
 	SELECT sum(paymentAmount) FROM payment WHERE hotelId=#{hotelId}
 </select>
 <!-- getfilterAmount -->
@@ -52,8 +53,8 @@
 
 <!-- insertPayment -->
 <insert id="insertPayment" parameterType="com.care.hotel.payment.DTO.paymentDTO">
-	INSERT INTO payment(paymentNo, reservationNo, memberId, hotelId, paymentDate, paymentType, paymentAmount, paymentStatus)
-	VALUES(#{paymentNo}, #{reservationNo}, #{memberId}, #{hotelId}, #{paymentDate}, #{paymentType}, #{paymentAmount}, #{paymentStatus})
+	INSERT INTO payment(paymentNo, reservationNo, memberId, hotelId, paymentDate, paymentType, paymentAmount, paymentStatus, cardId)
+	VALUES(#{paymentNo}, #{reservationNo}, #{memberId}, #{hotelId}, #{paymentDate}, #{paymentType}, #{paymentAmount}, #{paymentStatus}, #{cardId})
 </insert>
 
 </mapper>

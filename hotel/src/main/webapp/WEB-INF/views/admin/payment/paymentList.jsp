@@ -85,7 +85,7 @@
 	<div align="left" style="margin-top:20px;">
 		검색 결과 매출액 / 총 매출액  : <b>${sessionScope.filterAmount }원 /  ${sessionScope.totalAmount }원</b>
 	</div>
-	<!-- 예약 목록 테이블 -->
+	<!-- 결제 목록 테이블 -->
 	<div>
 		<table class="admin_reservationListTable">
 		<thead>
@@ -104,7 +104,7 @@
 			<!-- forEach문 -->
 			<c:forEach var="paymentList" items="${sessionScope.paymentList }">
 			<tr>
-				<td><a href="${root }admin_reservationInfoProc?reservationNo=${paymentList.paymentNo}">${paymentList.paymentNo }</a></td>
+				<td>${paymentList.paymentNo }</td>
 				<td>${paymentList.reservationNo }</td>
 				<td>${paymentList.memberId }</td>
 				
@@ -132,7 +132,7 @@
 				
 				<td>
 				<c:choose>
-					<c:when test="${paymentList.paymentStatus eq '0' }"><font style="color:#5ea540">결제완료</font></c:when>
+					<c:when test="${paymentList.paymentStatus eq '0' }"><font style="color:blue">결제완료</font></c:when>
 					<c:when test="${paymentList.paymentStatus eq '1' }"><font style="color:red">결제취소</font></c:when>
 					<c:when test="${paymentList.paymentStatus eq '2' }"><font style="color:red">환불</font></c:when>
 				</c:choose>
@@ -141,11 +141,8 @@
 				<td>
 				<c:choose>
 					<c:when test="${paymentList.paymentStatus eq '0' }">
-						<input type="button" value="결제취소" class="admin_commonBtn" onclick="location.href='${root }admin_reservationModifyProc?reservationNo=${paymentList.paymentNo }'">
+						<input type="button" value="결제취소" class="admin_commonBtn" onclick="location.href='${root }payCanclePageProc?paymentNo=${paymentList.paymentNo }'">
 						</c:when>
-					<c:when test="${paymentList.paymentStatus eq '1' }">
-						<input type="button" value="결제취소" class="admin_commonBtnG" disabled>
-					</c:when>
 					<c:otherwise>
 						<input type="button" value="결제취소" class="admin_commonBtnG" disabled>
 					</c:otherwise>

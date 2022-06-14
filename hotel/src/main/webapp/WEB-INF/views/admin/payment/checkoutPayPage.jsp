@@ -50,6 +50,7 @@
 	}
 	
 	function printInfo() {
+		var cardId = document.getElementById('cardId');
 		var cardCompany = document.getElementById('cardCompany');
 		var cardNo1 = document.getElementById('cardNo1');
 		var cardNo2 = document.getElementById('cardNo2');
@@ -61,6 +62,7 @@
 		if(req.readyState == 4 && req.status == 200){
 			var result = JSON.parse(req.responseText);
 			if(result.cardDTONull != "cardDTONull") {
+				cardId.value = result.cardId;
 				cardCompany.value = result.cardCompany;
 				cardNo1.value = result.cardNo1;
 				cardNo2.value = result.cardNo2;
@@ -86,6 +88,12 @@
 		var validityYy = document.getElementById('validityYy');
 		var CSV = document.getElementById('CSV');
 		var paymentAmount = document.getElementById('paymentAmount');
+		
+		var cardNo = document.getElementById('cardNo');
+		var validityYyMm = document.getElementById('validityYyMm');
+		cardNo.value = cardNo1.value + cardNo2.value + cardNo3.value + cardNo4.value;
+		validityYyMm.value = validityYy.value + validityMm.value;
+		
 		if(paymentType.value == '1'){
 			if(cardCompany.value == "" || cardNo1.value == "" || cardNo2.value == "" || cardNo3.value == ""
 					|| cardNo4.value == "" || validityMm.value == "" || validityYy == "" || CSV == ""){
@@ -143,6 +151,11 @@
 <input type="hidden" name="hotelId" value="${resDTO.hotelId }">
 <input type="hidden" name="reservationStatus" value="${resDTO.reservationStatus }">
 
+<!-- 카드 정보 저장 -->
+<input type="hidden" id="cardId" name="cardId" value="${cardId }">
+<input type="hidden" id="cardNo" name="cardNo">
+<input type="hidden" id="validityYyMm" name="validityYyMm">
+
 <table class="payTable">
 	<tr><th>결제번호</th><td>${paymentNo }</td></tr>
 	<tr><th>예약번호</th><td>${resDTO.reservationNo }</td></tr>
@@ -176,6 +189,7 @@
 		유효기간 : <input type="text" name="validityMm" id="validityMm" value="${validityMm }" class="input_validity">/
 		<input type="text" name="validityYy" id="validityYy" value="${validityYy }" class="input_validity"><br/>
 		CSV : <input type="text" name="CSV" id="CSV" value="${CSV }" class="input_csv"><br/>
+		<font style="color:red">*카드 정보는 자동으로 저장됩니다.</font>
 	</td></tr>
 	<tr><th>결제금액</th><td>${resDTO.baseAmount }원</td></tr>
 	<tr><th>추가결제금액</th><td><input type="text" id="paymentAmount" name="paymentAmount" class="input_paymentAmount">원</td></tr>

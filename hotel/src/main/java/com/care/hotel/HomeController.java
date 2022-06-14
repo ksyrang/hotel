@@ -247,6 +247,12 @@ public class HomeController {
 		return "admin/payment/paymentList";
 	}
 	
+	/* 관리자 결제 취소 페이지 */
+	@RequestMapping(value="payCanclePage")
+	public String payCanclePage() {
+		return "admin/payment/payCanclePage";
+	}
+	
 	/* 관리자 매출 목록 */
 	@RequestMapping(value="checkoutPayPage")
 	public String checkoutPayPage() {

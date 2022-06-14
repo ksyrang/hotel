@@ -16,7 +16,7 @@
 <update id="cardUpdate" parameterType="com.care.hotel.member.DTO.memberCardDTO">
 	UPDATE credit_card
 	SET cardCompany=#{cardCompany}, cardNo=#{cardNo}, validityYyMm=#{validityYyMm}, CSV=#{CSV}
-	WEHRE cardId=#{cardId}
+	WHERE cardId=#{cardId}
 </update>
 
 <!-- getMaxCardId -->
