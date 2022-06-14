@@ -81,6 +81,7 @@ public class memberSvcImpl implements ImemberSvc{
 			insertMemberExDto.setMemberAddr2(allMemberDto.getMemberAddr2());
 			insertMemberExDto.setMemberHomePhone(allMemberDto.getMemberHomePhone());
 			memberDAO.memberExInsert(insertMemberExDto);
+			
 		}
 		
 //		if(memberUpdateResult != 1 || memberExUpdateResult != 1) {
