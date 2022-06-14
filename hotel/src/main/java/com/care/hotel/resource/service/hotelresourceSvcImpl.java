@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 
 import com.care.hotel.common.PageService;
 import com.care.hotel.member.DAO.memberDAO;
-import com.care.hotel.member.DTO.memberDTO;
 import com.care.hotel.resourceDAO.IhotelDAO;
 import com.care.hotel.resourceDAO.IroomDAO;
 import com.care.hotel.resourceDTO.hotelDTO;
@@ -24,20 +23,6 @@ public class hotelresourceSvcImpl implements IhotelresourceSvc{
    @Autowired memberDAO memberDAO;
    @Autowired HttpSession session;
 
-   @Override
-   public void memberList(int currentPage, String select, String search) {
-      int pageBlock = 5; // 한 화면에 보여줄 데이터 수
-      int totalCount = memberDAO.memberCount(select, search); // 총 데이터의 수 
-      int end = currentPage * pageBlock; // 데이터의 끝 번호
-      int begin = end+1 - pageBlock; // 데이터의 시작 번호
-      
-      ArrayList<memberDTO> list = memberDAO.memberList(begin, end, select, search);
-      session.setAttribute("memberList", list);
-      String url = "/hotel/memberListProc?currentPage=";
-      session.setAttribute("page", PageService.getNavi(currentPage, pageBlock, totalCount, url));
-      session.setAttribute("memberCount", totalCount);
-   }
-   
    //호텔 zone
    @Override
    public void hotelList(int currentPage, String select, String search) {

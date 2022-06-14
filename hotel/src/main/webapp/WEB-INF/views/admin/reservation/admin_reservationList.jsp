@@ -9,7 +9,32 @@
 <link href="${pageContext.request.contextPath}/resources/css/admin/admin_commonCss.css" rel="stylesheet" type="text/css">
 <link href="${pageContext.request.contextPath}/resources/css/admin/admin_reservationList.css" rel="stylesheet" type="text/css">
 <title>admin_reservationList</title>
-
+<script>
+	function searchCheck() {
+		var dateBase = document.getElementById('dateBase');
+		var startDate = document.getElementById('startDate');
+		var endDate = document.getElementById('endDate');
+		
+		if(dateBase.value != "") {
+			if(startDate.value == "" || startDate.value == null || endDate.value == "" || endDate.value == null) {
+				alert("날짜를 입력해주세요.");
+				return;
+			}
+		}
+		
+		if(startDate.value != "" && startDate.value != null && endDate.value != "" && endDate.value != null){
+			if(dateBase.value == ""){
+				alert("날짜 기준을 선택해주세요.");
+				return;
+			}
+			if(startDate.value > endDate.value) {
+				alert("검색 일자를 다시 입력해주세요.");
+				return;
+			}
+		}
+		document.getElementById('f').submit();
+	}
+</script>
 </head>
 <body>
 
@@ -21,7 +46,7 @@
 <div class="admin_mainDiv">
 <!-- 필터 div -->
 <div class="admin_searchFilterDiv">
-	<form>
+	<form id='f'>
 		<!-- 호텔 필터링 -->
 		<c:if test="${sessionScope.userId eq 'admin' }">
 		<select name="hotelSelect" class="admin_hotelSearch">
@@ -32,16 +57,33 @@
 		</select>
 		</c:if>
 		<!-- 날짜 필터링 -->
-		<select name="dateBase" class="admin_dateSelete">
+		<select name="dateBase" id="dateBase" class="admin_dateSelete">
 			<option value="">날짜 기준</option>
 			<option value="reservationDate">예약일 기준</option>
 			<option value="checkinDate">체크인 기준</option>
 		</select>
-		<input type="date" name="startDate" class="admin_reservationDate">~<input type="date" name="endDate" class="admin_reservationDate2">
+		<input type="date" id="startDate" name="startDate" class="admin_reservationDate">~<input type="date" id="endDate" name="endDate" class="admin_reservationDate2">
 		<!-- 예약번호 검색 -->
 		<input type="text" name="reservationNoSearch" placeholder="예약번호" class="admin_reservationNoSearch">
-		<input type="submit" name="reservationSearchBtn" value="검색" class="admin_commonBtn">
+		<input type="button" name="reservationSearchBtn" value="검색" class="admin_commonBtn" onclick="searchCheck()">
 	</form>
+	
+	<div align="left" style="margin-top:5px; color:#80715c;">
+		<c:if test="${ShotelSelect != null and ShotelSelect != ''}">
+		<c:forEach var="hotelInfoList" items="${allHotelInfo }">
+			<c:if test="${hotelInfoList.hotelId eq ShotelSelect }">
+				호텔명 : ${hotelInfoList.hotelName }&nbsp;&nbsp;
+			</c:if>
+		</c:forEach>
+		</c:if>
+		<c:if test="${SdateBase != null and SdateBase != '' }">
+			<c:if test="${SdateBase == 'reservationDate' }">예약일 기준 : </c:if>
+			<c:if test="${SdateBase == 'checkinDate' }">체크인 기준 : </c:if>
+			<c:if test="${SstartDate != null and SstartDate != '' and SendDate != null and SendDate != ''}">${SstartDate } ~ ${SendDate }</c:if>
+			&nbsp;&nbsp;
+		</c:if>
+		<c:if test="${SreservationNoSearch != null and SreservationNoSearch != '' }">예약번호 : ${SreservationNoSearch }</c:if>
+	</div>
 	
 	<!-- 예약 목록 테이블 -->
 	<div>

@@ -3,6 +3,7 @@ package com.care.hotel.member.service;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -18,6 +19,7 @@ import com.care.hotel.member.DAO.memberDAO;
 import com.care.hotel.member.DTO.AllMemberDTO;
 import com.care.hotel.member.DTO.memberDTO;
 import com.care.hotel.member.DTO.memberExDTO;
+import com.care.hotel.common.PageService;
 import com.care.hotel.login.DAO.IloginDAO;
 import com.care.hotel.login.DTO.LoginDTO;
 
@@ -27,6 +29,19 @@ public class memberSvcImpl implements ImemberSvc{
 	@Autowired IloginDAO loginDAO;
 	@Autowired private HttpSession session;
 	
+	@Override
+	   public void memberList(int currentPage, String select, String search) {
+	      int pageBlock = 10; // 한 화면에 보여줄 데이터 수
+	      int totalCount = memberDAO.memberCount(select, search); // 총 데이터의 수 
+	      int end = currentPage * pageBlock; // 데이터의 끝 번호
+	      int begin = end+1 - pageBlock; // 데이터의 시작 번호
+	      
+	      ArrayList<memberDTO> list = memberDAO.memberList(begin, end, select, search);
+	      session.setAttribute("memberList", list);
+	      String url = "/hotel/memberListProc?currentPage=";
+	      session.setAttribute("page", PageService.getNavi(currentPage, pageBlock, totalCount, url));
+	      session.setAttribute("memberCount", totalCount);
+	   }
 	
 	@Override
 	public AllMemberDTO userInfo(String memberId) {

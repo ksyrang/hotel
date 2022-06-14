@@ -33,6 +33,13 @@ public class AdminResevationController {
 			@RequestParam(value = "currentPage", required = false, defaultValue = "1") int currentPage,
 			String hotelSelect, String dateBase, String startDate, String endDate,String reservationNoSearch) {
 		model.addAttribute("allHotelInfo", hotelresourceSvc.allHotelInfo());
+		
+		model.addAttribute("ShotelSelect", hotelSelect);
+		model.addAttribute("SdateBase", dateBase);
+		model.addAttribute("SstartDate", startDate);
+		model.addAttribute("SendDate", endDate);
+		model.addAttribute("SreservationNoSearch", reservationNoSearch);
+		
 		reservationSvc.reservationList(currentPage, hotelSelect, dateBase, startDate, endDate, reservationNoSearch);
 		return "forward:/admin_index?formpath=admin_reservationList";
 	}

@@ -30,7 +30,7 @@ public class PaymentServiceImpl implements IPaymentService{
 	
 	@Override
 	public void paymentList(int currentPage, String hotelSelect, String startDate, String endDate, String typeSelect, String StatusSelect, String memberId) {
-		int pageBlock = 5; // 한 화면에 보여줄 데이터 수
+		int pageBlock = 10; // 한 화면에 보여줄 데이터 수
 		int end = currentPage * pageBlock; // 데이터의 끝 번호
 		int begin = end+1 - pageBlock; // 데이터의 시작 번호
 		

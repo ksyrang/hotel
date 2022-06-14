@@ -9,4 +9,5 @@
 
 .admin_reservationListTable {margin-top: 20px; width: 1000px; border-color: #61380B; border-collapse: collapse;}
 .admin_reservationListTable tr {border-bottom: 1px solid; border-top: 1px solid;}
-.admin_reservationListTable td {text-align: center;}
+.admin_reservationListTable th {height: 30px;}
+.admin_reservationListTable td {text-align: center; height: 20px;}

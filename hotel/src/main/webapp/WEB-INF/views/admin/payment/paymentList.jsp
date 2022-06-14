@@ -9,28 +9,35 @@
 <link href="${pageContext.request.contextPath}/resources/css/admin/admin_commonCss.css" rel="stylesheet" type="text/css">
 <link href="${pageContext.request.contextPath}/resources/css/admin/admin_reservationList.css" rel="stylesheet" type="text/css">
 <title>paymentList</title>
-<!-- <script>
-	function check() {
+<script>
+	function searchCheck() {
 		var startDate = document.getElementById('startDate');
 		var endDate = document.getElementById('endDate');
 		
-		if(startDate.value != null || startDate.value != ""){
-			if(endDate.value == null || endDate.value == ""){
-				alert("검색 종료일을 선택해주세요.");
+		if(startDate.value != "") {
+			if(endDate.value == "" || endDate.value == null) {
+				alert("검색 종료일자를 입력해주세요.");
 				return;
 			}
 		}
 		
-		if(endDate.value != null || endDate.value != "") {
-			if(startDate.value == null || startDate.value == ""){
-				alert("검색 시작일을 선택해주세요.");
+		if(endDate.value != "") {
+			if(startDate.value == "" || startDate.value == null) {
+				alert("검색 시작일자를 입력해주세요.");
+				return;
+			}
+		}
+		
+		if(startDate.value != "" && startDate.value != null && endDate.value != "" && endDate.value != null){
+			if(startDate.value > endDate.value) {
+				alert("검색 일자를 다시 입력해주세요.");
 				return;
 			}
 		}
 		
 		document.getElementById('f').submit();
 	}
-</script> -->
+</script>
 </head>
 <body>
 
@@ -73,10 +80,40 @@
 		</select>
 		<!-- 회원아이디 검색 -->
 		<input type="text" name="memberId" id="memberId" placeholder="회원 아이디" class="admin_reservationNoSearch">
-		<input type="submit" name="reservationSearchBtn" value="검색" class="admin_commonBtn" >
+		<input type="button" name="reservationSearchBtn" value="검색" class="admin_commonBtn" onclick="searchCheck()" >
 	</form>
-	<div align="left" style="margin-top:20px;">
-		검색 결과 매출액 / 총 매출액  : <b>${sessionScope.filterAmount }원 /  ${sessionScope.totalAmount }원</b>
+	<div align="left" style="margin-top:5px; color:#80715c;">
+		<c:if test="${ShotelSelect != null and ShotelSelect != ''}">
+		<c:forEach var="hotelInfoList" items="${allHotelInfo }">
+			<c:if test="${hotelInfoList.hotelId eq ShotelSelect }">
+				호텔명 : ${hotelInfoList.hotelName }&nbsp;&nbsp;
+			</c:if>
+		</c:forEach>
+		</c:if>
+		<c:if test="${SstartDate != null and SstartDate != '' and SendDate != null and SendDate != ''}">결제일자 : ${SstartDate } ~ ${SendDate }&nbsp;&nbsp;</c:if>
+		<c:if test="${StypeSelect != null and StypeSelect != '' }">결제타입 : 
+		<c:choose>
+			<c:when test="${StypeSelect eq '1'}">신용/체크카드</c:when>
+			<c:when test="${StypeSelect eq '2'}">무통장입금</c:when>
+			<c:when test="${StypeSelect eq '3'}">휴대폰결제</c:when>
+			<c:when test="${StypeSelect eq '4'}">카카오페이</c:when>
+			<c:when test="${StypeSelect eq '5'}">네이버페이</c:when>
+			<c:when test="${StypeSelect eq '6'}">토스</c:when>
+		</c:choose>
+		&nbsp;&nbsp;
+		</c:if>
+		<c:if test="${SstatusSelect != null and SstatusSelect != '' }">결제상태 : 
+		<c:choose>
+			<c:when test="${SstatusSelect eq '0' }">결제완료</c:when>
+			<c:when test="${SstatusSelect eq '1' }">결제취소</c:when>
+			<c:when test="${SstatusSelect eq '2' }">환불</c:when>
+		</c:choose>
+		&nbsp;&nbsp;
+		</c:if>
+		<c:if test="${SmemberId != null and SmemberId != '' }">회원아이디 : ${SmemberId }</c:if>
+		<!-- 결제취소 if문 
+		<c:if test="${SstatusSelect eq '1' }">-</c:if>-->
+		<br><br>검색 결과 매출액 / 총 매출액  : <b style="color: #80715c;">${sessionScope.filterAmount }원 /  ${sessionScope.totalAmount }원</b>
 	</div>
 	<!-- 결제 목록 테이블 -->
 	<div>

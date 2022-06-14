@@ -12,11 +12,9 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.care.hotel.member.DTO.AllMemberDTO;
 import com.care.hotel.member.service.ImemberSvc;
-import com.care.hotel.resource.service.IhotelresourceSvc;
 
 @Controller
 public class AdminController {
-	@Autowired IhotelresourceSvc hotellistSVC;
 	@Autowired ImemberSvc memberSvc;
 	@Autowired HttpSession session;
 	
@@ -27,7 +25,9 @@ public class AdminController {
 	public String memberListProc(Model model, 
 			@RequestParam(value = "currentPage", required = false, defaultValue = "1") int currentPage,
 			String select, String search) {
-		hotellistSVC.memberList(currentPage, select, search);//서비스 내부에서 session에 데이터를 업로드함
+		model.addAttribute("Sselect", select);
+		model.addAttribute("Ssearch", search);
+		memberSvc.memberList(currentPage, select, search);//서비스 내부에서 session에 데이터를 업로드함
 		return "forward:/admin_index?formpath=memberList";
 	}
 	

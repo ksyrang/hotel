@@ -8,7 +8,28 @@
 <meta charset="UTF-8">
 <link href="${pageContext.request.contextPath}/resources/css/admin/amdin_memberList.css" rel="stylesheet" type="text/css">
 <title>admin_memberList</title>
-
+<script>
+	function searchCheck() {
+		var select = document.getElementById('select');
+		var search = document.getElementById('search');
+		
+		if(select.value != "") {
+			if(search.value == "" || search.value == null) {
+				alert("검색어를 입력해주세요.");
+				return;
+			}
+		}
+		
+		if(search.value == "" || search.value != null){
+			if(select.value == ""){
+				alert("검색 기준을 선택해주세요.");
+				return;
+			}
+		}
+		
+		document.getElementById('f').submit();
+	}
+</script>
 </head>
 <body>
 
@@ -20,17 +41,26 @@
 
 
 <div class="admin_memberCombo">
-<form>
-	<select name="select" class="admin_memberCombobox">
-		<option value="">===선택===</option>
+<form id='f'>
+	<select name="select" id="select" class="admin_memberCombobox">
+		<option value="">검색기준</option>
 		<option value="memberId">아이디</option>
 		<option value="name">이름</option>
 		<option value="mobile">전화번호</option>
 		<option value="email">이메일</option>
 	</select>
-	<input type="text" name="search" class="admin_memberSearchTxt">
-	<input type="submit" name="memberSearchBtn" value="검색" class="admin_memberSearchBtn">
+	<input type="text" name="search" id="search" class="admin_memberSearchTxt">
+	<input type="button" name="memberSearchBtn" value="검색" class="admin_memberSearchBtn" onclick="searchCheck()">
 </form>
+<div align="left" style="margin-top:5px; color:#80715c;">
+	<c:if test="${Sselect != null and Sselect != '' }">
+		<c:if test="${Sselect eq 'memberId'}">아이디 : </c:if>
+		<c:if test="${Sselect eq 'name'}">이름 : </c:if>
+		<c:if test="${Sselect eq 'mobile'}">전화번호 : </c:if>
+		<c:if test="${Sselect eq 'email'}">이메일 : </c:if>
+		<c:if test="${Ssearch != null and Ssearch !='' }">${Ssearch }</c:if>
+	</c:if>
+</div>
 </div>
 
 <div>

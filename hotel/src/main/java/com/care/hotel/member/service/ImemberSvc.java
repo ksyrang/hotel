@@ -6,6 +6,9 @@ import com.care.hotel.member.DTO.memberDTO;
 import com.care.hotel.member.DTO.memberExDTO;
 
 public interface ImemberSvc {
+	
+	public void memberList(int currentPage, String select, String search);
+	
 	// 관리자 회원 정보
 	public AllMemberDTO userInfo(String memberId);
 	

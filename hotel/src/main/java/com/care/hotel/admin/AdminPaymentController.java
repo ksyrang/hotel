@@ -38,6 +38,14 @@ public class AdminPaymentController {
 			@RequestParam(value = "currentPage", required = false, defaultValue = "1") int currentPage,
 			String hotelSelect, String startDate, String endDate, String typeSelect, String StatusSelect,String memberId) {
 		model.addAttribute("allHotelInfo", hotelresourceSvc.allHotelInfo());
+		
+		model.addAttribute("ShotelSelect", hotelSelect);
+		model.addAttribute("SstartDate", startDate);
+		model.addAttribute("SendDate", endDate);
+		model.addAttribute("StypeSelect", typeSelect);
+		model.addAttribute("SstatusSelect", StatusSelect);
+		model.addAttribute("SmemberId", memberId);
+		
 		paymentSvc.paymentList(currentPage, hotelSelect, startDate, endDate, typeSelect, StatusSelect, memberId);
 		return "forward:/admin_index?formpath=paymentList";
 	}

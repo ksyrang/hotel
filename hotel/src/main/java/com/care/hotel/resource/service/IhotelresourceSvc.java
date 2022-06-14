@@ -7,8 +7,6 @@ import com.care.hotel.resourceDTO.roomDTO;
 
 public interface IhotelresourceSvc {
    
-   public void memberList(int currentPage, String select, String search);
-   
    public void hotelList(int currentPage, String select, String search);
    public void hotelInfo(String hotelId);
    public int hotelModify(hotelDTO hotelInfo);
