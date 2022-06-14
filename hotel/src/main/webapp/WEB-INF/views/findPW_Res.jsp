@@ -77,13 +77,12 @@
 						<strong>${sessionScope.findMemberNameENG}님의</strong>
 						<br>
 						"PW - "
-						<strong>[${sessionScope.findMemberPW}]</strong>
+						<strong>[${sessionScope.findMemberPw}]</strong>
 					</dd>
 				</dl>	
 			</div>
 					</div>
 					<div class="btnList">
-						<input type="submit"  value='아이디 확인'  style="width: 80px;" />
 						<a href="${root }index?formpath=login" class="btnCancel"><span>취소</span></a>
 					</div>
 					

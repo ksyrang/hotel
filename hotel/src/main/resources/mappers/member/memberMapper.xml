@@ -100,6 +100,6 @@
 	</select>
 	<!-- 비밀번호 찾기 -->
 	<select id="memberPwFind" parameterType="com.care.hotel.member.DTO.memberDTO" resultType="com.care.hotel.member.DTO.memberDTO">
-		SELECT memberPw FROM member WHERE memberId=${memberId} and memberNameENG=#{memberNameENG} and memberEmail=#{memberEmail}
+		SELECT memberPw FROM member WHERE memberId=#{memberId} and memberNameENG=#{memberNameENG} and memberEmail=#{memberEmail}
 	</select>
 </mapper>

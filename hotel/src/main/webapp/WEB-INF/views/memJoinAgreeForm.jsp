@@ -621,11 +621,6 @@ function getCookie(cookie_name) {
 				<h4 class="tit">약관동의</h4>
 			</div>
 			
-			<div class="checkAgreeBox">
-                <input type="checkbox" class="checkAgree3 uiform checkbox" id="mbr_chk_all" autocomplete="off">
-                <label for="mbr_chk_all" class="checkallA"><strong>신라리워즈 가입 약관 전체 동의</strong></label>
-                <h4 class="tit"><br>※ 전체동의는 선택사항(동의 내용을 확인한후 개별동의 가능)이며 전체동의 버튼을 체크하면 선택적 수집동의도 동시 진행됩니다.</h4>
-            </div>
             <!-- 신라 리워즈  약관동의 Start -->
 			<div class="ctnBox">
 				<div class="hTitS">

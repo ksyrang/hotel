@@ -18,11 +18,13 @@ import com.care.hotel.member.DAO.memberDAO;
 import com.care.hotel.member.DTO.AllMemberDTO;
 import com.care.hotel.member.DTO.memberDTO;
 import com.care.hotel.member.DTO.memberExDTO;
+import com.care.hotel.login.DAO.IloginDAO;
 import com.care.hotel.login.DTO.LoginDTO;
 
 @Service
 public class memberSvcImpl implements ImemberSvc{
 	@Autowired memberDAO memberDAO;
+	@Autowired IloginDAO loginDAO;
 	@Autowired private HttpSession session;
 	
 	
@@ -121,7 +123,7 @@ public class memberSvcImpl implements ImemberSvc{
 	}
 	
 	@Override
-	public String memberJoin(memberDTO member, memberExDTO memberExDto) {
+	public String memberJoin(memberDTO member, memberExDTO memberExDto, LoginDTO login) {
 		String id = member.getMemberId();
 		String nameKR = member.getMemberNameKR();
 		String nameENG = member.getMemberNameENG();
@@ -137,6 +139,9 @@ public class memberSvcImpl implements ImemberSvc{
 		
 		if (!("".equals(memberExDto.getMemberZipcode()) || "".equals(memberExDto.getMemberAddr1()) || "".equals(memberExDto.getMemberAddr2()) || "".equals(memberExDto.getMemberHomePhone()))) {
 			memberDAO.memberExInsert(memberExDto);
+		}
+		if(!(id.isEmpty() || pw.isEmpty())) {
+			loginDAO.loginInsert(login);
 		}
 		return "가입 완료";
 		
@@ -176,7 +181,7 @@ public class memberSvcImpl implements ImemberSvc{
 		// 이름, 이메일이 빈 값이 아닐 때
 		if(memberId != null || memberNameENG != null || memberEmail != null) {
 		   memberDTO member = memberDAO.memberPwFind(memberId, memberNameENG, memberEmail);
-		   System.out.println("member.getMemberPw()" + member.getMemberPw());
+		   System.out.println("member.getMemberPw() : " + member.getMemberPw());
 		   session.setAttribute("findMemberNameENG", memberNameENG);
 		   // 해당 값인 memberDTO가 있을 때
 		   if(member != null) {

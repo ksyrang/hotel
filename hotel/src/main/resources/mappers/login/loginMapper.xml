@@ -3,7 +3,13 @@
 <mapper namespace="com.care.hotel.login.DAO.IloginDAO">
 
 	<select id="loginInfo" resultType="com.care.hotel.login.DTO.LoginDTO" parameterType="String">
-		SELECT * FROM login WHERE memberid = #{memberId}		
+		SELECT * FROM login WHERE memberId = #{memberId}		
 	</select>
+	
+	<!-- loginInsert -->
+	<insert id="loginInsert" parameterType="com.care.hotel.login.DTO.LoginDTO">
+		INSERT INTO login VALUES(#{memberId}, #{memberPw} ) 
+	</insert>
+	
 	
 </mapper>

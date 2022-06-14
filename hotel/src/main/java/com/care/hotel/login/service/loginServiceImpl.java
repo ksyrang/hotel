@@ -51,5 +51,10 @@ public class loginServiceImpl implements IloginService {
 	public void logoutProc() {
 		session.invalidate();
 	}
+//	@Override
+//	public String loginJoin(LoginDTO login) {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
 
 }

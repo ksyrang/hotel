@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.care.hotel.login.DTO.LoginDTO;
 import com.care.hotel.member.DTO.memberDTO;
 import com.care.hotel.member.DTO.memberExDTO;
 import com.care.hotel.member.service.memberSvcImpl;
@@ -56,14 +57,14 @@ public class MemJoinController {
 	}
 	
 	@RequestMapping(value = "memberJoinProc", method = RequestMethod.POST)
-	public String memberJoinSaveProc(memberDTO member, memberExDTO memberExDto, String firstName, String lastName, Model model, RedirectAttributes ra){
+	public String memberJoinSaveProc(memberDTO member, memberExDTO memberExDto, LoginDTO login, String firstName, String lastName, Model model, RedirectAttributes ra){
 		String memberNameENG = lastName + " " + firstName;
 		String msg = "가입 완료";
 		System.out.println("msg : " + msg);
 		
 		if(member.getMemberId() != null) {
 			member.setMemberNameENG(memberNameENG);
-			msg = memberService.memberJoin(member, memberExDto);
+			msg = memberService.memberJoin(member, memberExDto, login);
 		}
 		
 		if(msg.equals("가입 완료")) {
