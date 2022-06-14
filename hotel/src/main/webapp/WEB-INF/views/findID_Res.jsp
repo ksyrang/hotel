@@ -6,14 +6,16 @@
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>로그인 | The Shilla Hotels &amp; Resorts</title>
-<link href="${pageContext.request.contextPath}/css/mem/common.css" rel="stylesheet" type="text/css">
+<%-- <link href="${pageContext.request.contextPath}/css/mem/common.css" rel="stylesheet" type="text/css">
 <link href="${pageContext.request.contextPath}/css/mem/title_ko.css" rel="stylesheet" type="text/css">
 <link href="${pageContext.request.contextPath}/css/mem/common/print.css" rel="stylesheet" type="text/css" media="print">
 <link href="${pageContext.request.contextPath}/css/mem/mainImages_ko.css" rel="stylesheet" type="text/css">
 <link href="${pageContext.request.contextPath}/css/mem/common/reserve_new.css" rel="stylesheet" type="text/css">
 <link href="${pageContext.request.contextPath}/css/mem/common/lang-ko_N.css" rel="stylesheet" type="text/css">
 <link href="${pageContext.request.contextPath}/css/mem/common/btn_ko.css" rel="stylesheet" type="text/css">
-<link href="${pageContext.request.contextPath}/css/common/swiper.min.css" rel="stylesheet" type="text/css">
+<link href="${pageContext.request.contextPath}/css/common/swiper.min.css" rel="stylesheet" type="text/css"> --%>
+<link href="${pageContext.request.contextPath}/resources/css/csh.css" rel="stylesheet" type="text/css">
+
 <meta name="description" content="로그인"><!-- <meta name="keywords" content="로그인" /> -->
 <meta name="og:title" content="로그인 | The Shilla Hotels &amp; Resorts">
 <!-- 검색엔진용 추가 180524 -->
@@ -24,23 +26,6 @@
 
 document.write("<div id='popCalendarDiv' class='popCalendar' style='display:none' ></div>");
 
-</script>
-<script>
-
-window.onload = function() {
-	document.getElementById('submit').onclick = function() {
-		
-		if ( document.pfrm.memberNameENG.value.trim() == '' || ) {
-			alert( '이름을 입력해주세요' );
-			return false;
-		}
-		if ( document.pfrm.memberEmail.value.trim() == '' ) {
-			alert( '메일을 입력해주세요' );
-			return false;
-		}
-		document.pfrm.submit();
-	}
-}
 </script>
 </head><body class="subBody joinBody"><div id="popCalendarDiv" class="popCalendar" style="display:none"></div>
 <jsp:useBean id="member" class="com.care.hotel.member.DTO.memberDTO"/>
@@ -66,7 +51,7 @@ window.onload = function() {
 		<div class="btn"><a class="btnClose" href="${root }index?formpath=login"><span>닫기</span></a></div>
 	</div>
 	<div class="popCtn">
-		<div class="step step2" style="display:" id="step2Div">
+		<div style="display:">
 			<p class="msg1">신라리워즈 아이디 찾기 결과는 다음과 같습니다.</p>
 			<div class="formBox">
 				<dl>
@@ -80,59 +65,13 @@ window.onload = function() {
 			
 			<div class="btnList">
 				<a href="${root }index?formpath=login" class="btnSubmit"><span>확인</span></a>
-				<a href="${root }index?formpath=findPW"><span >비밀번호 찾기</span></a> 
+				<a href="${root }index?formpath=findPW" class ="btnLostPw"><span>비밀번호찾기</span></a>
 			</div>
 			
 		</div>
 		
 		<!-- 아이디찾기 결과선택 -->
-		<div class="step step2" style="display:none" id="step2Div">
-			<div class="resultBox">
-				<dl><dd>	${member.memberId }
-						</dd></dl>
-			</div>
-			<div class="btnList">
-				<a href="${root }index?formpath=login" class="btnSubmit"><span>확인</span></a>
-				<a href="${root }index?formpath=findPW" id="popForPwButton" class="btnLostPw"><span>비밀번호찾기</span></a>
-			</div>
-			
-			
-		</div>
 		
-		<!-- 아이디찾기 결과끝 -->
-		<div class="step step3" style="display:none" id="step3Div">
-			<div class="resultBox">
-				<dl>
-					<dd>
-						입력하신 정보로 신라리워즈 번호를 찾을 수 없습니다.</dd>
-				</dl>
-			</div>
-			<div class="btnList">
-				<a class="btnLostId" href="${root }index?formpath=findID"><span>신라리워즈 번호 또는 아이디 찾기</span></a> 
-				<a class="btnJoin" href="${root }index?formpath=memJoinAgreeForm"><span>신라리워즈 가입</span></a>
-			</div>
-		</div>
-		
-		<!-- 아이디찾기 30개 넘음 -->
-		<div class="step step3" style="display:none" id="step4Div">
-			<div class="resultBox">
-				<dl>
-					<dd>
-						신라리워즈 번호 찾기를 진행할 수 없습니다.<br>신라리워즈 고객센터로 문의하세요.<br>02-2230-5528</dd>
-				</dl>
-			</div>
-			<div class="btnList">
-<a class="btnSubmit" href="${root }index?formpath=login"><span>닫기</span></a> 
-			</div>
-		</div>
-		
-	</div>
-	<div class="btnAcc"><a class="btnClose" href="${root }index?formpath=login"><span>닫기</span></a></div>
-</div>
-<div class="mdScreen" style="display: block; height: 1292px;"></div>
-</div>
-
-
 
 
 <!-- Google Tag Manager (noscript) -->

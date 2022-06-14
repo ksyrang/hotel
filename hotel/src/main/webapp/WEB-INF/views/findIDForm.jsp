@@ -114,45 +114,8 @@ window.onload = function() {
 			
 		</div>
 		
-		<!-- 아이디찾기 결과선택 -->
-		<div class="step step2" style="display:none" id="step2Div">
-			<div class="resultBox">
-				<dl><dd>	${member.memberId }
-						</dd></dl>
-			</div>
-			<div class="btnList">
-				<a href="${root }index?formpath=login" class="btnSubmit"><span>취소</span></a>
-				<a class="btnLostPw" id="popForPwButton" href="${root }index?formpath=findPW"><span>비밀번호찾기</span></a> 
-			</div>
-			
-		</div>
 		
-		<!-- 아이디찾기 결과끝 -->
-		<div class="step step3" style="display:none" id="step3Div">
-			<div class="resultBox">
-				<dl>
-					<dd>
-						입력하신 정보로 신라리워즈 번호를 찾을 수 없습니다.</dd>
-				</dl>
-			</div>
-			<div class="btnList">
-				<a class="btnLostId" href="${root }index?formpath=findID"><span>신라리워즈 번호 또는 아이디 찾기</span></a> 
-				<a class="btnJoin" href="${root }index?formpath=memJoinAgreeForm"><span>신라리워즈 가입</span></a>
-			</div>
-		</div>
 		
-		<!-- 아이디찾기 30개 넘음 -->
-		<div class="step step3" style="display:none" id="step4Div">
-			<div class="resultBox">
-				<dl>
-					<dd>
-						신라리워즈 번호 찾기를 진행할 수 없습니다.<br>신라리워즈 고객센터로 문의하세요.<br>02-2230-5528</dd>
-				</dl>
-			</div>
-			<div class="btnList">
-<a class="btnSubmit" href="${root }index?formpath=login"><span>닫기</span></a> 
-			</div>
-		</div>
 		
 	</div>
 	<div class="btnAcc"><a class="btnClose" href="${root }index?formpath=login"><span>닫기</span></a></div>

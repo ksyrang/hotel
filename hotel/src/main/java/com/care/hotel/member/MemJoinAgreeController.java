@@ -30,6 +30,14 @@ public class MemJoinAgreeController {
 		
 		return "memJoinAgreeForm";
 	}
+	
+	@RequestMapping(value = "memJoinAgreeProc", method = RequestMethod.POST)
+	public String memJoinAgreeProc() {
+		
+		
+		return "forward:/index?formpath=memJoinForm";
+	}
+	
 	@RequestMapping(value = "memJoinForm")
 	public String memJoinForm(Locale locale, Model model) {
 		logger.info("회원정보 입력");

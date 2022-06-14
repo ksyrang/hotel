@@ -60,7 +60,7 @@ public class MemJoinController {
 	public String memberJoinSaveProc(memberDTO member, memberExDTO memberExDto, LoginDTO login, String firstName, String lastName, Model model, RedirectAttributes ra){
 		String memberNameENG = lastName + " " + firstName;
 		String msg = "가입 완료";
-		System.out.println("msg : " + msg);
+	//	System.out.println("msg : " + msg);
 		
 		if(member.getMemberId() != null) {
 			member.setMemberNameENG(memberNameENG);
@@ -72,7 +72,7 @@ public class MemJoinController {
 			return "forward:/index?formpath=memberInsert";
 		}else {
 			ra.addFlashAttribute("msg", msg);
-			return "redirect:/index?formpath=memJoinAgreeForm";
+			return "redirect:/index?formpath=memJoinForm";
 		}
 		
 	}

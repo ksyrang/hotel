@@ -34,8 +34,9 @@ public class FindInfoController {
 	public String findIDSaveProc(String memberId, String memberNameENG, String lastName, String firstName, String memberEmail, Model model, RedirectAttributes ra) {
 		logger.info("FindIDSaveProc");
 		if(lastName == null || lastName == "" || firstName == null || firstName == "" || memberEmail == null || memberEmail == "") {
+			logger.info("아이디 찾기 실패");
 			ra.addFlashAttribute("msg", "FindIDProc 오류발생");
-			return "redirect:/index?formpath=login";
+			return "redirect:/index?formpath=findID";
 		}else {
 			memberNameENG = lastName + " " + firstName;
 			String result = memberService.findID(memberNameENG, memberEmail);
@@ -76,8 +77,9 @@ public class FindInfoController {
 	public String findPWSaveProc(String memberPw, String memberId, String memberNameENG, String firstName, String lastName, String memberEmail, Model model, RedirectAttributes ra) {
 		logger.info("FindPWSaveProc");
 		if(memberId == null || memberId == "" ||lastName == null || lastName == "" || firstName == null || firstName == "" || memberEmail == null || memberEmail == "") {
+			logger.info("비밀번호 찾기 실패");
 			ra.addFlashAttribute("msg", "FindIDProc 오류발생");
-			return "redirect:/index?formpath=login";
+			return "redirect:/index?formpath=findPW";
 		}else {
 			String result = "회원의 비밀번호는 [ " + memberPw + "]입니다.";
 			memberNameENG = lastName + " " + firstName;

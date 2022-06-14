@@ -365,7 +365,7 @@ function getCookie(cookie_name) {
 	<input type="hidden" name="EncodeData" value="AgAFQkQ2MDQf+bz3vizRwSLR/J45qh8dQZ5hSuAC//IPdSh5I7fYfXkIiExqglObe19CueftyLBiJ8R4H+XF7E8v1FI/yW3zMd9FvcFKtVOJXWMgndplmmzUEcAVpVoUnNoAjjIZXMKcTQbQAb12V0tbPfX19re+ivyh//Ktki+g4QPosLUfPNSqkSMpclBDzHw694sGtTTf2Eu7aH87plmia1Htmn1jEQWksrksI8YImyLg04hg4gH6xHpXhS7F8Q1udnmY6i9pgDA5Vf1EkF816uvM5DlTD84P39TkFMtqIt4l1O6yD7g5p1fT8e56wUCXAKqFK5cPz6OdKaVUzxGfky8Rmk2yT3UHKq1Oz6kME8yDxqM0bIQuOe8xU/Q71/0ldV2zAFIa6l66K2tBvZHvY42L4/nNBrcqYZGV5xlsU6dSiKYxrAbAwcARx8J07nogSl/U5f8Vwy3dtatKLvjB0oJtQNn8sw9yL0aVdEk7ruJwQamObOifnoJL4PQoCPj6y1LzRXQ=" autocomplete="off"> <!-- 위에서 업체정보를 암호화 한 데이타입니다. -->
 </form>
 
-<form name="viewBrowsewrapForm" id="viewBrowsewrapForm" method="post" action="${root }index?formpath=memJoinForm">
+<form name="viewBrowsewrapForm" id="viewBrowsewrapForm" method="post" action="memJoinAgreeProc">
 <input type="hidden" id="sqMbPersnallyCertifictH" name="sqMbPersnallyCertifictH" value="" autocomplete="off">
 <input type="hidden" id="itCd" name="itCd" value="" autocomplete="off">
 <input type="hidden" id="mbrNm" name="mbrNm" autocomplete="off">
@@ -407,7 +407,6 @@ function getCookie(cookie_name) {
 			<div class="ctnBox">
 				<div class="hTitS">
 					<h4 class="tit">신라리워즈 이용약관에 대한 동의 (필수)</h4>
-					<div class="info"><a href="#none" onclick="popPrivacyInc(1);" id="privacyIncbutton_1" class="btnViewAll">전체보기</a></div>
 				</div>
 				<div class="policyBox">
 					<div class="box">
@@ -838,7 +837,6 @@ function getCookie(cookie_name) {
 				<hr class="hrstyleA">
 				<div class="hTitS">
 					<h4 class="tit">개인정보 수집, 이용에 대한 동의 (필수)</h4>
-					<div class="info"><a class="btnViewAll" href="#none" onclick="popPrivacyInc(2);" id="privacyIncbutton_2">전체보기</a></div>
 				</div>
 				<div class="policyBox">
 					<div class="box">
@@ -859,7 +857,6 @@ function getCookie(cookie_name) {
 				<hr class="hrstyleA">
 				<div class="hTitS">
 	                <h4 class="tit">개인정보 제3자 제공에 대한 동의 (필수)</h4>
-	                <div class="info"><a href="#none" onclick="popPrivacyInc(6);" id="privacyIncbutton_6" class="btnViewAll">전체보기</a>
 	                </div>
 	            </div>
 	            <div class="policyBox">
@@ -883,7 +880,6 @@ function getCookie(cookie_name) {
 	            <hr class="hrstyleA">
 	            <div class="hTitS">
 					<h4 class="tit">개인정보 마케팅 활용 동의 (선택)</h4>
-					<div class="info"><a href="#none" onclick="popPrivacyInc(4);" id="privacyIncbutton_4" class="btnViewAll">전체보기</a></div>
 				</div>
 				<div class="policyBox">
 					<div class="box">
@@ -915,7 +911,6 @@ function getCookie(cookie_name) {
 				<hr style="border-bottom:1px dashed #ede4d6;margin:20px 0 20px 0;height:0px;background:transparent;border-top:0;border-right:0;border-left:0;">
 				<div class="hTitS">
 	                <h4 class="tit">개인정보 제3자 제공 및 국외이전 동의 (선택)</h4>
-	                <div class="info"><a href="#none" onclick="popPrivacyInc(7);" id="privacyIncbutton_7" class="btnViewAll">전체보기</a>
 	                </div>
 	            </div>
 	            <div class="policyBox">
@@ -980,7 +975,9 @@ function getCookie(cookie_name) {
 			<!-- 신라 리워즈  약관동의 End -->
 
 			<div class="buttonwrapA">
-                <a href="${root }index?formpath=memJoinForm" class="buttonstyleA" onclick="nextStep();">다음</a>&nbsp;&nbsp;<a href="/hotel/" class="buttonstyleA">취소</a>
+                <input type=submit  class="buttonstyleA" style="margin-bottom:13px;" onclick="nextStep();" />
+                 &nbsp;&nbsp;<a href="${root }index?formpath=memJoinForm" class="buttonstyleA" onclick="nextStep();">다음</a>
+                &nbsp;&nbsp;<a href="/hotel/" class="buttonstyleA">취소</a>
             </div>
 		</div>
 	</div>

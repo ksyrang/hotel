@@ -132,10 +132,11 @@ public class memberSvcImpl implements ImemberSvc{
 		String pw = member.getMemberPw();
 		String gender = member.getMemberGender();
 		
-		if (memberDAO.isExistId(login.getMemberId()) > 0)
-			return "중복 아이디 입니다.";
+		
 		
 		if(!(id.isEmpty() || nameKR.isEmpty() || nameENG.isEmpty() || birth.isEmpty() || mobile.isEmpty() || email.isEmpty() || pw.isEmpty() || gender.isEmpty())) {
+			if (memberDAO.isExistId(login.getMemberId()) > 0)
+				return "중복 아이디 입니다.";
 			memberDAO.memberInsert(member);
 		}else {
 			return "필수 입력 정보 입니다.";
@@ -143,11 +144,13 @@ public class memberSvcImpl implements ImemberSvc{
 		
 		if (!("".equals(memberExDto.getMemberZipcode()) || "".equals(memberExDto.getMemberAddr1()) || "".equals(memberExDto.getMemberAddr2()) || "".equals(memberExDto.getMemberHomePhone()))) {
 			memberDAO.memberExInsert(memberExDto);
+		
 		}else {
 			return "입력 정보가 없습니다";
 		}
 		if(!(id.isEmpty() || pw.isEmpty())) {
 			loginDAO.loginInsert(login);
+			
 		}else {
 			return "필수 입력 정보 입니다.";
 		}
