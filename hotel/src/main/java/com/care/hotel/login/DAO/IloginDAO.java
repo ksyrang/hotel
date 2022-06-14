@@ -8,4 +8,6 @@ public interface IloginDAO {
 	void loginInsert(LoginDTO login);
 	
 	
+	
+	
 }

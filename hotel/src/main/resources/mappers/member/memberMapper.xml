@@ -88,7 +88,7 @@
 	
 	<!-- 아이디 중복 확인 -->
 	<select id="isExistId" parameterType="String" resultType="int">
-		SELECT count(*) FROM member WHERE memberId=#{memberId}
+		SELECT count(*) FROM login WHERE memberId=#{memberId}
 	</select>
 	<!-- 이메일 중복 확인 -->
 	<select id="isExistEmail" parameterType="String" resultType="int">

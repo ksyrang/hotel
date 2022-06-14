@@ -72,16 +72,15 @@ window.onload = function() {
 				<dl>
 					<dd>
 						<strong>${sessionScope.findMemberNameENG}님의</strong>
-						<br>
-						"ID - "
-						<strong>[${sessionScope.findMemberID}]</strong>
+						아이디는 
+						<strong>[${sessionScope.findMemberID}]입니다.</strong>
 					</dd>
 				</dl>	
 			</div>
 			
 			<div class="btnList">
 				<a href="${root }index?formpath=login" class="btnSubmit"><span>확인</span></a>
-				<a href="${root }index?formpath=findPW"><span>비밀번호 찾기</span></a> 
+				<a href="${root }index?formpath=findPW"><span >비밀번호 찾기</span></a> 
 			</div>
 			
 		</div>
@@ -93,9 +92,10 @@ window.onload = function() {
 						</dd></dl>
 			</div>
 			<div class="btnList">
-				<a href="${root }index?formpath=login" class="btnSubmit"><span>취소</span></a>
-				<a class="btnLostPw" id="popForPwButton" href="${root }index?formpath=findPW"><span>비밀번호찾기</span></a> 
+				<a href="${root }index?formpath=login" class="btnSubmit"><span>확인</span></a>
+				<a href="${root }index?formpath=findPW" id="popForPwButton" class="btnLostPw"><span>비밀번호찾기</span></a>
 			</div>
+			
 			
 		</div>
 		

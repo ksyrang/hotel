@@ -28,7 +28,7 @@ public interface memberDAO {
 	
 	int memberDelete(String memberId);
 	
-	memberDTO isExistId(String memberId);
+	int isExistId(String memberId);
 	
 	int isExistEmail(String memberEmail);
 	

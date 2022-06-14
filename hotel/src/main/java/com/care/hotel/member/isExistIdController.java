@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-public class memberInsertController {
+public class isExistIdController {
 	
-	private static final Logger logger = LoggerFactory.getLogger(memberInsertController.class);
+	private static final Logger logger = LoggerFactory.getLogger(isExistIdController.class);
 
 	
 //	@RequestMapping(value = "/memberInsert")

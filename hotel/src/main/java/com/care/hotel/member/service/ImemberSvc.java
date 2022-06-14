@@ -16,7 +16,7 @@ public interface ImemberSvc {
 	public String adminCheck(String adminId, String adminPw, String memberId);
 	
 	// 아이디 중복 확인
-	public memberDTO isExistId(String memberId);
+	public String isExistId(String memberId);
 	
 	// 멤버 회원 가입 
 	public String memberJoin(memberDTO member, memberExDTO memberExDTO, LoginDTO login);

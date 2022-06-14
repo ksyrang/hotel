@@ -93,8 +93,14 @@ public class MemJoinController {
 	
 	@PostMapping(value = "isExistId", produces = "application/json; charset=UTF-8")
 	@ResponseBody
-	public memberDTO isExistId(@RequestBody(required = false) String memberId) {
-		memberDTO member = memberService.isExistId(memberId);
-		return member;
+	public String isExistId(@RequestBody(required = false) String memberId) {
+		logger.info("userIdCheck 진입");
+        logger.info("전달받은 id:"+memberId);
+		String msg = memberService.isExistId(memberId);
+		logger.info("확인 결과:"+msg);
+		return msg;
+		
 	}
+
+
 }	

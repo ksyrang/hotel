@@ -111,15 +111,14 @@ public class memberSvcImpl implements ImemberSvc{
 	}
 	
 	@Override
-	public memberDTO isExistId(String memberId) {
+	public String isExistId(String memberId) {
 		if (memberId == null)
-			System.out.println("아이디를 입력 후 다시 시도하세요.");
-			
-		memberDTO member = memberDAO.isExistId(memberId);
-		if (member != null)
-			System.out.println("중복 아이디 입니다.");
-		System.out.println("사용 가능한 아이디입니다.");
-		return member;
+			return "아이디를 입력 후 다시 시도하세요.";
+		int count = memberDAO.isExistId(memberId);
+		if (count == 1)
+			return "중복 아이디 입니다.";
+
+		return "사용 가능한 아이디입니다.";
 	}
 	
 	@Override
@@ -133,15 +132,24 @@ public class memberSvcImpl implements ImemberSvc{
 		String pw = member.getMemberPw();
 		String gender = member.getMemberGender();
 		
+		if (memberDAO.isExistId(login.getMemberId()) > 0)
+			return "중복 아이디 입니다.";
+		
 		if(!(id.isEmpty() || nameKR.isEmpty() || nameENG.isEmpty() || birth.isEmpty() || mobile.isEmpty() || email.isEmpty() || pw.isEmpty() || gender.isEmpty())) {
 			memberDAO.memberInsert(member);
-		}	
+		}else {
+			return "필수 입력 정보 입니다.";
+		}
 		
 		if (!("".equals(memberExDto.getMemberZipcode()) || "".equals(memberExDto.getMemberAddr1()) || "".equals(memberExDto.getMemberAddr2()) || "".equals(memberExDto.getMemberHomePhone()))) {
 			memberDAO.memberExInsert(memberExDto);
+		}else {
+			return "입력 정보가 없습니다";
 		}
 		if(!(id.isEmpty() || pw.isEmpty())) {
 			loginDAO.loginInsert(login);
+		}else {
+			return "필수 입력 정보 입니다.";
 		}
 		return "가입 완료";
 		
@@ -156,14 +164,16 @@ public class memberSvcImpl implements ImemberSvc{
 		// 이름, 이메일이 빈 값이 아닐 때
 		if(memberNameENG != null || memberEmail != null) {
 		   memberDTO member = memberDAO.memberIdFind(memberNameENG, memberEmail);
-		   System.out.println("member.getMemberId() : " + member.getMemberId());
+		 //  System.out.println("member.getMemberId() : " + member.getMemberId());
 		   System.out.println("memberNameENG : " + memberNameENG);
 		   session.setAttribute("findMemberNameENG", memberNameENG);
 		   // 해당 값인 memberDTO가 있을 때
 		   if(member != null) {
 		      result="가입된 아이디는 [ " + member.getMemberId() + "]입니다.";
 		      session.setAttribute("findMemberID", member.getMemberId());
-		   }  
+		   }else {
+			   result="다시 입력해주세요.";
+		   }
 		}else {
 		// 이름, 이메일이 빈 값일 때
 		   result="다시 입력해주세요.";
@@ -181,13 +191,15 @@ public class memberSvcImpl implements ImemberSvc{
 		// 이름, 이메일이 빈 값이 아닐 때
 		if(memberId != null || memberNameENG != null || memberEmail != null) {
 		   memberDTO member = memberDAO.memberPwFind(memberId, memberNameENG, memberEmail);
-		   System.out.println("member.getMemberPw() : " + member.getMemberPw());
+		//   System.out.println("member.getMemberPw() : " + member.getMemberPw());
 		   session.setAttribute("findMemberNameENG", memberNameENG);
 		   // 해당 값인 memberDTO가 있을 때
 		   if(member != null) {
 		      result="회원의 비밀번호는 [ " + member.getMemberPw() + "]입니다.";
 		      session.setAttribute("findMemberPw", member.getMemberPw());
-		   }  
+		   }else {
+			   result="다시 입력해주세요.";
+		   }
 		}else {
 		// 이름, 이메일이 빈 값일 때
 		   result="다시 입력해주세요.";

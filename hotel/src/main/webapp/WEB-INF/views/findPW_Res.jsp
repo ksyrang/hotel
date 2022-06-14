@@ -75,15 +75,14 @@
 				<dl>
 					<dd>
 						<strong>${sessionScope.findMemberNameENG}님의</strong>
-						<br>
-						"PW - "
-						<strong>[${sessionScope.findMemberPw}]</strong>
+						비밀번호는
+						<strong>[${sessionScope.findMemberPw}]입니다.</strong>
 					</dd>
 				</dl>	
 			</div>
 					</div>
 					<div class="btnList">
-						<a href="${root }index?formpath=login" class="btnCancel"><span>취소</span></a>
+						<a href="${root }index?formpath=login" class="btnSubmit"><span>확인</span></a>
 					</div>
 					
 					<div class="guideBox">

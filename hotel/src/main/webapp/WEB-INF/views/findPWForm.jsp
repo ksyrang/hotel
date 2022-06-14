@@ -101,7 +101,7 @@
 						</tbody></table>
 					</div>
 					<div class="btnList">
-						<input type="submit"  value='비밀번호 확인'  style="width: 80px;" />
+						<input type="submit"  value='비밀번호 확인' id="popForPwButton" class="btnLostPw"  />
 						<a href="${root }index?formpath=login" class="btnCancel"><span>취소</span></a>
 					</div>
 					

@@ -1495,6 +1495,17 @@
     line-height: 100px;
     overflow: hidden;
 }
+/*중복 아이디 존재하지 않는 경우 */
+.id.input_re_1{
+	color : green;
+	display : none;
+}
+
+/*중복 아이디 존재하지 않는 경우 */
+.id.input_re_2{
+	color : red;
+	display : none;
+}
 
 .tableJoinForm .msgCheck1,
 .tableJoinForm .msgCheck2 {

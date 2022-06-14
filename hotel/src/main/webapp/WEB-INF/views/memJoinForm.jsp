@@ -32,6 +32,38 @@
   integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
   crossorigin="anonymous"></script>
 </head>
+<script type=text/javascript>
+/* function isExistId(){
+    var id = $('#memberId').val(); //id값이 "id"인 입력란의 값을 저장
+    $.ajax({
+        url:'${root}index?formpath=isExistId', //Controller에서 인식할 주소
+        type:'post', //POST 방식으로 전달
+        data:{id:id},
+        success:function(msg){
+        	if(msg != 1){ //cnt가 1이 아니면(=0일 경우) -> 사용 가능한 아이디 
+        		  alert("사용 가능합니다.")
+            } else { // cnt가 1일 경우 -> 이미 존재하는 아이디
+            	 alert("이미 존재하는 아이디입니다.")
+            }
+        },
+        error:function(){
+            alert("에러입니다");
+        }
+    });
+}; */
+var req;
+ function isExistId(){
+	 var msg = document.getElementById('msg');
+	req = new XMLHttpRequest();
+	req.onreadystatechange = printMsg;
+	req.open('post', 'isExistId');
+	req.send(document.getElementById('memberId').value);
+} 
+function printMsg(){
+	var msg = document.getElementById('msg');
+	msg.innerHTML = req.responseText;
+}
+</script>
 <body class="subBody joinBody"><div id="popCalendarDiv" class="popCalendar" style="display:none"></div>
 
 <!-- <script src="/js/json2.js" charset="UTF-8"></script>
@@ -281,13 +313,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
  */
 	
-	function isExistId(){
-		var req;
-		req = new XMLHttpRequest();
-		req.onreadystatechange = printMsg;
-		req.open('post', 'isExistId');
-		req.send(document.getElementById('memberId').value);
-	}	function sendAuth(){
+
+	function sendAuth(){
 		var req;
 		req = new XMLHttpRequest();
 		req.onreadystatechange = printMsg;
@@ -295,11 +322,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		req.send(document.getElementById('memberEmail').value);
 	}
 	
-	function printMsg(){
-		var req;
-		var msg = document.getElementById('msg');
-		msg.innerHTML = req.responseText;
-	}
 
 	function checkAuth(){
 		var req;
@@ -485,8 +507,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 						</colgroup>
 							<tbody><tr class="first">
 								<th scope="row" class="first"><em class="ast">*</em> 아이디</th>
-								<td class="first"><input type="text" id="memberId" name="memberId" class="uiform text" maxlength="15" autocomplete="off" style="width:130px">
-								<span class="idConfirm"><input type="button" value="중복 확인" onclick="isExistId()"></span><span class="msgCheck msgCheck2">8자  이내 영문 또는 영문/숫자 조합</span></td>
+								<td class="first"><input type="text" id="memberId" name="memberId" placeholder="8자  이내 영문 또는 영문/숫자 조합" class="uiform text" maxlength="15" autocomplete="off" style="width:130px">
+								<input type="button" value="중복 확인" onclick="isExistId()">
+								</td>
 							</tr>
 					<tr>
 						<th scope="row"><em class="ast">*</em> 비밀번호</th>

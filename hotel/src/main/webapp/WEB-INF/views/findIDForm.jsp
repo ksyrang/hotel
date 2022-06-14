@@ -30,8 +30,12 @@ document.write("<div id='popCalendarDiv' class='popCalendar' style='display:none
 window.onload = function() {
 	document.getElementById('submit').onclick = function() {
 		
-		if ( document.pfrm.memberNameENG.value.trim() == '' || ) {
+		if ( document.pfrm.firstName.value.trim() == '' || ) {
 			alert( '이름을 입력해주세요' );
+			return false;
+		}
+		if ( document.pfrm.lastName.value.trim() == '' || ) {
+			alert( '성을 입력해주세요' );
 			return false;
 		}
 		if ( document.pfrm.memberEmail.value.trim() == '' ) {
@@ -105,9 +109,7 @@ window.onload = function() {
 			</div>
 			
 			<div class="btnList">
-			<button type="submit" id="submit" class="btnSubmit">확인</button>
-				<a href="javascript:selectPopForId();" id="submit" class="btnSubmit"><span>확인</span></a>
-				<input type="submit"  value='아이디 확인'  style="width: 80px;" />
+				<button type="submit" id="submit" class="btnSubmit" value='아이디 확인'  style="width: 60px;"></button>
 			</div>
 			
 		</div>
