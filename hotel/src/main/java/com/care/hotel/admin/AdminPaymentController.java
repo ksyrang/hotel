@@ -10,6 +10,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -68,7 +69,7 @@ public class AdminPaymentController {
 			model.addAttribute("cardNo4", cardDTO.getCardNo().substring(12));
 			model.addAttribute("validityMm", cardDTO.getValidityYyMm().substring(2,4));
 			model.addAttribute("validityYy",  cardDTO.getValidityYyMm().substring(0,2));
-			model.addAttribute("csv", cardDTO.getCSV());
+			model.addAttribute("CSV", cardDTO.getCSV());
 		}
 		
 		if(reservationStatus.equals("0")) {
@@ -95,7 +96,7 @@ public class AdminPaymentController {
 				cardInfo.put("cardNo4", cardDTO.getCardNo().substring(12));
 				cardInfo.put("validityMm", cardDTO.getValidityYyMm().substring(2,4));
 				cardInfo.put("validityYy",  cardDTO.getValidityYyMm().substring(0,2));
-				cardInfo.put("csv", cardDTO.getCSV());
+				cardInfo.put("CSV", cardDTO.getCSV());
 			}else {
 				cardInfo.put("cardDTONull", "cardDTONull");
 			}
@@ -107,9 +108,9 @@ public class AdminPaymentController {
 	 
 	// 결제 버튼을 눌렀을 때
 	@RequestMapping(value="PaymentProc", method=RequestMethod.POST)
-	public String PaymentProc(paymentDTO paymentDTO, String reservationStatus, RedirectAttributes ra) {
+	public String PaymentProc(paymentDTO paymentDTO, String reservationStatus, memberCardDTO cardDTO, RedirectAttributes ra) {
 		String result = "";
-		result = paymentSvc.insertPayment(paymentDTO, reservationStatus);
+		result = paymentSvc.insertPayment(paymentDTO, reservationStatus, cardDTO);
 		ra.addFlashAttribute("msg", result);
 		return "redirect:admin_reservationListProc";
 		

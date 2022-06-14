@@ -30,7 +30,7 @@
 		var cardNo4 = document.getElementById('cardNo4');
 		var validityMm = document.getElementById('validityMm');
 		var validityYy = document.getElementById('validityYy');
-		var csv = document.getElementById('csv');
+		var CSV = document.getElementById('CSV');
 		
 		if(checked.checked == true) {
 			req = new XMLHttpRequest();
@@ -45,7 +45,7 @@
 			cardNo4.value = "";
 			validityMm.value = "";
 			validityYy.value = "";
-			csv.value = "";
+			CSV.value = "";
 		}
 	}
 	
@@ -57,7 +57,7 @@
 		var cardNo4 = document.getElementById('cardNo4');
 		var validityMm = document.getElementById('validityMm');
 		var validityYy = document.getElementById('validityYy');
-		var csv = document.getElementById('csv');
+		var CSV = document.getElementById('CSV');
 		if(req.readyState == 4 && req.status == 200){
 			var result = JSON.parse(req.responseText);
 			if(result.cardDTONull != "cardDTONull") {
@@ -68,7 +68,7 @@
 				cardNo4.value = result.cardNo4;
 				validityMm.value = result.validityMm;
 				validityYy.value = result.validityYy;
-				csv.value = result.csv;
+				CSV.value = result.CSV;
 			}else {
 				alert("고객의 카드 정보가 없습니다.");
 			}
@@ -84,10 +84,16 @@
 		var cardNo4 = document.getElementById('cardNo4');
 		var validityMm = document.getElementById('validityMm');
 		var validityYy = document.getElementById('validityYy');
-		var csv = document.getElementById('csv');
+		var CSV = document.getElementById('CSV');
+		
+		var cardNo = document.getElementById('cardNo');
+		var validityYyMm = document.getElementById('validityYyMm');
+		cardNo.value = cardNo1.value + cardNo2.value + cardNo3.value + cardNo4.value;
+		validityYyMm.value = validityYy.value + validityMm.value;
+		
 		if(paymentType.value == '1'){
 			if(cardCompany.value == "" || cardNo1.value == "" || cardNo2.value == "" || cardNo3.value == ""
-					|| cardNo4.value == "" || validityMm.value == "" || validityYy == "" || csv == ""){
+					|| cardNo4.value == "" || validityMm.value == "" || validityYy == "" || CSV == ""){
 				alert("신용/체크카드 정보를 입력해주세요.");
 				return;
 			}
@@ -105,11 +111,12 @@
 				alert("유효기간을 정확히 입력해주세요.");
 				return;
 			}
-			if(csv.value.length != 3) {
-				alert("csv를 정확히 입력해주세요.");
+			if(CSV.value.length != 3) {
+				alert("CSV를 정확히 입력해주세요.");
 				return;
 			}
 		}
+		
 		document.getElementById('f').submit();
 	}
 
@@ -131,6 +138,10 @@
 <input type="hidden" name="paymentAmount" value="${resDTO.baseAmount }">
 <input type="hidden" name="hotelId" value="${resDTO.hotelId }">
 <input type="hidden" name="reservationStatus" value="${resDTO.reservationStatus }">
+
+<!-- 카드 정보 저장 -->
+<input type="hidden" id="cardNo" name="cardNo">
+<input type="hidden" id="validityYyMm" name="validityYyMm">
 
 <table class="payTable">
 	<tr><th>결제번호</th><td>${paymentNo }</td></tr>
@@ -164,7 +175,7 @@
 		<input type="text" name="cardNo4" id="cardNo4" value="${cardNo4 }"  class="input_cardNo"><br/>
 		유효기간 : <input type="text" name="validityMm" id="validityMm" value="${validityMm }" class="input_validity">/
 		<input type="text" name="validityYy" id="validityYy" value="${validityYy }" class="input_validity"><br/>
-		CSV : <input type="text" name="csv" id="csv" value="${csv }" class="input_csv"><br/>
+		CSV : <input type="text" name="CSV" id="CSV" value="${CSV }" class="input_csv"><br/>
 	</td></tr>
 	<tr><th>결제금액</th><td>${resDTO.baseAmount }원</td></tr>
 </table>

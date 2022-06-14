@@ -13,6 +13,8 @@ import org.springframework.stereotype.Service;
 import com.care.hotel.Reservation.DAO.AD_reservationDAO;
 import com.care.hotel.Reservation.DTO.reservationDTO;
 import com.care.hotel.common.PageService;
+import com.care.hotel.member.DAO.memberCardDAO;
+import com.care.hotel.member.DTO.memberCardDTO;
 import com.care.hotel.payment.DAO.paymentDAO;
 import com.care.hotel.payment.DTO.paymentDTO;
 import com.care.hotel.resourceDAO.IhotelDAO;
@@ -23,6 +25,7 @@ public class PaymentServiceImpl implements IPaymentService{
 	@Autowired paymentDAO paymentDAO;
 	@Autowired AD_reservationDAO resDAO;
 	@Autowired IhotelDAO hotelDAO;
+	@Autowired memberCardDAO cardDAO;
 	@Autowired HttpSession session;
 	
 	@Override
@@ -104,11 +107,29 @@ public class PaymentServiceImpl implements IPaymentService{
 
 	// 결제 테이블에 데이터 insert, 예약 상태 변경
 	@Override
-	public String insertPayment(paymentDTO paymentDTO, String reservationStatus) {
+	public String insertPayment(paymentDTO paymentDTO, String reservationStatus, memberCardDTO cardDTO) {
 		if(paymentDTO.getPaymentAmount() == null || paymentDTO.getPaymentAmount() == "") {
 			paymentDTO.setPaymentAmount("0");
 		}
 		reservationDTO resDTO = resDAO.reservationInfo(paymentDTO.getReservationNo());
+		memberCardDTO oldCardDTO = cardDAO.cardInfo(paymentDTO.getMemberId());
+		
+		// 카드 정보 자동저장
+		if(cardDTO != null) {
+			// 고객의 카드 정보가 db에 없을 경우
+			if(oldCardDTO == null) {
+				Integer cardId = cardDAO.getMaxCardId() + 1;
+				String strCardId = Integer.toString(cardId);
+				cardDTO.setCardId(strCardId);
+				cardDAO.cardInsert(cardDTO);
+				System.out.println("credit-card insert 완료 : " + cardDTO.getCardId());
+			} else {
+			// 고객의 카드 정보가 db에 있을 경우
+				cardDTO.setCardId(oldCardDTO.getCardId());
+				cardDAO.cardUpdate(cardDTO);
+				System.out.println("credit-card update 완료 : " + cardDTO.getCardId());
+			}
+		}
 		// 결제상태 -> 완료
 		paymentDTO.setPaymentStatus("0");
 		paymentDAO.insertPayment(paymentDTO);

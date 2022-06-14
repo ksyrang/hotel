@@ -1,5 +1,6 @@
 package com.care.hotel.payment.service;
 
+import com.care.hotel.member.DTO.memberCardDTO;
 import com.care.hotel.payment.DTO.paymentDTO;
 
 public interface IPaymentService {
@@ -10,6 +11,6 @@ public interface IPaymentService {
 	public String createPaymentNo();
 	// 결제일 생성
 	public String getPaymentDate();
-	// 결제 테이블에 데이터 insert, 예약 상태 변경
-	public String insertPayment(paymentDTO paymentDTO, String reservationStatus);
+	// 결제 테이블에 데이터 insert, 예약 상태 변경, 카드 정보 저장
+	public String insertPayment(paymentDTO paymentDTO, String reservationStatus, memberCardDTO cardDTO);
 }

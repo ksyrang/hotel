@@ -7,4 +7,21 @@
 	SELECT * FROM credit_card WHERE memberId=#{memberId}
 </select>
 
+<!-- cardInsert -->
+<insert id="cardInsert" parameterType="com.care.hotel.member.DTO.memberCardDTO">
+	INSERT INTO credit_card VALUES (#{cardId}, #{memberId}, #{cardCompany}, #{cardNo}, #{validityYyMm}, #{CSV})
+</insert>
+
+<!-- cardUpdate -->
+<update id="cardUpdate" parameterType="com.care.hotel.member.DTO.memberCardDTO">
+	UPDATE credit_card
+	SET cardCompany=#{cardCompany}, cardNo=#{cardNo}, validityYyMm=#{validityYyMm}, CSV=#{CSV}
+	WEHRE cardId=#{cardId}
+</update>
+
+<!-- getMaxCardId -->
+<select id="getMaxCardId" resultType="Integer">
+	SELECT max(cardId) FROM credit_card
+</select>
+
 </mapper>
