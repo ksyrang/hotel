@@ -10,78 +10,56 @@
 호텔별 예약 그래프 일, 월, 년 
 예약 대비 결제 비율?(막대? 선형? 파이?
  --> 
- 
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script>
-window.onload= send;
+window.onload= chartUpdate;
+const texttest = 'test';
+const monthlyTitle = 'Monthly salses chart';
 
-
-var req;
-function send(){//데이터 송신 메소드
+var jDatas;
+function chartUpdate(){//데이터 송신 메소드
 	//alert('onload start');	
-	
-	req = new XMLHttpRequest();
-	req.onreadystatechange = textChang;
-	req.open('post','chartUpdate');
-	req.send(null);
+	xhr = new XMLHttpRequest();
+	xhr.onreadystatechange = function(){
+		if(xhr.readyState == 4 && xhr.status == 200) {
+			jDatas = xhr.responseText;
+			//콜백함수이기 때문에 현재 위치 이외에 있으면 데이터의 회신을 기다리지 않고 동작하기때문에 null값이라고 표현한다.
+			google.charts.load('current', {'packages':['bar']}); //차트의 형상을 지정 하단 코드들도 맞춰서 수정해줘야함
+			google.charts.setOnLoadCallback(drawChart);
+		}
+	};
+	xhr.open('post','chartUpdates_S');
+	xhr.setRequestHeader('Content-Type','application/json; charset=utf-8');//보내고자 하는 데이터의 자료형을 알려주는것
+	var select = document.getElementById('chartSelect').value;
+	xhr.send(select);
 }
 
-const hotelsName =[]; 
+  function drawChart() {
+ 	 var data = new google.visualization.DataTable(jDatas);
 
-function textChang(){//데이터 수신 메소드
-	console.log('test');
-	if(req.readyState == 4 && req.status == 200) {
-		jDatas = JSON.parse(req.responseText);//json확장자의 파일에서 가져오 데이터 뭉치
-		console.log(jDatas);
-		for(i=0;i<jDatas.cd.length;i++){//jDatas.length = 대집합의 개수(1개), jDatas.cd.length = cd안에 있는 라인 수
-			hotelsName[i] = jDatas.cd[i].hotelName;
-		}
-	}
+    var options = {//차트의 특정 옵션 설정
+      chart: {
+        title: texttest,
+        //subtitle: 'Sales, Expenses, and Profit: 2014-2017',
+      }
+    };
 
-} 
- </script>
+    var chart = new google.charts.Bar(document.getElementById('columnchart_material'));//차트 생성 아이디에 해당하는 div에 생성 
 
- <center>
-<div class="admin_main">
-	<select name="searchTitle" class="searchTitle"  style="height: 25px;"><!-- onchange="send()" -->
+    chart.draw(data, google.charts.Bar.convertOptions(options));//차트의 옵션을 입력
+  }
+</script>
+    
+    
+<body>
+ <div class="admin_main">
+	<select name="chartSelect" id="chartSelect" onchange="chartUpdate()">
 		<option value="">전체</option>
-	<c:forEach var="List" items="${sessionScope.hotelList }">
-		<option value="${List.hotelId }">${List.hotelName }</option>
-	</c:forEach>
+		<option value="curMthSalses">현월 매출</option>
+		<option value="preMthSalses">전월 매출</option>
+		<option value="yearSalses">금년 매출</option>
 	</select>
-
-	<canvas id="myChart"></canvas>
-
-</div>
-</center>
-
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script>
-
-  const data = {//원하는 오브젝트를 넣어햐 할때
-    labels: hotelsName,
-    datasets: [{
-        label: 'My First dataset',
-        backgroundColor: 'rgb(255, 99, 132)',
-        borderColor: 'rgb(255, 99, 132)',
-        data: [0, 10, 5, 2, 20, 30, 45],
-      }]
-  };
-
-  const config = {
-    type: 'bar',//그래프의 형태를 결정 짓는 다
-    data: data,
-    options: {
-    	title :{
-    		display: true,
-  			text: 'test'
-    	}
-    }
-  };
-
-  const myChart = new Chart(
-    document.getElementById('myChart'),
-    config
-  );
-
-  
-  </script>
+   <div id="columnchart_material" style="width: 800px; height: 500px;"></div>
+ </div>
+</body>
