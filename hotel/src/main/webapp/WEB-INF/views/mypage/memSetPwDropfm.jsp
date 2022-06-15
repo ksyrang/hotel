@@ -30,22 +30,22 @@
 				<h2 class="tit">마이페이지</h2>
 				<ul class="menu">
 					<li class="m1 first">
-						<a href="/hotel/myPage"><span>예약 확인/취소</span></a>
+						<a href="/hotel/memListResvProc"><span>예약 확인/취소</span></a>
 					</li>
 					<li class="m2 last">
 						<a><span>내정보</span></a>
 						<ul class="sMenu">
 							<li class="s1 first">
-								<a href="/hotel/mypage/memSetPwCnfm"><span>프로필 수정</span></a>
+								<a href="/hotel/memSetPwCnfm"><span>프로필 수정</span></a>
 							</li>
 							<li class="s2">
-								<a href="/hotel/mypage/memSetPwMod"><span>비밀번호 변경</span></a>
+								<a href="/hotel/memSetPwMod"><span>비밀번호 변경</span></a>
 							</li>
 							<li class="s3">
-								<a href="/hotel/mypage/memListAsk"><span>문의 내역</span></a>
+								<a href="/hotel/memListAsk"><span>문의 내역</span></a>
 							</li>
 							<li class="s4 last">
-								<a href="/hotel/mypage/memSetPwDropfm?gubun=t"  class="on"><span>탈회요청</span></a>
+								<a href="/hotel/memSetPwDropfm?gubun=t"  class="on"><span>탈회요청</span></a>
 							</li>
 						</ul>
 					</li>
@@ -57,7 +57,7 @@
 <h3>
 	<font color="red" >${msg } </font>
 </h3>
-<form action="pwCnfmProc" method="post" id="f">
+<form action="pwCnfmProc" id="f">
 	<div class="ctnMypage ctnUserInfo1">
 		<div class="location">
 			<p class="list">
@@ -70,6 +70,7 @@
 		</div>
 		<div class="msgBox">회원정보를 안전하게 보호하기 위해 비밀번호를 다시 한번 확인합니다.</div>
 		<input type="hidden" id="gubun" name="gubun" value="t" autocomplete="off">
+		<input type="hidden" id="memberId" name="memberId" value="${userId}" autocomplete="off">
 		<table class="tableTypeA tableUserInfo1" summary="아이디,비밀번호로 구성된 테이블">
 			<caption>프로필 수정</caption>
 			<colgroup>
@@ -79,9 +80,7 @@
 			<tbody>
 				<tr class="first">
 					<th scope="row" class="first"><label for="memberId" class="id">아이디</label></th>
-					<td class="first">
-						<input type="text" class="login_input" id="memberId" name="memberId" placeholder="ID" maxlength="20">
-					</td>
+					<td>${userId}</td>
 				</tr>
 				<tr class="last">
 					<th scope="row" class="last"><label for="memberPw" class="pw">비밀번호</label></th>

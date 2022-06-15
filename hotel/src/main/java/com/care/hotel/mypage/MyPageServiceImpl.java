@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.care.hotel.Reservation.DAO.reservationDAO;
+import com.care.hotel.Reservation.DTO.reservationDTO;
 import com.care.hotel.Reservation.DTO.reservationHotelDTO;
 import com.care.hotel.common.PageService;
 import com.care.hotel.member.DAO.memberDAO;
@@ -28,11 +29,26 @@ public class MyPageServiceImpl implements IMyPageService{
 		int begin = end+1 - pageBlock; // 데이터의 시작 번호
 		
 		ArrayList<reservationHotelDTO> list = reservationDAO.reservationList(begin, end, select, startDt, endDt, memberId);
+		// reservationDate, checkinDate 포맷 변경
+		for(int i = 0; i < list.size(); i++) {
+			reservationHotelDTO resDto = list.get(i);
+			String reservationDate = list.get(i).getReservationDate().substring(0, 10);
+			String checkinDate = list.get(i).getCheckinDate().substring(0, 10);
+			String checkoutDate = list.get(i).getCheckoutDate().substring(0, 10);
+			String cancelDate = null;
+			if(list.get(i).getCancelDate() != null)
+				cancelDate = list.get(i).getCancelDate().substring(0, 10);
+			resDto.setReservationDate(reservationDate);
+			resDto.setCheckinDate(checkinDate);
+			resDto.setCheckoutDate(checkoutDate);
+			resDto.setCancelDate(cancelDate);
+			list.set(i, resDto);
+		}
 		session.setAttribute("reservationList", list);
 		session.setAttribute("select", select);
 		session.setAttribute("startDt", startDt);
 		session.setAttribute("endDt", endDt);
-		String url = "mypage_index?formpath=memListResvProc&currentPage=";
+		String url = "mypage_index?formpath=memListResv&currentPage=";
 		session.setAttribute("page", PageService.getNavi(currentPage, pageBlock, totalCount, url));
 		session.setAttribute("reservationCount", totalCount);
 	}
@@ -60,12 +76,15 @@ public class MyPageServiceImpl implements IMyPageService{
 			return 0; // 아이디 혹은 비밀번호를 확인해주세요
 		} 
 		memberDTO memberDto = memberDAO.memberInfo(memberId);
-		session.setAttribute("member", memberDto);
-		if(memberDto.getMemberId().equals(memberId) && memberDto.getMemberPw().equals(memberPw)) {
-			return 2; // "[" + reservationNo + "] 예약을 취소 했습니다.";
-			
-		} else {
-			return 1; // "아이디 혹은 비밀번호를 확인해주세요.";
+		if(memberDto == null) {
+			return 3; // DB에 존재하지 않음;
+		}else {
+			if(memberDto.getMemberId().equals(memberId) && memberDto.getMemberPw().equals(memberPw)) {
+				session.setAttribute("member", memberDto);
+				return 2; // "[" + reservationNo + "] 예약을 취소 했습니다.";
+			}else {
+				return 1; // 비밀번호가 맞지 않음
+			}
 		}
 	}
 	
@@ -75,6 +94,7 @@ public class MyPageServiceImpl implements IMyPageService{
 		if(memberDto.getMemberPw() == null || memberDto.getMemberPw()  == "") { 
 			return 0;
 		} 
+		session.setAttribute("member", memberDto);
 		memberDTO check = memberDAO.memberInfo(memberDto.getMemberId());
 		if(check != null) {
 			memberDAO.memberUpdate(memberDto);

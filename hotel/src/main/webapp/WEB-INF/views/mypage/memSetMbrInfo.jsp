@@ -34,22 +34,22 @@
 				<h2 class="tit">마이페이지</h2>
 				<ul class="menu">
 					<li class="m1 first">
-						<a href="/hotel/myPage"><span>예약 확인/취소</span>	</a>
+						<a href="/hotel/memListResvProc"><span>예약 확인/취소</span>	</a>
 					</li>
 					<li class="m2 last">
 						<a><span>내정보</span></a>
 						<ul class="sMenu">
 							<li class="s1 first">
-							<a href="/hotel/mypage/memSetPwCnfm" class="on"><span>프로필 수정</span></a>
+							<a href="/hotel/memSetPwCnfm" class="on"><span>프로필 수정</span></a>
 							</li>
 							<li class="s2">
-								<a href="/hotel/mypage/memSetPwMod"><span>비밀번호 변경</span></a>
+								<a href="/hotel/memSetPwMod"><span>비밀번호 변경</span></a>
 							</li>
 							<li class="s3">
-								<a href="/hotel/mypage/memListAsk"><span>문의 내역</span></a>
+								<a href="/hotel/memListAsk"><span>문의 내역</span></a>
 							</li>
 							<li class="s4 last">
-								<a href="/hotel/mypage/memSetPwDropfm?gubun=t"><span>탈회요청</span></a>
+								<a href="/hotel/memSetPwDropfm?gubun=t"><span>탈회요청</span></a>
 							</li>
 						</ul>
 					</li>
@@ -60,7 +60,7 @@
 <h3>
 	<font color="red" >${msg } </font>
 </h3>
-<form action="memSetUpdtProc" method="post">
+<form action="memSetUpdtProc" id="f">
 	<div class="ctnMypage ctnUserInfo2">
 		<div class="location">
 			<p class="list"><span class="crPosit">현재 페이지 위치 : </span> &gt; 마이페이지 &gt; 내정보 &gt; <strong>프로필 수정</strong></p>
@@ -83,9 +83,9 @@
 				
 		<!-- <c:set var="member" value="${sessionScope.member}"/> -->
 		<input type="hidden" id="memberId" name="memberId" value="${member.memberId}" autocomplete="off">
-		<input type="hidden" id="memberNameKR" name="memberNameKR" value="${member.memberNameKR}" autocomplete="off">
-		<input type="hidden" id="memberNameENG" name="memberNameENG" value="${member.memberNameENG}" autocomplete="off">
 		<input type="hidden" id="memberGender" name="memberGender" value="${member.memberGender}" autocomplete="off"> 
+		<input type="hidden" id="memberPw" name="memberPw" value="${member.memberPw}" autocomplete="off"> 
+		<input type="hidden" id="memberEmail" name="memberEmail" value="${member.memberEmail}" autocomplete="off"> 
 		<table class="tableTypeA tableJoinForm tableUserInfo2" summary="회원" border="1">
 			<caption>프로필 수정</caption>
 			<colgroup>
@@ -96,7 +96,12 @@
 			<tbody>
 				<tr class="first">
 					<th scope="row">성명(국문)</th>
+					<td>
+						<input type="text" style="width: 120px;" id="memberNameKR" name="memberNameKR" value="${member.memberNameKR}" maxlength="15">
+				<!-- 
+				 	</td>
 					<td class="name">${member.memberNameKR} /
+				 -->	
 						<c:choose>
 							<c:when test="${member.memberGender eq 'm'}">
 								<strong style="color: blue"> Mr.</strong>
@@ -113,7 +118,9 @@
 		
 				<tr>
 					<th scope="row">성명(영문)</th>
-					<td>${member.memberNameENG}</td>
+					<td>
+						<input type="text" style="width: 140px;" id="memberNameENG" name="memberNameENG" value="${member.memberNameENG}" maxlength="30">
+				 	</td>
 				</tr>
 		
 				<tr>
@@ -122,9 +129,7 @@
 				</tr>
 				<tr>
 					<th scope="row">비밀번호</th>
-					<td>
-						<input type="text" style="width: 100px;" id="memberPw" name="memberPw" maxlength="8" value="${member.memberPw}" onkeyup="this.value=this.value.replace(/[^\d\ ]/g, '')" autocomplete="off">
-					</td>
+					<td>${member.memberPw}</td>
 				</tr>
 				<tr>
 					<th scope="row">생년월일</th>
@@ -134,13 +139,7 @@
 				</tr>
 				<tr>
 					<th scope="row">이메일 </th>
-					<td>
-						<input id="email" name="email" class="emailId uiform text" type="text" value="${member.memberEmail}" onkeyup="this.value=this.value.replace(/[^a-z0-9_-.]/gi,'');" maxlength="40" autocomplete="off">
-						<!-- 
-						<span class="emailConfirm" style="margin-left: 10px;">
-						<a href="#none" onclick="checkDuplicateEmail();">이메일 중복확인</a></span>
-						 -->
-					</td>
+					<td>${member.memberEmail}</td>
 				</tr>
 				<tr>
 					<th scope="row" class="last">휴대전화 </th>
@@ -157,7 +156,7 @@
 			<input type="button" class="btnCancel" onclick="location.herf='mypage/memSetPwCnfm'" />
 	 -->
 			<input type="submit" class="btnChange" />
-			<a href="/hotel/mypage/memSetPwCnfm" class="btnCancel"><span>취소</span></a>
+			<a href="/hotel/memSetPwCnfm" class="btnCancel"><span>취소</span></a>
 		</div>
 	</div> <!-- ctnMypage ctnUserInfo2 -->
 </form>

@@ -7,10 +7,10 @@
 		SELECT count(*) FROM reservation 
 		<choose>
 			<when test="select == '예약일'">
-				WHERE (reservationDate BETWEEN #{startDt} AND #{endDt}) AND memberId = #{memberId}
+				WHERE (reservationDate BETWEEN to_date(#{startDt},'YYYY-MM-DD') AND to_date(#{endDt},'YYYY-MM-DD')) AND memberId = #{memberId}
 			</when>
 			<when test="select == '투숙일'">
-				WHERE (checkinDate BETWEEN #{startDt} AND #{endDt}) AND memberId = #{memberId}
+				WHERE (checkinDate BETWEEN to_date(#{startDt},'YYYY-MM-DD') AND to_date(#{endDt},'YYYY-MM-DD')) AND memberId = #{memberId}
 			</when>
 			<otherwise>
 				WHERE memberId = '####'
@@ -26,10 +26,10 @@
 				FROM reservation B
 				<choose>
 					<when test="select == '예약일'">
-						WHERE (reservationDate BETWEEN #{startDt} AND #{endDt}) AND memberId = #{memberId}
+						WHERE (reservationDate BETWEEN to_date(#{startDt},'YYYY-MM-DD') AND to_date(#{endDt},'YYYY-MM-DD')) AND memberId = #{memberId}
 					</when>
 					<when test="select == '투숙일'">
-						WHERE (checkinDate BETWEEN #{startDt} AND #{endDt}) AND memberId = #{memberId}
+						WHERE (checkinDate BETWEEN  to_date(#{startDt},'YYYY-MM-DD') AND to_date(#{endDt},'YYYY-MM-DD')) AND memberId = #{memberId}
 					</when>
 				</choose>
 			)C
@@ -37,6 +37,8 @@
 	</select>
 	
 	<update id="reservationCancel" parameterType="String">
-		UPDATE reservation SET reservationStatus='9', cancelDate=#{cancelDt} WHERE reservationNo=#{resvNo}
+		UPDATE reservation 
+		SET reservationStatus='9', cancelDate = to_date(#{cancelDate},'YYYY-MM-DD')
+		WHERE reservationNo=#{resvNo}
 	</update>
 </mapper>

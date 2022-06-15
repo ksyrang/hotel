@@ -33,22 +33,22 @@
 				<h2 class="tit">마이페이지</h2>
 				<ul class="menu">
 					<li class="m1 first">
-						<a href="/hotel/myPage"><span>예약 확인/취소</span>	</a>
+						<a href="/hotel/memListResvProc"><span>예약 확인/취소</span>	</a>
 					</li>
 					<li class="m2 last">
 						<a><span>내정보</span></a>
 						<ul class="sMenu">
 							<li class="s1 first">
-								<a href="/hotel/mypage/memSetPwCnfm"><span>프로필 수정</span></a>
+								<a href="/hotel/memSetPwCnfm"><span>프로필 수정</span></a>
 							</li>
 							<li class="s2">
-								<a href="/hotel/mypage/memSetPwMod"><span>비밀번호 변경</span></a>
+								<a href="/hotel/memSetPwMod"><span>비밀번호 변경</span></a>
 							</li>
 							<li class="s3">
-								<a href="/hotel/mypage/memListAsk"><span>문의 내역</span></a>
+								<a href="/hotel/memListAsk"><span>문의 내역</span></a>
 							</li>
 							<li class="s4 last">
-								<a href="/hotel/mypage/memSetPwDropfm?gubun=t"><span>탈회요청</span></a>
+								<a href="/hotel/memSetPwDropfm?gubun=t"><span>탈회요청</span></a>
 							</li>
 						</ul>
 					</li>
@@ -56,7 +56,10 @@
 			</div> <!-- lnbMenu -->
 		</div> <!-- lnbArea lnbAreaMypage -->
 <div class="contents" id="contents">
- <form id="f">
+<h3>
+	<font color="red" >${msg } </font>
+</h3>
+<form action="memListResvProc" id="f">
 	<div class="ctnMypage ctnMypageRsv ctnMypageRsvRmPack rewards_N">
 		<div class="location">
 			<p class="list">
@@ -86,7 +89,7 @@
 							<input type="date" name="startDt" id="startDt" />
 							~
 							<input type="date" name="endDt" id="endDt" />
-							<input type="button" value="조회" onclick="check();" class="searchBtn">
+							<input type="button" value="조회" onclick="check();" class="btnSch">
 			            </div>
 				<!-- 		
 							<input type="submit" name="searchBtn" value="조회" class="searchBtn">
@@ -153,12 +156,12 @@
 												<c:when test="${resvList.reservationStatus eq '0'}">
 													<td scope="col" style="color: blue">RESERVATION</td>
 													<td scope="col"><input type="button" value="취소" class="btnCancel1" 
-														onclick="location.href='${mypage}memCnclResvProc?memberId=${resvList.memberId}&reservationNo=${resvList.reservationNo}'"></td>
+														onclick="location.href='memCnclResvProc?memberId=${resvList.memberId}&reservationNo=${resvList.reservationNo}'"></td>
 												</c:when>
 												<c:when test="${resvList.reservationStatus eq '1'}">
 													<td scope="col">CHECK_IN</td>
 													<td scope="col"><input type="button" value="취소" class="btnCancel1" 
-														onclick="location.href='${mypage}memCnclResvProc?memberId=${resvList.memberId}&reservationNo=${resvList.reservationNo}'"></td>
+														onclick="location.href='memCnclResvProc?memberId=${resvList.memberId}&reservationNo=${resvList.reservationNo}'"></td>
 												</c:when>
 												<c:when test="${resvList.reservationStatus eq '2'}">
 													<td scope="col">CHECK_OUT</td>
@@ -197,3 +200,4 @@
 		</div> <!-- contents -->
 	</div> <!-- container -->
 </div> <!-- contain -->
+

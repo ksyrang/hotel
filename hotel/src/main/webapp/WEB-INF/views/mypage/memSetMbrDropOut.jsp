@@ -16,22 +16,22 @@
 				<h2 class="tit">마이페이지</h2>
 				<ul class="menu">
 					<li class="m1 first">
-						<a href="/hotel/myPage"><span>예약 확인/취소</span>	</a>
+						<a href="/hotel/memListResvProc"><span>예약 확인/취소</span>	</a>
 					</li>
 					<li class="m2 last">
 						<a><span>내정보</span></a>
 						<ul class="sMenu">
 							<li class="s1 first">
-							<a href="/hotel/mypage/memSetPwCnfm" ><span>프로필 수정</span></a>
+							<a href="/hotel/memSetPwCnfm" ><span>프로필 수정</span></a>
 							</li>
 							<li class="s2">
-								<a href="/hotel/mypage/memSetPwMod"><span>비밀번호 변경</span></a>
+								<a href="/hotel/memSetPwMod"><span>비밀번호 변경</span></a>
 							</li>
 							<li class="s3">
-								<a href="/hotel/mypage/memListAsk"><span>문의 내역</span></a>
+								<a href="/hotel/memListAsk"><span>문의 내역</span></a>
 							</li>
 							<li class="s4 last">
-								<a href="/hotel/mypage/memSetPwDropfm?gubun=t"  class="on"><span>탈회요청</span></a>
+								<a href="/hotel/memSetPwDropfm?gubun=t"  class="on"><span>탈회요청</span></a>
 							</li>
 						</ul>
 					</li>
@@ -40,7 +40,7 @@
 		</div> <!-- lnbArea lnbAreaMypage -->
 <div class="contents" id="contents">
 <h3>
-	<font color="red" >${memberId } </font>
+	<font color="red" >${msg} (${dropCheck}/${memberId }) </font>
 </h3>
 <form action="memSetDropProc" method="post">
 	<div class="ctnMypage ctnMemDis">
@@ -56,29 +56,31 @@
 		<div class="memoText">
 			<p>탈회를 신청하시기 전에 아래의 유의사항을 한 번 더 확인해 주시기 바랍니다.</p>
 			<ul>
-				<li class="first">- 탈회를 신청하시면 번복이 불가능하며 보유하신 모든 포인트는 소멸됩니다.</li>
-				<li>- 개인정보보호법에 따라 고객님의 호텔 이용기록, 개인정보 및 문의내역 기록도 모두 삭제됩니다</li>
+				<li class="first">- 탈회를 신청하시면 번복이 불가능합니다.</li>
+				<li>- 개인정보보호법에 따라 고객님의 호텔 이용기록, 개인정보 기록도 모두 삭제됩니다</li>
 				<li class="last">- 탈회 신청이 완료되면 즉시 홈페이지 로그인이 제한됩니다.</li>
 			</ul>
 		</div>
 		<br>
-		
+		<c:if test="${dropCheck == '성공'}">
+			<div class="breakBox" id="success">
+					<strong>${memberId}</strong> 님의 탈회 신청이 완료되었습니다.
+			</div>
+		</c:if>
+		<!-- 
 		<c:choose>
-			<c:when test="${memberId eq '' || memberId eq null}">
+			<c:when test="${dropCheck == '성공'}">
 				<div class="breakBox" id="success" style="display: none;">
-					<strong style="color: red">${memberId}</strong> 님의 탈회 신청이 완료되었습니다.
-				</div>
-			</c:when>
-			<c:otherwise>
-				<div class="breakBox" id="success">
 					<strong>${memberId}</strong> 님의 탈회 신청이 완료되었습니다.
 				</div>
-			</c:otherwise>
+			</c:when>
 		</c:choose>
-				
-		<div class="btnList">
-			<input type="submit" class="btn_application" style="position: absolute; left:45%;"/>
-		</div>
+		 -->
+		<c:if test="${dropCheck != '성공'}">
+			<div class="btnList">
+				<input type="submit" class="btn_application" style="position: absolute; left:45%;"/>
+			</div>
+		</c:if>
 				
 	</div> <!-- ctnMypage -->
 </form>
