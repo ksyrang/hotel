@@ -45,14 +45,22 @@ function isExistId(){
 		return;
 	}
 	req = new XMLHttpRequest();
-	req.onreadystatechange = printMsg;
+	req.onreadystatechange = printMsg1;
 	req.open('post', 'isExistId');
 	req.send(document.getElementById('memberId').value);
 }
 	 
-function printMsg(){
-	var msg = document.getElementById('msg');
-	msg.innerHTML = req.responseText;
+function printMsg1(){
+	var msg1 = document.getElementById('msg1');
+	msg1.innerHTML = req.responseText;
+}
+function printMsg2(){
+	var msg2 = document.getElementById('msg2');
+	msg2.innerHTML = req.responseText;
+}
+function printMsg3(){
+	var msg3 = document.getElementById('msg3');
+	msg3.innerHTML = req.responseText;
 }
 function pwCheck() {
 	var memberPw = document.getElementById('memberPw').value;
@@ -68,14 +76,14 @@ function pwCheck() {
 function sendAuth(){
 	var req;
 	req = new XMLHttpRequest();
-	req.onreadystatechange = printMsg;
+	req.onreadystatechange = printMsg2;
 	req.open('post', 'sendAuth');
 	req.send(document.getElementById('memberEmail').value);
 }
 function checkAuth(){
 	var req;
 	req = new XMLHttpRequest();
-	req.onreadystatechange = printMsg;
+	req.onreadystatechange = printMsg3;
 	req.open('post', 'checkAuth');
 	req.setRequestHeader("Content-Type", "application/json; charset=UTF-8");
 	var number = document.getElementById('authNumber').value;
@@ -216,13 +224,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 						<td>
 							<input id="memberEmail" name="memberEmail"  type="text" size="20" value="" onkeyup="this.value=this.value.replace(/[^a-z0-9_.@-]/gi,'');" maxlength="40" title="이메일주소 입력" autocomplete="off"> 
 							<input type="button" value="인증번호 전송" onclick="sendAuth()">
+							<h4><font color="red" id="msg2" >${msg2 } </font></h4>
 						</td>
 					</tr>
 					<tr>
 						<th scope="row"><em class="ast">*</em> 이메일 인증번호 </th>
 						<td>
-							<input type="text" class="uiform mailNumb text" id="mailNumb" name="mailNumb" value="" maxlength="4" onkeyup="this.value=this.value.replace(/[^\d\ ]/g, '')" autocomplete="off">
+							<input type="text" class="uiform mailNumb text" id="authNumber" name="authNumber" value="" maxlength="6" onkeyup="this.value=this.value.replace(/[^\d\ ]/g, '')" autocomplete="off">
 							<input type="button" value="인증번호 확인" onclick="checkAuth()">
+							<h4><font color="red" id="msg3" >${msg3 } </font></h4>
 						</td>
 					</tr>
 					<!-- 휴대전화 -->
@@ -285,7 +295,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 								<label for="memberId" class="idForm">아이디</label>
 								<input type="text" id="memberId" name="memberId" placeholder="8자 이내 영문 또는 영문/숫자 조합" class="uiform text" maxlength="8" autocomplete="off" style="width:200px">
 								<input type="button" value="중복 확인" onclick="isExistId()">
-								<h4><font color="red" id="msg" >${msg } </font></h4>
+								<h4><font color="red" id="msg1" >${msg } </font></h4>
 								</td>
 							</tr>
 					<tr>

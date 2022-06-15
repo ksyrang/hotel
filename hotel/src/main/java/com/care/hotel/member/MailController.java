@@ -20,12 +20,12 @@ public class MailController {
 	
 	@ResponseBody
 	@PostMapping(value="sendAuth", produces = "application/json; charset=UTF-8")
-	public String sendAuth(@RequestBody(required = false) String email) {
-		if(email != null) {
+	public String sendAuth(@RequestBody(required = false) String memberEmail) {
+		if(memberEmail != null) {
 			Random r = new Random();
 			String number = String.format("%06d", r.nextInt(1000000)); 
 			System.out.println("인증 번호 : " + number);
-			mailService.sendMail(email, "[인증번호]", number);
+			mailService.sendMail(memberEmail, "[인증번호]", number);
 			session.setAttribute("authNumber", number);
 			return "인증 번호 전송";
 		}else {
