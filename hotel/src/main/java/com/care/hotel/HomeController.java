@@ -264,7 +264,33 @@ public class HomeController {
 	public String admin_statisticsMain() {
 		return "admin/statistics/statisticsMainForm";
 	}
-
+	
+	
+	
+	/* 카카오페이 페이지 */
+	@RequestMapping("kakaoPay")
+	public String kakaoPay() {
+		return "admin/kakaopay/kakaoPay";
+	}
+	
+	/* 카카오페이 성공 페이지 */
+	@RequestMapping("kakaoApproval")
+	public String kakaoApproval() {
+		return "admin/kakaopay/kakaoApproval";
+	}
+	
+	/* 카카오페이 취소 페이지 */
+	@RequestMapping("kakaoCancel")
+	public String kakaoCancel() {
+		return "admin/kakaopay/kakaoCancel";
+	}
+	
+	/* 카카오페이 실패 페이지 */
+	@RequestMapping("kakaoFail")
+	public String kakaoFail() {
+		return "admin/kakaopay/kakaoFail";
+	}
+	
 	/*admin end*/
 
 //	@RequestMapping("reservationMain")

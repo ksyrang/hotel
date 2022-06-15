@@ -112,12 +112,18 @@ public class AdminPaymentController {
 	 
 	// 결제 버튼을 눌렀을 때
 	@RequestMapping(value="PaymentProc", method=RequestMethod.POST)
-	public String PaymentProc(paymentDTO paymentDTO, String reservationStatus, memberCardDTO cardDTO, RedirectAttributes ra) {
-		String result = "";
-		result = paymentSvc.insertPayment(paymentDTO, reservationStatus, cardDTO);
-		ra.addFlashAttribute("msg", result);
-		return "redirect:admin_reservationListProc";
-		
+	public String PaymentProc(paymentDTO paymentDTO, String reservationStatus, memberCardDTO cardDTO, RedirectAttributes ra, Model model) {
+		// 결제 수단 - 카카오 페이 일 때
+		if(paymentDTO.getPaymentType().equals("4")) {
+			model.addAttribute("paymentDTO", paymentDTO);
+			model.addAttribute("reservationStatus", reservationStatus);
+			return "forward:/admin_index?formpath=kakaoPay";
+		}else {
+			String result = "";
+			result = paymentSvc.insertPayment(paymentDTO, reservationStatus, cardDTO);
+			ra.addFlashAttribute("msg", result);
+			return "redirect:admin_reservationListProc";
+		}
 	}
 	
 	// 결제 취소 페이지

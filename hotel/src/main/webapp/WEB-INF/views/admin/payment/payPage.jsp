@@ -87,11 +87,14 @@
 		var validityMm = document.getElementById('validityMm');
 		var validityYy = document.getElementById('validityYy');
 		var CSV = document.getElementById('CSV');
-		
+		// 카드 정보 저장
 		var cardNo = document.getElementById('cardNo');
 		var validityYyMm = document.getElementById('validityYyMm');
 		cardNo.value = cardNo1.value + cardNo2.value + cardNo3.value + cardNo4.value;
 		validityYyMm.value = validityYy.value + validityMm.value;
+		// 결제수단 체크
+		var paymentType = document.getElementById('paymentType');
+		var form = document.getElementById('f')
 		
 		if(paymentType.value == '1'){
 			if(cardCompany.value == "" || cardNo1.value == "" || cardNo2.value == "" || cardNo3.value == ""
@@ -118,8 +121,15 @@
 				return;
 			}
 		}
-		
-		document.getElementById('f').submit();
+		// 결제 수단에 따라 form action 바꾸기
+		if(paymentType.value == '4') {
+			form.method = "gets";
+			form.action = "kakaoPayProc";
+		}else {
+			form.method = "post";
+			form.action = "PaymentProc";
+		}
+		form.submit();
 	}
 
 </script>
@@ -131,7 +141,7 @@
 </c:if>
 <div class="admin_mainDiv">
 
-<form action="PaymentProc" method="post" id='f'>
+<form id='f'>
 
 <input type="hidden" name="paymentNo" value="${paymentNo }">
 <input type="hidden" name="reservationNo" value="${resDTO.reservationNo }">
