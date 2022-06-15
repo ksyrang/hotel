@@ -86,9 +86,9 @@
 					            <option value="예약일">예약일 기준</option>
 					            <option value="투숙일">투숙일 기준</option>
 			            	</select>
-							<input type="date" name="startDt" id="startDt" />
+							<input type="date" name="startDt" id="startDt" value="${startDt }" />
 							~
-							<input type="date" name="endDt" id="endDt" />
+							<input type="date" name="endDt" id="endDt" value="${endDt }" />
 							<input type="button" value="조회" onclick="check();" class="btnSch">
 			            </div>
 				<!-- 		
@@ -96,6 +96,9 @@
 				 -->
 				
 			</div> <!-- schBox -->
+			<div>
+			선택기준 : ${select } 시작날짜 : ${startDt } 종료날짜 : ${endDt }
+			</div>
 			<div class="box boxRoomPack">
 				<div class="hTit">
 					<h5 class="tit">Room/Package(객실/패키지)</h5>

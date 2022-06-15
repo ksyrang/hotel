@@ -38,7 +38,7 @@
 	
 	<update id="reservationCancel" parameterType="String">
 		UPDATE reservation 
-		SET reservationStatus='9', cancelDate = to_date(#{cancelDate},'YYYY-MM-DD')
+		SET reservationStatus='9', cancelDate = to_date(#{cancelDt},'YYYY-MM-DD')
 		WHERE reservationNo=#{resvNo}
 	</update>
 </mapper>

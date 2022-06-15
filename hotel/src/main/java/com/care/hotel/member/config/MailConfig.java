@@ -15,8 +15,8 @@ public class MailConfig {
 		JavaMailSenderImpl jms = new JavaMailSenderImpl();
 		jms.setHost("smtp.gmail.com");
 		jms.setPort(587);
-		jms.setUsername(""); // 인증번호를 클라이언트에게 보낼 이메일 주소.
-		jms.setPassword(""); // 이메일 비밀번호
+		jms.setUsername("leeyoonghee0@gmail.com"); // 인증번호를 클라이언트에게 보낼 이메일 주소.
+		jms.setPassword("iaapmfpjurufubbp"); // 이메일 비밀번호
 		
 		Properties pro = new Properties();
 		pro.setProperty("mail.transport.protocol", "smtp");

@@ -20,9 +20,11 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.care.hotel.member.DTO.memberDTO;
 import com.care.hotel.member.DTO.memberPwChngDTO;
+import com.care.hotel.member.service.MailService;
 
 @Controller
 public class MyPageController {
+	@Autowired private MailService mailService;
 	@Autowired IMyPageService myPageService;
 	@Autowired HttpSession session;
 	
@@ -46,6 +48,9 @@ public class MyPageController {
 			@RequestParam(value = "currentPage", required = false, defaultValue = "1") int currentPage,
 			String select, String startDt, String endDt) {
 		logger.info("memListResvProc");
+		model.addAttribute("select",select);
+		model.addAttribute("startDt",startDt);
+		model.addAttribute("endDt",endDt);
 		String memberId = (String)session.getAttribute("userId");
 		
 		String result;
@@ -57,7 +62,7 @@ public class MyPageController {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 		Calendar calendar = Calendar.getInstance();
 		Date dateObj = calendar.getTime();
-		if(startDt == "" || startDt == null) startDt = "2000-01-01";
+		if(startDt == "" || startDt == null) startDt = "2022-01-01";
 		if(endDt == "" || endDt == null) endDt = sdf.format(dateObj);
 		if(select == "" || select == null) select = "예약일";
 //		startDt = startDt.replaceAll("[^0-9]", "");
@@ -105,12 +110,15 @@ public class MyPageController {
 		String cancelDate = sdf.format(dateObj);
 		
 		String result = "";
+		String email = "";
 		
 		int check = myPageService.memResvCncl(memberId, memberPw, reservationNo, cancelDate);
-		System.out.println("memCnclCheckProc check : " + check + " cancelDate : " + cancelDate);
+		email = (String)session.getAttribute("email");
+		System.out.println("memCnclCheckProc check : " + check + " cancelDate : " + cancelDate + " email : " + email);
 		
 		if(check == 2) {
-			result = "[" + reservationNo + "] 예약을 취소했습니다.";
+			result = "[" + reservationNo + "] 예약 취소 메일을 송부하였습니다.";
+			mailService.sendMail(email, "[신난다호텔 예약 취소]", result);
 			model.addAttribute("msg", result);
 			return "forward:/memListResvProc";
 		}else {
@@ -215,13 +223,16 @@ public class MyPageController {
 		System.out.println("Id : "+memberId);
 		
 		String result = "";
+		String email = "";
 		String dropCheck = "실패";
 		
 		int check = myPageService.memSetDropOut(memberId);
-		System.out.println("memSetDropProc check 2 성공 : " + check);
+		email = (String)session.getAttribute("email");
+		System.out.println("memSetDropProc check 2 성공 : " + check + " email : " + email);
 		
 		if(check == 2) {
 			result = "[" + memberId + "]님 회원탈회 신청이 완료되었습니다.";
+			mailService.sendMail(email, "[신난다호텔 회원 탈회]", result);
 			dropCheck = "성공";
 		}else {
 			result = "[" + memberId + "]님 회원탈회 신청이 실패했습니다.";

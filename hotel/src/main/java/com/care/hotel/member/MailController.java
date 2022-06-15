@@ -56,4 +56,17 @@ public class MailController {
 		
 		return "인증 실패";
 	}
+	
+	@ResponseBody
+	@PostMapping(value="sendResvCnclMail", produces = "application/json; charset=UTF-8")
+	public String sendResvCnclMail(@RequestBody(required = false) String email, String reservationNo) {
+		if(email != null) {
+			String cnclMsg = "예약번호 ( "+reservationNo+" ) 가 취소 되었습니다.";
+			mailService.sendMail(email, "[예약 취소]", cnclMsg);
+			return "예약 취소 메일 전송";
+		}else {
+			return "이메일을 입력하세요.";
+		}
+	}
+	
 }

@@ -8,15 +8,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.care.hotel.Reservation.DAO.reservationDAO;
-import com.care.hotel.Reservation.DTO.reservationDTO;
 import com.care.hotel.Reservation.DTO.reservationHotelDTO;
 import com.care.hotel.common.PageService;
 import com.care.hotel.member.DAO.memberDAO;
 import com.care.hotel.member.DTO.memberDTO;
 import com.care.hotel.member.DTO.memberPwChngDTO;
+import com.care.hotel.member.service.MailService;
 
 @Service
 public class MyPageServiceImpl implements IMyPageService{
+	@Autowired private MailService mailService;
 	@Autowired reservationDAO reservationDAO;
 	@Autowired memberDAO memberDAO;
 	@Autowired HttpSession session;
@@ -62,6 +63,7 @@ public class MyPageServiceImpl implements IMyPageService{
 		memberDTO memberDto = memberDAO.memberInfo(memberId);
 		if(memberDto.getMemberId().equals(memberId) && memberDto.getMemberPw().equals(memberPw)) {
 			reservationDAO.reservationCancel(reservationNo, cancelDate);
+			session.setAttribute("email", memberDto.getMemberEmail());
 			return 2; // "[" + reservationNo + "] 예약을 취소 했습니다.";
 			
 		} else {
@@ -134,6 +136,7 @@ public class MyPageServiceImpl implements IMyPageService{
 		} 
 		memberDTO memberDto = memberDAO.memberInfo(memberId);
 		if(memberDto != null) {
+			session.setAttribute("email", memberDto.getMemberEmail());
 			memberDAO.memberDelete(memberId);
 			return 2;
 		}else {
