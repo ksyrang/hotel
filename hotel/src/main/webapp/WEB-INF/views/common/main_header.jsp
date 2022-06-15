@@ -131,7 +131,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- 로그인 -->
   <span class="loginArea">
 	<a href="${root }index?formpath=login">로그인</a>
-    <a href="/mem/mbr/join/memViewBrowsewrap.do">신난다리워즈 가입</a>
+    <a href="${root }index?formpath=memJoinAgreeForm">신난다리워즈 가입</a>
     </span>
   <!-- 예약확인 추가 -->
    <div class="resvConfirm">
