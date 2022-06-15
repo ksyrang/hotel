@@ -33,85 +33,59 @@
   crossorigin="anonymous"></script>
 </head>
 <script type=text/javascript>
-/* function isExistId(){
-    var id = $('#memberId').val(); //id값이 "id"인 입력란의 값을 저장
-    $.ajax({
-        url:'${root}index?formpath=isExistId', //Controller에서 인식할 주소
-        type:'post', //POST 방식으로 전달
-        data:{id:id},
-        success:function(msg){
-        	if(msg != 1){ //cnt가 1이 아니면(=0일 경우) -> 사용 가능한 아이디 
-        		  alert("사용 가능합니다.")
-            } else { // cnt가 1일 경우 -> 이미 존재하는 아이디
-            	 alert("이미 존재하는 아이디입니다.")
-            }
-        },
-        error:function(){
-            alert("에러입니다");
-        }
-    });
-}; */
+
+</script>
+<body class="subBody joinBody"><div id="popCalendarDiv" class="popCalendar" style="display:none"></div>
+
+<script>
 var req;
- function isExistId(){
-	 var msg = document.getElementById('msg');
+function isExistId(){
+	if(document.getElementById('memberId').value == ""){
+		alert("필수 정보 입니다.");
+		return;
+	}
 	req = new XMLHttpRequest();
 	req.onreadystatechange = printMsg;
 	req.open('post', 'isExistId');
 	req.send(document.getElementById('memberId').value);
-} 
+}
+	 
 function printMsg(){
 	var msg = document.getElementById('msg');
 	msg.innerHTML = req.responseText;
 }
+function pwCheck() {
+	var memberPw = document.getElementById('memberPw').value;
+	var memberPwCheck = document.getElementById('memberPwCheck').value;
+	if(memberPw == memberPwCheck){
+		 document.getElementById('label2').innerHTML = "일치";
+	}else{
+		 document.getElementById('label2').innerHTML = "불일치";
+		 document.getElementById('memberPw').value = "";
+		 document.getElementById('memberPwCheck').value = ""; 
+	}
+}
+function sendAuth(){
+	var req;
+	req = new XMLHttpRequest();
+	req.onreadystatechange = printMsg;
+	req.open('post', 'sendAuth');
+	req.send(document.getElementById('memberEmail').value);
+}
+function checkAuth(){
+	var req;
+	req = new XMLHttpRequest();
+	req.onreadystatechange = printMsg;
+	req.open('post', 'checkAuth');
+	req.setRequestHeader("Content-Type", "application/json; charset=UTF-8");
+	var number = document.getElementById('authNumber').value;
+	var data = {authNumber:number};
+	data = JSON.stringify(data);
+	req.send(data);
+}
 </script>
-<body class="subBody joinBody"><div id="popCalendarDiv" class="popCalendar" style="display:none"></div>
-
-<!-- <script src="/js/json2.js" charset="UTF-8"></script>
-<script src="/js/jquery-1.8.3.js" charset="UTF-8"></script>
-<script src="/js/uniform.js" charset="UTF-8"></script>
-<script src="/js/browser.js" charset="UTF-8"></script>
-<script src="/js/style.hub.js" charset="UTF-8"></script>
-<script src="/js/swiper.min.js"></script>
-<script src="/js/style.advance.js" charset="UTF-8"></script>개선 : js 추가
-<script src="/js/resv/advResvCalendar.js" charset="UTF-8"></script> [2019_모션추가]3 달력 고도화
-<script src="/index.do/secu/messageJs.do" charset="UTF-8"></script>
-	<script src="/js/common.js" charset="UTF-8"></script>
-<script src="/js/commonEx.js" charset="UTF-8"></script>
-<script src="/js/jquery.slides.js" charset="UTF-8"></script>
-<script src="/js/mbr/popLogin.js" charset="UTF-8"></script><div id="popLoginDiv" class="popLogin" style="display:none"></div>
-<script src="/js/mbr/forIdPwd.js" charset="UTF-8"></script><div id="popForIdPwDiv" style="display:none">0</div>
-<script src="/js/mbr/mbshPointRead.js" charset="UTF-8"></script><div id="mbshPotinRead" style="display:none"></div>
-<script src="/js/resv/resvCalendar.js" charset="UTF-8"></script><script src="/js/resv/resvPromotionCalendar.js" charset="UTF-8"></script>
-<script src="/js/resv/resv.js" charset="UTF-8"></script><script src="/js/resv/din.js" charset="UTF-8"></script>
-<script src="/js/ask/ask.js" charset="UTF-8"></script><script src="/js/mbr/zipno.js" charset="UTF-8"></script><div id="zipNoLayerDiv" class="popLogin" style="display:none"></div>
-<script src="/js/offers/makeAPlan.js" charset="UTF-8"></script><div id="makeAPlanLayerDiv" class="popLogin" style="display:none"></div>
-<script src="/js/mbr/mbr_join.js" charset="UTF-8"></script>
-<script src="/js/jquery.cookie.js" charset="UTF-8"></script>
-<script src="/js/placeholders.js" charset="UTF-8"></script>
-<script src="/js/rewards_new2020.js" charset="UTF-8"></script>
-<script src="/js/dining_new2020.js" charset="UTF-8"></script> -->
-<!--[if IE 6]><script src="/js/png24.js"></script><![endif]-->
-
-<script type="text/javascript">
-
-	</script>
-
-<!-- 운영인 경우만 Google Analytics 호출 -->
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-T3LBJ26');</script>
-<!-- End Google Tag Manager -->
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
 
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-119797985-1"></script>
-
-
-
-
 
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T3LBJ26"
@@ -132,208 +106,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <script type="text/javascript" src="/js/jquery.alphanumeric.js"></script>
 <script type="text/javascript">
-/*
- function saveMbrJoinForm() {
-	
-	if($.trim($('#titlCd').val()) == ""){
-		alert(messages["msg.cmm.selected.required"].replaceMsg(['호칭']));
-		$('#titlCd').focus();
-		return;
-	}
-	
-	if($.trim($('#mbrNm').val()) == ""){
-		alert(messages["msg.cmm.required"].replaceMsg(['성명']));
-		$('#mbrNm').focus();
-		return;
-	}
-
-	if($.trim($('#mbrEnFnm').val()) == ""){
-		alert(messages["msg.cmm.required"].replaceMsg(['First name(이름)']));
-		$('#mbrEnFnm').focus();
-		return;
-	}
-
-	if($.trim($('#mbrEnLnm').val()) == ""){
-		alert(messages["msg.cmm.required"].replaceMsg(['Last name(성)']));
-		$('#mbrEnLnm').focus();
-		return;
-	}
-
-
-	if($.trim($('#birthYear').val()) == ""){
-		alert(messages["msg.cmm.selected.required"].replaceMsg(['생일(년도)']));
-		$('#birthYear').focus();
-		return;
-	}
-
-	if($.trim($('#birthMonth').val()) == ""){
-		alert(messages["msg.cmm.selected.required"].replaceMsg(['생일(월)']));
-		$('#birthMonth').focus();
-		return;
-	}
-
-	if($.trim($('#birthDay').val()) == ""){
-		alert(messages["msg.cmm.selected.required"].replaceMsg(['생일(일)']));
-		$('#birthDay').focus();
-		return;
-	}
-
-	
-	if(fnCalcBirth() == false) {
-		alert('신라리워즈는 만19세 이상부터 회원가입이 가능합니다.');
-		return;
-	}
-	
-	if($.trim($('#mbno2').val()) == ""){
-		alert(messages["msg.cmm.required"].replaceMsg(['휴대전화 ']));
-		$('#mbno2').focus();
-		return;
-	}
-
-	if($.trim($('#mbno3').val()) == ""){
-		alert(messages["msg.cmm.required"].replaceMsg(['휴대전화 ']));
-		$('#mbno3').focus();
-		return;
-	}
-	
-	if($.trim($('#mbrPw').val()) == ""){
-		alert(messages["msg.cmm.required"].replaceMsg(['비밀번호']));
-		$('#mbrPw').focus();
-		return;
-	}
-
-	if($.trim($('#mbrPw2').val()) == ""){
-		alert(messages["msg.cmm.required"].replaceMsg(['비밀번호 확인']));
-		$('#mbrPw2').focus();
-		return;
-	}
-
-	if($.trim($('#mbrPw').val()) != $.trim($('#mbrPw2').val())){
-		alert('비밀번호와 비밀번호확인이 일치하지 않습니다.');
-		$('#mbrPw2').focus();
-		return;
-	}
-	
-	var mbrPw = $('#mbrPw').val();
-	if(!checkPass(mbrPw)){
-		   return;
-	}
-	
-	//특수문자 %가 패스워드에 들어간 경우 체크 -- 20160229 김동욱
-	if(!checkPassSpChar($('#mbrPw'))){
-		return;
-	}
-	
-	$('#email').val($('#email1').val() + "@" + $('#email2').val());
-	
-	if($.trim($('#email').val()) == ""){
-		alert(messages["msg.cmm.required"].replaceMsg(['이메일']));
-		return;
-	}
-    if(!checkEmail( $('#email1') , $('#email2')  )){
-   	   return;
-    }
-    
-	if(!checkedEmail) {
-		alert(messages["msg.cmm.required"].replaceMsg(['이메일 중복확인을 해주세요.']));
-		$('#email1').focus();
-		return;
-	}
-	
-	if($.trim($('#lognId').val()) == ""){
-		alert(messages["msg.cmm.required"].replaceMsg(['아이디']));
-		return;
-	}
-	if(!checkedLognId) {
-	//	 alert(messages["msg.cmm.required"].replaceMsg(['아이디 중복확인을 해주세요.'])); 
-		alert(messages["msg.cmm.required"].replaceMsg(["아이디 중복확인"]));
-		$('#lognId').focus();
-		return;
-	}
- }
-	
-	if(gbn == false){
-		
-		gbn = true;
-		$('.opacity').show();
-		$('.re-loader').show();
-		
-		$("#titlCd").prop("disabled", false);
-		$("#mbrNm").prop("disabled", false);
-		$("#birthYear").prop("disabled", false);
-		$("#birthMonth").prop("disabled", false);
-		$("#birthDay").prop("disabled", false);
-		$("#mbno1").prop("disabled", false);
-		
-	    //신청버튼
-		 var string = $("form[name=mbrJoinForm]").serialize();
-		 $.post( "/${root }index?formpath=memJoinSuccessForm", string).done(function(data){
-		 
-			$('.opacity').hide();
-			$('.re-loader').hide();
-
-			var jObj = JSON.parse(data);
-			
-			 if(jObj.returnCode == "ciOverlap"){
-					alert('이미 가입된 회원입니다.');
-					 $('#mbrJoinForm').attr('action','/index.do').submit();
-			 }else if(jObj.returnCode == "emailOverlap"){
-					alert('이미 가입된 email 주소입니다.');
-					 //$('#mbrJoinForm').attr('action','/index.do').submit();
-				 	gbn=false;
-			 }else if(jObj.returnCode == "fail"){
-					alert('신라리워즈 고객센터로 문의하세요.');
-					 $('#mbrJoinForm').attr('action','/index.do').submit();
-			 }else if(jObj.returnCode == "noJoinCd"){
-				 	alert('입력하신 프로모션 코드는 유효하지 않습니다.');
-				 	gbn=false;
-			 }else if(jObj.returnCode == "dfIdOverlap"){
-				 	alert('이미 사용중인 ID입니다. 다른 ID를 설정해 주세요.');
-				 	gbn=false;
-			 }else if(jObj.returnCode == "noRcId"){
-					alert('유효하지 않은 추천인 아이디입니다.');
-				 	gbn=false;
-			 }else{
-				 $("#mbshIdNo").val(jObj.returnCode);
-				 $("#shillaDfsJoinFlag").val(jObj.shillaDfsJoinFlag);
-				 if ("" != null && "" != "") {	 
-					 alert('신청이 완료되었습니다.');
-					 $('#mbrJoinForm').attr('action','/index.do').submit();
-				 }else{
-					$('#mbrJoinForm').attr('action','./memViewMbrInfoEnd.do').submit();
-				 }
-			 }
-
-		}).fail(function( jqxhr, textStatus, error ) {
-			$('.opacity').hide();
-			$('.re-loader').hide();
-			alert('생성이 실패하였습니다.');
-		});
-	}
-
- */
 	
 
-	function sendAuth(){
-		var req;
-		req = new XMLHttpRequest();
-		req.onreadystatechange = printMsg;
-		req.open('post', 'sendAuth');
-		req.send(document.getElementById('memberEmail').value);
-	}
-	
-
-	function checkAuth(){
-		var req;
-		req = new XMLHttpRequest();
-		req.onreadystatechange = printMsg;
-		req.open('post', 'checkAuth');
-		req.setRequestHeader("Content-Type", "application/json; charset=UTF-8");
-		var number = document.getElementById('authNumber').value;
-		var data = {authNumber:number};
-		data = JSON.stringify(data);
-		req.send(data);
-	}
 </script>
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script>
@@ -441,7 +215,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 						<th scope="row"><em class="ast">*</em> 이메일 </th>
 						<td>
 							<input id="memberEmail" name="memberEmail"  type="text" size="20" value="" onkeyup="this.value=this.value.replace(/[^a-z0-9_.@-]/gi,'');" maxlength="40" title="이메일주소 입력" autocomplete="off"> 
-							<input type="button" value="이메일 인증번호 전송" onclick="sendAuth()">
+							<input type="button" value="인증번호 전송" onclick="sendAuth()">
 						</td>
 					</tr>
 					<tr>
@@ -472,8 +246,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 								<div class="zipcode">
 									<label class="zipcode1" for="memberZipcode">우편번호앞자리</label>
 									<input type="text" class="zipcode1 uiform text" id="memberZipcode" name="memberZipcode" style="width: 100px;" readonly="readonly" autocomplete="off">
-<!-- 										- -->
-<!-- 										<input type="text" class="zipcode2 uiform" id="zipNo2" name="zipNo2"  readonly> -->
+<!-- 										
+<!-- 									<!--	<input type="text" class="zipcode2 uiform" id="zipNo2" name="zipNo2"  readonly> -->
 									<input type="button" value="우편번호 검색" onclick="daumPost()">
 								</div>
 								
@@ -507,15 +281,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 						</colgroup>
 							<tbody><tr class="first">
 								<th scope="row" class="first"><em class="ast">*</em> 아이디</th>
-								<td class="first"><input type="text" id="memberId" name="memberId" placeholder="8자  이내 영문 또는 영문/숫자 조합" class="uiform text" maxlength="15" autocomplete="off" style="width:130px">
+								<td class="first">
+								<label for="memberId" class="idForm">아이디</label>
+								<input type="text" id="memberId" name="memberId" placeholder="8자 이내 영문 또는 영문/숫자 조합" class="uiform text" maxlength="8" autocomplete="off" style="width:200px">
 								<input type="button" value="중복 확인" onclick="isExistId()">
+								<h4><font color="red" id="msg" >${msg } </font></h4>
 								</td>
 							</tr>
 					<tr>
 						<th scope="row"><em class="ast">*</em> 비밀번호</th>
 						<td>
 							<label for="memberPw" class="pwForm1">비밀번호</label>
-							<input type="password" class="pwForm1 uiform password" id="memberPw" name="memberPw" maxlength="20" autocomplete="off" style="width:130px">
+							<input type="password" class="pwForm1 uiform password" id="memberPw" name="memberPw" maxlength="20" autocomplete="off" style="width:200px">
 								<div class="pwGuide" style="display: none;">
 									<h4 class="tit">비밀번호 입력 시 아래의 사항을 참고하시어 안전한 정보 입력을 권장합니다.</h4>
 									<ul class="list">
@@ -530,30 +307,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 						<th scope="row" class="last"><em class="ast">*</em> 비밀번호 확인</th>
 						<td class="last">
 							<label for="memberPwCheck" class="pwForm2">비밀번호 확인</label>
-							<input type="password" class="pwForm2 uiform password" id="memberPwCheck" name="memberPwCheck" maxlength="20" autocomplete="off" style="width:130px"> 
+							<input type="password" class="pwForm2 uiform password" id="memberPwCheck" name="memberPwCheck" maxlength="20" autocomplete="off" style="width:200px" onchange="pwCheck()"> 
+							<label id="label2">(*필수 체크)</label>
 						</td>
-					</tr>
-					
-				</tbody>
-				
-				
+					</tr>	
+				</tbody>	
                 </table>
-
 				<div class="rwPromotion">
                    <span>※ 신라리워즈 가입 고객께는 모바일
    카드가 발급 되며 혜택 및 약관은
    홈페이지에서 확인 가능합니다.</span>   
                 </div>
-                 <!-- 카드 안내 문구 끝-->
-							
-				<br>
-				
-				
-               
-           		<!--  onclick="nextStep();"-->
-				
+                 <!-- 카드 안내 문구 끝-->							
+				<br>              
+           		<!--  onclick="nextStep();"-->	
 				<div class="btnList">
-			 	<input type=submit  value='회원 가입'  style="width: 60px;" />
+			 	<input type="submit"  value='회원 가입'  style="width: 60px;" />
 				<input type=reset value='취소' style="width: 60px; "/>
 				</div>
 			<!--  -->
@@ -566,16 +335,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			<div class="opacity" style="display: none;"></div>
 	</form>
 	<div id="mbrJoinLayer"></div>
-	</div>
-	
-	<script>
-	$(document).ready(function(){
-	//회원가입 버튼(회원가입 기능 작동)
-		$(".join_button").click(function(){
-			$("#join_form").attr("action", "${root }index?formpath=memberInsert");
-			$("#join_form").submit();
-		});
-	});
-	</script>	
+	</div>	
 			
 </body></html>

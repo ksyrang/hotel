@@ -58,7 +58,10 @@
 			alert("개인정보 제 3자 제공 동의 거부");
 		}
 		
-		document.getElementById('f').submit();
+		 location.href="${root}index?formpath=memJoinForm";
+		 
+		
+		/* document.getElementById('f').submit(); */
 		
 	} 
 </script>
