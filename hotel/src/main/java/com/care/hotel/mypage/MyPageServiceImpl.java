@@ -5,13 +5,16 @@ import java.util.ArrayList;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.care.hotel.Reservation.DAO.reservationDAO;
 import com.care.hotel.Reservation.DTO.reservationHotelDTO;
 import com.care.hotel.common.PageService;
 import com.care.hotel.member.DAO.memberDAO;
+import com.care.hotel.member.DTO.AllMemberDTO;
 import com.care.hotel.member.DTO.memberDTO;
+import com.care.hotel.member.DTO.memberExDTO;
 import com.care.hotel.member.DTO.memberPwChngDTO;
 import com.care.hotel.member.service.MailService;
 
@@ -78,32 +81,69 @@ public class MyPageServiceImpl implements IMyPageService{
 			return 0; // 아이디 혹은 비밀번호를 확인해주세요
 		} 
 		memberDTO memberDto = memberDAO.memberInfo(memberId);
+		memberExDTO memberExDto = memberDAO.memberExInfo(memberId);
+		AllMemberDTO allMemberDto = new AllMemberDTO();
 		if(memberDto == null) {
 			return 3; // DB에 존재하지 않음;
-		}else {
-			if(memberDto.getMemberId().equals(memberId) && memberDto.getMemberPw().equals(memberPw)) {
-				session.setAttribute("member", memberDto);
-				return 2; // "[" + reservationNo + "] 예약을 취소 했습니다.";
-			}else {
-				return 1; // 비밀번호가 맞지 않음
+		}
+		if(memberDto.getMemberId().equals(memberId) && memberDto.getMemberPw().equals(memberPw)) {
+			allMemberDto.setMemberId(memberDto.getMemberId());
+			allMemberDto.setMemberNameKR(memberDto.getMemberNameKR());
+			allMemberDto.setMemberNameENG(memberDto.getMemberNameENG());
+			allMemberDto.setMemberBirth(memberDto.getMemberBirth());
+			allMemberDto.setMemberMobile(memberDto.getMemberMobile());
+			allMemberDto.setMemberEmail(memberDto.getMemberEmail());
+			allMemberDto.setMemberPw(memberDto.getMemberPw());
+			allMemberDto.setMemberGender(memberDto.getMemberGender());
+			if(memberExDto != null) {
+				allMemberDto.setMemberZipcode(memberExDto.getMemberZipcode());
+				allMemberDto.setMemberAddr1(memberExDto.getMemberAddr1());
+				allMemberDto.setMemberAddr2(memberExDto.getMemberAddr2());
+				allMemberDto.setMemberHomePhone(memberExDto.getMemberHomePhone());
 			}
+			session.setAttribute("member", allMemberDto);
+			return 2; // "[" + reservationNo + "] 예약을 취소 했습니다.";
+		}else {
+			return 1; // 비밀번호가 맞지 않음
 		}
 	}
 	
 	@Override
-	public int memSetUpdt(memberDTO memberDto) {
-		
-		if(memberDto.getMemberPw() == null || memberDto.getMemberPw()  == "") { 
+	public int memSetUpdt(AllMemberDTO allMemberDto) {
+		if(allMemberDto.getMemberPw() == null || allMemberDto.getMemberPw()  == "") { 
 			return 0;
 		} 
-		session.setAttribute("member", memberDto);
-		memberDTO check = memberDAO.memberInfo(memberDto.getMemberId());
-		if(check != null) {
-			memberDAO.memberUpdate(memberDto);
-			return 2;
-		}else {
-			return 1;
+		session.setAttribute("member", allMemberDto);
+		memberDTO memberDto = memberDAO.memberInfo(allMemberDto.getMemberId());
+		if(memberDto == null) return 1;
+		// 비밀번호 변경시, 새 비밀번호 암호화
+		if(!(memberDto.getMemberPw().equals(allMemberDto.getMemberPw()))) {
+			BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+			String securePw = encoder.encode(allMemberDto.getMemberPw());
+			allMemberDto.setMemberPw(securePw);
 		}
+
+		memberDAO.memberUpdate(allMemberDto);
+		
+		memberExDTO memberExDto = memberDAO.memberExInfo(allMemberDto.getMemberId());
+		if(memberExDto != null) {
+			memberExDto.setMemberId(allMemberDto.getMemberId());
+			memberExDto.setMemberZipcode(allMemberDto.getMemberZipcode());
+			memberExDto.setMemberAddr1(allMemberDto.getMemberAddr1());
+			memberExDto.setMemberAddr2(allMemberDto.getMemberAddr2());
+			memberExDto.setMemberHomePhone(allMemberDto.getMemberHomePhone());
+			memberDAO.memberExUpdate(memberExDto);
+		} else {
+			memberExDTO insertMemberExDto = new memberExDTO();
+			insertMemberExDto.setMemberId(allMemberDto.getMemberId());
+			insertMemberExDto.setMemberZipcode(allMemberDto.getMemberZipcode());
+			insertMemberExDto.setMemberAddr1(allMemberDto.getMemberAddr1());
+			insertMemberExDto.setMemberAddr2(allMemberDto.getMemberAddr2());
+			insertMemberExDto.setMemberHomePhone(allMemberDto.getMemberHomePhone());
+			memberDAO.memberExInsert(insertMemberExDto);
+		}
+		return 2;
+
 	}
 	
 	@Override

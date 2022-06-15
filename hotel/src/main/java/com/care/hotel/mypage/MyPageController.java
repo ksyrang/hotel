@@ -4,7 +4,6 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
-import javax.mail.Session;
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
@@ -12,13 +11,12 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.care.hotel.member.DTO.memberDTO;
+import com.care.hotel.member.DTO.AllMemberDTO;
 import com.care.hotel.member.DTO.memberPwChngDTO;
 import com.care.hotel.member.service.MailService;
 
@@ -168,12 +166,16 @@ public class MyPageController {
 	}
 	
 	@RequestMapping(value="memSetUpdtProc")
-	public String memSetUpdtProc(String memberPw, String memberId, memberDTO mem, Model model) {
+	public String memSetUpdtProc(String memberPw, String memberId, AllMemberDTO mem, Model model) {
 		logger.info("memSetUpdtProc");
 		System.out.println("getMemberId : "+mem.getMemberId());
 		System.out.println("getMemberPw : "+mem.getMemberPw());
 		System.out.println("getMemberNameKR : " + mem.getMemberNameKR());
 		System.out.println("getMemberNameENG : " + mem.getMemberNameENG());
+		System.out.println("getMemberZipcode : " + mem.getMemberZipcode());
+		System.out.println("getMemberAddr1 : " + mem.getMemberAddr1());
+		System.out.println("getMemberAddr2 : " + mem.getMemberAddr2());
+		System.out.println("getMemberHomePhone : " + mem.getMemberHomePhone());
 		
 		String result = "";
 		

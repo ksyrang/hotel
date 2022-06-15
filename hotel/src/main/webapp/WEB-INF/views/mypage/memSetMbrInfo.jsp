@@ -8,6 +8,9 @@
 .lnbAreaMypage .lnbMenu .m2 .sMenu li.s2 a{ background-position:0 -22px;}
 .lnbAreaMypage .lnbMenu .m2 .sMenu li.s3 a{ background-position:0 -44px;}
 .lnbAreaMypage .lnbMenu .m2 .sMenu li.s4 a{ background-position:0 -66px;}
+.zipcode {height: 30px; width: 90px; background: transparent;}
+.address {height: 30px; width: 500px; background: transparent;}
+.zipcodeSearchBtn {height: 30px; border:0; outline:0; background-color: #f1e3c4;}
 </style>
 <script>
 	function check() {
@@ -25,6 +28,27 @@
 		if(memberMobile.value == "") { alert('# 휴대전화를 입력하세요.'); return; }
 		
 		document.getElementById('f').submit();
+	}
+</script>
+<script type="text/javascript" src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script>
+	function daumPost() {
+	    new daum.Postcode({
+	        oncomplete: function(data) {
+	        	var addr = "";
+	        	// R == 도로명 주소, J == 지번 주소
+	        	if(data.userSelectedType == "R")
+	        		addr = data.roadAddress;
+	        	else
+	        		addr = data.jibunAddress;
+	        	
+	        	//우편 번호
+	        	document.getElementById('zipcode').value = data.zonecode;
+	        	document.getElementById('addr1').value = addr;
+	        	document.getElementById('addr2').focus();
+	        	
+	        }
+	    }).open();
 	}
 </script>
 <div class="contain">
@@ -142,9 +166,24 @@
 					<td>${member.memberEmail}</td>
 				</tr>
 				<tr>
-					<th scope="row" class="last">휴대전화 </th>
+					<th scope="row">휴대전화 </th>
 					<td>
-						<input type="text" class="uiform phoneNum3 text" style="width: 100px;" id="memberMobile" name="memberMobile" maxlength="11" value="${member.memberMobile}" onkeyup="this.value=this.value.replace(/[^\d\ ]/g, '')" autocomplete="off">
+						<input type="text" style="width: 100px;" id="memberMobile" name="memberMobile" maxlength="11" value="${member.memberMobile}" onkeyup="this.value=this.value.replace(/[^\d\ ]/g, '')" autocomplete="off">
+					</td>
+				</tr>
+				<tr>
+					<th scope="row">자택전화 </th>
+					<td>
+						<input type="text" style="width: 100px;" id="memberHomePhone" name="memberHomePhone" maxlength="11" value="${member.memberHomePhone}" onkeyup="this.value=this.value.replace(/[^\d\ ]/g, '')" autocomplete="off">
+					</td>
+				</tr>
+				<tr>
+					<th scope="row" class="last">자택주소 </th>
+					<td>
+						<input type="text" style="width: 50px;" id="zipcode" class="zipcode" name="memberZipcode" maxlength="5" value="${member.memberZipcode}" >
+						<input type="button" value="우편번호 검색" onclick="daumPost()" class="zipcodeSearchBtn"><br>
+						<input type="text" id="addr1" class="address" name="memberAddr1" value="${member.memberAddr1 }" ><br>
+						<input type="text" id="addr2" class="address" name="memberAddr2" value="${member.memberAddr2 }" >
 					</td>
 				</tr>
 			</tbody>

@@ -82,23 +82,29 @@
 		<div class="mypageWrap">
 			<div class="schBox">
 			            <div >
-			            	<select name="select" style="height: 27px;">
-					            <option value="예약일">예약일 기준</option>
-					            <option value="투숙일">투숙일 기준</option>
-			            	</select>
+			            	<c:choose>
+			            		<c:when test="${select == null || select == '예약일'}">
+					            	<select name="select" style="height: 27px;">
+							            <option value="예약일">예약일 기준</option>
+							            <option value="투숙일">투숙일 기준</option>
+					            	</select>
+			            		</c:when>
+			            		<c:otherwise>
+			            			<select name="select" style="height: 27px;">
+							            <option value="투숙일">투숙일 기준</option>
+							            <option value="예약일">예약일 기준</option>
+					            	</select>
+			            		</c:otherwise>
+			            	</c:choose>
 							<input type="date" name="startDt" id="startDt" value="${startDt }" />
 							~
 							<input type="date" name="endDt" id="endDt" value="${endDt }" />
 							<input type="button" value="조회" onclick="check();" class="btnSch">
 			            </div>
-				<!-- 		
-							<input type="submit" name="searchBtn" value="조회" class="searchBtn">
-				 -->
-				
 			</div> <!-- schBox -->
-			<div>
-			선택기준 : ${select } 시작날짜 : ${startDt } 종료날짜 : ${endDt }
-			</div>
+			<!-- 
+			 <div>선택기준 : ${select } 시작날짜 : ${startDt } 종료날짜 : ${endDt }</div>
+			 -->
 			<div class="box boxRoomPack">
 				<div class="hTit">
 					<h5 class="tit">Room/Package(객실/패키지)</h5>
