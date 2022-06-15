@@ -234,6 +234,7 @@ public class MyPageController {
 			result = "[" + memberId + "]님 회원탈회 신청이 완료되었습니다.";
 			mailService.sendMail(email, "[신난다호텔 회원 탈회]", result);
 			dropCheck = "성공";
+			session.setAttribute("userId", "");
 		}else {
 			result = "[" + memberId + "]님 회원탈회 신청이 실패했습니다.";
 		}
