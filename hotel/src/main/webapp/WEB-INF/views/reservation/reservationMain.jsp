@@ -36,6 +36,21 @@
 		}
 		document.getElementById('f').submit();
 	}
+	/*
+	function resCheck() {
+		var hotelSelect = document.getElementById('hotelSelect');
+		var startDate = document.getElementById('startDate');
+		var endDate = document.getElementById('endDate');
+		var availablePerson = document.getElementById('availablePerson');
+		
+		if(hotelSelect.value == '' || startDate.value == '' || endDate.value == '' || availablePerson == ''){
+			alert("검색 후 이용해주세요.");
+			return;
+		}else {
+			location.href='${root }roomReservation_step1Proc?roomId=${roomList.roomId }'
+		}
+	}
+	*/
 </script>
 </head>
 <body>
@@ -99,7 +114,7 @@
 				
 				<td>최대인원 : ${roomList.availablePerson }명</td>
 				<td>${roomList.basicCharge }원</td>
-				<td><input type="button" value="예약하기" class="admin_commonBtn" onclick="location.href='${root }admin_reservationModifyProc?reservationNo=${resdb.reservationNo }'"></td>
+				<td><input type="button" value="예약하기" class="admin_commonBtn" onclick="location.href='${root }roomReservation_step1Proc?roomId=${roomList.roomId }'"></td>
 			</tr>
 			</c:forEach>
 		</table><br>

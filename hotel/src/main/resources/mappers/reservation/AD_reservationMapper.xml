@@ -64,5 +64,21 @@
 		WHERE reservationNo = #{reservationNo}
 	</update>
 	
+	<!-- isExistResNo -->
+	<select id="isExistResNo" resultType="String">
+		SELECT reservationNo FROM reservation WHERE reservationNo = #{reservationNo}
+	</select>
+	
+	<!-- insertRes -->
+	<insert id="insertRes" parameterType="com.care.hotel.Reservation.DTO.reservationDTO">
+		INSERT INTO reservation(reservationNo, memberId, hotelId, roomId, reservationDate, checkinDate, checkoutDate, guestNumber, baseAmount, breakfastCheck, reservationStatus)
+		VALUES(#{reservationNo}, #{memberId}, #{hotelId}, #{roomId}, #{reservationDate}, #{checkinDate}, #{checkoutDate}, #{guestNumber}, #{baseAmount}, #{breakfastCheck}, #{reservationStatus})
+	</insert>
+	
+	<!-- insertResEx -->
+	<insert id="insertResEx" parameterType="com.care.hotel.Reservation.DTO.reservationExDTO">
+		INSERT INTO reservation_extra(reservationNo, remark)
+		VALUES(#{reservationNo}, #{remark})
+	</insert>
 
 </mapper>

@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+.resMainDiv {margin:auto; width: 1000px; margin-bottom: 20px; margin-top: 20px;}
+
+.optionTable {width: 950px; height: 200px; margin: auto; border-collapse: collapse; margin-bottom: 20px;}
+.optionTable th {text-align: left; height: 25px;}
+.optionTable td {width: 475px;}
+
+.optionArea {width:400px; height: 100px;}
+
+.memberInfoTable {width: 950px; height: 200px; margin: auto; border-collapse: collapse; margin-bottom: 20px;}
+.memberInfoTable th {text-align: left; height: 25px;}
+.memberInfoTable td {width: 475px;}
+
+.selectCompany {width: 100px; height: 20px;}
+.input_cardNo {width:40px; height: 20px;}
+.input_validity {width:30px; height: 20px;}
+.input_csv {width:30px; height: 20px;}
+
+.precautionTable {width: 950px; height: 200px;margin: auto; border-collapse: collapse; margin-bottom: 20px;}
+.precautionTable th {text-align: left; height: 25px;}
+
+.informationTable {width: 950px; margin: auto; border-collapse: collapse; margin-bottom: 20px;}
+.informationTable th {text-align: left; height: 25px;}
+
+.personalInformation_textArea {width:900px; height: 100px;}
+
+.fontUp {font-size: 15px;}
+
+tr {border: 0.5px solid; color:#dcdcdc}
+
+.previous {width: 475px; text-align: left;}
+.amountR {width: 177px; text-align: left;}
+.amountL {width: 177px; text-align: right;}
+.resbtn {width: 121px; text-align: right;}
+
+.btnLB {background-color:  #aa937d; border:0; outline:0; height: 40px; color: white; width: 120px;}
+.btnDB {background-color:  #3e2b2c; border:0; outline:0; height: 40px; color: white; width: 120px;}

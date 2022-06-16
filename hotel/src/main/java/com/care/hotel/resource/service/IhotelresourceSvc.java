@@ -16,6 +16,8 @@ public interface IhotelresourceSvc {
    public void roomInfo(String roomId);
    public int roomcheck(String roomId);
    
+   public roomDTO roomInfoDTO(String roomId);
+   
    /* 모든 호텔 정보 보기 */
    public ArrayList<hotelDTO> allHotelInfo();
    

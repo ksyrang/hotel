@@ -29,4 +29,11 @@ public interface AD_reservationDAO {
 	// 예약 상태 변경
 	void resStatusCheckin(reservationDTO resDTO);
 
+	// 예약 번호 중복 확인
+	String isExistResNo(String resNo);
+
+	void insertRes(reservationDTO resDTO);
+
+	void insertResEx(reservationExDTO resExDTO);
+
 }
