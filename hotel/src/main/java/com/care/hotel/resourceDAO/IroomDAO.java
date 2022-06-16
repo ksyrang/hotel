@@ -26,5 +26,11 @@ public interface IroomDAO {
 	public int checkRoom(String roomId);
 
 	public void roomAdd(roomDTO roomInfo);
+	
+	// 멤버쪽 룸 리스트
+	public ArrayList<roomDTO> memRoomList(@Param("b")int begin, @Param("e")int end, 
+			@Param("hotelId")String hotelSelect, @Param("availablePerson")String availablePerson);
+	
+	public int memRoomCount(@Param("hotelId")String hotelSelect,  @Param("availablePerson")String availablePerson);
 
 }

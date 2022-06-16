@@ -12,11 +12,9 @@ public interface IhotelresourceSvc {
    public int hotelModify(hotelDTO hotelInfo);
    public boolean hotelDelte(String hotelId, String adminId, String adminPw);
    
-   
    public void roomList(int currentPage, String select, String search);
    public void roomInfo(String roomId);
    public int roomcheck(String roomId);
-   
    
    /* 모든 호텔 정보 보기 */
    public ArrayList<hotelDTO> allHotelInfo();

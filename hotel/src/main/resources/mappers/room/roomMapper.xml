@@ -74,4 +74,28 @@
 	</insert>
    
    
+	<!-- roomCount -->
+	<select id="memRoomCount" resultType="int">
+		SELECT count(*) FROM room
+		<where>
+			<if test='hotelId != null and hotelId != ""'>hotelId=#{hotelId}</if>
+			<if test='availablePerson != null and availablePerson != ""'>availablePerson <![CDATA[=<]]> #{availablePerson}</if>
+		</where>
+	</select>
+	
+	
+	<!-- roomList -->
+	<select id="memRoomList" resultType="com.care.hotel.resourceDTO.roomDTO">
+		SELECT B.* FROM(
+			SELECT rownum rn, A.* FROM( 
+				SELECT * FROM room
+				<where>
+					<if test='hotelId != null and hotelId != ""'>hotelId=#{hotelId}</if>
+					<if test='availablePerson != null and availablePerson != ""'>availablePerson <![CDATA[=<]]> #{availablePerson}</if>
+				</where>
+				ORDER BY roomType
+				)A
+			)B WHERE rn BETWEEN #{b} and #{e}
+	</select>
+   
 </mapper>
