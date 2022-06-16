@@ -29,7 +29,7 @@ public class MailController {
 			session.setAttribute("authNumber", number);
 			return "인증 번호 전송";
 		}else {
-			return "이메일을 입력하세요.";
+			return "이메일 형식을 입력하세요.";
 		}
 	}
 	

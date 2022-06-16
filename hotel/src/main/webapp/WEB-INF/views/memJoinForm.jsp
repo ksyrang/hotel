@@ -39,49 +39,54 @@
 
 <script>
 var req;
-function isExistId(){
-	if(document.getElementById('memberId').value == ""){
-		alert("필수 정보 입니다.");
-		return;
-	}
-	req = new XMLHttpRequest();
-	req.onreadystatechange = printMsg1;
-	req.open('post', 'isExistId');
-	req.send(document.getElementById('memberId').value);
-}
 	 
-function printMsg1(){
+function printMsg(){
 	var msg1 = document.getElementById('msg1');
 	msg1.innerHTML = req.responseText;
 }
-function printMsg2(){
+ function printMsg2(){
 	var msg2 = document.getElementById('msg2');
 	msg2.innerHTML = req.responseText;
 }
 function printMsg3(){
 	var msg3 = document.getElementById('msg3');
 	msg3.innerHTML = req.responseText;
-}
+} 
 function pwCheck() {
 	var memberPw = document.getElementById('memberPw').value;
 	var memberPwCheck = document.getElementById('memberPwCheck').value;
 	if(memberPw == memberPwCheck){
-		 document.getElementById('label2').innerHTML = "일치";
+		if(memberPw.length >= 8 && memberPwCheck.length >= 8){
+			document.getElementById('label2').innerHTML = "일치";
+		}else{
+			document.getElementById('label2').innerHTML = "비밀번호 길이는 8~20자리 입니다.";
+			document.getElementById('memberPw').value = "";
+			document.getElementById('memberPwCheck').value = ""; 
+		}
+		 
 	}else{
 		 document.getElementById('label2').innerHTML = "불일치";
 		 document.getElementById('memberPw').value = "";
 		 document.getElementById('memberPwCheck').value = ""; 
 	}
 }
+function isExistId(){
+	if(document.getElementById('memberId').value == ""){
+		alert("필수 정보 입니다.");
+		return;
+	}
+	req = new XMLHttpRequest();
+	req.onreadystatechange = printMsg;
+	req.open('post', 'isExistId');
+	req.send(document.getElementById('memberId').value);
+}
 function sendAuth(){
-	var req;
 	req = new XMLHttpRequest();
 	req.onreadystatechange = printMsg2;
 	req.open('post', 'sendAuth');
 	req.send(document.getElementById('memberEmail').value);
 }
 function checkAuth(){
-	var req;
 	req = new XMLHttpRequest();
 	req.onreadystatechange = printMsg3;
 	req.open('post', 'checkAuth');
@@ -138,9 +143,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	    
 	}
 </script>
+
 <form action="memberJoinProc" method="post">
-
-
 	<div class="container">
 		<div class="contents" id="contents">
 			<div class="ctnJoin ctnJoinStep2">
@@ -222,31 +226,31 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					<tr>
 						<th scope="row"><em class="ast">*</em> 이메일 </th>
 						<td>
-							<input id="memberEmail" name="memberEmail"  type="text" size="20" value="" onkeyup="this.value=this.value.replace(/[^a-z0-9_.@-]/gi,'');" maxlength="40" title="이메일주소 입력" autocomplete="off"> 
+							<input id="memberEmail" name="memberEmail"  type="text" value="" onkeyup="this.value=this.value.replace(/^[-A-Za-z0-9_][-A-Za-z0-9_.][@]{1}[-A-Za-z0-9_]+[-A-Za-z0-9_.][.]{3}[A-Za-z]$/gi, '');" maxlength="80" title="이메일주소 입력" autocomplete="off"> 
 							<input type="button" value="인증번호 전송" onclick="sendAuth()">
-							<h4><font color="red" id="msg2" >${msg2 } </font></h4>
+						<div><span style="color: red; font-size=10px;" id="msg2">${msg2 }</span></div>
 						</td>
 					</tr>
 					<tr>
 						<th scope="row"><em class="ast">*</em> 이메일 인증번호 </th>
 						<td>
-							<input type="text" class="uiform mailNumb text" id="authNumber" name="authNumber" value="" maxlength="6" onkeyup="this.value=this.value.replace(/[^\d\ ]/g, '')" autocomplete="off">
+							<input type="text" class="uiform mailNumb text" id="authNumber" name="authNumber" value="" maxlength="6" onkeyup="this.value=this.value.replace(/[^\d\ ]/gi, '')" autocomplete="off">
 							<input type="button" value="인증번호 확인" onclick="checkAuth()">
-							<h4><font color="red" id="msg3" >${msg3 } </font></h4>
+						<div><span style="color: red; font-size=10px;" id="msg3">${msg3 }</span></div>
 						</td>
 					</tr>
 					<!-- 휴대전화 -->
 					<tr>
 						<th scope="row"><em class="ast">*</em> 휴대전화 </th>
 						<td>
-							<input type="text" class="uiform phoneNum2 text" placeholder='- 빼고 작성' id="memberMobile" name="memberMobile" value="" maxlength="11" onkeyup="this.value=this.value.replace(/[^\d\ ]/g, '')" autocomplete="off">	
+							<input type="text" class="uiform phoneNum2 text" placeholder='- 빼고 작성' id="memberMobile" name="memberMobile" value="" maxlength="11" onkeyup="this.value=this.value.replace(/^01([0|1|6|7|8|9])-([0-9]{3,4})-([0-9]{4})$/gi, '')" autocomplete="off">	
 						</td>
 					</tr>
 					<!-- 자택전화 -->
 					<tr>
 						<th scope="row"> 자택전화</th>
 						<td>
-							<input type="text" class="uiform phoneHome2 text" placeholder='- 빼고 작성' id="memberHomePhone" name="memberHomePhone" maxlength="10" onkeyup="this.value=this.value.replace(/[^\d\ ]/g, '')" autocomplete="off">
+							<input type="text" class="uiform phoneHome2 text" placeholder='- 빼고 작성' id="memberHomePhone" name="memberHomePhone" maxlength="10" onkeyup="this.value=this.value.replace(/^(0(2|3[1-3]|4[1-4]|5[1-5]|6[1-4]))-(\d{3,4})-(\d{4})$/gi, '')" autocomplete="off">
 						</td>
 					</tr>
 					<tr class="last">
@@ -293,16 +297,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 								<th scope="row" class="first"><em class="ast">*</em> 아이디</th>
 								<td class="first">
 								<label for="memberId" class="idForm">아이디</label>
-								<input type="text" id="memberId" name="memberId" placeholder="8자 이내 영문 또는 영문/숫자 조합" class="uiform text" maxlength="8" autocomplete="off" style="width:200px">
+								<input type="text" id="memberId" name="memberId" onkeyup="this.value=this.value.replace(/[^a-z0-9]/gi,'');" placeholder="8자 이내 영문 또는 영문/숫자 조합" class="uiform text" maxlength="8" autocomplete="off" style="width:200px">
 								<input type="button" value="중복 확인" onclick="isExistId()">
-								<h4><font color="red" id="msg1" >${msg } </font></h4>
+								<div><span style="color: red; font-size=10px;" id="msg1">${msg1 }</span></div>
 								</td>
 							</tr>
 					<tr>
 						<th scope="row"><em class="ast">*</em> 비밀번호</th>
 						<td>
 							<label for="memberPw" class="pwForm1">비밀번호</label>
-							<input type="password" class="pwForm1 uiform password" id="memberPw" name="memberPw" maxlength="20" autocomplete="off" style="width:200px">
+							<input type="password" class="pwForm1 uiform password" id="memberPw" name="memberPw" onkeyup="this.value=this.value.replace(/[^a-z0-9~!@\#$%^&*]/gi,'');" maxlength="20" autocomplete="off" style="width:200px">
 								<div class="pwGuide" style="display: none;">
 									<h4 class="tit">비밀번호 입력 시 아래의 사항을 참고하시어 안전한 정보 입력을 권장합니다.</h4>
 									<ul class="list">
@@ -324,9 +328,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				</tbody>	
                 </table>
 				<div class="rwPromotion">
-                   <span>※ 신라리워즈 가입 고객께는 모바일
-   카드가 발급 되며 혜택 및 약관은
-   홈페이지에서 확인 가능합니다.</span>   
+                   <span>※ 신라리워즈 가입 고객께는 모바일카드가 발급 되며 혜택 및 약관은 홈페이지에서 확인 가능합니다.</span>   
                 </div>
                  <!-- 카드 안내 문구 끝-->							
 				<br>              

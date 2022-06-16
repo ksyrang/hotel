@@ -95,9 +95,9 @@ public class MemJoinController {
 	public String isExistId(@RequestBody(required = false) String memberId) {
 		logger.info("userIdCheck 진입");
         logger.info("전달받은 id:"+memberId);
-		String msg = memberService.isExistId(memberId);
-		logger.info("확인 결과:"+msg);
-		return msg;
+		String msg1 = memberService.isExistId(memberId);
+		logger.info("확인 결과:"+msg1);
+		return msg1;
 		
 	}
 

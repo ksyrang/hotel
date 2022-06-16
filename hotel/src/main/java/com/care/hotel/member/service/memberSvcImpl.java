@@ -146,8 +146,21 @@ public class memberSvcImpl implements ImemberSvc{
 		String email = member.getMemberEmail();
 		String pw = member.getMemberPw();
 		String gender = member.getMemberGender();
-		
-		
+
+		Boolean authStatus = (Boolean) session.getAttribute("authStatus");
+		if (authStatus == null || authStatus != true)
+			return "이메일 인증 후 가입 할 수 있습니다.";
+
+		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+		String securePw = encoder.encode(member.getMemberPw());
+		member.setMemberPw(securePw);
+
+		if(!(id.isEmpty() || pw.isEmpty() || id == null || pw == null)) {
+			loginDAO.loginInsert(login);
+			
+		}else {
+			return "필수 입력 정보 입니다.";
+		}
 		
 		if(!(id.isEmpty() || nameKR.isEmpty() || nameENG.isEmpty() || birth.isEmpty() || mobile.isEmpty() || email.isEmpty() || pw.isEmpty() || gender.isEmpty())) {
 			if (memberDAO.isExistId(login.getMemberId()) > 0)
@@ -163,12 +176,7 @@ public class memberSvcImpl implements ImemberSvc{
 		}else {
 			return "입력 정보가 없습니다";
 		}
-		if(!(id.isEmpty() || pw.isEmpty())) {
-			loginDAO.loginInsert(login);
-			
-		}else {
-			return "필수 입력 정보 입니다.";
-		}
+		
 		return "가입 완료";
 		
 	}

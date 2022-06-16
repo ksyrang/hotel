@@ -396,7 +396,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				<hr style="border-bottom:1px dashed #ede4d6;margin:20px 0 20px 0;height:0px;background:transparent;border-top:0;border-right:0;border-left:0;">
 				<div class="hTitS">
 	                <h4 class="tit">개인정보 제3자 제공 및 국외이전 동의 (선택)</h4>
-	                <div class="info"><a href="#none" onclick="popPrivacyInc(7);" id="privacyIncbutton_7" class="btnViewAll">전체보기</a>
 	                </div>
 	            </div>
 	            <div class="policyBox">
