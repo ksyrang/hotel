@@ -8,7 +8,7 @@
 <meta charset="UTF-8">
 <link href="${pageContext.request.contextPath}/resources/css/admin/admin_commonCss.css" rel="stylesheet" type="text/css">
 <link href="${pageContext.request.contextPath}/resources/css/admin/admin_reservationList.css" rel="stylesheet" type="text/css">
-<title>admin_reservationList</title>
+<title>reservationMain</title>
 <script>
 	function searchCheck() {
 		var hotelSelect = document.getElementById('hotelSelect');
@@ -34,9 +34,6 @@
 				return;
 			}
 		}
-		
-		
-		
 		document.getElementById('f').submit();
 	}
 </script>
@@ -74,12 +71,34 @@
 			<!-- forEach문 -->
 			<c:forEach var="roomList" items="${sessionScope.memRoomList }">
 			<tr>
-				<td>${roomList.hotelId }</td>
+				
+				<td>
+				<c:forEach var="hotelInfoList" items="${allHotelInfo }">
+				<c:if test="${roomList.hotelId eq  hotelInfoList.hotelId}">${hotelInfoList.hotelName }</c:if>
+				</c:forEach>
+				</td>
+				
 				<td>${roomList.roomId }</td>
-				<td>${roomList.roomType }</td>
-				<td>${roomList.bedType }</td>
-				<td>${roomList.roomId }</td>
-				<td>${roomList.availablePerson }</td>
+				
+				<td>
+				<c:choose>
+					<c:when test="${roomList.roomType eq 'S'}">Standard Room</c:when>
+					<c:when test="${roomList.roomType eq 'D'}">Deluxe Room</c:when>
+					<c:when test="${roomList.roomType eq 'S'}">Suite Room</c:when>
+				</c:choose>
+				</td>
+				
+				<td>
+				<c:choose>
+					<c:when test="${roomList.bedType eq 'S'}">Single Bed</c:when>
+					<c:when test="${roomList.bedType eq 'D'}">Double Bed</c:when>
+					<c:when test="${roomList.bedType eq 'T'}">Twin Bed</c:when>
+					<c:when test="${roomList.bedType eq 'F'}">Family Bed</c:when>
+				</c:choose>
+				</td>
+				
+				<td>최대인원 : ${roomList.availablePerson }명</td>
+				<td>${roomList.basicCharge }원</td>
 				<td><input type="button" value="예약하기" class="admin_commonBtn" onclick="location.href='${root }admin_reservationModifyProc?reservationNo=${resdb.reservationNo }'"></td>
 			</tr>
 			</c:forEach>

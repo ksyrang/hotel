@@ -93,7 +93,7 @@
 					<if test='hotelId != null and hotelId != ""'>hotelId=#{hotelId}</if>
 					<if test='availablePerson != null and availablePerson != ""'>AND availablePerson<![CDATA[>=]]>#{availablePerson}</if>
 				</where>
-				ORDER BY roomType
+				ORDER BY availablePerson ASC, basicCharge ASC
 				)A
 			)B WHERE rn BETWEEN #{b} and #{e}
 	</select>

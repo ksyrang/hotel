@@ -97,6 +97,18 @@ public class HomeController {
 		return "reservation/reservationMain";
 	}
 	
+	/* reservation step1 페이지*/
+	@RequestMapping("roomReservation_step1")
+	public String roomReservation_step1() {
+		return "reservation/roomReservation_step1";
+	}
+	
+	/* reservation complete 페이지*/
+	@RequestMapping("roomReservation_complete")
+	public String roomReservation_complete() {
+		return "reservation/roomReservation_complete";
+	}
+	
 	@RequestMapping("main_header")
 	public String main_header() {
 		return "main_header";

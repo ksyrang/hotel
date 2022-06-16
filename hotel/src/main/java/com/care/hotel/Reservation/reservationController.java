@@ -1,5 +1,7 @@
 package com.care.hotel.Reservation;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,6 +13,7 @@ import com.care.hotel.common.DateService;
 import com.care.hotel.memRoom.service.ImemRoomSvc;
 import com.care.hotel.memRoom.service.memRoomSvcImpl;
 import com.care.hotel.resource.service.IhotelresourceSvc;
+import com.care.hotel.resourceDTO.roomDTO;
 
 @Controller
 public class reservationController {
@@ -40,6 +43,16 @@ public class reservationController {
 		
 		memRoomSvc.memRoomList(currentPage, hotelSelect, startDate, endDate, availablePerson);
 		return "forward:/index?formpath=reservationMain";
+	}
+	
+	@RequestMapping(value="roomReservation_step1Proc")
+	public String roomReservation_step1Proc(roomDTO roomDTO, HttpSession session) {
+		return "forward:/index?formpath=roomReservation_step1";
+	}
+	
+	@RequestMapping(value="roomReservation_completeProc")
+	public String roomReservation_completeProc() {
+		return "forward:/index?formpath=roomReservation_complete";
 	}
 
 }
