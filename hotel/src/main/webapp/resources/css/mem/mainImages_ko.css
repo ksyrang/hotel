@@ -1,8 +1,6 @@
 .head .header .logo{ width:260px; margin:0 auto;}
 .head .header .logo a{ display:block;  height:78px; background:url(../../images/ko/main/logo.gif); text-indent:-9999%; overflow:hidden; }
 
-
-
 /*높이 한줄 추가 시작*/
 .head .header .topNavi{ position:absolute; right:0px; bottom:15px;}
 /*높이 한줄 추가 끝*/

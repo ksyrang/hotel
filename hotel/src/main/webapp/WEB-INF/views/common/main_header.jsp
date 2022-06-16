@@ -13,6 +13,10 @@
 <link href="${pageContext.request.contextPath}/resources/css/mem/common/reserve_new.css" rel="stylesheet" type="text/css">
 <link href="${pageContext.request.contextPath}/resources/css/mem/common/lang-ko_N.css" rel="stylesheet" type="text/css">
 <link href="${pageContext.request.contextPath}/resources/css/common/swiper.min.css" rel="stylesheet" type="text/css">
+<link href="${pageContext.request.contextPath}/resources/css/kjs.css" rel="stylesheet" type="text/css">
+<style>
+.footer_logo a{ margin:auto; width:250px; height:78px; position:relative; left: -1%; }
+</style>
 <meta name="description" content="The Shilla Hotels &amp; Resorts"><!-- <meta name="keywords" content="The Shilla Hotels &amp; Resorts" /> -->
 <meta name="og:title" content="The Shilla Hotels &amp; Resorts">
 
@@ -127,16 +131,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 <div class="header">
-  <h1 class="logo"><a href="${root }">THE SHINNANDA HOTELS</a></h1>
+  <div class="footer_logo">
+         <a href="${root }"><img  class="logo" src="${pageContext.request.contextPath}/resources/images/newLogo.gif" width="100" height="78"></a>
+  </div>
+<!-- 
+  <h1 class="Alogo"><a href="${root }">THE SHINNANDA HOTELS</a></h1>
+ -->
   <!-- 로그인 -->
   <span class="loginArea">
-	<a href="${root }index?formpath=login">로그인</a>
-    <a href="${root }index?formpath=memJoinAgreeForm">신난다리워즈 가입</a>
-    </span>
+  	<c:choose>
+  		<c:when test="${sessionScope.userId == null || sessionScope.userId == '' }">
+  			<a href="${root }index?formpath=login">로그인</a>
+		    <a href="${root }index?formpath=memJoinAgreeForm">신난다리워즈 가입</a>
+  		</c:when>
+  		<c:otherwise>
+			<a href="${root }logoutProc">로그아웃</a>
+		    <a href="${root }memListResvProc">마이페이지</a>
+  		</c:otherwise>
+  	</c:choose>
+  </span>
   <!-- 예약확인 추가 -->
    <div class="resvConfirm">
 		  <div class="resvConBox">
-			  <a class="btn" href="#">예약확인</a>
+			  <a class="btn" href="${root }memListResvProc">예약확인</a>
 			  <!-- <ul class="list">
 				  <li class="dn1 first last">
 					  <ul class="listSt">
@@ -150,7 +167,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				  </li>
 			  </ul> -->
 		  </div>
-	  </div>
+	</div>
   <!-- 예약확인 추가 -->
   <!-- 한국어 영어 일어 시작  -->
     <div class="language">
