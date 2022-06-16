@@ -137,6 +137,19 @@ public class memberSvcImpl implements ImemberSvc{
 	}
 	
 	@Override
+	public String isExistEmail(String memberEmail) {
+		if (memberEmail == null)
+			return "이메일를 입력 후 다시 시도하세요.";
+		int count = memberDAO.isExistEmail(memberEmail);
+		if (count == 1)
+			return "중복 이메일 입니다.";
+
+		return "사용 가능한 이메일 입니다.";
+		
+	}
+
+	
+	@Override
 	public String memberJoin(memberDTO member, memberExDTO memberExDto, LoginDTO login) {
 		String id = member.getMemberId();
 		String nameKR = member.getMemberNameKR();
@@ -147,38 +160,25 @@ public class memberSvcImpl implements ImemberSvc{
 		String pw = member.getMemberPw();
 		String gender = member.getMemberGender();
 
-		Boolean authStatus = (Boolean) session.getAttribute("authStatus");
-		if (authStatus == null || authStatus != true)
-			return "이메일 인증 후 가입 할 수 있습니다.";
-
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 		String securePw = encoder.encode(member.getMemberPw());
 		member.setMemberPw(securePw);
 
-		if(!(id.isEmpty() || pw.isEmpty() || id == null || pw == null)) {
-			loginDAO.loginInsert(login);
-			
-		}else {
-			return "필수 입력 정보 입니다.";
-		}
 		
 		if(!(id.isEmpty() || nameKR.isEmpty() || nameENG.isEmpty() || birth.isEmpty() || mobile.isEmpty() || email.isEmpty() || pw.isEmpty() || gender.isEmpty())) {
-			if (memberDAO.isExistId(login.getMemberId()) > 0)
+			if (memberDAO.isExistId(id) > 0 || memberDAO.isExistEmail(email) > 0)
 				return "중복 아이디 입니다.";
 			memberDAO.memberInsert(member);
+			loginDAO.loginInsert(login);
+			memberDAO.memberExInsert(memberExDto);
 		}else {
 			return "필수 입력 정보 입니다.";
 		}
 		
-		if (!("".equals(memberExDto.getMemberZipcode()) || "".equals(memberExDto.getMemberAddr1()) || "".equals(memberExDto.getMemberAddr2()) || "".equals(memberExDto.getMemberHomePhone()))) {
-			memberDAO.memberExInsert(memberExDto);
-		
-		}else {
-			return "입력 정보가 없습니다";
-		}
-		
+//		if(!(id || "".equals(memberExDto.getMemberZipcode()) || "".equals(memberExDto.getMemberAddr1()) || "".equals(memberExDto.getMemberAddr2()) || "".equals(memberExDto.getMemberHomePhone()))) {
+//			memberDAO.memberExInsert(memberExDto);
+//		}
 		return "가입 완료";
-		
 	}
 			
 		
@@ -234,6 +234,7 @@ public class memberSvcImpl implements ImemberSvc{
 		return result;
 	}
 
+	
 
 		
 		

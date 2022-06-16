@@ -5,6 +5,8 @@ import java.util.Random;
 
 import javax.servlet.http.HttpSession;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -12,24 +14,48 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.care.hotel.member.service.MailService;
+import com.care.hotel.member.service.memberSvcImpl;
 
 @Controller
 public class MailController {
 	@Autowired private MailService mailService;
 	@Autowired private HttpSession session;
+	@Autowired private memberSvcImpl memberService;
+	
+	private static final Logger logger = LoggerFactory.getLogger(MemJoinController.class);
+	
+	@ResponseBody
+	@PostMapping(value = "isExistEmail", produces = "application/json; charset=UTF-8")
+	public String isExistEmail(@RequestBody(required = false) String memberEmail) {
+		logger.info("userIdCheck 진입");
+        logger.info("전달받은 id:"+memberEmail);
+		String msg4 = memberService.isExistEmail(memberEmail);
+		if(msg4.equals("중복 이메일 입니다.")) {
+			session.setAttribute("emailCheck", 1); // 1 == 중복된 이메일
+		}else {
+			session.removeAttribute("emailCheck");
+		}
+		logger.info("확인 결과:"+msg4);
+		return msg4;
+		
+	}
 	
 	@ResponseBody
 	@PostMapping(value="sendAuth", produces = "application/json; charset=UTF-8")
 	public String sendAuth(@RequestBody(required = false) String memberEmail) {
-		if(memberEmail != null) {
-			Random r = new Random();
-			String number = String.format("%06d", r.nextInt(1000000)); 
-			System.out.println("인증 번호 : " + number);
-			mailService.sendMail(memberEmail, "[인증번호]", number);
-			session.setAttribute("authNumber", number);
-			return "인증 번호 전송";
+		if(session.getAttribute("emailCheck") != null && (int)session.getAttribute("emailCheck") == 1) {
+			return "중복된 이메일 입니다.";
 		}else {
+			if(memberEmail != null) {
+				Random r = new Random();
+				String number = String.format("%06d", r.nextInt(1000000)); 
+				System.out.println("인증 번호 : " + number);
+				mailService.sendMail(memberEmail, "[인증번호]", number);
+				session.setAttribute("authNumber", number);
+				return "인증 번호 전송";
+			}else {
 			return "이메일 형식을 입력하세요.";
+			}
 		}
 	}
 	

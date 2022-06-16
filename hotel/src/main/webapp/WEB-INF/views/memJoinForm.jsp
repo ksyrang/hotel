@@ -52,11 +52,15 @@ function printMsg3(){
 	var msg3 = document.getElementById('msg3');
 	msg3.innerHTML = req.responseText;
 } 
+function printMsg4(){
+	var msg4 = document.getElementById('msg4');
+	msg4.innerHTML = req.responseText;
+} 
 function pwCheck() {
 	var memberPw = document.getElementById('memberPw').value;
 	var memberPwCheck = document.getElementById('memberPwCheck').value;
 	if(memberPw == memberPwCheck){
-		if(memberPw.length >= 8 && memberPwCheck.length >= 8){
+		if(memberPw.length >= 8 && memberPwCheck.length >= 8 && memberPw.length <= 20 && memberPwCheck.length <= 20){
 			document.getElementById('label2').innerHTML = "일치";
 		}else{
 			document.getElementById('label2').innerHTML = "비밀번호 길이는 8~20자리 입니다.";
@@ -95,6 +99,67 @@ function checkAuth(){
 	var data = {authNumber:number};
 	data = JSON.stringify(data);
 	req.send(data);
+}
+function isExistEmail(){
+	var email = document.getElementById('memberEmail').value;
+	if(email == ""){
+		alert("필수 정보 입니다.");
+		return;
+	}
+	if(email.length < 5 || email.length > 20){
+		alert("이메일 확인 바랍니다.");
+		return;
+	}
+	req = new XMLHttpRequest();
+	req.onreadystatechange = printMsg4;
+	req.open('post', 'isExistEmail');
+	req.send(document.getElementById('memberEmail').value);
+}
+function buttonCheck(){
+/* 	var id = document.getElementById('memberId').value;
+	var pw = document.getElementById('memberPw').value;
+	var pwc = document.getElementById('memberPwCheck').value;
+	var gender = document.getElementById('memberGender').value;
+	var name1st = document.getElementById('firstName').value;
+	var name2nd = document.getElementById('lastName').value;
+	var birth = document.getElementById('memberBirth').value;
+	var email = document.getElementById('memberEmail').value;
+	var number = document.getElementById('authNumber').value;
+	var phone = document.getElementById('memberMobile').value; */
+	
+	var msg1 = document.getElementById('msg1').innerHTML;
+	var msg2 = document.getElementById('msg2').innerHTML;
+	var msg3 = document.getElementById('msg3').innerHTML;
+	var msg4 = document.getElementById('msg4').innerHTML;
+	
+	/* if(id == "" || pw == "" || pwc == "" || gender == "" || name1st == "" || name2nd == "" || birth == "" || email == "" || number == "" || phone == ""){
+		alert("*표시의 정보는 반드시 작성 해주세요");
+		return;
+	} */
+	
+	 if(msg1 == "" || msg1 == "중복 아이디 입니다."){  
+		alert("아이디 중복 확인을 반드시 해주세요");
+		return;
+	}else if(msg2 == "" || msg2 =="이메일 형식을 입력하세요."){
+		alert("이메일 인증을 반드시 해주세요");
+		return;
+	}else if(msg3 == "" || msg3 == "인증 번호를 입력하세요." || msg3 == "인증 실패"){
+		alert("인증번호 확인을 반드시 해주세요");
+		return;
+	}else if(msg4 == "" || msg4 == "중복 아이디 입니다."){
+		alert("이메일 중복 확인을 반드시 해주세요");
+		return;
+	}else{
+	//	location.href="${root }index?formpath=memberInsert";
+		document.getElementById('f').submit();
+	}
+}
+function emailRegex(){
+	var emailRule = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;//이메일 정규식 
+	if(!emailRule.test(document.getElementById('memberEmail').value)) {           
+		return false;
+	}
+	
 }
 </script>
 
@@ -144,7 +209,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	}
 </script>
 
-<form action="memberJoinProc" method="post">
+<form action="memberJoinProc" method="post" id="f">
 	<div class="container">
 		<div class="contents" id="contents">
 			<div class="ctnJoin ctnJoinStep2">
@@ -217,7 +282,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					<tr>
 						<th scope="row"><em class="ast">*</em> 생년월일</th>
 						<td>
-						<input id="memberBirth" name="memberBirth" placeholder='- 빼고 8자리로 작성' onkeyup="this.value=this.value.replace(/[^0-9]/gi,'');" style="text-transform: uppercase;" type="text" class="lastNameEn uiform text" value="" maxlength="8" autocomplete="off" />
+						<input id="memberBirth" name="memberBirth" placeholder='- 빼고 8자리로 작성'  onkeyup="this.value=this.value.replace(/[^0-9]/gi,'');" type="text" class="lastNameEn uiform text" value="" maxlength="8" autocomplete="off" />
 						</td>
 					</tr>
 					
@@ -226,8 +291,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					<tr>
 						<th scope="row"><em class="ast">*</em> 이메일 </th>
 						<td>
-							<input id="memberEmail" name="memberEmail"  type="text" value="" onkeyup="this.value=this.value.replace(/^[-A-Za-z0-9_][-A-Za-z0-9_.][@]{1}[-A-Za-z0-9_]+[-A-Za-z0-9_.][.]{3}[A-Za-z]$/gi, '');" maxlength="80" title="이메일주소 입력" autocomplete="off"> 
+							<input id="memberEmail" name="memberEmail"  type="text" value="" onkeyup="this.value=this.value.replace(/[^a-z0-9.@]{5,20}/i,'')" maxlength="80" placeholder="이메일주소 입력" autocomplete="off"> 
+							<input type="button" value="이메일 중복 확인" onclick="isExistEmail()">
 							<input type="button" value="인증번호 전송" onclick="sendAuth()">
+						<div><span style="color: red; font-size=10px;" id="msg4">${msg4 }</span></div>
 						<div><span style="color: red; font-size=10px;" id="msg2">${msg2 }</span></div>
 						</td>
 					</tr>
@@ -297,8 +364,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 								<th scope="row" class="first"><em class="ast">*</em> 아이디</th>
 								<td class="first">
 								<label for="memberId" class="idForm">아이디</label>
-								<input type="text" id="memberId" name="memberId" onkeyup="this.value=this.value.replace(/[^a-z0-9]/gi,'');" placeholder="8자 이내 영문 또는 영문/숫자 조합" class="uiform text" maxlength="8" autocomplete="off" style="width:200px">
-								<input type="button" value="중복 확인" onclick="isExistId()">
+								<input type="text" id="memberId" name="memberId" size="20" placeholder="8자 이내 영문 또는 영문/숫자 조합" onkeyup="this.value=this.value.replace(/[^a-z0-9]{8,20}/i,'')" class="uiform text" maxlength="8" autocomplete="off" style="width:200px">
+								<input type="button" value="아이디 중복 확인" onclick="isExistId()">
 								<div><span style="color: red; font-size=10px;" id="msg1">${msg1 }</span></div>
 								</td>
 							</tr>
@@ -306,7 +373,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 						<th scope="row"><em class="ast">*</em> 비밀번호</th>
 						<td>
 							<label for="memberPw" class="pwForm1">비밀번호</label>
-							<input type="password" class="pwForm1 uiform password" id="memberPw" name="memberPw" onkeyup="this.value=this.value.replace(/[^a-z0-9~!@\#$%^&*]/gi,'');" maxlength="20" autocomplete="off" style="width:200px">
+							<input type="password" class="pwForm1 uiform password" id="memberPw" size="20" name="memberPw" onkeyup="this.value=this.value.replace(/[^a-z0-9~!@\#$%^&*]{8,20}/i,'')" maxlength="20" autocomplete="off" style="width:200px">
 								<div class="pwGuide" style="display: none;">
 									<h4 class="tit">비밀번호 입력 시 아래의 사항을 참고하시어 안전한 정보 입력을 권장합니다.</h4>
 									<ul class="list">
@@ -321,7 +388,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 						<th scope="row" class="last"><em class="ast">*</em> 비밀번호 확인</th>
 						<td class="last">
 							<label for="memberPwCheck" class="pwForm2">비밀번호 확인</label>
-							<input type="password" class="pwForm2 uiform password" id="memberPwCheck" name="memberPwCheck" maxlength="20" autocomplete="off" style="width:200px" onchange="pwCheck()"> 
+							<input type="password" class="pwForm2 uiform password" id="memberPwCheck" size="20" name="memberPwCheck" onkeyup="this.value=this.value.replace(/[^a-z0-9!@\#$%^&*]{8,20}/i,'')" maxlength="20" autocomplete="off" style="width:200px" onchange="pwCheck()"> 
 							<label id="label2">(*필수 체크)</label>
 						</td>
 					</tr>	
@@ -334,7 +401,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				<br>              
            		<!--  onclick="nextStep();"-->	
 				<div class="btnList">
-			 	<input type="submit"  value='회원 가입'  style="width: 60px;" />
+			 	<input type="button"  value='회원 가입'  style="width: 60px;" onclick="buttonCheck()" />
 				<input type=reset value='취소' style="width: 60px; "/>
 				</div>
 			<!--  -->
