@@ -12,8 +12,17 @@ import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 
 @Configuration
-@MapperScan(basePackages = {"com.care.hotel.login.DAO", "com.care.hotel.member.DAO", 
-		"com.care.hotel.payment.DAO","com.care.hotel.Reservation.DAO","com.care.hotel.resourceDAO"})
+@MapperScan(basePackages = {
+		"com.care.hotel.login.DAO", 
+		"com.care.hotel.member.DAO", 
+		"com.care.hotel.payment.DAO",
+		"com.care.hotel.Reservation.DAO",
+		"com.care.hotel.resourceDAO",
+		"com.care.hotel.Reservation.DAO",
+		"com.care.hotel.resourceDAO",
+		"com.care.hotel.statistics.DAO"
+		}
+)
 
 public class DBconfig {
 	@Bean//컨테이너 등록

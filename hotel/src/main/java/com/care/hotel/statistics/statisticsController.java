@@ -41,11 +41,16 @@ public class statisticsController {
 	@PostMapping(value="chartUpdates", produces = "text/html; charset=UTF-8")//produces = "text/html; charset=UTF-8" 데이터를 리턴해 줄때 한글 깨짐 방지
 	public String chartUpdates_S(@RequestBody(required = false) String chartSelect) {
 
-		if(chartSelect ==""|| chartSelect == null || chartSelect.isEmpty()) return statisticsSvc.yearRevenueChart();
-		
-		if(chartSelect.equals("curMthSalses")) return statisticsSvc.chartTest();
-		else if(chartSelect.equals("preMthSalses")) return statisticsSvc.chartTest2();
-		else return statisticsSvc.chartTest3();
+		//전체
+		if(chartSelect ==""|| chartSelect == null || chartSelect.isEmpty()) return statisticsSvc.allRevenueChart();
+		//금월
+		if(chartSelect.equals("curMthSalses")) return statisticsSvc.currentmonthChart();
+		//금년
+		else if(chartSelect.equals("yearSalses")) return statisticsSvc.yearRevenueChart();
+		//전월
+		else if(chartSelect.equals("preMthSalses")) return statisticsSvc.earlymonthChart();
+		//test 및 null 방지
+		else return statisticsSvc.allRevenueChart();
 	}
 	
 }

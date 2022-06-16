@@ -57,10 +57,10 @@ function chartUpdate(){//데이터 송신 메소드
  <div class="admin_main">
 	<select name="chartSelect" id="chartSelect" onchange="chartUpdate()">
 		<option value="">전체</option>
-		<option value="curMthSalses">현월 매출</option>
+		<option value="curMthSalses">금월 매출</option>
 		<option value="preMthSalses">전월 매출</option>
 		<option value="yearSalses">금년 매출</option>
 	</select>
-   <div id="columnchart_material" style="width: 800px; height: 500px;"></div>
+   <div id="columnchart_material" style="height: 50%;"></div>
  </div>
 </body>

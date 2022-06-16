@@ -11,12 +11,16 @@ public interface IstatisticsSvc {
 	public ArrayList<hotelDTO> allhotelList();
 
 	
-	public String chartTest();
-	public String chartTest2();
-	public String chartTest3();
+//	public String chartTest();
+//	public String chartTest2();
+//	public String chartTest3();
 
-	public String amountAllChart();
+	public String allRevenueChart();
+	
+	public String currentmonthChart();
 
+	public String earlymonthChart();	
+	
 	public String yearRevenueChart();
-
+	
 }

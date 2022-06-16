@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.care.hotel.statistics.DAO.IstatisticsDAO">
+
+<!-- getyearRevenue 금년 매출 -->
+	<select id="getyearRevenue" resultType="int">
+		SELECT sum(paymentAmount) FROM payment
+		<where>
+			<if test='hotelId != null and hotelId != ""'>hotelId=#{hotelId}</if>
+			<if test="paymentDate != null and paymentDate !=''">AND paymentDate BETWEEN TO_DATE(#{paymentDate}||'0101', 'YYYYMMDD') AND TO_DATE(#{paymentDate}||'1231', 'YYYYMMDD')</if>
+		</where><!-- BETWEEN TO_DATE(#{from_dt} AND TO_DATE(#{to_dt}, 'YYYYMMDD') + 0.99999 -->
+	</select>
+<!-- getyearRevenue 금월 매출 -->
+	<select id="getMonthRevenue" resultType="int">
+		SELECT sum(paymentAmount) FROM payment
+		<where>
+			<if test='hotelId != null and hotelId != ""'>hotelId=#{hotelId}</if>
+			<if test="paymentDate != null and paymentDate !=''">AND paymentDate BETWEEN TO_DATE(#{paymentDate}||'01', 'YYYYMMDD') AND LAST_DAY(TO_DATE(#{paymentDate}||'01', 'YYYYMMDD')) </if>
+		</where>
+	</select>
+
+</mapper>
