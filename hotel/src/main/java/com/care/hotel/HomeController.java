@@ -91,6 +91,12 @@ public class HomeController {
 		return "home2";
 	}	
 	
+	/* reservation Main 페이지 */
+	@RequestMapping("reservationMain")
+	public String reservationMain() {
+		return "reservation/reservationMain";
+	}
+	
 	@RequestMapping("main_header")
 	public String main_header() {
 		return "main_header";
@@ -100,6 +106,8 @@ public class HomeController {
 	public String main_footer() {
 		return "main_footer";
 	}
+	
+	
 	
 	/*//admin sector//*/
 	@RequestMapping(value="admin")
