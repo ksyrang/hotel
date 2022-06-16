@@ -38,8 +38,9 @@ public class FindInfoController {
 			ra.addFlashAttribute("msg", "FindIDProc 오류발생");
 			return "redirect:/index?formpath=findID";
 		}else {
+			String result = memberNameENG + "회원의 아이디는 [ " + memberId + "]입니다.";
 			memberNameENG = lastName + " " + firstName;
-			String result = memberService.findID(memberNameENG, memberEmail);
+			result = memberService.findID(memberNameENG, memberEmail);
 			
 			System.out.println(memberNameENG);
 			System.out.println(memberEmail);
@@ -81,7 +82,7 @@ public class FindInfoController {
 			ra.addFlashAttribute("msg", "FindIDProc 오류발생");
 			return "redirect:/index?formpath=findPW";
 		}else {
-			String result = "회원의 비밀번호는 [ " + memberPw + "]입니다.";
+			String result = memberNameENG + "회원의 비밀번호는 [ " + memberPw + "]입니다.";
 			memberNameENG = lastName + " " + firstName;
 			result = memberService.findPW(memberId, memberNameENG, memberEmail);
 		

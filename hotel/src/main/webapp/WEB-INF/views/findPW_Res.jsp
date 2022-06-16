@@ -74,9 +74,7 @@
 			<div class="formBox">
 				<dl>
 					<dd>
-						<strong>${sessionScope.findMemberNameENG}님의</strong>
-						비밀번호는
-						<strong>[${sessionScope.findMemberPw}]입니다.</strong>
+						<strong>${msg }</strong>
 					</dd>
 				</dl>	
 			</div>

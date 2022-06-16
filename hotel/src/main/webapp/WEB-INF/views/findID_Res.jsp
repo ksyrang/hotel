@@ -43,7 +43,7 @@ document.write("<div id='popCalendarDiv' class='popCalendar' style='display:none
 <script src="/js/commonEx.js" charset="UTF-8"></script>
 <script src="/js/jquery.slides.js" charset="UTF-8"></script>
 <script src="/js/mbr/popLogin.js" charset="UTF-8"></script><div id="popLoginDiv" class="popLogin" style="display:none"></div>
-<script src="/js/mbr/forIdPwd.js" charset="UTF-8"></script><div id="popForIdPwDiv" style="display: block;" tabindex="-1">
+<script src="/js/mbr/forIdPwd.js" charset="UTF-8"></script><div id="popForIdPwDiv" style="display: block;" tabindex="-1"></div>
 <div class="popLayer popLayerFindId">
 
 	<div class="popHead">
@@ -56,9 +56,7 @@ document.write("<div id='popCalendarDiv' class='popCalendar' style='display:none
 			<div class="formBox">
 				<dl>
 					<dd>
-						<strong>${sessionScope.findMemberNameENG}님의</strong>
-						아이디는 
-						<strong>[${sessionScope.findMemberID}]입니다.</strong>
+						<strong>${msg}</strong>
 					</dd>
 				</dl>	
 			</div>
@@ -69,11 +67,10 @@ document.write("<div id='popCalendarDiv' class='popCalendar' style='display:none
 			</div>
 			
 		</div>
-		
+	</div>
 		<!-- 아이디찾기 결과선택 -->
 		
-
-
+</div>
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T3LBJ26"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>

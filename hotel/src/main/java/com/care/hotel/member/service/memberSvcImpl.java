@@ -195,7 +195,7 @@ public class memberSvcImpl implements ImemberSvc{
 		   session.setAttribute("findMemberNameENG", memberNameENG);
 		   // 해당 값인 memberDTO가 있을 때
 		   if(member != null) {
-		      result="가입된 아이디는 [ " + member.getMemberId() + "]입니다.";
+		      result = memberNameENG + "가입된 아이디는 [" + member.getMemberId() + "]입니다.";
 		      session.setAttribute("findMemberID", member.getMemberId());
 		   }else {
 			   result="다시 입력해주세요.";
@@ -221,8 +221,15 @@ public class memberSvcImpl implements ImemberSvc{
 		   session.setAttribute("findMemberNameENG", memberNameENG);
 		   // 해당 값인 memberDTO가 있을 때
 		   if(member != null) {
-		      result="회원의 비밀번호는 [ " + member.getMemberPw() + "]입니다.";
-		      session.setAttribute("findMemberPw", member.getMemberPw());
+			   BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+			   String newPw = "11111111";//변경될 새로운 pw 원 data
+			   newPw = encoder.encode(newPw);//인코딩
+			   memberDTO mem = memberDAO.memberInfo(memberId);
+			   mem.setMemberPw(newPw);//새로운 비밀번호 덮어쓰기
+			   memberDAO.memberUpdate(mem);//정보 업데이트
+			   
+		      result= memberNameENG + "회원의 비밀번호는 [" + "11111111" + "]입니다.";
+		      session.setAttribute("findMemberPw", "11111111");
 		   }else {
 			   result="다시 입력해주세요.";
 		   }
