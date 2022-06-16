@@ -52,7 +52,8 @@ public class MyPageServiceImpl implements IMyPageService{
 		session.setAttribute("select", select);
 		session.setAttribute("startDt", startDt);
 		session.setAttribute("endDt", endDt);
-		String url = "mypage_index?formpath=memListResv&currentPage=";
+//		String url = "mypage_index?formpath=memListResv&currentPage=";
+		String url = "mypage_index?formpath=memPageResvProc&currentPage=";
 		session.setAttribute("page", PageService.getNavi(currentPage, pageBlock, totalCount, url));
 		session.setAttribute("reservationCount", totalCount);
 	}

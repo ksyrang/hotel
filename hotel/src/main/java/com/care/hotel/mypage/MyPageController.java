@@ -47,13 +47,10 @@ public class MyPageController {
 			@RequestParam(value = "currentPage", required = false, defaultValue = "1") int currentPage,
 			String select, String startDt, String endDt) {
 		logger.info("memListResvProc");
-		model.addAttribute("select",select);
-		model.addAttribute("startDt",startDt);
-		model.addAttribute("endDt",endDt);
 		String memberId = (String)session.getAttribute("userId");
 		
 		String result;
-		if(memberId == null) {
+		if(memberId == null || memberId == "") {
 			result = "로그인 후 진행하시기 바랍니다.";
 			model.addAttribute("msg", result);
 			return "forward:/";
@@ -75,6 +72,21 @@ public class MyPageController {
 		return "forward:/mypage_index?formpath=memListResv";
 	}
 	
+	@RequestMapping(value = "memPageResvProc")
+	public String memPageResvProc(Model model, 
+			@RequestParam(value = "currentPage", required = false, defaultValue = "1") int currentPage,
+			String select, String startDt, String endDt) {
+		logger.info("memPageResvProc");
+		String memberId = (String)session.getAttribute("userId");
+		select = (String)session.getAttribute("select");
+		startDt = (String)session.getAttribute("startDt");
+		endDt = (String)session.getAttribute("endDt");
+		
+		System.out.println(currentPage + "/" + select + "/" + startDt + "/ " + endDt + "/ " + memberId);
+		myPageService.memListResv(currentPage, select, startDt, endDt, memberId);//서비스 내부에서 session에 데이터를 업로드함
+		
+		return "forward:/memListResv";
+	}
 	@RequestMapping(value="memListResv")
 	public String memListResv() {
 		logger.info("memListResv");
