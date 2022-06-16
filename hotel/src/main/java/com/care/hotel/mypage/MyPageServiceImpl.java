@@ -64,7 +64,9 @@ public class MyPageServiceImpl implements IMyPageService{
 			return 0; // 아이디 혹은 비밀번호를 확인해주세요
 		} 
 		memberDTO memberDto = memberDAO.memberInfo(memberId);
-		if(memberDto.getMemberId().equals(memberId) && memberDto.getMemberPw().equals(memberPw)) {
+		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+		if(memberDto.getMemberId().equals(memberId) && 
+				(encoder.matches(memberPw, memberDto.getMemberPw()) || memberDto.getMemberPw().equals(memberPw))) {
 			reservationDAO.reservationCancel(reservationNo, cancelDate);
 			session.setAttribute("email", memberDto.getMemberEmail());
 			return 2; // "[" + reservationNo + "] 예약을 취소 했습니다.";
@@ -86,7 +88,10 @@ public class MyPageServiceImpl implements IMyPageService{
 		if(memberDto == null) {
 			return 3; // DB에 존재하지 않음;
 		}
-		if(memberDto.getMemberId().equals(memberId) && memberDto.getMemberPw().equals(memberPw)) {
+		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+		
+		if(memberDto.getMemberId().equals(memberId) && 
+				(encoder.matches(memberPw, memberDto.getMemberPw()) || memberDto.getMemberPw().equals(memberPw))) {
 			allMemberDto.setMemberId(memberDto.getMemberId());
 			allMemberDto.setMemberNameKR(memberDto.getMemberNameKR());
 			allMemberDto.setMemberNameENG(memberDto.getMemberNameENG());
@@ -158,8 +163,11 @@ public class MyPageServiceImpl implements IMyPageService{
 			return 1;
 		} 
 		memberDTO memberDto = memberDAO.memberInfo(memberPwChngDto.getMemberId());
-		if(memberDto.getMemberPw().equals(memberPwChngDto.getMemberPw())) {
-			memberDto.setMemberPw(memberPwChngDto.getMemberNewPw());
+		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+		if(memberDto.getMemberPw().equals(memberPwChngDto.getMemberPw())
+				|| encoder.matches(memberPwChngDto.getMemberPw(), memberDto.getMemberPw())) {
+			String securePw = encoder.encode(memberPwChngDto.getMemberNewPw());
+			memberDto.setMemberPw(securePw);
 			memberDAO.memberUpdate(memberDto);
 			return 2;
 		}else {

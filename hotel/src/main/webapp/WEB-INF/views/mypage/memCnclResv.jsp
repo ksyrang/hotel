@@ -91,7 +91,7 @@
 				<tr class="last">
 					<th scope="row" class="last"><label for="memberPw" class="pw">비밀번호</label></th>
 					<td class="last">
-						<input type="password" class="pw uiform password" id="memberPw" name="memberPw" placeholder="PASSWORD" maxlength="20" >
+						<input type="password" class="pw uiform password" id="memberPw" name="memberPw" placeholder="PASSWORD" maxlength="60" >
 					</td>
 				</tr>
 			</tbody>

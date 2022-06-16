@@ -75,20 +75,20 @@
 						<th scope="row">
 							<label for="memberPw" class="memberPw">현재 비밀번호</label></th>
 						<td>
-							<input type="password" class="memberPw" id="memberPw" name="memberPw" maxlength="20" style="width: 143px;" autocomplete="off">
+							<input type="password" class="memberPw" id="memberPw" name="memberPw" maxlength="60" style="width: 143px;" autocomplete="off">
 						</td>
 					</tr>
 					<tr>
 						<th scope="row"><label for="memberNewPw" class="pwNew">새 비밀번호</label></th>
 						<td>
-							<input type="password" class="memberNewPw" id="memberNewPw" name="memberNewPw" maxlength="20" style="width: 143px;" autocomplete="off">
+							<input type="password" class="memberNewPw" id="memberNewPw" name="memberNewPw" maxlength="60" style="width: 143px;" autocomplete="off">
 							<span class="msgCheck">8~20자 이내 영문/숫자 조합(특수문자 입력 가능)</span>
 						</td>
 					</tr>
 					<tr class="last">
 						<th scope="row" class="last"><label for="memberNewPwCnfm" class="memberNewPwCnfm">새 비밀번호 확인</label></th>
 						<td class="last">
-							<input type="password" class="memberNewPwCnfm" id="memberNewPwCnfm" name="memberNewPwCnfm" maxlength="20" style="width: 143px;" autocomplete="off">
+							<input type="password" class="memberNewPwCnfm" id="memberNewPwCnfm" name="memberNewPwCnfm" maxlength="60" style="width: 143px;" autocomplete="off">
 						</td>
 					</tr>
 				</tbody>

@@ -9,6 +9,7 @@ import javax.servlet.http.HttpSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -101,6 +102,9 @@ public class MyPageController {
 		System.out.println("memCnclCheckProc memberId : " + memberId);
 		System.out.println("memCnclCheckProc memberPw : " + memberPw);
 		System.out.println("memCnclCheckProc reservationNo : " + reservationNo);
+		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+		String securePw = encoder.encode(memberPw);
+		System.out.println("memCnclCheckProc securePw : " + securePw);
 		
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 		Calendar calendar = Calendar.getInstance();
@@ -207,8 +211,12 @@ public class MyPageController {
 		
 		if(check == 2) {
 			result = "[" + mem.getMemberId() + "]님 비밀번호를 수정했습니다.";
+		}else if(check == 0) {
+			result = "[" + mem.getMemberId() + "]님 현재 비밀번호 / 새 비밀번호를 입력하세요.";
+		}else if(check == 1) {
+			result = "[" + mem.getMemberId() + "]님 새 비밀번호와 확인 비밀번호가 일치하지 않습니다.";
 		}else {
-			result = "[" + mem.getMemberId() + "]님 비밀번호 수정에 실패했습니다.";
+			result = "[" + mem.getMemberId() + "]님 현재 비밀번호를 확인하시고 다시 진행 바랍니다.";
 		}
 		model.addAttribute("msg", result);
 		return "forward:/memSetPwMod";
@@ -233,7 +241,7 @@ public class MyPageController {
 		System.out.println("memSetDropProc check 2 성공 : " + check + " email : " + email);
 		
 		if(check == 2) {
-			result = "[" + memberId + "]님 회원탈회 신청이 완료되었습니다.";
+			result = "[" + memberId + "]님 회원탈회가 완료되어 메일이 송부되었습니다.";
 			mailService.sendMail(email, "[신난다호텔 회원 탈회]", result);
 			dropCheck = "성공";
 			session.setAttribute("userId", "");
