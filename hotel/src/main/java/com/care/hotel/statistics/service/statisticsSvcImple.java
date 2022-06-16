@@ -1,5 +1,7 @@
 package com.care.hotel.statistics.service;
 
+import java.sql.Date;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -30,6 +32,40 @@ public class statisticsSvcImple implements IstatisticsSvc {
 	public ArrayList<hotelDTO> allhotelList() {
 		return hotelDAO.allhotelidList();
 	}
+	
+	@Override
+	public String amountAllChart() {
+		
+		return null;
+	}
+	@Override
+	public String yearRevenueChart() {
+		System.out.println("yearRevenueChart 진입" );
+		ArrayList<hotelDTO> hotelList = hotelDAO.allhotelidList();//호텔 리스트 생성
+		
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy"); //금년도 생성
+		String targetYaer = sdf.format(new java.util.Date());// sql에서 받을수 있게 변환
+		
+		GoogleChartDTO charttest = new GoogleChartDTO();//차트DTO 생성
+		charttest.addColumn("등록된 호텔", "string"); //가로축 명칭 정의 컬럼
+		
+		for(hotelDTO hotel: hotelList) {
+			long yearRevenue = paymentDAO.getyearRevenue(hotel.getHotelId(), targetYaer);
+			//호텔 별 매출 가져오기
+			
+			charttest.addColumn("금년매출", hotel.getHotelName(), "number");
+			charttest.addRow(hotel.getHotelName(), yearRevenue);
+			
+		}
+		
+		
+		Gson gson = new Gson();
+		String jSon = gson.toJson(charttest.getResult());
+		
+		return jSon;
+	}
+	
+	
 	
 	@Override
 	public String chartTest() {

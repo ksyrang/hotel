@@ -38,12 +38,11 @@ public class statisticsController {
 	 */
 	
 	@ResponseBody
-	@PostMapping(value="chartUpdates_S", produces = "text/html; charset=UTF-8")//produces = "text/html; charset=UTF-8" 데이터를 리턴해 줄때 한글 깨짐 방지
+	@PostMapping(value="chartUpdates", produces = "text/html; charset=UTF-8")//produces = "text/html; charset=UTF-8" 데이터를 리턴해 줄때 한글 깨짐 방지
 	public String chartUpdates_S(@RequestBody(required = false) String chartSelect) {
-		/*<option value="curMthSalses">현월 매출</option>
-		<option value="preMthSalses">전월 매출</option>
-		<option value="yearSalses">금년 매출</option>	*/
-		if(chartSelect ==""|| chartSelect == null || chartSelect.isEmpty()) return statisticsSvc.chartTest();
+
+		if(chartSelect ==""|| chartSelect == null || chartSelect.isEmpty()) return statisticsSvc.yearRevenueChart();
+		
 		if(chartSelect.equals("curMthSalses")) return statisticsSvc.chartTest();
 		else if(chartSelect.equals("preMthSalses")) return statisticsSvc.chartTest2();
 		else return statisticsSvc.chartTest3();

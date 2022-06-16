@@ -7,6 +7,7 @@ public class roomDTO {
 	private String roomType;
 	private String bedType;
 	private int availablePerson;
+	private int basicCharge;
 	
 	public String getRoomId() {
 		return roomId;
@@ -38,6 +39,12 @@ public class roomDTO {
 	public void setRoomType(String roomType) {
 		this.roomType = roomType;
 	}
-	
+	public int getBasicCharge() {
+		return basicCharge;
+	}
+	public void setBasicCharge(int basicCharge) {
+		this.basicCharge = basicCharge;
+	}
+
 
 }

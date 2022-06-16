@@ -34,7 +34,7 @@ public class hotelresourceController {
 	}	
 	@RequestMapping("prehotelModifyProc")
 	public String prehotelModifyProc(String hotelId, Model model) {
-		if(session.getAttribute("hotelInfo") == null) hotelresSVC.hotelInfo(hotelId);
+		hotelresSVC.hotelInfo(hotelId);
 		return "forward:/admin_index?formpath=admin_hotelInfoModify";
 	}
 	
@@ -120,7 +120,6 @@ public class hotelresourceController {
 		roomInfo.setHotelId(hotelSel);
 		session.setAttribute("addroomInfo", roomInfo);
 		int check = hotelresSVC.roomcheck(roomInfo.getRoomId());		
-		System.out.println("check num: "+check);
 		if(check > 0) {
 			return "forward:/preroomaddProc";
 		}

@@ -76,4 +76,11 @@
 	VALUES(#{paymentNo}, #{reservationNo}, #{memberId}, #{hotelId}, #{paymentDate}, #{paymentType}, #{paymentAmount}, #{referencePaymentNo}, #{paymentStatus}, #{cardId})
 </insert>
 
+<!-- getyearRevenue 금년 매출 -->
+	<select id="getyearRevenue" resultType="Long">
+		SELECT sum(paymentAmount) FROM payment WHERE hotelId=#{hotelId} AND paymentDate = to_date(#{paymentDate},'YYYY')
+	</select>
+
+
+
 </mapper>

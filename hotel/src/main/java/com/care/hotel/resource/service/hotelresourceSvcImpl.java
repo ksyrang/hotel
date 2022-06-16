@@ -105,6 +105,7 @@ public class hotelresourceSvcImpl implements IhotelresourceSvc{
 		   tmp.setRoomType(roomInfo.getRoomType());
 		   tmp.setBedType(roomInfo.getBedType());
 		   tmp.setAvailablePerson(roomInfo.getAvailablePerson());
+		   tmp.setBasicCharge(roomInfo.getBasicCharge());
 		   tmp.setOldId(oldId);
 		   roomDAO.roomUpdateId(tmp);
 	   }

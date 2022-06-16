@@ -30,6 +30,8 @@ public interface paymentDAO {
 	void payStatus(paymentDTO oldPaymentDTO);
 
 	void insertCanclePayment(paymentDTO paymentDTO);
+	
+	Long getyearRevenue(@Param("hotelId")String hotelId, @Param("paymentDate")String paymentDate);
 
 	
 

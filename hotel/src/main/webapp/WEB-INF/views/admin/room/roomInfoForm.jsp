@@ -27,6 +27,9 @@
 				<th>허용 인원</th><td>${sessionScope.roomInfo.availablePerson }</td>
 			</tr>
 			<tr>
+				<th>기본 요금</th><td>${sessionScope.roomInfo.basicCharge }</td>
+			</tr>
+			<tr>
 				<td><input type="button" class="Btn" value="수정" onclick="location.href='${root }preroomModifyProc?roomId=${roomInfo.roomId}'"/></td>
 				<td><input type="button" class="Btn" value="삭제" onclick="location.href='${root  }admin_index?formpath=roomdelete&roomId=${roomInfo.roomId}'"></td>
 				<td><input type="button" class="Btn" value="뒤로가기" onclick="location.href='${root}roomlistProc'"/></td>

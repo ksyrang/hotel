@@ -15,4 +15,8 @@ public interface IstatisticsSvc {
 	public String chartTest2();
 	public String chartTest3();
 
+	public String amountAllChart();
+
+	public String yearRevenueChart();
+
 }

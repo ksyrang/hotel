@@ -29,18 +29,19 @@ function chartUpdate(){//데이터 송신 메소드
 			google.charts.setOnLoadCallback(drawChart);
 		}
 	};
-	xhr.open('post','chartUpdates_S');
+	xhr.open('post','chartUpdates');
 	xhr.setRequestHeader('Content-Type','application/json; charset=utf-8');//보내고자 하는 데이터의 자료형을 알려주는것
 	var select = document.getElementById('chartSelect').value;
 	xhr.send(select);
 }
 
   function drawChart() {
- 	 var data = new google.visualization.DataTable(jDatas);
+ 	 var data = new google.visualization.DataTable(jDatas);//ajax로 온 데이터 를 입력
 
     var options = {//차트의 특정 옵션 설정
       chart: {
-        title: texttest,
+       //title: monthlyTitle,
+        //titlePosition: 'in',
         //subtitle: 'Sales, Expenses, and Profit: 2014-2017',
       }
     };

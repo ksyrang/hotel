@@ -34,6 +34,10 @@
 				<td><input type="text" name="availablePerson" placeholder="정원" value="${sessionScope.roomInfo.availablePerson }"></td>
 			</tr>
 			<tr>
+				<th>기본 요금</th>
+				<td><input type="text" name="basicCharge" placeholder="기본요금" value="${sessionScope.roomInfo.basicCharge }"></td>
+			</tr>
+			<tr>
 				<td align='center' height=40 colspan=5>
 					<input type="submit" value='수정' style="width: 120px; "/>
 					<input type="reset" value='취소' style="width: 120px; "/>	 
