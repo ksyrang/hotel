@@ -79,7 +79,7 @@
 		SELECT count(*) FROM room
 		<where>
 			<if test='hotelId != null and hotelId != ""'>hotelId=#{hotelId}</if>
-			<if test='availablePerson != null and availablePerson != ""'>availablePerson <![CDATA[=<]]> #{availablePerson}</if>
+			<if test='availablePerson != null and availablePerson != ""'>AND availablePerson<![CDATA[>=]]>#{availablePerson}</if>
 		</where>
 	</select>
 	
@@ -91,7 +91,7 @@
 				SELECT * FROM room
 				<where>
 					<if test='hotelId != null and hotelId != ""'>hotelId=#{hotelId}</if>
-					<if test='availablePerson != null and availablePerson != ""'>availablePerson <![CDATA[=<]]> #{availablePerson}</if>
+					<if test='availablePerson != null and availablePerson != ""'>AND availablePerson<![CDATA[>=]]>#{availablePerson}</if>
 				</where>
 				ORDER BY roomType
 				)A

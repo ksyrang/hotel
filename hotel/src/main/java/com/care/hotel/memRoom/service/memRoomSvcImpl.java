@@ -18,14 +18,23 @@ public class memRoomSvcImpl implements ImemRoomSvc{
 
 	@Override
 	public void memRoomList(int currentPage, String hotelSelect, String startDate, String endDate,
-			String availablePerson) {
+			Integer availablePerson) {
 		int pageBlock = 5; // 한 화면에 보여줄 데이터 수
 		int end = currentPage * pageBlock; // 데이터의 끝 번호
 		int begin = end+1 - pageBlock; // 데이터의 시작 번호
-		int totalCount = roomDAO.memRoomCount(hotelSelect, availablePerson); // 총 데이터의 수 ;
+		
+		int IntAvailablePerson;
+		//availablePerson 형변환
+		if(availablePerson == null) {
+			IntAvailablePerson = 0;
+		} else {
+			IntAvailablePerson = availablePerson;
+		}
+		
+		int totalCount = roomDAO.memRoomCount(hotelSelect, IntAvailablePerson); // 총 데이터의 수 ;
 		//int totalCount = roomDAO.roomCount(hotelSelect, startDate, endDate, availablePerson); // 총 데이터의 수 ;
 		
-		ArrayList<roomDTO> roomList = roomDAO.memRoomList(begin, end, hotelSelect, availablePerson);
+		ArrayList<roomDTO> roomList = roomDAO.memRoomList(begin, end, hotelSelect, IntAvailablePerson);
 		//ArrayList<roomDTO> roomList = roomDAO.roomList(begin, end, hotelSelect, startDate, endDate, availablePerson);
 		
 		session.setAttribute("memRoomCount", totalCount);

@@ -20,7 +20,7 @@ public class reservationController {
 	@RequestMapping(value="reservationMainProc", method = RequestMethod.GET)
 	public String reservationMainProc(Model model, 
 			@RequestParam(value = "currentPage", required = false, defaultValue = "1") int currentPage,
-			String hotelSelect, String startDate, String endDate, String availablePerson) {
+			String hotelSelect, String startDate, String endDate, Integer availablePerson) {
 		   
 		model.addAttribute("allHotelInfo", hotelSvc.allHotelInfo());
 		
