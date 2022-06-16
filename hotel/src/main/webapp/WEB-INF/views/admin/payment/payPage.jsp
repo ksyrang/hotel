@@ -123,7 +123,7 @@
 		}
 		// 결제 수단에 따라 form action 바꾸기
 		if(paymentType.value == '4') {
-			form.method = "gets";
+			form.method = "get";
 			form.action = "kakaoPayProc";
 		}else {
 			form.method = "post";
