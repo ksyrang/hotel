@@ -132,7 +132,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <div class="header">
   <div class="footer_logo">
-         <a href="${root }"><img  class="logo" src="${pageContext.request.contextPath}/resources/images/newLogo.gif" width="100" height="78"></a>
+         <a href="${root }"><img  class="logo" src="${pageContext.request.contextPath}/resources/images/logoSND.gif" width="100" height="78"></a>
   </div>
 <!-- 
   <h1 class="Alogo"><a href="${root }">THE SHINNANDA HOTELS</a></h1>
