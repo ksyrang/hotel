@@ -414,8 +414,13 @@
 }
 
 .popLayerFindId .btnLostPw {
-    background-image: url(../../../images/en/common/join/loginBtnLostPw.gif);
-    width: 121px;
+    background: url(../../../images/ko/common/join/loginBtnLostPw.gif) no-repeat;
+    width: 95px;
+    height: 27px;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 100px;
+    overflow: hidden;
 }
 
 /*20150626 end*/

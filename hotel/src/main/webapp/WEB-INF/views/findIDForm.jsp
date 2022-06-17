@@ -110,6 +110,7 @@ window.onload = function() {
 			
 			<div class="btnList">
 				<button type="submit" id="submit" class="btnSubmit" value='아이디 확인'  style="width: 60px;"></button>
+				<a href="${root }index?formpath=login" class="btnCancel"><span>취소</span></a>
 			</div>
 			
 		</div>
