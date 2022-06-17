@@ -36,9 +36,14 @@
 	<div class="admin_main">
 	<form action="hotelModifyProc" method="post">
 		<table>
-			<tr>
-				<td><input type="button" value="뒤로가기" onclick="location.href='${root}hotellistProc'"/></td>
-			</tr>
+			<c:choose>
+				<c:when test="${sessionScope.userId eq 'admin' }">
+					<td><input type="button" class="Btn" value="뒤로가기" onclick="location.href='${root}hotellistProc'"/></td>
+				</c:when>
+				<c:otherwise>
+					<td><input type="button" class="Btn" value="뒤로가기" onclick="location.href='${root }hotelInfoProc?hotelId=${sessionScope.userId }'"/></td>
+				</c:otherwise>
+			</c:choose>	
 			<tr>
 				<th>호텔 이름</th>
 				<th><input type="text" name="hotelName" placeholder="호텔이름" value="${sessionScope.hotelInfo.hotelName }"></th>

@@ -61,7 +61,9 @@ public class hotelresourceController {
 		
 		if(result) {
 			session.removeAttribute("hotelId");
-			return "redirect:hotellistProc"; //성공
+			String userId = (String)session.getAttribute("userId");
+			if(userId.equals("admin")) return "redirect:hotellistProc"; //성공
+			else return "redirect:/admin";
 		}
 		else return "redirect:/admin_index?formpath=admin_hoteldelete"; // 실패
 	}
