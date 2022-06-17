@@ -22,16 +22,35 @@
 	</script>
 </c:if>
 
-예약번호 : ${resDTO.reservationNo }
-회원아이디 : ${resDTO.memberId }
-호텔아이디 : ${resDTO.hotelId }
-룸아이디 : ${resDTO.roomId }
-예약일자 : ${resDTO.reservationDate }
-체크인일자 : ${resDTO.checkinDate }
-체크아웃일자 : ${resDTO.checkoutDate }
-투숙인원 : ${resDTO.guestNumber }
-기본요금 : ${resDTO.baseAmount }
-조식여부 : ${resDTO.breakfastCheck }
-예약상태 : ${resDTO.reservationStatus }
+<div class="admin_mainDiv">
+	<div align="center" style="margin-top : 50px;">
+	<label class="fontL">예약번호</label><br>
+	<label class="fontLR">${resDTO.reservationNo }</label><br>
+	<label class="fontL">예약이 완료되었습니다.</label><br>
+	<label class="fontM">예약 완료 이메일을 전송했습니다.</label>
+	</div>
 
+<table class="resTable">
+	<tr>
+		<td>예약번호</td>
+		<th>${resDTO.reservationNo }</th>
+	</tr>
+	<tr>
+		<td>예약일자</td>
+		<th>${resDTO.reservationDate }</th>
+	</tr>
+	<tr>
+		<td>체크인 ~ 체크아웃</td>
+		<th> ${resDTO.checkinDate } ~ ${resDTO.checkoutDate }</th>
+	</tr>
+	<tr>
+		<td>금액</td>
+		<th>${resDTO.baseAmount }</th>
+	</tr>
+	
+</table>
+<div align="center">
+	<input type="button" value="홈으로" class="homeBtn" onclick="location.href='${root }'">
+</div>
+</div>
 </body>

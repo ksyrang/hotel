@@ -112,6 +112,7 @@ public class reservationController {
 	public String roomReservation_completeProc(String reservationNo, Model model) {
 		System.out.println("roomReservation_completeProc");
 		model.addAttribute("resDTO",memRoomSvc.getReservationDTO(reservationNo));
+		
 		return "forward:/index?formpath=roomReservation_complete";
 	}
 

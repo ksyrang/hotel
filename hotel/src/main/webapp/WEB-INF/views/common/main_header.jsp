@@ -190,7 +190,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 	<!-- Find a hotel 시작 -->
 	<div class="hotelBox_wrap"><!-- 개선 : class="hotelBox_wrap"변경 -->
-		<a class="btn" href="javascript:void(0);">호텔찾기 콤보상자</a>
+		<a class="btn" href="${root}reservationMainProc">호텔찾기</a>
 
 		<!-- 개선 : 호텔찾기 -->
 		<div class="hotelBox_N">
@@ -341,7 +341,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 	<!-- 예약 팝업 추가 -->
 	<div class="rsvBox_wrap rsvBtn">
-		<a class="btn" href="#none">예약<!-- 예약 --></a>
+		<a class="btn" href="${root }reservationMainProc">예약<!-- 예약 --></a>
 		<div class="newDim"></div>
 		<div class="rsvBox_N">
 			<div class="hHead">

@@ -14,8 +14,10 @@ import com.care.hotel.Reservation.DTO.reservationExDTO;
 import com.care.hotel.common.DateService;
 import com.care.hotel.common.PageService;
 import com.care.hotel.member.DAO.memberCardDAO;
+import com.care.hotel.member.DAO.memberDAO;
 import com.care.hotel.member.DTO.memberCardDTO;
 import com.care.hotel.member.DTO.memberDTO;
+import com.care.hotel.member.service.MailService;
 import com.care.hotel.resourceDAO.IhotelDAO;
 import com.care.hotel.resourceDAO.IroomDAO;
 import com.care.hotel.resourceDTO.hotelDTO;
@@ -23,10 +25,12 @@ import com.care.hotel.resourceDTO.roomDTO;
 
 @Service
 public class memRoomSvcImpl implements ImemRoomSvc{
+	@Autowired private MailService mailService;
 	@Autowired IroomDAO roomDAO;
 	@Autowired IhotelDAO hotelDAO;
 	@Autowired AD_reservationDAO resDAO;
 	@Autowired memberCardDAO cardDAO;
+	@Autowired memberDAO memberDAO;
 	@Autowired HttpSession session;
 
 	@Override
@@ -95,7 +99,7 @@ public class memRoomSvcImpl implements ImemRoomSvc{
 		
 		reservationDTO resDTO = resAllDTO;
 		resDAO.insertRes(resDTO);
-		result= resNo + " 예약이 완료되었습니다.";
+		System.out.println("예약 완료");
 		
 		// res_extra 저장
 		if(resAllDTO.getRemark() != null || resAllDTO.getRemark() != "") {
@@ -103,6 +107,7 @@ public class memRoomSvcImpl implements ImemRoomSvc{
 			resExDTO.setReservationNo(resAllDTO.getReservationNo());
 			resExDTO.setRemark(resAllDTO.getRemark());
 			resDAO.insertResEx(resExDTO);
+			System.out.println("예약 요청사항 저장 완료");
 		}
 		
 		// 카드 정보 저장
@@ -120,12 +125,26 @@ public class memRoomSvcImpl implements ImemRoomSvc{
 			}
 		}
 		
-		return result;
+		// 메일 전송하기
+		memberDTO memDTO = memberDAO.memberInfo(resAllDTO.getMemberId());
+		String content = resNo + " 예약이 완료되었습니다.";
+		mailService.sendMail(memDTO.getMemberEmail(),"[신난다호텔 예약이 완료되었습니다.]",content);
+		System.out.println(memDTO.getMemberEmail() + "로 예약 이메일 전송 완료");
+		
+		return resNo;
 	}
 
 	@Override
 	public reservationDTO getReservationDTO(String reservationNo) {
 		reservationDTO resDTO = resDAO.reservationInfo(reservationNo);
+		String resDate = resDTO.getReservationDate().substring(0, 10);
+		String inDate = resDTO.getCheckinDate().substring(0, 10);
+		String outDate = resDTO.getCheckoutDate().substring(0, 10);
+		
+		resDTO.setReservationDate(resDate);
+		resDTO.setCheckinDate(inDate);
+		resDTO.setCheckoutDate(outDate);
+		
 		return resDTO;
 	}
 
