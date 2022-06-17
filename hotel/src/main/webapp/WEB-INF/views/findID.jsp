@@ -25,7 +25,29 @@
 document.write("<div id='popCalendarDiv' class='popCalendar' style='display:none' ></div>");
 
 </script>
-</head><body class="subBody joinBody"><div id="popCalendarDiv" class="popCalendar" style="display:none"></div>
+</head>
+<script>
+
+function idConfirm(){
+	var namef = document.getElementById('firstName').value;
+	var nameL = document.getElementById('lastName').value;
+	var email = document.getElementById('memberEmail').value;
+	
+	var msg = document.getElementById('msg').innerHTML;
+	
+	if(nameF == "" || nameL == "" || email == ""){
+		alert("필수 정보 입니다.");
+		return;
+	}else if(msg == "" || msg == "다시 입력해주세요."){
+		alert("성함 및 이메일을 다시 확인해주세요.");
+		return;
+	}else{
+		document.getElementById('f').submit();
+	}
+	
+}
+</script>
+<body class="subBody joinBody"><div id="popCalendarDiv" class="popCalendar" style="display:none"></div>
 <jsp:useBean id="member" class="com.care.hotel.member.DTO.memberDTO"/>
 <jsp:setProperty property="*" name="member"/>
 <script src="/js/json2.js" charset="UTF-8"></script>
@@ -42,28 +64,8 @@ document.write("<div id='popCalendarDiv' class='popCalendar' style='display:none
 <script src="/js/jquery.slides.js" charset="UTF-8"></script>
 <script src="/js/mbr/popLogin.js" charset="UTF-8"></script><div id="popLoginDiv" class="popLogin" style="display:none"></div>
 <script src="/js/mbr/forIdPwd.js" charset="UTF-8"></script><div id="popForIdPwDiv" style="display: block;" tabindex="-1">
-<script>
 
-function idConfirm(){
-	var namef = document.getElementById('firstName').value;
-	var nameL = document.getElementById('lastName').value;
-	var email = document.getElementById('memberEmail').value;
-	
-	var msg = document.getElementById('msg').innerHTML;
-	
-	if(nameF == "" || nameL == "" || email == ""){
-		alert("필수 정보 입니다.");
-		return;
-	}else if(msg == "다시 입력해주세요."){
-		alert("성함 및 이메일을 다시 확인해주세요.");
-		return;
-	}else{
-		document.getElementById('f').submit();
-	}
-	
-}
-</script>
-<form action="findIDProc" method="POST" name="f">
+<form action="findIDProc" method="POST" id="f">
 <div class="popLayer popLayerFindId">
 
 	<div class="popHead">
@@ -102,6 +104,7 @@ function idConfirm(){
 						<td>
 							<input id="memberEmail" name="memberEmail" type="text" style="width: 254px;" onkeyup="this.value=this.value.replace(/[^a-z0-9_.@-]/gi,'');" maxlength="40">
 							<!-- <input type="hidden" id="memNameId" name="memNameId" value=""> -->
+							<div><span style="color: red; font-size=10px;" id="msg">${msg }</span></div>
 						</td>
 					</tr>
 				</tbody></table>
@@ -109,7 +112,7 @@ function idConfirm(){
 			</div>
 			
 			<div class="btnList">
-				<button type="button" id="submit" class="btnSubmit" value='아이디 확인'  style="width: 60px;" onclick="idConfirm()"></button>
+				<input type="button" id="submit" class="btnSubmit" value='아이디 확인'  style="width: 60px;" onclick="idConfirm()">
 				<a href="${root }index?formpath=login" class="btnCancel"><span>취소</span></a>
 			</div>
 			

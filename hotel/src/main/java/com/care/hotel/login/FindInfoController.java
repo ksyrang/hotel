@@ -53,7 +53,7 @@ public class FindInfoController {
 		
 			if(result.equals("다시 입력해주세요.")) {
 				ra.addFlashAttribute("msg", result);
-				return "redirect:/index?formpath=findIDForm";
+				return "redirect:/index?formpath=findID";
 			}else {
 				model.addAttribute("msg", result);
 				return "forward:/index?formpath=findID_Res";
@@ -97,7 +97,7 @@ public class FindInfoController {
 		
 			if(result.equals("다시 입력해주세요.")) {
 				ra.addFlashAttribute("msg", result);
-				return "redirect:/index?formpath=findPWForm";
+				return "redirect:/index?formpath=findPW";
 			}else {
 			model.addAttribute("msg", result);
 				return "forward:/index?formpath=findPW_Res";

@@ -78,12 +78,12 @@ public class HomeController {
 	
 	@RequestMapping(value="findID")
 	public String findID(String memberNameENG, String memberEmail) {
-		return "findIDForm";
+		return "findID";
 	}
 	
 	@RequestMapping(value="findPW")
 	public String findPW(String memberId, String memberNameENG, String memberEmail) {
-		return "findPWForm";
+		return "findPW";
 	}
 
 	@RequestMapping("home2")
