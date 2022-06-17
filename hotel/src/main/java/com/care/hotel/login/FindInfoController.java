@@ -33,12 +33,12 @@ public class FindInfoController {
 	@RequestMapping(value = "findIDProc", method = RequestMethod.POST)
 	public String findIDSaveProc(String memberId, String memberNameENG, String lastName, String firstName, String memberEmail, Model model, RedirectAttributes ra) {
 		logger.info("FindIDSaveProc");
+		String result = "다시 입력해주세요.";
 		if(lastName == null || lastName == "" || firstName == null || firstName == "" || memberEmail == null || memberEmail == "") {
 			logger.info("아이디 찾기 실패");
-			ra.addFlashAttribute("msg", "FindIDProc 오류발생");
+			ra.addFlashAttribute("msg", result);
 			return "redirect:/index?formpath=findID";
 		}else {
-			String result = memberNameENG + "님의 가입된 아이디는 [" + memberId + "]입니다.";
 			memberNameENG = lastName + " " + firstName;
 			result = memberService.findID(memberNameENG, memberEmail);
 			
@@ -77,12 +77,12 @@ public class FindInfoController {
 	@RequestMapping(value = "findPWProc", method = RequestMethod.POST)
 	public String findPWSaveProc(String memberPw, String memberId, String memberNameENG, String firstName, String lastName, String memberEmail, Model model, RedirectAttributes ra) {
 		logger.info("FindPWSaveProc");
+		String result = "다시 입력해주세요.";
 		if(memberId == null || memberId == "" ||lastName == null || lastName == "" || firstName == null || firstName == "" || memberEmail == null || memberEmail == "") {
 			logger.info("비밀번호 찾기 실패");
-			ra.addFlashAttribute("msg", "FindIDProc 오류발생");
+			ra.addFlashAttribute("msg", "다시 입력해주세요.");
 			return "redirect:/index?formpath=findPW";
 		}else {
-			String result= memberNameENG + "님의 비밀번호는 [" + "11111111" + "]로 수정하겠습니다.";
 			memberNameENG = lastName + " " + firstName;
 			result = memberService.findPW(memberId, memberNameENG, memberEmail);
 		

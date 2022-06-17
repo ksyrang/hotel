@@ -20,13 +20,12 @@
 <meta name="keywords" content="신라스테이,신라호텔,서울신라호텔,제주신라호텔,호텔신라,럭셔리호텔,신라리워즈">
 <meta name="description" content="국내 최고 럭셔리 호텔인 호텔신라는 신라호텔과 신라스테이 브랜드를 보유하고 있습니다.">
 <meta name="subject" content="신라스테이 소개,신라 리워즈 안내,브랜드 및 호텔 소개,객실 패키지 안내,온라인 최저가 예약,">
-<script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script gtm="GTM-T3LBJ26" type="text/javascript" async="" src="https://www.google-analytics.com/gtm/optimize.js?id=OPT-NQ9CLZ3"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-30Y6N61ES4&amp;l=dataLayer&amp;cx=c"></script><script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-T3LBJ26"></script><script type="text/javascript">
-
-document.write("<div id='popCalendarDiv' class='popCalendar' style='display:none' ></div>");
+<script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script gtm="GTM-T3LBJ26" type="text/javascript" async="" src="https://www.google-analytics.com/gtm/optimize.js?id=OPT-NQ9CLZ3"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-30Y6N61ES4&amp;l=dataLayer&amp;cx=c"></script><script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-T3LBJ26"></script>
+<script type="text/javascript">
 
 </script>
 </head>
-<script>
+<!-- <script type=text/javascript>
 
 function idConfirm(){
 	var namef = document.getElementById('firstName').value;
@@ -38,7 +37,7 @@ function idConfirm(){
 	if(nameF == "" || nameL == "" || email == ""){
 		alert("필수 정보 입니다.");
 		return;
-	}else if(msg == "" || msg == "다시 입력해주세요."){
+	}else if(msg == "다시 입력해주세요." || msg == "아이디 찾기 실패"){
 		alert("성함 및 이메일을 다시 확인해주세요.");
 		return;
 	}else{
@@ -46,7 +45,7 @@ function idConfirm(){
 	}
 	
 }
-</script>
+</script> -->
 <body class="subBody joinBody"><div id="popCalendarDiv" class="popCalendar" style="display:none"></div>
 <jsp:useBean id="member" class="com.care.hotel.member.DTO.memberDTO"/>
 <jsp:setProperty property="*" name="member"/>
@@ -112,7 +111,7 @@ function idConfirm(){
 			</div>
 			
 			<div class="btnList">
-				<input type="button" id="submit" class="btnSubmit" value='아이디 확인'  style="width: 60px;" onclick="idConfirm()">
+				<input type="submit" class="btnSubmit" value='아이디 확인'  style="width: 60px;"/>
 				<a href="${root }index?formpath=login" class="btnCancel"><span>취소</span></a>
 			</div>
 			

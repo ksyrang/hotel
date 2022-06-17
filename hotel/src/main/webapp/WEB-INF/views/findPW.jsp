@@ -96,6 +96,7 @@
 								<td>
 									<label class="emailId" for="emailId">이메일아이디 </label>
 									<input id="memberEmail" name="memberEmail" type="text" style="width: 254px;" onkeyup="this.value=this.value.replace(/[^a-z0-9_.@-]/gi,'');" maxlength="40">
+									<div><span style="color: red; font-size=10px;" id="msg">${msg }</span></div>
 								</td>
 							</tr>
 						</tbody></table>
