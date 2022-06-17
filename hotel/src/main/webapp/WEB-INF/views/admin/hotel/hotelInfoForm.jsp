@@ -8,7 +8,7 @@
 <center>
 	<div class="admin_main">
 	<form>
-		<table>
+		<table class="admin_memberInfoTable">
 			<tr>
 				<th>호텔 이름</th><th>${sessionScope.hotelInfo.hotelName }</th>
 			</tr>

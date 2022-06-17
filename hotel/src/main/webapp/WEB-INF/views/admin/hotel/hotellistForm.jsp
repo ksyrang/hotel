@@ -22,17 +22,17 @@
 	</form>
 	
 	<div style="height: 20px;"></div>
-		<table >
+		<table class="admin_memberTable">
 			<thead>
-				<tr>
-					<th style="width: 150px; height: 20px;" align="center">Hotel ID</th>
-					<th style="width: 250px; height: 20px;" align="center">Hotel Name</th>
-					<th style="width: 150px; height: 20px;" align="center">Phone number</th>
-					<th style="width: 200px; height: 20px;" align="center">Email</th>
-					<th style="width: 100px; height: 20px;" align="center">수정 / 삭제</th>
+				<tr><!-- <th style="width: 150px; height: 20px;" align="center"> -->
+					<th>Hotel ID</th>
+					<th>Hotel Name</th>
+					<th>Phone number</th>
+					<th>Email</th>
+					<th>수정 / 삭제</th>
 				</tr>
 			</thead>
-			<tr><td colspan=5><hr/></td></tr>
+			<!-- <tr><td colspan=5><hr/></td></tr> -->
 			<c:forEach var="hoteldb" items="${sessionScope.hotelList }">
 				<tr>
 					<td style="width: 150px; height: 20px;" align="center">
@@ -47,7 +47,7 @@
 					</td>
 				</tr>
 			</c:forEach>
-			<tr><td colspan=5><hr/></td></tr>
+			<!-- <tr><td colspan=5><hr/></td></tr> -->
 		</table>
 	${sessionScope.hotelPage }
 </div>
