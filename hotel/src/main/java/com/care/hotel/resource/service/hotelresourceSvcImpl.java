@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.care.hotel.common.PageService;
@@ -45,6 +46,9 @@ public class hotelresourceSvcImpl implements IhotelresourceSvc{
    
    @Override
    public int hotelModify(hotelDTO hotelInfo) {
+	  BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+	  String PwEncoder = encoder.encode(hotelInfo.getHotelPw());
+	  hotelInfo.setHotelPw(PwEncoder);
       int result = hotelDAO.hotelUpdate(hotelInfo);
       return result;
    }
@@ -112,17 +116,9 @@ public class hotelresourceSvcImpl implements IhotelresourceSvc{
    }
    
    @Override
-   public boolean roomDelete(String roomId, String adminId, String adminPw) {
-      String adminDBId = "admin"; // 어드민 프로퍼티 만들면 변경 필요.
-      String adminDBPw = "admin";
-      if(adminId==null || adminPw == null) return false;
-      else if(!adminId.equals(adminDBId)) return false;
-      else if(!adminPw.equals(adminDBPw)) return false;
-      //실패 조건 end
-      roomDAO.roomDelete(roomId);
-      
-      return true;
-
+   public int roomDelete(String roomId) {
+     int result = roomDAO.roomDelete(roomId);
+     return result;
    }
    
    @Override
@@ -147,8 +143,11 @@ public class hotelresourceSvcImpl implements IhotelresourceSvc{
 	}
    
    @Override
-	public void hotelAdd(hotelDTO hotelInfo) {
-	   hotelDAO.hotelAdd(hotelInfo);
+	public void hotelAdd(hotelDTO hotelInfo) { 
+	  BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+	  String PwEncoder = encoder.encode(hotelInfo.getHotelPw());
+	  hotelInfo.setHotelPw(PwEncoder);
+	  hotelDAO.hotelAdd(hotelInfo);
 	}
 
 @Override

@@ -220,9 +220,9 @@ public class HomeController {
 		return "admin/room/roomInfomodifyform";
 	}
 	
-	@GetMapping("admin_roomDelete")
-	public String admin_roomDelete(Model model, String roomId) {
-		session.setAttribute("roomId", roomId);
+	@RequestMapping("admin_roomDelete")
+	public String admin_roomDelete() {
+
 		return "admin/room/roomdeleteForm";
 	}
 	

@@ -3,8 +3,10 @@ package com.care.hotel.resource;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -18,6 +20,9 @@ public class hotelresourceController {
 	
 	@Autowired IhotelresourceSvc hotelresSVC;
 	@Autowired HttpSession session;
+	@Value("${ADMIN:admin}")private String ADMINID;
+	@Value("${ADMPW:admin}")private String ADMINPW;
+	
 	
 	@RequestMapping("hotellistProc")
 	public String hotellistProc(Model model, 
@@ -41,12 +46,11 @@ public class hotelresourceController {
 	@PostMapping("hotelModifyProc")
 	public String hotelModifyProc(hotelDTO hotelInfo, String hotelPw, String hotelPwC, Model model) {
 
-		System.out.println("hotelModifyProc 진입");
 		if((hotelPw == null || hotelPw.isEmpty()) && (hotelPwC == null || hotelPwC.isEmpty())) {//null일 경우 기존의 PW를 입력
 			hotelInfo.setHotelPw(((hotelDTO)session.getAttribute("hotelInfo")).getHotelPw());
 		}
 		else if(!hotelPw.equals(hotelPwC)) {
-//			session.setAttribute("msg", "비밀번호 불일치");
+			model.addAttribute("msg", "비밀번호 불일치");
 			return "forward:/admin_index?formpath=admin_hotelInfoModify";
 		}
 		int result = hotelresSVC.hotelModify(hotelInfo);
@@ -100,24 +104,44 @@ public class hotelresourceController {
 	}
 	
 	@RequestMapping("roomdeleteProc")
-	public String roomdeleteProc(String adminId, String adminPw) {
-		String roomId = (String)session.getAttribute("roomId");
-		System.out.println("roomId : "+roomId);
-		boolean result = hotelresSVC.roomDelete(roomId, adminId, adminPw);
-		if(result) {
-			session.removeAttribute("roomId");
-			return "redirect:roomlistProc"; //성공
-		}
-		else return "redirect:/admin_index?formpath=admin_roomdelete"; // 실패
+	public String roomdeleteProc(Model model, String roomId, String msg) {
+//		System.out.println("getproc roomId:"+roomId);
+		model.addAttribute("roomId", roomId);
+		return "forward:/admin_index?formpath=admin_roomDelete";
 	}
 	
-	@RequestMapping("preroomaddProc")
-	public String preroomaddProc(Model model) {
-		hotelresSVC.allhotelList();
-		return "redirect:/admin_index?formpath=admin_roomAdd";
+	@PostMapping("roomdeletecheckProc")
+	public String roomdeleteProc(String roomId, String adminId, String adminPw, Model model) {
+
+		if(!(ADMINID.equals(adminId)&&ADMINPW.equals(adminPw))) {
+			model.addAttribute("msg","입력정보 오류 입니다.");
+			model.addAttribute("roomId",roomId);
+			return "forward:/roomdeleteProc";
+		}
+
+		int result = hotelresSVC.roomDelete(roomId);
+		if(result < 0) {//실패
+			model.addAttribute("msg","삭제 중 이상 발생 관리자에게 문의해주세요.");
+			return "forward:/roomdeleteProc";
+		}
+		//성공
+		model.addAttribute("msg",roomId+"의 삭제가 완료 되었습니다.");
+		return "redirect:roomlistProc";
 	}
 	
 	@RequestMapping("roomAddProc")
+	public String preroomaddProc(Model model) {
+		String userId = (String)session.getAttribute("userId");
+		if(userId.equals(ADMINID)) {//관리자로 진입
+			hotelresSVC.allhotelList();
+			return "redirect:/admin_index?formpath=admin_roomAdd";
+		}
+		else {
+			return "redirect:/admin_index?formpath=admin_roomAdd";
+		}
+	}
+	
+	@RequestMapping("roomAddCheckProc")
 	public String roomAddProc(roomDTO roomInfo, String hotelSel) {
 		roomInfo.setHotelId(hotelSel);
 		session.setAttribute("addroomInfo", roomInfo);

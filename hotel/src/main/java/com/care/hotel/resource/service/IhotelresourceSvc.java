@@ -25,7 +25,7 @@ public interface IhotelresourceSvc {
 
    public void roomModify(roomDTO roomInfo);
 
-   public boolean roomDelete(String roomId, String adminId, String adminPw);
+   public int roomDelete(String roomId);
 
    public void roomAdd(roomDTO roomInfo);
 
