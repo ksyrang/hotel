@@ -7,13 +7,10 @@
 <table>
 	<tr>
 		<td align="center">
-			<h3>
-				더 할 나위 없다.
-			</h3>
+			<img class="img" width="1520" height="500" src="${pageContext.request.contextPath}/images/contents/main/MAIN_HUB/ShinNanDaMain2.jpg" alt="[서울신라호텔] Rewards Urban Island - 따스한 햇살이 드리우는 어번 아일랜드 온수풀에서 봄날의 휴식을 즐겨보세요." draggable="false">
+			<%-- <img class="img" width="100%;" height="500" src="${pageContext.request.contextPath}/images/contents/main/MAIN_HUB/ShinNanDaMain2.jpg" alt="[서울신라호텔] Rewards Urban Island - 따스한 햇살이 드리우는 어번 아일랜드 온수풀에서 봄날의 휴식을 즐겨보세요." draggable="false"> --%>
 		</td>
 	</tr>
-	<tr>
-		<td align="right"> - 미생</td>
-	</tr>
-</table>
+</table> 
+
 </center>
