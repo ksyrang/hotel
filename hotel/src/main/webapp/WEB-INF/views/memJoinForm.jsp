@@ -66,12 +66,14 @@ function pwCheck() {
 			document.getElementById('label2').innerHTML = "비밀번호 길이는 8~20자리 입니다.";
 			document.getElementById('memberPw').value = "";
 			document.getElementById('memberPwCheck').value = ""; 
+			return;
 		}
 		 
 	}else{
 		 document.getElementById('label2').innerHTML = "불일치";
 		 document.getElementById('memberPw').value = "";
 		 document.getElementById('memberPwCheck').value = ""; 
+		 return;
 	}
 }
 function isExistId(){
@@ -131,6 +133,8 @@ function buttonCheck(){
 	var msg2 = document.getElementById('msg2').innerHTML;
 	var msg3 = document.getElementById('msg3').innerHTML;
 	var msg4 = document.getElementById('msg4').innerHTML;
+	var pw = document.getElementById('memberPw').value;
+	var pwc = document.getElementById('memberPwCheck').value;
 	
 	/* if(id == "" || pw == "" || pwc == "" || gender == "" || name1st == "" || name2nd == "" || birth == "" || email == "" || number == "" || phone == ""){
 		alert("*표시의 정보는 반드시 작성 해주세요");
@@ -146,10 +150,13 @@ function buttonCheck(){
 	}else if(msg3 == "" || msg3 == "인증 번호를 입력하세요." || msg3 == "인증 실패"){
 		alert("인증번호 확인을 반드시 해주세요");
 		return;
-	}else if(msg4 == "" || msg4 == "중복 아이디 입니다."){
+	}else if(msg4 == "" || msg4 == "중복 이메일 입니다."){
 		alert("이메일 중복 확인을 반드시 해주세요");
 		return;
-	}else{
+	}else if(pwc == "" ){
+		alert("비밀번호 확인을 반드시 해주세요.");
+	}
+	else{
 	//	location.href="${root }index?formpath=memberInsert";
 		document.getElementById('f').submit();
 	}
@@ -207,6 +214,28 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	    }).open();
 	    
 	}
+	
+	function checkKr() {
+		$("#memberNameKR").keyup(function() {
+        	// 입력값에 숫자, 영문, 특수문자가 올 경우 경고창 표시 후 ""으로 치환
+			var regexp = /[a-z0-9]|[ \[\]{}()<>?|`~!@#$%^&*-_+=,.;:\"'\\]/g;
+			v = $(this).val();
+			if (regexp.test(v)) {
+                $(this).val(v.replace(regexp, ""));
+            }
+		});
+	}
+	function checkEmail() {
+		/* $("#memberEmail").keyup(function() {
+        	// 입력값에 숫자, 영문, 특수문자가 올 경우 경고창 표시 후 ""으로 치환
+			var regexp = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]$/;//이메일 정규식 
+			v = $(this).val();
+			if (!regexp.test(v)) {
+                $(this).val(v.replace(regexp, ""));
+            }
+		}); */
+	}
+
 </script>
 
 <form action="memberJoinProc" method="post" id="f">
@@ -257,7 +286,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 							<option value="n" title="n" >선택안함</option>
 							</select>
 
-							<input type="text" class="lastNameEn uiform text" id="memberNameKR" name="memberNameKR" maxlength="30" value="" autocomplete="off" />
+							<input type="text" class="lastNameEn uiform text" id="memberNameKR" name="memberNameKR" maxlength="15" value="" autocomplete="off"  onkeyup="checkKr()"/>
 						</td>
 					</tr>
 					
@@ -267,11 +296,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 							<div class="inputForm2">
 										<div class="Fname">
 											<label for="firstName">First Name</label>
-											<input type="text" class="firstName input uiform" id="firstName" name="firstName" placeholder="First name(이름)" style=" width:130px; text-transform: uppercase;" onkeyup="this.value=this.value.replace(/[^a-z]/gi,'');">
+											<input type="text" class="firstName input uiform" id="firstName" name="firstName" placeholder="First name(이름)" style=" width:130px; " onkeyup="this.value=this.value.replace(/[^A-Z]/gi,'');">
 										</div>
+										<!-- text-transform: uppercase; -->
 										<div class="Lname">
 											<label for="lastName">Last Name</label>
-											<input type="text" class="lastName input uiform" id="lastName" name="lastName" placeholder="Last name(성)" style="width:130px; text-transform: uppercase;" onkeyup="this.value=this.value.replace(/[^a-z]/gi,'');">
+											<input type="text" class="lastName input uiform" id="lastName" name="lastName" placeholder="Last name(성)" style="width:130px; " onkeyup="this.value=this.value.replace(/[^A-Z]/gi,'');">
 										</div>
 							</div>
 						</td>
@@ -291,7 +321,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					<tr>
 						<th scope="row"><em class="ast">*</em> 이메일 </th>
 						<td>
-							<input id="memberEmail" name="memberEmail"  type="text" value="" onkeyup="this.value=this.value.replace(/[^a-z0-9.@]{5,20}/i,'')" maxlength="80" placeholder="이메일주소 입력" autocomplete="off"> 
+							<input id="memberEmail" name="memberEmail"  type="text" value="" onkeyup="this.value=this.value.replace(/[^a-z0-9_.@-]/gi,'');"   maxlength="80" placeholder="이메일주소 입력" autocomplete="off"> 
 							<input type="button" value="이메일 중복 확인" onclick="isExistEmail()">
 							<input type="button" value="인증번호 전송" onclick="sendAuth()">
 						<div><span style="color: red; font-size=10px;" id="msg4">${msg4 }</span></div>
@@ -310,14 +340,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					<tr>
 						<th scope="row"><em class="ast">*</em> 휴대전화 </th>
 						<td>
-							<input type="text" class="uiform phoneNum2 text" placeholder='- 빼고 작성' id="memberMobile" name="memberMobile" value="" maxlength="11" onkeyup="this.value=this.value.replace(/^01([0|1|6|7|8|9])-([0-9]{3,4})-([0-9]{4})$/gi, '')" autocomplete="off">	
+							<input type="text" class="uiform phoneNum2 text" placeholder='- 빼고 작성' id="memberMobile" name="memberMobile" value="" maxlength="11" onkeyup="this.value=this.value.replace(/[^\d\ ]/gi, '')" autocomplete="off">	
 						</td>
 					</tr>
 					<!-- 자택전화 -->
 					<tr>
 						<th scope="row"> 자택전화</th>
 						<td>
-							<input type="text" class="uiform phoneHome2 text" placeholder='- 빼고 작성' id="memberHomePhone" name="memberHomePhone" maxlength="10" onkeyup="this.value=this.value.replace(/^(0(2|3[1-3]|4[1-4]|5[1-5]|6[1-4]))-(\d{3,4})-(\d{4})$/gi, '')" autocomplete="off">
+							<input type="text" class="uiform phoneHome2 text" placeholder='- 빼고 작성' id="memberHomePhone" name="memberHomePhone" maxlength="10" onkeyup="this.value=this.value.replace(/[^\d\ ]/gi, '')" autocomplete="off">
 						</td>
 					</tr>
 					<tr class="last">

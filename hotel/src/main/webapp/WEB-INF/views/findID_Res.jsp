@@ -51,7 +51,7 @@ document.write("<div id='popCalendarDiv' class='popCalendar' style='display:none
 		<div class="btn"><a class="btnClose" href="${root }index?formpath=login"><span>닫기</span></a></div>
 	</div>
 	<div class="popCtn">
-		<div class="pop/layerFindPw">
+		
 			<p class="msg1">신라리워즈 아이디 찾기 결과는 다음과 같습니다.</p>
 			<div class="formBox">
 				<dl>
@@ -63,10 +63,10 @@ document.write("<div id='popCalendarDiv' class='popCalendar' style='display:none
 			
 			<div class="btnList">
 				<a href="${root }index?formpath=login" class="btnSubmit"><span>확인</span></a>
-				<a href="${root }index?formpath=findPW" id="popForPwButton" class ="btnLostPw"><span>비밀번호찾기</span></a>
+				<a href="${root }index?formpath=findPW"><span>비밀번호찾기</span></a>
 			</div>
 			<!--   -->
-		</div>
+		
 	</div>
 		<!-- 아이디찾기 결과선택 -->
 		

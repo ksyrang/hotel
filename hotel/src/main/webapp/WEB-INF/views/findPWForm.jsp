@@ -80,11 +80,11 @@
 									<div class="inputForm2">
 										<div class="Fname">
 											<label for="firstName">First Name</label>
-											<input type="text" class="firstName input uiform" id="firstName" name="firstName" placeholder="First name(이름)" style=" width:130px; text-transform: uppercase;" onkeyup="this.value=this.value.replace(/[^a-z]/gi,'');">
+											<input type="text" class="firstName input uiform" id="firstName" name="firstName" placeholder="First name(이름)" style=" width:130px;" onkeyup="this.value=this.value.replace(/[^A-Z]/gi,'');">
 										</div>
 										<div class="Lname">
 											<label for="lastName">Last Name</label>
-											<input type="text" class="lastName input uiform" id="lastName" name="lastName" placeholder="Last name(성)" style="width:130px; text-transform: uppercase;" onkeyup="this.value=this.value.replace(/[^a-z]/gi,'');">
+											<input type="text" class="lastName input uiform" id="lastName" name="lastName" placeholder="Last name(성)" style="width:130px;" onkeyup="this.value=this.value.replace(/[^A-Z]/gi,'');">
 										</div>
 									</div>
 								</td>

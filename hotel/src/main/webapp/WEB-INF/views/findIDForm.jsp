@@ -25,27 +25,6 @@
 document.write("<div id='popCalendarDiv' class='popCalendar' style='display:none' ></div>");
 
 </script>
-<script>
-
-window.onload = function() {
-	document.getElementById('submit').onclick = function() {
-		
-		if ( document.pfrm.firstName.value.trim() == '' || ) {
-			alert( '이름을 입력해주세요' );
-			return false;
-		}
-		if ( document.pfrm.lastName.value.trim() == '' || ) {
-			alert( '성을 입력해주세요' );
-			return false;
-		}
-		if ( document.pfrm.memberEmail.value.trim() == '' ) {
-			alert( '메일을 입력해주세요' );
-			return false;
-		}
-		document.pfrm.submit();
-	}
-}
-</script>
 </head><body class="subBody joinBody"><div id="popCalendarDiv" class="popCalendar" style="display:none"></div>
 <jsp:useBean id="member" class="com.care.hotel.member.DTO.memberDTO"/>
 <jsp:setProperty property="*" name="member"/>
@@ -63,7 +42,28 @@ window.onload = function() {
 <script src="/js/jquery.slides.js" charset="UTF-8"></script>
 <script src="/js/mbr/popLogin.js" charset="UTF-8"></script><div id="popLoginDiv" class="popLogin" style="display:none"></div>
 <script src="/js/mbr/forIdPwd.js" charset="UTF-8"></script><div id="popForIdPwDiv" style="display: block;" tabindex="-1">
-<form action="findIDProc" method="POST" name="pfrm">
+<script>
+
+function idConfirm(){
+	var namef = document.getElementById('firstName').value;
+	var nameL = document.getElementById('lastName').value;
+	var email = document.getElementById('memberEmail').value;
+	
+	var msg = document.getElementById('msg').innerHTML;
+	
+	if(nameF == "" || nameL == "" || email == ""){
+		alert("필수 정보 입니다.");
+		return;
+	}else if(msg == "다시 입력해주세요."){
+		alert("성함 및 이메일을 다시 확인해주세요.");
+		return;
+	}else{
+		document.getElementById('f').submit();
+	}
+	
+}
+</script>
+<form action="findIDProc" method="POST" name="f">
 <div class="popLayer popLayerFindId">
 
 	<div class="popHead">
@@ -86,11 +86,11 @@ window.onload = function() {
 							<div class="inputForm2">
 										<div class="Fname">
 											<label for="firstName">First Name</label>
-											<input type="text" class="firstName input uiform" id="firstName" name="firstName" placeholder="First name(이름)" style=" width:130px; text-transform: uppercase;" onkeyup="this.value=this.value.replace(/[^a-z]/gi,'');">
+											<input type="text" class="firstName input uiform" id="firstName" name="firstName" placeholder="First name(이름)" style=" width:130px;" onkeyup="this.value=this.value.replace(/[^A-Z]/gi,'');">
 										</div>
 										<div class="Lname">
 											<label for="lastName">Last Name</label>
-											<input type="text" class="lastName input uiform" id="lastName" name="lastName" placeholder="Last name(성)" style="width:130px; text-transform: uppercase;" onkeyup="this.value=this.value.replace(/[^a-z]/gi,'');">
+											<input type="text" class="lastName input uiform" id="lastName" name="lastName" placeholder="Last name(성)" style="width:130px;" onkeyup="this.value=this.value.replace(/[^A-Z]/gi,'');">
 										</div>
 							</div>
 						</td>
@@ -109,7 +109,7 @@ window.onload = function() {
 			</div>
 			
 			<div class="btnList">
-				<button type="submit" id="submit" class="btnSubmit" value='아이디 확인'  style="width: 60px;"></button>
+				<button type="button" id="submit" class="btnSubmit" value='아이디 확인'  style="width: 60px;" onclick="idConfirm()"></button>
 				<a href="${root }index?formpath=login" class="btnCancel"><span>취소</span></a>
 			</div>
 			

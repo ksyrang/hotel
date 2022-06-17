@@ -38,7 +38,7 @@ public class FindInfoController {
 			ra.addFlashAttribute("msg", "FindIDProc 오류발생");
 			return "redirect:/index?formpath=findID";
 		}else {
-			String result = memberNameENG + "회원의 아이디는 [ " + memberId + "]입니다.";
+			String result = memberNameENG + "님의 가입된 아이디는 [" + memberId + "]입니다.";
 			memberNameENG = lastName + " " + firstName;
 			result = memberService.findID(memberNameENG, memberEmail);
 			
@@ -53,7 +53,7 @@ public class FindInfoController {
 		
 			if(result.equals("다시 입력해주세요.")) {
 				ra.addFlashAttribute("msg", result);
-				return "redirect:/index?formpath=login";
+				return "redirect:/index?formpath=findIDForm";
 			}else {
 				model.addAttribute("msg", result);
 				return "forward:/index?formpath=findID_Res";
@@ -82,7 +82,7 @@ public class FindInfoController {
 			ra.addFlashAttribute("msg", "FindIDProc 오류발생");
 			return "redirect:/index?formpath=findPW";
 		}else {
-			String result = memberNameENG + "회원의 비밀번호는 [ " + memberPw + "]입니다.";
+			String result= memberNameENG + "님의 비밀번호는 [" + "11111111" + "]로 수정하겠습니다.";
 			memberNameENG = lastName + " " + firstName;
 			result = memberService.findPW(memberId, memberNameENG, memberEmail);
 		
@@ -97,7 +97,7 @@ public class FindInfoController {
 		
 			if(result.equals("다시 입력해주세요.")) {
 				ra.addFlashAttribute("msg", result);
-				return "redirect:/index?formpath=login";
+				return "redirect:/index?formpath=findPWForm";
 			}else {
 			model.addAttribute("msg", result);
 				return "forward:/index?formpath=findPW_Res";
