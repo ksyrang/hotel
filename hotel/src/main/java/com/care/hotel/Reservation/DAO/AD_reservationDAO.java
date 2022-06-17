@@ -10,6 +10,7 @@ import com.care.hotel.Reservation.DTO.reservationExDTO;
 
 @Repository
 public interface AD_reservationDAO {
+	
 
 	int reservationCount(@Param("hotelId")String hotelSelect, @Param("dateBase")String dateBase, @Param("startDate")String startDate, @Param("endDate")String endDate,
 			@Param("reservationNo")String reservationNoSearch);
