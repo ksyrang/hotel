@@ -63,12 +63,20 @@
 			<option value="checkinDate">체크인 기준</option>
 		</select>
 		<input type="date" id="startDate" name="startDate" class="admin_reservationDate">~<input type="date" id="endDate" name="endDate" class="admin_reservationDate2">
+		<!-- 예약상태 필터링 -->
+		<select name="resStatus" id="resStatus" class="admin_dateSelete">
+			<option value="">예약상태</option>
+			<option value="0">예약</option>
+			<option value="1">체크인</option>
+			<option value="2">체크아웃</option>
+			<option value="9">예약취소</option>
+		</select>
 		<!-- 예약번호 검색 -->
 		<input type="text" name="reservationNoSearch" placeholder="예약번호" class="admin_reservationNoSearch">
 		<input type="button" name="reservationSearchBtn" value="검색" class="admin_commonBtn" onclick="searchCheck()">
 	</form>
 	
-	<div align="left" style="margin-top:5px; color:#80715c;">
+	<div align="left" style="margin-top:10px; color:#80715c;">
 		<c:if test="${ShotelSelect != null and ShotelSelect != ''}">
 		<c:forEach var="hotelInfoList" items="${allHotelInfo }">
 			<c:if test="${hotelInfoList.hotelId eq ShotelSelect }">
@@ -81,6 +89,14 @@
 			<c:if test="${SdateBase == 'checkinDate' }">체크인 기준 : </c:if>
 			<c:if test="${SstartDate != null and SstartDate != '' and SendDate != null and SendDate != ''}">${SstartDate } ~ ${SendDate }</c:if>
 			&nbsp;&nbsp;
+		</c:if>
+		<c:if test="${SresStatus != null and SresStatus != '' }">예약상태 : 
+			<c:choose>
+				<c:when test="${SresStatus eq '0' }">예약</c:when>
+				<c:when test="${SresStatus eq '1' }">체크인</c:when>
+				<c:when test="${SresStatus eq '2' }">체크아웃</c:when>
+				<c:when test="${SresStatus eq '9' }">예약취소</c:when>
+			</c:choose>
 		</c:if>
 		<c:if test="${SreservationNoSearch != null and SreservationNoSearch != '' }">예약번호 : ${SreservationNoSearch }</c:if>
 	</div>

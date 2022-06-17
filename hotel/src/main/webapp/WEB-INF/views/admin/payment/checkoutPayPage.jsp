@@ -183,17 +183,17 @@
 			<option value="농협은행" <c:if test="${cardCompany == '농협은행' }">selected</c:if>>농협은행</option>	
 			<option value="카카오뱅크" <c:if test="${cardCompany == '카카오뱅크' }">selected</c:if>>카카오뱅크</option>	
 		</select><br/>
-		카드번호 : <input type="text" name="cardNo1" id="cardNo1" value="${cardNo1 }" class="input_cardNo"> 
-		<input type="password" name="cardNo2" id="cardNo2" value="${cardNo2 }"  class="input_cardNo">
-		<input type="password" name="cardNo3" id="cardNo3" value="${cardNo3 }"  class="input_cardNo"> 
-		<input type="text" name="cardNo4" id="cardNo4" value="${cardNo4 }"  class="input_cardNo"><br/>
-		유효기간 : <input type="text" name="validityMm" id="validityMm" value="${validityMm }" class="input_validity">/
-		<input type="text" name="validityYy" id="validityYy" value="${validityYy }" class="input_validity"><br/>
-		CSV : <input type="text" name="CSV" id="CSV" value="${CSV }" class="input_csv"><br/>
+		카드번호 : <input type="text" name="cardNo1" id="cardNo1" value="${cardNo1 }" maxlength="4" class="input_cardNo" onkeyup="this.value=this.value.replace(/[^0-9]/gi,'');"> 
+		<input type="password" name="cardNo2" id="cardNo2" value="${cardNo2 }" maxlength="4"  class="input_cardNo" onkeyup="this.value=this.value.replace(/[^0-9]/gi,'');">
+		<input type="password" name="cardNo3" id="cardNo3" value="${cardNo3 }" maxlength="4"  class="input_cardNo" onkeyup="this.value=this.value.replace(/[^0-9]/gi,'');"> 
+		<input type="text" name="cardNo4" id="cardNo4" value="${cardNo4 }" maxlength="4"  class="input_cardNo" onkeyup="this.value=this.value.replace(/[^0-9]/gi,'');"><br/>
+		유효기간 : <input type="text" name="validityMm" id="validityMm" value="${validityMm }" maxlength="2" class="input_validity" onkeyup="this.value=this.value.replace(/[^0-9]/gi,'');">/
+		<input type="text" name="validityYy" id="validityYy" value="${validityYy }" maxlength="2" class="input_validity" onkeyup="this.value=this.value.replace(/[^0-9]/gi,'');"><br/>
+		CSV : <input type="password" name="CSV" id="CSV" value="${CSV }" class="input_csv" maxlength="3" onkeyup="this.value=this.value.replace(/[^0-9]/gi,'');"><br/>
 		<font style="color:red">*카드 정보는 자동으로 저장됩니다.</font>
 	</td></tr>
 	<tr><th>결제금액</th><td>${resDTO.baseAmount }원</td></tr>
-	<tr><th>추가결제금액</th><td><input type="text" id="paymentAmount" name="paymentAmount" class="input_paymentAmount">원</td></tr>
+	<tr><th>추가결제금액</th><td><input type="text" id="paymentAmount" name="paymentAmount" class="input_paymentAmount" onkeyup="this.value=this.value.replace(/[^0-9]/gi,'');">원</td></tr>
 </table>
 <div class="payDiv">
 	<input type="button" value="취소" class="payCancleBtn" onclick="javascript:history.back();">

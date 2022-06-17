@@ -52,7 +52,7 @@
 	<input type="text" name="search" id="search" class="admin_memberSearchTxt">
 	<input type="button" name="memberSearchBtn" value="검색" class="admin_memberSearchBtn" onclick="searchCheck()">
 </form>
-<div align="left" style="margin-top:5px; color:#80715c;">
+<div align="left" style="margin-top:10px; color:#80715c;">
 	<c:if test="${Sselect != null and Sselect != '' }">
 		<c:if test="${Sselect eq 'memberId'}">아이디 : </c:if>
 		<c:if test="${Sselect eq 'name'}">이름 : </c:if>

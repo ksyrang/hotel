@@ -119,7 +119,12 @@ public class PaymentServiceImpl implements IPaymentService{
 			if(cardDTO != null) {
 				// 고객의 카드 정보가 db에 없을 경우
 				if(oldCardDTO == null) {
-					Integer cardId = cardDAO.getMaxCardId() + 1;
+					Integer cardId = 0;
+					if(cardDAO.getMaxCardId() != null) {
+						cardId = cardDAO.getMaxCardId() + 1;
+					}else {
+						cardId = 1;
+					}
 					String strCardId = Integer.toString(cardId);
 					cardDTO.setCardId(strCardId);
 					cardDAO.cardInsert(cardDTO);

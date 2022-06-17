@@ -11,6 +11,7 @@
 			<if test="dateBase =='reservationDate'">AND reservationDate BETWEEN to_date(#{startDate},'YYYY-MM-DD') AND to_date(#{endDate},'YYYY-MM-DD')</if>
 			<!-- dateBase == checkinDate -->
 			<if test="dateBase == 'checkinDate'">AND checkinDate BETWEEN to_date(#{startDate},'YYYY-MM-DD') AND to_date(#{endDate},'YYYY-MM-DD')</if>
+			<if test='reservationStatus != null and reservationStatus != ""'>AND reservationStatus=#{reservationStatus}</if>
 			<if test='reservationNo != null and reservationNo != ""'>AND reservationNo like '%'||#{reservationNo}||'%'</if>
 		</where>
 	</select>
@@ -26,6 +27,7 @@
 					<if test="dateBase =='reservationDate'">AND reservationDate BETWEEN to_date(#{startDate},'YYYY-MM-DD') AND to_date(#{endDate},'YYYY-MM-DD')</if>
 					<!-- dateBase == checkinDate -->
 					<if test="dateBase == 'checkinDate'">AND checkinDate BETWEEN to_date(#{startDate},'YYYY-MM-DD') AND to_date(#{endDate},'YYYY-MM-DD')</if>
+					<if test='reservationStatus != null and reservationStatus != ""'>AND reservationStatus=#{reservationStatus}</if>
 					<if test='reservationNo != null and reservationNo != ""'>AND reservationNo like '%'||#{reservationNo}||'%'</if>
 				</where>
 				ORDER BY reservationDate DESC, checkinDate ASC

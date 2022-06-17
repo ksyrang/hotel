@@ -31,16 +31,17 @@ public class AdminResevationController {
 	@RequestMapping(value="admin_reservationListProc", method = RequestMethod.GET)
 	public String admin_reservationListProc(Model model, 
 			@RequestParam(value = "currentPage", required = false, defaultValue = "1") int currentPage,
-			String hotelSelect, String dateBase, String startDate, String endDate,String reservationNoSearch) {
+			String hotelSelect, String dateBase, String startDate, String endDate, String resStatus, String reservationNoSearch) {
 		model.addAttribute("allHotelInfo", hotelresourceSvc.allHotelInfo());
 		
 		model.addAttribute("ShotelSelect", hotelSelect);
 		model.addAttribute("SdateBase", dateBase);
 		model.addAttribute("SstartDate", startDate);
 		model.addAttribute("SendDate", endDate);
+		model.addAttribute("SresStatus", resStatus);
 		model.addAttribute("SreservationNoSearch", reservationNoSearch);
 		
-		reservationSvc.reservationList(currentPage, hotelSelect, dateBase, startDate, endDate, reservationNoSearch);
+		reservationSvc.reservationList(currentPage, hotelSelect, dateBase, startDate, endDate, resStatus, reservationNoSearch);
 		return "forward:/admin_index?formpath=admin_reservationList";
 	}
 	

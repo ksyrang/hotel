@@ -192,23 +192,23 @@
 		<td>성명(영문)</td><td>${userInfo.memberNameENG }</td>
 		<td>카드번호</td>
 		<td>
-		<input type="text" name="cardNo1" id="cardNo1" value="${cardNo1 }" class="input_cardNo" onkeyup="numberCheck(this)"> 
-		<input type="password" name="cardNo2" id="cardNo2" value="${cardNo2 }"  class="input_cardNo" onkeyup="numberCheck(this)">
-		<input type="password" name="cardNo3" id="cardNo3" value="${cardNo3 }"  class="input_cardNo" onkeyup="numberCheck(this)"> 
-		<input type="text" name="cardNo4" id="cardNo4" value="${cardNo4 }"  class="input_cardNo" onkeyup="numberCheck(this)">
+		<input type="text" name="cardNo1" id="cardNo1" value="${cardNo1 }" class="input_cardNo" onkeyup="numberCheck(this)" maxlength="4"> 
+		<input type="password" name="cardNo2" id="cardNo2" value="${cardNo2 }"  class="input_cardNo" onkeyup="numberCheck(this)" maxlength="4">
+		<input type="password" name="cardNo3" id="cardNo3" value="${cardNo3 }"  class="input_cardNo" onkeyup="numberCheck(this)" maxlength="4"> 
+		<input type="text" name="cardNo4" id="cardNo4" value="${cardNo4 }"  class="input_cardNo" onkeyup="numberCheck(this)" maxlength="4">
 		</td>
 	</tr>
 	<tr>
 		<td>이메일</td><td>${userInfo.memberEmail }</td>
 		<td>유효기간</td>
 		<td>
-		<input type="text" name="validityMm" id="validityMm" value="${validityMm }" class="input_validity" onkeyup="numberCheck(this)">/
-		<input type="text" name="validityYy" id="validityYy" value="${validityYy }" class="input_validity" onkeyup="numberCheck(this)">
+		<input type="text" name="validityMm" id="validityMm" value="${validityMm }" class="input_validity" onkeyup="numberCheck(this)" maxlength="2">/
+		<input type="text" name="validityYy" id="validityYy" value="${validityYy }" class="input_validity" onkeyup="numberCheck(this)" maxlength="2">
 		</td>
 	</tr>
 	<tr>
 		<td>연락처</td><td>${userInfo.memberMobile }</td>
-		<td>CSV</td><td><input type="text" name="CSV" id="CSV" value="${CSV }" class="input_csv" onkeyup="numberCheck(this)"></td>
+		<td>CSV</td><td><input type="password" name="CSV" id="CSV" value="${CSV }" class="input_csv" onkeyup="numberCheck(this)"  maxlength="3"></td>
 	</tr>
 	<tr>
 		<td colspan="4">

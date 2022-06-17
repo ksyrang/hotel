@@ -13,6 +13,9 @@ import com.care.hotel.Reservation.DTO.reservationDTO;
 import com.care.hotel.Reservation.DTO.reservationExDTO;
 import com.care.hotel.common.DateService;
 import com.care.hotel.common.PageService;
+import com.care.hotel.member.DAO.memberDAO;
+import com.care.hotel.member.DTO.memberDTO;
+import com.care.hotel.member.service.MailService;
 import com.care.hotel.resourceDAO.IhotelDAO;
 import com.care.hotel.resourceDTO.hotelDTO;
 
@@ -20,11 +23,13 @@ import com.care.hotel.resourceDTO.hotelDTO;
 public class ReservationSvcImpl implements IReservationSvc{
    @Autowired AD_reservationDAO reservationDAO;
    @Autowired IhotelDAO hotelDAO;
+   @Autowired memberDAO memberDAO;
+   @Autowired MailService mailService;
    @Autowired HttpSession session;
    
    @Override
-   public void reservationList(int currentPage, String hotelSelect, String dateBase, String startDate, String endDate,
-         String reservationNoSearch) {
+   public void reservationList(int currentPage, String hotelSelect, String dateBase, String startDate, String endDate
+		   , String resStatus, String reservationNoSearch) {
       int pageBlock = 10; // 한 화면에 보여줄 데이터 수
       int end = currentPage * pageBlock; // 데이터의 끝 번호
       int begin = end+1 - pageBlock; // 데이터의 시작 번호
@@ -46,12 +51,12 @@ public class ReservationSvcImpl implements IReservationSvc{
       }
       
       if(check == 2) {
-         totalCount = reservationDAO.reservationCount(hotelSelect, dateBase, startDate, endDate, reservationNoSearch); // 총 데이터의 수 
-         resList = reservationDAO.resList(begin, end, hotelSelect, dateBase, startDate, endDate, reservationNoSearch);
+         totalCount = reservationDAO.reservationCount(hotelSelect, dateBase, startDate, endDate, resStatus, reservationNoSearch); // 총 데이터의 수 
+         resList = reservationDAO.resList(begin, end, hotelSelect, dateBase, startDate, endDate, resStatus, reservationNoSearch);
       } else {
          // session이 관리자일 때 
-         totalCount = reservationDAO.reservationCount(hotelSelect, dateBase, startDate, endDate, reservationNoSearch); // 총 데이터의 수 
-         resList = reservationDAO.resList(begin, end, hotelSelect, dateBase, startDate, endDate, reservationNoSearch);
+         totalCount = reservationDAO.reservationCount(hotelSelect, dateBase, startDate, endDate, resStatus, reservationNoSearch); // 총 데이터의 수 
+         resList = reservationDAO.resList(begin, end, hotelSelect, dateBase, startDate, endDate, resStatus, reservationNoSearch);
       }
       
       // reservationDate, checkinDate 포맷 변경
@@ -126,9 +131,13 @@ public class ReservationSvcImpl implements IReservationSvc{
       resDTO.setReservationStatus("9");
       resDTO.setCancelDate(cancelDate);
       
+      // 메일을 보내기 위해 고객 id 불러옴
+      memberDTO memberDTO = memberDAO.memberInfo(resDTO.getMemberId());
+      
       // hotelInfo에 데이터가 있을 시
       if(hotelInfo != null) {
          if(id.equals(session.getAttribute("userId")) && pw.equals(hotelInfo.getHotelPw())) {
+        	mailService.sendMail(memberDTO.getMemberEmail(),"[신난다호텔 예약이 취소되었습니다.]",result);
             reservationDAO.reservationDelete(resDTO);
          }else {
             result = "아이디 혹은 비밀번호를 확인해주세요.";
@@ -136,6 +145,7 @@ public class ReservationSvcImpl implements IReservationSvc{
       }else {
          // 관리자 id, pw가 맞을 시
          if(id.equals("admin") && pw.equals("1234")) {
+        	mailService.sendMail(memberDTO.getMemberEmail(),"[신난다호텔 예약이 취소되었습니다.]",result);
             reservationDAO.reservationDelete(resDTO);
          }else {
             result = "아이디 혹은 비밀번호를 확인해주세요.";

@@ -17,10 +17,31 @@
 		lastName = document.getElementById('lastName');
 		memberBirth = document.getElementById('memberBirth');
 		memberMobile = document.getElementById('memberMobile');
+		memberHomePhone = document.getElementById('memberHomePhone');
 		
 		if(memberNameKR.value == "" || firstName.value == "" || lastName.value == "" || memberBirth.value == "" || memberMobile.value == "") {
 			alert('필수 정보를 입력해주세요.');
 			return;
+		}
+		
+		if(memberBirth.value.length != 8){
+			alert('생년월일을 정확히 입력해주세요.');
+			memberBirth.focus();
+			return;
+		}
+		
+		if(memberMobile.value.length != 11){
+			alert('휴대전화를 정확히 입력해주세요.');
+			memberMobile.focus();
+			return;
+		}
+		
+		if(memberHomePhone.value != null){
+			if(memberHomePhone.value.length != 11){
+				alert('자택전화를 정확히 입력해주세요.');
+				memberHomePhone.focus();
+				return;
+			}
 		}
 		
 		document.getElementById('f').submit();
@@ -63,14 +84,13 @@
 
 <div class="admin_memberInfoTopRight">
 	<input type="button" value="저장" class="listBtn" onclick="check();">
-	<input type="button" value="이전" class="listBtn" onclick="location.href='javascript:history.back();">
+	<input type="button" value="이전" class="listBtn" onclick="javascript:history.back();">
 </div>
 
 <div class="admin_memberInfoTableDiv">
 <table class="admin_memberInfoTable">
 <tr>
-	<th>* 아이디</th><td><input type="text" name="memberId" value="${user.memberId }" class="admin_input_basic" readonly ></td>
-	<th>* 비밀번호</th><td><input type="text" name="memberPw" value="${user.memberPw }" class="admin_input_basic" readonly></td>
+	<th>* 아이디</th><td colspan="3"><input type="text" name="memberId" value="${user.memberId }" class="admin_input_basic" readonly ></td>
 </tr>
 <tr>
 	<th>* 성명(국문)</th>
@@ -82,7 +102,7 @@
 	LastName(성) <input type="text" id="lastName" name="lastName"  value="${lastName }" class="admin_input_basic"></td>
 </tr>
 <tr>
-	<th>* 생년월일</th><td><input type="text" id="memberBirth" name="memberBirth"  value="${user.memberBirth }" class="admin_input_basic"></td>
+	<th>* 생년월일</th><td><input type="text" id="memberBirth" name="memberBirth"  value="${user.memberBirth }" maxlength="8" class="admin_input_basic" onkeyup="this.value=this.value.replace(/[^0-9]/gi,'');"></td>
 
 	<th>* 성별</th><td>
 	<c:choose>
@@ -120,11 +140,11 @@
 	<th>* 이메일</th><td colspan="3"><input type="text" name="memberEmail"  value="${user.memberEmail }" class="admin_input_basic" readonly></td>
 </tr>
 <tr>
-	<th>* 휴대전화</th><td colspan="3"><input type="text" id="memberMobile" name="memberMobile"  value="${user.memberMobile }" class="admin_input_basic"></td>
+	<th>* 휴대전화</th><td colspan="3"><input type="text" id="memberMobile" name="memberMobile"  value="${user.memberMobile }" maxlength="11" class="admin_input_basic" onkeyup="this.value=this.value.replace(/[^0-9]/gi,'');"></td>
 	
 </tr>
 <tr>
-<th>자택전화</th><td colspan="3"><input type="text" name="memberHomePhone"  value="${user.memberHomePhone }" class="admin_input_basic"></td>
+<th>자택전화</th><td colspan="3"><input type="text" name="memberHomePhone" id="memberHomePhone"  value="${user.memberHomePhone }" maxlength="11" class="admin_input_basic" onkeyup="this.value=this.value.replace(/[^0-9]/gi,'');"></td>
 </tr>
 <tr>
 	<th>자택주소</th>

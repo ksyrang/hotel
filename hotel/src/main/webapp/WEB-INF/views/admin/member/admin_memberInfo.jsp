@@ -28,8 +28,7 @@
 <div class="admin_memberInfoTableDiv">
 <table class="admin_memberInfoTable">
 <tr>
-	<th>아이디</th><td>${user.memberId }</td>
-	<th>비밀번호</th><td>${user.memberPw }</td>
+	<th>아이디</th><td colspan="3">${user.memberId }</td>
 </tr>
 <tr>
 	<th>성명(국문)</th><td colspan="3">${user.memberNameKR }</td>

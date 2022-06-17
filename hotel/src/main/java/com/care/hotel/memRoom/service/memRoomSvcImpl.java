@@ -74,7 +74,6 @@ public class memRoomSvcImpl implements ImemRoomSvc{
 	@Override
 	public String insertReservation(reservationAllDTO resAllDTO, memberCardDTO cardDTO, memberDTO memberDTO,
 			roomDTO roomDTO) {
-		String result = "";
 		String resNo = "";
 		// resNo 생성
 		while(true) {
@@ -114,7 +113,12 @@ public class memRoomSvcImpl implements ImemRoomSvc{
 		if(cardDTO != null) {
 			memberCardDTO oldCardDTO = cardDAO.cardInfo(resAllDTO.getMemberId());
 			if(oldCardDTO == null) {
-				Integer cardId = cardDAO.getMaxCardId() + 1;
+				Integer cardId = 0;
+				if(cardDAO.getMaxCardId() != null) {
+					cardId = cardDAO.getMaxCardId() + 1;
+				}else {
+					cardId = 1;
+				}
 				String strCardId = Integer.toString(cardId);
 				cardDTO.setCardId(strCardId);
 				cardDAO.cardInsert(cardDTO);
