@@ -10,6 +10,33 @@
 <link href="${pageContext.request.contextPath}/resources/css/admin/admin_reservationList.css" rel="stylesheet" type="text/css">
 <title>reservationMain</title>
 <script>
+
+	//박수 구하는 ajax
+	var req;
+	function getStay(){
+		var startDate = document.getElementById('startDate').value;
+		var endDate = document.getElementById('endDate').value;
+		
+		req = new XMLHttpRequest();
+		req.onreadystatechange = textChange;
+		req.open('post', 'getStayDate');
+		
+		var startDate = document.getElementById('startDate').value;
+		var endDate = document.getElementById('endDate').value;
+		
+		var sendData = {strDate : startDate, eDate : endDate};
+		sendData = JSON.stringify(sendData);
+		req.setRequestHeader('Content-Type', "application/json; charset=UTF-8");
+		req.send(sendData);
+	}
+	
+	function textChange() {
+		var period = document.getElementById('period');
+		if(req.readyState == 4 && req.status == 200){
+			period.innerHTML = req.responseText;
+		}
+	}
+	
 	function searchCheck() {
 		var hotelSelect = document.getElementById('hotelSelect');
 		var startDate = document.getElementById('startDate');
@@ -72,11 +99,11 @@
 			</c:forEach>
 		</select>
 		<!-- 날짜 필터링 -->
-		체크인 <input type="date" id="startDate" name="startDate" class="admin_reservationDate" min="${today }" value = "${SstartDate }">
-		<span>&nbsp;1박&nbsp;</span>
-		체크아웃 <input type="date" id="endDate" name="endDate" class="admin_reservationDate2" min="${tomorrow }" value = "${SendDate }">
+		체크인 <input type="date" id="startDate" name="startDate" class="admin_reservationDate" min="${today }" value = "${SstartDate }" onchange="getStay()">
+		&nbsp;<span id = "period">1</span>박&nbsp;
+		체크아웃 <input type="date" id="endDate" name="endDate" class="admin_reservationDate2" min="${tomorrow }" value = "${SendDate }" onchange="getStay()">
 		<!-- 예약번호 검색 -->
-		<input type="text" name="availablePerson" id="availablePerson" placeholder="투숙인원" value = "${SavailablePerson }" class="admin_reservationNoSearch">
+		<input type="text" name="availablePerson" id="availablePerson" placeholder="투숙인원" value = "${SavailablePerson }" class="admin_reservationNoSearch" onkeyup="this.value=this.value.replace(/[^0-9]/gi,'');">
 		<input type="button" name="reservationSearchBtn" value="검색" class="admin_commonBtn" onclick="searchCheck()">
 	</form>
 	
