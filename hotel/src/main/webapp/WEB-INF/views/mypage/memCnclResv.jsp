@@ -8,17 +8,20 @@
 .lnbAreaMypage .lnbMenu .m2 .sMenu li.s2 a{ background-position:0 -22px;}
 .lnbAreaMypage .lnbMenu .m2 .sMenu li.s3 a{ background-position:0 -44px;}
 .lnbAreaMypage .lnbMenu .m2 .sMenu li.s4 a{ background-position:0 -66px;}
+#loading { width: 100%; height: 100%; top: 0; left: 0; position: fixed; display: block; opacity: 0.8; background: white; z-index: 99; text-align: center; }
+#loading > img { position: absolute; top: 50%; left: 50%; z-index: 100; }
 </style>
 <script>
+<%--
+	$(document).ready(function() {
+		$('#loading').hide();
+	});
+--%>
 	function check() {
 		memberId = document.getElementById('userId');
 		memberPw = document.getElementById('memberPw');
 		
-		if(memberPw.value == "") {
-			alert('# 비밀번호를 확인해주세요.');
-			return;
-		}
-		
+	<%--	$('#loading').show(); --%>
 		document.getElementById('f').submit();
 	}
 </script>
@@ -52,10 +55,15 @@
 			</div> <!-- lnbMenu -->
 		</div> <!-- lnbArea lnbAreaMypage -->
 <div class="contents" id="contents">
+<!-- 
+<div id="loading"><img src="${pageContext.request.contextPath}/resources/images/ko/common/loadingAnimation.gif" alt="loading"></div>
+ -->
+<!-- 
 <h3>
 	<font color="red" >${msg } </font>
 </h3>
-<form action="memCnclCheckProc" method="post" id="f">
+ -->
+<form action="memCnclCheckProc" method="post" id="f" onsubmit="check();">
 	<div class="ctnMypage ctnMypageRsv ctnMypageRsvRmPack rewards_N">
 		<div class="location">
 			<p class="list">
@@ -70,7 +78,7 @@
 
 		<div style="height: 30px;">
 			<h2>
-				<font size="2" color="blue" face="돋음">[ ${userId} ] 님의 [ ${reservationNo} ] 예약을 정말 취소 하시겠습니까?</font>
+				<font size="2" color="#874A4A" face="돋음">[ ${userId} ] 님의 [ ${reservationNo} ] 예약을 취소 하시겠습니까?</font>
 			</h2>
 		</div>
 		<input type="hidden" name="reservationNo" value="${reservationNo}" >
@@ -79,7 +87,8 @@
 			<caption>예약 확인/취소</caption>
 			<colgroup>
 				<col width="17%" class="col1">
-				<col class="col2">
+				<col width="20%" class="col2">
+				<col class="col3">
 			</colgroup>
 			<tbody>
 				<tr class="first">
@@ -93,11 +102,17 @@
 					<td class="last">
 						<input type="password" class="pw uiform password" id="memberPw" name="memberPw" placeholder="PASSWORD" maxlength="60" >
 					</td>
+					<td>
+							<h3><font color="red" >${msg } </font></h3>
+					</td>
 				</tr>
 			</tbody>
 		</table>
 		<div class="btnList">
-			<input type="button" value="확인" onclick="check();" class="btnConfirm">
+			<input type="submit" value="확인" class="btnConfirm">
+	<!-- 
+	 		<input type="button" value="확인" onclick="check();" class="btnConfirm">
+	 -->
 		</div>
 	</div> <!-- ctnMypage ctnMypageRsv ctnMypageRsvRmPack rewards_N -->
 </form>

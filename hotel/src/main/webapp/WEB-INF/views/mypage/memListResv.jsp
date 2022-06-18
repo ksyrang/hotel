@@ -26,6 +26,13 @@
 	}
 </script>
 	
+<c:if test="${sessionScope.userId == null }">
+<script>
+	alert("로그인 후 이용해주세요.");
+	location.href="${root }index?formpath=login";
+</script>
+</c:if>
+
 <div class="contain">
 	<div class="container">
 		<div class="lnbArea lnbAreaMypage">
@@ -56,9 +63,11 @@
 			</div> <!-- lnbMenu -->
 		</div> <!-- lnbArea lnbAreaMypage -->
 <div class="contents" id="contents">
+<!-- 
 <h3>
 	<font color="red" >${msg } </font>
 </h3>
+ -->
 <form action="memListResvProc" id="f">
 	<div class="ctnMypage ctnMypageRsv ctnMypageRsvRmPack rewards_N">
 		<div class="location">
@@ -71,11 +80,13 @@
 		<div class="myRservationTit">
 			<h4 class="tit">예약확인/취소</h4>
 		</div>
+		<!-- 
 		<div style="height: 30px;">
 			<h2>
 				<font size="2" color="blue" face="돋음">[ ${userId} ] 님의 객실 예약 내역을 확인하실 수 있습니다.</font>
 			</h2>
 		</div>
+		 -->
 		<!-- 
 		<div class="topMsg">예약 내역을 확인하실 수 있습니다.</div>
 		 -->
@@ -163,21 +174,21 @@
 											<td scope="col">${resvList.checkinDate }/<br>${resvList.checkoutDate }</td>
 											<c:choose>
 												<c:when test="${resvList.reservationStatus eq '0'}">
-													<td scope="col" style="color: blue">RESERVATION</td>
+													<td scope="col" style="color: blue">예약</td>
 													<td scope="col"><input type="button" value="취소" class="btnCancel1" 
 														onclick="location.href='memCnclResvProc?memberId=${resvList.memberId}&reservationNo=${resvList.reservationNo}'"></td>
 												</c:when>
 												<c:when test="${resvList.reservationStatus eq '1'}">
-													<td scope="col">CHECK_IN</td>
+													<td scope="col">체크인</td>
 													<td scope="col"><input type="button" value="취소" class="btnCancel1" 
 														onclick="location.href='memCnclResvProc?memberId=${resvList.memberId}&reservationNo=${resvList.reservationNo}'"></td>
 												</c:when>
 												<c:when test="${resvList.reservationStatus eq '2'}">
-													<td scope="col">CHECK_OUT</td>
+													<td scope="col">체크아웃</td>
 													<td scope="col"></td>
 												</c:when>
 												<c:when test="${resvList.reservationStatus eq '9'}">
-													<td scope="col" style="color: red">CANCEL</td>
+													<td scope="col" style="color: red">취소</td>
 													<td scope="col"></td>
 												</c:when>
 												<c:otherwise>
