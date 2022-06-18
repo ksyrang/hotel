@@ -4,14 +4,11 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.datasource.init.ScriptUtils;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -66,6 +63,9 @@ public class MyPageController {
 			model.addAttribute("endDt", endDt);
 			System.out.println(currentPage + "/" + select + "/" + startDt + "/ " + endDt + "/ " + memberId);
 			myPageService.memListResv(currentPage, select, startDt, endDt, memberId);//서비스 내부에서 session에 데이터를 업로드함
+		}else {
+//			session.setAttribute("reservationList", null);
+			session.setAttribute("reservationCount", 0);
 		}
 		return "forward:/mypage_index?formpath=memListResv";
 	}

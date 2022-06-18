@@ -12,8 +12,8 @@
 </style>	
 <script>
 	function check() {
-		adminId = document.getElementById('memberId');
-		adminPw = document.getElementById('memberPw');
+		memberId = document.getElementById('memberId');
+		memberPw = document.getElementById('memberPw');
 		
 		if(memberId.value == "" || memberPw.value == "") {
 			alert('# 아이디 혹은 비밀번호를 확인해주세요.');

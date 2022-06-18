@@ -11,20 +11,30 @@
 #loading { width: 100%; height: 100%; top: 0; left: 0; position: fixed; display: block; opacity: 0.8; background: white; z-index: 99; text-align: center; }
 #loading > img { position: absolute; top: 50%; left: 50%; z-index: 100; }
 </style>
+<style>
+/* Start by LYH : 2022-06-18 20:25)*/
+#loading { width: 100%; height: 100%; top: 0; left: 0; position: fixed; display: block; opacity: 0.6; background: #e4e4e4; z-index: 99; text-align: center; }
+#loading > img { position: absolute; top: 50%; left: 50%; z-index: 100; }
+#loading > p { position: absolute; top: 57%; left: 43%; z-index: 101; }
+</style>
+<!--항상 최신버전의 제이쿼리를 사용한다-->
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>	
 <script>
-<%--
 	$(document).ready(function() {
 		$('#loading').hide();
+		$('#f').submit(function(){
+		    $('#loading').show();
+		    return true;
+		});
 	});
---%>
-	function check() {
-		memberId = document.getElementById('userId');
-		memberPw = document.getElementById('memberPw');
-		
-	<%--	$('#loading').show(); --%>
-		document.getElementById('f').submit();
-	}
 </script>
+<!--로딩바-->
+<div id="loading" style="margin-left: 0px;">
+	<img src="${pageContext.request.contextPath}/resources/images/ko/common/loadingAnimation1.gif" alt="loading">
+    <p>처리중입니다..잠시기다려주세요.</p>
+</div>
+<!-- End by LYH : 2022-06-18 20:25) --> 
+
 <div class="contain">
 	<div class="container">
 		<div class="lnbArea lnbAreaMypage">
@@ -63,7 +73,7 @@
 	<font color="red" >${msg } </font>
 </h3>
  -->
-<form action="memCnclCheckProc" method="post" id="f" onsubmit="check();">
+<form action="memCnclCheckProc" method="post" id="f">
 	<div class="ctnMypage ctnMypageRsv ctnMypageRsvRmPack rewards_N">
 		<div class="location">
 			<p class="list">

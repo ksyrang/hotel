@@ -13,7 +13,7 @@
 <script>
 	function pwUpdtCheck() {
 		var memberPw = document.getElementById('memberPw').value;
-		var memberNewPw = document.getElementById('memberNewPw').value;
+		var memberNewPw = document.getElementById('memberNewPw').value;f
 		var memberNewPwCnfm = document.getElementById('memberNewPwCnfm').value;
 		
 		if(memberPw == "" || memberNewPw == "" || memberNewPwCnfm == "") {
@@ -21,7 +21,7 @@
 			return;
 		}
 		if(memberNewPw == memberNewPwCnfm){
-			if(memberNewPw.length < 8 && memberNewPwCnfm.length > 20){
+			if(memberNewPw.length < 8 || memberNewPwCnfm.length > 20){
 				alert('비밀번호 길이는 8~20자리 입니다.');
 				document.getElementById('memberNewPw').value = "";
 				document.getElementById('memberNewPwCnfm').value = ""; 
