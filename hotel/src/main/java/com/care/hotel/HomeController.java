@@ -176,45 +176,45 @@ public class HomeController {
 		return "admin/member/admin_memberDelete";
 	}
 	/* 호텔 관리 */
-	@GetMapping("admin_hotelAdd")
+	@RequestMapping("admin_hotelAdd")
 	public String admin_hotelAdd () {
 		return "admin/hotel/hoteladdForm";
 	}
-	@GetMapping("admin_hotelList")
+	@RequestMapping("admin_hotelList")
 	public String admin_hotelList() {
 		return "admin/hotel/hotellistForm";
 	}
-	@GetMapping("admin_hotelInfo")
+	@RequestMapping("admin_hotelInfo")
 	public String admin_hotelInfo() {
 //		if(session.getAttribute("hotelInfo") == null)
 		return "admin/hotel/hotelInfoForm";
 	}	
 	
-	@GetMapping("admin_hotelInfoModify")
+	@RequestMapping("admin_hotelInfoModify")
 	public String admin_hotelInfoModify() {
 		
 		return "admin/hotel/hotelInfomodifyform";
 	}	
 	
-	@GetMapping("admin_hotelDelete")
+	@RequestMapping("admin_hotelDelete")
 	public String admin_hoteldelete(Model model, String hotelId) {
 		session.setAttribute("hotelId", hotelId);
 		return "admin/hotel/hoteldeleteForm";
 	}
  	/* 룸 관리 */
-	@GetMapping("admin_roomList")
+	@RequestMapping("admin_roomList")
 	public String admin_roomList() {
 		
 		return "admin/room/roomlistForm";
 	}
 	
-	@GetMapping("admin_roomInfo")
+	@RequestMapping("admin_roomInfo")
 	public String admin_roomInfo() {
 //		if(session.getAttribute("roomInfo") == null)
 		return "admin/room/roomInfoForm";
 	}
  	
-	@GetMapping("admin_roomInfoModify")
+	@RequestMapping("admin_roomInfoModify")
 	public String admin_roomInfoModify() {
 		
 		return "admin/room/roomInfomodifyform";
@@ -226,7 +226,7 @@ public class HomeController {
 		return "admin/room/roomdeleteForm";
 	}
 	
-	@GetMapping("admin_roomAdd")
+	@RequestMapping("admin_roomAdd")
 	public String admin_roomAdd() {
 		
 		return "admin/room/roomAddform";

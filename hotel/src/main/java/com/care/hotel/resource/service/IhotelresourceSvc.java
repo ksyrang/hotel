@@ -8,7 +8,7 @@ import com.care.hotel.resourceDTO.roomDTO;
 public interface IhotelresourceSvc {
    
    public void hotelList(int currentPage, String select, String search);
-   public void hotelInfo(String hotelId);
+   public hotelDTO hotelInfo(String hotelId);
    public int hotelModify(hotelDTO hotelInfo);
    public boolean hotelDelte(String hotelId, String adminId, String adminPw);
    

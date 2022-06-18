@@ -83,24 +83,30 @@ public class hotelresourceController {
 	
 	@RequestMapping("roomInfoProc")
 	public String roomInfoProc(String roomId, Model model) {
-		if(roomId ==""||roomId == null) return "redirect:roomlistProc";
+		if(roomId ==""||roomId == null|| roomId.isEmpty()) return "redirect:roomlistProc";
 		hotelresSVC.roomInfo(roomId);
 		return "forward:/admin_index?formpath=admin_roomInfo";
 	}
 	
 	@RequestMapping("preroomModifyProc")
 	public String preroomModifyProc(String roomId, Model model) {
-		if(roomId ==""||roomId == null) return "redirect:roomlistProc";
+		if(roomId ==""||roomId == null) {
+			return "redirect:/roomlistProc";
+		}
 		hotelresSVC.roomInfo(roomId);
 		return "forward:/admin_index?formpath=admin_roomInfoModify";
 	}
 	
 	@RequestMapping("roomModifyProc")
-	public String roomModifyProc(roomDTO roomInfo, Model model) {
-	
+	public String roomModifyProc(roomDTO roomInfo, Model model) {	
+		System.out.println("roomModifyProc roomID "+roomInfo.getRoomId());
 		hotelresSVC.roomModify(roomInfo);
 		String roomId = roomInfo.getRoomId();
-		return "redirect:/roomInfoProc?roomId="+roomId;
+		String hotelId = roomInfo.getHotelId();
+		String NewId = hotelId+"-"+roomId;
+		model.addAttribute("roomId", NewId);
+		System.out.println("NewId : "+NewId);
+		return "redirect:/roomlistProc";
 	}
 	
 	@RequestMapping("roomdeleteProc")
@@ -134,20 +140,26 @@ public class hotelresourceController {
 		String userId = (String)session.getAttribute("userId");
 		if(userId.equals(ADMINID)) {//관리자로 진입
 			hotelresSVC.allhotelList();
-			return "redirect:/admin_index?formpath=admin_roomAdd";
+			return "forward:/admin_index?formpath=admin_roomAdd";
 		}
 		else {
-			return "redirect:/admin_index?formpath=admin_roomAdd";
+			return "forward:/admin_index?formpath=admin_roomAdd";
 		}
 	}
 	
-	@RequestMapping("roomAddCheckProc")
-	public String roomAddProc(roomDTO roomInfo, String hotelSel) {
-		roomInfo.setHotelId(hotelSel);
-		session.setAttribute("addroomInfo", roomInfo);
+	@PostMapping("roomAddCheckProc")
+	public String roomAddProc(roomDTO roomInfo, Model model) {
+
+//		session.setAttribute("addroomInfo", roomInfo);
+		model.addAttribute("addroomInfo", roomInfo);
+		
+		hotelDTO tmp = hotelresSVC.hotelInfo(roomInfo.getHotelId());
+		model.addAttribute("hotelName",tmp.getHotelName());
+		
 		int check = hotelresSVC.roomcheck(roomInfo.getRoomId());		
 		if(check > 0) {
-			return "forward:/preroomaddProc";
+			model.addAttribute("msg", "등록되어 있는 방 아이디 입니다.");
+			return "forward:/roomAddProc";
 		}
 		hotelresSVC.roomAdd(roomInfo);
 		session.removeAttribute("addroomInfo");

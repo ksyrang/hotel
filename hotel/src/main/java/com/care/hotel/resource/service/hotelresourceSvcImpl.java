@@ -39,9 +39,10 @@ public class hotelresourceSvcImpl implements IhotelresourceSvc{
    }
    
    @Override
-   public void hotelInfo(String hotelId) {
+   public hotelDTO hotelInfo(String hotelId) {
       hotelDTO hotelInfo = hotelDAO.hotelInfo(hotelId);
       session.setAttribute("hotelInfo", hotelInfo);
+      return hotelInfo;
    }
    
    @Override
@@ -100,17 +101,23 @@ public class hotelresourceSvcImpl implements IhotelresourceSvc{
    
    @Override
    public void roomModify(roomDTO roomInfo) {
-	   String oldId = ((roomDTO)session.getAttribute("roomInfo")).getRoomId();
-	   if(oldId.equals(roomInfo.getRoomId()))	   roomDAO.roomUpdate(roomInfo);
+		roomDTO oldtmp = ((roomDTO)session.getAttribute("roomInfo"));
+		System.out.println("oldtmp "+oldtmp.getRoomId());
+		String newId = roomInfo.getHotelId()+"-"+roomInfo.getRoomId();
+		System.out.println("NewId : "+newId);
+	   if(newId.equals(oldtmp.getRoomId()))	   {
+		   roomInfo.setRoomId(oldtmp.getRoomId());
+		   roomDAO.roomUpdate(roomInfo);
+	   }
 	   else {
 		   roommodiDTO tmp = new roommodiDTO();
-		   tmp.setRoomId(roomInfo.getRoomId());
+		   tmp.setRoomId(newId);
 		   tmp.setHotelId(roomInfo.getHotelId());
 		   tmp.setRoomType(roomInfo.getRoomType());
 		   tmp.setBedType(roomInfo.getBedType());
 		   tmp.setAvailablePerson(roomInfo.getAvailablePerson());
 		   tmp.setBasicCharge(roomInfo.getBasicCharge());
-		   tmp.setOldId(oldId);
+		   tmp.setOldId(oldtmp.getRoomId());
 		   roomDAO.roomUpdateId(tmp);
 	   }
    }
@@ -134,7 +141,9 @@ public class hotelresourceSvcImpl implements IhotelresourceSvc{
    
    @Override
 	public void roomAdd(roomDTO roomInfo) {
-		roomDAO.roomAdd(roomInfo);
+	   String tmp = roomInfo.getHotelId()+"-"+roomInfo.getRoomId();
+	   roomInfo.setRoomId(tmp);
+	   roomDAO.roomAdd(roomInfo);
 	}
     
    @Override
@@ -150,11 +159,11 @@ public class hotelresourceSvcImpl implements IhotelresourceSvc{
 	  hotelDAO.hotelAdd(hotelInfo);
 	}
 
-@Override
-public roomDTO roomInfoDTO(String roomId) {
-	roomDTO roomInfo = roomDAO.roomInfo(roomId);
-	return roomInfo;
-}
+	@Override
+	public roomDTO roomInfoDTO(String roomId) {
+		roomDTO roomInfo = roomDAO.roomInfo(roomId);
+		return roomInfo;
+	}
    
    
 }

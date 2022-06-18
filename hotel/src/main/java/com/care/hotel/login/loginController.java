@@ -71,14 +71,29 @@ public class loginController {
 	
 	
 	@PostMapping("loginProc")
-	public String loginProc(String userId, String userPw) {
+	public String loginProc(String userId, String userPw, Model model) {
 		int result =loginSVC.loginProc(userId, userPw);
-		System.out.println(result);
-		if(result == 0) return "forward:/index?formpath=login"; // 없는 Id
-		else if(result == 2) return "forward:/"; //맴버 로그인
-		else if(result == 4) return "redirect:admin"; //매니저 로그인
-		else if(result == 7) return "redirect:admin"; //관리자 로그인
-		else if(result == 9) return "forward:/index?formpath=login"; //비밀번호 오류
+//		System.out.println(result);
+		if(result == 0) {
+			model.addAttribute("msg", "미등록 회원 입니다.");
+			return "forward:/index?formpath=login"; // 없는 Id
+		}
+		else if(result == 2) {
+			model.addAttribute("msg", userId+"님 환영합니다.");
+			return "redirect:/"; //맴버 로그인
+		}
+		else if(result == 4) {
+			model.addAttribute("msg", userId+"님 환영합니다.");
+			return "redirect:/admin"; //매니저 로그인		
+		}
+		else if(result == 7) {
+			model.addAttribute("msg", userId+"님 환영합니다.");
+			return "redirect:/admin"; //관리자 로그인
+		}
+		else if(result == 9) {
+			model.addAttribute("msg", "아이디 또는 비밀번호를 확인해주세요.");
+			return "forward:/index?formpath=login"; //비밀번호 오류
+		}
 		
 		return "forward:/";
 	}

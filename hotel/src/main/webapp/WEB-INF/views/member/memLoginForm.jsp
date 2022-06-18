@@ -11,9 +11,19 @@
 </style>
 <<script type="text/javascript">
 	function logininfoSubmit(){
+		var userId = document.getElementById("userId");
+		var userPw = document.getElementById("userPw");
+		
+		if(userId.value == "" || userPw.value == ""){
+			alert('아이디 혹은 비밀번호를 확인해주세요.');
+			return;	
+		}		
 		document.getElementById("f").submit();		
 	}
 </script>
+<c:if test="${not empty msg }">
+	<script>alert("${msg}");</script>
+</c:if>
 <c:url var="root" value="/" />
 <center>
 <div class="loginBox contents" id="contents">
@@ -33,8 +43,8 @@
 						<fieldset class="loginSet">
 							<form id="f" action="${root }loginProc" method="POST">
 								<div class="inputForm">
-									<div style="float: left; height: 30px;"><input type="text" style="width: 280px; " name="userId" placeholder="신라 리워즈 아이디 입력"></div>
-									<div style="float: left;"><input type="password" style="width: 280px; " maxlength="40" name="userPw" placeholder="비밀번호"></div>
+									<div style="float: left; height: 30px;"><input type="text" style="width: 280px; " id="userId" name="userId" placeholder="신라 리워즈 아이디 입력"></div>
+									<div style="float: left;"><input type="password" style="width: 280px; " maxlength="40" id="userPw" name="userPw" placeholder="비밀번호"></div>
 								</div>
 								<!-- 로그인 버튼 -->
 								<div class="loginBtn">	

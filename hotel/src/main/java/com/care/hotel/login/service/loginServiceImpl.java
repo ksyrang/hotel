@@ -3,6 +3,7 @@ package com.care.hotel.login.service;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -17,6 +18,9 @@ public class loginServiceImpl implements IloginService {
 	@Autowired IloginDAO loginDAO;
 	@Autowired IhotelDAO hotelDAO;
 	@Autowired HttpSession session;
+	@Value("${ADMIN:admin}")private String ADMINID;
+	@Value("${ADMPW:admin}")private String ADMINPW;
+	
 	
 	public int loginProc(String userId, String userPw) {
 		//DB에서 데이터 가져오기
@@ -36,12 +40,11 @@ public class loginServiceImpl implements IloginService {
 		}
 		if(DBhotel != null && !DBhotel.getHotelPw().equals(userPw)) return 9;//매니저 비밀번호 오류
 		//admin 시
-		String adminId ="admin";//향후 수정 필요
-		String adminPw ="admin";
-		if(adminId.equals(userId)&&adminPw.equals(userPw)) {
-			session.setAttribute("userId", adminId);
+
+		if(ADMINID.equals(userId)&&ADMINPW.equals(userPw)) {
+			session.setAttribute("userId", ADMINID);
 			return 7;
-		}else if(adminId.equals(userId)&&!adminPw.equals(userPw)) {
+		}else if(ADMINID.equals(userId)&&!ADMINPW.equals(userPw)) {
 			return 9;
 		}
 		

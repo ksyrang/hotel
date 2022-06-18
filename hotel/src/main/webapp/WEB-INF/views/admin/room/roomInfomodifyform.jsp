@@ -1,22 +1,29 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
-<c:url var="root" value="/" />
-//<script src="${root}/resources/check.js"></script>
+<c:url var="root" value="/" /><%-- 
+<script src="${root}/resources/check.js"></script> --%>
 <link href="${pageContext.request.contextPath}/resources/css/admin/amdin_hotelList.css" rel="stylesheet" type="text/css">
 <link href="${pageContext.request.contextPath}/resources/css/admin/amdin_memberList.css" rel="stylesheet" type="text/css">
 <link href="${pageContext.request.contextPath}/resources/css/admin/admin_memberInfo.css" rel="stylesheet" type="text/css">
 
 <script>
 	function check() {
-		roomId = document.getElementById('roomId');
-		hotelId = document.getElementById('hotelId');
-		roomType = document.getElementById('roomType');
-		bedType = document.getElementById('bedType');
-		availablePerson = document.getElementById('availablePerson');
-		basicCharge = document.getElementById('basicCharge');
+		var roomId = document.getElementById('roomId');
+		var hotelId = document.getElementById('hotelId');
 		
-		if(roomId.value == "" || hotelId.value == "" || roomType.value == "" || bedType.value == "" || availablePerson.value == "" || basicCharge.value == "") {
+		var roomTypeList = document.getElementById('roomType');
+		var roomType = roomTypeList.options[roomTypeList.selectedIndex].value;
+		
+		var bedTypeList = document.getElementById('bedType');
+		var bedType = bedTypeList.options[bedTypeList.selectedIndex].value;
+		
+		var availablePersonList = document.getElementById('availablePerson');
+		var availablePerson = availablePersonList.options[availablePersonList.selectedIndex].value;
+		
+		var basicCharge = document.getElementById('basicCharge');
+		
+		if(roomId.value == "" || hotelId.value == "" || roomType == null || bedType == null || availablePerson == null || basicCharge.value == "") {
 			alert('필수 정보를 입력해주세요.');
 			return;
 		}
