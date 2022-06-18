@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.care.hotel.resource.service.IhotelresourceSvc;
 import com.care.hotel.resourceDTO.hotelDTO;
 import com.care.hotel.resourceDTO.roomDTO;
+import com.care.hotel.resourceDTO.roomVO;
 
 @Controller
 public class hotelresourceController {
@@ -84,7 +85,10 @@ public class hotelresourceController {
 	@RequestMapping("roomInfoProc")
 	public String roomInfoProc(String roomId, Model model) {
 		if(roomId ==""||roomId == null|| roomId.isEmpty()) return "redirect:roomlistProc";
-		hotelresSVC.roomInfo(roomId);
+		roomDTO roomInfo = hotelresSVC.roomInfo(roomId);
+		roomInfo = hotelresSVC.roomIdProc(roomInfo);
+		roomVO roomvo = hotelresSVC.roomIdProc(roomInfo);
+		model.addAttribute("roomInfo", roomvo);
 		return "forward:/admin_index?formpath=admin_roomInfo";
 	}
 	
@@ -93,19 +97,16 @@ public class hotelresourceController {
 		if(roomId ==""||roomId == null) {
 			return "redirect:/roomlistProc";
 		}
-		hotelresSVC.roomInfo(roomId);
-		return "forward:/admin_index?formpath=admin_roomInfoModify";
+		roomDTO roomInfo = hotelresSVC.roomInfo(roomId);
+		roomVO roomvo = hotelresSVC.roomIdProc(roomInfo);
+		model.addAttribute("roomInfo", roomvo);
+		return "forward:/admin_index?formpath=admin_roomModify";
 	}
 	
 	@RequestMapping("roomModifyProc")
-	public String roomModifyProc(roomDTO roomInfo, Model model) {	
-		System.out.println("roomModifyProc roomID "+roomInfo.getRoomId());
+	public String roomModifyProc(roomDTO roomInfo, Model model) {
+
 		hotelresSVC.roomModify(roomInfo);
-		String roomId = roomInfo.getRoomId();
-		String hotelId = roomInfo.getHotelId();
-		String NewId = hotelId+"-"+roomId;
-		model.addAttribute("roomId", NewId);
-		System.out.println("NewId : "+NewId);
 		return "redirect:/roomlistProc";
 	}
 	
@@ -138,6 +139,10 @@ public class hotelresourceController {
 	@RequestMapping("roomAddProc")
 	public String preroomaddProc(Model model) {
 		String userId = (String)session.getAttribute("userId");
+		if(userId == null|| userId==""|| userId.isEmpty()) {
+			model.addAttribute("msg","로그인 세션이 만료되었습니다. 로그인 페이지로 이동합니다.");
+			return "forward:/index?formpath=login";
+		}
 		if(userId.equals(ADMINID)) {//관리자로 진입
 			hotelresSVC.allhotelList();
 			return "forward:/admin_index?formpath=admin_roomAdd";
@@ -148,15 +153,14 @@ public class hotelresourceController {
 	}
 	
 	@PostMapping("roomAddCheckProc")
-	public String roomAddProc(roomDTO roomInfo, Model model) {
+	public String roomAddProc(roomVO roomInfo, Model model) {
 
-//		session.setAttribute("addroomInfo", roomInfo);
 		model.addAttribute("addroomInfo", roomInfo);
 		
 		hotelDTO tmp = hotelresSVC.hotelInfo(roomInfo.getHotelId());
 		model.addAttribute("hotelName",tmp.getHotelName());
 		
-		int check = hotelresSVC.roomcheck(roomInfo.getRoomId());		
+		int check = hotelresSVC.roomcheck(roomInfo.getHotelId()+"-"+roomInfo.getRoomIdVO());		
 		if(check > 0) {
 			model.addAttribute("msg", "등록되어 있는 방 아이디 입니다.");
 			return "forward:/roomAddProc";

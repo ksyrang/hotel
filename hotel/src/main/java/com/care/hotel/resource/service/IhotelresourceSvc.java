@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import com.care.hotel.resourceDTO.hotelDTO;
 import com.care.hotel.resourceDTO.roomDTO;
+import com.care.hotel.resourceDTO.roomVO;
 
 public interface IhotelresourceSvc {
    
@@ -13,7 +14,7 @@ public interface IhotelresourceSvc {
    public boolean hotelDelte(String hotelId, String adminId, String adminPw);
    
    public void roomList(int currentPage, String select, String search);
-   public void roomInfo(String roomId);
+   public roomDTO roomInfo(String roomId);
    public int roomcheck(String roomId);
    
    public roomDTO roomInfoDTO(String roomId);
@@ -27,11 +28,12 @@ public interface IhotelresourceSvc {
 
    public int roomDelete(String roomId);
 
-   public void roomAdd(roomDTO roomInfo);
+   public void roomAdd(roomVO roomInfo);
 
    public hotelDTO hotelCheck(String hotelId);
 
    public void hotelAdd(hotelDTO hotelInfo);
 
+   public roomVO roomIdProc(roomDTO roominfo);
    
 }

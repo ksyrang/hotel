@@ -4,107 +4,80 @@
 
 
 <!-- 테이블 내 row 개수  -->
-	<select id="hotelCount" resultType="int">
-		SELECT count(*) FROM hotel
-		<choose>
-			<when test="sel == 'id'">
-				WHERE hotelid like '%'||#{search}||'%'
-			</when>
-			<when test="sel == 'email'">
-				WHERE hotelemail like '%'||#{search}||'%'
-			</when>
-			<when test="sel == 'name'">
-				WHERE hotelname like '%'||#{search}||'%'
-			</when>
-			<when test="sel == 'tel'">
-				WHERE hotelphonenumber like '%'||#{search}||'%'
-			</when>
-		</choose>	
-	</select>
-	
-	<select id="roomCount" resultType="int">
-		SELECT count(*) FROM room
-		<choose>
-			<when test="sel == 'roomId'">
-				WHERE roomid like '%'||#{search}||'%'
-			</when>
-			<when test="sel == 'hotelId'">
-				WHERE hotelid like '%'||#{search}||'%'
-			</when>
-			<when test="sel == 'Rtype'">
-				WHERE roomtype like '%'||#{search}||'%'
-			</when>
-			<when test="sel == 'Btype'">
-				WHERE bedtype like '%'||#{search}||'%'
-			</when>
-			<when test="sel == 'person'">
-				WHERE availableperson like '%'||#{search}||'%'
-			</when>
-		</choose>
-	</select>
-	
+   <select id="hotelCount" resultType="int">
+      SELECT count(*) FROM hotel
+      <choose>
+         <when test="sel == 'id'">
+            WHERE hotelid like '%'||#{search}||'%'
+         </when>
+         <when test="sel == 'email'">
+            WHERE hotelemail like '%'||#{search}||'%'
+         </when>
+         <when test="sel == 'name'">
+            WHERE hotelname like '%'||#{search}||'%'
+         </when>
+         <when test="sel == 'tel'">
+            WHERE hotelphonenumber like '%'||#{search}||'%'
+         </when>
+      </choose>   
+   </select>
+   
+
+   
 <!-- 리스트 블러오기  -->
-	<select id="hotelList" resultType="com.care.hotel.resourceDTO.hotelDTO">
-		SELECT B.* FROM(
-			SELECT rownum rn, A.* FROM( 
-				SELECT * FROM hotel 
-				<choose>
-					<when test="sel == 'id'">
-						WHERE hotelid like '%'||#{search}||'%'
-					</when>
-					<when test="sel == 'email'">
-						WHERE hotelemail like '%'||#{search}||'%'
-					</when>
-					<when test="sel == 'name'">
-						WHERE hotelname like '%'||#{search}||'%'
-					</when>
-					<when test="sel == 'tel'">
-						WHERE hotelphonenumber like '%'||#{search}||'%'
-					</when>
-				</choose>
-			)A
-		)B WHERE rn BETWEEN #{b} and #{e}
+   <select id="hotelList" resultType="com.care.hotel.resourceDTO.hotelDTO">
+      SELECT B.* FROM(
+         SELECT rownum rn, A.* FROM( 
+            SELECT * FROM hotel 
+            <choose>
+               <when test="sel == 'id'">
+                  WHERE hotelid like '%'||#{search}||'%'
+               </when>
+               <when test="sel == 'email'">
+                  WHERE hotelemail like '%'||#{search}||'%'
+               </when>
+               <when test="sel == 'name'">
+                  WHERE hotelname like '%'||#{search}||'%'
+               </when>
+               <when test="sel == 'tel'">
+                  WHERE hotelphonenumber like '%'||#{search}||'%'
+               </when>
+            </choose>
+            ORDER BY hotelid ASC
+         )A
+      )B WHERE rn BETWEEN #{b} and #{e}
+   </select>
+   
+   <!-- !!! -->
+   <!-- 호텔 정보 불러오기  -->
+   <select id="hotelInfo" resultType="com.care.hotel.resourceDTO.hotelDTO" parameterType="String">
+      SELECT * FROM hotel WHERE hotelid = #{hotelId}   
+   </select>
+   <update id="hotelUpdate" parameterType="com.care.hotel.resourceDTO.hotelDTO">
+      UPDATE hotel set hotelname=#{hotelName}, hotelpw=#{hotelPw}, hotelemail=#{hotelEmail}, hoteladdr1=#{hotelAddr1}, hoteladdr2=#{hotelAddr2}, hotelzipcode=#{hotelZipcode}, hotelphonenumber=#{hotelPhoneNumber} WHERE hotelid=#{hotelId}
+   </update>
+   <delete id="hotelDelete" parameterType="String">
+      DELETE FROM hotel WHERE hotelid=#{hotelId}
+   </delete>
+   
+   <!-- 모든 호텔 정보 불러오기 -->
+   <select id="allHotelInfo" resultType="com.care.hotel.resourceDTO.hotelDTO">
+	SELECT * FROM hotel
+   </select>
+   
+   <select id="allhotelidList" resultType="com.care.hotel.resourceDTO.hotelDTO">
+	SELECT  hotelid, hotelname FROM hotel ORDER BY hotelname ASC
+   </select>
+	
+	<select id="checkHotel" parameterType="String" resultType="com.care.hotel.resourceDTO.hotelDTO">
+		SELECT hotelid, hotelname FROM hotel WHERE hotelid=#{hotelId}
+	
 	</select>
 	
-		<select id="roomList" resultType="com.care.hotel.resourceDTO.roomDTO">
-		SELECT B.* FROM(
-			SELECT rownum rn, A.* FROM( 
-				SELECT * FROM room 
-				<choose>
-					<when test="sel == 'roomId'">
-						WHERE roomid like '%'||#{search}||'%'
-					</when>
-					<when test="sel == 'hotelId'">
-						WHERE hotelid like '%'||#{search}||'%'
-					</when>
-					<when test="sel == 'Rtype'">
-						WHERE roomtype like '%'||#{search}||'%'
-					</when>
-					<when test="sel == 'Btype'">
-						WHERE bedtype like '%'||#{search}||'%'
-					</when>
-					<when test="sel == 'person'">
-						WHERE availableperson like '%'||#{search}||'%'
-					</when>
-				</choose>
-			)A
-		)B WHERE rn BETWEEN #{b} and #{e}
-	</select>
-	
-	<!-- 호텔 정보 불러오기  -->
-	<select id="hotelInfo" resultType="com.care.hotel.resourceDTO.hotelDTO" parameterType="String">
-		SELECT * FROM hotel WHERE hotelid = #{hotelId}	
-	</select>
-	<update id="updateHotel" parameterType="com.care.hotel.resourceDTO.hotelDTO">
-		UPDATE hotel set hotelname=#{hotelName}, hotelpw=#{hotelPw}, hotelemail=#{hotelEmail}, hoteladdr1=#{hotelAddr1}, hoteladdr2=#{hotelAddr2}, hotelzipcode=#{hotelZipcode} WHERE hotelid=#{hotelId}
-	</update>
-	<delete id="hotelDelete" parameterType="String">
-		DELETE FROM hotel WHERE hotelid=#{hotelId}
-	</delete>
-	
-	<!-- 모든 호텔 정보 불러오기 -->
-	<select id="allHotelInfo" resultType="com.care.hotel.resourceDTO.hotelDTO">
-		SELECT * FROM hotel
-	</select>
+	<insert id="hotelAdd" parameterType="com.care.hotel.resourceDTO.hotelDTO">
+		INSERT INTO hotel (HOTELID, HOTELPW, HOTELNAME, HOTELZIPCODE, HOTELADDR1, HOTELADDR2, HOTELPHONENUMBER, HOTELEMAIL) 
+					VALUES (#{hotelId}, #{hotelPw}, #{hotelName}, #{hotelZipcode}, #{hotelAddr1}, #{hotelAddr2}, #{hotelPhoneNumber}, #{hotelEmail})
+	</insert>
+
 
 </mapper>

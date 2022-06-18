@@ -25,11 +25,11 @@
 	<form>
 		<table class="admin_memberInfoTable">
 			<tr>
-				<th>방 아이디</th><td>${sessionScope.roomInfo.roomId }</td>
+				<th>방 번호</th><td>${roomInfo.roomIdVO }</td>
 			</tr>
 	
 			<tr>
-				<th>호텔 아이디</th><td>${sessionScope.roomInfo.hotelId }</td>
+				<th>호텔 아이디</th><td>${roomInfo.hotelId }</td>
 			</tr>
 			<tr>
 				<th>방 형태</th>
@@ -53,10 +53,10 @@
 					</td>
 			</tr>
 			<tr>
-				<th>허용 인원</th><td>${sessionScope.roomInfo.availablePerson }</td>
+				<th>허용 인원</th><td>${roomInfo.availablePerson } 명</td>
 			</tr>
 			<tr>
-				<th>기본 요금</th><td>${sessionScope.roomInfo.basicCharge }</td>
+				<th>기본 요금</th><td>${roomInfo.basicCharge } 원</td>
 			</tr>
 			
 		</table>

@@ -4,20 +4,30 @@
 <c:url var="root" value="/" />
 <link href="${pageContext.request.contextPath}/resources/css/admin/amdin_hotelList.css" rel="stylesheet" type="text/css">
 <link href="${pageContext.request.contextPath}/resources/css/admin/amdin_memberList.css" rel="stylesheet" type="text/css">
+<link href="${pageContext.request.contextPath}/resources/css/admin/admin_memberInfo.css" rel="stylesheet" type="text/css">
+
+
+<c:if test="${not empty msg }">
+	<script>alert("${msg}");</script>
+</c:if>
+
 
 <center>
 	<div class="admin_main">
-	<form>
+	<div class="admin_memberInfoTopLeft">호텔 정보</div>
+	
+	<div class="admin_memberInfoTopRight">
+		<input type="button" value="목록" class="listBtn" onclick="location.href='${root }hotellistProc'">
+		<input type="button" value="수정" class="listBtn" onclick="location.href='${root }prehotelModifyProc?hotelId=${sessionScope.hotelInfo.hotelId}'">
+		<input type="button" value="삭제" class="listBtn" onclick="location.href='${root }admin_index?formpath=admin_hotelDelete&hotelId=${sessionScope.hotelInfo.hotelId}'">
+	</div>
 		<table class="admin_memberInfoTable">
 			<tr>
-				<th>호텔 이름</th><th>${sessionScope.hotelInfo.hotelName }</th>
+				<th>호텔 이름</th><td>${sessionScope.hotelInfo.hotelName }</td>
 			</tr>
 	
 			<tr>
 				<th>호텔 아이디</th><td>${sessionScope.hotelInfo.hotelId }</td>
-			</tr>
-			<tr>
-				<th>호텔 비밀전호</th><td>${sessionScope.hotelInfo.hotelPw }</td>
 			</tr>
 			<tr>
 				<th>호텔 이메일</th><td>${sessionScope.hotelInfo.hotelEmail }</td>
@@ -33,18 +43,6 @@
 			</tr>
 			<tr>
 				<th>호텔 우편번호</th><td>${sessionScope.hotelInfo.hotelZipcode }</td>
-			</tr>
-			<tr>
-				<td><input type="button" class="Btn" value="수정" onclick="location.href='${root }prehotelModifyProc?hotelId=${hoteldb.hotelId}'"/></td>
-				<td><input type="button" class="Btn" value="삭제" onclick="location.href='${root }admin_index?formpath=hoteldelete&hotelId=${hoteldb.hotelId}'"></td>
-				<c:choose>
-					<c:when test="${sessionScope.userId eq 'admin' }">
-						<td><input type="button" class="Btn" value="뒤로가기" onclick="location.href='${root}hotellistProc'"/></td>
-					</c:when>
-					<c:otherwise>
-						<td><input type="button" class="Btn" value="뒤로가기" onclick="location.href='${root }admin'"/></td>
-					</c:otherwise>
-				</c:choose>	
 			</tr>
 		</table>
 	</form>

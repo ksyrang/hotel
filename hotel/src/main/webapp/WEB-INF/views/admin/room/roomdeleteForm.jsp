@@ -15,8 +15,10 @@
 			alert('아이디 혹은 비밀번호를 확인해주세요.');
 			return;
 		}
+		var choice = confirm("정말 삭제 하시겠습니까?");
+		if(choice) document.getElementById('f').submit();
+		else window.history.back();
 		
-		document.getElementById('f').submit();
 	}
 </script>
 <c:if test="${not empty msg }">
@@ -43,7 +45,7 @@
 				<tr>
 					<td colspan="2" align="center">
 						<input type="button" class="okBtn" onclick="check();" value="삭제"/>
-						<input type="reset" class="okBtnB" value="취소"/>
+						<input type="button" value="취소" class="okBtnB" onclick="javascript:history.back();"/>
 					</td>
 				</tr>
 			</table>

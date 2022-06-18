@@ -44,8 +44,9 @@
                   WHERE availableperson like '%'||#{search}||'%'
                </when>
             </choose>
+            ORDER BY hotelid ASC
          )A
-      )B WHERE rn BETWEEN #{b} and #{e}
+      )B WHERE rn BETWEEN #{b} and #{e} 
    </select>
    
    <select id="roomInfo" resultType="com.care.hotel.resourceDTO.roomDTO" parameterType="String">

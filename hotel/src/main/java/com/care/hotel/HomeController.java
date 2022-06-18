@@ -214,10 +214,10 @@ public class HomeController {
 		return "admin/room/roomInfoForm";
 	}
  	
-	@RequestMapping("admin_roomInfoModify")
-	public String admin_roomInfoModify() {
+	@RequestMapping("admin_roomModify")
+	public String admin_roomModify() {
 		
-		return "admin/room/roomInfomodifyform";
+		return "admin/room/roomModifyform";
 	}
 	
 	@RequestMapping("admin_roomDelete")

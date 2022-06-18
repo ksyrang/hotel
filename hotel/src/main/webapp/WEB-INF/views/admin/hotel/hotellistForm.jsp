@@ -8,6 +8,13 @@
 <center>
 <div class="admin_main">
 	<form action=""><!-- 자기 자신의 map으로 가는데 list의 시작이 listproc이었기 때문에 proc으로 진행됨. -->
+		<select name="hotelSelect" style="height: 25px;">
+				<option value="">호텔명</option>
+			<c:forEach var="hotelInfoList" items="${hotelidList }">
+				<option value="${List.hotelId }" selected="selected">${List.hotelName }</option>
+			</c:forEach>
+		</select>
+		
 		<select name="select" class="select" style="height: 25px;">
 			<option value="">전체</option>
 			<option value="id">아이디</option>

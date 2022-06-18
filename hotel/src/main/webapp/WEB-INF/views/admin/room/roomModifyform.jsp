@@ -46,12 +46,14 @@
 	</div>
 		<table class="admin_memberInfoTable">
 			<tr>
-				<th>*방 아이디</th>
-				<th><input type="text" id="roomId" name="roomId" placeholder="방 아이디" value="${sessionScope.roomInfo.roomId }"></th>
+				<th>*방 번호(수정 불가)</th>
+				<th><input type="text" placeholder="방 아이디" readonly="readonly" value="${roomInfo.roomIdVO }">
+					<input type="hidden" id="roomId" name="roomId" value="${roomInfo.roomId }">
+				</th>
 			</tr>
 			<tr>
 				<th>*호텔 아이디(수정 불가)</th>
-				<td><input type="text" id="hotelId" name="hotelId" placeholder="호텔아이디" readonly="readonly" value="${sessionScope.roomInfo.hotelId }"></td>
+				<td><input type="text" id="hotelId" name="hotelId" placeholder="호텔아이디" readonly="readonly" value="${roomInfo.hotelId }"></td>
 			</tr>
 			<tr>
 				<th>*방 형태</th>
@@ -157,7 +159,7 @@
 			</tr>
 			<tr>
 				<th>*기본 요금</th>
-				<td><input type="text" id="basicCharge" name="basicCharge" placeholder="기본요금" value="${sessionScope.roomInfo.basicCharge }">원</td>
+				<td><input type="text" id="basicCharge" name="basicCharge" placeholder="기본요금" value="${roomInfo.basicCharge }">원</td>
 			</tr>
 		</table>
 	</form>

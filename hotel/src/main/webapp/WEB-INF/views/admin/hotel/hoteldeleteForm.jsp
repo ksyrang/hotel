@@ -4,30 +4,53 @@
 <c:url var="root" value="/" />
 <link href="${pageContext.request.contextPath}/resources/css/admin/amdin_hotelList.css" rel="stylesheet" type="text/css">
 <link href="${pageContext.request.contextPath}/resources/css/admin/amdin_memberList.css" rel="stylesheet" type="text/css">
-
+<link href="${pageContext.request.contextPath}/resources/css/admin/admin_memberInfo.css" rel="stylesheet" type="text/css">
+<link href="${pageContext.request.contextPath}/resources/css/admin/admin_memberDelete.css" rel="stylesheet" type="text/css">
+<script>
+	function check() {
+		adminId = document.getElementById('adminId');
+		adminPw = document.getElementById('adminPw');
+		
+		if(adminId.value == "" || adminPw.value == "") {
+			alert('아이디 혹은 비밀번호를 확인해주세요.');
+			return;
+		}
+		var choice = confirm("정말 삭제 하시겠습니까?");
+		if(choice) document.getElementById('f').submit();
+		else window.history.back();
+		
+	}
+</script>
+<c:if test="${not empty msg }">
+	<script>alert('${msg}');</script>
+</c:if>
 <center>
 <div class="admin_main">
-	<form action="hoteldeleteProc" method="post">
-		<table>
-			<tr>
-				<th>호텔 아이디</th>
-				<td>${hotelId }</td>
-			</tr>
-			<tr>
-				<th>관리자 아이디</th>
-				<td><input type="text" name="adminId" placeholder="아이디 입력"/></td>
-			</tr>
-			<tr>
-				<th>관리자 패스워드</th>
-				<td><input type="text" name="adminPw" placeholder="비밀번호 입력"/></td>
-			</tr>
-			<tr>
-				<td colspan="2" align="center">
-					<input type="submit" value="삭제"/>
-					<input type="reset" value="취소"/>
-				</td>
-			</tr>
-		</table>
-	</form>	
+	<div class="top_info">호텔 삭제</div><br>
+	<div align="center">
+		${hotelId }을 정말 삭제하시겠습니까?
+	</div>
+	
+	<div align="center" class="delteTabDiv">
+		<form action="hoteldeleteProc" method="post" id="f">
+			<table class="adminLoginTable">
+				<tr>
+					<th>관리자 아이디</th>
+					<td><input type="text" id="adminId" name="adminId" placeholder="아이디 입력"/></td>
+				</tr>
+				<tr>
+					<th>관리자 패스워드</th>
+					<td><input type="text" id="adminPw" name="adminPw" placeholder="비밀번호 입력"/></td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center">
+						<input type="button" class="okBtn" onclick="check();" value="삭제"/>
+						<input type="button" value="취소" class="okBtnB" onclick="javascript:history.back();"/>
+					</td>
+				</tr>
+			</table>
+			<input type="hidden" id="roomId" name="roomId" value="${hotelId }"/>
+		</form>	
+	</div>
 </div>
 </center>

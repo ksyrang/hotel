@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +15,7 @@ import com.care.hotel.resourceDAO.IhotelDAO;
 import com.care.hotel.resourceDAO.IroomDAO;
 import com.care.hotel.resourceDTO.hotelDTO;
 import com.care.hotel.resourceDTO.roomDTO;
+import com.care.hotel.resourceDTO.roomVO;
 import com.care.hotel.resourceDTO.roommodiDTO;
 
 @Service
@@ -23,7 +25,9 @@ public class hotelresourceSvcImpl implements IhotelresourceSvc{
    @Autowired IroomDAO roomDAO;
    @Autowired memberDAO memberDAO;
    @Autowired HttpSession session;
-
+   @Value("${ADMIN:admin}")private String ADMINID;
+	@Value("${ADMPW:admin}")private String ADMINPW;
+   
    //호텔 zone
    @Override
    public void hotelList(int currentPage, String select, String search) {
@@ -56,11 +60,10 @@ public class hotelresourceSvcImpl implements IhotelresourceSvc{
    
    @Override
    public boolean hotelDelte(String hotelId, String adminId, String adminPw) {
-      String adminDBId = "admin"; // 어드민 프로퍼티 만들면 변경 필요.
-      String adminDBPw = "admin";
-      if(adminId==null || adminPw == null) return false;
-      else if(!adminId.equals(adminDBId)) return false;
-      else if(!adminPw.equals(adminDBPw)) return false;
+    
+	   if(adminId==null || adminPw == null) return false;
+      else if(!adminId.equals(ADMINID)) return false;
+      else if(!adminPw.equals(ADMINPW)) return false;
       //실패 조건 end
       hotelDAO.hotelDelete(hotelId);
       
@@ -94,32 +97,17 @@ public class hotelresourceSvcImpl implements IhotelresourceSvc{
    }
    
    @Override
-   public void roomInfo(String roomId) {
+   public roomDTO roomInfo(String roomId) {
       roomDTO roomInfo = roomDAO.roomInfo(roomId);
-      session.setAttribute("roomInfo", roomInfo);
+//      roomInfo.setRoomId(roomIdProc(roomInfo));
+//      System.out.println(roomInfo.getRoomId());
+//      session.setAttribute("roomInfo", roomInfo);
+      return roomInfo;
    }
    
    @Override
    public void roomModify(roomDTO roomInfo) {
-		roomDTO oldtmp = ((roomDTO)session.getAttribute("roomInfo"));
-		System.out.println("oldtmp "+oldtmp.getRoomId());
-		String newId = roomInfo.getHotelId()+"-"+roomInfo.getRoomId();
-		System.out.println("NewId : "+newId);
-	   if(newId.equals(oldtmp.getRoomId()))	   {
-		   roomInfo.setRoomId(oldtmp.getRoomId());
-		   roomDAO.roomUpdate(roomInfo);
-	   }
-	   else {
-		   roommodiDTO tmp = new roommodiDTO();
-		   tmp.setRoomId(newId);
-		   tmp.setHotelId(roomInfo.getHotelId());
-		   tmp.setRoomType(roomInfo.getRoomType());
-		   tmp.setBedType(roomInfo.getBedType());
-		   tmp.setAvailablePerson(roomInfo.getAvailablePerson());
-		   tmp.setBasicCharge(roomInfo.getBasicCharge());
-		   tmp.setOldId(oldtmp.getRoomId());
-		   roomDAO.roomUpdateId(tmp);
-	   }
+	   roomDAO.roomUpdate(roomInfo);
    }
    
    @Override
@@ -140,8 +128,8 @@ public class hotelresourceSvcImpl implements IhotelresourceSvc{
 	}
    
    @Override
-	public void roomAdd(roomDTO roomInfo) {
-	   String tmp = roomInfo.getHotelId()+"-"+roomInfo.getRoomId();
+	public void roomAdd(roomVO roomInfo) {
+	   String tmp = roomInfo.getHotelId()+"-"+roomInfo.getRoomIdVO();
 	   roomInfo.setRoomId(tmp);
 	   roomDAO.roomAdd(roomInfo);
 	}
@@ -164,6 +152,22 @@ public class hotelresourceSvcImpl implements IhotelresourceSvc{
 		roomDTO roomInfo = roomDAO.roomInfo(roomId);
 		return roomInfo;
 	}
-   
+	
+	@Override
+	public roomVO roomIdProc(roomDTO roominfo) {
+		roomVO result = new roomVO();
+		int hotelidlength = roominfo.getHotelId().length();
+		String VOID = roominfo.getRoomId();
+		VOID = VOID.substring(hotelidlength+1);
+		
+		result.setRoomId(roominfo.getRoomId());
+		result.setRoomIdVO(VOID);
+		result.setHotelId(roominfo.getHotelId());
+		result.setRoomType(roominfo.getRoomType());
+		result.setBedType(roominfo.getBedType());
+		result.setAvailablePerson(roominfo.getAvailablePerson());
+		result.setBasicCharge(roominfo.getBasicCharge());		
+		return result;
+   }
    
 }

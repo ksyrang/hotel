@@ -30,8 +30,11 @@ public class DBconfig {
 		HikariConfig hikariConfig = new HikariConfig();
 		hikariConfig.setDriverClassName("oracle.jdbc.OracleDriver");
 		hikariConfig.setJdbcUrl("jdbc:oracle:thin:@localhost:1521:xe");
+//		hikariConfig.setJdbcUrl("jdbc:oracle:thin:@hoteldbcloud_high?TNS_ADMIN=/wallet/**/Wallet_hoteldbcloud");		
 		hikariConfig.setUsername("hotel");
 		hikariConfig.setPassword("hotel1");
+//		hikariConfig.setUsername("admin");
+//		hikariConfig.setPassword("Rlawlstn!210");
 		HikariDataSource dataSource = new HikariDataSource(hikariConfig);
 		
 		return  dataSource;

@@ -2,14 +2,14 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <c:url var="root" value="/" />
-<script src="${root}/resources/check.js"></script>
+<%-- <script src="${root}/resources/check.js"></script> --%>
 <link href="${pageContext.request.contextPath}/resources/css/admin/amdin_hotelList.css" rel="stylesheet" type="text/css">
 <link href="${pageContext.request.contextPath}/resources/css/admin/amdin_memberList.css" rel="stylesheet" type="text/css">
 <link href="${pageContext.request.contextPath}/resources/css/admin/admin_memberInfo.css" rel="stylesheet" type="text/css">
 
 <script>
 	function check() {
-		var roomId = document.getElementById('roomId');
+		var roomIdVO = document.getElementById('roomIdVO');
 		var hotelId = document.getElementById('hotelId');
 		
 		var roomTypeList = document.getElementById('roomType');
@@ -23,7 +23,7 @@
 		
 		var basicCharge = document.getElementById('basicCharge');
 		
-		if(roomId.value == "" || hotelId.value == "" || roomType == null || bedType == null || availablePerson == null || basicCharge.value == "") {
+		if(roomIdVO.value == "" || hotelId.value == "" || roomType == null || bedType == null || availablePerson == null || basicCharge.value == "") {
 			alert('필수 정보를 입력해주세요.');
 			return;
 		}
@@ -47,8 +47,8 @@
 	</div>
 		<table class="admin_memberInfoTable">
 			<tr>
-				<th>*방 아이디</th>
-				<td><input type="text" id="roomId" name="roomId" placeholder="방 아이디" value="${addroomInfo.roomId }"></td>
+				<th>*방 번호</th>
+				<td><input type="text" id="roomIdVO" name="roomIdVO" placeholder="방 아이디" value="${addroomInfo.roomIdVO }"></td>
 			</tr>
 			<tr>
 				<th>*호텔 아이디</th>

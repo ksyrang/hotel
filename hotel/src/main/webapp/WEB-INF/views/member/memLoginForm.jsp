@@ -9,7 +9,7 @@
         backgroupd-size : 13px;
     }
 </style>
-<<script type="text/javascript">
+<script type="text/javascript">
 	function logininfoSubmit(){
 		var userId = document.getElementById("userId");
 		var userPw = document.getElementById("userPw");
@@ -48,9 +48,10 @@
 								</div>
 								<!-- 로그인 버튼 -->
 								<div class="loginBtn">	
-									<a href="javascript:logininfoSubmit();" title="Login">
+								<input type="button" onclick="javascript:logininfoSubmit();" class="btnLogin">
+<%-- 									<a href="javascript:logininfoSubmit();" title="Login">
 										<img src="${pageContext.request.contextPath}/images/ko/common/join/loginBtnLogin.gif" alt="로그인" class="btnLogin">
-									</a>
+									</a> --%>
 								</div>
 							</form>
 						</fieldset>
