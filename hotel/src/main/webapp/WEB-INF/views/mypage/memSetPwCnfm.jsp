@@ -14,12 +14,12 @@
 	function check() {
 		memberId = document.getElementById('memberId');
 		memberPw = document.getElementById('memberPw');
-		
+	<%--	
 		if(memberId.value == "" || memberPw.value == "") {
 			alert('# 아이디 혹은 비밀번호를 확인해주세요.');
 			return;
 		}
-		
+	--%>	
 		document.getElementById('f').submit();
 	}
 </script>
@@ -53,9 +53,6 @@
 			</div>  <!-- lnbMenu -->
 		</div> <!-- lnbArea lnbAreaMypage -->
 <div class="contents" id="contents">
-<h3>
-	<font color="red" >${msg } </font>
-</h3>
 <form action="pwCnfmProc" id="f">
 	<div class="ctnMypage ctnUserInfo1">
 		<div class="location">
@@ -76,7 +73,8 @@
 			<caption>프로필 수정</caption>
 			<colgroup>
 				<col width="17%" class="col1">
-				<col class="col2">
+				<col width="20%" class="col2">
+				<col class="col3">
 			</colgroup>
 			<tbody>
 				<tr class="first">
@@ -89,6 +87,9 @@
 					<th scope="row" class="last"><label for="memberPw" class="pw">비밀번호</label></th>
 					<td class="last">
 						<input type="password" class="pw uiform password" id="memberPw" name="memberPw" placeholder="PASSWORD" maxlength="60" >
+					</td>
+					<td>
+							<h3><font color="red" >${msg } </font></h3>
 					</td>
 				</tr>
 			</tbody>

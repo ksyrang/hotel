@@ -9,7 +9,35 @@
 .lnbAreaMypage .lnbMenu .m2 .sMenu li.s2 a{ background-position:0 -22px;}
 .lnbAreaMypage .lnbMenu .m2 .sMenu li.s3 a{ background-position:0 -44px;}
 .lnbAreaMypage .lnbMenu .m2 .sMenu li.s4 a{ background-position:0 -66px;}
-</style>	
+</style>
+<script>
+	function pwUpdtCheck() {
+		var memberPw = document.getElementById('memberPw').value;
+		var memberNewPw = document.getElementById('memberNewPw').value;
+		var memberNewPwCnfm = document.getElementById('memberNewPwCnfm').value;
+		
+		if(memberPw == "" || memberNewPw == "" || memberNewPwCnfm == "") {
+			alert('현재 또는 새 비밀번호를 입력해주세요.');
+			return;
+		}
+		if(memberNewPw == memberNewPwCnfm){
+			if(memberNewPw.length < 8 && memberNewPwCnfm.length > 20){
+				alert('비밀번호 길이는 8~20자리 입니다.');
+				document.getElementById('memberNewPw').value = "";
+				document.getElementById('memberNewPwCnfm').value = ""; 
+				return;
+			}
+		}else{
+			alert('새 비밀번호와 확인번호가 일치하지 않습니다.');
+			document.getElementById('memberNewPw').value = "";
+			document.getElementById('memberNewPwCnfm').value = ""; 
+			memberNewPw.focus();
+			return;
+		}
+		
+		document.getElementById('f').submit();
+	}
+</script>	
 <div class="contain">
 	<div class="container">
 		<div class="lnbArea lnbAreaMypage">
@@ -40,9 +68,6 @@
 			</div> <!-- lnbMenu -->
 		</div> <!-- lnbArea lnbAreaMypage -->
 <div class="contents" id="contents">
-<h3>
-	<font color="red" >${msg } </font>
-</h3>
 <form action="memSetPwUpdtProc" id="f" >
 	<div class="ctnMypage ctnPwMod">
 		<div class="location">
@@ -53,50 +78,51 @@
 			<h4 class="tit">비밀번호 변경</h4>
 		</div>
 			
-		<div class="msg">고객님의 정보를 언제든지 확인, 변경하실 수 있습니다.
+		<div class="msg">고객님의 정보를 언제든지 확인, 변경하실 수 있습니다.</div>
+		<div class="hTitS">
+			<h5 class="tit">비밀번호 변경</h5>
 		</div>
-			<div class="hTitS">
-				<h5 class="tit">비밀번호 변경</h5>
-			</div>
-			<input type="hidden" id="memberId" name="memberId" value="${userId}" autocomplete="off">
-			<table class="tableTypeA tablePwMod" summary="현재 비밀번호,새비밀번호,새비밀번화확인으로 구성된 테이블">
-				<caption>비밀번호 변경</caption>
-				<colgroup>
-					<col width="15%" class="col1">
-					<col class="col2">
-				</colgroup>
-				<tbody>
-					<tr class="first">
-						<th scope="row" class="first">
-							<label>아이디</label></th>
-						<td>${userId}</td>
-					</tr>
-					<tr>
-						<th scope="row">
-							<label for="memberPw" class="memberPw">현재 비밀번호</label></th>
-						<td>
-							<input type="password" class="memberPw" id="memberPw" name="memberPw" maxlength="60" style="width: 143px;" autocomplete="off">
-						</td>
-					</tr>
-					<tr>
-						<th scope="row"><label for="memberNewPw" class="pwNew">새 비밀번호</label></th>
-						<td>
-							<input type="password" class="memberNewPw" id="memberNewPw" name="memberNewPw" maxlength="60" style="width: 143px;" autocomplete="off">
-							<span class="msgCheck">8~20자 이내 영문/숫자 조합(특수문자 입력 가능)</span>
-						</td>
-					</tr>
-					<tr class="last">
-						<th scope="row" class="last"><label for="memberNewPwCnfm" class="memberNewPwCnfm">새 비밀번호 확인</label></th>
-						<td class="last">
-							<input type="password" class="memberNewPwCnfm" id="memberNewPwCnfm" name="memberNewPwCnfm" maxlength="60" style="width: 143px;" autocomplete="off">
-						</td>
-					</tr>
-				</tbody>
-			</table>
-			<div class="btnList">
-				<input type="submit" class="btnChange" />
-				<a href="#" class="btnCancel"><span>취소</span></a>
-			</div>
+		<input type="hidden" id="memberId" name="memberId" value="${userId}" autocomplete="off">
+		<table class="tableTypeA tablePwMod" summary="현재 비밀번호,새비밀번호,새비밀번화확인으로 구성된 테이블">
+			<caption>비밀번호 변경</caption>
+			<colgroup>
+				<col width="15%" class="col1">
+				<col class="col2">
+			</colgroup>
+			<tbody>
+				<tr class="first">
+					<th scope="row" class="first"><label>아이디</label></th>
+					<td>${userId}</td>
+				</tr>
+				<tr>
+					<th scope="row"><label for="memberPw" class="memberPw">현재 비밀번호</label></th>
+					<td>
+						<input type="password" class="memberPw" id="memberPw" name="memberPw" maxlength="60" style="width: 143px;" autocomplete="off">
+					</td>
+				</tr>
+				<tr>
+					<th scope="row"><label for="memberNewPw" class="pwNew">새 비밀번호</label></th>
+					<td>
+						<input type="password" class="memberNewPw" id="memberNewPw" name="memberNewPw" maxlength="60" style="width: 143px;" autocomplete="off">
+						<span class="msgCheck">8~20자 이내 영문/숫자 조합(특수문자 입력 가능)</span>
+					</td>
+				</tr>
+				<tr class="last">
+					<th scope="row" class="last"><label for="memberNewPwCnfm" class="memberNewPwCnfm">새 비밀번호 확인</label></th>
+					<td class="last">
+						<input type="password" class="memberNewPwCnfm" id="memberNewPwCnfm" name="memberNewPwCnfm" maxlength="60" style="width: 143px;" autocomplete="off">
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="btnList">
+<!-- 
+			<input type="submit" class="btnChange" />
+			<a href="#" class="btnCancel"><span>취소</span></a>
+ -->			
+			<input type="button" class="btnChange" value='수정' onclick="pwUpdtCheck(); return false;" />
+			<input type="reset" class="btnCancel" >
+		</div>
 	</div> <!-- ctnMypage -->
 </form>
 		</div>  <!-- contents -->

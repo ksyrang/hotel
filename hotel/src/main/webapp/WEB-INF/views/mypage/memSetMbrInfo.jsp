@@ -13,20 +13,36 @@
 .zipcodeSearchBtn {height: 30px; border:0; outline:0; background-color: #f1e3c4;}
 </style>
 <script>
-	function check() {
-		memberId = document.getElementById('memberId');
-		memberPw = document.getElementById('memberPw');
+	function buttonCheck() {
 		memberNameKR = document.getElementById('memberNameKR');
-		memberNameENG = document.getElementById('memberNameENG');
+		firstName = document.getElementById('firstName');
+		lastName = document.getElementById('lastName');
 		memberBirth = document.getElementById('memberBirth');
 		memberMobile = document.getElementById('memberMobile');
 		memberGender = document.getElementById('memberGender');
+		memberHomePhone = document.getElementById('memberHomePhone');
 		
-		if(memberPw.value == "") { alert('# 비밀번호를 입력하세요.'); return; }
-		if(memberBirth.value == "") { alert('# 생년월일을 입력하세요.'); return; }
-		if(memberEmail.value == "") { alert('# 이메일을 입력하세요.'); return; }
-		if(memberMobile.value == "") { alert('# 휴대전화를 입력하세요.'); return; }
-		
+		if(memberNameKR.value == "" || firstName.value == "" || lastName.value == "" || memberBirth.value == "" || memberMobile.value == "") {
+			alert('필수 정보를 입력해주세요.');
+			return;
+		}
+		if(memberBirth.value.length != 8){
+			alert('생년월일을 정확히 입력해주세요.');
+			memberBirth.focus();
+			return;
+		}
+		if(memberMobile.value.length != 11){
+			alert('휴대전화를 정확히 입력해주세요.');
+			memberMobile.focus();
+			return;
+		}
+		if(memberHomePhone.value != null && memberHomePhone.value != ""){
+			if(memberHomePhone.value.length < 9 || memberHomePhone.value.length > 11){
+				alert('자택전화를 정확히 입력해주세요.');
+				memberHomePhone.focus();
+				return;
+			}
+		}
 		document.getElementById('f').submit();
 	}
 </script>
@@ -49,6 +65,17 @@
 	        	
 	        }
 	    }).open();
+	}
+	
+	function checkKr() {
+		$("#memberNameKR").keyup(function() {
+        	// 입력값에 숫자, 영문, 특수문자가 올 경우 경고창 표시 후 ""으로 치환
+			var regexp = /[a-z0-9]|[ \[\]{}()<>?|`~!@#$%^&*-_+=,.;:\"'\\]/g;
+			v = $(this).val();
+			if (regexp.test(v)) {
+                $(this).val(v.replace(regexp, ""));
+            }
+		});
 	}
 </script>
 <div class="contain">
@@ -81,9 +108,6 @@
 			</div> <!-- lnbMenu -->
 		</div> <!-- lnbArea lnbAreaMypage -->
 <div class="contents" id="contents">
-<h3>
-	<font color="red" >${msg } </font>
-</h3>
 <form action="memSetUpdtProc" id="f">
 	<div class="ctnMypage ctnUserInfo2">
 		<div class="location">
@@ -93,7 +117,7 @@
 		<div class="myProfilemodifyTit">
 			<h4 class="tit">프로필 수정</h4>
 		</div>
-		
+<!-- 
 		<div class="msg">고객님의 정보를 언제든지 확인, 변경하실 수 있습니다.
 			<c:choose>
 				<c:when test="${msg eq '' || msg eq null}">
@@ -104,10 +128,10 @@
 				</c:otherwise>
 			</c:choose>
 		</div>
+ -->
 				
 		<!-- <c:set var="member" value="${sessionScope.member}"/> -->
 		<input type="hidden" id="memberId" name="memberId" value="${member.memberId}" autocomplete="off">
-		<input type="hidden" id="memberGender" name="memberGender" value="${member.memberGender}" autocomplete="off"> 
 		<input type="hidden" id="memberPw" name="memberPw" value="${member.memberPw}" autocomplete="off"> 
 		<input type="hidden" id="memberEmail" name="memberEmail" value="${member.memberEmail}" autocomplete="off"> 
 		<table class="tableTypeA tableJoinForm tableUserInfo2" summary="회원" border="1">
@@ -119,31 +143,56 @@
 		
 			<tbody>
 				<tr class="first">
-					<th scope="row">성명(국문)</th>
-					<td>
-						<input type="text" style="width: 120px;" id="memberNameKR" name="memberNameKR" value="${member.memberNameKR}" maxlength="15">
-				<!-- 
-				 	</td>
-					<td class="name">${member.memberNameKR} /
-				 -->	
+					<th scope="row" class="first">성명(국문)</th>
+					<td class="first">
 						<c:choose>
 							<c:when test="${member.memberGender eq 'm'}">
-								<strong style="color: blue"> Mr.</strong>
+								<select name="memberGender">
+									<option value="n">선택안함</option>
+									<option value="m" selected>Mr.</option>
+									<option value="w">Miss.</option>
+								</select>
 							</c:when>
 							<c:when test="${member.memberGender eq 'w'}">
-								<strong style="color: blue"> Miss.</strong>
+								<select name="memberGender">
+									<option value="n">선택안함</option>
+									<option value="m">Mr.</option>
+									<option value="w"selected>Miss.</option>
+								</select>
+							</c:when>
+							<c:when test="${member.memberGender eq 'n'}">
+								<select name="memberGender"">
+									<option value="n" selected>선택안함</option>
+									<option value="m">Mr.</option>
+									<option value="w">Miss.</option>
+								</select>
 							</c:when>
 							<c:otherwise>
-								<strong style="color: blue"> 미지정.</strong>
+								<select name="memberGender">
+									<option value="n" selected>선택안함</option>
+									<option value="m">Mr.</option>
+									<option value="w">Miss.</option>
+								</select>
 							</c:otherwise>
 						</c:choose>
+						<input type="text" style="width: 120px;" id="memberNameKR" name="memberNameKR" value="${member.memberNameKR}" maxlength="15" onkeyup="checkKr()"/>
 					</td>
 				</tr>
 		
 				<tr>
 					<th scope="row">성명(영문)</th>
 					<td>
-						<input type="text" style="width: 140px;" id="memberNameENG" name="memberNameENG" value="${member.memberNameENG}" maxlength="30">
+						<div class="inputForm2">
+							<div class="Fname">
+								<label for="firstName">First Name(이름)</label>
+								<input type="text" class="firstName" id="firstName" name="firstName" value="${firstName }" placeholder="First name(이름)" style=" width:130px; " onkeyup="this.value=this.value.replace(/[^A-Z]/gi,'');">
+							</div>
+							<!-- text-transform: uppercase; -->
+							<div class="Lname">
+								<label for="lastName">Last Name(성)</label>
+								<input type="text" class="lastName" id="lastName" name="lastName" value="${lastName }" placeholder="Last name(성)" style="width:100px; " onkeyup="this.value=this.value.replace(/[^A-Z]/gi,'');">
+							</div>
+						</div>
 				 	</td>
 				</tr>
 		
@@ -152,13 +201,9 @@
 					<td>${member.memberId}</td>
 				</tr>
 				<tr>
-					<th scope="row">비밀번호</th>
-					<td>${member.memberPw}</td>
-				</tr>
-				<tr>
 					<th scope="row">생년월일</th>
 					<td>
-						<input type="text" style="width: 100px;" id="memberBirth" name="memberBirth" maxlength="8" value="${member.memberBirth}" onkeyup="this.value=this.value.replace(/[^\d\ ]/g, '')" autocomplete="off">
+						<input type="text" id="memberBirth" name="memberBirth" onkeyup="this.value=this.value.replace(/[^0-9]/gi,'');" value="${member.memberBirth}" maxlength="8" autocomplete="off" />
 					</td>
 				</tr>
 				<tr>
@@ -168,22 +213,22 @@
 				<tr>
 					<th scope="row">휴대전화 </th>
 					<td>
-						<input type="text" style="width: 100px;" id="memberMobile" name="memberMobile" maxlength="11" value="${member.memberMobile}" onkeyup="this.value=this.value.replace(/[^\d\ ]/g, '')" autocomplete="off">
+						<input type="text" placeholder='- 빼고 작성' id="memberMobile" name="memberMobile" value="${member.memberMobile}" maxlength="11" onkeyup="this.value=this.value.replace(/[^\d\ ]/gi, '')" autocomplete="off">	
 					</td>
 				</tr>
 				<tr>
 					<th scope="row">자택전화 </th>
 					<td>
-						<input type="text" style="width: 100px;" id="memberHomePhone" name="memberHomePhone" maxlength="11" value="${member.memberHomePhone}" onkeyup="this.value=this.value.replace(/[^\d\ ]/g, '')" autocomplete="off">
+						<input type="text" placeholder='- 빼고 작성' id="memberHomePhone" name="memberHomePhone" maxlength="11" value="${member.memberHomePhone}" onkeyup="this.value=this.value.replace(/[^\d\ ]/gi, '')" autocomplete="off">
 					</td>
 				</tr>
 				<tr>
 					<th scope="row" class="last">자택주소 </th>
 					<td>
-						<input type="text" style="width: 50px;" id="zipcode" class="zipcode" name="memberZipcode" maxlength="5" value="${member.memberZipcode}" >
+						<input type="text" id="zipcode" name="memberZipcode"  value="${member.memberZipcode }" style="width:50;">
 						<input type="button" value="우편번호 검색" onclick="daumPost()" class="zipcodeSearchBtn"><br>
-						<input type="text" id="addr1" class="address" name="memberAddr1" value="${member.memberAddr1 }" ><br>
-						<input type="text" id="addr2" class="address" name="memberAddr2" value="${member.memberAddr2 }" >
+						<input type="text" id="addr1" name="memberAddr1" value="${member.memberAddr1 }" style="width:400px; " class="input_address"><br>
+						<input type="text" id="addr2" name="memberAddr2" value="${member.memberAddr2 }" style="width:400px; " class="input_address">
 					</td>
 				</tr>
 			</tbody>
@@ -193,8 +238,9 @@
 	<!-- 
 			<input type="button" value="수정" onclick="check();" class="btnChange">
 			<input type="button" class="btnCancel" onclick="location.herf='mypage/memSetPwCnfm'" />
+	 		<input type="button" class="btnCancel" value="취소" onclick="location.herf='/hotel/memSetPwCnfm'"/>
 	 -->
-			<input type="submit" class="btnChange" />
+	 		<input type="button" class="btnChange" value='수정' onclick="buttonCheck()" />
 			<a href="/hotel/memSetPwCnfm" class="btnCancel"><span>취소</span></a>
 		</div>
 	</div> <!-- ctnMypage ctnUserInfo2 -->

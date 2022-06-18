@@ -4,11 +4,14 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.datasource.init.ScriptUtils;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -49,26 +52,21 @@ public class MyPageController {
 		logger.info("memListResvProc");
 		String memberId = (String)session.getAttribute("userId");
 		
-		String result;
-		if(memberId == null || memberId == "") {
-			result = "로그인 후 진행하시기 바랍니다.";
-			model.addAttribute("msg", result);
-			return "forward:/";
+		if(memberId != null && memberId != "") {
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+			Calendar calendar = Calendar.getInstance();
+			Date dateObj = calendar.getTime();
+			if(startDt == "" || startDt == null) startDt = "2022-01-01";
+			if(endDt == "" || endDt == null) endDt = sdf.format(dateObj);
+			if(select == "" || select == null) select = "예약일";
+	//		startDt = startDt.replaceAll("[^0-9]", "");
+	//		endDt = endDt.replaceAll("[^0-9]", "");
+			model.addAttribute("select", select);
+			model.addAttribute("startDt", startDt);
+			model.addAttribute("endDt", endDt);
+			System.out.println(currentPage + "/" + select + "/" + startDt + "/ " + endDt + "/ " + memberId);
+			myPageService.memListResv(currentPage, select, startDt, endDt, memberId);//서비스 내부에서 session에 데이터를 업로드함
 		}
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-		Calendar calendar = Calendar.getInstance();
-		Date dateObj = calendar.getTime();
-		if(startDt == "" || startDt == null) startDt = "2022-01-01";
-		if(endDt == "" || endDt == null) endDt = sdf.format(dateObj);
-		if(select == "" || select == null) select = "예약일";
-//		startDt = startDt.replaceAll("[^0-9]", "");
-//		endDt = endDt.replaceAll("[^0-9]", "");
-		model.addAttribute("select", select);
-		model.addAttribute("startDt", startDt);
-		model.addAttribute("endDt", endDt);
-		System.out.println(currentPage + "/" + select + "/" + startDt + "/ " + endDt + "/ " + memberId);
-		myPageService.memListResv(currentPage, select, startDt, endDt, memberId);//서비스 내부에서 session에 데이터를 업로드함
-		
 		return "forward:/mypage_index?formpath=memListResv";
 	}
 	
@@ -129,14 +127,16 @@ public class MyPageController {
 		int check = myPageService.memResvCncl(memberId, memberPw, reservationNo, cancelDate);
 		email = (String)session.getAttribute("email");
 		System.out.println("memCnclCheckProc check : " + check + " cancelDate : " + cancelDate + " email : " + email);
-		
+		session.setAttribute("alertMsg", null);
 		if(check == 2) {
 			result = "[" + reservationNo + "] 예약 취소 메일을 송부하였습니다.";
 			mailService.sendMail(email, "[신난다호텔 예약 취소]", result);
 			model.addAttribute("msg", result);
-			return "forward:/memListResvProc";
+			model.addAttribute("url","memListResvProc");
+//			return "forward:/memListResvProc";
+			return "forward:/alertRedirect";
 		}else {
-			result = "아이디와 비밀번호를 확인해 주세요.";
+			result = "비밀번호를 확인해 주세요.";
 			ra.addFlashAttribute("msg", result);
 			return "redirect:memCnclResvProc?memberId="+memberId+"&reservationNo="+reservationNo;
 		}
@@ -148,12 +148,18 @@ public class MyPageController {
 		System.out.println("pwCnfmProc gubun : " + gubun);
 		System.out.println("pwCnfmProc memberId : " + memberId);
 		System.out.println("pwCnfmProc memberPw : " + memberPw);
+		String lastName = (String)session.getAttribute("lastName");
+		String firstName = (String)session.getAttribute("firstName");
+		System.out.println("pwCnfmProc lastName : " + lastName);
+		System.out.println("pwCnfmProc firstName : " + firstName);
 		
 		model.addAttribute("memberId", memberId);
 		
 		String result = "";
 		
 		int check = myPageService.pwCnfm(memberId, memberPw);
+		model.addAttribute("lastName", (String)session.getAttribute("lastName"));
+		model.addAttribute("firstName", (String)session.getAttribute("firstName"));
 		System.out.println("pwCnfmProc check 2(성공) : " + check);
 		
 		if(check == 2) {
@@ -162,7 +168,7 @@ public class MyPageController {
 			else
 				return "forward:/mypage_index?formpath=memSetMbrDropOut";
 		}else {
-			result = "[ " + memberId + " ]님의 비밀번호를 확인해 주세요.";
+			result = "비밀번호를 확인해 주세요.";
 			model.addAttribute("msg", result);
 			if(gubun == "" || gubun == null)
 				return "forward:/memSetPwCnfm";
@@ -182,8 +188,10 @@ public class MyPageController {
 	}
 	
 	@RequestMapping(value="memSetUpdtProc")
-	public String memSetUpdtProc(String memberPw, String memberId, AllMemberDTO mem, Model model) {
+	public String memSetUpdtProc(String firstName, String lastName, AllMemberDTO mem, Model model) {
 		logger.info("memSetUpdtProc");
+		String memberNameENG = lastName + " " + firstName;
+		mem.setMemberNameENG(memberNameENG);
 		System.out.println("getMemberId : "+mem.getMemberId());
 		System.out.println("getMemberPw : "+mem.getMemberPw());
 		System.out.println("getMemberNameKR : " + mem.getMemberNameKR());
@@ -205,7 +213,10 @@ public class MyPageController {
 			result = "[" + mem.getMemberNameKR() + "]님 프로필 정보 수정에 실패했습니다.";
 			model.addAttribute("msg", result);
 		}
-		return "forward:/pwCnfmProc";
+		model.addAttribute("url", "memListResvProc");
+		return "forward:/alertRedirect";
+//		return "forward:/pwCnfmProc";
+//		return "forward:/memListResvProc";
 	}
 
 	@RequestMapping(value="memSetPwUpdtProc")
@@ -222,7 +233,11 @@ public class MyPageController {
 		System.out.println("memSetPwUpdtProc check 2 성공 : " + check);
 		
 		if(check == 2) {
-			result = "[" + mem.getMemberId() + "]님 비밀번호를 수정했습니다.";
+			result = "[" + mem.getMemberId() + "]님 비밀번호를 변경 하였습니다.";
+			model.addAttribute("msg", result);
+			model.addAttribute("url", "memListResvProc");
+//			return "forward:/memListResvProc";
+			return "forward:/alertRedirect";
 		}else if(check == 0) {
 			result = "[" + mem.getMemberId() + "]님 현재 비밀번호 / 새 비밀번호를 입력하세요.";
 		}else if(check == 1) {
@@ -231,7 +246,14 @@ public class MyPageController {
 			result = "[" + mem.getMemberId() + "]님 현재 비밀번호를 확인하시고 다시 진행 바랍니다.";
 		}
 		model.addAttribute("msg", result);
-		return "forward:/memSetPwMod";
+		model.addAttribute("url", "memSetPwMod");
+//		return "forward:/memSetPwMod";
+		return "forward:/alertRedirect";
+	}
+	
+	@RequestMapping("alertRedirect")
+	public String alertRedirect() {
+		return "common/alertRedirect";
 	}
 	
 	@RequestMapping("memSetPwMod")
@@ -246,7 +268,7 @@ public class MyPageController {
 		
 		String result = "";
 		String email = "";
-		String dropCheck = "실패";
+		String dropCheck = "";
 		
 		int check = myPageService.memSetDropOut(memberId);
 		email = (String)session.getAttribute("email");
@@ -256,13 +278,18 @@ public class MyPageController {
 			result = "[" + memberId + "]님 회원탈회가 완료되어 메일이 송부되었습니다.";
 			mailService.sendMail(email, "[신난다호텔 회원 탈회]", result);
 			dropCheck = "성공";
+			model.addAttribute("dropCheck", dropCheck);
 			session.setAttribute("userId", "");
+			model.addAttribute("msg", result);
+			model.addAttribute("url", "memListResvProc");
+			return "forward:/alertRedirect";
 		}else {
 			result = "[" + memberId + "]님 회원탈회 신청이 실패했습니다.";
+			dropCheck = "실패";
+			model.addAttribute("dropCheck", dropCheck);
+			model.addAttribute("msg", result);
+			return "forward:/mypage_index?formpath=memSetMbrDropOut";
 		}
-		model.addAttribute("msg", result);
-		model.addAttribute("dropCheck", dropCheck);
-		return "forward:/mypage_index?formpath=memSetMbrDropOut";
 	}
 	
 	@RequestMapping("memListAsk")

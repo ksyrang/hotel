@@ -16,11 +16,9 @@ import com.care.hotel.member.DTO.AllMemberDTO;
 import com.care.hotel.member.DTO.memberDTO;
 import com.care.hotel.member.DTO.memberExDTO;
 import com.care.hotel.member.DTO.memberPwChngDTO;
-import com.care.hotel.member.service.MailService;
 
 @Service
 public class MyPageServiceImpl implements IMyPageService{
-	@Autowired private MailService mailService;
 	@Autowired reservationDAO reservationDAO;
 	@Autowired memberDAO memberDAO;
 	@Autowired HttpSession session;
@@ -108,6 +106,13 @@ public class MyPageServiceImpl implements IMyPageService{
 				allMemberDto.setMemberHomePhone(memberExDto.getMemberHomePhone());
 			}
 			session.setAttribute("member", allMemberDto);
+			//영문이름 firstName/LastName 구분
+			String memberNameEng = memberDto.getMemberNameENG();
+			String[] nameSplit = memberNameEng.split(" ");
+			if(nameSplit[0] == null ) nameSplit[0] = "";
+			if(nameSplit[1] == null ) nameSplit[1] = "";
+			session.setAttribute("lastName", nameSplit[0]);
+			session.setAttribute("firstName", nameSplit[1]);
 			return 2; // "[" + reservationNo + "] 예약을 취소 했습니다.";
 		}else {
 			return 1; // 비밀번호가 맞지 않음

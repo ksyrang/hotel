@@ -39,9 +39,6 @@
 			</div> <!-- lnbMenu -->
 		</div> <!-- lnbArea lnbAreaMypage -->
 <div class="contents" id="contents">
-<h3>
-	<font color="red" >${msg} (${dropCheck}/${memberId }) </font>
-</h3>
 <form action="memSetDropProc" method="post">
 	<div class="ctnMypage ctnMemDis">
 		<div class="location">
