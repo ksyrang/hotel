@@ -72,17 +72,17 @@
 			<tr>
 				<th>우편 번호</th>
 				<td>
-					<input type=text name='hotelZipcode' id="zonecode" value="${sessionScope.hotelAdd.hotelZipcode }" /> 
+					<input type=text name='hotelZipcode' id="zonecode" placeholder="우편 번호" value="${sessionScope.hotelAdd.hotelZipcode }" /> 
+					<input type="button" class="btn" value="우편번호 검색" onclick="daumPost()">
 				</td>
-				<td><input type="button" class="btn" value="우편번호 검색" onclick="daumPost()"></td>
 			</tr>
 			<tr>
 				<th>주소</th>
-				<td><input type=text name='hotelAddr1' id="addr1" value="${sessionScope.hotelAdd.hotelAddr1 }" readonly="readonly"/></td> 
+				<td><input type=text name='hotelAddr1' id="addr1" placeholder="주소" value="${sessionScope.hotelAdd.hotelAddr1 }" readonly="readonly"/></td> 
 			</tr>
 			<tr>
 				<th>상세 주소</th>
-				<td><input type=text name='hotelAddr2' id="addr2" value="${sessionScope.hotelAdd.hotelAddr2 }" /></td>
+				<td><input type=text name='hotelAddr2' id="addr2" placeholder="상세 주소" value="${sessionScope.hotelAdd.hotelAddr2 }" /></td>
 			</tr>
 		</table>
 	</form>

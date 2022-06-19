@@ -2,31 +2,25 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.care.hotel.resourceDAO.IroomDAO">
 
-   <select id="roomCount" resultType="int">
-      SELECT count(*) FROM room
-      <choose>
-         <when test="sel == 'roomId'">
-            WHERE roomid like '%'||#{search}||'%'
-         </when>
-         <when test="sel == 'hotelId'">
-            WHERE hotelid like '%'||#{search}||'%'
-         </when>
-         <when test="sel == 'Rtype'">
-            WHERE roomtype like '%'||#{search}||'%'
-         </when>
-         <when test="sel == 'Btype'">
-            WHERE bedtype like '%'||#{search}||'%'
-         </when>
-         <when test="sel == 'person'">
-            WHERE availableperson like '%'||#{search}||'%'
-         </when>
-      </choose>
-   </select>
-
-   <select id="roomList" resultType="com.care.hotel.resourceDTO.roomDTO">
-      SELECT B.* FROM(
-         SELECT rownum rn, A.* FROM( 
-            SELECT * FROM room 
+	<select id="roomCount" resultType="int">
+		SELECT count(*) FROM room
+<!-- 			<where>
+				<if test="sel != '' and sel != null">
+					<choose>
+						<when test="sel == 'roomId' ">
+							roomId = #{roomId}
+						</when>
+						<when test="sel == 'charge' ">
+							basicCharge = #{basicCharge}
+						</when>
+					</choose>
+				</if>
+				<if test="hotelId != '' and hotelId != null">AND hotelId=#{hotelId}</if>
+				<if test="roomType != '' and roomType != null">AND roomType=#{roomType}</if>
+				<if test="bedType != '' and bedType != null">AND bedType=#{bedType}</if>
+				<if test="availablePerson != '' and availablePerson != null">AND availablePerson=#{availablePerson}</if>
+				<if test="availablePerson != '' and availablePerson != null">AND availablePerson=#{availablePerson}</if>
+			</where> -->
             <choose>
                <when test="sel == 'roomId'">
                   WHERE roomid like '%'||#{search}||'%'
@@ -34,14 +28,60 @@
                <when test="sel == 'hotelId'">
                   WHERE hotelid like '%'||#{search}||'%'
                </when>
-               <when test="sel == 'Rtype'">
+               <when test="sel == 'roomType'">
                   WHERE roomtype like '%'||#{search}||'%'
                </when>
-               <when test="sel == 'Btype'">
+               <when test="sel == 'bedType'">
                   WHERE bedtype like '%'||#{search}||'%'
                </when>
                <when test="sel == 'person'">
                   WHERE availableperson like '%'||#{search}||'%'
+               </when>
+               <when test="sel == 'charge'">
+                  WHERE basiccharge like '%'||#{search}||'%'
+               </when>
+            </choose>
+   </select>
+
+   <select id="roomList" resultType="com.care.hotel.resourceDTO.roomDTO">
+      SELECT B.* FROM(
+         SELECT rownum rn, A.* FROM( 
+            SELECT * FROM room 
+<!-- 	   			<where>
+					<if test="sel != '' and sel != null">
+						<choose>
+							<when test="sel == 'roomId' ">
+								roomId = #{roomId}
+							</when>
+							<when test="sel == 'charge' ">
+								basicCharge = #{basicCharge}
+							</when>
+						</choose>
+					</if>
+					<if test="hotelId != '' and hotelId != null">AND hotelId=#{hotelId}</if>
+					<if test="roomType != '' and roomType != null">AND roomType=#{roomType}</if>
+					<if test="bedType != '' and bedType != null">AND bedType=#{bedType}</if>
+					<if test="availablePerson != '' and availablePerson != null">AND availablePerson=#{availablePerson}</if>
+					<if test="availablePerson != '' and availablePerson != null">AND availablePerson=#{availablePerson}</if>
+				</where> -->
+            <choose>
+               <when test="sel == 'roomId'">
+                  WHERE roomid like '%'||#{search}||'%'
+               </when>
+               <when test="sel == 'hotelId'">
+                  WHERE hotelid like '%'||#{search}||'%'
+               </when>
+               <when test="sel == 'roomType'">
+                  WHERE roomtype like '%'||#{search}||'%'
+               </when>
+               <when test="sel == 'bedType'">
+                  WHERE bedtype like '%'||#{search}||'%'
+               </when>
+               <when test="sel == 'person'">
+                  WHERE availableperson like '%'||#{search}||'%'
+               </when>
+               <when test="sel == 'charge'">
+                  WHERE basiccharge like '%'||#{search}||'%'
                </when>
             </choose>
             ORDER BY hotelid ASC
@@ -98,5 +138,11 @@
 				)A
 			)B WHERE rn BETWEEN #{b} and #{e}
 	</select>
+   
+   <select id="roomAllList" resultType="com.care.hotel.resourceDTO.roomDTO">
+   	SELECT * FROM room ORDER BY hotelId ASC
+   
+   </select>
+   
    
 </mapper>

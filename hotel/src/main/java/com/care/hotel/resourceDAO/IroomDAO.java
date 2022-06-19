@@ -32,5 +32,8 @@ public interface IroomDAO {
 			@Param("hotelId")String hotelSelect, @Param("availablePerson")int availablePerson);
 	
 	public int memRoomCount(@Param("hotelId")String hotelSelect,  @Param("availablePerson")Integer availablePerson);
+	
+	public ArrayList<roomDTO> roomAllList();
+	
 
 }

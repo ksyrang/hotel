@@ -12,13 +12,46 @@
 <center>
 <div class="admin_main">
 	<form action="">
+<%-- 		<select name="hotelSelect" style="height: 25px;">
+			<option value="">호텔명</option>
+			<c:forEach var="HList" items="${roomAllList }">
+				<option value="${HList.hotelId }">${HList.hotelId }</option>
+			</c:forEach>
+		</select>
+		<select name="roomselect" style="height: 25px;">
+			<option value="">방 형태</option>
+				<c:forEach var="RList" items="${roomAllList }">
+					<c:if test="${RList.roomType eq  'T'}"><option value="T">Standard Room</option></c:if>
+					<c:if test="${RList.roomType eq  'D'}"><option value="D">Deluxe Room</option></c:if>
+					<c:if test="${RList.roomType eq  'S'}"><option value="S">Suite Room</option></c:if>
+				</c:forEach>
+		</select>
+		<select name="bedselect" style="height: 25px;">
+			<option value="">침대 형태</option>
+				<c:forEach var="BList" items="${roomAllList }">
+					<c:if test="${BList.roomType eq  'S'}"><option value="${BList.roomType}">Single Bed</option></c:if>
+					<c:if test="${BList.roomType eq  'D'}"><option value="${BList.roomType}">Double Bed</option></c:if>
+					<c:if test="${BList.roomType eq  'T'}"><option value="${BList.roomType}">Twin Bed</option></c:if>
+					<c:if test="${BList.roomType eq  'F'}"><option value="${BList.roomType}">Family Bed</option></c:if>
+				</c:forEach>
+		</select>
+		<select name="personselect" style="height: 25px;">
+			<option value="">허용 인원</option>
+			<c:forEach var="PList" items="${roomAllList }">
+				<c:if test="${PList.availablePerson eq  'S'}"><option value="${PList.availablePerson}">${PList.availablePerson} 명</option></c:if>
+					<c:if test="${PList.availablePerson eq  'D'}"><option value="${PList.availablePerson}">${PList.availablePerson} 명</option></c:if>
+					<c:if test="${PList.availablePerson eq  'T'}"><option value="${PList.availablePerson}">${PList.availablePerson} 명</option></c:if>
+					<c:if test="${PList.availablePerson eq  'F'}"><option value="${PList.availablePerson}">${PList.availablePerson} 명</option></c:if>
+			</c:forEach>
+		</select> --%>
 		<select name="select" class="select" style="height: 25px;">
 			<option value="">전체</option>
-			<option value="roomId">방 아이디</option>
 			<option value="hotelId">호텔 아이디</option>
-			<option value="Rtype">방 형태</option>
-			<option value="Btype">침대 형태</option>
-			<option value="person">허용인원</option>
+			<option value="roomId">방 아이디</option>
+			<option value="roomType">방 형태</option>
+			<option value="bedType">침대 형태</option>			
+			<option value="person">허용 인원</option>
+			<option value="charge">기준 금액</option>
 		</select>
 		<input type="text" name="search" class="search">
 		<input type="submit" name="SearchBtn" value="검색" class="Btn">

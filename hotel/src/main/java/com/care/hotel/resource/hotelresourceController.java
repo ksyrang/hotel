@@ -29,6 +29,9 @@ public class hotelresourceController {
 	public String hotellistProc(Model model, 
 			@RequestParam(value = "currentPage", required = false, defaultValue = "1") int currentPage,
 			String select, String search) {
+		model.addAttribute("currentPage", currentPage);
+		model.addAttribute("select", select);
+		model.addAttribute("search", search);
 		hotelresSVC.hotelList(currentPage, select, search);//서비스 내부에서 session에 데이터를 업로드함
 		return "forward:/admin_index?formpath=admin_hotelList";
 	}
@@ -77,8 +80,19 @@ public class hotelresourceController {
 	public String roomlistProc(Model model, 
 			@RequestParam(value = "currentPage", required = false, defaultValue = "1") int currentPage,
 			String select, String search) {
-		
+
+		model.addAttribute("currentPage", currentPage);
+		model.addAttribute("select", select);
+		model.addAttribute("search", search);	
+//		model.addAttribute("hotelSelect", hotelSelect);
+//		model.addAttribute("roomselect", roomselect);	
+//		model.addAttribute("bedselect", bedselect);
+//		model.addAttribute("personselect", personselect);	
+
 		hotelresSVC.roomList(currentPage, select, search);//서비스 내부에서 session에 데이터를 업로드함
+//		model.addAttribute("roomAllList", hotelresSVC.roomAllList());//room전체 정보 가져오기
+		
+		//		hotelresSVC.allhotelList();
 		return "forward:/admin_index?formpath=admin_roomList";
 	}
 	

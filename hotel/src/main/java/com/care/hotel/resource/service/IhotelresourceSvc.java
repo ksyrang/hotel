@@ -36,4 +36,6 @@ public interface IhotelresourceSvc {
 
    public roomVO roomIdProc(roomDTO roominfo);
    
+   public ArrayList<roomDTO> roomAllList();
+   
 }
