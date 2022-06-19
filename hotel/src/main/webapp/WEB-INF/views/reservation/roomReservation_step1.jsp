@@ -170,7 +170,7 @@
 			정보 입력
 		</th>
 	</tr>
-	<tr>
+	<tr class="tbTop">
 		<th colspan="2" class="fontUp">고객정보</th>
 		<th colspan="2" class="fontUp">신용카드 정보</th>
 	</tr>
@@ -219,7 +219,7 @@
 </table>
 
 <table class="precautionTable">
-	<tr>
+	<tr class="tbTop">
 		<th class="fontUp">유의사항</th>
 	</tr>
 	<tr>
@@ -240,7 +240,7 @@
 		</td>
 	</tr>
 	<tr>
-		<th class="fontUp">취소 및 환불 규정</th>
+		<th class="bordertop">취소 및 환불 규정</th>
 	</tr>
 	<tr>
 		<td>
@@ -251,7 +251,7 @@
 		</td>
 	</tr>
 	<tr>
-		<td><input type="checkbox" id="precautionCheck" value="Y"> 유의사항, 취소 및 환불 규정을 모두 확인해주세요.</td>
+		<td class="bordertopheight"><input type="checkbox" id="precautionCheck" value="Y"> 유의사항, 취소 및 환불 규정을 모두 확인해주세요.</td>
 	</tr>
 </table>
 

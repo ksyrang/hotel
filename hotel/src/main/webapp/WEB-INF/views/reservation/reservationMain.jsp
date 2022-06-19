@@ -87,7 +87,7 @@
 </c:if>
 
 <!-- 전체 div -->
-<div class="admin_mainDiv">
+<div class="admin_Div">
 <!-- 필터 div -->
 <div class="admin_searchFilterDiv">
 	<form id='f'>
@@ -113,24 +113,24 @@
 			<!-- forEach문 -->
 			<c:forEach var="roomList" items="${sessionScope.memRoomList }">
 			<tr>
+				<td>
+				<c:choose>
+					<c:when test="${roomList.roomType eq 'T'}"><img src="${pageContext.request.contextPath}/images/roomImages/standardRoom.jpg" alt="Standard" class="room_img"></c:when>
+					<c:when test="${roomList.roomType eq 'D'}"><img src="${pageContext.request.contextPath}/images/roomImages/DerulxRoom.jpg" alt="Deluxe" class="room_img"></c:when>
+					<c:when test="${roomList.roomType eq 'S'}"><img src="${pageContext.request.contextPath}/images/roomImages/suiteRoom.jpg" alt="Suite" class="room_img"></c:when>
+				</c:choose>
+				</td>
 				
 				<td>
 				<c:forEach var="hotelInfoList" items="${allHotelInfo }">
 				<c:if test="${roomList.hotelId eq  hotelInfoList.hotelId}">${hotelInfoList.hotelName }</c:if>
 				</c:forEach>
-				</td>
-				
-				<td>${roomList.roomId }</td>
-				
-				<td>
-				<c:choose>
-					<c:when test="${roomList.roomType eq 'S'}">Standard Room</c:when>
+				 / ${roomList.roomId } <br><br>
+				 <c:choose>
+					<c:when test="${roomList.roomType eq 'T'}">Standard Room</c:when>
 					<c:when test="${roomList.roomType eq 'D'}">Deluxe Room</c:when>
 					<c:when test="${roomList.roomType eq 'S'}">Suite Room</c:when>
-				</c:choose>
-				</td>
-				
-				<td>
+				</c:choose> /
 				<c:choose>
 					<c:when test="${roomList.bedType eq 'S'}">Single Bed</c:when>
 					<c:when test="${roomList.bedType eq 'D'}">Double Bed</c:when>
@@ -139,9 +139,9 @@
 				</c:choose>
 				</td>
 				
-				<td>최대인원 : ${roomList.availablePerson }명</td>
-				<td>${roomList.basicCharge }원</td>
-				<td><input type="button" value="예약하기" class="admin_commonBtn" onclick="location.href='${root }roomReservation_step1Proc?roomId=${roomList.roomId }'"></td>
+				<td>최대 투숙 인원 : ${roomList.availablePerson }명</td>
+				<td style="font-size: 15px; font-weight: bold;">${roomList.basicCharge }원</td>
+				<td><input type="button" value="예약하기" class="resBtn" onclick="location.href='${root }roomReservation_step1Proc?roomId=${roomList.roomId }'"></td>
 			</tr>
 			</c:forEach>
 		</table><br>

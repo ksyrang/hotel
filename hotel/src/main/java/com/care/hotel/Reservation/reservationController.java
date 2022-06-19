@@ -75,39 +75,37 @@ public class reservationController {
 				session.getAttribute("wantCheckout") == null || session.getAttribute("wantavPerson") == null) {
 			ra.addFlashAttribute("msg", "데이터를 입력 후 이용해주세요.");
 			return "redirect:/reservationMainProc";
-		}else {
+		}else if(memRoomSvc.chekcPeriod(roomId, (String)session.getAttribute("wantCheckin"), (String)session.getAttribute("wantCheckout")) == false){
 			// 예약 날짜 확인
-			if(memRoomSvc.chekcPeriod(roomId, (String)session.getAttribute("wantCheckin"), (String)session.getAttribute("wantCheckout")) == false) {
-				model.addAttribute("msg", "해당 날짜는 예약 불가능합니다.");
-				ra.addFlashAttribute("msg", "해당 날짜는 예약 불가능합니다.");
-				return "forward:/reservationMainProc";
-				//return "forward:/reservationMainProc?hotelSelect="+ session.getAttribute("wantHotel") 
-				//+ "&startDate=" + session.getAttribute("wantCheckin") + "&endDate=" + session.getAttribute("wantCheckout")
-				//+ "&availablePerson=" + session.getAttribute("wantavPerson");
-			} else {
-				roomDTO roomDTO = hotelSvc.roomInfoDTO(roomId);
-				// 호텔명
-				model.addAttribute("hotelName", memRoomSvc.getHotelName(roomDTO.getHotelId()));
-				// 객실 정보
-				model.addAttribute("roomDTO", roomDTO);
-				// 고객 정보
-				model.addAttribute("userInfo", memberSvc.userInfo(memberId));
-				// 카드 정보
-				memberCardDTO cardDTO = cardSvc.cardInfo(memberId);
-				if(cardDTO != null) {
-					//모델에 값 넣어주기
-					model.addAttribute("cardId", cardDTO.getCardId());
-					model.addAttribute("cardCompany", cardDTO.getCardCompany());
-					model.addAttribute("cardNo1", cardDTO.getCardNo().substring(0, 4));
-					model.addAttribute("cardNo2", cardDTO.getCardNo().substring(4, 8));
-					model.addAttribute("cardNo3", cardDTO.getCardNo().substring(8, 12));
-					model.addAttribute("cardNo4", cardDTO.getCardNo().substring(12));
-					model.addAttribute("validityMm", cardDTO.getValidityYyMm().substring(2,4));
-					model.addAttribute("validityYy",  cardDTO.getValidityYyMm().substring(0,2));
-					model.addAttribute("CSV", cardDTO.getCSV());
-				}
-				return "forward:/index?formpath=roomReservation_step1";
+			model.addAttribute("msg", "해당 날짜는 예약 불가능합니다.");
+			ra.addFlashAttribute("msg", "해당 날짜는 예약 불가능합니다.");
+			return "forward:/reservationMainProc";
+			//return "forward:/reservationMainProc?hotelSelect="+ session.getAttribute("wantHotel") 
+			//+ "&startDate=" + session.getAttribute("wantCheckin") + "&endDate=" + session.getAttribute("wantCheckout")
+			//+ "&availablePerson=" + session.getAttribute("wantavPerson");
+		} else {
+			roomDTO roomDTO = hotelSvc.roomInfoDTO(roomId);
+			// 호텔명
+			model.addAttribute("hotelName", memRoomSvc.getHotelName(roomDTO.getHotelId()));
+			// 객실 정보
+			model.addAttribute("roomDTO", roomDTO);
+			// 고객 정보
+			model.addAttribute("userInfo", memberSvc.userInfo(memberId));
+			// 카드 정보
+			memberCardDTO cardDTO = cardSvc.cardInfo(memberId);
+			if(cardDTO != null) {
+				//모델에 값 넣어주기
+				model.addAttribute("cardId", cardDTO.getCardId());
+				model.addAttribute("cardCompany", cardDTO.getCardCompany());
+				model.addAttribute("cardNo1", cardDTO.getCardNo().substring(0, 4));
+				model.addAttribute("cardNo2", cardDTO.getCardNo().substring(4, 8));
+				model.addAttribute("cardNo3", cardDTO.getCardNo().substring(8, 12));
+				model.addAttribute("cardNo4", cardDTO.getCardNo().substring(12));
+				model.addAttribute("validityMm", cardDTO.getValidityYyMm().substring(2,4));
+				model.addAttribute("validityYy",  cardDTO.getValidityYyMm().substring(0,2));
+				model.addAttribute("CSV", cardDTO.getCSV());
 			}
+			return "forward:/index?formpath=roomReservation_step1";
 		}
 		
 	}

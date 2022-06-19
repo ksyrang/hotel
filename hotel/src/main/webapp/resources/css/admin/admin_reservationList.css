@@ -11,3 +11,5 @@
 .admin_reservationListTable tr {border-bottom: 1px solid; border-top: 1px solid;}
 .admin_reservationListTable th {height: 30px;}
 .admin_reservationListTable td {text-align: center; height: 20px;}
+
+.room_img {width: 170px; height: 120px;}

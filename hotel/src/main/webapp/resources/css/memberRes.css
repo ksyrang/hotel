@@ -2,13 +2,13 @@
 
 .resMainDiv {margin:auto; width: 1000px; margin-bottom: 20px; margin-top: 20px;}
 
-.optionTable {width: 950px; height: 200px; margin: auto; border-collapse: collapse; margin-bottom: 20px;}
+.optionTable {width: 950px; height: 200px; margin: auto; border: 0.5px solid; color:#dcdcdc; margin-bottom: 20px;}
 .optionTable th {text-align: left; height: 25px;}
 .optionTable td {width: 475px;}
 
 .optionArea {width:400px; height: 100px;}
 
-.memberInfoTable {width: 950px; height: 200px; margin: auto; border-collapse: collapse; margin-bottom: 20px;}
+.memberInfoTable {width: 950px; height: 200px; margin: auto; border: 0.5px solid; color:#dcdcdc; margin-bottom: 20px;}
 .memberInfoTable th {text-align: left; height: 25px;}
 .memberInfoTable td {width: 475px;}
 
@@ -17,21 +17,23 @@
 .input_validity {width:30px; height: 20px;}
 .input_csv {width:30px; height: 20px;}
 
-.precautionTable {width: 950px; height: 200px;margin: auto; border-collapse: collapse; margin-bottom: 20px;}
-.precautionTable th {text-align: left; height: 25px;}
+.precautionTable {width: 950px; height: 200px;margin: auto; border: 0.5px solid; color:#dcdcdc; margin-bottom: 20px;}
+.precautionTable th {text-align: left; height: 25px; padding-top: 5px; padding-bottom: 5px;}
 
-.informationTable {width: 950px; margin: auto; border-collapse: collapse; margin-bottom: 20px;}
-.informationTable th {text-align: left; height: 25px;}
+.informationTable {width: 950px; margin: auto; border: 0.5px solid; color:#dcdcdc; margin-bottom: 20px;}
+.informationTable th {text-align: left; height: 25px; padding-top: 5px; padding-bottom: 5px;}
 
 .personalInformation_textArea {width:900px; height: 100px;}
 
-.fontUp {font-size: 15px;}
+.fontUp {font-size: 15px; border-bottom: 0.5px solid; border-bottom-color:#dcdcdc;  padding-top: 5px; padding-bottom: 5px;}
+.bordertop {font-size: 15px; border-top: 0.5px solid; border-top-color:#dcdcdc; border-bottom: 0.5px solid; border-bottom-color:#dcdcdc; padding-top: 5px; padding-bottom: 5px;}
+.bordertopheight {border-top: 0.5px solid; border-top-color:#dcdcdc; padding-top: 5px; padding-bottom: 5px; text-align: center;}
 
-tr {border: 0.5px solid; color:#dcdcdc}
+
 
 .previous {width: 475px; text-align: left;}
 .amountR {width: 177px; text-align: left;}
-.amountL {width: 177px; text-align: right;}
+.amountL {width: 177px; text-align: right; font-size: 17px; font-weight: bold;}
 .resbtn {width: 121px; text-align: right;}
 
 .btnLB {background-color:  #aa937d; border:0; outline:0; height: 40px; color: white; width: 120px;}
