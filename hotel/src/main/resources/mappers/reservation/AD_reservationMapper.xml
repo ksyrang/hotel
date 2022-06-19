@@ -82,5 +82,15 @@
 		INSERT INTO reservation_extra(reservationNo, remark)
 		VALUES(#{reservationNo}, #{remark})
 	</insert>
+	
+	<!-- periodCount -->
+	
+	<select id="periodCount" parameterType="map" resultType="com.care.hotel.Reservation.DTO.reservationDTO">
+		SELECT * FROM reservation 
+		WHERE roomId = #{roomId}
+		AND ((checkinDate <![CDATA[>=]]> to_date(#{checkinDate},'YYYY-MM-DD') AND checkinDate <![CDATA[<=]]> to_date(#{checkoutDate},'YYYY-MM-DD'))
+		OR (checkoutDate <![CDATA[>=]]> to_date(#{checkinDate},'YYYY-MM-DD') AND checkoutDate <![CDATA[<=]]> to_date(#{checkoutDate},'YYYY-MM-DD')))
+		ORDER BY checkinDate ASC
+	</select>
 
 </mapper>

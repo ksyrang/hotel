@@ -17,5 +17,8 @@ public interface ImemRoomSvc {
 			memberDTO memberDTO, roomDTO roomDTO);
 
 	public reservationDTO getReservationDTO(String reservationNo);
+	
+	// 예약 날짜 확인
+	public boolean chekcPeriod(String roomId, String checkinDate, String checkoutDate);
 	   
 }

@@ -1,6 +1,11 @@
 package com.care.hotel.memRoom.service;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
@@ -55,6 +60,7 @@ public class memRoomSvcImpl implements ImemRoomSvc{
 		//ArrayList<roomDTO> roomList = roomDAO.roomList(begin, end, hotelSelect, startDate, endDate, availablePerson);
 		
 		// 세션에 고객이 정한 체크인, 체크아웃, 투숙 인원 저장
+		session.setAttribute("wantHotel", hotelSelect);
 		session.setAttribute("wantCheckin", startDate);
 		session.setAttribute("wantCheckout", endDate);
 		session.setAttribute("wantavPerson", availablePerson);
@@ -150,6 +156,87 @@ public class memRoomSvcImpl implements ImemRoomSvc{
 		resDTO.setCheckoutDate(outDate);
 		
 		return resDTO;
+	}
+
+	//예약 날짜 확인
+	@Override
+	public boolean chekcPeriod(String roomId, String checkinDate, String checkoutDate) {
+		boolean result = false;
+		
+		Map<String, Object> data = new HashMap<String, Object>();
+		data.put("roomId", roomId);
+		data.put("checkinDate", checkinDate);
+		data.put("checkoutDate", checkoutDate);
+		
+		ArrayList<reservationDTO> resList = resDAO.periodCount(data);
+		
+		if(resList == null || resList.isEmpty()) {
+			System.out.println(roomId + "객실 " + checkinDate + " ~ " + checkoutDate + " 예약 가능");
+			result = true; // 예약 가능
+		}else {
+			System.out.println("resList 존재");
+	
+			for(reservationDTO dto : resList) {
+				System.out.println("resList checkinDate : " + dto.getCheckinDate());
+				System.out.println("resList checkoutDate : " + dto.getCheckoutDate());
+			}
+			
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+			// String to Date
+			try {
+				Date inDate = sdf.parse(checkinDate);
+				Date outDate = sdf.parse(checkoutDate);
+
+				System.out.println("고객 checkin 날짜 : " + inDate);
+				System.out.println("고객 checkout 날짜 : " + outDate);
+				
+				for (int i = 0; i < resList.size(); i++) {
+					try {
+						Date dtoOutDate = sdf.parse(resList.get(i).getCheckoutDate());
+						
+						Date dtoInDate = null;
+						if(i < resList.size() - 1) {
+							dtoInDate = sdf.parse(resList.get(i + 1).getCheckinDate());
+						}
+						
+						System.out.println("디비 검색 체크아웃 : " + dtoOutDate);
+						
+						if(dtoInDate != null) {
+							System.out.println("디비 검색 체크인 + 1 : " + dtoInDate);
+						}
+
+						// && dtoInDate.after(outDate)
+						int compare = dtoOutDate.compareTo(inDate);
+						//if (dtoOutDate.before(inDate)) {
+						if(dtoInDate != null) {
+							int compare2 = dtoInDate.compareTo(outDate);
+							if(compare <= 0 && compare2 >= 0) {
+								System.out.println(roomId + "객실 " + checkinDate + " ~ " + checkoutDate + " 예약 가능");
+								result = true; // 예약 가능
+								break;
+							}else {
+								continue;
+							}
+						}else {
+							dtoInDate = sdf.parse(resList.get(i).getCheckinDate());
+							int compare2 = dtoInDate.compareTo(outDate);
+							if(compare <= 0 || compare2 >= 0) {
+								System.out.println(roomId + "객실 " + checkinDate + " ~ " + checkoutDate + " 예약 가능");
+								result = true; // 예약 가능
+								break;
+							} else {
+								continue;
+							}
+						}
+					} catch (ParseException e) {
+						e.printStackTrace();
+					}
+				}
+			} catch (ParseException e) {
+				e.printStackTrace();
+			}
+		}
+		return result;
 	}
 
 	

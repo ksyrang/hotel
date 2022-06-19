@@ -1,6 +1,7 @@
 package com.care.hotel.Reservation.DAO;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
@@ -36,5 +37,9 @@ public interface AD_reservationDAO {
 	void insertRes(reservationDTO resDTO);
 
 	void insertResEx(reservationExDTO resExDTO);
+
+	// 예약 날짜 체크
+	//int periodCount(@Param("roomId")String roomId, @Param("checkinDate")String checkinDate);
+	ArrayList<reservationDTO> periodCount(Map<String, Object> data);
 
 }
