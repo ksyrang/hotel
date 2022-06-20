@@ -125,7 +125,7 @@ public class HomeController {
 	@RequestMapping(value="admin")
 	public String admin_index(Model model) {
 		logger.info("admin_index");
-		model.addAttribute("formpath", "home2");
+		model.addAttribute("formpath", "admin_reservationList");
 		return "admin_index";
 	}
 	
