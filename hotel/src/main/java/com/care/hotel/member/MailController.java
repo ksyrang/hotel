@@ -29,7 +29,19 @@ public class MailController {
 	public String isExistEmail(@RequestBody(required = false) String memberEmail) {
 		logger.info("userIdCheck 진입");
         logger.info("전달받은 id:"+memberEmail);
-		String msg4 = memberService.isExistEmail(memberEmail);
+		String[] checkAt = memberEmail.split("");
+		int result = 0;
+		for(String tmp : checkAt) {
+			if(tmp.equals("@")) {
+				result++;
+			}
+		}
+        if(result !=1) {
+        	session.setAttribute("emailCheck", 1);
+        	return "중복 이메일 입니다.";
+        }
+                                 
+        String msg4 = memberService.isExistEmail(memberEmail);
 		if(msg4.equals("중복 이메일 입니다.")) {
 			session.setAttribute("emailCheck", 1); // 1 == 중복된 이메일
 		}else {

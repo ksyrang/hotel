@@ -204,7 +204,7 @@
 			<img
 				src="${pageContext.request.contextPath}/images/contents/main/MAIN_HUB/ShinNanDaMain4.jpg"
 				style="width: 100%">
-			<div class="text">ACNE STUDIO</div>
+			<div class="text">ShinNanDa Hotel</div>
 		</div>
 
 		<div class="mySlides fade">

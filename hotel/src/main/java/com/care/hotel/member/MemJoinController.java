@@ -57,13 +57,15 @@ public class MemJoinController {
 	}
 	
 	@RequestMapping(value = "memberJoinProc", method = RequestMethod.POST)
-	public String memberJoinSaveProc(memberDTO member, memberExDTO memberExDto, LoginDTO login, String firstName, String lastName, Model model, RedirectAttributes ra){
+	public String memberJoinSaveProc(memberDTO member, memberExDTO memberExDto, LoginDTO login, String firstName, String lastName, String birthYear, String birthMonth, String birthDay, Model model, RedirectAttributes ra){
+		String memberBirth = birthYear + birthMonth + birthDay;
 		String memberNameENG = lastName + " " + firstName;
 		String msg = "가입 완료";
 		//	System.out.println("msg : " + msg);
 		
 		if(member.getMemberId() != null) {
 			member.setMemberNameENG(memberNameENG);
+			member.setMemberBirth(memberBirth);
 			msg = memberService.memberJoin(member, memberExDto, login);
 		}
 		

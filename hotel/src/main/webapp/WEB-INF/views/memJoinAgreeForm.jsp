@@ -134,7 +134,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					<li class="t3 last"><span>가입완료</span></li>
 				</ul>
 			</div>
-			<div class="top">
+			<div class="top" style="margin-left: 150px;">
 				<h3 class="tit">호텔신라에 오신 것을 환영합니다.</h3>
 				<p class="info">호텔신라에 회원 가입하시면 하나의 ID로 통합해서 사용하실 수 있으며, 서울신라호텔, <br>제주신라호텔 등 신라호텔의 다양한 혜택과 서비스를 받으실 수 있습니다.</p><p></p>
 			</div>
