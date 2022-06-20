@@ -4,7 +4,7 @@
 <c:url var="root" value="/" />
 <link href="${pageContext.request.contextPath}/resources/css/admin/admin_header.css" rel="stylesheet" type="text/css">
 <div class="admin_logo">
-	<a href="${root }admin_reservationListProc"><img  class="logo" src="${pageContext.request.contextPath}/resources/images/logoSND.gif" width="100" height="78"></a>
+	<a href="${root }admin_reservationListProc"><img  class="logo" src="${pageContext.request.contextPath}/resources/images/logoSND2.gif" width="100" height="78"></a>
 </div>
 <div class="amdin_header">
 	<div class="admin_header_top">
