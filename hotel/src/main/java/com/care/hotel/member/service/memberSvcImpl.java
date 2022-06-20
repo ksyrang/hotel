@@ -163,6 +163,7 @@ public class memberSvcImpl implements ImemberSvc{
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 		String securePw = encoder.encode(member.getMemberPw());
 		member.setMemberPw(securePw);
+		login.setMemberPw(securePw);
 
 		
 		if(!(id.isEmpty() || nameKR.isEmpty() || nameENG.isEmpty() || birth.isEmpty() || mobile.isEmpty() || email.isEmpty() || pw.isEmpty() || gender.isEmpty())) {
