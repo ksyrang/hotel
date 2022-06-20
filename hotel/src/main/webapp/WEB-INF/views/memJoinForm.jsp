@@ -188,6 +188,7 @@ function buttonCheck(){
 	var pw = document.getElementById('memberPw').value;
 	var pwc = document.getElementById('memberPwCheck').value;
 	var phone = document.getElementById('memberMobile').value;
+	var homePhone = document.getElementById('memberHomePhone').value;
 	
 	/* if(id == "" || pw == "" || pwc == "" || gender == "" || name1st == "" || name2nd == "" || birth == "" || email == "" || number == "" || phone == ""){
 		alert("*표시의 정보는 반드시 작성 해주세요");
@@ -209,6 +210,8 @@ function buttonCheck(){
 	}else if(pwc == "" ){
 		alert("비밀번호 확인을 반드시 해주세요.");
 	}else if(phone.length < 10){
+		alert("전화번호 형식에 맞게 입력해주세요.")
+	}else if(homePhone.length < 10){
 		alert("전화번호 형식에 맞게 입력해주세요.")
 	}else{
 	//	location.href="${root }index?formpath=memberInsert";
@@ -462,7 +465,7 @@ function emailRegex(){
 									<th scope="row">자택전화</th>
 									<td><input type="text" class="uiform phoneHome2 text"
 										placeholder='- 빼고 작성' id="memberHomePhone"
-										name="memberHomePhone" maxlength="10"
+										name="memberHomePhone" maxlength="11"
 										onkeyup="this.value=this.value.replace(/[^\d\ ]/gi, '')"
 										autocomplete="off"></td>
 								</tr>
