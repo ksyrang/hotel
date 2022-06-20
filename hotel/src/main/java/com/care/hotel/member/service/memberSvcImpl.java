@@ -229,6 +229,10 @@ public class memberSvcImpl implements ImemberSvc{
 			   mem.setMemberPw(newPw);//새로운 비밀번호 덮어쓰기
 			   memberDAO.memberUpdate(mem);//정보 업데이트
 			   
+			   LoginDTO login = loginDAO.loginInfo(memberId);
+			   login.setMemberPw(newPw);
+			   loginDAO.loginUpdate(login);
+			   
 		      result= memberNameENG + "님의 비밀번호는 [" + "11111111" + "]로 수정하겠습니다.";
 		      session.setAttribute("findMemberPw", "11111111");
 		   }else {

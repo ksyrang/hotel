@@ -7,7 +7,7 @@ public interface IloginDAO {
 	
 	void loginInsert(LoginDTO login);
 	
-	
+	int loginUpdate(LoginDTO login);
 	
 	
 }

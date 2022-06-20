@@ -11,6 +11,11 @@
 		INSERT INTO login VALUES(#{memberId}, #{memberPw} ) 
 	</insert>
 	
-	
+	<!-- loginUpdate -->
+	<update id="loginUpdate" parameterType="com.care.hotel.login.DTO.LoginDTO">
+	UPDATE login 
+	SET memberPw=#{memberPw}
+	WHERE memberId=#{memberId}
+	</update>
 	
 </mapper>
