@@ -153,7 +153,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   	</c:choose>
   </span>
   <!-- 예약확인 추가 -->
-   <div class="resvConfirm">
+<%--    <div class="resvConfirm">
 		  <div class="resvConBox">
 			  <a class="btn" href="${root }memListResvProc">예약확인</a>
 			  <!-- <ul class="list">
@@ -169,16 +169,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				  </li>
 			  </ul> -->
 		  </div>
-	</div>
+	</div> --%>
   <!-- 예약확인 추가 -->
   <!-- 한국어 영어 일어 시작  -->
-    <div class="language">
+<!--     <div class="language">
 		<div class="globalBox">
 			<a class="btn" href="#">한국어</a><ul class="list">
-				<!--<li class="dn1 first last">
+				<li class="dn1 first last">
 					<ul class="listSt">
 						 <li class="st first st3"><a href="/hub/cmm/setLang.do?lang=en"><span>English</span></a></li><li class="st st4"><a href="/hub/cmm/setLang.do?lang=ja"><span>日本語</span></a></li><li class="st last st5"><a href="/hub/cmm/setLang.do?lang=zh"><span>简体中文</span></a></li></ul> 
-				</li> -->
+				</li>
 			</ul>
 		</div>
     </div>
@@ -189,7 +189,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             });
         });
     </script>
-
+ -->
 	<!-- Find a hotel 시작 -->
 	<div class="hotelBox_wrap"><!-- 개선 : class="hotelBox_wrap"변경 -->
 <%-- 		<a class="btn" href="${root}reservationMainProc">호텔찾기</a>
@@ -220,12 +220,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	<!-- // 예약 팝업 추가 -->
   <div class="hubMenu">
     <ul>
-        <li class="first"><span class="hMenu1"><a href="/membership/inquires/aboutShilla/memOverView.do">호텔신라 소개</a></span></li>
+<!--         <li class="first"><span class="hMenu1"><a href="/membership/inquires/aboutShilla/memOverView.do">호텔신라 소개</a></span></li>
         <li><span class="hMenu2"><a href="/membership/inquires/contactus/memIndex.do">고객문의</a></span></li>
         <li class="last"><span class="hMenu3">
 		<a href="/membership/offers/pack/memListRewardsPack.do">신라리워즈</a>
 			</span>
-        </li>
+        </li> -->
     </ul>
   </div>
 </div>
