@@ -8,8 +8,6 @@
 .lnbAreaMypage .lnbMenu .m2 .sMenu li.s2 a{ background-position:0 -22px;}
 .lnbAreaMypage .lnbMenu .m2 .sMenu li.s3 a{ background-position:0 -44px;}
 .lnbAreaMypage .lnbMenu .m2 .sMenu li.s4 a{ background-position:0 -66px;}
-#loading { width: 100%; height: 100%; top: 0; left: 0; position: fixed; display: block; opacity: 0.8; background: white; z-index: 99; text-align: center; }
-#loading > img { position: absolute; top: 50%; left: 50%; z-index: 100; }
 </style>
 <style>
 /* Start by LYH : 2022-06-18 20:25)*/
@@ -64,15 +62,8 @@
 				</ul>
 			</div> <!-- lnbMenu -->
 		</div> <!-- lnbArea lnbAreaMypage -->
-<div class="contents" id="contents">
-<!-- 
-<div id="loading"><img src="${pageContext.request.contextPath}/resources/images/ko/common/loadingAnimation.gif" alt="loading"></div>
- -->
-<!-- 
-<h3>
-	<font color="red" >${msg } </font>
-</h3>
- -->
+		<div class="contents" id="contents">
+
 <form action="memCnclCheckProc" method="post" id="f">
 	<div class="ctnMypage ctnMypageRsv ctnMypageRsvRmPack rewards_N">
 		<div class="location">
@@ -126,6 +117,6 @@
 		</div>
 	</div> <!-- ctnMypage ctnMypageRsv ctnMypageRsvRmPack rewards_N -->
 </form>
-</div> <!-- contents -->
+		</div> <!-- contents -->
 	</div> <!-- container -->
 </div> <!-- contain -->

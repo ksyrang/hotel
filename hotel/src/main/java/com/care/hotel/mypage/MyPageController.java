@@ -52,9 +52,12 @@ public class MyPageController {
 		if(memberId != null && memberId != "") {
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 			Calendar calendar = Calendar.getInstance();
-			Date dateObj = calendar.getTime();
-			if(startDt == "" || startDt == null) startDt = "2022-01-01";
-			if(endDt == "" || endDt == null) endDt = sdf.format(dateObj);
+			Date dt = calendar.getTime();
+			if(endDt == "" || endDt == null) endDt = sdf.format(dt);
+			if(startDt == "" || startDt == null) {
+				calendar.add(Calendar.MONTH, -3);
+				startDt = sdf.format(calendar.getTime());
+			}
 			if(select == "" || select == null) select = "예약일";
 	//		startDt = startDt.replaceAll("[^0-9]", "");
 	//		endDt = endDt.replaceAll("[^0-9]", "");
@@ -63,11 +66,12 @@ public class MyPageController {
 			model.addAttribute("endDt", endDt);
 			System.out.println(currentPage + "/" + select + "/" + startDt + "/ " + endDt + "/ " + memberId);
 			myPageService.memListResv(currentPage, select, startDt, endDt, memberId);//서비스 내부에서 session에 데이터를 업로드함
+			return "forward:/mypage_index?formpath=memListResv";
 		}else {
 //			session.setAttribute("reservationList", null);
 			session.setAttribute("reservationCount", 0);
+			return "forward:/mypage_index?formpath=home2";
 		}
-		return "forward:/mypage_index?formpath=memListResv";
 	}
 	
 	@RequestMapping(value = "memPageResvProc")

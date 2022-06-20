@@ -2,6 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:url var="root" value="/" />
 <c:url var="mypage" value="/mypage/" />
+<link href="${pageContext.request.contextPath}/css/mem/common.css" rel="stylesheet" type="text/css">
 <link href="${pageContext.request.contextPath}/resources/css/mem/title_ko.css" rel="stylesheet" type="text/css">
 <style>
 .lnbAreaMypage .lnbMenu .m2 .sMenu li.s1 a{ background-position:0 0;}
@@ -161,7 +162,7 @@
 								</select>
 							</c:when>
 							<c:when test="${member.memberGender eq 'n'}">
-								<select name="memberGender"">
+								<select name="memberGender">
 									<option value="n" selected>선택안함</option>
 									<option value="m">Mr.</option>
 									<option value="w">Miss.</option>
@@ -175,7 +176,8 @@
 								</select>
 							</c:otherwise>
 						</c:choose>
-						<input type="text" style="width: 120px;" id="memberNameKR" name="memberNameKR" value="${member.memberNameKR}" maxlength="15" onkeyup="checkKr()"/>
+						<input type="text" class="lastNameEn" id="memberNameKR" name="memberNameKR" value="${member.memberNameKR}" 
+							style="width: 120px;" maxlength="15" autocomplete="on" onkeyup="checkKr()"/>
 					</td>
 				</tr>
 		
@@ -185,12 +187,14 @@
 						<div class="inputForm2">
 							<div class="Fname">
 								<label for="firstName">First Name(이름)</label>
-								<input type="text" class="firstName" id="firstName" name="firstName" value="${firstName }" placeholder="First name(이름)" style=" width:130px; " onkeyup="this.value=this.value.replace(/[^A-Z]/gi,'');">
+								<input type="text" class="firstName" id="firstName" name="firstName" value="${firstName }" placeholder="First name(이름)" 
+									style=" width:130px; " onkeyup="this.value=this.value.replace(/[^A-Z]/gi,'');">
 							</div>
 							<!-- text-transform: uppercase; -->
 							<div class="Lname">
 								<label for="lastName">Last Name(성)</label>
-								<input type="text" class="lastName" id="lastName" name="lastName" value="${lastName }" placeholder="Last name(성)" style="width:100px; " onkeyup="this.value=this.value.replace(/[^A-Z]/gi,'');">
+								<input type="text" class="lastName" id="lastName" name="lastName" value="${lastName }" placeholder="Last name(성)" 
+									style="width:100px; " onkeyup="this.value=this.value.replace(/[^A-Z]/gi,'');">
 							</div>
 						</div>
 				 	</td>
