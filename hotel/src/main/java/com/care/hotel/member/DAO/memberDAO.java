@@ -23,6 +23,8 @@ public interface memberDAO {
 	
 	memberExDTO memberExInfo(String memberId);
 	
+	int memberUpdateNoPw(memberDTO memberDto);
+	
 	int memberUpdate(memberDTO memberDto);
 	int memberExUpdate(memberExDTO memberExDto);
 	

@@ -71,6 +71,13 @@
 	</insert>
 	
 	<!-- memberUpdate -->
+	<update id="memberUpdateNoPw" parameterType="com.care.hotel.member.DTO.memberDTO">
+	UPDATE member 
+	SET memberNameKR=#{memberNameKR}, memberNameENG=#{memberNameENG}, memberBirth=#{memberBirth}, memberMobile=#{memberMobile}, memberGender=#{memberGender}
+	WHERE memberId=#{memberId}
+	</update>
+	
+	<!-- memberUpdate -->
 	<update id="memberUpdate" parameterType="com.care.hotel.member.DTO.memberDTO">
 	UPDATE member 
 	SET memberNameKR=#{memberNameKR}, memberNameENG=#{memberNameENG}, memberBirth=#{memberBirth}, memberMobile=#{memberMobile}, memberPw=#{memberPw}, memberGender=#{memberGender}

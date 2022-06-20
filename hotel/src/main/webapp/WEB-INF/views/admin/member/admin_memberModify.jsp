@@ -37,7 +37,7 @@
 		}
 		
 		if(memberHomePhone.value != null){
-			if(memberHomePhone.value.length != 11){
+			if(memberHomePhone.value.length < 10){
 				alert('자택전화를 정확히 입력해주세요.');
 				memberHomePhone.focus();
 				return;
@@ -81,6 +81,9 @@
 </div>
 
 <form action="memberModifyProc" method="post" id="f">
+
+<!-- 비밀번홓 저장 -->
+<input type="hidden" name="memberPW" value="${user.memberPw }">
 
 <div class="admin_memberInfoTopRight">
 	<input type="button" value="저장" class="listBtn" onclick="check();">

@@ -73,12 +73,14 @@ public class memberSvcImpl implements ImemberSvc{
 	public String memberModify(AllMemberDTO allMemberDto) {
 		memberDTO memberDto = memberDAO.memberInfo(allMemberDto.getMemberId());
 		// 비밀번호 변경시, 새 비밀번호 암호화
-		if(!(memberDto.getMemberPw().equals(allMemberDto.getMemberPw()))) {
-			BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-			String securePw = encoder.encode(allMemberDto.getMemberPw());
-			allMemberDto.setMemberPw(securePw);
-		}
-		memberDAO.memberUpdate(allMemberDto);
+		/*
+		 * if(!(memberDto.getMemberPw().equals(allMemberDto.getMemberPw()))) {
+		 * BCryptPasswordEncoder encoder = new BCryptPasswordEncoder(); String securePw
+		 * = encoder.encode(allMemberDto.getMemberPw());
+		 * allMemberDto.setMemberPw(securePw); }
+		 */
+		// 비밀번호 빼고 업데이트
+		memberDAO.memberUpdateNoPw(allMemberDto);
 		// int memberExUpdateResult = memberDAO.memberExUpdate(allMemberDto);
 		
 		memberExDTO memberExDto = memberDAO.memberExInfo(allMemberDto.getMemberId());
