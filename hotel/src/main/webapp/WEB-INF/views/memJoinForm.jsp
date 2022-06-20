@@ -179,7 +179,7 @@ function buttonCheck(){
 	var birth = document.getElementById('memberBirth').value;
 	var email = document.getElementById('memberEmail').value;
 	var number = document.getElementById('authNumber').value;
-	var phone = document.getElementById('memberMobile').value; */
+	 */
 	
 	var msg1 = document.getElementById('msg1').innerHTML;
 	var msg2 = document.getElementById('msg2').innerHTML;
@@ -187,6 +187,7 @@ function buttonCheck(){
 	var msg4 = document.getElementById('msg4').innerHTML;
 	var pw = document.getElementById('memberPw').value;
 	var pwc = document.getElementById('memberPwCheck').value;
+	var phone = document.getElementById('memberMobile').value;
 	
 	/* if(id == "" || pw == "" || pwc == "" || gender == "" || name1st == "" || name2nd == "" || birth == "" || email == "" || number == "" || phone == ""){
 		alert("*표시의 정보는 반드시 작성 해주세요");
@@ -207,8 +208,9 @@ function buttonCheck(){
 		return;
 	}else if(pwc == "" ){
 		alert("비밀번호 확인을 반드시 해주세요.");
-	}
-	else{
+	}else if(phone.length < 10){
+		alert("전화번호 형식에 맞게 입력해주세요.")
+	}else{
 	//	location.href="${root }index?formpath=memberInsert";
 		document.getElementById('f').submit();
 	}
@@ -451,7 +453,7 @@ function emailRegex(){
 									<th scope="row"><em class="ast">*</em> 휴대전화</th>
 									<td><input type="text" class="uiform phoneNum2 text"
 										placeholder='- 빼고 작성' id="memberMobile" name="memberMobile"
-										value="" maxlength="11"
+										value="" maxlength="11" 
 										onkeyup="this.value=this.value.replace(/[^\d\ ]/gi, '')"
 										autocomplete="off"></td>
 								</tr>
