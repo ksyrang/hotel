@@ -29,24 +29,24 @@ public class loginServiceImpl implements IloginService {
 		LoginDTO DBmem =  loginDAO.loginInfo(userId);
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 		
-		if(DBmem != null && encoder.matches(DBmem.getMemberPw(), userPw)) {
+		if(DBmem != null && encoder.matches(userPw,DBmem.getMemberPw())) {
 			session.setAttribute("userId", userId);
 			return 2;//맴버 로그인
 		}
-		if(DBmem != null && !encoder.matches(DBmem.getMemberPw(), userPw)) return 9;//맴버 비밀번호 오류
+		if(DBmem != null && !encoder.matches(userPw,DBmem.getMemberPw())) return 9;//맴버 비밀번호 오류
 		//member zone end
 		hotelDTO DBhotel = hotelDAO.hotelInfo(userId);
-		if(DBhotel != null && encoder.matches(DBhotel.getHotelPw(), userPw)) {
+		if(DBhotel != null && encoder.matches(userPw,DBhotel.getHotelPw())) {
 			session.setAttribute("userId", userId);
 			return 4;//매니저 로그인
 		}
-		if(DBhotel != null && !encoder.matches(DBhotel.getHotelPw(), userPw)) return 9;//매니저 비밀번호 오류
+		if(DBhotel != null && !encoder.matches(userPw,DBhotel.getHotelPw())) return 9;//매니저 비밀번호 오류
 		//admin 시
 		
-		if(ADMINID.equals(userId)&&encoder.matches(ADMINPW, userPw)) {
+		if(ADMINID.equals(userId)&&userPw.equals(ADMINPW)) {
 			session.setAttribute("userId", ADMINID);
 			return 7;
-		}else if(ADMINID.equals(userId)&&!encoder.matches(ADMINPW, userPw)) {
+		}else if(ADMINID.equals(userId)&&!userPw.equals(ADMINPW)) {
 			return 9;
 		}
 		
