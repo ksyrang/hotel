@@ -114,6 +114,7 @@ public class AdminPaymentController {
 	@RequestMapping(value="PaymentProc", method=RequestMethod.POST)
 	public String PaymentProc(paymentDTO paymentDTO, String reservationStatus, memberCardDTO cardDTO, RedirectAttributes ra, Model model) {
 		// 결제 수단 - 카카오 페이 일 때
+		/*
 		if(paymentDTO.getPaymentType().equals("4")) {
 			model.addAttribute("paymentDTO", paymentDTO);
 			model.addAttribute("reservationStatus", reservationStatus);
@@ -123,7 +124,11 @@ public class AdminPaymentController {
 			result = paymentSvc.insertPayment(paymentDTO, reservationStatus, cardDTO);
 			ra.addFlashAttribute("msg", result);
 			return "redirect:admin_reservationListProc";
-		}
+		}*/
+		String result = "";
+		result = paymentSvc.insertPayment(paymentDTO, reservationStatus, cardDTO);
+		ra.addFlashAttribute("msg", result);
+		return "redirect:admin_reservationListProc";
 	}
 	
 	// 결제 취소 페이지

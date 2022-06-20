@@ -125,7 +125,7 @@
 				<c:forEach var="hotelInfoList" items="${allHotelInfo }">
 				<c:if test="${roomList.hotelId eq  hotelInfoList.hotelId}">${hotelInfoList.hotelName }</c:if>
 				</c:forEach>
-				 / ${roomList.roomId } <br><br>
+				 <br><br>
 				 <c:choose>
 					<c:when test="${roomList.roomType eq 'T'}">Standard Room</c:when>
 					<c:when test="${roomList.roomType eq 'D'}">Deluxe Room</c:when>
