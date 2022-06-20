@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.care.hotel.Reservation.DAO.AD_reservationDAO;
@@ -26,6 +28,9 @@ public class ReservationSvcImpl implements IReservationSvc{
    @Autowired memberDAO memberDAO;
    @Autowired MailService mailService;
    @Autowired HttpSession session;
+   
+   @Value("${ADMIN:admin}")private String ADMINID;
+   @Value("${ADMPW:admin}")private String ADMINPW;
    
    @Override
    public void reservationList(int currentPage, String hotelSelect, String dateBase, String startDate, String endDate
@@ -134,9 +139,12 @@ public class ReservationSvcImpl implements IReservationSvc{
       // 메일을 보내기 위해 고객 id 불러옴
       memberDTO memberDTO = memberDAO.memberInfo(resDTO.getMemberId());
       
+      // 호텔 비밀번호 복화화
+      BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+      
       // hotelInfo에 데이터가 있을 시
       if(hotelInfo != null) {
-         if(id.equals(session.getAttribute("userId")) && pw.equals(hotelInfo.getHotelPw())) {
+         if(id.equals(session.getAttribute("userId")) && encoder.matches(pw, hotelInfo.getHotelPw())) {
         	mailService.sendMail(memberDTO.getMemberEmail(),"[신난다호텔 예약이 취소되었습니다.]",result);
             reservationDAO.reservationDelete(resDTO);
          }else {
@@ -144,7 +152,7 @@ public class ReservationSvcImpl implements IReservationSvc{
          }
       }else {
          // 관리자 id, pw가 맞을 시
-         if(id.equals("admin") && pw.equals("1234")) {
+         if(id.equals(ADMINID) && pw.equals(ADMINPW)) {
         	mailService.sendMail(memberDTO.getMemberEmail(),"[신난다호텔 예약이 취소되었습니다.]",result);
             reservationDAO.reservationDelete(resDTO);
          }else {

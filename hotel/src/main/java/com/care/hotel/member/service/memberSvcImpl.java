@@ -11,6 +11,7 @@ import javax.servlet.http.HttpSession;
 
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -28,6 +29,8 @@ public class memberSvcImpl implements ImemberSvc{
 	@Autowired memberDAO memberDAO;
 	@Autowired IloginDAO loginDAO;
 	@Autowired private HttpSession session;
+	@Value("${ADMIN:admin}")private String ADMINID;
+	@Value("${ADMPW:admin}")private String ADMINPW;
 	
 	@Override
 	   public void memberList(int currentPage, String select, String search) {
@@ -115,9 +118,9 @@ public class memberSvcImpl implements ImemberSvc{
 		
 		if(adminId == null || adminId  == "" || adminPw == null || adminPw == "") { 
 			result = "아이디 혹은 비밀번호를 확인해주세요.";
-		} else if(!(adminId.equals("admin"))) {
+		} else if(!(adminId.equals(ADMINID))) {
 			result = "아이디 혹은 비밀번호를 확인해주세요.";
-		} else if(!(adminPw.equals("1234"))) {
+		} else if(!(adminPw.equals(ADMINPW))) {
 			result = "아이디 혹은 비밀번호를 확인해주세요.";
 		} else {
 			memberDAO.memberDelete(memberId);
