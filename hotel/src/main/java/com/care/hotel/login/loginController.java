@@ -84,11 +84,11 @@ public class loginController {
 		}
 		else if(result == 4) {
 			model.addAttribute("msg", userId+"님 환영합니다.");
-			return "redirect:/admin"; //매니저 로그인		
+			return "redirect:/admin_reservationListProc"; //매니저 로그인		
 		}
 		else if(result == 7) {
 			model.addAttribute("msg", userId+"님 환영합니다.");
-			return "redirect:/admin"; //관리자 로그인
+			return "redirect:/admin_reservationListProc"; //관리자 로그인
 		}
 		else if(result == 9) {
 			model.addAttribute("msg", "아이디 또는 비밀번호를 확인해주세요.");
