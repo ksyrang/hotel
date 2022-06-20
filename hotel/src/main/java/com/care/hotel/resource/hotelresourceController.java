@@ -153,6 +153,8 @@ public class hotelresourceController {
 	@RequestMapping("roomAddProc")
 	public String preroomaddProc(Model model) {
 		String userId = (String)session.getAttribute("userId");
+		
+		
 		if(userId == null|| userId==""|| userId.isEmpty()) {
 			model.addAttribute("msg","로그인 세션이 만료되었습니다. 로그인 페이지로 이동합니다.");
 			return "forward:/index?formpath=login";
@@ -162,13 +164,15 @@ public class hotelresourceController {
 			return "forward:/admin_index?formpath=admin_roomAdd";
 		}
 		else {
+			hotelDTO hotelInfo = hotelresSVC.hotelInfo(userId);
+			model.addAttribute("hotelInfo", hotelInfo);
 			return "forward:/admin_index?formpath=admin_roomAdd";
 		}
 	}
 	
 	@PostMapping("roomAddCheckProc")
 	public String roomAddProc(roomVO roomInfo, Model model) {
-
+		System.out.println("들어옴");
 		model.addAttribute("addroomInfo", roomInfo);
 		
 		hotelDTO tmp = hotelresSVC.hotelInfo(roomInfo.getHotelId());
