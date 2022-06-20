@@ -2,11 +2,11 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <c:url var="root" value="/" />
-<link href="${pageContext.request.contextPath}/resources/css/kjs.css" rel="stylesheet" type="text/css">
+
 <link href="${pageContext.request.contextPath}/resources/css/admin/amdin_hotelList.css" rel="stylesheet" type="text/css">
 <link href="${pageContext.request.contextPath}/resources/css/admin/amdin_memberList.css" rel="stylesheet" type="text/css">
 <link href="${pageContext.request.contextPath}/resources/css/admin/admin_memberInfo.css" rel="stylesheet" type="text/css">
-
+<link href="${pageContext.request.contextPath}/resources/css/kjs.css" rel="stylesheet" type="text/css">
 
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script>
@@ -73,7 +73,7 @@
 				<th>우편 번호</th>
 				<td>
 					<input type=text name='hotelZipcode' id="zonecode" placeholder="우편 번호" value="${sessionScope.hotelAdd.hotelZipcode }" /> 
-					<input type="button" class="btn" value="우편번호 검색" onclick="daumPost()">
+					<input type="button" class="zipbutton" value="우편번호 검색" onclick="daumPost()">
 				</td>
 			</tr>
 			<tr>

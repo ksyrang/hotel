@@ -1915,7 +1915,7 @@ html.has-modal .estCharge.fixedB, html.has-modal .estCharge.fixedB .estRsvDetail
 .mainVisual .new_rsvBox .jspCapBottom{height:0}
 
 /* header > 호텔찾기 */
-.head .header .hotelBox_wrap{position:absolute; left:0px; top:39px;  width:111px; height:51px; background:url(../../images/ko/mem/new_2019/main_hotelsch.png) no-repeat 0px 0px; z-index:20;}
+.head .header .hotelBox_wrap{position:absolute; left:0px; top:39px;  width:111px; height:51px; /* background:url(../../images/ko/mem/new_2019/main_hotelsch.png) no-repeat 0px 0px; */ z-index:20;}
 .head .header .hotelBox_wrap .btn{ display:inline-block; position:relative; z-index:5;width: 100%; height:51px; text-indent:-9999%; overflow:hidden;}
 .head .header .hotelBox_wrap.on{background:url(../../images/ko/mem/new_2019/main_hotelsch.png) no-repeat 0px 0px;}
 .head .header .hotelBox_wrap.on .btn:after{position: absolute;bottom: 0;left: 0;z-index:10;content: '';display: inline-block;width:100%;height: 4px;background: #3b3b3a;}

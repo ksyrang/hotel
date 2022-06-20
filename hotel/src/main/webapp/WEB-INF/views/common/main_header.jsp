@@ -7,13 +7,15 @@
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>The ShinNanDa Hotels</title>
+
 <link href="${pageContext.request.contextPath}/resources/css/mem/common.css" rel="stylesheet" type="text/css">
 <link href="${pageContext.request.contextPath}/resources/css/mem/common/print.css" rel="stylesheet" type="text/css" media="print">
 <link href="${pageContext.request.contextPath}/resources/css/mem/mainImages_ko.css" rel="stylesheet" type="text/css">
 <link href="${pageContext.request.contextPath}/resources/css/mem/common/reserve_new.css" rel="stylesheet" type="text/css">
 <link href="${pageContext.request.contextPath}/resources/css/mem/common/lang-ko_N.css" rel="stylesheet" type="text/css">
 <link href="${pageContext.request.contextPath}/resources/css/common/swiper.min.css" rel="stylesheet" type="text/css">
-<link href="${pageContext.request.contextPath}/resources/css/kjs.css" rel="stylesheet" type="text/css">
+<link href="${pageContext.request.contextPath}/resources/css/common/new_2019.css" rel="stylesheet" type="text/css">
+
 <style>
 .footer_logo a{ margin:auto; width:250px; height:78px; position:relative; left: -1%; }
 </style>
@@ -190,153 +192,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 	<!-- Find a hotel 시작 -->
 	<div class="hotelBox_wrap"><!-- 개선 : class="hotelBox_wrap"변경 -->
-		<a class="btn" href="${root}reservationMainProc">호텔찾기</a>
-
-		<!-- 개선 : 호텔찾기 -->
-		<div class="hotelBox_N">
-			<div class="hHead">
-				<ul class="htTab">
-   					<li class="tab2 on first"><a href="#"><span>권역별</span></a></li>
-					<li class="tab1  last"><a href="#"><span>브랜드별</span></a></li><!-- a 선택시 li class on 추가 -->
-				</ul>
-			</div>
-
-			<!-- 권역별 -->
-			<div class="hCon" style="display:block;">
-				<div class="list2">
-					<dl>
-						<dt><a href="#"><img src="${pageContext.request.contextPath}/images/ko/mem/new_2019/main_tab2_tit1.gif" alt="국내"></a></dt>
-						<dd>
-							<strong class="tit"><img src="${pageContext.request.contextPath}/images/ko/mem/new_2019/main_tab2_stit1.gif" alt="서울 강북"></strong>
-							<ul>
-								<li class="first"><a href="https://www.shilla.net/seoul/index.do?lang=ko">서울신라호텔</a></li>
-													<li><a href="https://www.shillastay.com/gwanghwamun/index.do?lang=ko">신라스테이 광화문</a></li>
-														<li><a href="https://www.shillastay.com/mapo/index.do?lang=ko">신라스테이 마포</a></li>
-														<li class="last"><a href="https://www.shillastay.com/seodaemun/index.do?lang=ko">신라스테이 서대문</a></li>
-														</ul>
-						</dd>
-						<dd>
-							<strong class="tit"><img src="${pageContext.request.contextPath}/images/ko/mem/new_2019/main_tab2_stit2.gif" alt="서울 강남"></strong>
-							<ul>
-								<li class="first"><a href="https://www.shillastay.com/yeoksam/index.do?lang=ko">신라스테이 역삼</a></li>
-														<li><a href="https://www.shillastay.com/seocho/index.do?lang=ko">신라스테이 서초</a></li>
-														<li><a href="https://www.shillastay.com/guro/index.do?lang=ko">신라스테이 구로</a></li>
-														<li class="last"><a href="https://www.shillastay.com/samsung/index.do?lang=ko">신라스테이 삼성</a></li>
-														</ul>
-						</dd>
-						<dd>
-							<strong class="tit"><img src="${pageContext.request.contextPath}/images/ko/mem/new_2019/main_tab2_stit3.gif" alt="전국"></strong>
-							<ul>
-								<li class="first"><a href="https://www.shilla.net/jeju/index.do?lang=ko">제주신라호텔</a></li>
-													<li><a href="https://www.shillastay.com/dongtan/index.do?lang=ko">신라스테이 동탄</a></li>
-														<li><a href="https://www.shillastay.com/cheonan/index.do?lang=ko">신라스테이 천안</a></li>
-														<li><a href="https://www.shillastay.com/ulsan/index.do?lang=ko">신라스테이 울산</a></li>
-														<li><a href="https://www.shillastay.com/haeundae/index.do?lang=ko">신라스테이 해운대</a></li>
-														<li><a href="https://www.shillastay.com/seobusan/index.do?lang=ko">신라스테이 서부산</a></li>
-														<li class="last"><a href="https://www.shillastay.com/jeju/index.do?lang=ko">신라스테이 제주</a></li>
-													</ul>
-						</dd>
-					</dl>
-					<dl>
-						<dt><a href="#"><img src="${pageContext.request.contextPath}/images/ko/mem/new_2019/main_tab2_tit2.gif" alt="해외"></a></dt>
-						<dd>
-							<strong class="tit"><img src="${pageContext.request.contextPath}/images/ko/mem/new_2019/main_tab2_stit4.gif" alt="베트남"></strong>
-							<ul>
-								<li class="first last"><a href="https://www.shillamonogram.com/dnmg/index.do?lang=ko">신라모노그램 다낭</a></li>
-												</ul>
-						</dd>
-					</dl>
-				</div>
-			</div>
-			<!-- //권역별 -->
-
-
-			<!-- 브랜드별 -->
-			<div class="hCon" style="display:none;">
-				<div class="list1">
-					<dl>
-						<dt><a href="/index.do"><img src="${pageContext.request.contextPath}/images/ko/mem/new_2019/main_tab1_tit1.gif" alt="THE SHILLA"></a></dt>
-						<dd>
-							<ul>
-							<li class="first"><a href="https://www.shilla.net/seoul/index.do?lang=ko">서울신라호텔</a></li>
-														<li class="last"><a href="https://www.shilla.net/jeju/index.do?lang=ko">제주신라호텔</a></li>
-														</ul>
-						</dd>
-					</dl>
-					<dl>
-						<dt><a href="https://www.shillamonogram.com/mghub/index.do?lang=ko"><img src="${pageContext.request.contextPath}/images/ko/mem/new_2019/main_tab1_tit2.gif" alt="SHILLA MONOGRAM"></a></dt>
-						<dd>
-							<ul>
-								<li class="first last"><a href="https://www.shillamonogram.com/dnmg/index.do?lang=ko">신라모노그램 다낭</a></li>
-												</ul>
-						</dd>
-					</dl>
-					<dl>
-						<dt><a href="https://www.shillastay.com/"><img src="${pageContext.request.contextPath}/images/ko/mem/new_2019/main_tab1_tit3.gif" alt="SHILLA STAY"></a></dt>
-						<dd>
-							<ul>
-								<li class="first"><a href="https://www.shillastay.com/gwanghwamun/index.do?lang=ko">신라스테이 광화문</a></li>
-													<li><a href="https://www.shillastay.com/mapo/index.do?lang=ko">신라스테이 마포</a></li>
-													<li><a href="https://www.shillastay.com/seodaemun/index.do?lang=ko">신라스테이 서대문</a></li>
-													<li><a href="https://www.shillastay.com/yeoksam/index.do?lang=ko">신라스테이 역삼</a></li>
-													<li><a href="https://www.shillastay.com/seocho/index.do?lang=ko">신라스테이 서초</a></li>
-													<li><a href="https://www.shillastay.com/guro/index.do?lang=ko">신라스테이 구로</a></li>
-													<li><a href="https://www.shillastay.com/samsung/index.do?lang=ko">신라스테이 삼성</a></li>
-													<li><a href="https://www.shillastay.com/dongtan/index.do?lang=ko">신라스테이 동탄</a></li>
-													<li><a href="https://www.shillastay.com/cheonan/index.do?lang=ko">신라스테이 천안</a></li>
-													<li><a href="https://www.shillastay.com/ulsan/index.do?lang=ko">신라스테이 울산</a></li>
-													<li><a href="https://www.shillastay.com/haeundae/index.do?lang=ko">신라스테이 해운대</a></li>
-													<li><a href="https://www.shillastay.com/seobusan/index.do?lang=ko">신라스테이 서부산</a></li>
-													<li class="last"><a href="https://www.shillastay.com/jeju/index.do?lang=ko">신라스테이 제주</a></li>
-												</ul>
-						</dd>
-					</dl>
-				</div>
-			</div>
-			<!-- //브랜드별 -->
-
-			<a href="#" class="btnClose">닫기</a>
-		</div>
-		<!-- //개선 : 호텔찾기 -->
-
-		<div class="list" style="display:none"><!-- 20180307 호텔찾기 가로형 변경 -->
-		    <div class="hotel">
-		        <h3><a href="/index.do" class="tit">The Shilla</a></h3>
-		        <ul class="hotelListBox">
-					<li class="first"><a href="http://www.shilla.net/seoul/index.do?lang=ko">서울신라호텔</a></li>
-					<li class="last"><a href="http://www.shilla.net/jeju/index.do?lang=ko">제주신라호텔</a></li>
-				</ul>
-		    </div>
-		    <div class="stay">
-		        <h3><a href="http://www.shillastay.com/stayhub/index.do" class="tit">Shilla Stay</a></h3>
-		        <ul class="stayListBox">
-		            <li class="first">
-		                <span class="tit">서울 강북<!-- 서울 강북 --></span>
-		                <ul>
-							<li class="first"><a href="http://www.shillastay.com/gwanghwamun/index.do?lang=ko">신라스테이 광화문</a></li>
-							<li><a href="http://www.shillastay.com/mapo/index.do?lang=ko">신라스테이 마포</a></li>
-							<li class="last"><a href="http://www.shillastay.com/seodaemun/index.do?lang=ko">신라스테이 서대문</a></li>
-						</ul>
-		                <span class="tit">서울 강남<!-- 서울 강남 --></span>
-		                <ul>
-							<li class="first"><a href="http://www.shillastay.com/yeoksam/index.do?lang=ko">신라스테이 역삼</a></li>
-							<li><a href="http://www.shillastay.com/seocho/index.do?lang=ko">신라스테이 서초</a></li>
-							<li class="last"><a href="http://www.shillastay.com/guro/index.do?lang=ko">신라스테이 구로</a></li>
-						</ul>
-		            </li>
-		            <li class="last">
-		                <span class="tit">전국<!-- 전국 --></span>
-		                <ul>
-							<li class="first"><a href="http://www.shillastay.com/dongtan/index.do?lang=ko">신라스테이 동탄</a></li>
-							<li><a href="http://www.shillastay.com/cheonan/index.do?lang=ko">신라스테이 천안</a></li>
-							<li><a href="http://www.shillastay.com/ulsan/index.do?lang=ko">신라스테이 울산</a></li>
-							<li><a href="http://www.shillastay.com/haeundae/index.do?lang=ko">신라스테이 해운대</a></li>
-							<li class="last"><a href="http://www.shillastay.com/jeju/index.do?lang=ko">신라스테이 제주</a></li>
-						</ul>
-		            </li>
-		        </ul>
-		    </div>
-		</div><!-- 20180307 호텔찾기 가로형 변경 -->
+<%-- 		<a class="btn" href="${root}reservationMainProc">호텔찾기</a>
+ --%>
 	</div>
 
 	<!-- 예약 팝업 추가 -->
