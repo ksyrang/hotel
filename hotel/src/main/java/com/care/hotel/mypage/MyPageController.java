@@ -26,6 +26,7 @@ public class MyPageController {
 	@Autowired private MailService mailService;
 	@Autowired IMyPageService myPageService;
 	@Autowired HttpSession session;
+
 	
 	private static final Logger logger = LoggerFactory.getLogger(MyPageController.class);
 	

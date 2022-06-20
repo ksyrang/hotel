@@ -9,5 +9,6 @@ public interface IloginDAO {
 	
 	int loginUpdate(LoginDTO login);
 	
+	int loginDelete(String memberId);
 	
 }

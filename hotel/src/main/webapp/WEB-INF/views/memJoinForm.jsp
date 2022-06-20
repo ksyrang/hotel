@@ -211,8 +211,13 @@ function buttonCheck(){
 		alert("비밀번호 확인을 반드시 해주세요.");
 	}else if(phone.length < 10){
 		alert("전화번호 형식에 맞게 입력해주세요.")
-	}else if(homePhone.length < 10){
-		alert("전화번호 형식에 맞게 입력해주세요.")
+	}else if(!(homePhone == "")){
+		if(homePhone.length < 10){
+			alert("집 전화번호 형식에 맞게 입력해주세요.");
+			return;
+		}else{
+			document.getElementById('f').submit();
+		}
 	}else{
 	//	location.href="${root }index?formpath=memberInsert";
 		document.getElementById('f').submit();

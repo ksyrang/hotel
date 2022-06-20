@@ -18,4 +18,8 @@
 	WHERE memberId=#{memberId}
 	</update>
 	
+	<delete id="loginDelete" parameterType="String">
+	 DELETE FROM login WHERE memberId=#{memberId} 
+	 </delete>
+	
 </mapper>

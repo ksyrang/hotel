@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import com.care.hotel.Reservation.DAO.reservationDAO;
 import com.care.hotel.Reservation.DTO.reservationHotelDTO;
 import com.care.hotel.common.PageService;
+import com.care.hotel.login.DAO.IloginDAO;
 import com.care.hotel.member.DAO.memberDAO;
 import com.care.hotel.member.DTO.AllMemberDTO;
 import com.care.hotel.member.DTO.memberDTO;
@@ -22,6 +23,7 @@ public class MyPageServiceImpl implements IMyPageService{
 	@Autowired reservationDAO reservationDAO;
 	@Autowired memberDAO memberDAO;
 	@Autowired HttpSession session;
+	@Autowired IloginDAO loginDAO;
 
 	@Override
 	public void memListResv(int currentPage, String select, String startDt, String endDt, String memberId) {
@@ -192,6 +194,7 @@ public class MyPageServiceImpl implements IMyPageService{
 		if(memberDto != null) {
 			session.setAttribute("email", memberDto.getMemberEmail());
 			memberDAO.memberDelete(memberId);
+			loginDAO.loginDelete(memberId);
 			return 2;
 		}else {
 			return 1;
