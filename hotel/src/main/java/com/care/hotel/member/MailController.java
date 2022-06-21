@@ -61,8 +61,9 @@ public class MailController {
 			if(memberEmail != null) {
 				Random r = new Random();
 				String number = String.format("%06d", r.nextInt(1000000)); 
+				String content1 = "회원님이 받으신 이메일 인증번호는 " + number + " 입니다.";
 				System.out.println("인증 번호 : " + number);
-				mailService.sendMail(memberEmail, "[인증번호]", number);
+				mailService.sendMail(memberEmail, "[신난다호텔 회원가입 이메일 인증번호]", content1);
 				session.setAttribute("authNumber", number);
 				return "인증 번호 전송";
 			}else {

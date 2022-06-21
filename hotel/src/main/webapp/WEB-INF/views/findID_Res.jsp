@@ -47,12 +47,12 @@ document.write("<div id='popCalendarDiv' class='popCalendar' style='display:none
 <div class="popLayer popLayerFindId">
 
 	<div class="popHead">
-		<h2 class="tit">신라리워즈 아이디 찾기</h2>
+		<h2 class="tit">신난다리워즈 아이디 찾기</h2>
 		<div class="btn"><a class="btnClose" href="${root }index?formpath=login"><span>닫기</span></a></div>
 	</div>
 	<div class="popCtn">
 		
-			<p class="msg1">신라리워즈 아이디 찾기 결과는 다음과 같습니다.</p>
+			<p class="msg1">신난다리워즈 아이디 찾기 결과는 다음과 같습니다.</p>
 			<div class="formBox">
 				<dl>
 					<dd>

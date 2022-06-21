@@ -68,7 +68,7 @@ function idConfirm(){
 <div class="popLayer popLayerFindId">
 
 	<div class="popHead">
-		<h2 class="tit">신라리워즈 아이디 찾기</h2>
+		<h2 class="tit">신난다리워즈 아이디 찾기</h2>
 		<div class="btn"><a class="btnClose" href="${root }index?formpath=login"><span>닫기</span></a></div>
 	</div>
 	<div class="popCtn">

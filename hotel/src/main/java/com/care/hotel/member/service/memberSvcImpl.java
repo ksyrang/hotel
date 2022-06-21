@@ -239,7 +239,7 @@ public class memberSvcImpl implements ImemberSvc{
 			   login.setMemberPw(newPw);
 			   loginDAO.loginUpdate(login);
 			   
-		      result= memberNameENG + "님의 비밀번호는 [" + "11111111" + "]로 수정하겠습니다.";
+		      result= memberNameENG + "님의 비밀번호는 [" + "11111111" + "]로 수정되었습니다.";
 		      session.setAttribute("findMemberPw", "11111111");
 		   }else {
 			   result="다시 입력해주세요.";

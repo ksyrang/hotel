@@ -70,7 +70,7 @@
 				<div class="box findInfoBox">
 					<p class="msg">회원가입 시 등록하신 이메일 및 휴대폰으로 임시비밀번호를 발급해드립니다.</p>
 					-->	
-						<p class="msg1">신라리워즈 비밀번호 찾기 결과는 다음과 같습니다.</p>
+						<p class="msg1">신난다리워즈 비밀번호 찾기 결과는 다음과 같습니다.</p>
 			<div class="formBox">
 				<dl>
 					<dd>
