@@ -29,7 +29,7 @@
 <!--로딩바-->
 <div id="loading" style="margin-left: 0px;">
 	<img src="${pageContext.request.contextPath}/resources/images/ko/common/loadingAnimation1.gif" alt="loading">
-    <p>처리중입니다..잠시기다려주세요.</p>
+    <p> 처리중입니다... 잠시기다려주세요.</p>
 </div>
 <!-- End by LYH : 2022-06-18 20:25) --> 
 

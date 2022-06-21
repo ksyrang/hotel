@@ -8,7 +8,21 @@
 <link href="${pageContext.request.contextPath}/resources/css/admin/amdin_memberList.css" rel="stylesheet" type="text/css">
 <link href="${pageContext.request.contextPath}/resources/css/admin/admin_memberDelete.css" rel="stylesheet" type="text/css">
 <title>admin_reservationDelete</title>
+<style>
+#loading { width: 100%; height: 100%; top: 0; left: 0; position: fixed; display: block; opacity: 0.6; background: #e4e4e4; z-index: 99; text-align: center; }
+#loading > img { position: absolute; top: 50%; left: 50%; z-index: 100; }
+#loading > p { position: absolute; top: 57%; left: 43%; z-index: 101; }
+</style>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>	
 <script>
+	$(document).ready(function() {
+		$('#loading').hide();
+		$('#f').submit(function(){
+		    $('#loading').show();
+		    return true;
+		});
+	});
+	
 	function check() {
 		id = document.getElementById('id');
 		pw = document.getElementById('pw');
@@ -21,6 +35,7 @@
 		document.getElementById('f').submit();
 	}
 </script>
+
 </head>
 <body>
 
@@ -38,6 +53,10 @@
 
 <div align="center" class="delteTabDiv">
 
+<div id="loading" style="margin-left: 0px;">
+	<img src="${pageContext.request.contextPath}/resources/images/ko/common/loadingAnimation1.gif" alt="loading">
+    <p> 처리중입니다... 잠시기다려주세요.</p>
+</div>
 <form action="admin_reservationDeleteCheckProc" method="post" id="f">
 <table class="adminLoginTable">
 	<tr>

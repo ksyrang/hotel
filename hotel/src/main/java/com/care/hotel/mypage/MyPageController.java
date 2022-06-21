@@ -134,7 +134,7 @@ public class MyPageController {
 		System.out.println("memCnclCheckProc check : " + check + " cancelDate : " + cancelDate + " email : " + email);
 		session.setAttribute("alertMsg", null);
 		if(check == 2) {
-			result = "[" + reservationNo + "] 예약 취소 메일을 송부하였습니다.";
+			result = "[" + reservationNo + "] 예약 취소 메일을 전송하였습니다.";
 			mailService.sendMail(email, "[신난다호텔 예약 취소]", result);
 			model.addAttribute("msg", result);
 			model.addAttribute("url","memListResvProc");
@@ -280,7 +280,7 @@ public class MyPageController {
 		System.out.println("memSetDropProc check 2 성공 : " + check + " email : " + email);
 		
 		if(check == 2) {
-			result = "[" + memberId + "]님 회원탈회가 완료되어 메일이 송부되었습니다.";
+			result = "[" + memberId + "]님 회원탈회가 완료되어 메일을 전송하였습니다.";
 			mailService.sendMail(email, "[신난다호텔 회원 탈회]", result);
 			dropCheck = "성공";
 			model.addAttribute("dropCheck", dropCheck);
