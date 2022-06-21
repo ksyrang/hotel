@@ -71,7 +71,7 @@
 								<col>
 							</colgroup>
 							<tbody><tr>
-								<th scope="row"><label for="idInput" class="idInput">신라리워즈 번호 또는 아이디</label></th>
+								<th scope="row"><label for="idInput" class="idInput">신난다리워즈 번호 또는 아이디</label></th>
 								<td><input type="text" id="memberId" name="memberId" value="" size="15"></td>
 							</tr>
 							<tr>

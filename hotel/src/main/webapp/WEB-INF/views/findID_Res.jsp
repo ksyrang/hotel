@@ -63,7 +63,6 @@ document.write("<div id='popCalendarDiv' class='popCalendar' style='display:none
 			
 			<div class="btnList">
 				<a href="${root }index?formpath=login" class="btnSubmit"><span>확인</span></a>
-				<a href="${root }index?formpath=findPW"><span>비밀번호찾기</span></a>
 			</div>
 			<!--   -->
 		
