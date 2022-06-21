@@ -87,6 +87,10 @@ public class reservationController {
 			roomDTO roomDTO = hotelSvc.roomInfoDTO(roomId);
 			// 호텔명
 			model.addAttribute("hotelName", memRoomSvc.getHotelName(roomDTO.getHotelId()));
+			// 투숙일에 따른 요금 변경
+			int charge = roomDTO.getBasicCharge();
+			int period = (int)((long) session.getAttribute("resPeriod"));
+			roomDTO.setBasicCharge(charge * period);
 			// 객실 정보
 			model.addAttribute("roomDTO", roomDTO);
 			// 고객 정보

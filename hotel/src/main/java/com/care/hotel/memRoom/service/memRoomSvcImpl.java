@@ -59,11 +59,36 @@ public class memRoomSvcImpl implements ImemRoomSvc{
 		ArrayList<roomDTO> roomList = roomDAO.memRoomList(begin, end, hotelSelect, IntAvailablePerson);
 		//ArrayList<roomDTO> roomList = roomDAO.roomList(begin, end, hotelSelect, startDate, endDate, availablePerson);
 		
+		// 투숙기간에 따른 요금 변경
+		Date checkin = null;
+		Date checkout = null;
+		long period = 0;
+		try {
+			checkin = new SimpleDateFormat("yyyy-MM-dd").parse(startDate);
+			checkout = new SimpleDateFormat("yyyy-MM-dd").parse(endDate);
+			long diffSec = (checkout.getTime() - checkin.getTime()) / 1000; //초차이
+			period = diffSec / (24*60*60); //일수차이
+			
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		for(int i = 0; i < roomList.size(); i++) {
+			roomDTO room = roomList.get(i);
+			int charge = (int) (roomList.get(i).getBasicCharge() * period);
+			room.setBasicCharge(charge);
+			roomList.set(i, room);
+		}
+		
+		
 		// 세션에 고객이 정한 체크인, 체크아웃, 투숙 인원 저장
 		session.setAttribute("wantHotel", hotelSelect);
 		session.setAttribute("wantCheckin", startDate);
 		session.setAttribute("wantCheckout", endDate);
 		session.setAttribute("wantavPerson", availablePerson);
+		// 세션에 투숙일 저장
+		session.setAttribute("resPeriod", period);
 		
 		session.setAttribute("memRoomCount", totalCount);
 		session.setAttribute("memRoomList", roomList);
