@@ -124,6 +124,7 @@ public class memberSvcImpl implements ImemberSvc{
 			result = "아이디 혹은 비밀번호를 확인해주세요.";
 		} else {
 			memberDAO.memberDelete(memberId);
+			loginDAO.loginDelete(memberId);
 			result = "[" + memberId + "]회원을 삭제했습니다.";
 		}
 		
