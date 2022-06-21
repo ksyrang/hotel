@@ -109,11 +109,29 @@
 		
 	}
 </script>
-
+<style>
+#loading { width: 100%; height: 100%; top: 0; left: 0; position: fixed; display: block; opacity: 0.6; background: #e4e4e4; z-index: 99; text-align: center; }
+#loading > img { position: absolute; top: 50%; left: 50%; z-index: 100; }
+#loading > p { position: absolute; top: 57%; left: 43%; z-index: 101; }
+</style>
+<!--항상 최신버전의 제이쿼리를 사용한다-->
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>	
+<script>
+	$(document).ready(function() {
+		$('#loading').hide();
+		$('#f').submit(function(){
+		    $('#loading').show();
+		    return true;
+		});
+	});
+</script>
 
 </head>
 <body>
-
+<div id="loading" style="margin-left: 0px;">
+	<img src="${pageContext.request.contextPath}/resources/images/ko/common/loadingAnimation1.gif" alt="loading">
+    <p>처리중입니다... 잠시기다려주세요.</p>
+</div>
 <c:if test="${not empty msg }">
 	<script>alert("${msg}");</script>
 </c:if>
