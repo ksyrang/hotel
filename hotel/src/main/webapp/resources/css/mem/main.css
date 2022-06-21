@@ -440,7 +440,7 @@ div.selector.focus {outline: 1px dotted #0066FF; }
 .footer .linkBox{position:absolute; left:0 !important; top:25px;}
 .footer .linkBox li{ float:left; margin:0 0px 0 0}
 /*하단 푸터 수정 20170220*/
-.footer .linkBox li a{ height:13px; display:block; background:url(../../images/ko/mem/main/footLinkBox.gif) no-repeat; text-indent:-9999%; line-height:200px; overflow:hidden;}
+.footer .linkBox li a{ height:13px; display:block; background:url(../../images/ko/mem/main/footLinkBox1.gif) no-repeat; text-indent:-9999%; line-height:200px; overflow:hidden;}
 .footer .linkBox li.link1 a{ width:99px; background-position:0px 0px}
 .footer .linkBox li.link2 a{ width:123px; background-position:-99px 0px}
 .footer .linkBox li.link3 a{ width:134px; background-position:-221px 0px;}
