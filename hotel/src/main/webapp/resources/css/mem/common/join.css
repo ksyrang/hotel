@@ -2943,8 +2943,8 @@
 }
 
 .popLayerFindPw .btnLostId {
-    background: url(../../../images/ko/common/join/popFindPwBtnLostId.gif) no-repeat;
-    width: 185px;
+    background: url(../../../images/ko/common/join/loginBtnLostId.gif) no-repeat;
+    width: 194px;
     height: 27px;
     display: inline-block;
     vertical-align: middle;
