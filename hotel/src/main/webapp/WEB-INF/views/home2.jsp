@@ -180,7 +180,7 @@
 			<img
 				src="${pageContext.request.contextPath}/images/contents/main/MAIN_HUB/ShinNanDaMain.jpg"
 				style="width: 100%">
-			<div class="text">ACNE STUDIO</div>
+			<div class="text">ShinNanDa Hotel</div>
 		</div>
 
 		<div class="mySlides fade">
@@ -188,7 +188,7 @@
 			<img
 				src="${pageContext.request.contextPath}/images/contents/main/MAIN_HUB/ShinNanDaMain2.jpg"
 				style="width: 100%">
-			<div class="text">ACNE STUDIO</div>
+			<div class="text">ShinNanDa Hotel</div>
 		</div>
 
 		<div class="mySlides fade">
@@ -196,7 +196,7 @@
 			<img
 				src="${pageContext.request.contextPath}/images/contents/main/MAIN_HUB/ShinNanDaMain3.jpg"
 				style="width: 100%">
-			<div class="text">ACNE STUDIO</div>
+			<div class="text">ShinNanDa Hotel</div>
 		</div>
 
 		<div class="mySlides fade">
@@ -212,7 +212,7 @@
 			<img
 				src="${pageContext.request.contextPath}/images/contents/main/MAIN_HUB/ShinNanDaMain5.jpg"
 				style="width: 100%">
-			<div class="text">ACNE STUDIO</div>
+			<div class="text">ShinNanDa Hotel</div>
 		</div>
 
 		<div class="mySlides fade">
@@ -220,7 +220,7 @@
 			<img
 				src="${pageContext.request.contextPath}/images/contents/main/MAIN_HUB/ShinNanDaMain6.jpg"
 				style="width: 100%">
-			<div class="text">ShinNanDaHotel</div>
+			<div class="text">ShinNanDa Hotel</div>
 		</div>
 	<!-- Next and previous buttons -->	
 	<!-- 		
