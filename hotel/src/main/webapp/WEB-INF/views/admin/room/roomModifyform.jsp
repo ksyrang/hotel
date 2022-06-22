@@ -47,9 +47,9 @@
 		<table class="admin_memberInfoTable">
 			<tr>
 				<th>*방 번호(수정 불가)</th>
-				<th><input type="text" placeholder="방 아이디" readonly="readonly" value="${roomInfo.roomIdVO }">
+				<td><input type="text" placeholder="방 아이디" readonly="readonly" value="${roomInfo.roomIdVO }">
 					<input type="hidden" id="roomId" name="roomId" value="${roomInfo.roomId }">
-				</th>
+				</td>
 			</tr>
 			<tr>
 				<th>*호텔 아이디(수정 불가)</th>

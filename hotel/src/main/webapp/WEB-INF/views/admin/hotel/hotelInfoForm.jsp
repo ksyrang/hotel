@@ -17,14 +17,15 @@
 	<div class="admin_memberInfoTopLeft">호텔 정보</div>
 	
 	<div class="admin_memberInfoTopRight">
-		<c:choose>
+		<input type="button" value="목록" class="listBtn" onclick="location.href='${root }hotellistProc'">
+<%-- 		<c:choose>
 			<c:when test="">
 				<input type="button" value="목록" class="listBtn" onclick="location.href='${root }hotellistProc'">
 			</c:when>
 			<c:otherwise>
 				<input type="button" value="이전" class="listBtn" onclick="javascript:history.back();"/>
 			</c:otherwise>
-		</c:choose>
+		</c:choose> --%>
 		<input type="button" value="수정" class="listBtn" onclick="location.href='${root }prehotelModifyProc?hotelId=${sessionScope.hotelInfo.hotelId}'">
 		<input type="button" value="삭제" class="listBtn" onclick="location.href='${root }admin_index?formpath=admin_hotelDelete&hotelId=${sessionScope.hotelInfo.hotelId}'">
 	</div>

@@ -40,7 +40,7 @@
 				</tr>
 				<tr>
 					<th>관리자 패스워드</th>
-					<td><input type="text" id="adminPw" name="adminPw" placeholder="비밀번호 입력"/></td>
+					<td><input type="password" id="adminPw" name="adminPw" placeholder="비밀번호 입력"/></td>
 				</tr>
 				<tr>
 					<td colspan="2" align="center">

@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 /* admin_memberList */
-.admin_main {margin:auto; width: 1000px; margin-bottom: 20px; margin-top: 20px;}
+.admin_main {margin:auto; min-height:500px; width: 1000px; margin-bottom: 20px; margin-top: 20px;}
 .admin_memberCombo {height: 50px; margin-top: 10px; margin-left: 10px;}
 .admin_memberCombobox {height: 25px;}
 
