@@ -43,7 +43,7 @@
 						<fieldset class="loginSet">
 							<form id="f" action="${root }loginProc" method="POST">
 								<div class="inputForm">
-									<div style="float: left; height: 30px;"><input type="text" style="width: 280px; " id="userId" name="userId" placeholder="신라 리워즈 아이디 입력"></div>
+									<div style="float: left; height: 30px;"><input type="text" style="width: 280px; " id="userId" name="userId" placeholder="신난다 리워즈 아이디 입력"></div>
 									<div style="float: left;"><input type="password" style="width: 280px; " maxlength="40" id="userPw" name="userPw" placeholder="비밀번호"></div>
 								</div>
 								<!-- 로그인 버튼 -->
