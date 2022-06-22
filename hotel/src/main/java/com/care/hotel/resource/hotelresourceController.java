@@ -172,7 +172,7 @@ public class hotelresourceController {
 	
 	@PostMapping("roomAddCheckProc")
 	public String roomAddProc(roomVO roomInfo, Model model) {
-		System.out.println("들어옴");
+//		System.out.println("들어옴");
 		model.addAttribute("addroomInfo", roomInfo);
 		
 		hotelDTO tmp = hotelresSVC.hotelInfo(roomInfo.getHotelId());
